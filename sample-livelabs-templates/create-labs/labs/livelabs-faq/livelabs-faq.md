@@ -4,6 +4,38 @@
 
 For questions related to LiveLabs please review this FAQ. If you don't see an answer listed here, please visit the LiveLabs slack channel - #workshop-authors-help or email your respective admins, you can view the email in [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) under the support link section of your workshop. For example, database - [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
 
+## **LiveLabs Production FAQ**
+
+1.	Do I need to be on VPN to access LiveLabs URL?
+    -	No, LiveLabs passed CSSAP review and is available outside the firewall. It is accessible globally. Search for Oracle LiveLabs on the search engine of their choice, click on the apex link to go to LiveLabs homepage.
+2.	Who can run the workshop?
+    -	LiveLabs passed CSSAP review and is available outside the firewall. Anyone can run the workshops.
+3.	What do you need to run the workshop?
+    -	Brown Button / Customer's own tenancy – Customers do need anything to run the workshop.
+    -	Green Button / LiveLabs sandbox tenancy - An account of any type registered with Oracle (Eg: Gmail).
+4.	How to register for a workshop?
+    -	Navigate to [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1).
+    -	Click on View All Workshops to search for the workshop you want to run or type the keyword in Search Bar on top of the LiveLabs homepage.
+    -	Filter the workshops based on the Role, Focus Area, and Product, etc filter option on the right side of the page.
+    -	Once you finalize the workshop you want to run, Click on Launch Workshop.
+    -	Brown button / Customer's own tenancy:
+        - If customers want to run the workshop on their own tenancies, click the brown button - **Run On Your Tenancy**.
+        - Then click on **Open these workshop instructions in a new tab** to run through the instructions.. in a new tab
+    -	Green button / LiveLabs sandbox tenancy:
+        - If you want to run the workshop on LiveLabs tenancy, click the Green button – **Run On LiveLabs Sandbox**.
+        - Provide credentials of the account registered with Oracle (SSO) and sign in.
+        - On the Reserve page, choose the **Start Timezone**, turn on the Start Workshop Now button, provide your public SSH keys if requested, check the **I consent to receive the reservation emails** checkbox, and click **Submit reservation**.
+        - On My Reservations Page, once the provisioning is done, click **Launch Console** to view the Workshop details and Instructions to run the workshop.
+        - Then click **Open these workshop instructions in a new tab** available at the bottom of the page to run through the instructions.
+5.	How do I extend the LiveLabs tenancy workshop execution time?
+    -	If you have an active reservation, you can extend the reservation of a workshop:
+        - Navigate to My reservations on [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1) homepage.
+        - Click on Launch Workshop of the active reservation workshop that you want to extend.
+        - Click on Extend Workshop Reservation button available on the last row of the Workshop Details section.
+6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in WMS and want to add more content to the existing workshop?
+    -	We recommend go to [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51), find the workshop, and click **Message the Team** to contact the workshop team.
+    -   Or, you can find the workshop authors listed in the Acknowledgments section of the workshop, and slack or email them.
+
 ## **General FAQ**
 
 1.	Is this cloud only?
@@ -44,28 +76,34 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 
 ## **Development FAQ**
 
-1.	What should I do if I am making major updates to the workshop in production?
+1.  Who is responsible for approving pull requests in the GitHub repositories of Oracle LiveLabs GitHub project?
+    - LiveLabs Admin team is responsible for the Oracle LiveLabs GitHub project's pull request approvals.
+2.  What is the ETA to approve and merge the open pull request by LiveLabs admins?
+    - ETA to respond on the pull request is 1-2 business days.
+3.	Any questions related to Oracle LiveLabs GitHub project and repositories?
+    -	Join the Slack channel: #workshop-authors-help to ask the questions in the channel or mail to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
+4.	What should I do if I am making major updates to the workshop in production?
     -	If the workshop is in production, and the updates are major (i.e. not fixes, spelling updates, revised screenshots, etc) place the workshop back In Development.
     -	Create a new version of the workshop folder with the updated version
     -	Create new manifest copies of the changed files (i.e. setup.md is copied and called setup-v2.md)
     -	Proceed through the status’ like normal, submit Self QA
     -	Once QA Verification is complete, we will point to the new workshop (this allows us to roll back to the earlier version if there is an issue)
-2. What should I do if I am making minor updates to the workshop in production?
+5. What should I do if I am making minor updates to the workshop in production?
     - Make changes to your workshop and create a pull request.
     - Check in WMS that your workshop URLs are correct.
     - After your pull request is approved, and your changes are reflected in the github.io page, the workshop in production will be automatically updated.
-2.	What binary files are not allowed in Github?
+6.	What binary files are not allowed in Github?
     -	The OGHO wants to avoid executable files that can contain malicious code (PDFs, PSDs, ZIPs, JARs, WARs, EARs, BINs, EXEs).
-3.	Where do I put my workshop files/objects?
+7.	Where do I put my workshop files/objects?
     -	Zip your files and mail to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
     -	LiveLabs team will upload the file in LiveLabs owned tenancy object storage and share the pre-authenticated link with an expiry date to you in 1-2 days.
-4.	How to submit videos for the workshops to one of the Oracle’s official Youtube channels?
+8.	How to submit videos for the workshops to one of the Oracle’s official Youtube channels?
     -	Workshop videos can only be sourced from one of the official Oracle Youtube channels.  We have a LiveLabs YouTube channel.  Submit the video to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com) and we will review and upload it.
-5.	How to create a custom image from the Marketplace?
+9.	How to create a custom image from the Marketplace?
     -	Refer to [this](https://rpastijn.github.io/stuff/?lab=custom-image-mp-image) documentation on Github.
-6. Where can I locate the Self QA Checklist?
+10. Where can I locate the Self QA Checklist?
     -   When you're ready to Self-QA, change your workshop status to "Self QA". This will trigger an e-mail containing the Self QA Checklist. It can also be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx).
-7. What to do if my github local and staging environment are corrupted and need to delete it and then rebuilt it?
+11. What to do if my github local and staging environment are corrupted and need to delete it and then rebuilt it?
     - Instructions to delete a forked repo on Github:
         - Go to Settings of Repo you want to unfork
         - Scroll down till danger zone section and click Delete this Repository
@@ -73,8 +111,8 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
         - Click “I understand the consequences, delete this repository” button.
     - Delete the same repo you just deleted on Github on your local machine as well.
     - After the successful deletion of repo on Github and local machine, follow the instructions from step 7 in lab 1 - Get Started with Git and Set up the GitHub Environment to rebuilt the repo.
-8.	Any questions related to Github?
-    -	Join the Slack channel: #workshop-authors-help and ask the question in the channel.
+12. After my pull request is merged, how long does it take for the changes to be reflected in production?
+    Workshops in production use object storage links. The synchronization between the GitHub repositories and object storage happens every night (PST), so your changes will be reflected after the synchronization happens. If you want to update the workshop for upcoming events, please plan ahead.
 
 ## **Workshops FAQ**
 
@@ -103,7 +141,6 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	On the left menu, click on **Edit My Workshops**.
     -	Click on the **WMS ID** of the workshop you want to edit.
     -	On the top of the page, select the status you want to update and click **Save**.
-    
     >**Note:** As a workshop author, you cannot change your workshop to any statuses. Only council can change your workshop to **Approved** status. Only stakeholders can change your workshop to **Completed** status.
 6.	How to contact the author of a workshop?
     -	You can contact the workshop author if you have a question about a workshop, or have some feedback for the workshop.
@@ -198,40 +235,8 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 21. Can I customize a workshop for events?
     -   Yes. Refer to Lab 2 -> Task 3 to create a workshop folder for your event. Then, **overwrite workshop information** when you request the event code.
 
-## **LiveLabs Production FAQ**
-
-1.	Do I need to be on VPN to access LiveLabs URL?
-    -	No, LiveLabs passed CSSAP review and is available outside the firewall. It is accessible globally. Search for Oracle LiveLabs on the search engine of their choice, click on the apex link to go to LiveLabs homepage.
-2.	Who can run the workshop?
-    -	LiveLabs passed CSSAP review and is available outside the firewall. Anyone can run the workshops.
-3.	What do you need to run the workshop?
-    -	Brown Button / Customer's own tenancy – Customers do need anything to run the workshop.
-    -	Green Button / LiveLabs sandbox tenancy - An account of any type registered with Oracle (Eg: Gmail).
-4.	How to register for a workshop?
-    -	Navigate to [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1).
-    -	Click on View All Workshops to search for the workshop you want to run or type the keyword in Search Bar on top of the LiveLabs homepage.
-    -	Filter the workshops based on the Role, Focus Area, and Product, etc filter option on the right side of the page.
-    -	Once you finalize the workshop you want to run, Click on Launch Workshop.
-    -	Brown button / Customer's own tenancy:
-        - If customers want to run the workshop on their own tenancies, click the brown button - **Run On Your Tenancy**.
-        - Then click on **Open these workshop instructions in a new tab** to run through the instructions.. in a new tab
-    -	Green button / LiveLabs sandbox tenancy:
-        - If you want to run the workshop on LiveLabs tenancy, click the Green button – **Run On LiveLabs Sandbox**.
-        - Provide credentials of the account registered with Oracle (SSO) and sign in.
-        - On the Reserve page, choose the **Start Timezone**, turn on the Start Workshop Now button, provide your public SSH keys if requested, check the **I consent to receive the reservation emails** checkbox, and click **Submit reservation**.
-        - On My Reservations Page, once the provisioning is done, click **Launch Console** to view the Workshop details and Instructions to run the workshop.
-        - Then click **Open these workshop instructions in a new tab** available at the bottom of the page to run through the instructions.
-5.	How do I extend the LiveLabs tenancy workshop execution time?
-    -	If you have an active reservation, you can extend the reservation of a workshop:
-        - Navigate to My reservations on [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1) homepage.
-        - Click on Launch Workshop of the active reservation workshop that you want to extend.
-        - Click on Extend Workshop Reservation button available on the last row of the Workshop Details section.
-6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in WMS and want to add more content to the existing workshop?
-    -	We recommend go to [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51), find the workshop, and click **Message the Team** to contact the workshop team.
-    -   Or, you can find the workshop authors listed in the Acknowledgments section of the workshop, and slack or email them.
-
 ## Acknowledgements
 
 * **Author:** Anoosha Pilli, Product Manager, Database Product Management
 * **Contributors:** Madhusudhan Rao, Arabella Yao, Product Manager, Database Product Management
-* **Last Updated By/Date:** Arabella Yao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, April 2022

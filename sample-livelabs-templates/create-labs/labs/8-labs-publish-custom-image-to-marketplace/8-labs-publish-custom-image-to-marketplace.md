@@ -11,10 +11,10 @@ This lab will show you how to create an OCI marketplace compute based artifact f
 This lab assumes:
 - You're part of LiveLabs Team
 - You have access to the approved LiveLabs tenant (*C4U02*) configured for OCI Marketplace
-- The custom image to be used was created as prescribed in [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute)
+- The custom image to be used was created as prescribed in [Creating Compute Images for Marketplace](https://oracle-livelabs.github.io/common/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop)
 
-## Task 1: Create and (or) Test Custom Image 
-For custom images received from authors via imports from Object Storage pre-authenticated URLs, proceed as indicated below. If you created the image and have already validated  using a test instance, then skip to next task.
+## Task 1: Create and (or) Test Custom Image
+For custom images received from authors via imports from Object Storage pre-authenticated URLs, proceed as indicated below. If you built the image yourself and have already validated  using a test instance, then skip to **Task 4**.
 
 1. Login to the dedicated tenancy for marketplace images (*C4U02*) and navigate to */Compute/Custom Images*
 
@@ -68,7 +68,7 @@ For custom images received from authors via imports from Object Storage pre-auth
     - **`desktop_guide_url`**: Link to github.io guide ending with "*../workshop/desktop*"
       ```
       e.g.
-      https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/workshops/desktop
+      https://oracle-livelabs.github.io/em-omc/enterprise-manager/emcc/workshops/desktop
       ```
     - **`desktop_app1_url`** (Optional): Link to any webapp that should be loaded on the desktop on noVNC boot.
       ```
@@ -84,9 +84,9 @@ For custom images received from authors via imports from Object Storage pre-auth
 
     ![](./../7-labs-create-custom-image-for-marketplace/images/zip-orm-stack.png " ")
 
-15. Using the new zip file above, navigate to "*Developer Services > Stacks*" and create a test instance with Oracle Resources Manager (ORM).
+15. Using the new zip file above, navigate to "*Developer Services > Stacks*" and create a test instance with Oracle Resources Manager (ORM). Make sure to opt for provisioning with an SSH key
 
-    *Notes:* For more details on how to provision with ORM, refer to [setup-compute](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop-novnc/workshops/freetier/?lab=setup-compute-novnc-ssh) lab guide.
+    *Notes:* For more details on how to provision with ORM, refer to [setup-compute](https://oracle-livelabs.github.io/common/sample-livelabs-templates/sample-workshop-novnc/workshops/tenancy/?lab=setup-compute-novnc-ssh) lab guide.
 
 16. After successful instance creation, get the remote desktop URL and logon to validate
 
@@ -96,9 +96,99 @@ For custom images received from authors via imports from Object Storage pre-auth
 
     ![](./images/remote-desktop-landing.png " ")
 
-    *Notes:* If the setup was successful you should see two Google-chrome browser windows preloaded with the workshop guide on the left and webapps on the right.
+    *Notes:* If the setup was successful you should see two Google-chrome browser windows preloaded with the workshop guide on the left and webapps on the right (if *`desktop_app1_url`* or *`desktop_app2_url`* was provided).
 
-## Task 2: Create Marketplace Artifacts   
+## Task 2: Refresh the Image
+
+1. Open an SSH session from your local computer and connect to the instance created above using the SSH key that you provided during via ORM stack.
+
+2.  As opc, run *sudo su -* to login as root.
+
+    ```
+    <copy>
+    sudo su - || (sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd && sudo su -)
+
+    </copy>
+    ```
+
+3. Refresh *setup-firstboot.sh* to configure and enforce static hostname.
+
+    ```
+    <copy>
+    cd /tmp
+    rm -rf ll-setup
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Nx05fQvoLmaWOPXEMT_atsi0G7Y2lHAlI7W0k5fEijsa-36DcucQwPUn6xR2OIH8/n/natdsecurity/b/misc/o/setup-novnc-livelabs.zip -O setup-novnc-livelabs.zip
+    unzip -o  setup-novnc-livelabs.zip -d ll-setup
+    cd ll-setup/
+    chmod +x *.sh .*.sh
+    ./setup-firstboot.sh && exit
+
+    </copy>
+    ```
+
+    You are prompted for the following inputs:
+    - (1) Do you want to keep and preserve the current hostname? [Y/N]. The current hostname is shown for confirmation and the input required is either Y or N
+    - (2) If Y, "Please press *ENTER* to accept the default *holserv1* or type in your preferred host shortname (not the FQDN, and must be lowercase and alphanumeric):"
+    - (3) Do you have additional host alias(es), virtualhost names, or FQDN required for labs that are using this instance? [Y/N]
+    - (4) If Y, "Enter each additional host alias, FQDN, or virtualhost name (separated from each other by a space. e.g. *serv1 serv1.demo.com*)"
+
+4. Review the script output
+5. If you have additional entries you would like added to */etc/hosts* file whenever an instance is created from the image, edit */root/bootstrap/firstboot.sh* and add them under the ***Add Static Name to /etc/hosts*** block
+
+    In the example below, the following customization are added to a setup:
+    - 3 Additional host aliases:  *myapp*, *app1*, and *hr.demo.com*
+    - 3 Additional external host entries to "/etc/hosts"
+
+    ```
+    <copy>
+    sudo cat /root/bootstrap/firstboot.sh
+    </copy>
+    ```
+
+    ![](../6-labs-setup-graphical-remote-desktop/images/novnc-firstboot-1.png " ")
+
+    This customization resulted in the following */etc/hosts* file.
+
+    ```
+    <copy>
+    sudo cat /etc/hosts
+    </copy>
+    ```
+
+    ![](../6-labs-setup-graphical-remote-desktop/images/novnc-firstboot-2.png " ")
+
+6.  Still from the same SSH session, login again as root via SUDO and run the latest setup script to refresh the system. You will be prompted for the following input:
+
+    - The *OS user* for which the remote desktop will be configured. *Default: Oracle*
+
+    ```
+    <copy>
+    sudo su -
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+    cd /tmp/ll-setup/
+    ./setup-novnc-livelabs.sh
+
+    </copy>
+    ```
+7. Revisit the desktop URL from **Task 1** or use the URL from the script output above to validate.
+
+8. If the setup was successful you should see two Google-chrome browser windows preloaded with the workshop guide on the left and webapps on the right (if *`desktop_app1_url`* or *`desktop_app2_url`* was provided).
+
+9. If the half-right desktop screen space is empty, follow [Appendix #1 of setup guide](https://oracle-livelabs.github.io/common/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop#Appendix1:ConfiguringAdditionalDesktopAppsforAutoStartonVNCStartup) to add an auto-start task to launch the *Terminal* utility or another app such as *SQL Developer*.
+
+10. Close all open windows inside the remote desktop
+
+## Task 3: Create Update Custom Image   
+With all windows inside the remote desktop now closed, proceed as indicated below to create a custom image from the updated instance.
+
+1. Follow the [setup guide](https://oracle-livelabs.github.io/common/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=7-labs-create-custom-image-for-marketplace)
+
+## Task 4: Create Marketplace Artifacts   
 At this point, it's assumed that the test instance created in the previous lab has been successfully validated and can be submitted to OCI marketplace. This also assume that you have the required access for OCI Partner Portal. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI Marketplace Partner Portal, then navigate to *"Compute > Instances"*
@@ -141,7 +231,7 @@ At this point, it's assumed that the test instance created in the previous lab h
 
     ![](./images/create-artifact-6.png " ")
 
-## Task 3: Create Marketplace Listing   
+## Task 5: Create Marketplace Listing   
 1. Click on the 2nd icon on the top left to access the Listings section
 
     ![](./images/create-listing-1.png " ")
@@ -237,4 +327,4 @@ At this point, it's assumed that the test instance created in the previous lab h
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 * **Contributors** - - -
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2022
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2022

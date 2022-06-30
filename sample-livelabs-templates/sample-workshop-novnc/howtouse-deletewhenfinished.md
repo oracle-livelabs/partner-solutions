@@ -3,18 +3,17 @@
 ## Instructions - Delete this file when finished
 
 1. Open the sample-workshop template in Atom or Visual Studio Code
-2. We pre-created 5 folders.  A workshop is created out of multiple labs.
+2. We pre-created 5 folders. A workshop is created out of multiple labs.
 3. Remove the comments like this one: *List objectives for this lab*
 4. Make sure you use lower case folder and file name and dashes for spaces (setup-adb NOT Setup_ADB)
-5. Your image names should have descriptive names. Not just adb1, adb2, adb3.  For handicap accessibility we need the image descriptions to explain what the image looks like.  Remember all lower case and dashes.
-6. Make sure you watch this [video](https://otube.oracle.com/media/1_ucr6grc6) for how to do Self QA of a workshop.  These are the standards that need to be met before going to production.  (It's short don't worry!)
-7. Download our [QA Feedback doc](https://confluence.oraclecorp.com/confluence/download/attachments/1966947336/livelabs-QA-Feedback-Form-v2.docx?version=2&modificationDate=1598913736000&api=v2) as well.  We find workshops get in production quicker when you know what's needed to move to production up front and you use the skeleton.
+5. Your image names should have descriptive names. Not just adb1, adb2, adb3. For handicap accessibility we need the image descriptions to explain what the image looks like. Remember all lower case and dashes.
+6. Do the Self QA of a workshop. Download our [QA Feedback document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx). These are the standards that need to be met before going to production. We find workshops get in production quicker when you know what's needed to move to production up front and you use the skeleton.
 
-PS:  You do not need a Readme.md.  Readme's exist only at the top library levels. We direct all traffic to LiveLabs since we can't track usage on GitHub.  Do not create any direct links to GitHub, your workshop may be super popular but we can't track it so no one will know.
+PS:  You do not need a Readme.md. Readme's exist only at the top library levels. We direct all traffic to LiveLabs since we can't track usage on GitHub.  Do not create any direct links to GitHub, your workshop may be super popular but we can't track it so no one will know.
 
 ## Absolute Path for Oracle Cloud menu Navigation
 
-**Lab 1: Provision an Instance -> Step 0: Use these Standardized Pictures for Oracle Cloud Navigation (Commonly for Provisioning)** - We've included a list of common screenshots for navigating the Oracle Cloud Menu. Please read this section and use the relevant absolute path images where appropriate.  This will future proof your workshop in case of Oracle Cloud user interface updates.
+**Lab 1: Provision an Instance -> Step 0: Use these Standardized Pictures for Oracle Cloud Navigation (Commonly for Provisioning)** - We have included a list of common screenshots for navigating the Oracle Cloud Menu. Please read this section and use the relevant absolute path images where appropriate.  This will future proof your workshop in case of Oracle Cloud user interface updates.
 
 ## Folder Structure
 

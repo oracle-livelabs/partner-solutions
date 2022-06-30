@@ -100,7 +100,7 @@ Your instance at this point is ready for clean capture. Proceed to OCI console t
 
 1. Download the sample ORM stack zip archive
 
-    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/59BZ9_9iIy7rAjk1GCea-ZsSWjJxf0zDK7xFctJmMnsoVXzHtnTuOQsGkNAaYx6Q/n/natdsecurity/b/misc/o/ll-orm-mkplc-freetier.zip)
+    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ma3anAntwyF54E289zRxemySTIA2RZcOcq1jPZ_ZRiV3lhedYJSw3qCRnnU9K__M/n/natdsecurity/b/stack/o/ll-orm-mkplc-freetier.zip)
 
 2. Unzip it locally on your computer to *ll-orm-mkplc-freetier*.
 3. Delete the downloaded file *ll-orm-mkplc-freetier.zip*.
@@ -127,7 +127,7 @@ Your instance at this point is ready for clean capture. Proceed to OCI console t
 
 9. Using the new zip file above, navigate to "*Developer Services > Stacks*" and create a test instance with Oracle Resources Manager (ORM).
 
-    *Notes:* For more details on how to provision with ORM, refer to [setup-compute](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop-novnc/workshops/freetier/?lab=setup-compute-novnc-ssh) lab guide.
+    *Notes:* For more details on how to provision with ORM, refer to [setup-compute](https://oracle-livelabs.github.io/common/sample-livelabs-templates/sample-workshop-novnc/workshops/freetier/?lab=setup-compute-novnc-ssh) lab guide.
 
 10. After successful instance creation, get the remote desktop URL and logon to validate
 
@@ -161,7 +161,7 @@ Your instance at this point is ready for clean capture. Proceed to OCI console t
     - **`desktop_guide_url`**: Link to github.io guide ending with "*../workshop/desktop*".
       ```
       e.g.
-      https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/workshops/desktop/
+      https://oracle-livelabs.github.io/em-omc/enterprise-manager/emcc/workshops/desktop/
       ```
     - **`desktop_app1_url`** (Optional): Link to any webapp that should be loaded on the desktop on noVNC boot.
       ```
