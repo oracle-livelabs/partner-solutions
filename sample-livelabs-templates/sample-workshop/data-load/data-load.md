@@ -4,14 +4,14 @@
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Time: -- minutes
+Estimated Time: n minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### About Product/Technology (Optional)
+Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
+*List objectives for this lab*
 
 In this lab, you will:
 * Objective 1
@@ -20,44 +20,47 @@ In this lab, you will:
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
 
 This lab assumes you have:
-* An Oracle Cloud account
+* An Oracle account
 * All previous labs successfully completed
 
+*This is the "fold" - below items are collapsed by default*
 
-*Below, is the "fold"--where items are collapsed by default.*
-
-## Task 1: Concise Step Description
+## Task 1: <what is the action in this step>
 
 (optional) Step 1 opening paragraph.
 
 1. Sub step 1
 
-	![Image alt text](images/sample1.png)
+		![Image alt text](images/sample1.png)
 
-  To create a link to local file you want the reader to download, use the following formats. _The filename must be in lowercase letters and CANNOT include any spaces._
+  To create a link to local file you want the reader to download, use the following format.
 
-	Download the [starter file](files/starter-file.sql) SQL code.
+	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
+
+  Download the [starter file](files/starter-file.sql) SQL code.
 
 	When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
 
+	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
+
 	Download the [sample JSON code](files/sample.json?download=1).
 
-  > Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
 2. Sub step 2
 
-  ![Image alt text](images/sample1.png)
+    ![Image alt text](images/sample1.png)
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
 5. Example with bold **text**.
 
-   If you add another paragraph, add 3 spaces before the line.
+  If you add another paragraph, add 3 spaces before the line.
 
-## Task 2: Concise Step Description
+## Task 2: <what is the action in this step>
 
 1. Sub step 1 - tables sample
 
@@ -99,4 +102,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - <Name, Group, Month Year>

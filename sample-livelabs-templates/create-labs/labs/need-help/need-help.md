@@ -5,6 +5,7 @@
 In this lab, you will learn how to reach out for help if you have any questions when you develop your workshops. We provide several helpful resources to ensure that you can get all the help you need.
 
 ### Objectives
+
 - Learn about LiveLabs helpful resources
 
 ## Option 1: Use Self-service Learning Resources
@@ -15,18 +16,9 @@ In this lab, you will learn how to reach out for help if you have any questions 
 
 ## Option 2: Send an Email
 
-1. If you want to get advice for your workshop, you can send an email to your stakeholders, or council group.
-
-2. If you want to get help for your workshop, you can also email your questions to our shared emailbox: *livelabs-help-db_us@oracle.com*. We will try to get back to you within 1-2 business days.
-
-## Option 3: Attend Office Hours
-
-1. If you want to get one-on-one help, please attend either the [American time zone office hour every Tuesdays 8 AM (PST)](https://bit.ly/LivelabsOfficeHrs), or the [EMEA time zone office hour every Wednesdays 9 AM (GMT)](https://bit.ly/emealivelabsofficehrs).
-
-## Option 4: Use Slack Channel
-
-1. If you want to get immediate help, please join our Slack channel #workshop-authors-help and post your questions.
+1. If you want to get help or advice for your workshop, you can also email your questions to our council emailbox: *livelabs-help-community_us@oracle.com*. We will try to get back to you within 1-2 business days.
 
 ## Acknowledgements
+
 * **Authors:** Arabella Yao, Product Manager, Database Product Management
-* **Last Updated By/Date:** Arabella Yao, May 2022
+* **Last Updated By/Date:** Anoosha Pilli, July 2022

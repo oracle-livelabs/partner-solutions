@@ -11,15 +11,19 @@ This lab describes the prescribed folder structure that we need to follow for de
 
 ## Task 1: Folder Structure of the Oracle LiveLabs
 
-The following image shows a folder structure of the **sample-workshop** that is opened in the **Visual Studio Code** Editor. Inside each repository in [Oracle LiveLabs](https://github.com/oracle-livelabs), there is a **sample-livelabs-templates**  folder. You can see this structure at the following URL [https://github.com/oracle-livelabs/common/tree/main/sample-livelabs-templates/sample-workshop](https://github.com/oracle-livelabs/common/tree/main/sample-livelabs-templates/sample-workshop). You can get started with workshop development by copying this sample workshop folder.
+1. The following image shows a folder structure of the **sample-workshop** that is opened in the **Visual Studio Code** editor. 
 
-![Example of workshop structure.](./images/sample-workshop-structure.png " ")
+  Inside [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository in Oracle LiveLabs project, there is a **sample-livelabs-templates**  folder. You can see this structure at the following URL [https://github.com/oracle-livelabs/partner-solutions/tree/main/sample-livelabs-templates/sample-workshop](https://github.com/oracle-livelabs/partner-solutions/tree/main/sample-livelabs-templates/sample-workshop). You can get started with workshop development by copying this sample workshop folder.
+
+  ![Example of workshop structure.](./images/sample-workshop-structure.png " ")
 
 ## Task 2: Understand the Components of the Workshop and Lab Folders
-  The following describes the components of the above example:
+
+The following describes the components of the above example:
+
   * The root folder of this example is the name of the workshop, **sample-workshop**. Direct links to the workshop files will be coming soon.
 
->**Note:** You will be creating your project folder anywhere within your cloned repository. If you have not done so, please look into the [Oracle LiveLabs GitHub project](https://github.com/oracle-livelabs) to see different repositories and decide on a repository for your workshop. If no existing repository fits your workshop, please contact our LiveLabs team. (See more details about this in Lab 3 → Task 4.)
+	>**Note:** You will be creating your project folder anywhere within your cloned [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository.  (See more details about this in Lab 3 → Task 4.)
 
   * Each lab has its own folder, for example, **data-load**, **introduction**, **provision**, etc., each containing:
     * a **files** folder (optional) that contains the files used in this lab.
@@ -32,21 +36,19 @@ The following image shows a folder structure of the **sample-workshop** that is 
 
     The following screenshot shows a sample `manifest.json` file that is opened in the **Visual Studio Code** Editor.
 
-    >**Note:** Ensure that the appropriate stakeholder email is listed by ***help***. If the *include* and *variables* do not apply to your workshop, you should remove them, to ensure your workshop can render properly.
+    >**Note:** Ensure that the [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com) email is listed in ***help***. If the *include* and *variables* do not apply to your workshop, you should remove them, to ensure your workshop can render properly.
 
     ![Sample manifest json file.](./images/manifest.png " ")
 
 This concludes this lab. You may now **proceed to the next lab**.
 
-## (Optional) Task 3: Customize Workshop for Events
+## (Optional) Task 3: Customize Workshop
 
-Sometimes, the workshop team may want to *customize the workshop for an upcoming event*, for example, having a different introduction of the workshop, adding or removing some labs. Meanwhile, the workshop team doesn't want to affect the workshop already in production. They can have this customized version of the workshop in production by following the instructions below.
+Sometimes, the workshop team may want to *customize the workshop for an upcoming event*, for example, having a different introduction of the workshop, adding or removing some labs. Meanwhile, the workshop team does not want to affect the workshop already in production. They can have this customized version of the workshop in production by following the instructions below.
 
 Under the `workshops` folder, the workshop team can create an event folder. Just like the `desktop`, `freetier`, and/or `livelabs` folder that already existed, this event folder also contains an `index.html` file and a `manifest.json` file. The workshop team can customize the workshop by updating the `manifest.json` file. Then, the workshop team can use the link to the event folder for the event, leaving other workshops untouched.
 
-Refer to Lab 3a -> Task 2 to use conditional formatting for the event's content.
-
-Refer to Lab 4 -> Task 9 to request to publish the workshop of type *Event*.
+Refer to Lab 3a -> Task 2 to use conditional formatting for the content.
 
 ## (Optional) Task 4: Multiple Workshops Use the Same Lab Files
 
@@ -67,5 +69,5 @@ Refer to Lab 3a -> Task 2 to use conditional formatting for different versions o
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Arabella Yao, Product Manager, Database Product Management
     * Madhusudhan Rao, Product Manager, Database Product Management
-
-* **Last Updated By/Date:** Arabella Yao, Jun 2022
+    * Anoosha Pilli, Product Manager, Database Product Management
+* **Last Updated By/Date:** Anoosha Pilli, July 2022
