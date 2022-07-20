@@ -41,7 +41,7 @@ Before you develop you should ensure you have the latest content from production
 
   ![Merge into current branch.](./images/git-hub-merge-branch.png " ")
 
-  > **Note:** If you get an authentication error, please refer to the Lab 5 - Troubleshooting to resolve the issue.
+  > **Note:** If you get an authentication error, please refer to the Lab 6 - GitHub FAQ to resolve the issue.
 
 4. Select the branch **upstream/main** (there may be several branches, search until you see *upstream/main*). Press the **Create a merge commit** button.
 
@@ -228,14 +228,5 @@ If you have any questions, or want to make major changes to the workshop or want
 
 ## Acknowledgements
 
-* **Author:**
-    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-* **Contributors:**
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Kamryn Vinson, Product Manager, Database
-    * Anoosha Pilli, Product Manager, Database
-    * Arabella Yao, Product Manager, Database
-    * Madhusudhan Rao, Product Manager, Database
-    * Anoosha Pilli, Product Manager, Database Product Management
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022

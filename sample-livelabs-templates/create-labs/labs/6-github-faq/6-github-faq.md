@@ -1,6 +1,6 @@
-# GitHub Troubleshooting Tips
+# GitHub FAQ
 
-This lab provide an overview of GitHub, GitHub Projects and Repositories and troubleshooting steps related to various issues.
+This lab provide an overview of GitHub, GitHub Projects and Repositories and solutions to frequently asked questions.
 
 ## What is GitHub, GitHub Projects and Repositories?
 
@@ -17,13 +17,13 @@ In the following simplified example, the three-drawer filing cabinet represents 
 
   ![GitHub project organization diagram.](./images/git-hub-projects-repositories.png " ")
 
-## Issue 1: Commits Behind oracle:main
+## What to do when I am few commits behind oracle:main?
 
   ![Sync GitHub with main repository.](./images/git-hub-sync-behind.png " ")
 
 1. Follow the steps in Task 1: Get the Latest Updates from Production.
 
-## Issue 2: Clone failed
+## What to do when clone failed?
 
   ![Clone failed.](./images/clone-failed.png " ")
 
@@ -37,7 +37,7 @@ In the following simplified example, the three-drawer filing cabinet represents 
     <copy> git config --global core.ignorecase false </copy>
     ```
 
-## Issue 3: GitHub Merge Conflicts
+## How to resolve GitHub merge conflicts?
 
 GitHub merge conflicts happen when you and some other contributors are changing the same content in the oracle-livelabs repositories. Merge conflicts prevent you from pushing your changes to your GitHub repository.
 
@@ -57,7 +57,7 @@ GitHub merge conflicts happen when you and some other contributors are changing 
 
   ![Refresh your personal GitHub repository.](./images/git-hub-sync-ahead.png " ")
 
-## Issue 4: Cannot Use GitHub Desktop to Pull Changes from Production
+## I am not able to use GitHub Desktop to pull changes from production
 
 If you have not updated your local GitHub repo with GitHub repo in oracle-livelabs for a long time, and you are too many commits behind the oracle-livelabs:main, you may not get the latest changes from production using GitHub Desktop. It is simply because there are too commits to merge. In that case, you can use git commands to perform the same actions.
 
@@ -113,7 +113,7 @@ If you have not updated your local GitHub repo with GitHub repo in oracle-livela
   Navigate to the conflicting files and resolve the conflicts by choosing the incoming changes or current changes.
   Once conflicts are resolved, commit the changes in your GitHub desktop and push them.
 
-## Issue 5: Mess up GitHub Repo and Want to Delete the Repo
+## I have messed up GitHub repo and want to delete it
 
 >**Note:** Do this only if necessary.
 
@@ -133,7 +133,7 @@ In the worst case, if you cannot resolve issues in your local or staging repo, a
 
   This deletes the entire repo in your local/laptop. Follow the labs in this guide to set up your repo again.
 
-## Issue 6: Authentication error
+## I am getting authentication error
 
   ![Authentication failed.](./images/authentication-failed.png " ")
 
@@ -179,13 +179,13 @@ If you have already created an SSH key in your local computer and added the key 
 
   ![Push origin.](../3-labs-use-atom-editor-develop-content/images/push-origin.png " ")
 
-## Issue 7: GitHub Desktop is stuck
+## My GitHub Desktop is stuck
 
 1. First make sure that you are off VPN.
 
 2. Re-open the GitHub desktop.
 
-## Issue 8: GitHub Desktop does not reflect the repo I work on
+## My GitHub Desktop does not reflect the repo I work on
 
 If you have multiple Oracle LiveLabs repositories, you need to switch to the repository that you will work on in GitHub Desktop. Expand the dropdown list of **Current Repository**, and click the repository that you need.
 
@@ -193,14 +193,5 @@ If you have multiple Oracle LiveLabs repositories, you need to switch to the rep
 
 ## Acknowledgements
 
-* **Author:**
-    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-* **Contributors:**
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Kamryn Vinson, Product Manager, Database
-    * Anoosha Pilli, Product Manager, Database
-    * Arabella Yao, Product Manager, Database
-    * Madhusudhan Rao, Product Manager, Database
-
-* **Last Updated By/Date:** Arabella Yao, June 2022
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
+* **Last Updated By/Date:** Anoosha Pilli, July 2022

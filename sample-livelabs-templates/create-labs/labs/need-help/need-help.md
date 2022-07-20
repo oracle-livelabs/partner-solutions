@@ -20,5 +20,5 @@ In this lab, you will learn how to reach out for help if you have any questions 
 
 ## Acknowledgements
 
-* **Authors:** Arabella Yao, Product Manager, Database Product Management
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022

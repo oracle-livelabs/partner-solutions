@@ -6,13 +6,11 @@ The labs in this workshop walk you through all the steps to **develop workshops*
 
 ### **What are Labs and Workshops?**
 
-A lab is a new model adopted by the Database (DB) organization to enhance the tutorial experience. Labs can be combined to form a workshop, formerly known as Hands-on Lab or HOL, or a Learning Path.
-
 An individual Markdown (.md) file is called a lab. A collection of labs is called a workshop. A LiveLabs workshop must contain more than one lab. You cannot create a single lab LiveLabs (LL) workshop. In most cases, this is not a problem since most of the LL workshops contain at least one common lab titled **Get Started** that guides the user on the different types of Cloud accounts.
 
 ### **Oracle LiveLabs GitHub Project and Repositories**
 
-To ease the workshop development process and facilitate collaboration between Oracle product teams and customers, instead of having all workshops in one GitHub repository, we organize workshops into 26 GitHub repositories (as of July 2022) according to their product or feature groups, in the Oracle LiveLabs own GitHub project called [oracle-livelabs](https://github.com/oracle-livelabs). Those repositories are referred to as **Production**, since they are where customers view the completed LiveLabs workshops from.
+We organize workshops into 26 GitHub repositories (as of July 2022) according to their product or feature groups, in the Oracle LiveLabs own GitHub project called [oracle-livelabs](https://github.com/oracle-livelabs). Those repositories are referred to as **Production**, since they are where customers view the completed LiveLabs workshops from.
 
 > **Note:** You will be working in one of the **oracle-livelabs** Github project repositories called **oracle-livelabs/partner-solutions**. You can access the repository using this URL - [https://github.com/oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions). We recommend to bookmark this URL, as you will use it often.
 
@@ -74,11 +72,5 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Authors:**
-    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
-* **Contributors:**
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ 
-    * Arabella Yao, Product Manager, Database Product Management
-    * Anoosha Pilli, Product Manager, Database Product Management
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022

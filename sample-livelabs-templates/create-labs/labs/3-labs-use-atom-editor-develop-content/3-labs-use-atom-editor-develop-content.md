@@ -127,7 +127,7 @@ To merge content:
 
 8.  To push the new commits from the local clone to your forked location, click **Push origin**.
 
-    > **Note:** If you get an *Authentication failed* error, refer to the Lab 6 - GitHub Troubleshooting.
+    > **Note:** If you get an *Authentication failed* error, refer to the Lab 6 - GitHub FAQ.
 
     ![Push Origin.](./images/push-origin.png " ")
 
@@ -290,17 +290,5 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author:**
-    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-* **Contributors:**
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-	* Anoosha Pilli, Product Manager, Database Product Management
-
-* **Reviewed by:**
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Kay Malcolm, Database Product Management
-    * Arabella Yao, Database Product Management
-    * Andres Quintana
-    * Brianna Ambler
-
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022

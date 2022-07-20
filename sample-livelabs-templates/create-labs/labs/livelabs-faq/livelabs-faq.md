@@ -165,6 +165,5 @@ For questions related to Oracle LiveLabs please review this FAQ. If you do not s
 
 ## Acknowledgements
 
-* **Author:** Anoosha Pilli, Product Manager, Database Product Management
-* **Contributors:** Madhusudhan Rao, Arabella Yao, Product Manager, Database Product Management
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022

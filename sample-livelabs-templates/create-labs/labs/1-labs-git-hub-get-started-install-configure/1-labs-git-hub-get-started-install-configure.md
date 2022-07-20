@@ -69,13 +69,11 @@ In this Task, you will create and set up your GitHub account.
 
 4. Click **Account** to add your user name in the **Enter a user name** dialog. For example, johnhall.
 
-5. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
-
-    ![Set up 2 factor authentication.](./images/git-2-factor-authentication.png " ")
+5. We recommend setting a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
 
 ## Task 3: Download and Install the latest version of Git (Optional Step)
 
-> **Note:** For User Assistance Developers (UAD), Oracle recommends using the GitHub Desktop client because of its simple and user-friendly user interface, and it is also much easier to use than the Git command line; therefore, if you are a UAD, skip this task and follow the instructions in **Task 4: Install GitHub Desktop**.
+> **Note:** Oracle recommends using the GitHub Desktop client because of its simple and user-friendly user interface, and it is also much easier to use than the Git command line. Therefore, skip this task and follow the instructions in **Task 4: Install GitHub Desktop** if you are not familiar with command-line interface.
 
 To install Git:
 
@@ -192,13 +190,5 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Authors:**
-    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
-* **Contributors:**
-    * Kay Malcolm, Database Product Management
-    * Madhusudhan Rao, Principal Product Manager, Database
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Arabella Yao, Product Manager, Database
-    * Anoosha Pilli, Product Manager, Database Product Management
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022

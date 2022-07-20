@@ -62,12 +62,5 @@ Refer to Lab 3a -> Task 2 to use conditional formatting for different versions o
 
 ## Acknowledgements
 
-* **Author:**
-    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-* **Contributors:**
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Arabella Yao, Product Manager, Database Product Management
-    * Madhusudhan Rao, Product Manager, Database Product Management
-    * Anoosha Pilli, Product Manager, Database Product Management
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022

@@ -25,9 +25,9 @@ Rather than pointing to images within your lab folder or workshop directory with
 
 *For screenshots of OCI menu navigation, use the images with absolute links.*
 
-1. Here is an example of what the image code block looks like for pointing to a local image using relative path.
+1. Here is an example of what the image code looks like for pointing to a local image using relative path -
 
-  ```![Description](images/image.png " ")```
+  ![Image relative path](./images/image-relative-path.png " ")
 
 2. To use an image with an absolute path, just replace the path with an URL. In this case, I am pointing to a common image located in a different repository.
 
@@ -45,7 +45,7 @@ Rather than pointing to images within your lab folder or workshop directory with
 
 ## Task 2: Using Conditional Formatting
 
-If your workshop supports multiple instance types, but the bulk of the content stays the same, then conditional formatting can save you a lot of work. Most commonly, if you have differences between the "Free Tier" and "Sandbox" versions, like having elaborative instructions on provisioning a database instance in Free Tier version and just verifying the database setup instructions in the LiveLabs version. Then conditional formatting will help your workshop to use a singular markdown for both. This will save you immense effort and prevent accidental oversights if you need to update your workshop in the future since you won't have to maintain a duplicate markdown.
+If your workshop supports multiple instance types, but the bulk of the content stays the same, then conditional formatting can save you a lot of work. Most commonly, if you have differences between the "Tenancy" and "Sandbox" versions, like having elaborative instructions on provisioning a database instance in tenancy version and just verifying the database setup instructions in the Sandbox version. Then conditional formatting will help your workshop to use a singular markdown for both. This will save you immense effort and prevent accidental oversights if you need to update your workshop in the future since you won't have to maintain a duplicate markdown.
 
 1. Conditional formatting is using the "if" conditional to choose what to display in your markdown, based on an additional attribute "type" you attach to a lab element in your manifest.json file. Take a look at this example to understand the components involved in making conditional formatting work.
 
@@ -53,11 +53,11 @@ If your workshop supports multiple instance types, but the bulk of the content s
 
   	![Example of conditional formatting.](./images/conditional-vsc1.png " ")
 
-  	In the freetier folder's manifest.json file screenshot below, on lines 21 and 27, you can see that we added the attribute **"type:" "freetier"** to the lab element. In this instance, this manifest.json is for the free tier version of the workshop. So, when a customer launches the workshop through the run on your tenancy button on the workshop's landing page, lab 2, and lab 3 will always display the content inside the **"freetier"** type in the above screenshot.
+  	In the screenshot below, on freetier (now renamed to tenancy) folder's manifest.json file lines 21 and 27, you can see that we added the attribute **"type:" "freetier"** to the lab element. In this instance, this manifest.json is for the free tier version of the workshop. So, when a customer launches the workshop through the run on your tenancy button on the workshop's landing page, lab 2, and lab 3 will always display the content inside the **"freetier"** type in the above screenshot.
 
   	![Code is only rendered if condition is met.](./images/freetier.png " ")
 
-	Similarly, in the livelabs's folder manifest.json file screenshot below, on lines 12, 17, and 23, you can see the same thing except that it is **"type:" "livelabs"** for the livelabs version of the workshop. So, when a customer launches the workshop through the Run on LiveLabs button on the workshop's landing page, introduction lab, labs 1, and lab 2 will always display the content inside the **"livelabs"** type in the first screenshot of this task.
+	Similarly, in the screenshot below, on livelabs's (now renamed to sandbox) folder manifest.json file lines 12, 17, and 23, you can see the same thing except that it is **"type:" "livelabs"** for the livelabs version of the workshop. So, when a customer launches the workshop through the Run on LiveLabs button on the workshop's landing page, introduction lab, labs 1, and lab 2 will always display the content inside the **"livelabs"** type in the first screenshot of this task.
 
   	![Freetier version type.](./images/livelabs.png " ")
 
@@ -167,12 +167,5 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Didi Han, Database Product Management
-* **Contributors**:
-    * Kay Malcolm, Database Product Management
-    * Didi Han
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
-    * Andres Quintana
-    * Arabella Yao, Database Product Management
-    * Anoosha Pilli, Product Manager, Database Product Management
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date:** Anoosha Pilli, July 2022
