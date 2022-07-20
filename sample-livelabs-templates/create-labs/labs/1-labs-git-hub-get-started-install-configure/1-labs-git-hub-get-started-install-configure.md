@@ -1,97 +1,79 @@
-#  Get Started with Git and Set up the GitHub Environment
+# Get Started with Git and Set up the GitHub Environment
 
 ## Introduction
 
-In this lab, you will learn how to create a GitHub Account and associate it with your Oracle email account, request that your GitHub account is added to the Oracle GitHub Organization (OGHO) at [github.com/oracle](github.com/oracle), set up the GitHub development environment, and install GitHub Desktop.
+In this lab, you will learn how to create a GitHub Account and associate it with your email account, set up the GitHub development environment, and install GitHub Desktop.
 
 ### Objectives
-* Submit a LiveLabs workshop request using the **Oracle Workshop Management System (WMS)**.
+
+* Submit a LiveLabs workshop request through email
 * Create a GitHub account and add it to the Oracle GitHub Organization.
 * Set up your GitHub environment.
-* Install GitHub Desktop Client (recommended for User Assistance Developers).
+* Install GitHub Desktop Client.
 
-### What Do You Need?
+## Task 1: Submit a Workshop Request to the Oracle LiveLabs
 
-* Access to the **Oracle Workshop Management System (WMS)**
-* Access to the **Develop LiveLabs Workshops and Labs Using Markdown** internal documentation
-* Familiarity with HTML and/or Markdown is helpful but not required
+Before you get started, you should submit your new LiveLabs workshop request by sending an email to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com) for the Oracle LiveLabs team to review. Submitting a workshop informs the Oracle ecosystem that you are working on a workshop and submits your idea to the Workshop Council. We urge you not to delay this step. There are hundreds of workshops already, this step is important to help us preserve the quality and integrity of the workshop catalog.
 
-## Task 1: Submit a Workshop Request to the Oracle Workshop Management System
+1.  Provide all the below required *Workshop Basic Information*. Failure to provide all the details will prevent your workshop from being approved.
 
-Before getting started, you should submit your LiveLabs workshop request to the WMS. Submitting a workshop informs the Oracle ecosystem that you are working on a workshop and submits your idea to the Workshop Council. We urge you not to delay this step. There are hundreds of workshops already, this step is important to helps us preserve the quality and integrity of the workshop catalog.
+	-	*Workshop Title:* Choose a descriptive title up to 200 characters. Do not include the word "Workshop" or "Lab" and use "Oracle Speak". Choose a title that users would recognize or understand. Do not use abbreviations ("Autonomous Database" not "ADB") and start the title with an imperative verb ("Build" not "Building").
+	-	*Workshop Abstract:* Provide the workshop abstract details **thoroughly** as it is used for approval by the workshop council. Workshops are reviewed by the workshop council for adherence to current Oracle messaging. If you do not provide enough details, the council may revert back for more details and this may delay your workshop approval.
+		-	What is the Workshop Elevator Pitch/Messaging?
+		-	Provide brief details on the Workshop?
+		-	Why is this workshop needed?
+		-	What products/technologies are used in the workshop?
+		-	Is there a primary Oracle product/technology being showcased? If so, what is it?
+	-	*Short Description:* The short description is the key piece of information that goes on the tile of the workshop. Keep it crisp, catchy, and interesting. The length is up to 400 characters.
+	-	*Long Description:* The long description is a thorough description of the workshop that goes on the details page of the workshop.
+	-	*Workshop Team Members:* Provide the email address for everyone in the Workshop Team. They will be able to edit this workshop at any point in the workflow.
+		- Workshop Owner: Owner and primary Contact of the workshop. Responsible for workshop content being correct, accurate, and up-to-date. Also must keep accurate information in WMS for this workshop.
+		- Technical Contact: Expert of Labs in Workshop. This person will answer customer's questions via email, Stack Overflow, etc. If not identified, the Workshop Owner will assume this role.
+		-	Support Contact: Adapts Workshop to GitHub and LiveLabs. This person will move content to Github, Self QA the workshop, and add/maintain the "Need Help" or "Troubleshooting" section of the workshop. If not identified, the Workshop Owner will assume this role.
+		-	Manager Contact: Works with the Workshop Owner to complete the workshop and keep information accurate. This person is responsible for ensuring that there is a current and valid Workshop Owner.
+		-	Observer: This optional field is just for someone that wants to keep an eye on the workshop but does not have any responsibilities. Keep in mind that this person will have write permissions on this workshop.
+	-	*Workshop Outline:* Provide the title of each of your labs within the workshop.
+	-	*Workshop Prerequisites:* Provide the necessary prerequisites a user would need before attempting your workshop. For example, Some understanding of cloud and database terms is helpful, Familiarity with Oracle Cloud Infrastructure (OCI) is helpful, Familiarity with Database is desirable, but not required
+	-	*Level:* What is the Level of workshop - Beginner, Intermediate, Advanced?
+	-	*Role:* Who can run this workshop? For example, DBA, Business Analyst, etc. View the Role filter options to the left on this [page](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/livelabs-workshop-cards?clear=100) and share the details.
+	-	*Focus*: What is the focus of this workshop? For example: Database, AI/ML, Low Code, etc. View the Focus Area filter options to the left on this [page](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/livelabs-workshop-cards?clear=100) and share the details.
+	-	*Product*: What are the products demonstrated in this workshop? For example, Blockchain, Data Safe, Autonomous JSON Database, etc. View the Product options to the left on this [page](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/livelabs-workshop-cards?clear=100) and share the details.
+	-	*Publish Type*: Choose the below modes to display the content on Oracle LiveLabs
+		-	Public - The workshop is available through Oracle LiveLabs search and links to the public
+		-	Private - The workshop is available by the public only through links shared to the workshop team; it is not available to the public through Oracle LiveLabs search
+	-	*Workshop Environment:* On which type of tenancy does your workshop run?
+		-	Run on your tenancy - The workshop content can run either in customers Always Free, Free Tier or Paid tenancies.
+		-	Run on LiveLabs - The workshop is done in a registered LiveLabs tenancy, a.k.a Green Button. With Green Button, users can run the workshop in pre-provisioned environments. Users have to complete the workshop in a specified limited amount of time. After their reservations expire, any instances they create will be destroyed. However, users can extend their reservations up to 4 times.
+	- 	*Workshop Time*: The time to complete the entire workshop
+	-	*Anticipated Completion Date:* When do you anticipate this workshop to be completed?
 
-Workshop authors can watch the [video 2:22 – 22:40](https://otube.oracle.com/media/How%20to%20submit%20a%20LiveLabs%20workshop%20in%20WMS%20-%20LiveLabs%20Office%20Hours%20-%2002-04-2022/1_6v8qdkzp) on how to submit a new workshop request.
+2. Provide the *Social* details like share a link to the blog of your workshop, write a couple of sentences that would accompany a LinkedIn post about your workshop, and write a tweet (limit 240 characters) to be used to promote your workshop.
 
-1.  Login to Corporate VPN.
-
-2.  Access the **Oracle Workshop Management System (WMS)** page.
-    > **Note:** This page is only accessible to Oracle Employees.
-
-3.  Click **Submit a New Workshop Request**.
-
-4.  Fill in required *Workshop Basic Information*. Select the *Stakeholder*, *Workshop Council*, and *Workshop Owner Group* for your workshop. Fill in the *Workshop Abstract* **thoroughly**, *Workshop Outline*, and *Workshop Prerequisites*. Click **?** besides those fields to see more details.
-
-  ![Submit Workshop](images/submit_workshop.png " ")
-  ![Detailed Workshop Information](images/detailed_info.png " ")
-
-5.  Click the *Tags* tab, and select proper tags for your workshop. You should select a *Level* tag, and at least one tag for *Role*, *Focus Area*, and *Product* respectively. Failure to do so will prevent your workshop from being approved. Click **Create**.
-
-  ![Select tags](images/tags.png " ")
-
-6. Click the *Social* tab to include a link to the blog of your workshop, write a couple sentences that would accompany a LinkedIn post about your workshop, and write a tweet to be used to promote your workshop.
-
-  ![Select social](images/social.png " ")
-
-7.  We recommend you don't start working on your workshop until your workshop has been approved by a council member.
-
-Once your workshop is submitted, it will be sent to the workshop council.  The workshop council will approve your workshop or ask for more details within 3 business days. If you have not heard back from your council group after 3 business days, please message them via WMS. Once approved, you will be entered into the workflow and given additional steps to progress through to production.
-
-To find your council members, go to WMS, under **People & Role Reports**, select **Workshop Council Members**, and you can find your council members.
-
-Council can watch this [video 5:10 - 7:05](https://otube.oracle.com/media/Know%20about%20Roles%20and%20Responsibilities%20in%20LiveLabs%20Workshop%20Management%20System%202.0%20-%20LiveLabs%20Office%20Hours%20-%2001-28-2022/1_hrkwddhr) to understand your responsibilities and this [video 9:45 - 10:45](https://otube.oracle.com/media/Introducing%20LiveLabs%20Dashboard%20-%20LiveLabs%20Office%20Hours%20-%2002-08-2022/1_ebeuqq95) to learn how to change workshop statuses (approve the workshop).
-
-> **Note:** If you are a developer, QA, or PM, you can create and publish a Custom image of the on-premises product to OCI Market place. See the [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop) LiveLabs workshop.
+We recommend you do not start working on your workshop until your workshop has been approved by the workshop council. Once your workshop is submitted, it will be sent to the workshop council. The workshop council will approve your workshop or ask for more details within 3 business days through email. If you have not heard back from your council group after 3 business days, please email them to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com). Once approved, you will be entered into the workflow and given additional steps to progress through to production.
 
 ## Task 2: Create and Set Up Your GitHub Account
 
-In this Step, you will create and set up your GitHub account.
+In this Task, you will create and set up your GitHub account.
 
 1. Create a free GitHub Account here: [GitHub Web UI](https://github.com/) if you don't have one.
-    ![](./images/git-download-install-create-account.png " ")
 
-2.  If this is a new account, use your Oracle email ID to register.
+    ![Download Git](./images/git-download-install-create-account.png " ")
 
-    > **Note:** Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated with your @oracle.com email ID.
+2.  If this is a new account, use your email ID to register.
+
+    > **Note:** Do not create a secondary new account to join GitHub.
 
 3. Go to [GitHub Settings](https://github.com/settings/profile) and configure the following:
-    *   Set your Name as it appears in your Aria employee page.
+    *   Set your Name.
     *   Add your Profile Picture.
 
-4. Click **Account** to add your user name in the **Enter a user name** dialog. For example, achepuri, LauranSerhal, and so on.
+4. Click **Account** to add your user name in the **Enter a user name** dialog. For example, johnhall.
 
-5. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
-
-    ![Set up 2 factor authentication.](./images/git-2-factor-authentication.png " ")
-
-If you are an Oracle employee working on GitHub projects, you must be a member of the **Oracle GitHub organization (OGHO)** at [github.com/oracle](github.com/oracle), and be successfully listed under the **People** tab. To request access as a contributor to existing repository such as the **Oracle** project and its **learning-library** repo where your LiveLabs workshop will be stored, your GitHub account must be in accordance to the OGHO requirements. Once you complete the above steps, request membership to the **OGHO** as follows:
-
-1. Go to the **Oracle Identity Management (OIM)** system to Request Access.
-    > **Note:** **OIM** is only accessible to Oracle Employees.
-
-2. On the **Home** tab, click the **Request Access** tile, and then select **Request for Self** from the context menu. The **Request Access** tab is displayed.
-
-3. In the **Catalog** tab, enter **github** in the **Search** field, and then click **Search**. In the search result list, click **+ Add to Cart** in the row for the **GitHub Oracle Organization** (GitHub). The text changes to **+ In Cart** and it is grayed out. If this is the first time you are requesting access to a GitHub Organization, the system will automatically add the **GitHub** account to your cart. Click **Next**.
-
-4. In the **Cart Details** page, enter a justification for your request in the **Justification** field, and then click **Submit**. Provide your GitHub username if required on the page. The justification _MUST_ include the link to the GitHub repository that you intend to contribute to such as [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library). Follow the prompts or instructions. You usually will get an email notification once you submit your request and another once your request is approved.
-
-> **Note:** If the GitHub username field is displayed on the **Cart Details** page, you must provide your GitHub username. To find your GitHub username, login to GitHub. Your GitHub username is displayed on the left side of the page, next to your picture. In addition, you can click the drop-down arrow next to your picture on the right-hand side of the banner, and view your GitHub username in the **Signed in as** menu item. If you click the **Your profile** menu item, your username is visible under your full name on your profile page. It is also part of your profile URL, i.e. https://github.com/<GitHub_username>. You should only provide the username in the required field and nothing else (especially not your email address).
-
-5. Wait until you receive an approval email from the Oracle GitHub Organization (OGHO) before contributing content to the [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library) repository. Follow the instructions in the approval email.
-
+5. We recommend setting a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
 
 ## Task 3: Download and Install the latest version of Git (Optional Step)
 
-> **Note:** For User Assistance Developers (UAD), Oracle recommends using GitHub Desktop client because of its simple and user friendly user interface, and it is also much easier to use than the Git command line; therefore,  if you are a UAD, skip this task and follow the instructions in **Task 4: Install GitHub Desktop**.
+> **Note:** Oracle recommends using the GitHub Desktop client because of its simple and user-friendly user interface, and it is also much easier to use than the Git command line. Therefore, skip this task and follow the instructions in **Task 4: Install GitHub Desktop** if you are not familiar with command-line interface.
 
 To install Git:
 
@@ -111,9 +93,9 @@ To install Git:
 
 ## Task 4: Install GitHub Desktop
 
-The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow. It is much easier than using Git command line.
+The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow. It is much easier than using the Git command line.
 
-To setup the GitHub Development Environment and install **GitHub Desktop**:
+To set up the GitHub Development Environment and install **GitHub Desktop**:
 
 1. Download and install **GitHub Desktop** from [GitHub Desktop](https://desktop.github.com/).
 
@@ -121,87 +103,92 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
   ![GitHub desktop login screen.](./images/git-hub-desktop-login-screen.png " ")
 
-3. Click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**. You will receive an authentication code to your cell phone. Enter this code in the **Authentication code** field in the **Sign in** dialog box.
+3. Click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**. You will receive an authentication code sent to your cell phone. Enter this code in the **Authentication code** field in the **Sign in** dialog box.
 
     > **Note:** The authentication code is valid only for a few seconds.
 
-  You are now logged in to **GitHub Desktop**.
+	You are now logged in to **GitHub Desktop**.
 
   ![GitHub desktop main screen.](./images/get-started-git-hub-desktop.png " ")
 
-## Task 5: Fork the learning-library Repository on Your GitHub Account
+## Task 5: Fork Repositories of the oracle-livelabs Project on Your GitHub Account
 
-  We create workshops and labs in the **learning-library** repository of the **oracle** project. You must fork the **learning-library** repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked (stage) **learning-library** repository and you can edit its contents without affecting the parent **learning-library** (production) repository.
+After your workshop is approved by the council group, you will be creating your workshop and labs in the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository of the **oracle-livelabs** project. You must fork the repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked (stage) repository, and you can edit its contents without affecting the parent (production) repository.
 
-  For example, if a user named achepuri forks the **learning-library** repository in the **oracle** project, a duplicate repository [achepuri/learning-library](https://github.com/achepuri/learning-library) is created.
+For example, if a user named **anooshapilli** forks the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository in the **oracle-livelabs** project, a duplicate repository [anooshapilli/partner-solutions](https://github.com/anooshapilli/partner-solutions) is created.
 
-  To fork the **learning-library** repository:
+To create a workshop in the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository, you need to fork the **partner-solutions** repository. The following steps walk you through forking the **partner-solutions** repository, in the oracle-livelabs GitHub project.
 
 1. Log in to the [GitHub Web UI](http://github.com), using your GitHub account.
 
-2. Navigate to the [oracle/learning-library repository](https://github.com/oracle/learning-library).
+2. Navigate to the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository.
 
-3. Click **Fork** to display the following message: **How are you planning to use this fork?**.
+3. Click **Fork**.
 
-  ![Fork instruction dialog box.](./images/get-started-git-hub-webUI-fork.png " ")
+	In this example, we are forking the goldengate repository but the following process is the same for forking your **partner-solutions** repository.
 
-4. Select the option that indicates your local repository.
-In the following example, user achepuri has forked the **learning-library** repository.
+  ![Fork](./images/fork.png " ")
 
-  ![Local repository to fork.](./images/get-started-git-hub-webui-forked-library.png " ")
+4. Under **Owner**, expand the dropdown list and select your username. You can accept the **Repository name** as it is. Click **Create fork**.
 
-In the next Step, you will clone this forked repository.
+  ![Create fork](./images/create-fork.png " ")
+
+5. Then, your user has forked the **partner-solutions** repository.
+
+	As you can see, arabellayao user has forked the goldengate repository.
+
+  ![Local repository](./images/local-repo.png " ")
+
+In the next task, you will clone this forked repository.
 
 ## Task 6: Clone the Forked Repository
-A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as **Atom** editor, and use the **GitHub Desktop** client to keep track of your changes without having to be online.
 
-To clone the forked repository:
+A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as **Atom** editor, or **Visual Studio Code**, and use the **GitHub Desktop** client to keep track of your changes without having to be online.
+
+To clone the forked **partner-solutions** repository:
+
 1. Open your **GitHub Desktop** application and log in using your GitHub account.
-2. Click **File > Clone repository** to display the **Clone a repository** dialog box.
+
+2. Click **File > Clone repository** to display the **Clone a Repository** dialog box.
 
     ![Clone repository.](./images/git-hub-desktop-clone-repository.png " ")
 
-3. Select your own repository such as **your account/learning-library** from **Your repositories**. In this example, there is only one repository displayed named **achepuri/learning-library**. Under **Local path**, select the local path on your machine where the repository is going to be cloned (copied). This is where the project files get copied to your local file system. In this example, the local path is **C:\Users\achepuri.ORADEV\Documents\GitHub**.  
+3. Select your repository such as **your account/repo** from **Your Repositories**.  Under **Local Path**, select the local path on your machine where the repository is going to be cloned (copied). This is where the repository files get copied to your local file system. Click **Clone**.
 
-    ![Available repositories dialog box.](./images/git-hub-desktop-clone-repository_dialog.png " ")
+	In this example, arabellayao/goldengate is selected.
 
-4. Click **Clone**.
+    ![Available repositories dialog box.](./images/clone.png " ")
 
-  The **learning-library** repository files appear in the local path you just specified. You can now start working on your labs and workshops!
+4. The cloning process may take several minutes, depending on how big the repository is.
 
-  ![Successfully cloned repository.](./images/git-hub-my-cloned-repository.png " ")
+  ![Cloning](./images/cloning.png " ")
 
-  > **Note:** The local cloned repository is connected to the remote fork version. You can push your local clone changes to the remote fork version when you are online to keep them in sync.
-
-  When you make a clone, you can create your own project folder, edit the files in your preferred editor, such as **Atom**, and use **GitHub Desktop client** to keep track of your changes without having to be online.
-
-  The repository you cloned is still connected to the remote version (your fork) so that you can push your local changes to the remote to keep them synced when you're online.
-
-5. You can also use Github Desktop to Synchronize the changes that you have made in your local file system to the forked content on your github repo, more details on using Github Desktop in Lab 4 of this workshop and also on Otube [Working with GitHub Desktop](https://otube.oracle.com/media/t/1_bxj0cfqf).
-
-  ![Synchronize with GitHub.](./images/github-desktop-sync.png " ")
-
-6. When asked how you plan to use the fork select **To contribute to the parent project**.
+5. When asked how you plan to use the fork, select **To contribute to the parent project**. Click **Continue**.
 
   ![Contribute to parent project.](./images/contribute-to-parent.png " ")
 
-This concludes this lab. You may now proceed to the next lab.
+6. The repository files will appear in the local path you just specified. You can now start working on your labs and workshops!
 
-## Want to Learn More?
+	In this case, it is goldengate.
 
-<!-- * [Setting Up Environment](https://otube.oracle.com/media/Setting+Up+GitHub/0_93stcjpb) -->
+  ![Successfully cloned repository.](./images/git-hub-my-cloned-repository.png " ")
+
+	Once you make a clone, you can create your project folder, edit the files in your preferred editor, such as **Atom** or **Visual Studio Code**, and use **GitHub Desktop** to keep track of your changes without having to be online.
+
+	> **Note:** The repository you cloned (local version) is connected to the your fork (remote version) so that you can push your local changes to the remote to keep them synced when you are online.
+
+7. You can also use Github Desktop to synchronize the changes that you have made in your local file system to the forked content on your GitHub repo. More details on using Github Desktop in Lab 4 of this workshop.
+
+  ![Synchronize with GitHub.](./images/github-desktop-sync.png " ")
+
+This concludes this lab. You may now **proceed to the next lab**.
+
+## Learn More
+
 * [Download and Install Git for Windows](https://git-scm.com/download/win)
-<!-- * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf) -->
 * [Download and Install Git for Mac](https://git-scm.com/download/mac)
 
 ## Acknowledgements
 
-* **Authors:**
-    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
-* **Contributors:**
-    * Kay Malcolm, Database Product Management
-    * Madhusudhan Rao, Principal Product Manager, Database
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-
-* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, March 2022
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
+* **Last Updated By/Date:** Anoosha Pilli, July 2022

@@ -1,7 +1,9 @@
 # The title must be a question: How do I XYZ?
+
 Duration: 1 minute to 10 minute
 
 ## Answer
+
 * Description of solution/answer
 * be short & precise
 * try to minimize use of images/screenshots - less is more (sometimes)
@@ -9,7 +11,7 @@ Duration: 1 minute to 10 minute
 
 If you use images make sure to provide alternate text, for example:
 
-![A walrus sitting in the snow](images/walrus.png)
+![Where can I view the Lifecycle state in Autonomous Database](images/pic1.png)
 
 You can provide an answer that comprises multiple steps.
 Sometime a specific step relates to its own LiveLabs Sprints.
@@ -35,4 +37,8 @@ This is were the answer to the question is provided
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 
+## Acknowledgements
 
+* **Author** - <Name, Title, Group>
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name,  Month Year>
