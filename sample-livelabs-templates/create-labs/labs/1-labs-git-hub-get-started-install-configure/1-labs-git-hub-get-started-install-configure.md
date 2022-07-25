@@ -33,14 +33,14 @@ Before you get started, you should submit your new LiveLabs workshop request by 
 		-	Manager Contact: Works with the Workshop Owner to complete the workshop and keep information accurate. This person is responsible for ensuring that there is a current and valid Workshop Owner.
 		-	Observer: This optional field is just for someone that wants to keep an eye on the workshop but does not have any responsibilities. Keep in mind that this person will have write permissions on this workshop.
 	-	*Workshop Outline:* Provide the title of each of your labs within the workshop.
-	-	*Workshop Prerequisites:* Provide the necessary prerequisites a user would need before attempting your workshop. For example, Some understanding of cloud and database terms is helpful, Familiarity with Oracle Cloud Infrastructure (OCI) is helpful, Familiarity with Database is desirable, but not required
+	-	*Workshop Prerequisites:* Provide the necessary prerequisites a user would need before attempting your workshop. For example, Some understanding of cloud and database terms is helpful, Familiarity with Oracle Cloud Infrastructure (OCI) is helpful, Familiarity with Database is desirable, but not required.
 	-	*Level:* What is the Level of workshop - Beginner, Intermediate, Advanced?
 	-	*Role:* Who can run this workshop? For example, DBA, Business Analyst, etc. Click on Tags tab of the downloaded Submit Workshop Details document to view the options.
 	-	*Focus*: What is the focus of this workshop? For example: Database, AI/ML, Low Code, etc. Click on Tags tab of the downloaded Submit Workshop Details document to view the options.
 	-	*Product*: What are the products demonstrated in this workshop? For example, Blockchain, Data Safe, Autonomous JSON Database, etc. Click on Tags tab of the downloaded Submit Workshop Details document to view the options.
 	-	*Publish Type*: Choose the below modes to display the content on Oracle LiveLabs
-		-	Public - The workshop is available through Oracle LiveLabs search and links to the public
-		-	Private - The workshop is available by the public only through links shared to the workshop team; it is not available to the public through Oracle LiveLabs search
+		-	Public - The workshop is available through Oracle LiveLabs search and links to the public.
+		-	Private - The workshop is available by the public only through links shared to the workshop team; it is not available to the public through Oracle LiveLabs search.
 	-	*Workshop Environment:* On which type of tenancy does your workshop run?
 		-	Run on your tenancy - The workshop content can run either in customers Always Free, Free Tier or Paid tenancies.
 		-	Run on LiveLabs - The workshop is done in a registered LiveLabs tenancy, a.k.a Green Button. With Green Button, users can run the workshop in pre-provisioned environments. Users have to complete the workshop in a specified limited amount of time. After their reservations expire, any instances they create will be destroyed. However, users can extend their reservations up to 4 times.
