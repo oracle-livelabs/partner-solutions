@@ -10,9 +10,9 @@ An individual Markdown (.md) file is called a lab. A collection of labs is calle
 
 ### **Understanding the Roles and Responsibilities**
 
-**Workshop author or the workshop team** are the workshop developer(s) who submits the new workshop request to LiveLabs team, edit and update their workshop. They are also responsible for answering questions related to the workshop and performing regular quarterly QA.
+**Workshop author or the workshop team** are the workshop developer(s) who submit the new workshop request to the LiveLabs team and edit and update their workshop. They are also responsible for answering questions related to the workshop and performing regular quarterly QA.
 
-**LiveLabs Team or the workshop council group** helps the workshop author or the workshop team to navigate through the workshop development life-cycle and answer any questions related to workshop development.
+**LiveLabs Team or the workshop council group** determine whether a workshop fits messaging to protect the integrity of catalog content and are workshop approvers (or rejectors). They are also responsible for helping the workshop author or the workshop team to navigate the workshop development life-cycle and answer any questions related to workshop development.
 
 ### **Oracle LiveLabs GitHub Project and Repositories**
 
