@@ -15,7 +15,7 @@ In this lab, you will learn how to create a GitHub Account and associate it with
 
 Before you get started, you should submit your new LiveLabs workshop request by sending an email to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com) for the Oracle LiveLabs team to review. Submitting a workshop informs the Oracle ecosystem that you are working on a workshop and submits your idea to the Workshop Council. We urge you not to delay this step. There are hundreds of workshops already, this step is important to help us preserve the quality and integrity of the workshop catalog.
 
-1.  Provide all the below required *Workshop Basic Information*. Failure to provide all the details will prevent your workshop from being approved.
+1.  Download this [Submit Workshop Details document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vi68eJYNv_M4E-j-lE2-2cWItoiOG8dLZOUWSZBaHoj248RB0xGjBH8An8S4ehTd/n/id05dmgeno0f/b/partner-solutions/o/Submit_Workshop_Details_v1_072222.xlsx) and provide all the below required *Workshop Information*. Failure to provide all the details will prevent your workshop from being approved.
 
 	-	*Workshop Title:* Choose a descriptive title up to 200 characters. Do not include the word "Workshop" or "Lab" and use "Oracle Speak". Choose a title that users would recognize or understand. Do not use abbreviations ("Autonomous Database" not "ADB") and start the title with an imperative verb ("Build" not "Building").
 	-	*Workshop Abstract:* Provide the workshop abstract details **thoroughly** as it is used for approval by the workshop council. Workshops are reviewed by the workshop council for adherence to current Oracle messaging. If you do not provide enough details, the council may revert back for more details and this may delay your workshop approval.
@@ -33,14 +33,14 @@ Before you get started, you should submit your new LiveLabs workshop request by 
 		-	Manager Contact: Works with the Workshop Owner to complete the workshop and keep information accurate. This person is responsible for ensuring that there is a current and valid Workshop Owner.
 		-	Observer: This optional field is just for someone that wants to keep an eye on the workshop but does not have any responsibilities. Keep in mind that this person will have write permissions on this workshop.
 	-	*Workshop Outline:* Provide the title of each of your labs within the workshop.
-	-	*Workshop Prerequisites:* Provide the necessary prerequisites a user would need before attempting your workshop. For example, Some understanding of cloud and database terms is helpful, Familiarity with Oracle Cloud Infrastructure (OCI) is helpful, Familiarity with Database is desirable, but not required
+	-	*Workshop Prerequisites:* Provide the necessary prerequisites a user would need before attempting your workshop. For example, Some understanding of cloud and database terms is helpful, Familiarity with Oracle Cloud Infrastructure (OCI) is helpful, Familiarity with Database is desirable, but not required.
 	-	*Level:* What is the Level of workshop - Beginner, Intermediate, Advanced?
-	-	*Role:* Who can run this workshop? For example, DBA, Business Analyst, etc. View the Role filter options to the left on this [page](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/livelabs-workshop-cards?clear=100) and share the details.
-	-	*Focus*: What is the focus of this workshop? For example: Database, AI/ML, Low Code, etc. View the Focus Area filter options to the left on this [page](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/livelabs-workshop-cards?clear=100) and share the details.
-	-	*Product*: What are the products demonstrated in this workshop? For example, Blockchain, Data Safe, Autonomous JSON Database, etc. View the Product options to the left on this [page](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/livelabs-workshop-cards?clear=100) and share the details.
+	-	*Role:* Who can run this workshop? For example, DBA, Business Analyst, etc. Click on Tags tab of the downloaded Submit Workshop Details document to view the options.
+	-	*Focus*: What is the focus of this workshop? For example: Database, AI/ML, Low Code, etc. Click on Tags tab of the downloaded Submit Workshop Details document to view the options.
+	-	*Product*: What are the products demonstrated in this workshop? For example, Blockchain, Data Safe, Autonomous JSON Database, etc. Click on Tags tab of the downloaded Submit Workshop Details document to view the options.
 	-	*Publish Type*: Choose the below modes to display the content on Oracle LiveLabs
-		-	Public - The workshop is available through Oracle LiveLabs search and links to the public
-		-	Private - The workshop is available by the public only through links shared to the workshop team; it is not available to the public through Oracle LiveLabs search
+		-	Public - The workshop is available through Oracle LiveLabs search and links to the public.
+		-	Private - The workshop is available by the public only through links shared to the workshop team; it is not available to the public through Oracle LiveLabs search.
 	-	*Workshop Environment:* On which type of tenancy does your workshop run?
 		-	Run on your tenancy - The workshop content can run either in customers Always Free, Free Tier or Paid tenancies.
 		-	Run on LiveLabs - The workshop is done in a registered LiveLabs tenancy, a.k.a Green Button. With Green Button, users can run the workshop in pre-provisioned environments. Users have to complete the workshop in a specified limited amount of time. After their reservations expire, any instances they create will be destroyed. However, users can extend their reservations up to 4 times.

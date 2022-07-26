@@ -8,6 +8,12 @@ The labs in this workshop walk you through all the steps to **develop workshops*
 
 An individual Markdown (.md) file is called a lab. A collection of labs is called a workshop. A LiveLabs workshop must contain more than one lab. You cannot create a single lab LiveLabs (LL) workshop. In most cases, this is not a problem since most of the LL workshops contain at least one common lab titled **Get Started** that guides the user on the different types of Cloud accounts.
 
+### **Understanding the Roles and Responsibilities**
+
+**Workshop author or the workshop team** are the workshop developer(s) who submit the new workshop request to the LiveLabs team and edit and update their workshop. They are also responsible for answering questions related to the workshop and performing regular quarterly QA.
+
+**LiveLabs Team or the workshop council group** determine whether a workshop fits messaging to protect the integrity of catalog content and are workshop approvers (or rejectors). They are also responsible for helping the workshop author or the workshop team to navigate the workshop development life-cycle and answer any questions related to workshop development.
+
 ### **Oracle LiveLabs GitHub Project and Repositories**
 
 We organize workshops into 26 GitHub repositories (as of July 2022) according to their product or feature groups, in the Oracle LiveLabs own GitHub project called [oracle-livelabs](https://github.com/oracle-livelabs). Those repositories are referred to as **Production**, since they are where customers view the completed LiveLabs workshops from.
