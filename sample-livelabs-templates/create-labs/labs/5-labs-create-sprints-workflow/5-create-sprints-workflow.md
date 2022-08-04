@@ -93,7 +93,7 @@ At this stage your sprint status is **In Development**.
 6.  If you want to add images to your sprint, include them in the images folder. You can delete the images folder if you do not need it.
 
 7.  Edit the manifest.json file.
-    -   help: Update the field to point to *livelabs-help-sprints_us@oracle.com* email.
+    -   help: Update the field to point to *livelabs-help-community_us@oracle.com* email.
     -   title: Update the first title field with the title of your sprint.
     -   description: Add a short description of the sprint
     -   filename: Update this field with your file name
