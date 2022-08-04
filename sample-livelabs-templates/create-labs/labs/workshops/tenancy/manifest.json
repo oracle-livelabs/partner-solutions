@@ -38,9 +38,9 @@
       "filename": "./../../4-labs-github-merge-commit-pullrequest/4-labs-github-merge-commit-pullrequest.md"
     },
     {
-      "title": "(Optional) Lab 5: Generate SSH keys",
-      "description": "This lab shows you how to generate SSH keys for authentification",
-      "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
+      "title": "(Optional) Lab 5: Develop LiveLabs Sprints",
+      "description": "This lab shows you how to create Sprint for LiveLabs",
+      "filename": "./../../5-labs-create-sprints-workflow/5-create-sprints-workflow.md"
     },
     {
       "title": "Lab 6: GitHub FAQ",
@@ -48,9 +48,14 @@
       "filename": "../../6-github-faq/6-github-faq.md"
     },
     {
+      "title": "(Optional) Lab 7: Generate SSH keys",
+      "description": "This lab shows you how to generate SSH keys for authentification",
+      "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
+    },
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"./../../need-help/need-help.md"
+      "filename": "./../../need-help/need-help.md"
     }
   ]
 }
