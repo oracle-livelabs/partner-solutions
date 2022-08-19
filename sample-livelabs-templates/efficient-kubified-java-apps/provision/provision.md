@@ -1,12 +1,12 @@
-# Title of the Lab
+# Starter project
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+To demonstrate the concepts in this tutorial, we will use a simple Java application developed in Quarkus that exposes its own REST API and persists data in a H2 database, as well as doing a request to an external service to update content of the database.
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
-### About <Product/Technology> (Optional)
+### Quarkus Extensions Used 
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives

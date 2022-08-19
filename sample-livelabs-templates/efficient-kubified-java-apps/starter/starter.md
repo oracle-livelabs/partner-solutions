@@ -35,7 +35,7 @@ This lab assumes you have:
 
 1. Sub step 1
 
-	![Image alt text](images/sample1.png)
+	![Image alt text](images/efficient-app.png)
 
 	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
 
