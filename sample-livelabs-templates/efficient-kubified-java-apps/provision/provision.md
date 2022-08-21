@@ -1,12 +1,12 @@
-# Starter project
+# Title of the Lab
 
 ## Introduction
 
-To demonstrate the concepts in this tutorial, we will use a simple Java application developed in Quarkus that exposes its own REST API and persists data in a H2 database, as well as doing a request to an external service to update content of the database.
+*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Time: 15 minutes
+Estimated Time: -- minutes
 
-### Quarkus Extensions Used 
+### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
@@ -77,18 +77,15 @@ This lab assumes you have:
 
 4. Code examples that include variables
 
-	```
+```
   <copy>ssh -i <ssh-key-file></copy>
-  ```
+ ```
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Efficient Resource Management with Kubernetes](https:dn.dev/kube-dev-practices)
+* [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022
