@@ -42,15 +42,15 @@ After the application is up and running, you may call the `/jokes/init` endpoint
 
 1. The code of the `Joker` application is available on [GitHub](https://github.com/ammbra/joker.git).
 2. Clone the code by running the following command in a terminal window:
-   ```
+   ```shell
    git clone https://github.com/ammbra/joker.git 
    ```
 3. Go to project root:
-   ```
+   ```shell
    cd joker
    ```
 
-**NOTE** This tutorial was developed and tested with: Minikube v1.25.1  and OpenShift 4.10.
+> **NOTE** This tutorial was developed and tested with: Minikube v1.25.1  and OpenShift 4.10.
 
 ## Task 2: Start Joker Application in Dev Mode
 
@@ -58,7 +58,7 @@ Quarkus provides a Dev Mode which helps you during application development and i
 
 1. In a terminal window, make sure you are in `joker` project root and you set the Java version to 17:
 
-   ```
+   ```shell
    $ java -version
    openjdk version "17.0.3" 2022-04-19
    OpenJDK Runtime Environment GraalVM CE 22.1.0 (build 17.0.3+7-jvmci-22.1-b06)
@@ -67,13 +67,13 @@ Quarkus provides a Dev Mode which helps you during application development and i
 
 2. Run the following command to start your Quarkus application in Dev Mode:
 
-   ```
+   ```shell
    mvn quarkus:dev
    ```
 3. Unless another application uses your port 8080, you can access the `Joker` application in your favorite browser at http://localhost:8080/
 4. In a browser tab copy and paste the below URL:
 
-   ```
+   ```shell
    http://localhost:8080/jokes
    ```
 The output will be a JSON containing partial joke content.

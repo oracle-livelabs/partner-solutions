@@ -1,105 +1,372 @@
-# Title of the Lab
+# Adjust resources
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This section walks you through the steps needed to adjust resource quotas to efficiently run 'Joker' Java application.
 
-Estimated Time: n minutes
-
-### About Product/Technology (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
+Estimated Time: 60 minutes
 
 ### Objectives
 
-*List objectives for this lab*
+In this section, you will:
+* Discover namespace resource limits
+* Understand a few details about JVM ergonomics
+* Adjust container resources for 'Joker' application
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+### Prerequisites
 
-### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+This section assumes you have:
+* An Oracle Cloud account with access to a Kubernetes cluster.
+* All previous sections successfully completed.
+* Access to a container registry that is reachable from your Kubernetes cluster.
 
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
+In addition to those above, please run the following commands to have a sample Prometheus instance running:
 
-*This is the "fold" - below items are collapsed by default*
+```shell
+kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/prometheus-configmap.yaml
+kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/prometheus-deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/prometheus-service.yaml
+```
 
-## Task 1: <what is the action in this step>
 
-(optional) Step 1 opening paragraph.
+## Task 1: Setup and Discover Namespace Limits
 
-1. Sub step 1
+By using resource quotas, cluster administrators can restrict resource consumption and creation on a namespace basis.
 
-		![Image alt text](images/sample1.png)
+When deploying multiple applications, there will always be concerns that one Pod or Container could monopolize all available resources. To avoid such situations, a Pod or Container can consume as much memory and CPU as defined by the namespace’s resource quota.
 
-  To create a link to local file you want the reader to download, use the following format.
 
-	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+1. Run the following command to discover the resource quota established for your namespace :
 
-	When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
-
-	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
-
-	Download the [sample JSON code](files/sample.json?download=1).
-
-  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-  If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: <what is the action in this step>
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
+    ```shell
+    kubectl get resourcequota
     ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+2. At namespace level a LimitRange policy is employed to constrain resource allocations (to Pods or Containers).
+Run the following command to establish a namespace LimitRange
+
+    ```shell
+     kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/limit-ranger.yaml
     ```
+3. You can find out the LimitRange established for a namespace by running:
 
-4. Code examples that include variables
+   ```shell
+    kubectl get limitrange
+   ```
+The output would be similar to:
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+| NAME            | CREATED AT             |
+|-----------------|------------------------|
+| resource-limits | 2022-08-21T16:53:16Z   |
+
+
+4. Get the details of `resource-limits` LimitRange:
+   ```shell
+    kubectl describe limitrange resource-limits
+   ```
+The output would be similar to:
+
+| Type           | Resource | Min | Max | Default Request | Default Limit | Max Limit/Request Ratio |
+|----------------|----------|-----|-----|-----------------|---------------|-------------------------|
+| Container      | cpu      | -   | -   | 10m             | 1             | -                       |
+| Container      | memory   | -   | -   | 64Mi            | 750Mi         | -                       |
+
+This `LimitRange` enforces the default request/limit for compute resources in the namespace and automatically injects them to Containers at runtime.
+Any deployment that does not have requests or limits set (like the one done in the previous section) will use these default parameters.
+
+5. In order to get the memory and CPU values used by the JVM, run the following command (change the hostname to yours):
+   
+   ```shell
+    curl <hostname>/jokes/sysresources
+   ```
+The output should be similar to: `Memory: 181 Cores: 1`.
+
+If the memory limit is set to 750Mi, why does the JVM use only 181Mi? The JVM  has some default ergonomics and we will inspect them in the following task.
+
+
+## Task 2: Observe Default JVM Ergonomics
+
+If a memory value is not set, the JVM comes with a default memory one as starting point. This value is relative to the total amount of memory available to the container and it is 1/4 of its value.
+
+When you invoked `jokes/sysresources` endpoint, you could see the available memory was 181. The total memory available in the Pod is 750Mi, and 1/4 of this memory is 187 which is close value to we got in the application.
+
+Also, JVM uses a default Garbage Collector implementation depending on amount of CPU and memory available.
+
+| Resources available                              | GC algorithm  | 
+|--------------------------------------------------|---------------|
+| Fewer than two CPUs and less than 2GB of memory  | Serial GC     | 
+| >= 2 CPU’s and >=2GB of memory                   | G1GC          | 
+{: title="Default GC algorithms"}
+
+You can override the default algorithm, for example starting the application with `-XX:+UseG1GC` to force the usage of G1GC algorithm.
+
+To know exactly which values are used, you can start the JVM with the following flags set:
+
+| Flag Name and Value       | Description                                                                                                        | 
+|---------------------------|--------------------------------------------------------------------------------------------------------------------|
+| -XshowSettings:system     | Shows system settings detected/set by JVM.                                                                         | 
+| -Xlog:gc=info             | Shows information about GC (i.e which algorithm is used)                                                           | 
+| -Xlog:os+container=trace  | Print whether or not container detection is actually working and what values the JVM is determining to be in place |
+{: title="Useful JVM flags"}
+
+
+1. In a terminal window In the terminal window, run the following command to deploy `Joker` service as before but with a few extra flags
+
+   ```shell
+   kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-show-prop.yaml
+   ```
+The above command deploy the `Joker` service with `-XshowSettings:system -Xlog:gc=info -Xlog:os+container=info` flags set.
+
+
+2. Validate your deployment by running the command:
+
+    ```shell
+    kubectl get pods
+    ```
+The output should be similar to: 
+
+| NAME                   | READY | STATUS  | RESTARTS | AGE    |
+|------------------------|-------|---------|----------|--------|
+| joker-5bfcbdf9d4-bsgkh | 1/1   | Running | 0        | 113s   |
+
+3. Query the log of the Pod to see the defaults used:
+
+    ```shell
+    kubectl logs joker-5bfcbdf9d4-bsgkh
+    ```
+   You should see something similar to:
+
+   ```text
+   [0.001s][info][os,container] Memory Limit is: 786432000
+   [0.004s][info][gc          ] Using Serial
+   Operating System Metrics:
+   Provider: cgroupv1
+   Effective CPU Count: 1
+   CPU Period: 100000us
+   CPU Quota: 100000us
+   CPU Shares: 10us
+   List of Processors, 4 total:
+   0 1 2 3
+   List of Effective Processors, 4 total:
+   0 1 2 3
+   List of Memory Nodes, 1 total:
+   0
+   List of Available Memory Nodes, 1 total:
+   0
+   Memory Limit: 750.00M
+   Memory Soft Limit: Unlimited
+   Memory & Swap Limit: 750.00M
+   
+   [0.130s][info][gc          ] GC(0) Pause Young (Allocation Failure) 3M->1M(11M) 1.930ms
+   [0.350s][info][gc          ] GC(1) Pause Young (Allocation Failure) 4M->1M(11M) 4.179ms
+   [0.527s][info][gc          ] GC(2) Pause Young (Allocation Failure) 5M->2M(11M) 1.901ms
+   [0.653s][info][gc          ] GC(3) Pause Young (Allocation Failure) 5M->2M(11M) 1.413ms
+   [0.764s][info][gc          ] GC(4) Pause Young (Allocation Failure) 6M->3M(11M) 1.598ms
+   [0.856s][info][gc          ] GC(5) Pause Young (Allocation Failure) 7M->4M(11M) 1.025ms
+   [0.942s][info][gc          ] GC(6) Pause Young (Allocation Failure) 7M->4M(11M) 1.644ms
+   [1.040s][info][gc          ] GC(7) Pause Young (Allocation Failure) 7M->4M(11M) 1.687ms
+   [1.160s][info][gc          ] GC(8) Pause Young (Allocation Failure) 8M->5M(11M) 1.943ms
+   [1.316s][info][gc          ] GC(9) Pause Young (Allocation Failure) 8M->5M(11M) 1.662ms
+   [1.410s][info][gc          ] GC(10) Pause Young (Allocation Failure) 8M->5M(11M) 1.900ms
+   [1.517s][info][gc          ] GC(11) Pause Young (Allocation Failure) 9M->6M(11M) 2.443ms
+   [1.606s][info][gc          ] GC(12) Pause Young (Allocation Failure) 9M->6M(11M) 1.490ms
+   [1.720s][info][gc          ] GC(13) Pause Young (Allocation Failure) 9M->6M(11M) 1.445ms
+   [1.827s][info][gc          ] GC(14) Pause Young (Allocation Failure) 10M->6M(11M) 1.452ms
+   [1.929s][info][gc          ] GC(15) Pause Full (Metadata GC Threshold) 8M->7M(17M) 18.560ms
+   [2.122s][info][gc          ] GC(16) Pause Young (Allocation Failure) 12M->7M(17M) 2.150ms
+   ......
+   ```
+In the above output you can observe that the total amount of memory available in the node is used, together with  GC serial algorithm as there is only one CPU available.
+
+3. Clean up
+
+   ```shell
+   kubectl delete -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-show-prop.yaml
+   ```
+
+## Task 3: Adjust Container Resources
+
+Adjusting resources depends on the application you are developing, whether it’s an enterprise application or a stateless service.
+
+*CPU limits and requests* must have the same value as the JVM reads the number of processors available only during startup time.
+
+*Memory limits* is the container memory, so you need to count not only the JVM heap memory but all the memory required by the container. Is highly encouraged you to set request and limit value to the same value for JVM based applications.
+
+During this task we will improve the resource limits used by the application by simulating traffic and adjusting the limits.
+
+
+1. Deploy the application again:
+
+   ```shell
+   kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app.yaml
+   ```
+2. Reinitialize the complete set of data:
+
+   ```shell
+    curl <hostname>/jokes/init
+   ```
+3. Simulate some load using [hey](https://github.com/rakyll/hey):
+
+   ```shell
+    hey -n 100 -c 20 <hostname>/jokes
+   ```
+4. Execute the following command to observe the CPU and memory consumed:
+
+   ```shell
+   kubectl get --raw /apis/metrics.k8s.io/v1beta1/namespaces/default/pods/joker-9658dfbb8-fcwjk
+   ```
+5. Based on the output of above command you can adjust the limits in the Kubernetes resources to :
+    ```shell
+   kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-limits.yaml
+   ```
+The above command will update the resources with:
+
+   ```yaml
+          resources:
+            limits:
+              cpu: 200m
+              memory: 300Mi
+            requests:
+              cpu: 100m
+              memory: 300Mi
+   ```
+
+You can also generate the YAML file using Quarkus Kubernetes extension. 
+You can change the requests and limits in the `application.properties` file with the following properties:
+
+```properties
+    # Configuration file
+    # key = value
+   quarkus.kubernetes.resources.limits.cpu=200m
+   quarkus.kubernetes.resources.limits.memory=300Mi
+   quarkus.kubernetes.resources.requests.cpu=100m
+   quarkus.kubernetes.resources.requests.memory=300Mi
+```
+
+6. Validate your deployment by running the command:
+
+    ```shell
+    kubectl get pods
+    ```
+The output should be similar to:
+
+| NAME                   | READY | STATUS  | RESTARTS | AGE |
+|------------------------|-------|---------|----------|-----|
+| joker-7fdcc4d6bc-vb82k | 1/1   | Running | 0        | 6s  |
+
+7. Query the log of the Pod to see the defaults used:
+
+    ```shell
+    kubectl logs joker-7fdcc4d6bc-vb82k
+    ```
+   You should see something similar to:
+
+   ```text
+   [0.001s][info][os,container] Memory Limit is: 314572800
+   [0.003s][info][gc          ] Using Serial
+   Operating System Metrics:
+   Provider: cgroupv1
+   Effective CPU Count: 1
+   CPU Period: 100000us
+   CPU Quota: 20000us
+   CPU Shares: 102us
+   List of Processors, 4 total:
+   0 1 2 3
+   List of Effective Processors, 4 total:
+   0 1 2 3
+   List of Memory Nodes, 1 total:
+   0
+   List of Available Memory Nodes, 1 total:
+   0
+   Memory Limit: 300.00M
+   Memory Soft Limit: Unlimited
+   Memory & Swap Limit: 300.00M
+   
+   [0.877s][info][gc          ] GC(0) Pause Young (Allocation Failure) 2M->0M(7M) 2.830ms
+   [1.575s][info][gc          ] GC(1) Pause Young (Allocation Failure) 2M->1M(7M) 83.962ms
+   [3.179s][info][gc          ] GC(2) Pause Young (Allocation Failure) 3M->1M(7M) 2.867ms
+   [3.983s][info][gc          ] GC(3) Pause Young (Allocation Failure) 4M->2M(7M) 1.593ms
+   [4.783s][info][gc          ] GC(4) Pause Young (Allocation Failure) 4M->2M(7M) 1.295ms
+   [5.884s][info][gc          ] GC(5) Pause Young (Allocation Failure) 4M->2M(7M) 1.122ms
+   [6.480s][info][gc          ] GC(6) Pause Young (Allocation Failure) 4M->3M(7M) 1.312ms
+   [7.074s][info][gc          ] GC(7) Pause Young (Allocation Failure) 5M->3M(7M) 86.597ms
+   [7.779s][info][gc          ] GC(8) Pause Young (Allocation Failure) 5M->4M(7M) 1.343ms
+   [8.579s][info][gc          ] GC(9) Pause Young (Allocation Failure) 6M->4M(7M) 1.163ms
+   [8.981s][info][gc          ] GC(10) Pause Young (Allocation Failure) 6M->4M(7M) 1.417ms
+   [9.585s][info][gc          ] GC(11) Pause Young (Allocation Failure) 6M->4M(7M) 1.153ms
+   [10.873s][info][gc          ] GC(12) Pause Young (Allocation Failure) 6M->4M(7M) 81.875ms
+   [11.882s][info][gc          ] GC(13) Pause Young (Allocation Failure) 7M->5M(7M) 2.464ms
+   [12.586s][info][gc          ] GC(14) Pause Young (Allocation Failure) 7M->5M(7M) 1.196ms
+   [12.875s][info][gc          ] GC(15) Pause Full (Allocation Failure) 5M->5M(13M) 288.872ms
+   [14.384s][info][gc          ] GC(16) Pause Young (Allocation Failure) 9M->5M(13M) 9.611ms
+   [16.479s][info][gc          ] GC(17) Pause Young (Allocation Failure) 9M->6M(13M) 3.107ms
+   [17.879s][info][gc          ] GC(18) Pause Young (Allocation Failure) 10M->6M(13M) 1.139ms
+   [19.678s][info][gc          ] GC(19) Pause Young (Allocation Failure) 10M->6M(13M) 99.601ms
+   [21.776s][info][gc          ] GC(20) Pause Young (Allocation Failure) 10M->7M(13M) 91.749ms
+   [23.878s][info][gc          ] GC(21) Pause Full (Metadata GC Threshold) 11M->7M(19M) 200.650ms
+   ......
+   ```
+8. Run the following request to get the parameters used by the JVM, changing the hostname with yours:
+   ```shell
+      curl <hostname>/jokes/sysresources
+   ```
+The output should be similar to: ` Memory: 121 Cores: 1`. The memory is using the new limits which are around the 25% of memory available.
+The container memory is not only used for allocating the JVM heap memory but also for the JVM itself and the container.
+For this reason, a good rule of thumb is allocating a maximum of 75% of container memory for the heap.
+
+
+9. Undeploy the application:
+   ```shell
+   kubectl delete -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-limits.yaml
+   ```
+## Task 4: Adjust Container Resources and JVM heap size
+
+Setting the GC configuration is essential when deploying a Java application in a container.
+
+Several studies suggest the initial heap size and maximum heap size to the same value. Use the `-XX: InitialRAMPercentage` flag to set the initial value.
+Determine which GC to use depends on the amount of CPU and memory you assign to the container:
+
+
+| Amount of CPU and Memory | GC algorithm | 
+|--------------------------|--------------|
+| 1 CPU                    | Serial GC    | 
+| 2 CPU < 4Gb              | ParallelGC   | 
+| 2 CPU > 4Gb              |G1GC or ShenandoahGC|
+| 2 CPU > 28Gb             | ZGC          |
+{: title="GC algorithms based on CPU and Memory"}
+
+On the other hand, you should set the `-XX:MaxRAMPercentage` flag in order to have the JVM heap size dynamically using a percentage of the total available memory (`-XX:MaxRAMPercentage=75`).
+
+1. Deploy the application again:
+
+   ```shell
+   kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-75.yaml
+   ```
+2. Validate your deployment by running the command:
+
+    ```shell
+    kubectl get pods
+    ```
+The output should be similar to:
+
+| NAME                     | READY | STATUS  | RESTARTS | AGE  |
+|--------------------------|-------|---------|----------|------|
+| joker-844948d479-c5v9k   | 1/1   | Running | 0        | 6s   |
+
+3.   In order to get the memory and CPU values used by the JVM, run the following command (change the hostname to yours):
+
+   ```shell
+    curl <hostname>/jokes/sysresources
+   ```
+The output should be similar to: `Memory: 218 Cores: 1`. Now the application is using 75% of memory as heap.
+
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Efficient Resource Management with Kubernetes](https:dn.dev/kube-dev-practices)
+* [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022

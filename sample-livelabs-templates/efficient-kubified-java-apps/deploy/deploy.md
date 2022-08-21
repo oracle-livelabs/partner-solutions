@@ -1,94 +1,112 @@
-# Title of the Lab
+# Deploy To Kubernetes
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This section walks you through the steps needed to deploy `Joker` application to a Kubernetes cluster.
 
-Estimated Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 10 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+In this section, you will:
+* Build a container image using Jib. This task is optional.
+* Deploy to a Kubernetes cluster when packaging the Java application.
+* Deploy to a Kubernetes cluster using a YAML file.
 
-### Prerequisites (Optional)
+### Prerequisites 
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+This section assumes you have:
+* An Oracle Cloud account with access to a Kubernetes cluster.
+* All previous sections successfully completed.
+* Access to a container registry that is reachable from your Kubernetes cluster.
 
 
-*This is the "fold" - below items are collapsed by default*
+## Task 1: Build a Container Image using Jib (Optional)
 
-## Task 1: Concise Step Description
+You can use Quarkus Jib Extension (`quarkus-container-image-jib`) to create and push the container image to your container registry without the need of running local docker daemon.
 
-(optional) Step 1 opening paragraph.
+1. Add registry configuration properties to `src/main/resources/application.properties`, in your cloned `joker` directory:  
 
-1. Sub step 1
+```properties
+    # Configuration file
+    # key = value
+    #quarkus.container-image.push=true 
+    
+    quarkus.container-image.registry=quay.io
+    quarkus.container-image.group=myrepo
+    quarkus.container-image.name=greeting-app
+    quarkus.container-image.tag=1.0-SNAPSHOT
+```
 
-	![Image alt text](images/sample1.png)
+> **NOTE** Change `quay.io` to your container registry and `myrepo` to your organization. If you don’t, your push will fail.
 
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
+2. In order to push the container image, you have to authenticate to your container registry:
 
-2. Sub step 2
+```shell
+docker login quay.io
+```
 
-  ![Image alt text](images/sample1.png)
+3. Create and push your container image when packaging the application with Maven:
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+| OS        | Command                                                       |
+|-----------|---------------------------------------------------------------|
+| macOS     | `./mvnw clean package -Dquarkus.container-image.push=true`    |
+| Linux     | `./mvnw clean package -Dquarkus.container-image.push=true`    |
+| Windows   | `mvnw.cmd clean package -Dquarkus.container-image.push=true`  |
+{: title="List of commands to build and push a container image using Quarkus Jib extension"}
 
-5. Example with bold **text**.
+You should expect an output similar to:
+```output
+[INFO] [io.quarkus.container.image.jib.deployment.JibProcessor] Using base image with digest: sha256:1a2fddacdcda67494168749c7ab49243d06d8fbed34abab90566d81b94f5e1a5
+[INFO] [io.quarkus.container.image.jib.deployment.JibProcessor] Container entrypoint set to [java, -Djava.util.logging.manager=org.jboss.logmanager.LogManager, -jar, quarkus-run.jar]
+[INFO] [io.quarkus.container.image.jib.deployment.JibProcessor] Pushed container image quay.io/rhdevelopers/joker:1.0.0-SNAPSHOT (sha256:c0b74e651b9d18ca81db0b409570ceb103256cae7846783fb4883d9171821ad2)
 
-   If you add another paragraph, add 3 spaces before the line.
+[INFO] [io.quarkus.deployment.QuarkusAugmentor] Quarkus augmentation completed in 51109ms
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  56.437 s
+[INFO] Finished at: 2022-08-21T11:34:04+02:00
+[INFO] ------------------------------------------------------------------------
+```
 
-## Task 2: Concise Step Description
+## Task 2: Package your Java Application and Deploy to Kubernetes
 
-1. Sub step 1 - tables sample
+When Kubernetes extension (`quarkus-kubernetes`) is present in the classpath, a Kubernetes deployment file is scaffolded for you during package phase.
+The location of this file is `target/kubernetes/kubernetes.yml`.
 
-  Use tables sparingly:
+1. Customize Kubernetes configuration properties from `src/main/resources/application.properties`, in your cloned `joker` directory:
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+```properties
+    # Configuration file
+    # key = value
+    quarkus.kubernetes.ingress.expose=true
+```
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+2. Deploy to your Kubernetes cluster by running:
 
-    - List item 1
-    - List item 2
+| OS        | Command                                                      |
+|-----------|--------------------------------------------------------------|
+| macOS     | `./mvnw clean package -Dquarkus.kubernetes.deploy=true`      |
+| Linux     | `./mvnw clean package -Dquarkus.kubernetes.deploy=true`   |
+| Windows   | `mvnw.cmd clean package -Dquarkus.kubernetes.deploy=true` |
+{: title="List of commands to deploy to a Kubernetes cluster"}
 
-3. Code examples
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+## Task 3: Deploy the Application via dedicated YAML file
 
-4. Code examples that include variables
+We also provided a simple Kubernetes YAML file with everything set up, to deploy the Joker Application.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+```shell
+kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app.yaml
+```
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Efficient Resource Management with Kubernetes](https:dn.dev/kube-dev-practices)
+* [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022
