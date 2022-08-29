@@ -73,7 +73,7 @@ In this Task, you will create and set up your GitHub account.
 
 ## Task 3: Download and Install the latest version of Git (Optional Step)
 
-> **Note:** Oracle recommends using the GitHub Desktop client because of its simple and user-friendly user interface, and it is also much easier to use than the Git command line. Therefore, skip this task and follow the instructions in **Task 4: Install GitHub Desktop** if you are not familiar with command-line interface.
+> **Note:** If you are new to Git and Github, we recommend using the GitHub Desktop client because of its simple and user-friendly user interface. Therefore, skip this task and follow the instructions in **Task 4: Install GitHub Desktop** if you are not familiar with command-line interface.
 
 To install Git:
 
@@ -93,7 +93,7 @@ To install Git:
 
 ## Task 4: Install GitHub Desktop
 
-The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow. It is much easier than using the Git command line.
+The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow.
 
 To set up the GitHub Development Environment and install **GitHub Desktop**:
 

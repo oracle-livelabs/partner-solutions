@@ -2,34 +2,24 @@
 
 ## Introduction
 
-You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output.
+Oracle LiveLabs has a set folder structure that you will need to follow for developing your workshops. The folder structure is only part of the development since the workshop content is contained in the Markdown files and images that you write and edit as your workshop development. You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output.
+If you are new to Git and Github, we recommned using Github Desktop to maintain your repository.
+**Of course, you can use any IDE or Git tool of your choice**
 
 ### Objectives
 
+* Install Visual Studio Code and Github Desktop to 
+* Clone and fork Oracle LiveLabs GitHub repositories.
+* Familiarize yourself with the components of the workshop and the lab folders.
 * Learn about the tools that are available to develop and host your content.
 * Learn how to merge content.
-* Create workshop and lab content.
-* Preview the content in a browser.
 
-## Task 1: Install Your Text Editor
+## Task 1: Install Visual Studio Code as an IDE (optional)
 
-You can use your preferred editor, however, we recommend downloading either Atom or Visual Studio Code to author and edit your Markdown (.md) content. Below, there are instructions for both.
+You can use your preferred editor.
+If you are new to Markdown, we recommend downloading Visual Studio Code to author and edit your Markdown (.md) content. Below, you can find the instructions on how to download and install Visual Studio Code..
 
-### **Option 1: Install Atom**
-
-`Atom.io` is a 3rd party IDE freely available under MIT License.
-
-To install Atom:
-
-1. Go to the [Atom](https://github.com/atom/atom/releases/tag/v1.51.0) URL.
-
-2. Click the zip file for your operating system, save and extract the zip file.
-
-  ![Installation of Atom.](./images/use-atom-editor-download.png " ")
-
-3. From the extracted files, click `atom.exe` to launch Atom.
-
-### **Option 2: Install Visual Studio Code**
+### Install Visual Studio Code**
 
 To install Visual Studio Code:
 
@@ -45,35 +35,11 @@ To install Visual Studio Code:
 
   ![Launch Visual Studio Code.](./images/vscode-drag.png " ")
 
-## Task 2: Install Live Server
+## Task 2: Install Live Server Extension for Visual Studio Code (optional) 
 
-Now, install live Server to view the changes you make to the markdown file dynamically.
+If you are using Visual Studio Code, you can also instal the *Live Server extension* to view the changes you make to the markdown file dynamically. The extension will start a local web server that enables you not only to preview the transformed markdown but also to experience the look & feel of LiveLabs.
 
-### **Option 1: Install Atom's Live Server Package**
-
-You must NOT be connected to Oracle's network or VPN while installing the **atom-live-server** package.
-
-To install **atom-live-server**:
-
-1. In the **Atom** editor, click **Help**, and then select **Welcome Guide**.
-
-2. In the **Welcome Guide** screen, click **Install a Package**, and then click **Open Installer** to display the **Install Packages** window.
-
-  ![Install a package on Atom.](./images/use-atom-editor-welcome-install-package.png " ")
-
-3. Enter **atom-live-server**, and then click **Install**.
-
-  ![Install live server.](./images/use-atom-editor-welcome-install-package-atom-live-server.png " ")
-
-4. When the installation is completed, the **Install** button is replaced with the **Uninstall** and **Disable** buttons.
-
-  ![Successful installation.](./images/use-atom-editor-welcome-uninstall-disable.png " ")
-
-The **atom-live-server** plugin is added to the **Packages** menu.
-
-  ![Atom live server is installed.](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
-
-### **Option 2: Install Visual Studio Code's Live Server Extension**
+### Install Visual Studio Code's Live Server Extension**
 
 1. In the VS Code, navigate to the **Extensions** on the left-side navigation bar.
 
@@ -89,13 +55,16 @@ The **atom-live-server** plugin is added to the **Packages** menu.
 
 ## Task 3: Merge Content from Git Before You Start Editing Your Content
 
-Every day before you start editing your content, ensure to do a Merge in **GitHub Desktop**.
+Every day before you start editing your content, ensure to do a merge from upstream.
+You can do that using your `git` on the command line or GitHub Desktop.
+
+**Please note:** We provide documentation only on using Github Desktop. If you are familiar with Git, you can use Git also on the command line.
 
 Merging synchronizes the content in your cloned repository with the latest content on the **upstream/main** repository and ensures that you have the most recent versions of the templates and other workshops/labs.
 
 > **Note**: If you do not do that, you may get merge conflicts later when you commit your changes, which can be complex to fix.
 
-To merge content:
+To merge content using Github Desktop:
 
 1. Start your **GitHub Desktop** client.
 
@@ -205,24 +174,7 @@ To create your lab and workshop content:
 
 ## Task 6: Preview Your Workshop and Labs Using Live Server
 
-### **Option 1: Using Atom**
-
-1. First, start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
-  ![Start live server.](./images/use-atom-editor-packages-start-live-server.png " ")
-
-  By default, the **atom-live-server** opens a browser window that displays the folders inside your project (**labs**) folder.
-
-2. Click the **workshops** folder and then click the **freetier** folder that contains the workshop you want to view.
-
-  ![Select the workshop you want to view.](./images/use-atom-editor-open-live-server.png " ")
-
-  The Workshop is displayed along with the labs. You can make content changes in the **Atom** editor to the workshop and lab files, save the changes, and the updated content gets automatically refreshed in the browser window.
-
-  ![Workshop view in Live Server.](./images/use-atom-editor-workshop-output.png " ")
-
-3. To stop the **atom-live-server**, go back to **Atom**, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
-
-### **Option 2: Using Visual Studio Code**
+### Using Visual Studio Code**
 
 1. Within the directory of any workshop you want to view, click the **workshops** folder and then click the **freetier** folder.
 
@@ -287,6 +239,12 @@ To create your lab and workshop content:
   ![Use Path Intellisense Extension](./images/use-path-intellisense-extension2.png " ")
 
 This concludes this lab. You may now **proceed to the next lab**.
+
+## Want to Learn More?
+
+* [Download and Install Git for Windows](https://git-scm.com/download/win)
+* [Download and Install Git for Mac](https://git-scm.com/download/mac)
+* [Download Visual Studio Code](https://code.visualstudio.com/download)
 
 ## Acknowledgements
 
