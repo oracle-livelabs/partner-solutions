@@ -25,7 +25,7 @@ If you would like to recreate a similar setup, you can do the following:
     * `quarkus-jdbc-h2` to connect H2 database via JDBC.
     * `quarkus-hibernate-orm-panache` to simplify the code when interacting with Hibernate ORM.
     * `quarkus-smallrye-health` to monitor the application health.
-    * `quarkus-container-image-jib` to generate a container image without running a Docker daemon.
+    * `quarkus-container-image-docker` to generate a container image using the Docker images located under `src/main/Docker`.
     * `quarkus-kubernetes` to generate OpenShift resources from annotations.
 * Click the `Generate the application` button.
 
@@ -42,15 +42,19 @@ After the application is up and running, you may call the `/jokes/init` endpoint
 
 1. The code of the `Joker` application is available on [GitHub](https://github.com/ammbra/joker.git).
 2. Clone the code by running the following command in a terminal window:
-   ```shell
-   git clone https://github.com/ammbra/joker.git 
-   ```
-3. Go to project root:
-   ```shell
-   cd joker
-   ```
 
-> **NOTE** This tutorial was developed and tested with: Minikube v1.25.1  and OpenShift 4.10.
+```
+<copy>git clone https://github.com/ammbra/joker.git</copy>
+```
+
+3. Go to project root:
+
+```
+<copy>
+   cd joker
+</copy>
+```
+
 
 ## Task 2: Start Joker Application in Dev Mode
 
@@ -67,13 +71,14 @@ Quarkus provides a Dev Mode which helps you during application development and i
 
 2. Run the following command to start your Quarkus application in Dev Mode:
 
-   ```shell
-   mvn quarkus:dev
-   ```
+```
+<copy>mvn quarkus:dev</copy>
+```
+
 3. Unless another application uses your port 8080, you can access the `Joker` application in your favorite browser at http://localhost:8080/
 4. In a browser tab copy and paste the below URL:
 
-   ```shell
+   ```
    http://localhost:8080/jokes
    ```
 The output will be a JSON containing partial joke content.
@@ -114,5 +119,5 @@ Now that you got to know the application, let’s deploy it to a Kubernetes clus
 * [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
 
 ## Acknowledgements
-* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
-* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022
+* **Authors** - Ana-Maria Mihalceanu, Sr. Developer Advocate, Oracle | Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  September 2022

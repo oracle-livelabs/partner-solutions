@@ -1,91 +1,144 @@
-# Title of the Lab
+# Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This section walks you through the steps to create a managed Kubernetes environment on the Oracle Cloud Infrastructure.
 
-Estimated Time: -- minutes
+Estimated Lab Time: 20 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### About Product/Technology
+
+Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your container applications to the cloud. Use the Container Engine for Kubernetes (sometimes abbreviated OKE) when your development team wants to reliably build, deploy, and manage cloud-native applications. You specify the compute resources that your applications require, and OKE provisions them on the Oracle Cloud Infrastructure in an existing OCI tenancy.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
 
-### Prerequisites (Optional)
+* Create an OKE (Oracle Kubernetes Engine) instance.
+* Open the OCI Cloud Shell and configure `kubectl` to interact with the Kubernetes cluster.
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
+
+This tutorial shows you how the *Quick Start* feature creates and configures all the necessary resources for a 3-node Kubernetes cluster. All the nodes will be deployed in different availability domains to ensure high availability.
+
+For more information about OKE and custom cluster deployment, see the [Oracle Container Engine](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm) documentation.
+
+## Task 1: Create an OKE cluster
+
+The *Quick Create* feature uses the default settings to create a *quick cluster* with new network resources as required. This approach is the fastest way to create a new cluster. If you accept all the default values, you can create a new cluster in just a few clicks. New network resources for the cluster are created automatically, along with a node pool and three worker nodes.
+
+1. In the Console, select the *Hamburger Menu -> Developer Services -> Kubernetes Clusters (OKE)* as shown.
+
+    ![Hamburger Menu](images/hamburgermenu.png)
+
+2. In the Cluster List page, select the Compartment of your choice, where you are allowed to create a cluster, and then click *Create Cluster*.
+
+    ![Select Compartment](images/selectcompartment.png)
+
+3. In the Create Cluster Solution dialog, select *Quick Create* and click *Launch Workflow*.
+
+    ![Launch Workflow](images/launchworkflow.png)
+
+    *Quick Create* will create a new cluster with the default settings, along with new network resources for the new cluster.
+
+    Specify the following configuration details on the Cluster Creation page (please pay attention to the value you place in the *Shape* field):
+
+    * **Name**: The name of the cluster. Leave the default value.
+    * **Compartment**: The name of the compartment. Leave the default value.
+    * **Kubernetes version**: The version of Kubernetes. Leave the default value which should be *v1.24.1* or select the latest version available.
+    * **Kubernetes API Endpoint**: Are the cluster master nodes going to be routable or not. Select the *Public Endpoint* value.
+    * **Kubernetes Worker Nodes**: Are the cluster worker nodes going to be routable or not. Leave the default *Private Workers* value.
+    * **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select *VM.Standard2.1* (which is typically available in Oracle Free Tier Account).
+    * **Number of nodes**: The number of worker nodes to create. Leave the default value, *3*.
+
+    ![Quick Cluster](images/quickcluster.png)
+
+4. Click *Next* to review the details you entered for the new cluster.
+
+    ![Enter Data](images/enterdata.png)
+
+5. On the *Review* page, click *Create Cluster* to create the new network resources and the new cluster.
+
+    ![Review Cluster](images/reviewcluster.png)
+
+    > You see the network resources being created for you. Wait until the request to create the node pool is initiated and then click *Close*.
+
+    ![Network Resource](images/networkresource.png)
+
+    > Then, the new cluster is shown on the *Cluster Details* page. When the master nodes are created, the new cluster gains a status of *Active* (it takes about 7 minutes).Then, you may continue your labs.
+
+    ![cluster provision](images/clusterprovision.png)
+
+    ![cluster created](images/clustercreated.png)
+
+## Task 2: Configure `kubectl` (Kubernetes Cluster CLI)
+
+Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal, accessible from the Oracle Cloud Console. The Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI and other useful tools (*Git, kubectl, helm, OCI CLI*) to complete this lab. The Cloud Shell is accessible from the Console. Your Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.
 
 
-*This is the "fold" - below items are collapsed by default*
+We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It needs a `kubeconfig` file. This will be generated using the OCI CLI which is pre-authenticated, so there’s no setup to do before you can start using it.
 
-## Task 1: Concise Step Description
+1. Click *Access Cluster* on your cluster detail page.
 
-(optional) Step 1 opening paragraph.
+    > If you moved away from that page, then open the navigation menu and under *Developer Services*, select *Kubernetes Clusters (OKE)*. Select your cluster and go the detail page.
 
-1. Sub step 1
+    ![Access Cluster](images/accesscluster.png)
 
-	![Image alt text](images/sample1.png)
+    > A dialog is displayed from which you can open the Cloud Shell and contains the customized OCI command that you need to run, to create a Kubernetes configuration file.
 
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
+2. Leave the default *Cloud Shell Access* and first select the *Copy* link to copy the `oci ce...` command to the Cloud Shell.
 
-2. Sub step 2
+    ![Copy kubectl Config](images/copyconfig.png)
 
-  ![Image alt text](images/sample1.png)
+3. Now, click *Launch Cloud Shell* to open the built in console. Then close the configuration dialog before you paste the command into the *Cloud Shell*.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    ![Launch Cloud Shell](images/launchcloudshell.png)
 
-5. Example with bold **text**.
+4. Copy the command from the clipboard (Ctrl+V or right click and copy) into the Cloud Shell and run the command.
 
-   If you add another paragraph, add 3 spaces before the line.
+    For example, the command looks like the following:
 
-## Task 2: Concise Step Description
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
+    ```bash
+    oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.phx.aaaaaaaaaezwen..................zjwgm2tqnjvgc2dey3emnsd --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0
     ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+
+    ![kubectl config](images/kubectlconfig.png)
+
+5. Now check that `kubectl` is working, for example, using the `get node` command. you may need to run this command several times until you see the output similar to following.
+
+    ```bash
+    <copy>kubectl get node</copy>
     ```
 
-4. Code examples that include variables
+    ```bash
+    $ kubectl get node
+    NAME          STATUS   ROLES   AGE   VERSION
+    10.0.10.193   Ready    node    10m   v1.21.5
+    10.0.10.194   Ready    node    10m   v1.21.5
+    10.0.10.28    Ready    node    10m   v1.21.5
+    ```
+
+    > If you see the node's information, then the configuration was successful.
+
+6. You can minimize and restore the terminal size at any time using the controls at the top right corner of the Cloud Shell.
+
+    ![cloud shell](images/cloudshell.png)
+
+Leave this *Cloud Shell* open; we will use it for further labs.
+
+## Task 3 - Install Metrics Server
+
+
+Metrics Server can be used in order to observ resources consumed by applications. To install the latest Metrics Server release in high availability mode from the high-availability.yaml manifest, run the following command: 
 
 ```
-  <copy>ssh -i <ssh-key-file></copy>
- ```
-
-## Learn More
-
-* [Efficient Resource Management with Kubernetes](https:dn.dev/kube-dev-practices)
-* [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
+<copy>
+    kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+</copy>
+```
 
 ## Acknowledgements
-* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
-* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022
+* **Authors** - Ana-Maria Mihalceanu, Sr. Developer Advocate, Oracle| Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  September 2022

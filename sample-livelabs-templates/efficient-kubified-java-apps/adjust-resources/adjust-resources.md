@@ -4,7 +4,7 @@
 
 This section walks you through the steps needed to adjust resource quotas to efficiently run 'Joker' Java application.
 
-Estimated Time: 60 minutes
+Estimated Time: 50 minutes
 
 ### Objectives
 
@@ -21,14 +21,6 @@ This section assumes you have:
 * All previous sections successfully completed.
 * Access to a container registry that is reachable from your Kubernetes cluster.
 
-In addition to those above, please run the following commands to have a sample Prometheus instance running:
-
-```shell
-kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/prometheus-configmap.yaml
-kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/prometheus-deployment.yaml
-kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/prometheus-service.yaml
-```
-
 
 ## Task 1: Setup and Discover Namespace Limits
 
@@ -40,46 +32,64 @@ When deploying multiple applications, there will always be concerns that one Pod
 
 1. Run the following command to discover the resource quota established for your namespace :
 
-    ```shell
-    kubectl get resourcequota
-    ```
+```
+<copy>
+   kubectl get resourcequota
+</copy>
+```
+
 2. At namespace level a LimitRange policy is employed to constrain resource allocations (to Pods or Containers).
 Run the following command to establish a namespace LimitRange
 
-    ```shell
-     kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/limit-ranger.yaml
-    ```
+```
+<copy>
+   kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/limit-ranger.yaml
+</copy>
+```
+
 3. You can find out the LimitRange established for a namespace by running:
 
-   ```shell
-    kubectl get limitrange
-   ```
+```
+<copy> 
+   kubectl get limitrange
+</copy>
+```
+
 The output would be similar to:
 
 | NAME            | CREATED AT             |
 |-----------------|------------------------|
 | resource-limits | 2022-08-21T16:53:16Z   |
+{: title="Output"}
 
 
-4. Get the details of `resource-limits` LimitRange:
-   ```shell
-    kubectl describe limitrange resource-limits
-   ```
+4. Get the details of the LimitRange resource named `resource-limits` :
+
+```
+<copy>
+   kubectl describe limitrange resource-limits
+</copy>
+```
+
 The output would be similar to:
 
 | Type           | Resource | Min | Max | Default Request | Default Limit | Max Limit/Request Ratio |
 |----------------|----------|-----|-----|-----------------|---------------|-------------------------|
 | Container      | cpu      | -   | -   | 10m             | 1             | -                       |
 | Container      | memory   | -   | -   | 64Mi            | 750Mi         | -                       |
+{: title="Output"}
 
 This `LimitRange` enforces the default request/limit for compute resources in the namespace and automatically injects them to Containers at runtime.
 Any deployment that does not have requests or limits set (like the one done in the previous section) will use these default parameters.
 
 5. In order to get the memory and CPU values used by the JVM, run the following command (change the hostname to yours):
    
-   ```shell
-    curl <hostname>/jokes/sysresources
-   ```
+``` 
+   <copy>
+      curl <hostname>/jokes/sysresources
+   </copy>
+```
+
 The output should be similar to: `Memory: 181 Cores: 1`.
 
 If the memory limit is set to 750Mi, why does the JVM use only 181Mi? The JVM  has some default ergonomics and we will inspect them in the following task.
@@ -111,30 +121,39 @@ To know exactly which values are used, you can start the JVM with the following 
 {: title="Useful JVM flags"}
 
 
-1. In a terminal window In the terminal window, run the following command to deploy `Joker` service as before but with a few extra flags
+1. In the terminal window, run the following command to deploy `Joker` service as before but with a few extra flags
 
-   ```shell
+```
+<copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-show-prop.yaml
-   ```
+</copy>
+```
+
 The above command deploy the `Joker` service with `-XshowSettings:system -Xlog:gc=info -Xlog:os+container=info` flags set.
 
 
 2. Validate your deployment by running the command:
 
-    ```shell
-    kubectl get pods
+    ```
+    <copy>
+      kubectl get pods
+    </copy>
     ```
 The output should be similar to: 
 
 | NAME                   | READY | STATUS  | RESTARTS | AGE    |
 |------------------------|-------|---------|----------|--------|
 | joker-5bfcbdf9d4-bsgkh | 1/1   | Running | 0        | 113s   |
+{: title="Result"}
 
 3. Query the log of the Pod to see the defaults used:
 
-    ```shell
-    kubectl logs joker-5bfcbdf9d4-bsgkh
-    ```
+```
+<copy>
+   kubectl logs joker-5bfcbdf9d4-bsgkh
+</copy>
+```
+
    You should see something similar to:
 
    ```text
@@ -181,15 +200,19 @@ In the above output you can observe that the total amount of memory available in
 
 3. Clean up
 
-   ```shell
+```
+<copy>
    kubectl delete -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-show-prop.yaml
-   ```
+</copy>
+```
 
 ## Task 3: Adjust Container Resources
 
-Adjusting resources depends on the application you are developing, whether it’s an enterprise application or a stateless service.
+When you want to deploy a containerized application via a Pod, you can optionally specify how many compute resources (usually CPU and memory) a container needs. CPU is a compressible resource and memory is not.Kubernetes schedules a Pod based on the requests values and it allows it to consume more based on the limits values.
 
-*CPU limits and requests* must have the same value as the JVM reads the number of processors available only during startup time.
+Adjusting resources depends on the application you are developing, whether it’s an enterprise application or a stateless service. 
+
+The JVM reads the number of processors available only during startup time so *CPU requests* must be established as accurate as possible. *CPU limits* are not mandatory to set. If you are worried about CPU consumption, you should set CPU limits to a value equal to CPU requests.
 
 *Memory limits* is the container memory, so you need to count not only the JVM heap memory but all the memory required by the container. Is highly encouraged you to set request and limit value to the same value for JVM based applications.
 
@@ -198,57 +221,87 @@ During this task we will improve the resource limits used by the application by 
 
 1. Deploy the application again:
 
-   ```shell
+```
+<copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app.yaml
-   ```
+</copy>
+```
+
 2. Reinitialize the complete set of data:
 
-   ```shell
-    curl <hostname>/jokes/init
-   ```
+```
+   <copy>
+      curl <hostname>/jokes/init
+   </copy>
+```
+
+3. Find out the CPU and memory consumed by querying the metrics server installed in the provisiong section:
+
+```
+<copy>
+   kubectl get --raw /apis/metrics.k8s.io/v1beta1/namespaces/default/pods/joker-9658dfbb8-fcwjk
+</copy>
+```
+
+
 3. Simulate some load using [hey](https://github.com/rakyll/hey):
 
-   ```shell
-    hey -n 100 -c 20 <hostname>/jokes
-   ```
+```
+   <copy>
+      hey -n 100 -c 20 <hostname>/jokes
+   </copy>
+```   
+
 4. Execute the following command to observe the CPU and memory consumed:
 
-   ```shell
+```
+<copy>
    kubectl get --raw /apis/metrics.k8s.io/v1beta1/namespaces/default/pods/joker-9658dfbb8-fcwjk
-   ```
+</copy>
+```
+
 5. Based on the output of above command you can adjust the limits in the Kubernetes resources to :
-    ```shell
+
+```
+<copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-limits.yaml
-   ```
+</copy>
+```
+
 The above command will update the resources with:
 
-   ```yaml
-          resources:
-            limits:
-              cpu: 200m
-              memory: 300Mi
-            requests:
-              cpu: 100m
-              memory: 300Mi
-   ```
+```yaml
+<copy>
+resources:
+   limits:
+      memory: 300Mi
+   requests:
+      cpu: 100m
+      memory: 300Mi
+</copy>
+```
 
 You can also generate the YAML file using Quarkus Kubernetes extension. 
 You can change the requests and limits in the `application.properties` file with the following properties:
 
-```properties
-    # Configuration file
-    # key = value
-   quarkus.kubernetes.resources.limits.cpu=200m
-   quarkus.kubernetes.resources.limits.memory=300Mi
-   quarkus.kubernetes.resources.requests.cpu=100m
-   quarkus.kubernetes.resources.requests.memory=300Mi
+```
+<copy>
+# Configuration file
+# key = value
+quarkus.kubernetes.resources.limits.memory=300Mi
+quarkus.kubernetes.resources.requests.cpu=200m
+quarkus.kubernetes.resources.requests.memory=300Mi
+</copy>
 ```
 
 6. Validate your deployment by running the command:
 
-    ```shell
-    kubectl get pods
-    ```
+```
+<copy>
+   kubectl get pods
+</copy>
+```
+
 The output should be similar to:
 
 | NAME                   | READY | STATUS  | RESTARTS | AGE |
@@ -257,9 +310,12 @@ The output should be similar to:
 
 7. Query the log of the Pod to see the defaults used:
 
-    ```shell
-    kubectl logs joker-7fdcc4d6bc-vb82k
-    ```
+```
+   <copy>
+      kubectl logs joker-7fdcc4d6bc-vb82k
+   </copy>
+```
+
    You should see something similar to:
 
    ```text
@@ -308,18 +364,26 @@ The output should be similar to:
    ......
    ```
 8. Run the following request to get the parameters used by the JVM, changing the hostname with yours:
-   ```shell
+
+```
+   <copy>
       curl <hostname>/jokes/sysresources
-   ```
+   </copy>
+```
+
 The output should be similar to: ` Memory: 121 Cores: 1`. The memory is using the new limits which are around the 25% of memory available.
 The container memory is not only used for allocating the JVM heap memory but also for the JVM itself and the container.
 For this reason, a good rule of thumb is allocating a maximum of 75% of container memory for the heap.
 
 
 9. Undeploy the application:
-   ```shell
-   kubectl delete -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-limits.yaml
-   ```
+
+```
+<copy>
+      kubectl delete -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-limits.yaml
+</copy>
+```
+
 ## Task 4: Adjust Container Resources and JVM heap size
 
 Setting the GC configuration is essential when deploying a Java application in a container.
@@ -340,14 +404,20 @@ On the other hand, you should set the `-XX:MaxRAMPercentage` flag in order to ha
 
 1. Deploy the application again:
 
-   ```shell
+```
+<copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-75.yaml
-   ```
+</copy>
+```
+
 2. Validate your deployment by running the command:
 
-    ```shell
-    kubectl get pods
-    ```
+```
+   <copy>
+      kubectl get pods
+   </copy>
+```
+
 The output should be similar to:
 
 | NAME                     | READY | STATUS  | RESTARTS | AGE  |
@@ -356,9 +426,12 @@ The output should be similar to:
 
 3.   In order to get the memory and CPU values used by the JVM, run the following command (change the hostname to yours):
 
-   ```shell
-    curl <hostname>/jokes/sysresources
-   ```
+```
+   <copy>
+      curl <hostname>/jokes/sysresources
+   </copy>
+```
+
 The output should be similar to: `Memory: 218 Cores: 1`. Now the application is using 75% of memory as heap.
 
 
@@ -368,5 +441,5 @@ The output should be similar to: `Memory: 218 Cores: 1`. Now the application is 
 * [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
 
 ## Acknowledgements
-* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
-* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022
+* **Authors** - Ana-Maria Mihalceanu, Sr. Developer Advocate, Oracle | Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  September 2022

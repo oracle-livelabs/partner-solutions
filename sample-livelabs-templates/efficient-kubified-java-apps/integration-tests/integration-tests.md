@@ -20,15 +20,17 @@ This section assumes you have:
 * Access to a container registry that is reachable from your Kubernetes cluster.
 
 To make testing against a mock Kubernetes API extremely simple, Quarkus provides the `WithKubernetesTestServer` annotation which automatically launches a mock of the Kubernetes API server and sets the proper environment variables needed. 
-To take advantage of these features, the `quarkus-test-kubernetes-client` dependency needs to be added in pom.xml:
+To take advantage of these features, the `quarkus-test-kubernetes-client` dependency needs to be added in *pom.xml*:
 
-    ```xml
-      <dependency>
-          <groupId>io.quarkus</groupId>
-          <artifactId>quarkus-test-kubernetes-client</artifactId>
-          <scope>test</scope>
-        </dependency>
-    ```
+```
+    <copy>
+    <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-test-kubernetes-client</artifactId>
+        <scope>test</scope>
+    </dependency>
+    </copy>
+```
 
 ## Task 1: Create Integration Tests to Validate Kubernetes YAML Resources
 
@@ -42,7 +44,8 @@ You can create a `PodDisruptionBudget` for workloads encapsulated in other Kuber
 
 In the folder [src/main/kubernetes](https://github.com/ammbra/joker/blob/master/src/main/kubernetes) you have a `pdb.yml` file:
 
-    ```yaml
+```yaml
+    <copy>
     apiVersion: policy/v1
     kind: PodDisruptionBudget
     metadata:
@@ -51,22 +54,26 @@ In the folder [src/main/kubernetes](https://github.com/ammbra/joker/blob/master/
       selector:
         matchLabels:
           app.kubernetes.io/name: joker
-    ```
+     </copy>
+```
 
 Typically, you will install [src/main/kubernetes/pdb.yml]([src/main/kubernetes](https://github.com/ammbra/joker/blob/master/src/main/kubernetes/pdb.yml)) in an Kubernetes environment and will observe that the configuration is rejected because the name of the resource is missing. 
 However, you can avoid such a scenario by creating an integration test for the `PodDisruptionBudget` resource defined in the file.
 
-1. Create a Java class named `PodDisruptionBudgetTest` under [src/test/java/org/acme/example] :
+1. Create a Java class named `PodDisruptionBudgetTest` under `src/test/java/org/acme/example` :
 
-```java
+```
+<copy>
 public class PodDisruptionBudgetTest {
-    
+            
 }
+</copy>
 ```
 
 2. As this is a Quarkus test, you should annotate it with `@QuarkusTest`. To signal the mocked Kubernetes context, annotate the class with `@WithKubernetesTestServer`.
 
-```java
+```
+<copy>
 import io.quarkus.test.junit.DisabledOnIntegrationTest;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.kubernetes.client.WithKubernetesTestServer;
@@ -78,13 +85,15 @@ import io.quarkus.test.kubernetes.client.WithKubernetesTestServer;
 public class PodDisruptionBudgetTest {
     
 }
+</copy>
 ```
+
 Use `@DisabledOnIntegrationTest` annotation to exclude this test when running the native executable.
 
 3. Add the mock Kubernetes server context via a field:
 
-```java
-
+```
+<copy>
 import io.fabric8.kubernetes.client.server.mock.KubernetesServer;
 
 import io.quarkus.test.junit.DisabledOnIntegrationTest;
@@ -102,12 +111,12 @@ public class PodDisruptionBudgetTest {
     KubernetesServer mocKubernetesServer;
     
 }
+</copy>
 ```
-
 4. Construct the test method by adding the path to the YAML file as variable:
 
-```java
-
+```
+<copy>
 import io.fabric8.kubernetes.client.server.mock.KubernetesServer;
 
 import io.quarkus.test.junit.DisabledOnIntegrationTest;
@@ -132,11 +141,13 @@ public class PodDisruptionBudgetTest {
         String path = "./src/main/kubernetes/pdb.yml";
     }
 }
+</copy>
 ```
 
 5. Create the `PodDisruptionBudget` Java resource that gets populated based on the content of the YAML.
 
-```java
+```
+<copy>
 package org.acme.example;
 
 
@@ -169,11 +180,13 @@ public class PodDisruptionBudgetTest {
     }
 
 }
+</copy>
 ```
 
 6. As the YAML content is invalid, you should expect an exception to be thrown:
 
-```java
+```
+<copy>
 package org.acme.example;
 
 
@@ -209,13 +222,15 @@ public class PodDisruptionBudgetTest {
     }
 
 }
+</copy>
 ```
 
 7. By running the test (via ContinuousTesting/IDE/application package) you can get exceptions but also what is wrong with the resource.
 
 8. You can also test YAML as a text block:
 
-```java
+```
+<copy>
 package org.acme.example;
 
 
@@ -255,11 +270,12 @@ public class PodDisruptionBudgetTest {
 
     @Test
     public void testCustomYAMLInput() throws URISyntaxException, FileNotFoundException {
-        assertThrows(KubernetesClientException.class, () ->  mockKubernetes.getClient().policy().v1()
-                .podDisruptionBudget().load(flavoredInput).dryRun()) ;
+        assertThrows(KubernetesClientException.class, () ->   mockKubernetes.getClient().policy().v1().podDisruptionBudget().
+        load(flavoredInput).dryRun()) ;
     }
 
 }
+</copy>
 ```
 
 ## Learn More
@@ -268,5 +284,5 @@ public class PodDisruptionBudgetTest {
 * [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
 
 ## Acknowledgements
-* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
-* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022
+* **Authors** - Ana-Maria Mihalceanu, Sr. Developer Advocate, Oracle | Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  September 2022
