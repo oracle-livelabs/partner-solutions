@@ -42,7 +42,7 @@ A `PodDisruptionBudget` is a Kubernetes resource that you can define to protect 
 
 You can create a `PodDisruptionBudget` for workloads encapsulated in other Kubernetes resources like `Deployment`, `ReplicaSet`, `StatefulSet`.
 
-In the folder [src/main/kubernetes](https://github.com/ammbra/joker/blob/master/src/main/kubernetes) you have a `pdb.yml` file:
+In the folder [src/main/kubernetes](https://github.com/ammbra/joker/blob/main/src/main/kubernetes) you have a `pdb.yml` file:
 
 ```yaml
     <copy>

@@ -82,11 +82,37 @@ The output would be similar to:
 This `LimitRange` enforces the default request/limit for compute resources in the namespace and automatically injects them to Containers at runtime.
 Any deployment that does not have requests or limits set (like the one done in the previous section) will use these default parameters.
 
-5. In order to get the memory and CPU values used by the JVM, run the following command (change the hostname to yours):
+5. Get the external IP associated via Ingress by running the following command :
+  
+  ```
+   <copy>
+   kubectl --namespace ingress-nginx get services -o wide ingress-nginx-controller
+   </copy>
+  ```
+
+The output should be similar to: 
+
+```
+NAME                       TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)                      AGE   SELECTOR
+ingress-nginx-controller   LoadBalancer   10.96.61.56   193.145.235.17   80:31387/TCP,443:32404/TCP   45s   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
+```
+
+In this case we can see that the load balancer has been created and the external-IP address is available. If the External IP address is listed as `<pending>` then the load balancer is still being created, wait a short while then try the command again.
+
+ **Make a note of this external IP address, you'll be using it a lot!** 
+ Or use the following command to export it:
+  
+  ```
+   <copy>
+      export EXTERNAL_IP=<External IP>
+   </copy>
+  ```
+
+6. In order to get the memory and CPU values used by the JVM, run the following command (change the hostname to yours):
    
 ``` 
    <copy>
-      curl <hostname>/jokes/sysresources
+      curl https://$EXTERNAL_IP.nip.io/jokes/sysresources
    </copy>
 ```
 
@@ -248,7 +274,7 @@ During this task we will improve the resource limits used by the application by 
 
 ```
    <copy>
-      hey -n 100 -c 20 <hostname>/jokes
+      hey -n 100 -c 20  https://$EXTERNAL_IP.nip.io/jokes
    </copy>
 ```   
 
