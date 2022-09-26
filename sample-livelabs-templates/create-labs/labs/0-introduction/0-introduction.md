@@ -54,9 +54,13 @@ For a workshop to go from an idea to a LiveLabs workshop in production, it has t
 
   ![Completed](./images/completed.png " ")
 
+The following workflow shows the workshop development lifecycle from submitting a workshop to publishing on Oracle LiveLabs.
+
+![LiveLabs workshop development lifecycle](./images/workshop-workflow.png " ")
+
 The following diagram shows the general workflow process that your need to follow to set up your environment to develop labs and workshops. Most of the tasks are performed only once.
 
-![LiveLabs workflow infographic.](./images/git-hub-workflow-flow-chart.png " ")
+![LiveLabs development workflow infographic.](./images/git-hub-workflow-flow-chart.png " ")
 
 ### Workshop Objectives
 
