@@ -2,44 +2,37 @@
 
 ## About this Workshop
 
-This is a new line.
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+In this workshop, you will use quantum gates in Java to create a key distribution application.
 
-Estimated Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Quantum computing has several key concepts including superposition, entanglement, and measurement. This lab covers only superposition. We avoid mathematical equations in favor of more intuitive descriptions.
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
+Quantum computing impacts security in at least two ways. 
 
-  [](youtube:zNKxJjkq0Pw)
+* **Quantum Key Distribution (QKD)** - Distributing shared private keys in a secure manner.
+* **Shor's Algorithm** - Breaking encryption schemes such as RSA and Diffie-Hellman by efficiently facotring large public keys.
+
+This workshop uses superposition to demonstrate Quantum Key Distribution.
+
+Estimated Time: 1 hour 30 minutes 
 
 ### Objectives
 
-*List concise objectives for the workshop*
-
 In this workshop, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Run high-level quantum computing code in Java to generate random bits.
+* Run the corresponding low-level code in Java.
+* Perform experiments with quantum gates and qubits.
+* Run code to distribute secret encryption keys.
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites`
 
 This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
+* Basic Java programming skills
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Quantum Computing in Action](https://www.manning.com/books/quantum-computing-in-action)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name,  Month Year>
+* **Authors** - Johan Vos, Barry Burd
+* `**Contributors** -  <Name, Group> -- optional`
+* **Last Updated By/Date** - September 24, 2022

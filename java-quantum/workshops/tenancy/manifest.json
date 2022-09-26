@@ -18,16 +18,30 @@
             "filename": "https://oracle-livelabs.github.io/common//labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Create a Circuit",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../create-a-circuit/create-a-circuit.md"
+            "title": "Lab 1: High-Level Quantum Computing in Java",
+            "description": "High-Level Quantum Computing in Java",
+            "filename": "../../high-level-qc/high-level-qc.md"
         },
         {
-            "title": "Lab 2: Code Grover's Algorithm",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../grover-algorithm/grover-algorithm.md"
+            "title": "Lab 2: Low-Level Quantum Computing in Java",
+            "description": "Low-Leve Quantum Computing in Java",
+            "filename": "../../low-level-qc/low-level-qc.md"
         },
         {
+            "title": "Lab 3: Quantum Circuits",
+            "description": "Quantum Circuits",
+            "filename": "../../quantum-circuits-qc/quantum-circuits-qc.md"
+        },
+        {
+            "title": "Lab 4: Distributing Secret Encryption Keys",
+            "description": "Distributing Secret Encryption Keys",
+            "filename": "../../qkd/qkd.md"
+        },        
+        {
+            "title": "Solutions",
+            "description": "Solutions",
+            "filename": "../../solutions/solutions.md"
+        },{
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
