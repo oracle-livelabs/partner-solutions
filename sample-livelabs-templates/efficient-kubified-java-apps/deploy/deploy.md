@@ -28,7 +28,7 @@ You can use Quarkus Docker Extension (`quarkus-container-image-docker`) to creat
 
 1. Add registry configuration properties to `src/main/resources/application.properties`, in your cloned `joker` directory:  
 
-```
+```properties
 <copy>
 # Configuration file
 # key = value
@@ -42,7 +42,7 @@ quarkus.container-image.group=myrepo
 
 2. In order to push the container image, you have to authenticate to your container registry:
 
-```shell
+```bash
 docker login
 ```
 
@@ -91,7 +91,7 @@ The location of this file is `target/kubernetes/kubernetes.yml`.
 
 1. Customize Kubernetes configuration properties from `src/main/resources/application.properties`, in your cloned `joker` directory:
 
-```
+```properties
 <copy>
 # Configuration file
 # key = value
@@ -114,7 +114,7 @@ quarkus.kubernetes.ingress.expose=true
 
 We provided a simple Kubernetes YAML file with everything set up, to deploy the Joker Application.
 
-```
+```bash
 <copy>
 kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app.yaml
 </copy>

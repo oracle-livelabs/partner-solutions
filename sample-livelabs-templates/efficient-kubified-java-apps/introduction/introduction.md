@@ -11,8 +11,8 @@ Estimated Time: 2 hours 00 minutes
 
 In this workshop, you will:
 * Deploy to Kubernetes a Java application using Quarkus framework and its extensions.
-* Observe and adjust resource quotas to efficiently run the kubified application.
-* Observe memory and CPU consumed over time by a containerized Java application.
+* Observe resource quotas to efficiently run the kubified application.
+* Observe  and adjust memory and CPU consumed over time by a containerized Java application.
 * Create integration tests to validate Kubernetes/OpenShift resources prior to their actual deployment.
 
 ### Prerequisites
@@ -40,5 +40,5 @@ This lab assumes you have a set of tools. Please look into the table below and h
 * [Best Practices for Kube-Native Java Apps Workshop](https://redhat-scholars.github.io/kube-native-java-apps)
 
 ## Acknowledgements
-* **Authors** - Ana-Maria Mihalceanu, Developer Advocate, Red Hat| Elder Moraes, Developer Advocate, Red Hat
-* **Last Updated By/Date** - Ana-Maria Mihalceanu,  August 2022
+* **Authors** - Ana-Maria Mihalceanu, Sr. Developer Advocate, Oracle| Elder Moraes, Developer Advocate, Red Hat
+* **Last Updated By/Date** - Ana-Maria Mihalceanu,  September 2022

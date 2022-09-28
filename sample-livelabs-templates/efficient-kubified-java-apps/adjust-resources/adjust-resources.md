@@ -32,7 +32,7 @@ When deploying multiple applications, there will always be concerns that one Pod
 
 1. Run the following command to discover the resource quota established for your namespace :
 
-```
+```bash
 <copy>
    kubectl get resourcequota
 </copy>
@@ -41,7 +41,7 @@ When deploying multiple applications, there will always be concerns that one Pod
 2. At namespace level a LimitRange policy is employed to constrain resource allocations (to Pods or Containers).
 Run the following command to establish a namespace LimitRange
 
-```
+```bash
 <copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/limit-ranger.yaml
 </copy>
@@ -49,7 +49,7 @@ Run the following command to establish a namespace LimitRange
 
 3. You can find out the LimitRange established for a namespace by running:
 
-```
+```bash
 <copy> 
    kubectl get limitrange
 </copy>
@@ -65,7 +65,7 @@ The output would be similar to:
 
 4. Get the details of the LimitRange resource named `resource-limits` :
 
-```
+```bash
 <copy>
    kubectl describe limitrange resource-limits
 </copy>
@@ -84,7 +84,7 @@ Any deployment that does not have requests or limits set (like the one done in t
 
 5. Get the external IP associated via Ingress by running the following command :
   
-  ```
+  ```bash
    <copy>
    kubectl --namespace ingress-nginx get services -o wide ingress-nginx-controller
    </copy>
@@ -102,7 +102,7 @@ In this case we can see that the load balancer has been created and the external
  **Make a note of this external IP address, you'll be using it a lot!** 
  Or use the following command to export it:
   
-  ```
+  ```bash
    <copy>
       export EXTERNAL_IP=<External IP>
    </copy>
@@ -110,7 +110,7 @@ In this case we can see that the load balancer has been created and the external
 
 6. In order to get the memory and CPU values used by the JVM, run the following command (change the hostname to yours):
    
-``` 
+```bash
    <copy>
       curl https://$EXTERNAL_IP.nip.io/jokes/sysresources
    </copy>
@@ -123,11 +123,11 @@ If the memory limit is set to 750Mi, why does the JVM use only 181Mi? The JVM  h
 
 ## Task 2: Observe Default JVM Ergonomics
 
-If a memory value is not set, the JVM comes with a default memory one as starting point. This value is relative to the total amount of memory available to the container and it is 1/4 of its value.
+If a memory value is not set, the JVM comes with a default memory as starting point. This value is relative to the total amount of memory available to the container and it is 1/4 of its value.
 
 When you invoked `jokes/sysresources` endpoint, you could see the available memory was 181. The total memory available in the Pod is 750Mi, and 1/4 of this memory is 187 which is close value to we got in the application.
 
-Also, JVM uses a default Garbage Collector implementation depending on amount of CPU and memory available.
+Also, the JVM uses a default Garbage Collector implementation depending on amount of CPU and memory available.
 
 | Resources available                              | GC algorithm  | 
 |--------------------------------------------------|---------------|
@@ -144,12 +144,12 @@ To know exactly which values are used, you can start the JVM with the following 
 | -XshowSettings:system     | Shows system settings detected/set by JVM.                                                                         | 
 | -Xlog:gc=info             | Shows information about GC (i.e which algorithm is used)                                                           | 
 | -Xlog:os+container=trace  | Print whether or not container detection is actually working and what values the JVM is determining to be in place |
-{: title="Useful JVM flags"}
+{: title="Some JVM flags to observe JVM settings"}
 
 
 1. In the terminal window, run the following command to deploy `Joker` service as before but with a few extra flags
 
-```
+```bash
 <copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-show-prop.yaml
 </copy>
@@ -160,7 +160,7 @@ The above command deploy the `Joker` service with `-XshowSettings:system -Xlog:g
 
 2. Validate your deployment by running the command:
 
-    ```
+    ```bash
     <copy>
       kubectl get pods
     </copy>
@@ -174,7 +174,7 @@ The output should be similar to:
 
 3. Query the log of the Pod to see the defaults used:
 
-```
+```bash
 <copy>
    kubectl logs joker-5bfcbdf9d4-bsgkh
 </copy>
@@ -226,7 +226,7 @@ In the above output you can observe that the total amount of memory available in
 
 3. Clean up
 
-```
+```bash
 <copy>
    kubectl delete -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-show-prop.yaml
 </copy>
@@ -242,12 +242,12 @@ The JVM reads the number of processors available only during startup time so *CP
 
 *Memory limits* is the container memory, so you need to count not only the JVM heap memory but all the memory required by the container. Is highly encouraged you to set request and limit value to the same value for JVM based applications.
 
-During this task we will improve the resource limits used by the application by simulating traffic and adjusting the limits.
+During this task we will improve the resource requests and limits used by the application by simulating traffic and adjusting the limits.
 
 
 1. Deploy the application again:
 
-```
+```bash
 <copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app.yaml
 </copy>
@@ -255,7 +255,7 @@ During this task we will improve the resource limits used by the application by 
 
 2. Reinitialize the complete set of data:
 
-```
+```bash
    <copy>
       curl <hostname>/jokes/init
    </copy>
@@ -263,7 +263,7 @@ During this task we will improve the resource limits used by the application by 
 
 3. Find out the CPU and memory consumed by querying the metrics server installed in the provisiong section:
 
-```
+```bash
 <copy>
    kubectl get --raw /apis/metrics.k8s.io/v1beta1/namespaces/default/pods/joker-9658dfbb8-fcwjk
 </copy>
@@ -272,7 +272,7 @@ During this task we will improve the resource limits used by the application by 
 
 3. Simulate some load using [hey](https://github.com/rakyll/hey):
 
-```
+```bash
    <copy>
       hey -n 100 -c 20  https://$EXTERNAL_IP.nip.io/jokes
    </copy>
@@ -280,7 +280,7 @@ During this task we will improve the resource limits used by the application by 
 
 4. Execute the following command to observe the CPU and memory consumed:
 
-```
+```bash
 <copy>
    kubectl get --raw /apis/metrics.k8s.io/v1beta1/namespaces/default/pods/joker-9658dfbb8-fcwjk
 </copy>
@@ -288,7 +288,7 @@ During this task we will improve the resource limits used by the application by 
 
 5. Based on the output of above command you can adjust the limits in the Kubernetes resources to :
 
-```
+```bash
 <copy>
    kubectl apply -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-limits.yaml
 </copy>
@@ -310,7 +310,7 @@ resources:
 You can also generate the YAML file using Quarkus Kubernetes extension. 
 You can change the requests and limits in the `application.properties` file with the following properties:
 
-```
+```properties
 <copy>
 # Configuration file
 # key = value
@@ -322,7 +322,7 @@ quarkus.kubernetes.resources.requests.memory=300Mi
 
 6. Validate your deployment by running the command:
 
-```
+```bash
 <copy>
    kubectl get pods
 </copy>
@@ -336,7 +336,7 @@ The output should be similar to:
 
 7. Query the log of the Pod to see the defaults used:
 
-```
+```bash
    <copy>
       kubectl logs joker-7fdcc4d6bc-vb82k
    </copy>
@@ -391,7 +391,7 @@ The output should be similar to:
    ```
 8. Run the following request to get the parameters used by the JVM, changing the hostname with yours:
 
-```
+```bash
    <copy>
       curl <hostname>/jokes/sysresources
    </copy>
@@ -404,7 +404,7 @@ For this reason, a good rule of thumb is allocating a maximum of 75% of containe
 
 9. Undeploy the application:
 
-```
+```bash
 <copy>
       kubectl delete -f https://raw.githubusercontent.com/ammbra/joker/master/kubefiles/deploy-joker-app-limits.yaml
 </copy>

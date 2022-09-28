@@ -2,7 +2,7 @@
 
 ## Introduction
 
-To demonstrate the concepts in this tutorial, we will use a simple Java application developed in Quarkus that exposes its own REST API and persists data in a H2 database, as well as doing a request to an external service to update content of the database.
+To demonstrate the concepts in this tutorial, we will use a simple Java application developed with Quarkus that exposes its own REST API and persists data in a H2 database, as well as doing a request to an external service to update content of the database.
 
 Estimated Time: 15 minutes
 
@@ -16,7 +16,7 @@ In this section, you will:
 ### Quarkus Extensions Used (Optional)
 If you would like to recreate a similar setup, you can do the following:
 
-* In a browser window, navigate to https://code.quarkus.io/?j=17
+* In a browser window, navigate to [https://code.quarkus.io/?j=17](https://code.quarkus.io/?j=17)
 * Enrich the project to use the following Quarkus extensions:
 
     * `quarkus-resteasy-reactive`, `quarkus-resteasy-reactive-jackson` to create reactive JSON REST Services.
@@ -43,13 +43,13 @@ After the application is up and running, you may call the `/jokes/init` endpoint
 1. The code of the `Joker` application is available on [GitHub](https://github.com/ammbra/joker.git).
 2. Clone the code by running the following command in a terminal window:
 
-```
+```bash
 <copy>git clone https://github.com/ammbra/joker.git</copy>
 ```
 
 3. Go to project root:
 
-```
+```bash
 <copy>
    cd joker
 </copy>
@@ -71,7 +71,7 @@ Quarkus provides a Dev Mode which helps you during application development and i
 
 2. Run the following command to start your Quarkus application in Dev Mode:
 
-```
+```bash
 <copy>mvn quarkus:dev</copy>
 ```
 

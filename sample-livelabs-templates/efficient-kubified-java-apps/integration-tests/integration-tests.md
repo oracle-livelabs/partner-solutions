@@ -22,7 +22,7 @@ This section assumes you have:
 To make testing against a mock Kubernetes API extremely simple, Quarkus provides the `WithKubernetesTestServer` annotation which automatically launches a mock of the Kubernetes API server and sets the proper environment variables needed. 
 To take advantage of these features, the `quarkus-test-kubernetes-client` dependency needs to be added in *pom.xml*:
 
-```
+```xml
     <copy>
     <dependency>
         <groupId>io.quarkus</groupId>
@@ -62,7 +62,7 @@ However, you can avoid such a scenario by creating an integration test for the `
 
 1. Create a Java class named `PodDisruptionBudgetTest` under `src/test/java/org/acme/example` :
 
-```
+```java
 <copy>
 public class PodDisruptionBudgetTest {
             
@@ -72,7 +72,7 @@ public class PodDisruptionBudgetTest {
 
 2. As this is a Quarkus test, you should annotate it with `@QuarkusTest`. To signal the mocked Kubernetes context, annotate the class with `@WithKubernetesTestServer`.
 
-```
+```java
 <copy>
 import io.quarkus.test.junit.DisabledOnIntegrationTest;
 import io.quarkus.test.junit.QuarkusTest;
@@ -92,7 +92,7 @@ Use `@DisabledOnIntegrationTest` annotation to exclude this test when running th
 
 3. Add the mock Kubernetes server context via a field:
 
-```
+```java
 <copy>
 import io.fabric8.kubernetes.client.server.mock.KubernetesServer;
 
@@ -115,7 +115,7 @@ public class PodDisruptionBudgetTest {
 ```
 4. Construct the test method by adding the path to the YAML file as variable:
 
-```
+```java
 <copy>
 import io.fabric8.kubernetes.client.server.mock.KubernetesServer;
 
@@ -146,7 +146,7 @@ public class PodDisruptionBudgetTest {
 
 5. Create the `PodDisruptionBudget` Java resource that gets populated based on the content of the YAML.
 
-```
+```java
 <copy>
 package org.acme.example;
 
@@ -185,7 +185,7 @@ public class PodDisruptionBudgetTest {
 
 6. As the YAML content is invalid, you should expect an exception to be thrown:
 
-```
+```java
 <copy>
 package org.acme.example;
 
@@ -229,7 +229,7 @@ public class PodDisruptionBudgetTest {
 
 8. You can also test YAML as a text block:
 
-```
+```java
 <copy>
 package org.acme.example;
 

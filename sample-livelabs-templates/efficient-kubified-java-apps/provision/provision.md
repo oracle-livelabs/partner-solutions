@@ -141,7 +141,7 @@ Firstly we need to create a namespace for the ingress controller.
 
   1. Run the following command :
   
-    ```
+    ```yaml
    <copy>
     kubectl create namespace ingress-nginx
    </copy>
@@ -151,7 +151,7 @@ Firstly we need to create a namespace for the ingress controller.
   2. Run the following command to install **ingress-nginx** using Helm 3:
   
 
-  ```
+  ```bash
   <copy>
     helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --version 4.1.4 --set rbac.create=true  --set controller.service.annotations."service\.beta\.kubernetes\.io/oci-load-balancer-protocol"=TCP --set controller.service.annotations."service\.beta\.kubernetes\.io/oci-load-balancer-shape"=flexible --set controller.service.annotations."service\.beta\.kubernetes\.io/oci-load-balancer-shape-flex-min"=10  --set controller.service.annotations."service\.beta\.kubernetes\.io/oci-load-balancer-shape-flex-max"=20
   </copy>
@@ -175,7 +175,7 @@ It may take a few minutes for the LoadBalancer IP to be available.
 
 You can watch the status by running the following command:
 
-```
+```bash
   <copy>
     kubectl --namespace ingress-nginx get services -o wide -w ingress-nginx-nginx-ingress-controller
   </copy>
@@ -186,7 +186,7 @@ You can watch the status by running the following command:
 
 Metrics Server can be used in order to observ resources consumed by applications. To install the latest Metrics Server release in high availability mode from the high-availability.yaml manifest, run the following command: 
 
-```
+```bash
 <copy>
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 </copy>
