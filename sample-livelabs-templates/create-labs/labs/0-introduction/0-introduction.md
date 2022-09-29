@@ -1,77 +1,38 @@
 # Introduction to Labs and Workshops
 
-The labs in this workshop walk you through all the steps to **develop workshops** for LiveLabs.
+Welcome to LiveLabs and creating workshops to give practical hands on experiences for Oracle Products and technologies. This is the place to demonstrate use cases and allow users to explore and gain valuable knowledge with Oracle Cloud, Applications and Database. 
+
+This workshop is to help walk you through the process of creating your own workshop. It will walk you through all of the steps, processes even how to do quality checks to build a successful workshop.
 
 > **Note:** If you have any questions or concerns through out the process of workshop development life-cycle, contact Oracle LiveLabs team through email - [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com).
 
 ### **What are Labs and Workshops?**
 
-An individual Markdown (.md) file is called a lab. A collection of labs is called a workshop. A LiveLabs workshop must contain more than one lab. You cannot create a single lab LiveLabs (LL) workshop. In most cases, this is not a problem since most of the LL workshops contain at least one common lab titled **Get Started** that guides the user on the different types of Cloud accounts.
+Labs are a set of step by step instructions to complete a task as part of the hands-on experience. A workshop is the collection of the labs provided in a specific order to complete the overall set of instructions. A workshop should have an introduction and then at least two labs to work through. The workshop has the big picture of the what the user is going to accomplish by completing all or some of the labs listed in the workshop.
 
-### **Understanding the Roles and Responsibilities**
+An individual Markdown (.md) file is the document and text that makes up a lab. For each lab there is a markdown and the workshop has files that will call each lab and put them in order. In most cases, this is not a problem since most of the LiveLabs workshops contain at least one common lab titled **Get Started** that guides the user on the different types of Cloud accounts.
 
-**Workshop author or the workshop team** are the workshop developer(s) who submit the new workshop request to the LiveLabs team and edit and update their workshop. They are also responsible for answering questions related to the workshop and performing regular quarterly QA.
+Markdown files and images that are part of the lab instructions are kept in **oracle-livelabs/partner-solutions** a GitHub repository, which we will give details on later.
 
-**LiveLabs Team or the workshop council group** determine whether a workshop fits messaging to protect the integrity of catalog content and are workshop approvers (or rejectors). They are also responsible for helping the workshop author or the workshop team to navigate the workshop development life-cycle and answer any questions related to workshop development.
+### **What's next?**
 
-### **Oracle LiveLabs GitHub Project and Repositories**
+Before you get started with the development of labs and workshop, check out existing workshops on LiveLabs. There are some great examples out there and can give you new ideas.
 
-We organize workshops into 26 GitHub repositories (as of July 2022) according to their product or feature groups, in the Oracle LiveLabs own GitHub project called [oracle-livelabs](https://github.com/oracle-livelabs). Those repositories are referred to as **Production**, since they are where customers view the completed LiveLabs workshops from.
+* [Oracle LiveLabs](https://developer.oracle.com/livelabs/)
 
-> **Note:** You will be working in one of the **oracle-livelabs** Github project repositories called **oracle-livelabs/partner-solutions**. You can access the repository using this URL - [https://github.com/oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions). We recommend to bookmark this URL, as you will use it often.
+Also use the sample workshop that is found in [https://github.com/oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) under the  sample-livelabs-templates directory. (Steps will be provided later on setting up your GitHub repos).
 
-## **LiveLabs Workshop Workflow**
+Another important step is to take look at the QA document since it provides how to do images, format markdown and gets you started in the right direction for the workshop standards.
 
-Before you start, please check LiveLabs ([developer.oracle.com/livelabs](https://developer.oracle.com/livelabs)) to see if there is already a workshop similar to the content you want to create. If you see content that resembles yours and can be developed further, please contact that LiveLabs team to see if you can cooperate with the workshop team on the enhancement of the workshop. If not, please proceed.
-
-For a workshop to go from an idea to a LiveLabs workshop in production, it has to go through the following phases or statuses. You can refer to this section to see your current and next steps.
-
-1.  The workshop author or the workshop team submits the new workshop request (see details in Lab 1 -> Task 1) by emailing to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com). The new workshop request will be considered to be in *Submitted* status. Oracle LiveLabs workshop's *council* team will review the workshop within 2-3 business days. Council will either approve the workshop and move it to *Approved*, or ask the workshop team for more information and move it to *More Info Needed*.
-
-   ![Submitted](./images/submitted.png " ")
-
-2. Council will mail the workshop team for *more information* if needed. The workshop team will respond to the council via email [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com) with the updates to get the workshop approved.
-
-  ![More Info Needed](./images/more-info-needed.png " ")
-
-3. Council *approves* the workshop and shares you the ID of the workshop. Now, the workshop team can start developing the workshop. Refer to the notification email to see your action items.
-
-  ![Approved](./images/approved.png " ")
-
-4. Council will move the workshop to *In Development* once you start workshop development. The workshop team can refer to Lab 1 to Lab 4 to see workshop development-related instructions.
-
-  ![In Development](./images/in-development.png " ")
-
-5. After development, the workshop team will update the council when they start perform the self QA of the workshop. Then the council will move the workshop status to *Self QA*. Follow Lab 4 -> Task 8 to self-QA the workshop.
-
-  ![Self QA](./images/self-qa.png " ")
-
-6. Once the Self QA of the workshop is completed, the workshop team will notify council and mail the completed Self QA form to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com). The council will update the workshop status to *Self QA Complete* and will verify the QA within 2 business days.
-
-  ![Self QA Complete](./images/self-qa-complete.png " ")
-
-7. The council will either send workshop team issues to fix if any, or move the workshop to *Completed* status, meaning the workshop is ready for publishing. LiveLabs team will submit a publishing request, and approve it. After the publishing request is approved, the workshop will be live in LiveLabs automatically within a business day.
-
-  ![Completed](./images/completed.png " ")
-
-The following workflow shows the workshop development lifecycle from submitting a workshop to publishing on Oracle LiveLabs.
-
-![LiveLabs workshop development lifecycle](./images/workshop-workflow.png " ")
-
-The following diagram shows the general workflow process that your need to follow to set up your environment to develop labs and workshops. Most of the tasks are performed only once.
-
-![LiveLabs development workflow infographic.](./images/git-hub-workflow-flow-chart.png " ")
+* [QA Document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx)
 
 ### Workshop Objectives
 
-* Set up the GitHub environment.
-* Install and use GitHub Desktop Client.
-* Fork repositories you need in the Oracle LiveLabs GitHub project (copy repositories' content to GitHub).
-* Clone your forked repositories (copy repositories' content to the local machine).
-* Understand the lab folders' structure.
-* Install and use Atom Editor and the LiveLabs Markdown templates to develop content.
-* Review a few Markdown features.
-* Perform GitHub operations to commit your developed content to the main (production) repository in the Oracle LiveLabs GitHub project.
+* Submit your workshop details
+* Prepare your environment to develop the workshop.
+* Review a few Markdown features and other tips.
+* Perform QA on your workshop.
+* Get your workshop ready to publish.
 
 This concludes this lab. You may now **proceed to the next lab**.
 
@@ -83,4 +44,4 @@ This concludes this lab. You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Anoosha Pilli, Product Manager, Database Product Management
-* **Last Updated By/Date:** Anoosha Pilli, July 2022
+* **Last Updated By/Date:** Anoosha Pilli, September 2022
