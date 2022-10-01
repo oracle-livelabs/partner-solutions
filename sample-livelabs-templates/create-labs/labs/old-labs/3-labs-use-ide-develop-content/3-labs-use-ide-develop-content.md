@@ -3,7 +3,7 @@
 ## Introduction
 
 Oracle LiveLabs has a set folder structure that you will need to follow for developing your workshops. The folder structure is only part of the development since the workshop content is contained in the Markdown files and images that you write and edit as your workshop development. You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output.
-If you are new to Git and Github, we recommned using Github Desktop to maintain your repository.
+If you are new to Git and Github, we recommend using Github Desktop to maintain your repository.
 **Of course, you can use any IDE or Git tool of your choice**
 
 ### Objectives
@@ -14,44 +14,75 @@ If you are new to Git and Github, we recommned using Github Desktop to maintain 
 * Learn about the tools that are available to develop and host your content.
 * Learn how to merge content.
 
-## Task 1: Install Visual Studio Code as an IDE (optional)
+## Task 1: Fork Repositories of the oracle-livelabs Project on Your GitHub Account
 
-You can use your preferred editor.
-If you are new to Markdown, we recommend downloading Visual Studio Code to author and edit your Markdown (.md) content. Below, you can find the instructions on how to download and install Visual Studio Code..
+After your workshop is approved by the council group, you will be creating your workshop and labs in the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository of the **oracle-livelabs** project. You must fork the repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked (stage) repository, and you can edit its contents without affecting the parent (production) repository.
 
-### Install Visual Studio Code**
+For example, if a user named **anooshapilli** forks the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository in the **oracle-livelabs** project, a duplicate repository [anooshapilli/partner-solutions](https://github.com/anooshapilli/partner-solutions) is created.
 
-To install Visual Studio Code:
+To create a workshop in the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository, you need to fork the **partner-solutions** repository. The following steps walk you through forking the **partner-solutions** repository, in the oracle-livelabs GitHub project.
 
-1. Visit the [download](https://code.visualstudio.com/download) site and select the zip file for your operating system. In this case, we chose Mac OS.
+1. Log in to the [GitHub Web UI](http://github.com), using your GitHub account.
 
-  ![Downloading Visual Studio Code.](./images/vscode-os-options.png " ")
+2. Navigate to the [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) repository.
 
-2. Double-click the zip file to expand it. The VS Code application will then show in your downloads folder in Finder.
+3. Click **Fork**.
 
-  ![Install Visual Studio Code.](./images/vscode-zip-expanded.png " ")
+	In this example, we are forking the goldengate repository but the following process is the same for forking your **partner-solutions** repository.
 
-3. Drag it to the Applications folder and double-click it to launch the text editor.
+  ![Fork](./images/fork.png " ")
 
-  ![Launch Visual Studio Code.](./images/vscode-drag.png " ")
+4. Under **Owner**, expand the dropdown list and select your username. You can accept the **Repository name** as it is. Click **Create fork**.
 
-## Task 2: Install Live Server Extension for Visual Studio Code (optional) 
+  ![Create fork](./images/create-fork.png " ")
 
-If you are using Visual Studio Code, you can also instal the *Live Server extension* to view the changes you make to the markdown file dynamically. The extension will start a local web server that enables you not only to preview the transformed markdown but also to experience the look & feel of LiveLabs.
+5. Then, your user has forked the **partner-solutions** repository.
 
-### Install Visual Studio Code's Live Server Extension**
+	As you can see, arabellayao user has forked the goldengate repository.
 
-1. In the VS Code, navigate to the **Extensions** on the left-side navigation bar.
+  ![Local repository](./images/local-repo.png " ")
 
-  ![Add extensions in visual studio code.](./images/extensions-tab.png " ")
+In the next task, you will clone this forked repository.
 
-2. Type **Live Server** into the extensions search bar and select the first entry, "Live Server 5.6.1".
+## Task 2: Clone the Forked Repository
 
-  ![Search for live server.](./images/ls-search.png " ")
+A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as **Atom** editor, or **Visual Studio Code**, and use the **GitHub Desktop** client to keep track of your changes without having to be online.
 
-3. Click **Install**.
+To clone the forked **partner-solutions** repository:
 
-  ![Install live server.](./images/ls-install.png " ")
+1. Open your **GitHub Desktop** application and log in using your GitHub account.
+
+2. Click **File > Clone repository** to display the **Clone a Repository** dialog box.
+
+    ![Clone repository.](./images/git-hub-desktop-clone-repository.png " ")
+
+3. Select your repository such as **your account/repo** from **Your Repositories**.  Under **Local Path**, select the local path on your machine where the repository is going to be cloned (copied). This is where the repository files get copied to your local file system. Click **Clone**.
+
+	In this example, arabellayao/goldengate is selected.
+
+    ![Available repositories dialog box.](./images/clone.png " ")
+
+4. The cloning process may take several minutes, depending on how big the repository is.
+
+  ![Cloning](./images/cloning.png " ")
+
+5. When asked how you plan to use the fork, select **To contribute to the parent project**. Click **Continue**.
+
+  ![Contribute to parent project.](./images/contribute-to-parent.png " ")
+
+6. The repository files will appear in the local path you just specified. You can now start working on your labs and workshops!
+
+	In this case, it is goldengate.
+
+  ![Successfully cloned repository.](./images/git-hub-my-cloned-repository.png " ")
+
+	Once you make a clone, you can create your project folder, edit the files in your preferred editor, such as **Atom** or **Visual Studio Code**, and use **GitHub Desktop** to keep track of your changes without having to be online.
+
+	> **Note:** The repository you cloned (local version) is connected to the your fork (remote version) so that you can push your local changes to the remote to keep them synced when you are online.
+
+7. You can also use Github Desktop to synchronize the changes that you have made in your local file system to the forked content on your GitHub repo. More details on using Github Desktop in Lab 4 of this workshop.
+
+  ![Synchronize with GitHub.](./images/github-desktop-sync.png " ")
 
 ## Task 3: Merge Content from Git Before You Start Editing Your Content
 
@@ -187,56 +218,10 @@ To create your lab and workshop content:
 3. The local version of your workshop will then be launched in your web browser.
 
 > **Note:** If your workshop or labs do not show up using Live Server and you see a blank page, check the manifest.json file.
+
 1. Expand the navigation menu on the left, if you can navigate to other labs, then the problem is with a particular lab. Find that lab's location in the manifest.json file and fix the path to that lab's file.
+
 2. If no labs are showing up, then it is possibly the issue with the workshop. In the manifest.json file, make sure you remove the *include* and *variables* if they do not apply to your workshop.
-
-## Task 7: (Optional) Helpful resources and extensions for Visual Studio Code
-
-1. [Showdown Editor](http://demo.showdownjs.com/) is a Javascript Markdown to HTML converter that LiveLabs uses in the background to convert Markdown files to HTML. This documentation is a helpful resource while developing content in markdown files. This document provides a quick description of the markdown syntax supported on the left side and the output in HTML format on the right side. Showdown Editor shows the syntax of writing, paragraphs, headings, block and italics, code formatting, creating lists, tables, adding links, images, escaping entities, etc.
-
-  ![Showdown Editor](./images/showdown-editor.png " ")
-
-2. Set up tab spacing in Markdown files in Visual Studio Code - To have a fixed indentation and consistency in all the markdown files among the images, code snippets, and between the numbers in each task with the line starting, you need to set spaces to tabs (size 4).
-
-  To set spaces to tabs size 4, click on spaces, choose indent with tabs, and select 4 as configured size, which sets the tab spacing to 4.
-
-    ![click on spaces](./images/spacing1.png " ")
-
-    ![choose indent with tabs](./images/spacing2.png " ")
-
-    ![select 4 as configured size](./images/spacing3.png " ")
-
-    ![tab spacing is set to 4](./images/spacing4.png " ")
-
-3. Install Markdownlink Extension in Visual Studio Code - This extension is helpful to check markdown files linting and styling in VS Code. This extension has a library of rules to encourage standards and consistency for markdown files. 
-
-  To install this extension, search for markdownlint in the VS Code marketplace, select the first one and click on Install to install it.
-
-    ![Markdownlink Extension](./images/markdownlink-extension.png " ")
-
-4. Install Code Spell Checker Extension in Visual Studio Code - This extension is helpful to check spellings in the files.
-
-  Search for the code spell checker in the VS Code marketplace, select the first one that doesn’t specify any language in the title, which is the English spell checker, and install it.
-
-  ![Code Spell Checker Extension](./images/code-spell-checker-extension.png " ")
-
-5. Install Delete Trailing Spaces Extension in Visual Studio Code - Trailing space is all whitespace(s) located at the end of a line, without any other characters following it. This extension is helpful to resolve code blocks, copy and paste issues, and sometimes merge conflicts.
-
-  To highlight trailing spaces, in the VS Code marketplace, search for trailing spaces and select the first trailing spaces, not the one with a fork, and click on Install. Once the extension is installed, you can see that whitespace(s) are highlighted in red to delete them.
-
-  ![Delete Trailing Spaces Extension](./images/delete-trailing-spaces-extension.png " ")
-
-6. Install Path Intellisense Extension in Visual Studio Code - since repositories in the Oracle LiveLabs GitHub project have many files, you may want to access files in different folders of your workshop or sometimes in a different directory. To know the file, you are pointing to in the manifest.json file, you can use the path intellisense extension.
-
-  To install this extension, search for path intellisense in VS Code marketplace, select the first extension and install it.
-
-  ![Path Intellisense Extension](./images/path-intellisense-extension.png " ")
-
-  Use Path Intellisense Extension in manifest.json file - After typing the backslash, hit enter to view or choose the folder(s) or file(s)
-
-  ![Use Path Intellisense Extension](./images/use-path-intellisense-extension1.png " ")
-
-  ![Use Path Intellisense Extension](./images/use-path-intellisense-extension2.png " ")
 
 This concludes this lab. You may now **proceed to the next lab**.
 

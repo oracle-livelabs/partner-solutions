@@ -113,7 +113,7 @@ If you have not updated your local GitHub repo with GitHub repo in oracle-livela
   Navigate to the conflicting files and resolve the conflicts by choosing the incoming changes or current changes.
   Once conflicts are resolved, commit the changes in your GitHub desktop and push them.
 
-## I have messed up GitHub repo and want to delete it
+## I have messed up my GitHub repo and want to delete it
 
 >**Note:** Do this only if necessary.
 
