@@ -1,14 +1,14 @@
 # Introduction
 
-## About this Workshop
+## About this Tutorial
 
-This workshop demonstrates the use of MicroProfile technologies for developing cloud-native applications with best practices. It also covers how to package and then deploy the cloud-natives applications to Kubernetes.
+This tutorial demonstrates the use of MicroProfile technologies for developing cloud-native applications with best practices. It also covers how to package and then deploy the cloud-natives applications to Kubernetes.
 
-Estimated Workshop Time: 2 hours 
+Estimated tutorial time: 2 hours 
 
 ### Objectives
 
-In this workshop, you will learn how to:
+In this tutorial, you will learn how to:
 * Use the open source standard MicroProfile technologies to Develop cloud-native applications
 * Build and then deploy the application to Kubernetes
 
@@ -21,9 +21,9 @@ This lab assumes you have:
 * An editor with Java support (e.g. Eclipse, VS Code, IntelliJ)
 * Podman or Docker
 
-### The workshop 
+### The Tutorial 
 
-* [Workshop location](https://github.com/Emily-Jiang/tutorial-microprofile)
+* [tutorial location](https://github.com/Emily-Jiang/tutorial-microprofile)
 
 ## Learn More
 
