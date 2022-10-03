@@ -8,6 +8,11 @@
       "filename": "../../0-introduction/0-introduction.md"
     },
     {
+      "title": "Need to understand the status workflow in LiveLabs?",
+      "description": "Details the status in LiveLabs and what comes next, who is responsible.",
+      "filename": "../../0-introduction/0-livelabs-workflow.md"
+    },
+    {
       "title": "LiveLabs FAQ",
       "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
       "filename": "../../livelabs-faq/livelabs-faq.md"
@@ -35,7 +40,8 @@
     {
       "title": "Lab 5: Use GitHub Desktop to Commit to the GitHub Repository",
       "description": "This lab shows you how to map a node's private IP address to a public IP address",
-      "filename": "./../../6-labs-github-merge-commit-pullrequest/5-labs-github-merge-commit-pullrequest.md"
+      "filename": "./../../5-labs-github-merge-commit-pullrequest/5-labs-github-merge-commit-pullrequest.md"
+
     },
     {
       "title": "(Optional) Lab 6: Develop LiveLabs Sprints",
