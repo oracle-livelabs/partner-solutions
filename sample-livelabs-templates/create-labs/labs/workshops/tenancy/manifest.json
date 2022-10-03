@@ -8,6 +8,11 @@
       "filename": "../../0-introduction/0-introduction.md"
     },
     {
+      "title": "Need to understand the status workflow in LiveLabs?",
+      "description": "Details the status in LiveLabs and what comes next, who is responsible.",
+      "filename": "../../0-introduction/0-livelabs-workflow.md"
+    },
+    {
       "title": "LiveLabs FAQ",
       "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
       "filename": "../../livelabs-faq/livelabs-faq.md"
