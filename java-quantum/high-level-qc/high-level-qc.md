@@ -30,7 +30,6 @@ In this lab, you will:
 
    You’ll find the Java code examples in the folder qkd-java/jbang.
 
-
 ## Task 2: Run the code
 
 1. Examine the Java code in the file `RandomNumber.java`.
