@@ -180,7 +180,7 @@ public class LowLevelRandoms {
     </copy>
     ```
 
-3. The output is always 0 because
+3. The output is always 0 because 
 
     * The qubit starts off as a 0 by default.
     * The Hadamard gate is its own inverse. Applying Hadamard the second time in a row undoes the first application of the Hadamard gate.
@@ -320,6 +320,5 @@ public class LowLevelRandoms {
     ```
 
 ## Acknowledgements
-
-* **Authors** - Johan Vos, Barry Burd
-* **Last Updated By/Date** - Barry Burd, September 2022
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022
