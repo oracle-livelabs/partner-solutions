@@ -4,7 +4,7 @@
 
 This page has solutions to the workshop exercises.
 
-## High-Level Quantum Computing in Java - Task 3
+## Lab 1 Task 3: High-Level Quantum Computing in Java
 
 ```
 <copy>
@@ -31,7 +31,7 @@ public class RandomNumbers {
 </copy>
 ```
 
-## Low-Level Quantum Computing in Java - Task 3
+## Lab 2 Task 3: Low-Level Quantum Computing in Java
 
 ```
 <copy>
@@ -86,7 +86,7 @@ public class LowLevelRandoms {
 </copy>
 ```
 
-## Creating Quantum Circuits - Task 2
+## Lab 3 Task 2: Creating Quantum Circuits
 
 1. The output is always 0 because 
 
@@ -186,7 +186,7 @@ public class LowLevelRandoms {
     * The Hadamard gate is its own inverse. Applying Hadamard the second time in a row undoes the first application of the Hadamard gate.
 
     ```
-    </copy>
+    <copy>
     //usr/bin/env jbang "$0" "$@" ; exit $?
     //DEPS org.redfx:strange:0.1.1
     //DEPS org.redfx:strangefx:0.1.4
@@ -221,7 +221,7 @@ public class LowLevelRandoms {
         }
     }
     </copy>
-```
+    ```
 
 4. The output is always 1 because 
 
@@ -318,3 +318,7 @@ public class LowLevelRandoms {
     }
     </copy>
     ```
+
+## Acknowledgements
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022

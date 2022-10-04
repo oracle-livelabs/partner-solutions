@@ -9,7 +9,7 @@ Quantum computing has several key concepts including superposition, entanglement
 Quantum computing impacts security in at least two ways. 
 
 * **Quantum Key Distribution (QKD)** - Distributing shared private keys in a secure manner.
-* **Shor's Algorithm** - Breaking encryption schemes such as RSA and Diffie-Hellman by efficiently facotring large public keys.
+* **Shor's Algorithm** - Breaking encryption schemes such as RSA and Diffie-Hellman by efficiently factoring large public keys.
 
 This workshop uses superposition to demonstrate Quantum Key Distribution.
 
@@ -23,7 +23,7 @@ In this workshop, you will:
 * Perform experiments with quantum gates and qubits.
 * Run code to distribute secret encryption keys.
 
-### Prerequisites`
+### Prerequisites
 
 This lab assumes you have:
 * Basic Java programming skills
@@ -33,6 +33,5 @@ This lab assumes you have:
 * [Quantum Computing in Action](https://www.manning.com/books/quantum-computing-in-action)
 
 ## Acknowledgements
-* **Authors** - Johan Vos, Barry Burd
-* `**Contributors** -  <Name, Group> -- optional`
-* **Last Updated By/Date** - September 24, 2022
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022

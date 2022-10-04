@@ -14,7 +14,7 @@ This step’s code puts a qubit into a half-0-half-1 superposition state, and th
 
 Estimated Time: 20 minutes
 
-### Objective
+### Objectives
 
 In this lab, you will:
 * Run high-level quantum computing code in Java to generate random bits.
@@ -22,11 +22,11 @@ In this lab, you will:
 
 ## Task 1: Install the required software
 
-1. Visit https://www.jbang.dev/documentation/guide/latest/installation.html and follow the instructions for installing JBang.
+1. Visit [https://www.jbang.dev/documentation/guide/latest/installation.html](https://www.jbang.dev/documentation/guide/latest/installation.html) and follow the instructions for installing JBang.
 
 	JBang provides an easy way to run Java code without having to set up dependencies.
 
-2. Visit https://github.com/johanvos/qkd-java to get this lab’s code examples.
+2. Visit [https://github.com/johanvos/qkd-java](https://github.com/johanvos/qkd-java) to get this lab’s code examples.
 
    You’ll find the Java code examples in the folder qkd-java/jbang.
 
@@ -35,22 +35,22 @@ In this lab, you will:
 
 1. Examine the Java code in the file `RandomNumber.java`.
 
-   ```
-   <copy>
-   //usr/bin/env jbang "$0" "$@" ; exit $?
-   //DEPS org.redfx:strange:0.1.1
- 
-   import org.redfx.strange.algorithm.Classic;
- 
-   public class RandomNumber {
- 
-        public static void main (String[] args) {
-            int randomBit = Classic.randomBit();
-            System.out.println
-                ("Generate one random bit, which can be 0 or 1. Result = "+randomBit);
-        }
-    }
-    </copy>
+	```
+	<copy>
+	//usr/bin/env jbang "$0" "$@" ; exit $?
+	//DEPS org.redfx:strange:0.1.1
+	
+	import org.redfx.strange.algorithm.Classic;
+	
+	public class RandomNumber {
+	
+		public static void main (String[] args) {
+			int randomBit = Classic.randomBit();
+			System.out.println
+				("Generate one random bit, which can be 0 or 1. Result = "+randomBit);
+		}
+	}
+	</copy>
     ```
 
 2. Run the code with the command `jbang RandomNumber.java`.
@@ -65,6 +65,10 @@ In this lab, you will:
 
 ## Learn More
 
-* `???????????? `[Strange API documentation](https://redfx-quantum.github.io/strange/apidocs/org/redfx/strange/Program.html)
+* [Strange API documentation](https://redfx-quantum.github.io/strange/apidocs/)
+
+## Acknowledgements
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022
 
 
