@@ -32,4 +32,9 @@ Here are the most important links & things you should do to get started with wor
         - Why is this workshop needed?
         - What products/technologies are used in the workshop?
         - Is there a primary Oracle product/technology being showcased? If so, what is it?
-For detailed steps for workshop development, check the [LiveLabs documentation](https://bit.ly/createlabs)
+3.  For detailed steps for workshop development, check the [LiveLabs documentation](https://bit.ly/createlabs)
+
+## Acknowledgements
+
+* **Author** - Anoosha Pilli, Product Manager, Database Product Management
+* **Last Updated By/Date:** Anoosha Pilli, October 2022
