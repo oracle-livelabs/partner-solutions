@@ -4,10 +4,8 @@
 
 After you have completed self QA and your workshop has been reviewed, it is time to publish your workshop to LiveLabs Production. There are two areas that need to be completed to do this. First is in GitHub, and this is done by a Pull Request to merge your files with the oracle-livelabs/partner-solutions main - production repository. Second is in Oracle LiveLabs system. We, Oracle LiveLabs team will perform all the necessary steps to **Publish** the workshop in LiveLabs production to showcase your workshop.
 
-
 ### Objectives
 
-* Commit your changes
 * Create a Pull Request to upload your content to the main branch
 * Submit publish request
 
@@ -20,13 +18,13 @@ This lab assumes that you have completed **Lab 5: QA checks and steps** in the *
 
 ## Task 1: Create a Pull Request to Upload Your Content to the Main Repository
 
-After you complete QA and make any other needed updates to your files, you are ready to merge your files and folders to the Oracle LiveLabs Partner Solutions production repositories.
+After you complete Self QA and make any other needed updates to your files, you are ready to merge your files and folders to the Oracle LiveLabs Partner Solutions production repositories.
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle-livelabs/partner-solutions** to approve and host your content on the production **(upstream/main)** repository.
 
 > **Note:**
 * *For the community members to contribute content and create a pull request to  oracle-livelabs/partner-solutions repo, you need to fill out the Oracle Contributor Agreement (OCA) document which will be sent to you after your first pull request is created (if you haven’t done that yet). If you are member of the Oracle Organization you don't have to do that.*
-* *Before executing a PR, make sure your personal GitHub repo on the web is not behind (See Lab 3 **Maintain GitHub environment** and **GitHub FAQ** on the left menu for the steps to resolve merge conflicts). Failure to do so will result in conflicts.*
+* *Before executing a PR, make sure your personal GitHub repo on the web is not behind (See **Lab 3 Task 2** to sync your repo to ensure you have the latest content from production and **GitHub FAQ** on the left menu for the steps to resolve merge conflicts). Failure to do so will result in conflicts.*
 * *You cannot issue a pull request without syncing first. PRs will not be approved without your Workshop ID.*
 * The council can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle LiveLabs.
 
@@ -58,14 +56,13 @@ When the pull request is approved and merged into the **upstream/main** reposito
 
 Your committed content is now visible to the public on the upstream/main or production repository: [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions).
 
-
 > **Note:** If there are any concerns or issues while syncing your GitHub environment, check out the steps to resolve the issues in the GitHub FAQ lab on the left menu.
 
 ## Task 2: Request Publishing
 
 1.	The LiveLabs Council team will review the workshop content and verify the QA within next 2-3 business days. The council will reach out to you via email if there are more changes needed and update the status to either **In Development** or **Self QA**. Otherwise, the council will move the workshop into **Completed** status.
 
-2. After moving the workshop to completed status, the LiveLabs council team will submit a new workshop publish request in the LiveLabs system with all the required details you confirmed in the Task 8.
+2. After moving the workshop to completed status, the LiveLabs council team will submit a new workshop publish request in the LiveLabs system with all the required details you confirmed in the Lab 5 Task 3.
 
 3. It takes 1-2 business days for the new workshop publish request to be approved and for the workshop to be accessible in production for the public. The Oracle LiveLabs council team will notify you with the workshop URL.
 

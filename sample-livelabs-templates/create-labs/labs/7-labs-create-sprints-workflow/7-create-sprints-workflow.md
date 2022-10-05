@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create your Sprint in **partner-solutions** repository in Oracle LiveLabs GitHub Project, provides an overview of Sprints Folder Structure, and uses the folder components to develop sprints content. Then shows you how to commit your changes to your clone, create a pull request and submit a new sprint publish request.
 
-> **Note:** For any questions related to LiveLabs Sprints or about the process of the Sprints development lifecycle, send details in an email to **livelabs-help-community_us@oracle.com**. The LiveLabs Admin team will respond in 1-2 business days.
+> **Note:** For any questions related to LiveLabs Sprints or about the process of the Sprints development life-cycle, send details in an email to **livelabs-help-community_us@oracle.com**. The LiveLabs Admin team will respond in 1-2 business days.
 
 ### What are Oracle LiveLabs Sprints?
 
@@ -25,10 +25,11 @@ The following diagram shows the general LiveLabs Sprint Development Workflow pro
 
 To get started with Oracle LiveLabs Sprints development, you should have:
 
-* A GitHub Account (steps in Lab 1 Task 2)
-* Installed GitHub Desktop on your machine (steps in Lab 1 Task 4)
-* Set up Oracle LiveLabs partner-solutions GitHub Repository (steps in Lab 1 Task 4, 5)
-* Installed Visual Studio Code editor (steps in Lab 3 Task 1 Option 2) with LiveServer extension (steps in Lab 3 Task 2 Option 2)
+* A GitHub Account (steps in Lab 2 Task 1)
+* Installed GitHub Desktop on your machine (steps in Lab 2 Task 3)
+* Installed Visual Studio Code editor (steps in Lab 1 Task 4) with LiveServer extension (steps in Lab 1 Task 5)
+* Set up Oracle LiveLabs partner-solutions GitHub Repository (steps in Lab 3 Task 1, 2)
+* Set up GitHub Pages for your Fork (Steps in Lab 3Task 6)
 
 ## Task 1: Submit a Sprint Request to the Oracle LiveLabs
 
@@ -97,17 +98,17 @@ At this stage your sprint status is **In Development**.
     -   title: Update the first title field with the title of your sprint.
     -   description: Add a short description of the sprint
     -   filename: Update this field with your file name
-    -   Other related sprints: The manifest.json is like your book map file in SDL. If you want to add related sprints, update the title fields with the respective sprints tile, description and absolute paths (steps in Lab 3 Task 1) to their markdown files in the filename. You can add up to six related sprints and delete the existing sprints sections if you do not need them.
+    -   Other related sprints: The manifest.json is like your book map file in SDL. If you want to add related sprints, update the title fields with the respective sprints tile, description and absolute paths (steps in Lab 4 Task 3) to their markdown files in the filename. You can add up to six related sprints and delete the existing sprints sections if you do not need them.
 
         ![edit manifest.json file](./images/edit-manifest-file.png " ")
 
 8.  You can take the help of the formatting in .md file you copied earlier and edit it to develop your sprint.
 
-9.  Make sure you develop the content considering all the security related points mentioned in Lab 3 Task 5 of the LiveLabs guide.
+9.   You can refer the Lab 4 Tasks 2 to Task 10 to develop the content according to livelabs standard. (Optional - For helpful resources and extensions for VS Code - steps in Lab 2 Task 6).
 
-10. Preview your Sprint using the Live Server (Steps in Lab 3 Task 6 Option 2).
+10. Make sure you develop the content considering all the security related points mentioned in Lab 4 Task 2 of the LiveLabs guide.
 
-11. You can refer the Lab 3a for common markdown features for content development and Lab 3 Task 7 for helpful resources and extensions for VS Code.
+11. Preview your Sprint using the Live Server (Steps in Lab 4 Task 11).
 
 12. After you have completed developing your Sprint, you need to perform Self-QA of the Sprint to align with the LiveLabs standards. Download this [Self-QA document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/O1GlvQI4x2UHQsLkB2pOEEuARBTJsjrVZ7XNOtGre_U6xvEecj5rW1lItRhKOoBq/n/id05dmgeno0f/b/partner-solutions/o/Sprints-Self-QA.docx) to perform Self QA and check your Sprint against the form, make changes to your changes to your Sprint as needed, and fill out the form. At this point you are in **Self-QA** status.
 
@@ -115,22 +116,22 @@ At this stage your sprint status is **In Development**.
 
 You will push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Again as a reminder, it is a best practice to merge your repository every day or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the upstream/main repositories (Production), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/main. Next, Merging also avoids the long time it could take to complete if you do not do that often.
 
-1.  Once you have completed the development of the sprint or when you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone and then push those changes from your clone to your fork (Steps in Lab 4 Task 2). Then these changes get saved to your forked repository.
+1.  Once you have completed the development of the sprint or when you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone and then push those changes from your clone to your fork (Steps in Lab 3 Task 4). Then these changes get saved to your forked repository.
 
-2.  Before you create a pull request, get the latest updates from the production repository into your clone (Steps in Lab 4 Task 1).
+2.  Before you create a pull request, get the latest updates from the production repository into your clone (Steps in Lab 3 Task 3).
 
-3. Set up GitHub Pages for your Fork (Steps in Lab 4 Task 3) to test or review your Sprint content (Steps in Lab 4 Task 4).
+3. To review your Sprint content in your development repo or to share it for review, follow the steps in Lab 5 Task 1. This will be your development GitHub URL
 
-4. Create a Pull Request to upload your content to the main repository, i.e., **https://github.com/oracle-livelabs/partner-solutions** (Steps in Lab 4 task 5).
+4. Create a Pull Request to upload your content to the main repository, i.e., **https://github.com/oracle-livelabs/partner-solutions** (Steps in Lab 6 Task 1).
 
-5. Once the Pull Request is approved, it takes a few minutes for the changes to reflect on the **oracle-livelabs.github.io/partner-solutions** GitHub pages site. You can access your Sprint on GitHub by following the steps in Lab 4 Task 6.
+5. Once the Pull Request is approved, it takes a few minutes for the changes to reflect on the **oracle-livelabs.github.io/partner-solutions** GitHub pages site.
 
 ##  Task 5: Submit Sprint Publish Request
 
 1.  After you submit the pull request, send us an email to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com) with the below details:
 
     -   Confirm if the details like **Sprint Title, Short Description, Sprint Duration, Focus, and Product** provided while submitting the Sprint are still valid
-    -   Share the **oracle-livelabs GitHub Pages URL** (Steps in Lab 4 task 6 to create production URL) for the Sprint once it is published. Format: https://oracle-livelabs.github.io/partner-solutions/sprints/domain-folder-name/your-sprint-folder-name/
+    -   Share the **oracle-livelabs GitHub Pages URL** - Replace your name in the development GitHub URL created earlier in Task 4 Step 4 with *oracle-livelabs* to create production URL for the Sprint once it is published. Format: https://oracle-livelabs.github.io/partner-solutions/sprints/domain-folder-name/your-sprint-folder-name/
 
 2. Once you email us the details above, the sprint status will be in **Publish Requested**.
 

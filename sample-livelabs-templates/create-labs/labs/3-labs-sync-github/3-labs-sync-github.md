@@ -82,7 +82,7 @@ To clone the forked **partner-solutions** repository:
 
 	> **Note:** The repository you cloned (local version) is connected to the your fork (remote version) so that you can push your local changes to the remote to keep them synced when you are online.
 
-7. You can also use Github Desktop to synchronize the changes that you have made in your local file system to the forked content on your GitHub repo. More details on using Github Desktop in Lab 4 of this workshop.
+7. You can also use Github Desktop to synchronize the changes that you have made in your local file system to the forked content on your GitHub repo. More details on using Github Desktop in the next task.
 
   ![Synchronize with GitHub.](./images/github-desktop-sync.png " ")
 
@@ -126,7 +126,7 @@ To merge content using Github Desktop:
 
 8.  To push the new commits from the local clone to your forked location, click **Push origin**.
 
-    > **Note:** If you get an *Authentication failed* error, refer to the Lab 6 - GitHub FAQ.
+    > **Note:** If you get an *Authentication failed* error, refer to the GitHub FAQ on the left menu.
 
     ![Push Origin.](./images/push-origin.png " ")
 

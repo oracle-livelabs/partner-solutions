@@ -24,7 +24,7 @@ Using VSCode or another editor of your choice, the Markdown files need to be edi
 
 Leverage the content from the **sample-livelabs-templates/sample-workshop** folder to start creating lab and workshop content for your project.
 
-> **Note:** Make sure to update your clone from the **upstream/main** repository (detailed in **Task 3** of this lab) regularly whenever you are working on the markdown files.
+> **Note:** Make sure to update your clone from the **upstream/main** repository (detailed steps in **Lab 3 Task 3**) regularly whenever you are working on the markdown files.
 
 To create your lab and workshop content:
 
@@ -50,9 +50,9 @@ To create your lab and workshop content:
 
 7. Similarly, navigate to the **sample-livelabs-templates/sample-workshop** folder and copy the entire **workshops** folder along with its contents from **sample-livelabs-templates/sample-workshop** to your project folder.
 
-8. To edit the `.md` file of your lab, open your text editor (in this case, we are using Atom), click **File > Open Folder** to display the **Open Folder** dialog box. In VS Code, you would click **File > Open**. Navigate to cloned project folder and select your project folder to open in the editor.
+8. To edit the `.md` file of your lab, open your text editor, click **File > Open Folder** to display the **Open Folder** dialog box. In VS Code, you would click **File > Open**. Navigate to cloned project folder and select your project folder to open in the editor.
 
-  ![Open project folder in Atom.](./images/use-atom-editor-open-folder.png " ")
+  ![Open project folder](./images/use-editor-open-folder.png " ")
 
 9.	The project folder along with the **labs** and **workshops** folder will be displayed in your text editor. In this example, **sample-livelabs-templates/create-labs/labs** folder is opened.
 
@@ -68,7 +68,7 @@ To create your lab and workshop content:
 
 	Besides the list of labs, also update the `workshoptitle` field, and update the `help` field to point to the `livelabs-help-community_us@oracle.com` email. If the `include` and `variables` field do not apply to your workshop, please remove them, otherwise, your workshop will not render properly.
 
-	![Edit manifest json file with Atom.](./images/manifest.png " ")
+	![Edit manifest json file](./images/manifest.png " ")
 
 13. You can also create a `README.md` file within **workshops/freetier**, and update the `README.md` with a summary of your workshop. Note that the `README.md` file is optional for your workshop.
 
@@ -293,7 +293,23 @@ The LintChecker is a great javascript function for QAing that you should take ad
     }
     ```
 
-## Task 11: Useful Markdown Syntax Cheatsheet
+## Task 11: Preview Your Workshop and Labs Using Visual Studio Code Live Server
+
+1. Within the directory of any workshop you want to view, click the **workshops** folder and then click the **freetier** folder.
+
+  ![Navigate to freetier folder.](./images/folder-nav.png " ")
+
+2. Right-click on the index.html file and select **Open with Live Server**.
+
+  ![Right click and select open with the Live Server.](./images/right-click.png " ")
+
+3. The local version of your workshop will then be launched in your web browser.
+
+> **Note:** If your workshop or labs do not show up using Live Server and you see a blank page, check the manifest.json file.
+1. Expand the navigation menu on the left, if you can navigate to other labs, then the problem is with a particular lab. Find that lab's location in the manifest.json file and fix the path to that lab's file.
+2. If no labs are showing up, then it is possibly the issue with the workshop. In the manifest.json file, make sure you remove the *include* and *variables* if they do not apply to your workshop.
+
+## Task 12: Useful Markdown Syntax Cheatsheet
 
 1.	Download this handy [Cheatsheet](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Qfg5WZ_O9yDet7NlaJPT76s9o_Yy0VVQ3LDh34c0HTrietIqqKq-m9zukdqiRymL/n/c4u04/b/livelabsfiles/o/LiveLabs_MD_Cheat_Sheet.pdf), which has more information about using Markdown syntax for LiveLabs development.
 

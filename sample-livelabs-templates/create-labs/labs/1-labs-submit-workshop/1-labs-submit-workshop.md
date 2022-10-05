@@ -70,9 +70,9 @@ This is the overview of the steps, and in the next lab these topics will be cove
 
 1. Create, set up, and access GitHub account
 2. Install GitHub Desktop
-3. Fork repositories from [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions)
-4. Clone the repository that you forked
-5. Install and use Visual Studio Code
+3. Install and use Visual Studio Code
+4. Fork repositories from [oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions)
+5. Clone the repository that you forked
 6. Create your workshop's folder structure
 7. Create content using Visual Studio Code and the [sample workshop template](https://github.com/oracle-livelabs/partner-solutions/tree/main/sample-livelabs-templates/sample-workshop)
 8. Review content by Oracle LiveLabs team
