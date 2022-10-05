@@ -12,7 +12,7 @@ The Oracle Contributor Agreement (OCA) is a legal document that gives Oracle and
 
 > **Note:** For the community members to contribute content and create a pull request to  oracle-livelabs/partner-solutions repo, you need to fill out the Oracle Contributor Agreement (OCA) document which will be sent to you after your first pull request is created (if you haven’t done that yet). If you are member of the Oracle Organization you don't have to do that.
 
-### **What are Labs and Workshops?**
+## **What are Labs and Workshops?**
 
 Labs are a set of step by step instructions to complete a task as part of the hands-on experience. A workshop is the collection of the labs provided in a specific order to complete the overall set of instructions. A workshop should have an introduction and then at least two labs to work through. The workshop has the big picture of the what the user is going to accomplish by completing all or some of the labs listed in the workshop.
 
