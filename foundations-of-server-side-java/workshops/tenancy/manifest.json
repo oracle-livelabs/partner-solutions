@@ -1,0 +1,16 @@
+{
+    "workshoptitle": "Foundations of Modern Java Server Apps",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Overview of tutorial goals and target audience.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
