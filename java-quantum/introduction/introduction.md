@@ -6,14 +6,14 @@ In this workshop, you will use quantum gates in Java to create a key distributio
 
 Quantum computing has several key concepts including superposition, entanglement, and measurement. This lab covers only superposition. We avoid mathematical equations in favor of more intuitive descriptions.
 
-Quantum computing impacts security in at least two ways.
+Quantum computing impacts security in at least two ways. 
 
 * **Quantum Key Distribution (QKD)** - Distributing shared private keys in a secure manner.
 * **Shor's Algorithm** - Breaking encryption schemes such as RSA and Diffie-Hellman by efficiently factoring large public keys.
 
 This workshop uses superposition to demonstrate Quantum Key Distribution.
 
-Estimated Time: 1 hour 30 minutes
+Estimated Time: 1 hour 30 minutes 
 
 ### Objectives
 
@@ -33,6 +33,5 @@ This lab assumes you have:
 * [Quantum Computing in Action](https://www.manning.com/books/quantum-computing-in-action)
 
 ## Acknowledgements
-
-* **Authors** - Johan Vos, Barry Burd
-* **Last Updated By/Date** - Barry Burd, September 2022
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022
