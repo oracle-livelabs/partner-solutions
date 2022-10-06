@@ -1,4 +1,4 @@
-# Need to Understand the Status in LiveLabs?
+# Need to Understand the Workshop Workflow and Status in LiveLabs?
 
 ### **Oracle LiveLabs GitHub Project and Repositories**
 
@@ -30,11 +30,11 @@ For a workshop to go from an idea to a LiveLabs workshop in production, it has t
 
   ![Approved](./images/approved.png " ")
 
-4. Council will move the workshop to *In Development* once you start workshop development. The workshop team can refer to Lab 1 to Lab 4 to see workshop development-related instructions.
+4. Council will move the workshop to *In Development* once you start workshop development. The workshop team can refer to Lab 2 to Lab 4 to see workshop development-related instructions.
 
   ![In Development](./images/in-development.png " ")
 
-5. After development, the workshop team will update the council when they start perform the self QA of the workshop. Then the council will move the workshop status to *Self QA*. Follow Lab 4 -> Task 8 to self-QA the workshop.
+5. After development, the workshop team will begin performing the self QA of the workshop and will notify the council. Then the council will move the workshop status to *Self QA*. Follow Lab 5 -> Task 3 to self-QA the workshop.
 
   ![Self QA](./images/self-qa.png " ")
 
@@ -46,7 +46,7 @@ For a workshop to go from an idea to a LiveLabs workshop in production, it has t
 
   ![Completed](./images/completed.png " ")
 
-The following workflow shows the workshop development lifecycle from submitting a workshop to publishing on Oracle LiveLabs.
+The following workflow shows the workshop development life-cycle from submitting a workshop to publishing on Oracle LiveLabs.
 
 ![LiveLabs workshop development lifecycle](./images/workshop-workflow.png " ")
 
@@ -56,7 +56,7 @@ The following diagram shows the general workflow process that your need to follo
 
 ### **What's Next?**
 
-Now that you know all about Oracle GitHub project, oracle-livelabs/partner-solutions repository and LiveLabs workshop development workflow, you are all set to begin the labs! Click **Lab 1: Submit new workshop** in the Contents menu to get stated.
+Now that you know all about Oracle GitHub project, oracle-livelabs/partner-solutions repository and LiveLabs workshop development workflow, you are all set to begin the labs! Click **Lab 1: Submit New Workshop to Oracle LiveLabs** in the Contents menu to get stated.
 
 ## Learn More
 

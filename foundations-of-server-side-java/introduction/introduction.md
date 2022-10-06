@@ -45,10 +45,6 @@ Others
 * [Micronaut](https://micronaut.io/)
 * [Dropwizard](https://www.dropwizard.io/en/latest/)
 * [Javalin](https://javalin.io/)
-
-
-
-
 ## Acknowledgements
 * **Author** - Kito D. Mann ([@kito99](https://twitter.com/kito99)), Principal Consultant, [virtua.tech](https://virtua.tech])
 * **Last Updated By/Date** - Kito D. Mann, October 2022
