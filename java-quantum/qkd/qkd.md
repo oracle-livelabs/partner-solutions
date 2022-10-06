@@ -37,7 +37,8 @@ In this lab, you will:
         static Random random = new Random();
     
         public static void main(String[] args) {
-            QuantumExecutionEnvironment simulator = new SimpleQuantumExecutionEnvironment();
+            QuantumExecutionEnvironment simulator = 
+                    new SimpleQuantumExecutionEnvironment();
             Program program = new Program(N);
             Step data = new Step();
             data.addGates(new X(0), new X(2), new X(3), new X(6));
@@ -68,9 +69,11 @@ In this lab, you will:
             // When did Alice's and Bob's random choices agree?
             for (int i = 0; i < N; i++) {
                 if (aliceRandom[i] == bobRandom[i]) {
-                    System.err.println("Index " + i + " has a usable bit: " + qubits[i].measure());
+                    System.err.println("Index " + i + 
+                            " has a usable bit: " + qubits[i].measure());
                 } else {
-                    System.err.println("Bob and Alice used a different base " +
+                    System.err.println(
+                            "Bob and Alice used a different base " +
                             "for measuring qubit " + i + ", discard.");
                 }
             }
@@ -116,7 +119,7 @@ Bob and Alice used a different base for measuring qubit 7, discard.
 
 We want to send qubits from one node to another. (In this example, we simplify things by putting the sending node and receiving node in the same quantum program.) The sending node creates the qubits and manipulates them, the receiving node does more manipulation and reads the qubits. By sending a number of qubits that are either in the 0 state or the 1 state, we can send data from the sender to the receiver. 
 
-In the QKD.java program (below), the sender (Alice) creates 8 qubits (with initial value 0) and flips 4 of them so that they have value 1. The 4 qubits that she flips are the ones with index 0, 2, 3 and 6. This corresponds to the data message 01001101 (MSB order). (See the figure below.)
+In the `QKD.java` program (above), the sender (Alice) creates 8 qubits (with initial value 0) and flips 4 of them so that they have value 1. The 4 qubits that she flips are the ones with index 0, 2, 3 and 6. This corresponds to the data message 01001101 (MSB order). (See the figure below.)
 
 ![Image: Alice's randomly chosen X gates](./images/from-alice.png =6%x*)
 
@@ -143,14 +146,15 @@ Qubits are delicate. If an eavesdropper observes a qubit during transmission bet
 
          if and only if
 
-       on all the qubits on the marked lines (lines 0, 1, 2, and 6), Bob accurately read the 0 or 1 
-       values that Alice sent.
+       on all the qubits on the marked lines 
+             (lines 0, 1, 2, and 6), Bob accurately 
+             read the 0 or 1 values that Alice sent.
 
 Alice and Bob sacrifice half of the marked lines by publicly comparing their results. In this example, Bob announces his readings for the top two lines. (See the figure.)
 
 ![Image: Comparing bit values](./images/compare-bits.png =20%x*)
 
-The decision to sacrifice half of the lines is just a "common sense" compared with the checksum bit that is often used in classical code. Developers can use more or less than half the matching results as check-qubits.
+The decision to sacrifice half of the lines is like the checksum bit that is often used in classical code. Developers can use more or less than half the matching results as check-qubits.
 
 If Bob’s readings agree with Alice’s original transmissions, there was no eavesdropper. In that case, Alice and Bob use the remaining half of the marked lines as their private encryption key.
 
