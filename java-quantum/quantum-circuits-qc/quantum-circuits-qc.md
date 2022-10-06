@@ -2,14 +2,13 @@
 
 ## Introduction
 
-The program in the previous exercise passes one qubit through one quantum gate to create a random bit. A typical quantum computing program uses many qubits, with each qubit passing though many gates. When a qubit passes through many gates, each of the gates belongs to an instance of the `Step` class.
+The program in the previous exercise passes one qubit through one quantum gate to create a random bit. A typical quantum computing program uses many qubits, with each qubit passing though many gates. When a qubit passes through many gates, each of the gates belongs to an instance of the `Step` class. 
 
 Estimated Time: 25 minutes
 
-### Objective
+### Objectives
 
 In this lab, you will:
-
 * Run code that involves multiple qubits and multiple steps.
 * Experiment with code that involves multiple steps.
 
@@ -75,7 +74,6 @@ In this lab, you will:
     }
     </copy>
     ```
-
 2. Compare the code with the output of the run.
 
    What conclusions can you draw about creating circuits with Strange?
@@ -84,33 +82,32 @@ In this lab, you will:
 
 1. Make a copy of the code in `LowLevelRandom.java` from Task 1 in this workshop's Low-Level Quantum Computing in Java section.
 
-2. Modify the code in various ways to discover the effects of X gates and Hadamard gates on qubits. For each circuit, observe the observe the value that you get when you measure the run's result. Draw conclusions based on your observations.
+2. Modify the code in various ways to discover the effects of X gates and Hadamard gates on qubits. For each ciruit, observe the observe the value that you get when you measure the run's result. Draw conclusions based on your observations.
 
    Here are some circuits to try building:
 
-   1. A circuit with two X gates:
+    1. A circuit with two X gates:
 
-   ![Image: Two X gates](./images/xx.png)
+        ![Image: Two X gates](./images/xx.png)
 
-   2. An X gate followed by an H gate:
+    2. An X gate followed by an H gate:
 
-   ![Image: X gate followed by H gate](./images/xh.png)
+        ![Image: X gate followed by H gate](./images/xh.png)
 
-   3. Two H gates:
+    3. Two H gates:
 
-   ![Image: Two H gates](./images/hh.png)
+        ![Image: Two H gates](./images/hh.png)
 
-   4. An X gate followed by two H gates:
+    4. An X gate followed by two H gates:
 
-   ![Image: X gate followed by two H gates](./images/xhh.png)
+        ![Image: X gate followed by two H gates](./images/xhh.png)
 
-   5 An X gate between two H gates:
+    5. An X gate between two H gates:
 
-   ![Image: X gate between two H gates](./images/hxh.png)
+        ![Image: X gate between two H gates](./images/hxh.png)
 
    You'll find solutions at the end of these workshop materials.
 
 ## Acknowledgements
-
-* **Authors** - Johan Vos, Barry Burd
-* **Last Updated By/Date** - Barry Burd, September 2022
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022

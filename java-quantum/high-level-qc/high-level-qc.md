@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Strange** is a Java library for quantum computing.
+**Strange** is a Java library for quantum computing. 
 
 * Strange contains a high-level API in the class org.redfx.strange.algorithm.Classic. This API has  a number of functions that benefit from quantum computing, without exposing the low-level quantum computing details.
 * Strange also contains a low-level API that allows Java developers to create quantum applications using quantum computing details (by using quantum gates).
@@ -11,13 +11,14 @@ Classical computers work with bits: 0 and 1. But quantum computers work with qub
 
 This step’s code puts a qubit into a half-0-half-1 superposition state, and then measures the qubit to get 0 or 1. Approximately half the time, the measurement yields 0, and the rest of the time, the measurement yields 1. If you were running this code several times on a real quantum computer, the sequence of 0/1 outputs you’d get would be truly random.
 
+
 Estimated Time: 20 minutes
 
-### Objective
+### Objectives
 
 In this lab, you will:
-
 * Run high-level quantum computing code in Java to generate random bits.
+
 
 ## Task 1: Install the required software
 
@@ -33,22 +34,22 @@ In this lab, you will:
 
 1. Examine the Java code in the file `RandomNumber.java`.
 
-   	```
-   	<copy>
-   	//usr/bin/env jbang "$0" "$@" ; exit $?
-   	//DEPS org.redfx:strange:0.1.1
- 
-   	import org.redfx.strange.algorithm.Classic;
- 
-   	public class RandomNumber {
- 
-        public static void main (String[] args) {
-            int randomBit = Classic.randomBit();
-            System.out.println
-                ("Generate one random bit, which can be 0 or 1. Result = "+randomBit);
-        }
-    }
-    </copy>
+	```
+	<copy>
+	//usr/bin/env jbang "$0" "$@" ; exit $?
+	//DEPS org.redfx:strange:0.1.1
+	
+	import org.redfx.strange.algorithm.Classic;
+	
+	public class RandomNumber {
+	
+		public static void main (String[] args) {
+			int randomBit = Classic.randomBit();
+			System.out.println
+				("Generate one random bit, which can be 0 or 1. Result = "+randomBit);
+		}
+	}
+	</copy>
     ```
 
 2. Run the code with the command `jbang RandomNumber.java`.
@@ -63,9 +64,10 @@ In this lab, you will:
 
 ## Learn More
 
-* [Strange API documentation](https://redfx-quantum.github.io/strange/apidocs/org/redfx/strange/Program.html)
+* [Strange API documentation](https://redfx-quantum.github.io/strange/apidocs/)
 
 ## Acknowledgements
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022
 
-* **Authors** - Johan Vos, Barry Burd
-* **Last Updated By/Date** - Barry Burd, September 2022
+
