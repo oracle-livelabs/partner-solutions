@@ -40,7 +40,8 @@ In this lab, you will:
         public static void main (String[] args) {
     
             // Create a simulated quantum computer.
-            QuantumExecutionEnvironment simulator = new SimpleQuantumExecutionEnvironment();
+            QuantumExecutionEnvironment simulator = 
+                    new SimpleQuantumExecutionEnvironment();
     
             // Create a quantum program with 2 qubit2.
             Program program = new Program(2);
