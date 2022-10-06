@@ -4,8 +4,8 @@
 
 **Strange** is a Java library for quantum computing. 
 
-* Strange contains a high-level API in the class org.redfx.strange.algorithm.Classic. This API has  a number of functions that benefit from quantum computing, without exposing the low-level quantum computing details.
-* Strange also contains a low-level API that allows Java developers to create quantum applications using quantum computing details (by using quantum gates).
+* **Strange** contains a high-level API in the class `org.redfx.strange.algorithm.Classic`. This API has  a number of functions that benefit from quantum computing, without exposing the low-level quantum computing details.
+* **Strange** also contains a low-level API that allows Java developers to create quantum applications using quantum computing details (by using quantum gates).
 
 Classical computers work with bits: 0 and 1. But quantum computers work with qubits: 0, 1, and combinations (superpositions) of 0 and 1. Even so, when we measure a qubit, we always see either 0 or 1.
 
@@ -28,7 +28,7 @@ In this lab, you will:
 
 2. Visit [https://github.com/johanvos/qkd-java](https://github.com/johanvos/qkd-java) to get this lab’s code examples.
 
-   You’ll find the Java code examples in the folder qkd-java/jbang.
+   You’ll find the Java code examples in the folder `qkd-java/jbang`.
 
 ## Task 2: Run the code
 
@@ -46,7 +46,8 @@ In this lab, you will:
 		public static void main (String[] args) {
 			int randomBit = Classic.randomBit();
 			System.out.println
-				("Generate one random bit, which can be 0 or 1. Result = "+randomBit);
+				("Generate one random bit, " + 
+				 "which can be 0 or 1. Result = " + randomBit);
 		}
 	}
 	</copy>
