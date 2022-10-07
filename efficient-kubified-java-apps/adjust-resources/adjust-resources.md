@@ -86,15 +86,15 @@ Any deployment that does not have requests or limits set (like the one done in t
   
   ```bash
    <copy>
-   kubectl --namespace ingress-nginx get services -o wide ingress-nginx-controller
+   kubectl get svc
    </copy>
   ```
 
 The output should be similar to: 
 
 ```
-NAME                       TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)                      AGE   SELECTOR
-ingress-nginx-controller   LoadBalancer   10.96.61.56   193.145.235.17   80:31387/TCP,443:32404/TCP   45s   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
+NAME         TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)             AGE
+joker        LoadBalancer   10.96.82.30   158.101.33.40   80:32510/TCP        14m
 ```
 
 In this case we can see that the load balancer has been created and the external-IP address is available. If the External IP address is listed as `<pending>` then the load balancer is still being created, wait a short while then try the command again.
@@ -112,13 +112,13 @@ In this case we can see that the load balancer has been created and the external
    
 ```bash
    <copy>
-      curl https://$EXTERNAL_IP.nip.io/jokes/sysresources
+      curl $EXTERNAL_IP/jokes/sysresources
    </copy>
 ```
 
 The output should be similar to: `Memory: 181 Cores: 1`.
 
-If the memory limit is set to 750Mi, why does the JVM use only 181Mi? The JVM  has some default ergonomics and we will inspect them in the following task.
+If the memory limit is set to 750Mi, why does the JVM use only 334Mi? The JVM  has some default ergonomics and we will inspect them in the following task.
 
 
 ## Task 2: Observe Default JVM Ergonomics
@@ -257,11 +257,27 @@ During this task we will improve the resource requests and limits used by the ap
 
 ```bash
    <copy>
-      curl <hostname>/jokes/init
+      curl $EXTERNAL_IP/jokes/init
    </copy>
 ```
 
-3. Find out the CPU and memory consumed by querying the metrics server installed in the provisiong section:
+3. Obtain the name of the pod by running the following command:
+
+```bash
+<copy>
+   kubectl get pods
+</copy>
+```
+
+The output should be similart to:
+
+
+```output
+NAME                     READY   STATUS    RESTARTS   AGE
+joker-9658dfbb8-fcwjk   1/1     Running   0          6m16s
+```
+
+4. Find out the CPU and memory consumed by querying the metrics server installed in the provisiong section:
 
 ```bash
 <copy>
@@ -270,11 +286,11 @@ During this task we will improve the resource requests and limits used by the ap
 ```
 
 
-3. Simulate some load using [hey](https://github.com/rakyll/hey):
+5. Simulate some load using [hey](https://github.com/rakyll/hey):
 
 ```bash
    <copy>
-      hey -n 100 -c 20  https://$EXTERNAL_IP.nip.io/jokes
+      hey -n 100 -c 20  http://$EXTERNAL_IP/jokes
    </copy>
 ```   
 
@@ -393,7 +409,7 @@ The output should be similar to:
 
 ```bash
    <copy>
-      curl <hostname>/jokes/sysresources
+      curl $EXTERNAL_IP/jokes/sysresources
    </copy>
 ```
 
@@ -454,7 +470,7 @@ The output should be similar to:
 
 ```
    <copy>
-      curl <hostname>/jokes/sysresources
+      curl $EXTERNAL_IP/jokes/sysresources
    </copy>
 ```
 

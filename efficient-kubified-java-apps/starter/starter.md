@@ -25,7 +25,7 @@ If you would like to recreate a similar setup, you can do the following:
     * `quarkus-jdbc-h2` to connect H2 database via JDBC.
     * `quarkus-hibernate-orm-panache` to simplify the code when interacting with Hibernate ORM.
     * `quarkus-smallrye-health` to monitor the application health.
-    * `quarkus-container-image-docker` to generate a container image using the Docker images located under `src/main/Docker`.
+    * `quarkus-container-image-jib` to generate a container image without running a Docker daemon.
     * `quarkus-kubernetes` to generate OpenShift resources from annotations.
 * Click the `Generate the application` button.
 
@@ -79,14 +79,14 @@ Quarkus provides a Dev Mode which helps you during application development and i
 4. In a browser tab copy and paste the below URL:
 
    ```
-   http://localhost:8080/jokes
+   <copy>http://localhost:8080/jokes</copy>
    ```
 The output will be a JSON containing partial joke content.
 
 5. Finish initialization of the application by invoking the following URL in another tab:
 
    ```
-   http://localhost:8080/jokes/init
+   <copy>http://localhost:8080/jokes/init</copy>
    ```
    
 6. Go to the tab having [http://localhost:8080/jokes](http://localhost:8080/jokes) and refresh the page. Now you should see jokes in 4 languages.
