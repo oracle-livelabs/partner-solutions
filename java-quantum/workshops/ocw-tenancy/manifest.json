@@ -8,11 +8,6 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Get Started",
-            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common//labs/cloud-login/cloud-login.md"
-        },
-        {
             "title": "Lab 1: High-Level Quantum Computing in Java",
             "description": "High-Level Quantum Computing in Java",
             "filename": "../../high-level-qc/high-level-qc.md"
@@ -24,23 +19,23 @@
         },
         {
             "title": "Lab 3: Create Quantum Circuits",
-            "description": "Quantum Circuits",
+            "description": "Create Quantum Circuits",
             "filename": "../../quantum-circuits-qc/quantum-circuits-qc.md"
         },
         {
             "title": "Lab 4: Distribute Secret Encryption Keys",
-            "description": "Distributing Secret Encryption Keys",
+            "description": "Distribute Secret Encryption Keys",
             "filename": "../../qkd/qkd.md"
-        },        
+        },
         {
             "title": "Solutions",
             "description": "Solutions",
             "filename": "../../solutions/solutions.md"
         },
         {
-            "title": "Need Help?",
+            "title": "Oracle CloudWorld 2022 - Get Help",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
+            "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
     ]
 }

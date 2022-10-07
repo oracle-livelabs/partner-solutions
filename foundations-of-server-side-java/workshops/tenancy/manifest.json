@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "Foundations of Modern Java Server Apps",
+    "help": "livelabs-help-community_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Overview of tutorial goals and target audience.",
+            "filename": "../../introduction/introduction.md"
+        }
+    ]
+}

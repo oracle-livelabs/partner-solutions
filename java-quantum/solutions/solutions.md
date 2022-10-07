@@ -110,7 +110,8 @@ public class LowLevelRandoms {
     public class Experiments {
 
         public static void main (String[] args) {
-            QuantumExecutionEnvironment simulator = new SimpleQuantumExecutionEnvironment();
+            QuantumExecutionEnvironment simulator = 
+                    new SimpleQuantumExecutionEnvironment();
 
             Program program = new Program(1);
             Step step = new Step();
@@ -125,7 +126,8 @@ public class LowLevelRandoms {
             Qubit[] qubits = result.getQubits();
             Qubit zero = qubits[0];
             int value = zero.measure();
-            System.out.println("After running the program, its measured state = "+value);
+            System.out.println("After running the program, " + 
+                               "its measured state = " + value);
 
             Renderer.renderProgram(program);
         }
@@ -157,7 +159,8 @@ public class LowLevelRandoms {
     public class Experiments {
 
         public static void main (String[] args) {
-            QuantumExecutionEnvironment simulator = new SimpleQuantumExecutionEnvironment();
+            QuantumExecutionEnvironment simulator = 
+                    new SimpleQuantumExecutionEnvironment();
 
             Program program = new Program(1);
             Step step = new Step();
@@ -172,15 +175,15 @@ public class LowLevelRandoms {
             Qubit[] qubits = result.getQubits();
             Qubit zero = qubits[0];
             int value = zero.measure();
-            System.out.println("After running the program, its measured state = "+value);
-
+            System.out.println("After running the program, " + 
+                               "its measured state = " + value);
             Renderer.renderProgram(program);
         }
     }
     </copy>
     ```
 
-3. The output is always 0 because
+3. The output is always 0 because 
 
     * The qubit starts off as a 0 by default.
     * The Hadamard gate is its own inverse. Applying Hadamard the second time in a row undoes the first application of the Hadamard gate.
@@ -202,7 +205,8 @@ public class LowLevelRandoms {
     public class Experiments {
 
         public static void main (String[] args) {
-            QuantumExecutionEnvironment simulator = new SimpleQuantumExecutionEnvironment();
+            QuantumExecutionEnvironment simulator = 
+                    new SimpleQuantumExecutionEnvironment();
 
             Program program = new Program(1);
             Step step = new Step();
@@ -217,6 +221,8 @@ public class LowLevelRandoms {
             Qubit[] qubits = result.getQubits();
             Qubit zero = qubits[0];
             int value = zero.measure();
+            System.out.println("After running the program, " + 
+                               "its measured state = " + value);
             Renderer.renderProgram(program);
         }
     }
@@ -246,7 +252,8 @@ public class LowLevelRandoms {
     public class Experiments {
 
         public static void main (String[] args) {
-            QuantumExecutionEnvironment simulator = new SimpleQuantumExecutionEnvironment();
+            QuantumExecutionEnvironment simulator = 
+                    new SimpleQuantumExecutionEnvironment();
 
             Program program = new Program(1);
             Step step = new Step();
@@ -266,6 +273,8 @@ public class LowLevelRandoms {
             Qubit[] qubits = result.getQubits();
             Qubit zero = qubits[0];
             int value = zero.measure();
+            System.out.println("After running the program, " + 
+                               "its measured state = " + value);
             Renderer.renderProgram(program);
         }
     }
@@ -293,7 +302,8 @@ public class LowLevelRandoms {
     public class Experiments {
 
         public static void main (String[] args) {
-            QuantumExecutionEnvironment simulator = new SimpleQuantumExecutionEnvironment();
+            QuantumExecutionEnvironment simulator = 
+                    new SimpleQuantumExecutionEnvironment();
 
             Program program = new Program(1);
             Step step = new Step();
@@ -313,6 +323,8 @@ public class LowLevelRandoms {
             Qubit[] qubits = result.getQubits();
             Qubit zero = qubits[0];
             int value = zero.measure();
+            System.out.println("After running the program, " + 
+                               "its measured state = " + value);
             Renderer.renderProgram(program);
         }
     }
@@ -320,6 +332,5 @@ public class LowLevelRandoms {
     ```
 
 ## Acknowledgements
-
-* **Authors** - Johan Vos, Barry Burd
-* **Last Updated By/Date** - Barry Burd, September 2022
+* **Authors** - Johan Vos, Co-Founder of Gluon HQ; Barry Burd, Professor at Drew University
+* **Last Updated By/Date** - Barry Burd, October 2022

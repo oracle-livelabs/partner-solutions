@@ -6,6 +6,12 @@ This workshop is to help walk you through the process of creating your own works
 
 > **Note:** If you have any questions or concerns through out the process of workshop development life-cycle, contact Oracle LiveLabs team through email - [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com).
 
+### **What is Oracle Contributor Agreement (OCA)**
+
+The Oracle Contributor Agreement (OCA) is a legal document that gives Oracle and the contributor joint copyright interests in code contributed by the contributor to Oracle-sponsored open-source projects. An approved OCA is valid for all Oracle-sponsored open-source projects. Oracle employees do not need to sign the OCA. The Oracle Contributor Agreement Signing Service (OCASS) allows contributors to sign the OCA electronically and enables OCA reviewers will review and approve/reject OCAs.
+
+> **Note:** For the community members to contribute content and create a pull request to  oracle-livelabs/partner-solutions repo, you need to fill out the Oracle Contributor Agreement (OCA) document which will be sent to you after your first pull request is created (if you haven’t done that yet). If you are member of the Oracle Organization you don't have to do that.
+
 ### **What are Labs and Workshops?**
 
 Labs are a set of step by step instructions to complete a task as part of the hands-on experience. A workshop is the collection of the labs provided in a specific order to complete the overall set of instructions. A workshop should have an introduction and then at least two labs to work through. The workshop has the big picture of the what the user is going to accomplish by completing all or some of the labs listed in the workshop.
