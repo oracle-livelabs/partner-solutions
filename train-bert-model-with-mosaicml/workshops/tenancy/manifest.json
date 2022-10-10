@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
+    "workshoptitle": "Train Your Own BERT Model from Scratch with MosaicML",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -9,17 +9,17 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "description": "Welcome to the BERT training lab, presented by MosaicML.",
             "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Get Started",
-            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+            "description": "This lab covers the procedure for logging into the MosaicML tenancy of OCI for access to the JupyterLab service and notebooks.",
+            "filename": "../../getting-started/getting-started.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "title": "Lab 1: Connect to Your Notebook",
+            "description": "A Jupyter notebook has been provisioned for you in the OCI Data Science service. Connect to the JupyterLab service and open your notebook.",
             "filename": "../../provision/provision.md"
         },
         {
