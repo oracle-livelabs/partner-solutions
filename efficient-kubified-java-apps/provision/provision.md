@@ -147,8 +147,16 @@ Firstly we need to create a namespace for the ingress controller.
    </copy>
    ```
 
+  2. Run the following command to add **ingress-nginx** helm repo:
 
-  2. Run the following command to install **ingress-nginx** using Helm 3:
+
+  ```bash
+  <copy>
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+  </copy>
+  ```
+
+  3. Run the following command to install **ingress-nginx** using Helm 3:
   
 
   ```bash
@@ -177,7 +185,7 @@ You can watch the status by running the following command:
 
 ```bash
   <copy>
-    kubectl --namespace ingress-nginx get services -o wide -w ingress-nginx-nginx-ingress-controller
+    kubectl --namespace ingress-nginx get services -o wide -w ingress-nginx-controller
   </copy>
 ```
 
