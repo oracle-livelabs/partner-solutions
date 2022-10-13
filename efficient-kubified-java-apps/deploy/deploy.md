@@ -10,7 +10,7 @@ Estimated Time: 10 minutes
 
 
 In this section, you will:
-* Build a container image using Docker extension. This task is optional.
+* Build a container image using Jib extension. This task is optional.
 * Deploy to a Kubernetes cluster when packaging the Java application.
 * Deploy to a Kubernetes cluster using a YAML file.
 
@@ -22,9 +22,9 @@ This section assumes you have:
 * Access to a container registry that is reachable from your Kubernetes cluster.
 
 
-## Task 1: Build a Container Image using Docker (Optional)
+## Task 1: Build a Container Image using Jib (Optional)
 
-You can use Quarkus Docker Extension (`quarkus-container-image-docker`) to create and push the container image to your container registry. When packaging the application, this extension uses the generated Docker files that are located under `src/main/Docker/`.
+You can use Quarkus Jib Extension (`quarkus-container-image-jib`) to create and push the container image to your container registry without the need of running local docker daemon.
 
 1. Add registry configuration properties to `src/main/resources/application.properties`, in your cloned `joker` directory:  
 
@@ -34,11 +34,11 @@ You can use Quarkus Docker Extension (`quarkus-container-image-docker`) to creat
 # key = value
 #quarkus.container-image.push=true 
     
-quarkus.container-image.group=myrepo
+quarkus.container-image.group=ammbra
 </copy>
 ```
 
-> **NOTE** Change `myrepo` to your organization. If you don’t, your push will fail.
+> **NOTE** Change `ammbra` to your organization. If you don’t, your push will fail.
 
 2. In order to push the container image, you have to authenticate to your container registry:
 
@@ -57,30 +57,16 @@ docker login
 
 You should expect an output similar to:
 ```output
-INFO] [io.quarkus.deployment.util.ExecUtil] 36b85501f1e0: Preparing
-[INFO] [io.quarkus.deployment.util.ExecUtil] 1cdca92b725b: Preparing
-[INFO] [io.quarkus.deployment.util.ExecUtil] 6271a138c8f4: Preparing
-[INFO] [io.quarkus.deployment.util.ExecUtil] fa32d4b709c4: Preparing
-[INFO] [io.quarkus.deployment.util.ExecUtil] 69c6d244b79a: Preparing
-[INFO] [io.quarkus.deployment.util.ExecUtil] 60609ec85f86: Preparing
-[INFO] [io.quarkus.deployment.util.ExecUtil] f2c4302f03b8: Preparing
-[INFO] [io.quarkus.deployment.util.ExecUtil] f2c4302f03b8: Waiting
-[INFO] [io.quarkus.deployment.util.ExecUtil] 60609ec85f86: Waiting
-[INFO] [io.quarkus.deployment.util.ExecUtil] 1cdca92b725b: Pushed
-[INFO] [io.quarkus.deployment.util.ExecUtil] 6271a138c8f4: Pushed
-[INFO] [io.quarkus.deployment.util.ExecUtil] 36b85501f1e0: Pushed
-[INFO] [io.quarkus.deployment.util.ExecUtil] 60609ec85f86: Pushed
-[INFO] [io.quarkus.deployment.util.ExecUtil] fa32d4b709c4: Pushed
-[INFO] [io.quarkus.deployment.util.ExecUtil] f2c4302f03b8: Pushed
-[INFO] [io.quarkus.deployment.util.ExecUtil] 69c6d244b79a: Pushed
-[INFO] [io.quarkus.deployment.util.ExecUtil] 1.0.0-SNAPSHOT: digest: sha256:16b5b49994f3a8b253284de049bd08accd672c68b1e27edd4c718fae08da1b5c size: 1787
-[INFO] [io.quarkus.container.image.docker.deployment.DockerProcessor] Successfully pushed docker image ammbra/joker:1.0.0-SNAPSHOT
-[INFO] [io.quarkus.deployment.QuarkusAugmentor] Quarkus augmentation completed in 78872ms
+[INFO] [io.quarkus.container.image.jib.deployment.JibProcessor] Using base image with digest: sha256:1a2fddacdcda67494168749c7ab49243d06d8fbed34abab90566d81b94f5e1a5
+[INFO] [io.quarkus.container.image.jib.deployment.JibProcessor] Container entrypoint set to [java, -Djava.util.logging.manager=org.jboss.logmanager.LogManager, -jar, quarkus-run.jar]
+[INFO] [io.quarkus.container.image.jib.deployment.JibProcessor] Pushed container image ammbra/joker:1.0.0-SNAPSHOT (sha256:da2bd7068ac1de9baae267c1adb144647aff4171022a0e64de95a7a5f54494b7)
+
+[INFO] [io.quarkus.deployment.QuarkusAugmentor] Quarkus augmentation completed in 241553ms
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  01:39 min
-[INFO] Finished at: 2022-09-19T10:55:15+02:00
+[INFO] Total time:  04:13 min
+[INFO] Finished at: 2022-10-07T20:36:16+02:00
 [INFO] ------------------------------------------------------------------------
 ```
 
@@ -95,12 +81,21 @@ The location of this file is `target/kubernetes/kubernetes.yml`.
 <copy>
 # Configuration file
 # key = value
+quarkus.kubernetes.namespace=default
 quarkus.kubernetes.service-type=load-balancer
 quarkus.kubernetes.ingress.expose=true
 </copy>
 ```
 
-2. Deploy to your Kubernetes cluster by running:
+2. Run the following command to start your Quarkus application in Dev Mode:
+
+```bash
+<copy>mvn quarkus:dev</copy>
+```
+
+3. Inspect the resources generated under `target/kubernetes/` folder.
+
+4. Deploy to your Kubernetes cluster by running:
 
 | OS        | Command                                                      |
 |-----------|--------------------------------------------------------------|
