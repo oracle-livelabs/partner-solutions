@@ -8,7 +8,7 @@ Estimated Time: 5 minutes
 
 ### Cloud Accounts for This Lab
 
-For this lab, you have access to a pre-provisioned account hosted by MosaicML. Upon arrival at the workshop, you should have received an assigned account name from the MosaicML team. Please look up the credentials for your assigned name on [this spreadsheet](https://docs.google.com/spreadsheets/d/1fXxDErqZdfsaMZpyB7etDh3gUnFmpZsE3rKtW71bCeY/edit?usp=sharing)
+For this lab, you have access to a pre-provisioned account hosted by MosaicML. Upon arrival at the workshop, you should have received an assigned account name from the MosaicML team. Please look up the credentials for your assigned name on [this spreadsheet](https://docs.google.com/spreadsheets/d/1fXxDErqZdfsaMZpyB7etDh3gUnFmpZsE3rKtW71bCeY/edit?usp=sharing).
 
 ### Objectives
 
@@ -16,13 +16,13 @@ For this lab, you have access to a pre-provisioned account hosted by MosaicML. U
 
 ### Prerequisites
 - Cloud Account Name: **mosaicmlprod**
-- Username from the spreadsheet linked above
-- Password from the spreadsheet linked above
+- Username from [this spreadsheet](https://docs.google.com/spreadsheets/d/1fXxDErqZdfsaMZpyB7etDh3gUnFmpZsE3rKtW71bCeY/edit?usp=sharing)
+- Password from [this spreadsheet](https://docs.google.com/spreadsheets/d/1fXxDErqZdfsaMZpyB7etDh3gUnFmpZsE3rKtW71bCeY/edit?usp=sharing)
 
 ## Task 1:  Login to Oracle Cloud
-If you have an Oracle Cloud account already, and you've signed in with your personal credentials, please sign out and use these steps to sign back in.
+If you have an Oracle Cloud account already, and you've signed in with your personal credentials, **please sign out and use these steps to sign back in.**
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and enter `mosaicmlprod` and click **Next**.
+1. Go to [cloud.oracle.com](https://cloud.oracle.com), enter **`mosaicmlprod`** and click **Next**.
 
     ![Cloud Account Name](images/cloud-oracle.png " ")
 

@@ -6,10 +6,6 @@ MosaicML was created to enable organizations of any size to develop large AI mod
 
 Estimated Workshop Time: 1 hour 30 minutes
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
-
 ### Objectives
 
 At the end of this workshop, you will have an understanding of:
@@ -23,6 +19,7 @@ At the end of this workshop, you will have an understanding of:
 
 This intermediate-level lab assumes that you:
 * Have background knowledge or experience with software engineering and/or data science
+* Know how to use Jupyter notebooks and JupyterLab
 * Feel comfortable reading Python code
 * Are familiar with core ML concepts (training, features, loss, inference)
 * Have an interest in deep learning

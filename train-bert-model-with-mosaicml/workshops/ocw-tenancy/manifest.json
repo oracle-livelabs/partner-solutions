@@ -1,0 +1,35 @@
+{
+    "workshoptitle": "Train Your Own BERT Model from Scratch with MosaicML",
+    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
+                "sample.json":"../../data-load/files/sample.json",
+                "step2.md":"../../data-load/files/step2.md"},
+    "variables": ["../../variables/variables.json",
+                 "../../variables/variables-in-another-file.json"],
+    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Welcome to the BERT training lab, presented by MosaicML.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This lab covers the procedure for logging into the MosaicML tenancy of OCI for access to the JupyterLab service and notebooks.",
+            "filename": "../../getting-started/getting-started.md"
+        },
+        {
+            "title": "Connect to Your Notebook",
+            "description": "A Jupyter notebook has been provisioned for you in the OCI Data Science service. Connect to the JupyterLab service and open your notebook.",
+            "filename": "../../notebook/notebook.md"
+        },
+        {
+            "title": "Oracle CloudWorld 2022 - Get Help",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+        },
+        {
+            "title": "Other LiveLabs you might like",
+            "description": "Other LiveLabs you might like",
+            "filename": "../../other-livelabs/other-livelabs.md"
+        }
+    ]
+}
