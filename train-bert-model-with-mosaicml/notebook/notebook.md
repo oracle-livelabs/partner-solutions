@@ -1,33 +1,16 @@
-# Title of the Lab
+# Connect to Your Notebook
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Now that you have logged in, this procedure walks you through connecting to the OCI Data Science notebook that you will use for all of the BERT model training activities in this workshop. 
 
-Estimated Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 5 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
-
-
-*This is the "fold" - below items are collapsed by default*
+* Navigate through the Oracle Cloud management console to find your pre-configured Data Science notebook session
+* Activate your notebook session if necesssary, and open the `bert_workshop.ipynb` notebook
 
 ## Task 1: Concise Task Description
 
