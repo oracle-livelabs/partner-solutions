@@ -2,44 +2,35 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
+MosaicML was created to enable organizations of any size to develop large AI models efficiently and derive maximum value from their data. In this workshop, you will learn how to use the MosaicML Composer training library and the MosaicML Cloud platform to train a BERT language model from scratch on a custom dataset. Custom-trained models are able to achieve greater accuracy and deliver better results than models that are pre-trained on a generic dataset.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+Estimated Workshop Time: 1 hour 30 minutes
 
 ### Objectives
 
-*List objectives for the workshop*
+At the end of this workshop, you will have an understanding of:
+* Launching ML model training jobs on cloud services
+* The BERT large language models and some common use cases for them
+* Importing a model from the HuggingFace Hub 
+* Using MosaicML tools and services to train a BERT model
+* Using MosaicML tools and services to fine-tune a pre-trained model
 
-In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+### Prerequisites
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
+This intermediate-level lab assumes that you:
+* Have background knowledge or experience with software engineering and/or data science
+* Know how to use Jupyter notebooks and JupyterLab
+* Feel comfortable reading Python code
+* Are familiar with core ML concepts (training, features, loss, inference)
+* Have an interest in deep learning
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Composer Git repository](https://github.com/mosaicml/composer)
+* [Composer documentation](https://docs.mosaicml.com/)
+* [MosaicML Cloud documentation](https://mcli.docs.mosaicml.com/)
+* [MosaicML homepage](https://www.mosaicml.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Kobie Crawford, Head of Community, MosaicML
+* **Last Updated By/Date** - Kobie Crawford, October 2022

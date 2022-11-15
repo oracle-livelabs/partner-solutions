@@ -18,34 +18,8 @@
             "filename": "../../getting-started/getting-started.md"
         },
         {
-            "title": "Lab 1: Connect to Your Notebook",
-            "description": "A Jupyter notebook has been provisioned for you in the OCI Data Science service. Connect to the JupyterLab service and open your notebook.",
-            "filename": "../../provision/provision.md"
-        },
-        {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
-        },
-        {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
-        },
-        {
-            "title": "Lab 5: Tables in LiveLabs",
-            "filename": "../../tables/tables.md"
-        },
-        {
-            "title": "Lab 6: Variables in LiveLabs",
-            "filename": "../../variables/variables.md"
-        },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+            "title": "Oracle CloudWorld 2022 - Get Help",
+            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         },
         {
             "title": "Other LiveLabs you might like",
