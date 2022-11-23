@@ -238,7 +238,7 @@ Without using video scaling, all the video you embed will have small as the defa
 3. Use this format to scale the video size to medium.
 
 	```
-	[YouTubevideo scaled to medium size](youtube:lHriX403Oz4:medium)
+	[YouTube video scaled to medium size](youtube:lHriX403Oz4:medium)
 	```
 
 	[Video hosted on YouTube](youtube:lHriX403Oz4:medium)
@@ -416,4 +416,4 @@ This concludes this lab. You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Anoosha Pilli, Product Manager, Database Product Management
-* **Last Updated By/Date:** Anoosha Pilli, September 2022
+* **Last Updated By/Date:** Anoosha Pilli, November 2022
