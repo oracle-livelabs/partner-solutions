@@ -8,7 +8,7 @@ This exercise begins with setting up an image library of X-Ray images representi
 
 Estimated Workshop Time: 4 hours (depending on the model training duration selected)
 
-[](youtube:vIn7ujfadx4)
+[Just like a box of chocolated @ Youtube](youtube:vIn7ujfadx4)
 
 ### Objectives
 
