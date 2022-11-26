@@ -29,7 +29,7 @@ This lab assumes you have:
 
     Click **Next**.
 
-    ![](./images/pre-lab_001.png " ")
+    ![](./images/pre-lab_001.png =150x150)
 
     Choose **oracleidentityservice** as Identity Provider and click **Continue**.
 
