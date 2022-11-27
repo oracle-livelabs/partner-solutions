@@ -2,23 +2,21 @@
 
 ## Introduction
 
-This lab walks you through the steps to organize an image library in OCI Object Storage and upload X-Ray images to the the library.
+This lab walks you through the steps to create a new dataset using images from your image library and to label images with one of two labels.
 
-Estimated Time: 20 minutes
+Estimated Time: 60 minutes
 
-### About OCI Object Storage
-The Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. 
+### About Data Labeling
 
-The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+<... ADD text about data labeling ...> 
 
 ### Objectives
 
 In this lab, you will:
 
-* Create a new bucket
-* Set bucket visibility
-* Setup required folder structure
-* Load images
+* Create a new dataset using images from object storage
+* Label images using Data Labeling utility
+* Programmatic (Bulk) Image labeling
 
 ### Prerequisites
 
@@ -26,176 +24,197 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 
-## Task 1: Create a new Bucket
+## Task 1: Set privileges for Data Labeling
 
-You will organize your image library in a new object storage bucket.
+Before you can start your data labeling process, you must set additional dynamic group and set some policies for your existing OCI Group and for that new Dynamic Group.
 
-1. Step 1: Login into OCI
+1. Step 1: Navigate to **Data Labeling** page
 
-    Login as a user who will manage your image library and also will perform the rest of activities in this workshop.
+    From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
 
-    Select your Identity Provider, **oracleidentitycloudservice** in this case, ...
+    ![](./images/lab2_001.png " ")
 
-    ![](./images/lab1_001.jpg =50%x*)
+2. Step 2: Create a new Dataset
 
-    ... and provide your user's credentials. For example, Candy.Sweets.
+    Click on **Datasets** link under **Data Labeling** on the left side of the page. This will open **Dataset list** page in selected Compartment.
 
-    ![](./images/lab1_002.jpg =50%x*)
+    ![](./images/lab2_002.png " ")
 
-2. Step 2: Navigate to **Buckets** page
+3. Step 3: Verify **Data Labeling Prerequisites**
 
-    From the **Navigator** menu (top-left cornent) select **Storage** and then **Buckets**.
-
-    ![Navigate to Buckets page](./images/lab1_004.png " ")
-
-3. Step 3: Create a new bucket
-
-    Please pay attention that you've selected correct compartment, *Box-of-Chocolates* in our case.
-
-    Then click **Create Bucket**
-
-    ![Click Create Buckets](./images/lab1_005.jpg " ")
-
-4. Step 4: Define bucket
-
-    When creating a new bucket, provide a **Bucket Name** of your choosing and then leave everything else as default:
-    * choose Standard for **Default Storage Tier**, 
-    * use Encrypt using Oracle managed keys for **Encryption** and 
-    * provide some **Tags**.
-
-    ![Define a new bucket](./images/lab1_006.png " ")
-
-    Finally click **Create** to create a new bucket.
-
-## Task 2: Set visibility
-
-In order to make your image library visible to other users/service, you have to update its visibility. One way of doing it is to set visibility to **Public**.
-
-1. Step 1: Change visibility to Public.
-
-    From your bucket list choose your newly created bucket.
-
-    ![Buckets List](./images/lab1_007.jpg " ")
-
-2. Step 2: Edit Visibility
-
-    In the Bucket Details page, click **Edit Visibility**.
-
-    ![Bucket Details Page](./images/lab1_008.jpg " ")
-
-3. Step 3: Update Visibility
-
-    Check **Public** radio button and click **Save Changes**
-
-    ![Update visibility](./images/lab1_009.jpg =50%x*)
-
-4. Step 4: (optional) Set Pre-Authenticated Request
-
-    Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**.
-
-    In this case click **Pre-Authentication Requests** link under **Resources** and then **Create Pre-Authenticated Request**.
-
-    ![PAR](./images/lab1_010.png " ")
-
-    Fill required field in PAR definition and finally click **Create Pre-Authenticated Request**.
-
-    ![Create PAR](./images/lab1_011.png " ")
-
-    Pre-Authenticated Request details popup window is shown. Please copy URL for your reference as it won't be shown again.
-
-    ![PAR URL](./images/lab1_012.png " ")
-
-    Click **Close** to return to the **Bucket Details** page.
-
-    ![Bucket Details Page](./images/lab1_013.png " ")
-
-## Task 3: Set required folder structure
-
-This workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset.
-
-In this task you will setup the folder structure and load images into proper folders in the next. 
-
-Start with the library folder structure. Image library is organized in two folders:
-
-* PNEUMONIA, which contains images of bacteria or virus infected lungs, and
-* NORMAL, which contains images of normal, unaffected lungs
-
-1. Step 1: Create a new folder
-
-    Make sure you've clicked **Objects** under **Resources** in the Bucket Details page of you new bucket. 
-
-    Click **More Actions** and choose **Create New Folder** from the menu.
+    Expand **Show more information** to display what prerequisites have to be met before you can start you data labeling exercise. If these are not met, then Data Labeling just might not run properly.
     
-    ![Create folder](./images/lab1_014.png " ")
+    ![](./images/lab2_004.png " ")
 
-2. Step 2: Define folder
+    You can use OCI Group you've created in the beginning of this workshop, so you can skip the first step and continue with creating a new Dynamic Group.
 
-    Name your new folder **PNEUMONIA** and click **Create**
+4. Step 4: Navigate to **Dynamic Groups** page
 
-    ![Pneumonia folder](./images/lab1_015.jpg " ")
+    From **Navigator** menu choose **Identity & Security** and then **Dynamic Groups**.
 
-    Repeat this step for another new folder **NORMAL**.
-    
-    ![Normal folder](./images/lab1_016.png " ")
+     ![](./images/lab2_005.png " ")
 
-3. Step 3: Verify your folder structure
+5. Step 5: Create a new **Dynamic Group**
 
-    Please verify that you've created two folders, PNEUMONIA and NORMAL, under the *root*.
+    Click **Create** and define a new **Dynamic Group**.
 
-    ![Verify folders](./images/lab1_017.jpg " ")
+    Provide **Name**, **Description** and enter the following statement to the **Matching Rules**
 
-## Task 4: Load images
+    ```
+    ALL { resource.type = 'datalabelingdataset' }
+    ```
 
-We are now ready to load images into appropriate folders. The following steps might seem a bit long and far from being optimal as all images will be loaded using **Upload** utility provided on **Bucket Details** page. More elegant way of uploading would be to upload programmatically. 
+    ![](./images/lab2_006.png " ")
 
-The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx 20-30 minutes to complete.
+6. Step 6: Verify your new **Dynamic Group**
 
-1. Step 1: Initiate images Upload
+    Verify that your **Dynamic Group** is properly defined.
 
-    You should still be located in the **Objects** sub-page of the **Bucket Details** page of your bucket.
+    ![](./images/lab2_007.png " ")
 
-    Navigate to the **PNEUMONIA** folder first.
 
-    ![Pneumonia folder](./images/lab1_018.png " ")
+7. Step 7: Set policies for **Data Labeling**
 
-    And click **Upload**.
+    From the **Navigator** menu select **Identity & Security** and then **Policies**.
 
-2. Step 2: Upload images for PNEUMONIA
+    ![](./images/lab2_008.png " ")
 
-    In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged.
+8. Step 8: Create a new policy for Non-Administrative users
 
-    Then **drag image files** or **select files** from your computer onto **Choose Files from your Computer Area**. When ready, **Upload** button will become enabled (blue). Please note that you can upload approx. 200 images in one upload job.
+    Make sure that you've selected your *root* compartment first. Then click **Create Policy**.
 
-    Click **Upload** and wait all images are uploaded.
+    The first policy is for Non-Administrative users. These are members of previously created OCI Group. 
 
-    ![Upload pneumonia images](./images/lab1_019.png " ")
+    OCI Group needs the following privileges:
 
-    Repeat this step for all 3000+ images for PNEUMONIA.
+    ```markdown
+    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to read objectstorage-namespaces in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage data-labeling-family in compartment Box-of-Chocolates
+    ```
 
-3. Step 3: Upload images for NORMAL
+    ![](./images/lab2_010.png " ")
 
-    Repeat the previous step, except this time navigate to NORMAL folder and upload images for NORMAL.
+    Verify policies are properly entered.
 
-    ![Upload normal images](./images/lab1_020.png " ")
+    ![](./images/lab2_011.png " ")
 
-    There should be approx. 1000+ images for NORMAL.
 
-4. Step 4: Verify images are correctly loaded
+9. Step 9: Create a new policy for Dynamic Group
 
-    Before you continue to the next lab, just make sure that you've uploaded all images and that images are correctly placed into PNEUMONIA and NORMAL folders:
+    Repeat **Create Policy** for Dynamic Group you've created in the previous step. 
 
-    ![Verify loaded images](./images/lab1_022.png " ")
+    Enter the following statements:
 
-    You should see and review all details of uploaded images in corresponding folders.
+    ```markdown
+    allow dynamic-group Box-of-Chocolates_DataLabeling to read buckets in compartment Box-of-Chocolates
+    allow dynamic-group Box-of-Chocolates_DataLabeling to read objects in compartment Box-of-Chocolates
+    allow dynamic-group Box-of-Chocolates_DataLabeling to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE'}
+    ```
 
-    ![Verify loaded images](./images/lab1_021.png " ")
+    ![](./images/lab2_012.png " ")
+
+    Verify policies are properly entered.
+
+    ![](./images/lab2_013.png " ")
+
+    You are now ready to start with Data Labeling.
+
+## Task 2: Label images using Data Labeling tool
+
+Basic labeling tool is provided within OCI. With this tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, we will use programmatic data labeling using utilities provided by Oracle. We will provide code in the next session.
+
+But before you continue, you need to perform the first step, **Create Dataset** from your object storage image library.
+
+1. Step 1: **Create Dataset**
+
+    Navigate again to **Data Labeling** page you've entered in the first task of this Lab. 
+
+    Make sure you've selected your *root* compartment, **Box-of-Chocolates** in our case, and then click **Create dataset**.
+
+    ![](./images/lab2_014.png " ")
+
+2. Step 2: Define your dataset - **Add dataset details**
+
+    Use **Create dataset** wizard and set the parameters of your dataset.
+
+    First, **Name** your dataset and optionally add **Description** and provide **Labeling instructions**
+
+    ![](./images/lab2_015.png " ")
+
+    Click **Images** from **Dataset format** and **Single label** for **Annotation class**.
+
+    Click **Next**
+
+3. Step 3: Define your dataset - **Add files and labels**
+
+    In the 2nd step choose **Select from Object Storage** and provide **Object Storage location** details. This should be your bucket where you've put all of your images.
+
+    ![](./images/lab2_016.png " ")
+
+    Then *scroll* down to the lower section of this step.
+
+    Your files will be displayed.
+
+    ![](./images/lab2_017.png " ")
+
+    Add two labels:  **PNEUMONIA** and **NORMAL** in **Labels set**
+
+    ![](./images/lab2_018.png " ")
+
+    Click **Next**.
+
+4. Step 4: Define your dataset - **Review** and **Create**
+
+    Review your dataset details and click **Create**
+
+5. Step 5: Generating records
+
+    Records for your dataset are generated. You will have to wait for approx. 20-30 minutes. You can track the progress in top right corner.
+
+    ![](./images/lab2_019.png " ")
+
+6. Step 6: Review your dataset
+
+    You can see that there were 4881 records generated, none of them labeled yet.
+
+    ![](./images/lab2_020.png " ")
+
+    You can switch between **Data records** and **Gallery view**
+
+    ![](./images/lab2_021.png " ")
+
+7. Step 7: Open Data Labeling tool and set labels manually
+
+    You can click on the first image and Data Labeling tool will open. Since the first image is from PNEUMONIA folder, you can label it as **PNEUMONIA**.
+
+    Click **Save & next** and continue with manual labeling process.
+
+    ![](./images/lab2_023.png " ")
+
+    When you're done with labeling, exit by clicking **Cancel**. You can now see how many records have been labeled. 1 out of 4881 records in our example below.
+
+    ![](./images/lab2_024.png " ")
+
+## Task 3: Label images programmatically
+
+We have 4881 images to label. This is too much to label images manually, hence we will use Python program to label images programmatically.
+
+Oracle provides code which can be adjusted and used in your specific case. You can find the *original code* on [Github](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/data_labeling_examples).
+
+We have used Python code and adjusted to this labs requirements.You can download [data-labeling.zip](./files/data-labeling.zip) to your laptop.
+
+
+
+
 
 ## Learn More
 
-* [OCI Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
-
+* [OCI Data Labeling](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
 
 ## Acknowledgements
+
 * **Author** - Žiga Vaupot, Oracle ACE Pro, Qubix
 * **Contributors** -  Grega Dvoršak, Qubix
 * **Last Updated By/Date** - Žiga Vaupot, November 2022
