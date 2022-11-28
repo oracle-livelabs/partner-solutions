@@ -197,7 +197,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![](./images/lab2_024.png " ")
 
-## Task 3: Label images programmatically
+## Task 3: Bulk image labeling
 
 We have 4881 images to label. This is too much to label images manually, hence we will use Python program to label images programmatically.
 
