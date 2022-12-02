@@ -205,169 +205,211 @@ Oracle provides code which can be adjusted and used in your specific case. You c
 
 ![](./images/lab2_025.png " ")
 
-We have used Python code and adjusted to this labs requirements.You can download [data-labeling.zip](./files/data-labeling.zip) to your laptop.
+We have used Python code and adjusted to this labs requirements.You can download [lab2.zip](./files/lab2.zip) to your laptop.
 
-1. Step 1: Download [data-labeling.zip](./files/data-labeling.zip) to your computer.
+1. Step 1: Download [lab2.zip](./files/lab2.zip) to your computer.
 
-    You don't have to extract the zip file now, but you can still check it's content and the folder structure.
+    You don't have to extract the zip file on your laptop as you will upload it to your OCI environment. In any case if you check there should be two folders: *data-labeling* and *.oci* (this one is hidden).
 
-    ![](./images/lab2_025_2.png =40%x*)
+    If unzipped, *lab2.zip* has the following structure:
+
+    ![](./images/lab2_301.png =60%x*)
 
 2. Step 2: Open **Cloud Shell**
 
-    In OCI Console, for example from Data Labeling > Dataset page, open **Cloud Shell** console.
+    In the OCI Console, on the top bar, click **Developer Tools** icon to open associated menu and choose **Cloud Shell** option. That would open **Cloud Shell** terminal window.
 
-    ![](./images/lab2_026.png " ")
+    ![](./images/lab2_302.png " ")
 
-    On the top bar, you open menu and choose **Cloud Shell**
+3. Step 3: Upload pre-prepared files for data labeling.
 
-    ![](./images/lab2_027.png =50%x*)
+    In the **Cloud Shell** click **Cloud Shell Menu** icon (top right icon). Select **Upload**.
 
-3. Step 3: Upload data-labeling.zip file.
+    ![](./images/lab2_303.png =200px*)
 
-    **Cloud Shell** opens in the bottom section of your screen. In the top left corner, open **Utilities** menu and select **Upload**
+    This opens a dialog window. Drop lab2.zip file onto designated area or browse your computer and upload it. Observe that file name appears in the list of files for upload.
 
-    ![](./images/lab2_028.png " ")
+    Click **Upload**.
 
-    File Upload window pops up. Drag data-labeling.zip file to the rectangle area or select it from your computer.
+    ![](./images/lab2_304.png =50%x*)
 
-    ![](./images/lab2_029.png " ")
+    You can check the upload status. Once *Completed*, click **Hide**.
 
-    *data-labeling.zip* file is added below the upload section. You can now click **Upload** and the file will be loaded to your home directory.
+    ![](./images/lab2_305.png =50%x*)
 
-    ![](./images/lab2_030.png =60%x*)
-
-4. Step 4: Unzip *data-labeling.zip* file.
-
-    Once uploaded, simply unzip your file in your home directory.
+    Now you can unzip *lab2.zip* file in your home directory.
 
     ```console
-    unzip data-labeling.zip
+    unzip lab2.zip
     ```
 
-    ![](./images/lab2_031.png " ")
+    ![](./images/lab2_306.png =50%x*)
 
-    A new *data-labeling* folder is created with the content you've already reviewed above.
+    Please check that unzip created 2 folders: *data-labeling* and *.oci* with files as presented in image below:
 
-    ```console
-    ls -l
-    ls ./labeling_schemas/* -l
-    ```
+    ![](./images/lab2_307.png =50%x*)
 
-    ![](./images/lab2_032.png " ")
+    You can now minizize **Cloud Shell** terminal as you will need it a bit later.
 
-5. Step 5: Invoke **Code Editor** and update *config.py*
+    ![](./images/lab2_308.png =150x*)
 
-    Navigate to *data-labeling* folder and open *config.py* for editing. You can use **vi** for that, or if you are not so familiar with it, you can open **Code Editor** and edit the file there.
+4. Update *config.py* with required configuration parameters
 
-    ![](./images/lab2_033.png " ")
+    In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files. Let's show how to update and configure */data-labeling/config.py* first.
 
-    When **Code Editor** opens, open file *config.py*.
+    **4.1 YOUR REGION**
 
-    ![](./images/lab2_034.png " ")
+    Probably the easiest way to obtain your region information is to look at the URL. Spot *region* section and copy the value succeeding '=' simbol.
 
-    Please make sure you make changes in the lines
+    ![](./images/lab2_309.png =50%x*)
 
-    ```console
-    # region identifier of DLS Dataset, ie.: eu-frankfurt-1
-    region_identifier="<YOUR REGION>"
+    In our example, region is *eu-frankfurt-1*, but it can not be the case with your tenancy.
 
-    # compartment where DLS Dataset exists
-    compartment_id = "<YOUR COMPARTMENT OCID>"
+    **4.2 YOUR COMPARTMENT OCID**
 
-    # ocid of the DLS Dataset
-    dataset_id = "<YOUR DATASET OCID>"
-    ```
+    To obtain your compartment OCID navigate to **Compartments** page.
 
-    In case you are new to OCI, here is how you can obtain required values:
+    ![](./images/lab2_310.png " ")
 
-    **YOUR REGION**
+    Your **Compartment OCID** is located in **Compartment Information** tab (default). Click **Show** to display complete OCID and **Copy** to copy it clipboard.
 
-    **YOUR COMPARTMENT OCID**
+    ![](./images/lab2_311.png =60%x*)
 
-    **YOUR DATASET OCID**
+    **4.3 YOUR DATASET OCID**
 
-    Once you have required values, change corresponding lines in *config.py" and leave other lines unchanged.
+    **Dataset OCID** can be found on your **Dataset Details Page** under **Data Labeling**. **Dataset OCID** can be found under **Dataset information** tab.
+    
+    ![](./images/lab2_312.png " ")
 
-6. Step 6: Create *.oci/config* file for authorization
+5. Update *config* with required configuration parameters
 
-    There is more requirement you need to fulfill before you can run data labeling program.
-
-    In the *config.py*, you can see that the first line defines *config_ file_ path*.
+    *config* file is located in *.oci* folder. This is the file to which *config.py* is referring to in the first line.
+    
+    Check this entry in *config.py*:
 
     ```console
     # config file path
-    config_file_path="/home/<YOUR USER>/.oci/config"
+    config_file_path="/home/.oci/config"
     ```
+    There are several entries in the *config* file that you need to set:
 
-    At the moment */home/YOUR USER/.oci/* folder and */home/YOUR USER/.oci/config* file are not existing. So we need to create it manually.
+    **5.1 YOUR USER OCID**
 
-    The content of the config file is as follows:
+    In your OCI Console, navigate to **Profile** (top right corner icon) and choose **User settings** from the menu.
+
+    ![](./images/lab2_313.png =250x*)
+
+    **User Details Page** opens. You can copy your user OCID information from **User Information** tab. Click **Show** to display complete OCID and click **Copy** to copy OCID to *config* file.
+
+    ![](./images/lab2_314.png " ")
+
+    **5.2 FINGERPRINT FOR PRIVATE API KEY**
+
+    On the same, **User Details** page, you can now obtain also **fingerprint for your private API key**. You will generate your private API key, download it and then upload it into your *.oci* folder.
+
+    Click **API Keys** under **Resources** menu on the left and then click **Add API Key**.
+
+    ![](./images/lab2_315.png =60%x*)
+
+    In the dialog box, click **Download Private Key**. A new *.pem* file will be generated and downloaded to your computer.
+
+    In the **API Keys** section check and copy **Fingerprint** - 16 2-digit string, separated by ':'. Copy this string to *config* file.
+
+    ![](./images/lab2_315-2.png " ")
+
+    **5.3 PATH TO YOUR PRIVATE API KEY**
+
+    Set this entry to
 
     ```console
-    [DEFAULT]
-    user=<YOUR USER OCID>
-    fingerprint=<FINGERPRINT FOR PRIVATE API KEY>
-    key_file=<PATH TO YOUR PRIVATE API KEY>
-    tenancy=<YOUR TENANCY OCID>
-    region=<YOUR REGION>
+    key_file=~/.oci/oci_api_key.pem
     ```
 
-    You can also download the [config]](./files/config) file and update it with required values.
+    You have generated and downloaded this file in the previous step, but so far you haven't uploaded it. This will be done in the next step.
 
-    The missing values can be obtained here:
+    **5.4 YOUR TENANCY OCID**
 
-    **YOUR USER OCID**
+    For your tenancy OCID, open again **Profile** menu and select Tenancy option. 
 
-    **PRIVATE API KEY** and **FINGERPRINT FOR PRIVATE API KEY**
+    ![](./images/lab2_325.png =200x*)
 
-    **YOUR TENANCY OCID** and **YOUR REGION**
+    Copy **OCID** from **Tenancy Information** tab and paste it into *config* files
 
-    Return back to **Cloud Shell** and make sure you are located in your home directory, */home/Candy_Swee/* folder in our case. 
+    ![](./images/lab2_326.png " ")
+    
 
-    Create a new folder called *.oci* first and then open *vi* to create *config*. Copy the content of your local updated *config* file into *vi* and save the file.
+    **5.5 YOUR REGION**
+
+    You should have already obtain information about your region. Just reuse it from the previous step.
+
+    You can save *config* file.
+
+6. Step: Upload your **Private Key** file
+
+    You have already generated and downloaded **Private Key** for your user from OCI.
+
+    The file has a name something like this:
 
     ```console
-    mkdir .oci
-    cd .oci
-    vi config
+    -12-01-13-16.pem
+    ```
+    Rename this *.pem* file to *oci_ api_ key.pem*.
+
+    ```console
+    mv -12-01-13-16.pem oci_api_key.pem
+    ```
+    You can now upload your private key to OCI. 
+
+    In your OCI Console click **Restore** (it should be left-bottom in your console) or open **Cloud Shell** again.
+
+    Click on **Cloud Shell Menu** again and select **Upload**.
+
+    ![](./images/lab2_318.png =100x*)
+
+    When dialog window opens, choose *oca_api_key.pem* file to upload, and click **Upload*
+
+    ![](./images/lab2_319.png =200x*)
+
+    Confirm *oca_ api_ key.pem* file was uploaded and click **Hide**
+
+    ![](./images/lab2_320.png =50%x*)
+
+    *oca_ api_ key.pem* file is now in your user home folder. (Upload utility always loads file there)
+
+    ![](./images/lab2_321.png =50%x*)
+
+    Move *oca_ api_ key.pem* file to *.oci* folder.
+
+    ```console
+    mv oci_api_key.pem ./.oci
     ```
 
-    ![](./images/lab2_050.png " ")
+    Check *.oci* folder and confirm it contains to files:  *oca_ api_ key.pem* and *config*.
 
-    Save and exit *vi*.
+    ```console
+    ls ./.oci -l
+    ```
 
-    *config* file also points to your private API key, *oci_api_key.pem*. You have already downloaded it in one of the previous steps. Now you need to upload it to your home folder and then place it into *.oci* folder.
+    ![](./images/lab2_322.png =50%x*)
 
+    You are now ready to run the data labeling program. 
 
-
-
-
-10. Step 10: Run *main.py*
+7. Step 7: Run *main.py*
 
     You can finally start bulk labeling. Make sure you are in *data-labeling* folder and run *main.py*.
 
     ```console
     python3 main.py
     ```
-    
-    ![](./images/lab2_099.png " ")
-
     Program will run approx. 20-30 minutes.
 
-    ![](./images/lab2_100.png " ")
+    ![](./images/lab2_327.png " ")
 
     Once finished, check if all images are labeled now:
 
-    ![](./images/lab2_101.png " ")
+    ![](./images/lab2_328.png " ")
 
     This concludes this session, and now you can start training your new vision model.
-
-
-
-
-
-
 
 ## Learn More
 
