@@ -8,7 +8,9 @@ Estimated Time: 60 minutes
 
 ### About Data Labeling
 
-<... ADD text about data labeling ...> 
+Oracle Cloud Infrastructure (OCI) Data Labeling is a service for building labeled datasets to more accurately train AI and machine learning models. With OCI Data Labeling, developers and data scientists assemble data, create and browse datasets, and apply labels to data records through user interfaces and public APIs. The labeled datasets can be exported for model development across Oracle’s AI and data science services for a seamless model-building experience.
+
+In case of images, we need to assign a label to an image, which describes the image and classifies it. Or using same service, we can annotate parts of images and again tell the system what is that particular part of an image. For example, a wheel as a part of the car in the picture.
 
 ### Objectives
 
@@ -412,7 +414,7 @@ We have used Python code and adjusted to this labs requirements.You can download
 
 ## Learn More
 
-* [OCI Data Labeling](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
+* [OCI Data Labeling](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/home.htm)
 
 ## Acknowledgements
 
