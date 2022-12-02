@@ -336,7 +336,6 @@ We have used Python code and adjusted to this labs requirements.You can download
     Copy **OCID** from **Tenancy Information** tab and paste it into *config* files
 
     ![](./images/lab2_326.png " ")
-    
 
     **5.5 YOUR REGION**
 
@@ -353,7 +352,7 @@ We have used Python code and adjusted to this labs requirements.You can download
     ```console
     -12-01-13-16.pem
     ```
-    Rename this *.pem* file to *oci_ api_ key.pem*.
+    Rename this *.pem* file to *oci\_api\_key.pem*.
 
     ```console
     mv -12-01-13-16.pem oci_api_key.pem
@@ -366,25 +365,25 @@ We have used Python code and adjusted to this labs requirements.You can download
 
     ![](./images/lab2_318.png =100x*)
 
-    When dialog window opens, choose *oca_api_key.pem* file to upload, and click **Upload*
+    When dialog window opens, choose *oci\_api\_key.pem* file to upload, and click **Upload*
 
     ![](./images/lab2_319.png =200x*)
 
-    Confirm *oca_ api_ key.pem* file was uploaded and click **Hide**
+    Confirm *oci\_api\_key.pem* file was uploaded and click **Hide**
 
     ![](./images/lab2_320.png =50%x*)
 
-    *oca_ api_ key.pem* file is now in your user home folder. (Upload utility always loads file there)
+    *oci\_api_key.pem* file is now in your user home folder. (Upload utility always loads file there)
 
     ![](./images/lab2_321.png =50%x*)
 
-    Move *oca_ api_ key.pem* file to *.oci* folder.
+    Move *oci\_api\_key.pem* file to *.oci* folder.
 
     ```console
     mv oci_api_key.pem ./.oci
     ```
 
-    Check *.oci* folder and confirm it contains to files:  *oca_ api_ key.pem* and *config*.
+    Check *.oci* folder and confirm it contains to files:  *oci\_api\_key.pem* and *config*.
 
     ```console
     ls ./.oci -l
