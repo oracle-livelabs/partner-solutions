@@ -1,3 +1,8 @@
+![RedHat Company Logo](./images/redhat-company-logo.png =800x*)
+
+**Community Contributed Workshop**
+* **Authors:** *Elder Moraes, Developer Advocate, Red Hat & Ana-Maria Mihalceanu, Sr. Developer Advocate, Oracle*
+
 # Introduction
 
 ## About this Workshop

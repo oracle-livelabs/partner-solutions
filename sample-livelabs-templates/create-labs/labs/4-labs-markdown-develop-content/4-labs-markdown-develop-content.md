@@ -179,7 +179,79 @@ LiveLabs supports embedding of videos from [YouTube](https://www.youtube.com) or
 
   ![How to link a youtube video.](./images/youtube-url.png =60%x* " ")
 
-## Task 7: Scale an Image
+## Task 7: Scale a video
+
+Without using video scaling, all the video you embed will have small as the default size for your workshop. You can override the default video scaling by applying these manual controls below.
+
+### Resizing a video from Video Hub (Recommended)
+
+1. This is a video with no video sizing applied or the default video size. **This is the format we recommend for all your videos** if you don't need a particular scaling to drive emphasis on a subject.
+
+	```
+	[Oracle Video Hub video with no sizing](videohub:1_2ubr9fo8)
+	```
+
+  	[Demo video with no sizing.](videohub:1_2ubr9fo8)
+
+2. To scale the video size to small which is also the default video size, use this format.
+
+	```
+	[Oracle Video Hub video scaled to small size, default video size](videohub:1_2ubr9fo8:small)
+	```
+
+  	[Video hosted on Oracle Video Hub](videohub:1_2ubr9fo8:small)
+
+3. Use this format to scale the video size to medium.
+
+	```
+	[Oracle Video Hub video scaled to medium size](videohub:1_2ubr9fo8:medium)
+	```
+
+  	[Video hosted on Oracle Video Hub](videohub:1_2ubr9fo8:medium)
+
+4. To scale the video size to large in relation to the amount of lab page space available, use this format.
+
+	```
+	[Oracle Video Hub video scaled to large size](videohub:1_2ubr9fo8:large)
+	```
+
+	[Video hosted on Oracle Video Hub](videohub:1_2ubr9fo8:large)
+
+### Resizing a video from YouTube
+
+1. This is a video with no video sizing applied or the default video size. **This is the format we recommend for all your videos** if you don't need a particular scaling to drive emphasis on a subject.
+
+	```
+	[YouTube video with no sizing](youtube:lHriX403Oz4)
+	```
+
+	[Demo video with no sizing.](youtube:lHriX403Oz4)
+
+2. To scale the video size to small which is also the default video size, use this format.
+
+	```
+	[YouTube video scaled to small size, default video size](youtube:lHriX403Oz4:small)
+	```
+
+	[Video hosted on YouTube](youtube:lHriX403Oz4:small)
+
+3. Use this format to scale the video size to medium.
+
+	```
+	[YouTube video scaled to medium size](youtube:lHriX403Oz4:medium)
+	```
+
+	[Video hosted on YouTube](youtube:lHriX403Oz4:medium)
+
+4. To scale the video size to large in relation to the amount of lab page space available, use this format.
+
+	```
+	[YouTube video scaled to large size](youtube:lHriX403Oz4:large)
+	```
+
+	[Video hosted on YouTube](youtube:lHriX403Oz4:large)
+
+## Task 8: Scale an Image
 
 Without using image scaling, all the screenshots you take for your workshop will be of different sizes (unless you're a master of making pixel-perfect crops). To remedy this, we HIGHLY recommend you to stick with a scaling and use it throughout your workshop. This will make all the images scale to the same width (if possible) and contribute to a more consistent and polished feel. You can override the default image scaling by applying these manual controls below. **We highly recommend you use #4's format by default.**
 
@@ -217,7 +289,7 @@ Without using image scaling, all the screenshots you take for your workshop will
 
 5. As a final note, it's in your best interest to take as large of a picture as you can and then scale it down using the parameters above. LiveLabs allows the magnification of images so if you have a larger base image, the audience will have more clarity.
 
-## Task 8: Use the LintChecker
+## Task 9: Use the LintChecker
 
 The LintChecker is a great javascript function for QAing that you should take advantage of. It is especially handy in catching some of the more easily overlooked errors such as indentation and syntax errors.
 
@@ -227,7 +299,7 @@ The LintChecker is a great javascript function for QAing that you should take ad
 
   A box will pop up with any errors that the LintChecker caught. Keep in mind that these are not an exhaustive list of errors, they are only the ones that the function has been programmed to catch.  Also keep in mind that even though it lists something as an "error", if it was done intentionally by you, you can by all means just ignore it.
 
-## Task 9: Case Sensitivity
+## Task 10: Case Sensitivity
 
 **THIS IS IMPORTANT.** The majority of us use Windows and macOS which are **Case Insensitive** systems. This means that Windows and macOS consider "OrAcLe.PnG" to be the same as "oracle.png" or "Oracle.PNG" for file structure. GitHub and GitHub pages are **Case Sensitive**, and **do** make that distinction.
 
@@ -245,7 +317,7 @@ The LintChecker is a great javascript function for QAing that you should take ad
 
 2. If you do run into a Case Sensitivity error on Windows or macOS, you cannot simply fix it by renaming it DIRECTLY with the correct case... because the system will not recognize that you are trying to rename it. You have to either rename that item to something else entirely and then rename it back with the correct case... or you can use **"git mv"** as described [in this article](https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory) for more complicated fixes that involve entire directories.
 
-## Task 10: Code Snippets
+## Task 11: Code Snippets
 
 1. If you include code snippets in your workshop instruction, you can use the following syntax for code to distinguish it from other instructions.
 
@@ -293,7 +365,7 @@ The LintChecker is a great javascript function for QAing that you should take ad
     }
     ```
 
-## Task 11: Preview Your Workshop and Labs Using Visual Studio Code Live Server
+## Task 12: Preview Your Workshop and Labs Using Visual Studio Code Live Server
 
 1. Within the directory of any workshop you want to view, click the **workshops** folder and then click the **freetier** folder.
 
@@ -309,7 +381,33 @@ The LintChecker is a great javascript function for QAing that you should take ad
 1. Expand the navigation menu on the left, if you can navigate to other labs, then the problem is with a particular lab. Find that lab's location in the manifest.json file and fix the path to that lab's file.
 2. If no labs are showing up, then it is possibly the issue with the workshop. In the manifest.json file, make sure you remove the *include* and *variables* if they do not apply to your workshop.
 
-## Task 12: Useful Markdown Syntax Cheatsheet
+## Task 13: Strikethrough
+
+With this new feature, you can now cross out text or words in a paragraph by adding two tilde before and after the word or text in a paragraph.
+
+1. Use this format to cross out a word - *`~~strikethroguh~~`* transforms to *~~strikethrough~~*.
+
+2. To cross out text or a sentence in a paragraph, use this format.
+
+  *`~~An example of Strikethrough.~~`* transforms to *~~An example of Strikethrough.~~*
+
+## Task 14: Clickable Links
+
+1. Old pattern of making URL clickable required markdown formatting. For example, you need to have this format in markdown to make the links clickable.
+
+  *`Please visit [https://developer.oracle.com/livelabs](https://developer.oracle.com/livelabs)`* or *`Please visit <https://developer.oracle.com/livelabs>`* transforms to Please visit [https://developer.oracle.com/livelabs](https://developer.oracle.com/livelabs)
+
+2. With new pattern, type the URL (including https://) and the engine automatically creates a clickable URL.
+
+  *`Please visit https://developer.oracle.com/livelabs`* transforms to Please visit https://developer.oracle.com/livelabs
+
+3.  The old formatting still works and is required to achieve the below formatting with alternative text in markdown format.
+
+  *`Please visit [LiveLabs](https://developer.oracle.com)`* transforms to Please visit [LiveLabs](https://developer.oracle.com).
+
+4. The URLs are opened in a new tab in the browser and the same applies to email addresses as well.
+
+## Task 15: Useful Markdown Syntax Cheatsheet
 
 1.	Download this handy [Cheatsheet](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Qfg5WZ_O9yDet7NlaJPT76s9o_Yy0VVQ3LDh34c0HTrietIqqKq-m9zukdqiRymL/n/c4u04/b/livelabsfiles/o/LiveLabs_MD_Cheat_Sheet.pdf), which has more information about using Markdown syntax for LiveLabs development.
 
@@ -318,4 +416,4 @@ This concludes this lab. You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Anoosha Pilli, Product Manager, Database Product Management
-* **Last Updated By/Date:** Anoosha Pilli, September 2022
+* **Last Updated By/Date:** Anoosha Pilli, November 2022
