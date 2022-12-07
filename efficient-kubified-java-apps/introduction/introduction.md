@@ -1,11 +1,11 @@
+# Introduction
+
+## About this Workshop
+
 ![RedHat Company Logo](./images/redhat-company-logo.png =800x*)
 
 **Community Contributed Workshop**
 * **Authors:** *Elder Moraes, Developer Advocate, Red Hat & Ana-Maria Mihalceanu, Sr. Developer Advocate, Oracle*
-
-# Introduction
-
-## About this Workshop
 
 This workshop will explore best practices and valuable settings to manage application resources in a Kubernetes cluster. Since the load of cluster usage may increase rapidly due to traffic load and the number of applications deployed, it’s better to set up resource quotas to keep the workloads running smoothly.
 
