@@ -25,46 +25,130 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 
-## Task 1: Create your first **Vision model**
+## Task 1: Create your first Vision model
 
-You will organize your image library in a new object storage bucket.
+In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision** model and you will run some test to confirm it is working properly.
 
-1. Step 1: Login into OCI
+1. Step 1: Navigate to **Vision**
 
-    Login as a user who will manage your image library and also will perform the rest of activities in this workshop.
+    Using **Navigator** (on the left) navigate to **Analytics & AI** and then choose **Vision**.
 
-    Select your Identity Provider, **oracleidentitycloudservice** in this case, ...
+    ![Navigate to Vision](./images/lab3_001.png " ")
 
-    ![](./images/lab1_001.jpg =50%x*)
+2. Step 2: Create a custom **Project**
 
-    ... and provide your user's credentials. For example, Candy.Sweets.
+    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation. 
 
-    ![](./images/lab1_002.jpg =50%x*)
+    In your case, you will create your own custom model. So, Click **Projects**
 
-2. Step 2: Navigate to **Buckets** page
+    ![Navigate to Vision](./images/lab3_002.png " ")
 
-    From the **Navigator** menu (top-left cornent) select **Storage** and then **Buckets**.
+3. Step 3: Projects
 
-    ![Navigate to Buckets page](./images/lab1_004.png " ")
+    When you open the **Projects** page, pay attention to **important information** note that is displayed at the top of the page. There are some policies required which need to be set before you create a new custom project and before you start training your models.
 
-3. Step 3: Create a new bucket
+    ![Navigate to Vision](./images/lab3_003.png " ")
 
-    Please pay attention that you've selected correct compartment, *Box-of-Chocolates* in our case.
+4. Step 4: Setting policies for Vision
 
-    Then click **Create Bucket**
+    If you haven't set policies for Vision before, then open a new browser tab and navigate to **Policies** page.
 
-    ![Click Create Buckets](./images/lab1_005.jpg " ")
+    ![Navigate to Vision](./images/lab3_004.png " ")
 
-4. Step 4: Define bucket
+5. Step 5: Create a new policy
 
-    When creating a new bucket, provide a **Bucket Name** of your choosing and then leave everything else as default:
-    * choose Standard for **Default Storage Tier**, 
-    * use Encrypt using Oracle managed keys for **Encryption** and 
-    * provide some **Tags**.
+    Click **Create Policy**.
 
-    ![Define a new bucket](./images/lab1_006.png " ")
+    ![Navigate to Vision](./images/lab3_005.png =50%x*)
 
-    Finally click **Create** to create a new bucket.
+6. Step 6: Define policies to access Vision service
+
+    Provide a name of a new policy and description in **Create Policy** dialog page. In the **Policy Builder** section enable **Show manual editor** and enter the following policy
+
+    ```console
+    allow group OCI_Chocolate-Group to manage ai-service-vision-family in tenancy
+    ```
+
+    ![Navigate to Vision](./images/lab3_006.png " ")
+
+    Click **Create**.
+
+7. Step 7: Confirm Policy
+
+    Wait till policy is created and verify it has been properly set.
+
+    ![Navigate to Vision](./images/lab3_007.png " ")
+
+    You can close your 2nd tab page now.
+
+8. Step 8: Continue with customer Project setup
+
+    Click **Projects** on the left side menu list, confirm you are in correct **Compartment** (ie. Box-of-Chocolates) and click **Create Project**
+
+    ![Navigate to Vision](./images/lab3_008.png " ")
+
+9. Step 9: Define custom project
+
+    Select compartment in which you would like to create your Vision model.
+
+    Give your model a name and provide short description. Click **Create project**.
+
+    ![Navigate to Vision](./images/lab3_009.png " ")
+
+10. Step 10: Verify your project
+
+    You can monitor creation of your new project. This should be completed pretty quickly. Once done, your project should have status **ACTIVE**.
+
+    ![Navigate to Vision](./images/lab3_010.png " ")
+
+    Click on your **project name**.
+
+11. Step 11: Create a new vision model
+
+    Project page opens. You can see there is a list of **Models** that is currently empty. So, let's create your first Vision model.
+
+    Click **Create Model**
+
+    ![Navigate to Vision](./images/lab3_011.png " ")
+
+12. Step 12: Create and Train Model - Step 1
+
+    Create and Train Model Wizard will now take you through a few simple steps. 
+    
+    In the first step, you need to provide data for the model to be trained on. You are obviously using your X-Ray Images dataset, which was labeled, using **Data Labeling Service** in the previous exercise.
+
+    Click **Next** to proceed to the second step.
+
+    ![Navigate to Vision](./images/lab3_012.png " ")
+
+13. Step 13: Create and Train Model - Step 2
+
+    In this second step, you need to define parameters for the model itself. As you can see, there isn't much to do. Provide a name and description and then define **training duration**.
+
+    As you can see you can choose between *up to 24 hours*, *about an hour* and *custom duration*. In the script, **the recommended** option is chosen, which means up to 24 hours. In fact it should take approx. 5 hours to complete. But feel free to pick your option.
+
+    ![Navigate to Vision](./images/lab3_013.png " ")
+
+    Click **Next** to proceed to the **Review** step.
+
+14. Step 14: Create and Train Model - Step 3
+
+    In this step you will only review and confirm the settings. If you are ok with them, click **Create and train**.
+
+    ![Navigate to Vision](./images/lab3_014.png " ")
+
+
+15. Step 15:
+
+    ![Navigate to Vision](./images/lab3_015.png " ")
+
+16. Step 16:
+
+    ![Navigate to Vision](./images/lab3_016.png " ")
+
+17. Step 17:
+
+    ![Navigate to Vision](./images/lab3_017.png " ")
 
 
 ## Task 2: Create a staging bucket for Vision
