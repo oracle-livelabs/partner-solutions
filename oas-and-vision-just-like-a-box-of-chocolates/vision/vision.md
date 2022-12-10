@@ -15,10 +15,9 @@ The Object Storage service can store an unlimited amount of unstructured data of
 
 In this lab, you will:
 
-* Create a new bucket
-* Set bucket visibility
-* Setup required folder structure
-* Load images
+* Create a new vision model
+* Set a staging bucket
+* Test a model
 
 ### Prerequisites
 
@@ -26,7 +25,7 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 
-## Task 1: Create a new Bucket
+## Task 1: Create your first **Vision model**
 
 You will organize your image library in a new object storage bucket.
 
@@ -67,7 +66,52 @@ You will organize your image library in a new object storage bucket.
 
     Finally click **Create** to create a new bucket.
 
-## Task 2: Set visibility
+
+## Task 2: Create a staging bucket for Vision
+
+While your model is being created, you can set a staging bucket which is also required when using your model. Vision service, when running predictions, requires additional storage. Actually it is a staging bucket, where each prediction temporarily stores results. You need to create a staging bucket and allow access and manage privileges to you user group.
+
+1. Step 1: Navigate to **Storage** and then to **Buckets**.
+
+    As you've done this for the Image Library, open **Navigator** menu, select **Storage** and then choose **Buckets**
+
+    ![Define a new bucket](./images/lab3_101.png " ")
+
+2. Step 2: Create a **new Bucket**
+
+    In the **Object Storage & Archive Storage** page confirm you are in your compartment, ie. **Box-of-Chocolates** and click **Create Bucket**
+
+    ![Define a new bucket](./images/lab3_102.png " ")
+
+3. Step 3: Define your **Bucket**
+
+    Provide **Bucket Name**, and simply leave all other parameters as default.
+
+    ![Define a new bucket](./images/lab3_103.png " ")
+
+    Click **Create** to create a new bucket.
+
+4. Step 4: Verify new bucket is correctly created
+
+    You can now verify that a new bucket has been correctly created. 
+
+    ![Define a new bucket](./images/lab3_104.png " ")
+
+5. Step 5: Set policies for access and manage objects in new bucket
+
+    To access, read and manage objects in a staging bucket the following policies are required (replace User Group and Compartment names as required for your settings):
+
+    ```console
+    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}
+    ```
+
+    ![Define a new bucket](./images/lab3_105.png " ")
+
+
+
+## Task 3: not relevant
+
 
 In order to make your image library visible to other users/service, you have to update its visibility. One way of doing it is to set visibility to **Public**.
 

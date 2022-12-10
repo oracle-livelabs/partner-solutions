@@ -15,10 +15,11 @@ The Object Storage service can store an unlimited amount of unstructured data of
 
 In this lab, you will:
 
-* Create a new bucket
-* Set bucket visibility
-* Setup required folder structure
-* Load images
+* Create a new Oracle Analytics Cloud instance
+* Create a staging bucket
+* 
+*
+*
 
 ### Prerequisites
 
@@ -26,46 +27,45 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 
-## Task 1: Create a new Bucket
+## Task 1: Create a new OAC instance
 
-You will organize your image library in a new object storage bucket.
+This lab assumes you don't have any OAC instance available at the moment. That is why you should create one. You will create one Non-Production instance with features that are available in Professional Edition. To perform this lab, you don't have to setup an OAC Enterprise Edition, but of course, you can.
 
-1. Step 1: Login into OCI
+1. Step 1: Navigate to **Analytics** page
 
-    Login as a user who will manage your image library and also will perform the rest of activities in this workshop.
+    From the **Navigator** menu (top-left corner) select **Analytics & AI** and then **Analytics Cloud**.
 
-    Select your Identity Provider, **oracleidentitycloudservice** in this case, ...
+    ![Navigate to Analytics Cloud page](./images/lab4_001.png " ")
 
-    ![](./images/lab1_001.jpg =50%x*)
+2. Step 2: Create a new instance
 
-    ... and provide your user's credentials. For example, Candy.Sweets.
+    Make sure you are looking at your Compartment, in our case this is **Box-of-Chocolates** Compartment.
 
-    ![](./images/lab1_002.jpg =50%x*)
+    ![Analytics Cloud page](./images/lab4_002.png " ")
 
-2. Step 2: Navigate to **Buckets** page
+3. Step 3: Define a new Analytics Cloud instance
 
-    From the **Navigator** menu (top-left cornent) select **Storage** and then **Buckets**.
+    Provide a name for your new instance and optionally description. Confirm Compartment is correct.
 
-    ![Navigate to Buckets page](./images/lab1_004.png " ")
+    Then scroll down to **Capacity** section and pick one of the two options. In this case select **OCPU** as **Capacity Type** and select **OCPU Count**. **1 (Non-production)** should be enough.
 
-3. Step 3: Create a new bucket
+    ![Create Instance step 1a/2](./images/lab4_003.png " ")
 
-    Please pay attention that you've selected correct compartment, *Box-of-Chocolates* in our case.
+    Then scroll down again and specify **License and Edition**. As already said, **Professional Edition** should be fine as you don't need any of Enterprise Edition features.
 
-    Then click **Create Bucket**
+    ![Create Instance step 1b/2](./images/lab4_004.png " ")
 
-    ![Click Create Buckets](./images/lab1_005.jpg " ")
+    Click **Create** to start provisioning your new Oracle Analytics Cloud
 
-4. Step 4: Define bucket
+    ![Creating instance](./images/lab4_005.png " ")
 
-    When creating a new bucket, provide a **Bucket Name** of your choosing and then leave everything else as default:
-    * choose Standard for **Default Storage Tier**, 
-    * use Encrypt using Oracle managed keys for **Encryption** and 
-    * provide some **Tags**.
+4. Step 4: Verify that Oracle Analytics instance has been created
 
-    ![Define a new bucket](./images/lab1_006.png " ")
+    It takes approx. 30 minutes to create an instance. At least this was the time which was needed in our environment.
 
-    Finally click **Create** to create a new bucket.
+    ![Instance created](./images/lab4_006.png " ")
+
+    Instance should be in **Active** state.
 
 ## Task 2: Set visibility
 
