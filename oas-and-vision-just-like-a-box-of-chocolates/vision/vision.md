@@ -2,21 +2,20 @@
 
 ## Introduction
 
-This lab walks you through the steps to organize an image library in OCI Object Storage and upload X-Ray images to the the library.
+This lab walks you through the steps to train custom Image Classification model and to perform basic testing.
 
-Estimated Time: 20 minutes
+Estimated Time: 30 minutes and minimum 60 minutes for model training (up to 5 additional hours if max. training time is selected).
 
-### About OCI Object Storage
-The Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. 
+### About OCI Vision
 
-The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+OCI Vision is a serverless, cloud native service that provides deep learning-based, prebuilt, and custom computer vision models over REST APIs. OCI Vision helps you identify and locate objects, extract text, and identify tables, document types, and key-value pairs from business documents like receipts.
 
 ### Objectives
 
 In this lab, you will:
 
-* Create a new vision model
 * Set a staging bucket
+* Create a new vision model
 * Test a model
 
 ### Prerequisites
@@ -25,7 +24,48 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 
-## Task 1: Create your first Vision model
+## Task 1: Create a staging bucket for Vision
+
+Before you will begin with model training, one small prerequisite is needed. Vision service, when running predictions, requires additional storage, a staging bucket, where each prediction's results stores temporary results. You need to create a staging bucket and then allow access and manage privileges to you user group.
+
+1. Step 1: Navigate to **Storage** and then to **Buckets**.
+
+    As you've done this for the Image Library, open **Navigator** menu, select **Storage** and then choose **Buckets**
+
+    ![Define a new bucket](./images/lab3_101.png " ")
+
+2. Step 2: Create a **new Bucket**
+
+    In the **Object Storage & Archive Storage** page confirm you are in your compartment, ie. **Box-of-Chocolates** and click **Create Bucket**
+
+    ![Define a new bucket](./images/lab3_102.png " ")
+
+3. Step 3: Define your **Bucket**
+
+    Provide **Bucket Name**, and simply leave all other parameters as default.
+
+    ![Define a new bucket](./images/lab3_103.png " ")
+
+    Click **Create** to create a new bucket.
+
+4. Step 4: Verify new bucket is correctly created
+
+    You can now verify that a new bucket has been correctly created. 
+
+    ![Define a new bucket](./images/lab3_104.png " ")
+
+5. Step 5: Set policies for access and manage objects in new bucket
+
+    To access, read and manage objects in a staging bucket the following policies are required (replace User Group and Compartment names as required for your settings):
+
+    ```console
+    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}
+    ```
+
+    ![Define a new bucket](./images/lab3_105.png " ")
+
+## Task 2: Create your first Vision model
 
 In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision** model and you will run some test to confirm it is working properly.
 
@@ -144,7 +184,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_015.png " ")
 
-16. Step 16: Work request log
+16. Step 16: Work request log monitoring
 
     You can now monitor the progress by reviewing **Log Messages**.
 
@@ -152,177 +192,113 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_017.png " ")
 
+17. Step 17: Evaluate your model
 
-## Task 2: Create a staging bucket for Vision
+    ![Navigate to Vision](./images/lab3_201.png " ")
 
-While your model is being created, you can set a staging bucket which is also required when using your model. Vision service, when running predictions, requires additional storage. Actually it is a staging bucket, where each prediction temporarily stores results. You need to create a staging bucket and allow access and manage privileges to you user group.
+    ![Navigate to Vision](./images/lab3_201-2.png " ")
 
-1. Step 1: Navigate to **Storage** and then to **Buckets**.
+## Task 3: Testing your model
 
-    As you've done this for the Image Library, open **Navigator** menu, select **Storage** and then choose **Buckets**
+1. Step 1: Test you model using known images
 
-    ![Define a new bucket](./images/lab3_101.png " ")
+    Open bucket with your training image library (ie. *X-Ray-Images-for-Training*) in the second tab. Navigate to *NORMAL* folder and open details of any image. Copy **Image URL** to clipboard.
 
-2. Step 2: Create a **new Bucket**
+    ![Navigate to Vision](./images/lab3_202.png " ")
 
-    In the **Object Storage & Archive Storage** page confirm you are in your compartment, ie. **Box-of-Chocolates** and click **Create Bucket**
+    Navigate back to tab with your Project model's details.
 
-    ![Define a new bucket](./images/lab3_102.png " ")
+    Check **Object Storage** as your **Image Source** and paste **Image URL** from clipboard into **Enter Image URL** field. Click **Upload**. 
 
-3. Step 3: Define your **Bucket**
+    Image will be uploaded and automatically analyzed. **Image** and prediction **Results** are displayed. And we can see that this image has been classified as *NORMAL* with very high **Confidence**.
 
-    Provide **Bucket Name**, and simply leave all other parameters as default.
+    ![Navigate to Vision](./images/lab3_204.png " ")
 
-    ![Define a new bucket](./images/lab3_103.png " ")
+    You can repeat and perform prediction for one image which is clearly showing *PNEUMONIA* infected lungs.
 
-    Click **Create** to create a new bucket.
+    Copy **Image URL** to clipboard again ...
 
-4. Step 4: Verify new bucket is correctly created
+    ![Navigate to Vision](./images/lab3_205.png " ")
 
-    You can now verify that a new bucket has been correctly created. 
+    ... and copy it to **Enter Image URL** field and click **Uplaod**
 
-    ![Define a new bucket](./images/lab3_104.png " ")
+    ![Navigate to Vision](./images/lab3_207.png " ")
 
-5. Step 5: Set policies for access and manage objects in new bucket
+    You can see that image is now classified as *PNEUMONIA* as expected with almost 100% confidence.
 
-    To access, read and manage objects in a staging bucket the following policies are required (replace User Group and Compartment names as required for your settings):
+2. Step 2: Analyze predictions, confidence, requests and responses
 
-    ```console
-    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}
+    You have already checked **Results** on the right side of the page. 
+
+    Beside a table showing **Prediction Confidence** for each of the **Labels** you can see two additional items in the **Results** area: *Request* and *Response*.
+
+    ![Navigate to Vision](./images/lab3_208.png =30%x*)
+
+    Expand *Request*. This is request code for JSON call which is requesting prediction to be performed on the selected image.
+
+    ![Navigate to Vision](./images/lab3_209.png =30%x*)
+
+    ```json
+    {
+    "compartmentId": "ocid1.compartment.oc1..aaaaaaaa5pczgqb5i6dcs2sew52ztgesfx7yuuvrlsujgwa6xmsfio3em3pa",
+    "image": {
+        "source": "OBJECT_STORAGE",
+        "namespaceName": "frly8pi3k85f",
+        "bucketName": "X-Ray-Images-for-Training",
+        "objectName": "PNEUMONIA/person1000_bacteria_2931.jpeg"
+    },
+    "features": [
+        {
+        "modelId": "ocid1.aivisionmodel.oc1.eu-frankfurt-1.amaaaaaa4qfwndya2bdnv3rkfyj2fxqpiim2yeo7fjw2iuzkv4vfebf5pnwa",
+        "featureType": "IMAGE_CLASSIFICATION",
+        "maxResults": 5
+        }
+    ]
+    }
     ```
 
-    ![Define a new bucket](./images/lab3_105.png " ")
+    Expand *Response* and observe the JSON response with prediction results.
 
+    ![Navigate to Vision](./images/lab3_210.png =30%x*)
 
+    ```json
+    {
+    "imageObjects": null,
+    "labels": [
+        {
+        "name": "PNEUMONIA",
+        "confidence": 0.99974525
+        },
+        {
+        "name": "NORMAL",
+        "confidence": 0.00025476996
+        }
+    ],
+    "ontologyClasses": [
+        {
+        "name": "PNEUMONIA",
+        "parentNames": [],
+        "synonymNames": []
+        },
+        {
+        "name": "NORMAL",
+        "parentNames": [],
+        "synonymNames": []
+        }
+    ],
+    "imageText": null,
+    "imageClassificationModelVersion": "version",
+    "objectDetectionModelVersion": null,
+    "textDetectionModelVersion": null,
+    "errors": []
+    }
+    ```
 
-## Task 3: not relevant
-
-
-In order to make your image library visible to other users/service, you have to update its visibility. One way of doing it is to set visibility to **Public**.
-
-1. Step 1: Change visibility to Public.
-
-    From your bucket list choose your newly created bucket.
-
-    ![Buckets List](./images/lab1_007.jpg " ")
-
-2. Step 2: Edit Visibility
-
-    In the Bucket Details page, click **Edit Visibility**.
-
-    ![Bucket Details Page](./images/lab1_008.jpg " ")
-
-3. Step 3: Update Visibility
-
-    Check **Public** radio button and click **Save Changes**
-
-    ![Update visibility](./images/lab1_009.jpg =50%x*)
-
-4. Step 4: (optional) Set Pre-Authenticated Request
-
-    Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**.
-
-    In this case click **Pre-Authentication Requests** link under **Resources** and then **Create Pre-Authenticated Request**.
-
-    ![PAR](./images/lab1_010.png " ")
-
-    Fill required field in PAR definition and finally click **Create Pre-Authenticated Request**.
-
-    ![Create PAR](./images/lab1_011.png " ")
-
-    Pre-Authenticated Request details popup window is shown. Please copy URL for your reference as it won't be shown again.
-
-    ![PAR URL](./images/lab1_012.png " ")
-
-    Click **Close** to return to the **Bucket Details** page.
-
-    ![Bucket Details Page](./images/lab1_013.png " ")
-
-## Task 3: Set required folder structure
-
-This workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset.
-
-In this task you will setup the folder structure and load images into proper folders in the next. 
-
-Start with the library folder structure. Image library is organized in two folders:
-
-* PNEUMONIA, which contains images of bacteria or virus infected lungs, and
-* NORMAL, which contains images of normal, unaffected lungs
-
-1. Step 1: Create a new folder
-
-    Make sure you've clicked **Objects** under **Resources** in the Bucket Details page of you new bucket. 
-
-    Click **More Actions** and choose **Create New Folder** from the menu.
-    
-    ![Create folder](./images/lab1_014.png " ")
-
-2. Step 2: Define folder
-
-    Name your new folder **PNEUMONIA** and click **Create**
-
-    ![Pneumonia folder](./images/lab1_015.jpg " ")
-
-    Repeat this step for another new folder **NORMAL**.
-    
-    ![Normal folder](./images/lab1_016.png " ")
-
-3. Step 3: Verify your folder structure
-
-    Please verify that you've created two folders, PNEUMONIA and NORMAL, under the *root*.
-
-    ![Verify folders](./images/lab1_017.jpg " ")
-
-## Task 4: Load images
-
-We are now ready to load images into appropriate folders. The following steps might seem a bit long and far from being optimal as all images will be loaded using **Upload** utility provided on **Bucket Details** page. More elegant way of uploading would be to upload programmatically. 
-
-The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx 20-30 minutes to complete.
-
-1. Step 1: Initiate images Upload
-
-    You should still be located in the **Objects** sub-page of the **Bucket Details** page of your bucket.
-
-    Navigate to the **PNEUMONIA** folder first.
-
-    ![Pneumonia folder](./images/lab1_018.png " ")
-
-    And click **Upload**.
-
-2. Step 2: Upload images for PNEUMONIA
-
-    In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged.
-
-    Then **drag image files** or **select files** from your computer onto **Choose Files from your Computer Area**. When ready, **Upload** button will become enabled (blue). Please note that you can upload approx. 200 images in one upload job.
-
-    Click **Upload** and wait all images are uploaded.
-
-    ![Upload pneumonia images](./images/lab1_019.png " ")
-
-    Repeat this step for all 3000+ images for PNEUMONIA.
-
-3. Step 3: Upload images for NORMAL
-
-    Repeat the previous step, except this time navigate to NORMAL folder and upload images for NORMAL.
-
-    ![Upload normal images](./images/lab1_020.png " ")
-
-    There should be approx. 1000+ images for NORMAL.
-
-4. Step 4: Verify images are correctly loaded
-
-    Before you continue to the next lab, just make sure that you've uploaded all images and that images are correctly placed into PNEUMONIA and NORMAL folders:
-
-    ![Verify loaded images](./images/lab1_022.png " ")
-
-    You should see and review all details of uploaded images in corresponding folders.
-
-    ![Verify loaded images](./images/lab1_021.png " ")
+    This concludes the third lab. You will register created model in Analytics Cloud and deploy it with new images that require classification.
 
 ## Learn More
 
-* [OCI Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
+* [OCI Vision](https://docs.oracle.com/en-us/iaas/vision/vision/using/home.htm)
 
 
 ## Acknowledgements
