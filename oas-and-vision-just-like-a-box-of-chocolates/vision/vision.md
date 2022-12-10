@@ -113,8 +113,8 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
 12. Step 12: Create and Train Model - Step 1
 
-    Create and Train Model Wizard will now take you through a few simple steps. 
-    
+    Create and Train Model wizard will now take you through a few simple steps.
+
     In the first step, you need to provide data for the model to be trained on. You are obviously using your X-Ray Images dataset, which was labeled, using **Data Labeling Service** in the previous exercise.
 
     Click **Next** to proceed to the second step.
@@ -138,15 +138,17 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     ![Navigate to Vision](./images/lab3_014.png " ")
 
 
-15. Step 15:
+15. Step 15: Training in progress ...
+
+    Model training is now in progress. In the **Project details: models** page you can monitor the progress by clicking the **Work Request** operation (in this case **CREATE_MODEL).
 
     ![Navigate to Vision](./images/lab3_015.png " ")
 
-16. Step 16:
+16. Step 16: Work request log
+
+    You can now monitor the progress by reviewing **Log Messages**.
 
     ![Navigate to Vision](./images/lab3_016.png " ")
-
-17. Step 17:
 
     ![Navigate to Vision](./images/lab3_017.png " ")
 
