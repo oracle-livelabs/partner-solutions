@@ -177,7 +177,6 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_014.png " ")
 
-
 15. Step 15: Training in progress ...
 
     Model training is now in progress. In the **Project details: models** page you can monitor the progress by clicking the **Work Request** operation (in this case **CREATE_MODEL).
@@ -194,7 +193,13 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
 17. Step 17: Evaluate your model
 
+    When model training is completed - **State** is *Succeeded* and **% Complete** is *100%*.
+
+    In the **training metrics** area calculated metrics that were automatically calculated using 10% of images as test dataset. Training metrics **Precision**, **Recall** and **F1 Score** are in this case around 95%.
+
     ![Navigate to Vision](./images/lab3_201.png " ")
+
+    Additionally, you can review more detailed metrics for each label used in the model. Click on **Training metrics** link on the left side (under **Resources**). Table reveals, that training metrics for *PNEUMONIA* are slightly higher than for *NORMAL*.
 
     ![Navigate to Vision](./images/lab3_201-2.png " ")
 

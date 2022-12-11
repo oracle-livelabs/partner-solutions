@@ -16,7 +16,7 @@ The Object Storage service can store an unlimited amount of unstructured data of
 In this lab, you will:
 
 * Create a new Oracle Analytics Cloud instance
-* Create a staging bucket
+* Create a bucket for new images
 * 
 *
 *
@@ -67,128 +67,54 @@ This lab assumes you don't have any OAC instance available at the moment. That i
 
     Instance should be in **Active** state.
 
-## Task 2: Set visibility
+    In your Oracle Analytics console page, click **Analytics Home Page**.
 
-In order to make your image library visible to other users/service, you have to update its visibility. One way of doing it is to set visibility to **Public**.
+    ![Instance created](./images/lab4_007.png " ")
 
-1. Step 1: Change visibility to Public.
+    **Oracle Analytics Home Page** opens.
 
-    From your bucket list choose your newly created bucket.
+    ![Instance created](./images/lab4_008.png " ")
 
-    ![Buckets List](./images/lab1_007.jpg " ")
+## Task 2: Create a new bucket for prediction images
 
-2. Step 2: Edit Visibility
+It's time to prepare an image library for new images which are going to be classified for *PNEUMONIA* and *NORMAL*
 
-    In the Bucket Details page, click **Edit Visibility**.
+1. Step 1: Navigate to **Buckets**
 
-    ![Bucket Details Page](./images/lab1_008.jpg " ")
+    Once again, navigate to **Buckets** page and create a new bucket. 
 
-3. Step 3: Update Visibility
+    ![Buckets List](./images/lab4_011.png " ")
 
-    Check **Public** radio button and click **Save Changes**
+2. Step 2: Define a new bucket
 
-    ![Update visibility](./images/lab1_009.jpg =50%x*)
+    ![Buckets List](./images/lab4_012.png " ")
 
-4. Step 4: (optional) Set Pre-Authenticated Request
+3. Step 3: Download validation dataset
 
-    Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**.
+    Download and unzip [validation-dataset.zip](./files/validation_dataset.zip) to your laptop. 
 
-    In this case click **Pre-Authentication Requests** link under **Resources** and then **Create Pre-Authenticated Request**.
+4. Step 4: Upload images from validation dataset to newly create bucket.
 
-    ![PAR](./images/lab1_010.png " ")
+    Return to your new bucket and click **Upload**.
 
-    Fill required field in PAR definition and finally click **Create Pre-Authenticated Request**.
+    ![Buckets List](./images/lab4_013.png " ")
 
-    ![Create PAR](./images/lab1_011.png " ")
+    Drag and drop your validation images to the **Drop files here** area.
 
-    Pre-Authenticated Request details popup window is shown. Please copy URL for your reference as it won't be shown again.
+    ![Buckets List](./images/lab4_014.png " ")
 
-    ![PAR URL](./images/lab1_012.png " ")
+    Wait for images to prepare for upload and click **Upload**.
 
-    Click **Close** to return to the **Bucket Details** page.
+    ![Buckets List](./images/lab4_015.png " ")
 
-    ![Bucket Details Page](./images/lab1_013.png " ")
+    Validation images are now uploaded. You can return to Oracle Analytics and continue with this lab.
 
-## Task 3: Set required folder structure
+    ![Buckets List](./images/lab4_016.png " ")
 
-This workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset.
 
-In this task you will setup the folder structure and load images into proper folders in the next. 
+## Task 3: 
 
-Start with the library folder structure. Image library is organized in two folders:
 
-* PNEUMONIA, which contains images of bacteria or virus infected lungs, and
-* NORMAL, which contains images of normal, unaffected lungs
-
-1. Step 1: Create a new folder
-
-    Make sure you've clicked **Objects** under **Resources** in the Bucket Details page of you new bucket. 
-
-    Click **More Actions** and choose **Create New Folder** from the menu.
-    
-    ![Create folder](./images/lab1_014.png " ")
-
-2. Step 2: Define folder
-
-    Name your new folder **PNEUMONIA** and click **Create**
-
-    ![Pneumonia folder](./images/lab1_015.jpg " ")
-
-    Repeat this step for another new folder **NORMAL**.
-    
-    ![Normal folder](./images/lab1_016.png " ")
-
-3. Step 3: Verify your folder structure
-
-    Please verify that you've created two folders, PNEUMONIA and NORMAL, under the *root*.
-
-    ![Verify folders](./images/lab1_017.jpg " ")
-
-## Task 4: Load images
-
-We are now ready to load images into appropriate folders. The following steps might seem a bit long and far from being optimal as all images will be loaded using **Upload** utility provided on **Bucket Details** page. More elegant way of uploading would be to upload programmatically. 
-
-The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx 20-30 minutes to complete.
-
-1. Step 1: Initiate images Upload
-
-    You should still be located in the **Objects** sub-page of the **Bucket Details** page of your bucket.
-
-    Navigate to the **PNEUMONIA** folder first.
-
-    ![Pneumonia folder](./images/lab1_018.png " ")
-
-    And click **Upload**.
-
-2. Step 2: Upload images for PNEUMONIA
-
-    In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged.
-
-    Then **drag image files** or **select files** from your computer onto **Choose Files from your Computer Area**. When ready, **Upload** button will become enabled (blue). Please note that you can upload approx. 200 images in one upload job.
-
-    Click **Upload** and wait all images are uploaded.
-
-    ![Upload pneumonia images](./images/lab1_019.png " ")
-
-    Repeat this step for all 3000+ images for PNEUMONIA.
-
-3. Step 3: Upload images for NORMAL
-
-    Repeat the previous step, except this time navigate to NORMAL folder and upload images for NORMAL.
-
-    ![Upload normal images](./images/lab1_020.png " ")
-
-    There should be approx. 1000+ images for NORMAL.
-
-4. Step 4: Verify images are correctly loaded
-
-    Before you continue to the next lab, just make sure that you've uploaded all images and that images are correctly placed into PNEUMONIA and NORMAL folders:
-
-    ![Verify loaded images](./images/lab1_022.png " ")
-
-    You should see and review all details of uploaded images in corresponding folders.
-
-    ![Verify loaded images](./images/lab1_021.png " ")
 
 ## Learn More
 
