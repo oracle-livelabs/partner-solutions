@@ -112,9 +112,17 @@ It's time to prepare an image library for new images which are going to be class
     ![Buckets List](./images/lab4_016.png " ")
 
 
-## Task 3: 
+## Task 3: Connect Oracle Analytics to OCI Vision
 
+## Task 4: Update Safe Domains
 
+## Task 5: Register Vision Model with Oracle Analytics
+
+## Task 6: Apply Vision Model using Data Flows
+
+## Task 7: Import Vision Series Plug-in
+
+## Task 8: Visualize and Analyze
 
 ## Learn More
 
