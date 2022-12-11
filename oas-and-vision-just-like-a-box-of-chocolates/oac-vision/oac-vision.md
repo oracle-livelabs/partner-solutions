@@ -17,9 +17,12 @@ In this lab, you will:
 
 * Create a new Oracle Analytics Cloud instance
 * Create a bucket for new images
-* 
-*
-*
+* Set connection in Oracle Analytics to connect OCI Vision
+* Update Safe Domains
+* Register Vision Model with Oracle Analytics
+* Apply Vision Model and perform image classification using Data Flows
+* Import and Install Vision Series Plug-in
+* Visualize and Analyze predictions
 
 ### Prerequisites
 
@@ -111,18 +114,335 @@ It's time to prepare an image library for new images which are going to be class
 
     ![Buckets List](./images/lab4_016.png " ")
 
-
 ## Task 3: Connect Oracle Analytics to OCI Vision
+
+You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is a native **Oracle Cloud** connector available in Oracle Analytics, which you will use to retrive and register your Vision model with Oracle Analytics Cloud.
+
+1. Step 1: Navigate to **Connections**
+
+    Click **Navigator icon** (top-left) to open the **Navigator menu** on the left. Choose **Data**.
+
+    ![Buckets List](./images/lab4_201.png =30%x*)
+
+    Click **Connections** tab to review if there are any existing connections. At this point, there shouldn't be any (if case you've just provisioned OAC instance).
+
+    ![Buckets List](./images/lab4_202.png =50%x*)
+
+2. Step 2: Create a **new Connection**
+
+    In the top menu bar click **Create** and choose **Connection** from available options.
+
+    ![Buckets List](./images/lab4_203.png =30%x*)
+
+3. Step 3: Select **Connection Type**
+
+    **Create Connection** dialog window opens. From the available **Connection Types** choose **OCI Resource**.
+
+    ![Buckets List](./images/lab4_204.png =50%x*)
+
+4. Step 4: Provide **Connection details**
+
+    In the second step, define details for your connection. You will need to know in which **region** is your instance running. Then you also have to provide the **Tenancy OCID** and **User OCID** that would connect to OCI Vision. 
+
+    Based on the information provided you will then **generate API Key** and register it with the user whose OCID you've provided.
+
+    ![Buckets List](./images/lab4_205.png =50%x*)
+
+5. Step 5: (optional) Obtain **Tenancy OCID**
+
+    This is an optional step. You will have to open a new OCI Console page in a separate tab or window. If you have already obtained your **Tenancy OCID**, then you should use it. If you haven't got your **Tenancy OCID**, then open the **Profile** menu (top-right in your OCI console, not in Oracle Analytics Cloud Home Page) and select **Tenancy** menu option. 
+
+    ![Buckets List](./images/lab4_206.png =30%x*)
+
+    Tenancy page opens and you can copy **OCID** into clipboard from there.
+
+    ![Buckets List](./images/lab4_207.png =50%x*)
+
+    You can navigate to your original page and paste **Tenancy OCID** information in **Connection details**.
+
+6. Step 6: (optional) Obtain **User OCID**
+
+    This is also optional step as you have already obtained your **User OCID** when you were labeling images. Nevertheless, you will have to add newly generated API Key with that user, so you might open User page at least for later.
+
+    In any case, open the Profile menu again and select **User settings**. 
+
+    ![Buckets List](./images/lab4_208.png =30%x*)
+
+    You will see user's **OCID** under **User Information** tab. Copy **OCID** into respective field in **Connection details**.
+
+    ![Buckets List](./images/lab4_209.png =50%x*)
+
+    Don't close this tab page just yet.
+
+7. Step 7: Generate API Key
+
+    You should now return to **Connection details** dialog window to complete the setting.
+
+    Click **Generate**.
+
+    ![Buckets List](./images/lab4_210.png =50%x*)
+
+    API Key Fingerprint will be generated in the **API Key** field. You should click **Copy** now and copy API Key in clipboard.
+
+    ![Buckets List](./images/lab4_211.png =50%x*)
+
+8. Step 8: Add **API Key** to **User settings**
+
+    Return back to **User settings** page. 
+
+    ![Buckets List](./images/lab4_212.png =30%x*)
+
+    Scroll down to **Resources** menu located at bottom-left. Click **API Keys**. There should be one **API Key** in the **API Keys** list which you created earlier doing **Data Labeling** lab. You are going to create a new one. 
+
+    Click **Add API Key**
+
+    ![Buckets List](./images/lab4_214.png =50%x*)
+
+    When **Add API Key** dialog window opens, check radio button **Paste Public Key**. Click into **Public Key** field and paste clipboard content. Your public key should now be copied into an empty **Public Key** field.
+
+    Click **Add**
+
+    ![Buckets List](./images/lab4_215-1.png =50%x*)
+
+    Before completing this step, you can now review **Configuration File** that was generated and then click **Close** to close **Add API Key** dialog.
+
+    ![Buckets List](./images/lab4_215-2.png =50%x*)
+
+    You should see additional API Key in the **API Keys** list.
+
+    ![Buckets List](./images/lab4_216.png =70%x*)
+
+9. Step 1: Save your OCI Resource connection
+
+    Only now, you can save your connection. If you've tried to do it earlier, you would see an error. 
+
+    ![Buckets List](./images/lab4_217.png =50%x*)
+
+    Your new connection is now visible under **Connections**.
+
+    ![Buckets List](./images/lab4_218.png " ")
 
 ## Task 4: Update Safe Domains
 
+1. Step 1: Navigate to Console
+
+    From Analytics Cloud home page click **Navigator menu** icon and navigate to **Console**
+
+    ![Buckets List](./images/lab4_231.png =30%x*)
+
+2. Step 2: Open **Safe Domains**
+
+    Click **Safe Domains**
+
+    ![Buckets List](./images/lab4_232.png " ")
+
+3. Step 3: Add domain
+
+    Click **add domain** and add your domain. For example, if you are using eu-frankfurt-1 region, then domain entry should be as follows:
+
+    ```console
+    *.eu-franfurt-1.oraclecloud.com
+    ```
+
+    Check **Image** and **Connect** checkboxes, indicating that you are going to connect to that domain and you will download images from there.
+
+    ![Buckets List](./images/lab4_233.png " ")
+
 ## Task 5: Register Vision Model with Oracle Analytics
+
+In one of the previous step, you have already established a connection between Analytics Cloud and Vision. Now, you can register machine learning from Vision with Analytics Cloud using that connection.
+
+1. Step 1: Open **Register Model** dialog
+
+    Open top-right menu and select **Register Model/Function**. From the submenu choose **OCI Vision Models**.
+
+    ![Buckets List](./images/lab4_241.png =50%x*)
+
+2. Step 2: Select a connection
+
+    **Register a Vision model** dialog window opens. In the first step select a connection. That should be the one you've created earlier.
+
+    ![Buckets List](./images/lab4_242.png =50%x*)
+
+3. Step 3: Select a model
+
+    Based on selected connection, all the list of all available models is displayed. You can review each model details. There should also be your model. Click on it. On the right side the following information will be displayed **Model Name**, **Description** and **Staging Bucket Name**.
+
+    ![Buckets List](./images/lab4_243.png =50%x*)
+
+    Observe that **Register** button is shaded and inactive. This is because you need to specify **Staging Bucket Name** - remember you have created it in one of the previous steps. Obtain the name of your **staging bucket** and continue with **OCI Vision Model** registration.
+
+    ![Buckets List](./images/lab4_244.png =50%x*)
+
+4. Step 4: Inspect your model in Analytics Cloud
+
+    Your model is now registered and imported into Analytics Cloud. You can navigate to **Machine Learning** section from **Navigator menu** or simply search for it from **Ask BI** search line. Click **Machine Learning** to filter all ML models and the look for your model. 
+
+    ![Buckets List](./images/lab4_245.png =50%x*)
+
+    Right-mouse click and select **Inspect**. You can now review your model details.
+
+    ![Buckets List](./images/lab4_246.png =50%x*)
+
+    ![Buckets List](./images/lab4_247.png =50%x*)
 
 ## Task 6: Apply Vision Model using Data Flows
 
-## Task 7: Import Vision Series Plug-in
+  1. Step 1: ...
+
+    ![Buckets List](./images/lab4_251.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_252.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_253.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_254.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_255.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_256.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_257.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_258.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_259.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_260.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_261.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_262.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_263.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_264.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_265.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_266.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_267.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_268.png " ")
+
+
+## Task 7: Vision Series Plug-in
+
+https://www.oracle.com/business-analytics/data-visualization/examples/
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_271.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_272.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_273.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_274.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_275.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_276.png " ")
+
 
 ## Task 8: Visualize and Analyze
+
+ 1. Step 1: ...
+
+    ![Buckets List](./images/lab4_301.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_302.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_303.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_304.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_305.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_306.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_306-2.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_307.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_308.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_309.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_310.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_311.png " ")
+
+1. Step 1: ...
+
+    ![Buckets List](./images/lab4_312.png " ")
 
 ## Learn More
 
