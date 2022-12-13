@@ -1,8 +1,8 @@
-# Image Library
+# Data (Image) Labaling
 
 ## Introduction
 
-This lab walks you through the steps to create a new dataset using images from your image library and to label images with one of two labels.
+This lab walks you through the steps to create a new dataset of records using images from your image library and to label those images with one of two labels: PNEUMONIA and NORMAL.
 
 Estimated Time: 60 minutes
 
@@ -10,7 +10,7 @@ Estimated Time: 60 minutes
 
 Oracle Cloud Infrastructure (OCI) Data Labeling is a service for building labeled datasets to more accurately train AI and machine learning models. With OCI Data Labeling, developers and data scientists assemble data, create and browse datasets, and apply labels to data records through user interfaces and public APIs. The labeled datasets can be exported for model development across Oracle’s AI and data science services for a seamless model-building experience.
 
-In case of images, we need to assign a label to an image, which describes the image and classifies it. Or using same service, we can annotate parts of images and again tell the system what is that particular part of an image. For example, a wheel as a part of the car in the picture.
+In case of images, we need to assign a label to an image, which describes and classifies that image. Or using same service, we can annotate parts of images and again tell the system what is that particular part of an image. For example, a wheel as a part of the car in the picture.
 
 ### Objectives
 
@@ -24,11 +24,16 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* An Oracle Cloud account
+* Completed previous labs of this workshop: **Prepare Environment** and **Lab 1: Image Library**.
 
 ## Task 1: Set privileges for Data Labeling
 
-Before you can start your data labeling process, you must set additional dynamic group and set some policies for your existing OCI Group and for that new Dynamic Group.
+Before you can start your data labeling process, you must perform prerequisete steps to:
+
+* set additional dynamic group and
+* to set some required policies for your existing OCI Group and for the new Dynamic Group.
+
+To find out which dynamic groups and policies are required navigate to **Data Labeling** page as follows:
 
 1. Step 1: Navigate to **Data Labeling** page
 
@@ -44,11 +49,11 @@ Before you can start your data labeling process, you must set additional dynamic
 
 3. Step 3: Verify **Data Labeling Prerequisites**
 
-    Expand **Show more information** to display what prerequisites have to be met before you can start you data labeling exercise. If these are not met, then Data Labeling just might not run properly.
-    
+    Expand **Show more information** to display what prerequisites have to be met before you can start your data labeling exercise. If these are not met, then Data Labeling might not run properly.
+
     ![](./images/lab2_004.png " ")
 
-    You can use OCI Group you've created in the beginning of this workshop, so you can skip the first step and continue with creating a new Dynamic Group.
+    You can use OCI Group you've created in the beginning of this workshop (see **Prepare Environment**), so you can skip the first step and continue with creating a new Dynamic Group.
 
 4. Step 4: Navigate to **Dynamic Groups** page
 
@@ -60,7 +65,7 @@ Before you can start your data labeling process, you must set additional dynamic
 
     Click **Create** and define a new **Dynamic Group**.
 
-    Provide **Name**, **Description** and enter the following statement to the **Matching Rules**
+    Provide **Name**, **Description** and enter the following statement to the **Matching Rules**:
 
     ```console
     ALL { resource.type = 'datalabelingdataset' }
@@ -74,20 +79,19 @@ Before you can start your data labeling process, you must set additional dynamic
 
     ![](./images/lab2_007.png " ")
 
-
 7. Step 7: Set policies for **Data Labeling**
 
-    From the **Navigator** menu select **Identity & Security** and then **Policies**.
+    From the **Navigator** menu select **Identity & Security** and then choose **Policies**.
 
     ![](./images/lab2_008.png " ")
 
-8. Step 8: Create a new policy for Non-Administrative users
+8. Step 8: Create a new policy for **Non-Administrative users**
 
     Make sure that you've selected your *root* compartment first. Then click **Create Policy**.
 
-    The first policy is for Non-Administrative users. These are members of previously created OCI Group. 
+    The first policy is for Non-Administrative users. These are members of previously created OCI Group.
 
-    OCI Group needs the following privileges:
+    OCI Group needs the following privileges (assuming OCI Group is called *OCI_Chocolate-Group* and compartment's name is *Box-of-Chocolates*):
 
     ```console
     allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
@@ -98,16 +102,15 @@ Before you can start your data labeling process, you must set additional dynamic
 
     ![](./images/lab2_010.png " ")
 
-    Verify policies are properly entered.
+    Verify and double check all policies statements are properly entered and click **Create**.
 
     ![](./images/lab2_011.png " ")
-
 
 9. Step 9: Create a new policy for Dynamic Group
 
     Repeat **Create Policy** for Dynamic Group you've created in the previous step. 
 
-    Enter the following statements:
+    Enter the following statements (again assuming Dynamic Group is called *Box-of-Chocolates_DataLabeling* and compartment's name is *Box-of-Chocolates*):
 
     ```console
     allow dynamic-group Box-of-Chocolates_DataLabeling to read buckets in compartment Box-of-Chocolates
@@ -117,7 +120,7 @@ Before you can start your data labeling process, you must set additional dynamic
 
     ![](./images/lab2_012.png " ")
 
-    Verify policies are properly entered.
+    Verify and double check all policies statements are properly entered and click **Create**.
 
     ![](./images/lab2_013.png " ")
 
@@ -125,15 +128,15 @@ Before you can start your data labeling process, you must set additional dynamic
 
 ## Task 2: Label images using Data Labeling tool
 
-Basic labeling tool is provided within OCI. With this tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, we will use programmatic data labeling using utilities provided by Oracle. We will provide code in the next session.
+Basic data labeling tool is provided within OCI. With this labeling tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the next session.
 
-But before you continue, you need to perform the first step, **Create Dataset** from your object storage image library.
+But before you continue, you need to perform the first step, **Create Dataset** based on your object storage based Image Library.
 
 1. Step 1: **Create Dataset**
 
-    Navigate again to **Data Labeling** page you've entered in the first task of this Lab. 
+    Navigate again to **Data Labeling** page you've entered in the first task of this Lab.
 
-    Make sure you've selected your *root* compartment, **Box-of-Chocolates** in our case, and then click **Create dataset**.
+    Make sure you've selected your *root* compartment, ie. **Box-of-Chocolates** and then click **Create dataset**.
 
     ![](./images/lab2_014.png " ")
 
@@ -145,23 +148,23 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![](./images/lab2_015.png " ")
 
-    Click **Images** from **Dataset format** and **Single label** for **Annotation class**.
+    Click *Images* from **Dataset format** and *Single label* for **Annotation class**.
 
     Click **Next**
 
 3. Step 3: Define your dataset - **Add files and labels**
 
-    In the 2nd step choose **Select from Object Storage** and provide **Object Storage location** details. This should be your bucket where you've put all of your images.
+    In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. Box-of-Choclates) where you've put all of your images.
 
     ![](./images/lab2_016.png " ")
 
     Then *scroll* down to the lower section of this step.
 
-    Your files will be displayed.
+    Your images will be displayed.
 
     ![](./images/lab2_017.png " ")
 
-    Add two labels:  **PNEUMONIA** and **NORMAL** in **Labels set**
+    Enter two labels: *PNEUMONIA* and *NORMAL* in **Labels set** field.
 
     ![](./images/lab2_018.png " ")
 
@@ -173,29 +176,29 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
 5. Step 5: Generating records
 
-    Records for your dataset are generated. You will have to wait for approx. 20-30 minutes. You can track the progress in top right corner.
+    Records for your dataset will be generated. You will have to wait for approx. 30 minutes. You can track the progress in top right corner.
 
     ![](./images/lab2_019.png " ")
 
 6. Step 6: Review your dataset
 
-    You can see that there were 4881 records generated, none of them labeled yet.
+    When finished, you can review the result of the records generation activity. For example, you can see that there were 4881 records generated, none of them have been labeled yet.
 
     ![](./images/lab2_020.png " ")
 
-    You can switch between **Data records** and **Gallery view**
+    You can switch between **Data records** and **Gallery view** details.
 
     ![](./images/lab2_021.png " ")
 
 7. Step 7: Open Data Labeling tool and set labels manually
 
-    You can click on the first image and Data Labeling tool will open. Since the first image is from PNEUMONIA folder, you can label it as **PNEUMONIA**.
+    You can click on the first image and **Data Labeling** tool will open. Since the first image is from *PNEUMONIA* folder, you should label it as *PNEUMONIA*.
 
     Click **Save & next** and continue with manual labeling process.
 
     ![](./images/lab2_023.png " ")
 
-    When you're done with labeling, exit by clicking **Cancel**. You can now see how many records have been labeled. 1 out of 4881 records in our example below.
+    When you're done with labeling, exit by clicking **Cancel**. You can now check how many records have been labeled. In our example, only 1 out of 4881 records.
 
     ![](./images/lab2_024.png " ")
 
@@ -207,11 +210,13 @@ Oracle provides code which can be adjusted and used in your specific case. You c
 
 ![](./images/lab2_025.png " ")
 
-We have used Python code and adjusted to this labs requirements.You can download [lab2.zip](./files/lab2.zip) to your laptop.
+We have used original Python code and adjusted it to this labs requirements. You will upload this adjusted code to your OCI environment and run it there.
 
-1. Step 1: Download [lab2.zip](./files/lab2.zip) to your computer.
+1. Step 1: Download Python code.
 
-    You don't have to extract the zip file on your laptop as you will upload it to your OCI environment. In any case if you check there should be two folders: *data-labeling* and *.oci* (this one is hidden).
+    Download [lab2.zip](./files/lab2.zip) to your computer.
+
+    You don't have to extract the zip file to your laptop as you will upload it as such to your OCI environment.
 
     If unzipped, *lab2.zip* has the following structure:
 
@@ -235,7 +240,7 @@ We have used Python code and adjusted to this labs requirements.You can download
 
     ![](./images/lab2_304.png =50%x*)
 
-    You can check the upload status. Once *Completed*, click **Hide**.
+    You can check the upload status during the upload. Once *Completed*, click **Hide**.
 
     ![](./images/lab2_305.png =50%x*)
 
@@ -247,11 +252,11 @@ We have used Python code and adjusted to this labs requirements.You can download
 
     ![](./images/lab2_306.png =50%x*)
 
-    Please check that unzip created 2 folders: *data-labeling* and *.oci* with files as presented in image below:
+    Please check that unzip created 2 folders: *data-labeling* and *.oci* (this folder should be hidden) with files as presented in image below:
 
     ![](./images/lab2_307.png =50%x*)
 
-    You can now minizize **Cloud Shell** terminal as you will need it a bit later.
+    You can now minimize **Cloud Shell** terminal as you will need it again a little bit later.
 
     ![](./images/lab2_308.png =150x*)
 
@@ -265,7 +270,7 @@ We have used Python code and adjusted to this labs requirements.You can download
 
     ![](./images/lab2_309.png =50%x*)
 
-    In our example, region is *eu-frankfurt-1*, but it can not be the case with your tenancy.
+    In our example, region is *eu-frankfurt-1*, but it can not be the case with your instance.
 
     **4.2 YOUR COMPARTMENT OCID**
 
@@ -280,19 +285,20 @@ We have used Python code and adjusted to this labs requirements.You can download
     **4.3 YOUR DATASET OCID**
 
     **Dataset OCID** can be found on your **Dataset Details Page** under **Data Labeling**. **Dataset OCID** can be found under **Dataset information** tab.
-    
+
     ![](./images/lab2_312.png " ")
 
 5. Update *config* with required configuration parameters
 
     *config* file is located in *.oci* folder. This is the file to which *config.py* is referring to in the first line.
-    
+
     Check this entry in *config.py*:
 
     ```console
     # config file path
     config_file_path="/home/.oci/config"
     ```
+
     There are several entries in the *config* file that you need to set:
 
     **5.1 YOUR USER OCID**
@@ -420,4 +426,4 @@ We have used Python code and adjusted to this labs requirements.You can download
 
 * **Author** - Žiga Vaupot, Oracle ACE Pro, Qubix
 * **Contributors** -  Grega Dvoršak, Qubix
-* **Last Updated By/Date** - Žiga Vaupot, November 2022
+* **Last Updated By/Date** - Žiga Vaupot, December 2022

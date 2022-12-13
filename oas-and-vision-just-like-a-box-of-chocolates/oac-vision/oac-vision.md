@@ -1,13 +1,14 @@
-# Image Library
+# Visualize and Analyze
 
 ## Introduction
 
-This lab walks you through the steps to organize an image library in OCI Object Storage and upload X-Ray images to the the library.
+This lab walks you through the steps to ...
 
 Estimated Time: 20 minutes
 
 ### About OCI Object Storage
-The Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. 
+
+The Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability.
 
 The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
 

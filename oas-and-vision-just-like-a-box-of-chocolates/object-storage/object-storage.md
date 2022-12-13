@@ -2,20 +2,19 @@
 
 ## Introduction
 
-This lab walks you through the steps to organize an image library in OCI Object Storage and upload X-Ray images to the the library.
+This lab walks you through the steps to organize an image library in Object Storage and to upload X-Ray images to the this image library.
 
-Estimated Time: 20 minutes
+Estimated Time: 60 minutes
 
 ### About OCI Object Storage
-The Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. 
 
-The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+OCI Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
 
 ### Objectives
 
 In this lab, you will:
 
-* Create a new bucket
+* Create a new bucket within Object Storage
 * Set bucket visibility
 * Setup required folder structure
 * Load images
@@ -24,15 +23,15 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* An Oracle Cloud account
+* Completed *Prepare Environment* lab
 
 ## Task 1: Create a new Bucket
 
-You will organize your image library in a new object storage bucket.
+You will organize your image library in a new **Object Storage Bucket**.
 
 1. Step 1: Login into OCI
 
-    Login as a user who will manage your image library and also will perform the rest of activities in this workshop.
+    Login as a user who will manage your image library and will also perform the rest of activities in this workshop.
 
     Select your Identity Provider, **oracleidentitycloudservice** in this case, ...
 
@@ -44,24 +43,24 @@ You will organize your image library in a new object storage bucket.
 
 2. Step 2: Navigate to **Buckets** page
 
-    From the **Navigator** menu (top-left cornent) select **Storage** and then **Buckets**.
+    From the **Navigator** menu (top-left corner) select **Storage** and then **Buckets**.
 
     ![Navigate to Buckets page](./images/lab1_004.png " ")
 
 3. Step 3: Create a new bucket
 
-    Please pay attention that you've selected correct compartment, *Box-of-Chocolates* in our case.
+    Please pay attention that you've selected correct compartment, ie. *Box-of-Chocolates*.
 
-    Then click **Create Bucket**
+    Then click **Create Bucket**.
 
     ![Click Create Buckets](./images/lab1_005.jpg " ")
 
 4. Step 4: Define bucket
 
-    When creating a new bucket, provide a **Bucket Name** of your choosing and then leave everything else as default:
-    * choose Standard for **Default Storage Tier**, 
-    * use Encrypt using Oracle managed keys for **Encryption** and 
-    * provide some **Tags**.
+    When defining a new bucket, you should provide a **Bucket Name** of your choosing and then leave everything else as default:
+    * choose *Standard* for **Default Storage Tier**,
+    * use *Encrypt* using Oracle managed keys for **Encryption** and
+    * provide some **Tags** if you want to improve your OCI management and control.
 
     ![Define a new bucket](./images/lab1_006.png " ")
 
@@ -69,7 +68,7 @@ You will organize your image library in a new object storage bucket.
 
 ## Task 2: Set visibility
 
-In order to make your image library visible to other users/service, you have to update its visibility. One way of doing it is to set visibility to **Public**.
+In order to make your image library visible to other users/service, you have to update its visibility. Default visibility is set to *Private*. One way of changing visibility settings is simply to set visibility to **Public**. This can be a bit tricky from security reasons, but for this workshop we could squint in one eye.
 
 1. Step 1: Change visibility to Public.
 
@@ -91,7 +90,7 @@ In order to make your image library visible to other users/service, you have to 
 
 4. Step 4: (optional) Set Pre-Authenticated Request
 
-    Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**.
+    Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**. This gives you more control over what can public see and do with your images.
 
     In this case click **Pre-Authentication Requests** link under **Resources** and then **Create Pre-Authenticated Request**.
 
@@ -101,7 +100,7 @@ In order to make your image library visible to other users/service, you have to 
 
     ![Create PAR](./images/lab1_011.png " ")
 
-    Pre-Authenticated Request details popup window is shown. Please copy URL for your reference as it won't be shown again.
+    Pre-Authenticated Request details popup window is shown. **NOTE:** Please copy URL for your reference as it won't be shown again.
 
     ![PAR URL](./images/lab1_012.png " ")
 
@@ -109,33 +108,33 @@ In order to make your image library visible to other users/service, you have to 
 
     ![Bucket Details Page](./images/lab1_013.png " ")
 
-## Task 3: Set required folder structure
+## Task 3: Setup required folder structure
 
-This workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset.
+As already explained in the **Introduction** chapter of this workshop, this workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset. Check for more details **Introduction** chapter.
 
-In this task you will setup the folder structure and load images into proper folders in the next. 
+In this task you will setup the folder structure and load images into proper folders.
 
-Start with the library folder structure. Image library is organized in two folders:
+Start with the library folder structure. Image library is organized into two folders:
 
-* PNEUMONIA, which contains images of bacteria or virus infected lungs, and
-* NORMAL, which contains images of normal, unaffected lungs
+* PNEUMONIA folder contains x-ray images of bacteria or virus infected lungs, and
+* NORMAL, which contains x-ray images of normal, unaffected, lungs.
 
 1. Step 1: Create a new folder
 
-    Make sure you've clicked **Objects** under **Resources** in the Bucket Details page of you new bucket. 
+    You should still be in the **Bucket Details page**. Scroll to the **Objects** section on the page (if you don't see **Objects** then click on **Objects** link under **Resources**.
 
-    Click **More Actions** and choose **Create New Folder** from the menu.
-    
+    Click **More Actions** (next to **Upload**) and choose **Create New Folder** from the menu.
+
     ![Create folder](./images/lab1_014.png " ")
 
 2. Step 2: Define folder
 
-    Name your new folder **PNEUMONIA** and click **Create**
+    **Name** your new folder *PNEUMONIA* and click **Create**
 
     ![Pneumonia folder](./images/lab1_015.jpg " ")
 
-    Repeat this step for another new folder **NORMAL**.
-    
+    Repeat this step for another new folder called *NORMAL*.
+
     ![Normal folder](./images/lab1_016.png " ")
 
 3. Step 3: Verify your folder structure
@@ -146,9 +145,9 @@ Start with the library folder structure. Image library is organized in two folde
 
 ## Task 4: Load images
 
-We are now ready to load images into appropriate folders. The following steps might seem a bit long and far from being optimal as all images will be loaded using **Upload** utility provided on **Bucket Details** page. More elegant way of uploading would be to upload programmatically. 
+We are now ready to load images into appropriate folders. The following steps might seem a bit time consuming and far from being optimal as all images will be loaded using **Upload** utility provided on **Bucket Details** page. More elegant way of uploading would be to run the image load programmatically.
 
-The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx 20-30 minutes to complete.
+The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx. 30 minutes to complete.
 
 1. Step 1: Initiate images Upload
 
@@ -160,7 +159,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     And click **Upload**.
 
-2. Step 2: Upload images for PNEUMONIA
+2. Step 2: Upload images for *PNEUMONIA*
 
     In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged.
 
@@ -170,11 +169,11 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     ![Upload pneumonia images](./images/lab1_019.png " ")
 
-    Repeat this step for all 3000+ images for PNEUMONIA.
+    Repeat this step for all 3000+ images for *PNEUMONIA*.
 
-3. Step 3: Upload images for NORMAL
+3. Step 3: Upload images for *NORMAL*
 
-    Repeat the previous step, except this time navigate to NORMAL folder and upload images for NORMAL.
+    Repeat the previous step, except this time navigate to *NORMAL* folder and upload images for *NORMAL*.
 
     ![Upload normal images](./images/lab1_020.png " ")
 
@@ -198,4 +197,4 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 ## Acknowledgements
 * **Author** - Žiga Vaupot, Oracle ACE Pro, Qubix
 * **Contributors** -  Grega Dvoršak, Qubix
-* **Last Updated By/Date** - Žiga Vaupot, November 2022
+* **Last Updated By/Date** - Žiga Vaupot, December 2022

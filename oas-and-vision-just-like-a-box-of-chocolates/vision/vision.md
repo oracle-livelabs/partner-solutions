@@ -1,10 +1,10 @@
-# Image Library
+# Image Classification Model
 
 ## Introduction
 
-This lab walks you through the steps to train custom Image Classification model and to perform basic testing.
+This lab walks you through the steps to train custom Image Classification model and to perform basic testing using OCI Vision.
 
-Estimated Time: 30 minutes and minimum 60 minutes for model training (up to 5 additional hours if max. training time is selected).
+Estimated Time: 90 minutes (up to 6 hours if max. training duration is selected).
 
 ### About OCI Vision
 
@@ -14,19 +14,21 @@ OCI Vision is a serverless, cloud native service that provides deep learning-bas
 
 In this lab, you will:
 
-* Set a staging bucket
-* Create a new vision model
-* Test a model
+* Set a staging bucket required for storing temporary prediction results
+* Create a new image classification model using OCI Vision
+* Test a model using OCI Vision
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle Cloud account
+* Completed previous labs of this workshop: **Prepare Environment**, **Lab 1: Image Library** and **Lab 2: Data Labeling**.
 
 ## Task 1: Create a staging bucket for Vision
 
-Before you will begin with model training, one small prerequisite is needed. Vision service, when running predictions, requires additional storage, a staging bucket, where each prediction's results stores temporary results. You need to create a staging bucket and then allow access and manage privileges to you user group.
+Before you begin with model training, one small prerequisite is needed. 
+
+Vision service, when running predictions, requires additional storage, a staging bucket, where each prediction's results are stored temporarily. You need to create a staging bucket and then allow access and manage privileges to your user group.
 
 1. Step 1: Navigate to **Storage** and then to **Buckets**.
 
@@ -50,7 +52,7 @@ Before you will begin with model training, one small prerequisite is needed. Vis
 
 4. Step 4: Verify new bucket is correctly created
 
-    You can now verify that a new bucket has been correctly created. 
+    You can now verify that a new bucket has been correctly created.
 
     ![Define a new bucket](./images/lab3_104.png " ")
 
@@ -67,7 +69,7 @@ Before you will begin with model training, one small prerequisite is needed. Vis
 
 ## Task 2: Create your first Vision model
 
-In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision** model and you will run some test to confirm it is working properly.
+In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision**, image classification, model and you will run some test to confirm it is working properly.
 
 1. Step 1: Navigate to **Vision**
 
@@ -77,7 +79,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
 2. Step 2: Create a custom **Project**
 
-    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation. 
+    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
 
     In your case, you will create your own custom model. So, Click **Projects**
 
@@ -93,13 +95,13 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     If you haven't set policies for Vision before, then open a new browser tab and navigate to **Policies** page.
 
-    ![Navigate to Vision](./images/lab3_004.png " ")
+    ![Navigate to Vision](./images/lab3_004.png =50%x*)
 
 5. Step 5: Create a new policy
 
     Click **Create Policy**.
 
-    ![Navigate to Vision](./images/lab3_005.png =50%x*)
+    ![Navigate to Vision](./images/lab3_005.png =30%x*)
 
 6. Step 6: Define policies to access Vision service
 
