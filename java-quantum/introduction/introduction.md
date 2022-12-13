@@ -2,6 +2,11 @@
 
 ## About this Workshop
 
+![Gluonhqcom](./images/gluonhq.png " ")
+
+**Community Contributed Workshop**
+* **Authors:** *Johan Vos, Co-Founder of Gluon HQ & Barry Burd, Professor at Drew University ![Drew University Logo](./images/drew-university.png =10%x*)*
+
 In this workshop, you will use quantum gates in Java to create a key distribution application.
 
 Quantum computing has several key concepts including superposition, entanglement, and measurement. This lab covers only superposition. We avoid mathematical equations in favor of more intuitive descriptions.
