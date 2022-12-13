@@ -503,11 +503,9 @@ In this last excercise, you will create a visualisation and visualize your predi
 
 5. Step 5: Add **Vision Plugin** to the canvas
 
-    In the left panel, click on **Visualizations** tab and drag custom vizualisation **Vision Plugin** to the canvas. 
+    In the left panel, click on **Visualizations** tab and drag custom vizualization **Vision Plugin** to the canvas.
 
-    ![](./images/lab4_307.png " ")
-
-    Drag **Image File from Bucket** column onto **Vision Plugin**
+    Drag **Image File from Bucket** column onto **Image Location** placeholder of **Vision Plugin** visualization.
 
     ![](./images/lab4_307.png " ")
 
