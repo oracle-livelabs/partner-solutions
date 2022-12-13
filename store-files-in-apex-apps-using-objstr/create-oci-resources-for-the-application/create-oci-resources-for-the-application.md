@@ -4,7 +4,7 @@
 
 In this lab, we will provision the required Oracle Cloud Infrastructure (OCI) components to support the Oracle Application Express (APEX) application that we will create in the next lab.
 
-Estimated Time: 30 minutes
+Estimated Time: 15 minutes
 
 ### About the OCI Resources
 
@@ -17,6 +17,15 @@ In this lab, you will:
 * Provision a new Oracle Autonomous Database to host the web application.
 * Create an Oracle APEX workspace and database schema to create a web application to store documents.
 * Create an Object Storage bucket that will store uploaded documents.
+
+### Prerequisites
+
+This lab assumes that you have created the following OCI *Identity and Access Management* (IAM) resources:
+
+* A compartment for placing the Object Storage bucket.
+* A group that is used in policy statements.
+* A policy and statements that define actions that members of a group may perform.
+* A user assigned to a group with the required permissions to manage objects in the target bucket, and generated the API key pair.
 
 ## Task 1: Provision an Autonomous Database
 
@@ -65,4 +74,9 @@ In this lab, you will:
 1. Verify that the bucket has been created successfully.
 ![Check that the bucket was successfully created.](./images/validate-bucket-created-successfully.png)
 
-You may not **proceed to the next lab**.
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+
+* **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
+* **Last Updated By/Date** - Adrian Png, December 2022

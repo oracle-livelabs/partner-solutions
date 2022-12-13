@@ -4,7 +4,7 @@
 
 In this lab, we will create the required *Identity and Access Management* (IAM) resources that will be needed to support working with the Object Storage using the OCI REST APIs.
 
-Estimated Time: 30 minutes
+Estimated Time: 15 minutes
 
 ### About Identity and Access Management
 
@@ -18,6 +18,14 @@ In this lab, you will create the following IAM resources:
 * A group that is used in policy statements.
 * A policy and its statements that define actions that members of a group may perform.
 * A user that is used in applications to authenticate to the OCI REST APIs. Users are assigned to groups with the appropriate permissions.
+
+### Prerequisites
+
+This lab assumes that you have:
+
+* Access to an Oracle Cloud tenancy.
+* The necessary privileges to create the resources in this lab.
+* Some familiarity with the OCI Console.
 
 ## Task 1: Create a Compartment
 
@@ -93,4 +101,9 @@ In this lab, you will create the following IAM resources:
 >
 > Here, the API keys were generated using the OCI Console. Other alternative ways to create the private and public keys is to use either the OCI CLI, or [OpenSSL](https://www.openssl.org) that is installed in most modern operating systems.
 
-You may not **proceed to the next lab**.
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+
+* **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
+* **Last Updated By/Date** - Adrian Png, December 2022

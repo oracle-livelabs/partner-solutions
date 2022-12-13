@@ -4,7 +4,7 @@
 
 This lab puts theory into practice by having you create a very basic *Oracle Application Express* (APEX) application for managing documents and their metadata in a database.
 
-Estimated Time: 90 minutes
+Estimated Time: 60 minutes
 
 ### About <Product/Technology>
 
@@ -25,19 +25,24 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you have completed the preceding labs successfully, and have some experience developing Oracle APEX applications.
+This lab assumes that you have:
+
+* The necessary privileges to create the resources in this lab.
+* Created the required OCI resources.
+* Created the Oracle APEX workspace, Oracle Database schema, and a developer or workspace administrator account.
+* Some experience developing Oracle APEX applications.
 
 ## Task 1: Create a New Oracle APEX Application
 
-* After successful login to the workspace, click on the *App Builder* icon.
+1. After successful login to the workspace, click on the *App Builder* icon.
 ![Go to the App Builder](./images/navigate-to-app-builder.png)
-* Click the *Create* icon.
+1. Click the *Create* icon.
 ![Create a new application.](./images/create-a-new-oracle-apex-application.png)
-* Click the card item *New Application*.
+1. Click the card item *New Application*.
 ![Choose to create an application from scratch.](./images/create-application-from-scratch.png)
-* Enter the desired application name, and then click the button *Create Application*.
+1. Enter the desired application name, and then click the button *Create Application*.
 ![Provide an application name and then create it.](./images/provide-application-name.png)
-* Once the application has been created successfully, you will be redirected to the applications's home page.
+1. Once the application has been created successfully, you will be redirected to the applications's home page.
 ![The application's home page.](./images/access-application-home-page.png)
 
 ## Task 2: Setup a Workspace Web Credential
@@ -46,37 +51,37 @@ This lab assumes you have completed the preceding labs successfully, and have so
 >
 > Working with OCI REST APIs requires clients to [sign requests](https://docs.oracle.com/iaas/Content/API/Concepts/signingrequests.htm). From Oracle APEX 19.2, using the Oracle APEX Web Credential's OCI authentication type makes this process transparent.
 
-* Back on the App Builder home page, click on the *Workspace Utilities* icon.
+1. Back on the App Builder home page, click on the *Workspace Utilities* icon.
 ![Go to the Workspace Utilities.](./images/navigate-to-workspace-utilities.png)
-* Click on the link *Web Credentials*.
+1. Click on the link *Web Credentials*.
 ![Go to the Web Credentials page.](./images/navigate-to-web-credentials-page.png)
-* Click the button *Create*.
+1. Click the button *Create*.
 ![Create a new web credential.](./images/create-a-new-web-credential.png)
-* Select the authentication type *Oracle Cloud Infrastructure (OCI)*, and then enter the information from Lab 1, Task 5, when an API key was generated for the *Identity and Access Management* (IAM) user that will interact with the OCI REST APIs on the application's behalf. The required information are the tenancy [Oracle Cloud ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (OCID), user OCID, fingerprint of the user's API public key, and the user's API private key. Then, click the *Create* button.
+1. Select the authentication type *Oracle Cloud Infrastructure (OCI)*, and then enter the information from Lab 1, Task 5, when an API key was generated for the *Identity and Access Management* (IAM) user that will interact with the OCI REST APIs on the application's behalf. The required information are the tenancy [Oracle Cloud ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (OCID), user OCID, fingerprint of the user's API public key, and the user's API private key. Then, click the *Create* button.
 ![Enter the required information from Lab 5, Task 5.](./images/enter-required-information-for-web-credential.png)
-* Unless specified, the web credential's *Static Identifier* is derived from its name.
+1. Unless specified, the web credential's *Static Identifier* is derived from its name.
 ![List of web credentials in the workspace.](./images/list-of-web-credentials-in-workspace.png)
 
 ## Task 3: Create Substitution Strings
 
-* From the Application home page, go to the application definition by clicking the button *Edit Application Definition*, close to the top-right of the page.
+1. From the Application home page, go to the application definition by clicking the button *Edit Application Definition*, close to the top-right of the page.
 ![Go to the application's definition page.](./images/navigate-to-application-definition-page.png)
-* Click on the *Substitutions* tab and then create the **four** *Substitution Strings* listed below the screenshot.
+1. Click on the *Substitutions* tab and then create the **four** *Substitution Strings* listed below the screenshot.
 ![Create four substitution strings.](./images/create-four-substitution-strings.png)
 	* **`OBJSTR_API_ENDPOINT`** - the Object Storage endpoint varies with the region associated with your bucket. You can obtain the appropriate value from this [page](https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/).
 	* **`TENANCY_OBJSTR_NAMESPACE`** - see the next task item if you do not know what value to enter here.
 	* **`BUCKET_NAME`** - the name of the target bucket where the documents will be uploaded to.
 	* **`G_OCI_WEB_CREDENTIAL`** - the *Static Identifier* of the web credential created in Task 2.
-* If you are unsure of what the value of `TENANCY_OBJSTR_NAMESPACE` should be, then go to the OCI Console, click on the navigation menu, select *Governance & Administration*, and click *Tenancy Details*.
+1. If you are unsure of what the value of `TENANCY_OBJSTR_NAMESPACE` should be, then go to the OCI Console, click on the navigation menu, select *Governance & Administration*, and click *Tenancy Details*.
 ![Access the OCI Tenancy Details.](./images/access-oci-tenancy-details-page.png)
-* Under the *Tenancy Information*, use the value of the *Object storage namespace* field.
+1. Under the *Tenancy Information*, use the value of the *Object storage namespace* field.
 ![Obtain the Object Storage namespace value.](./images/obtain-object-storage-namespace-value.png)
 
 ## Task 4: Create Database Objects
 
-* Go to the *SQL Workshop* and access the *SQL Commands* utility to run
+1. Go to the *SQL Workshop* and access the *SQL Commands* utility to run
 ![Access the SQL Command utility in the Oracle APEX development environment.](./images/access-sql-command-utility.png)
-* Copy the following SQL code:
+1. Copy the following SQL code:
 	```sql
 	<copy>
 	create table document (
@@ -95,9 +100,9 @@ This lab assumes you have completed the preceding labs successfully, and have so
 	/
 	</copy>
 	```
-* Paste the copied code and then execute the SQL statement by clicking the button *Run*.
+1. Paste the copied code and then execute the SQL statement by clicking the button *Run*.
 ![Paste the SQL code and execute the statement.](./images/execute-create-document-table-sql-script.png)
-* Similarly, execute the following code to create the database trigger `document_biu`:
+1. Similarly, execute the following code to create the database trigger `document_biu`:
 	```sql
 	<copy>
 	create or replace trigger document_biu
@@ -122,18 +127,18 @@ This lab assumes you have completed the preceding labs successfully, and have so
 
 ## Task 5: Create a Page for Creating New or Modifying Existing Documents
 
-* From the application's home page, click the button *Create Page*.
+1. From the application's home page, click the button *Create Page*.
 ![Create a page from the application's home page.](./images/create-new-page-for-document-details.png)
-* In the modal page, click the icon *Blank Page*. The wizard should progress to the next step, if not, click the button *Next*.
+1. In the modal page, click the icon *Blank Page*. The wizard should progress to the next step, if not, click the button *Next*.
 ![Choose to create a blank page.](./images/choose-to-create-a-blank-page.png)
-* Enter *2* for the page number, and then *Document Details* for the page name. Leave the page mode set to *Normal*. Expand the hidden region *Navigation* to expose additional settings for the new page. First, select *Home (Page 1)* for the breadcrumb's parent entry, and then turn off navigation thereby not including a link to the new page on the application's side navigation menu.
+1. Enter *2* for the page number, and then *Document Details* for the page name. Leave the page mode set to *Normal*. Expand the hidden region *Navigation* to expose additional settings for the new page. First, select *Home (Page 1)* for the breadcrumb's parent entry, and then turn off navigation thereby not including a link to the new page on the application's side navigation menu.
 ![Enter details and settings for the new page.](./images/enter-details-for-new-page.png)
-* Create a new region of type *Form*. Set the source to:
+1. Create a new region of type *Form*. Set the source to:
 	* **Location** - *Local Database*
 	* **Type** - *Table / View*
 	* **Table Owner** - *Parsing Schema*
 	* **Table Name** - *DOCUMENT*
-* Oracle APEX will automatically populate the region with page items for each column in the table `DOCUMENT`. Prune the items leaving only the items listed in the table below, and change the page item types accordingly.
+1. Oracle APEX will automatically populate the region with page items for each column in the table `DOCUMENT`. Prune the items leaving only the items listed in the table below, and change the page item types accordingly.
 | Name               | Type           | Required? (Y/N) | Additional Notes                                |
 | ------------------ | -------------- | --------------- | ----------------------------------------------- |
 | `P2_DOCUMENT_ID`   | Hidden         | Not applicable  | Ensure a checksum is required.                  |
@@ -145,21 +150,21 @@ This lab assumes you have completed the preceding labs successfully, and have so
 | `P2_FILE`          | File Browse... | N               | See the next task item for additional settings. |
 {: title="Page Item Configurations"}
 
-* The page item `P2_FILE` is not generated by Oracle APEX and has to be added after configuring the Form region. After setting its page item type, set the following attributes:
+1. The page item `P2_FILE` is not generated by Oracle APEX and has to be added after configuring the Form region. After setting its page item type, set the following attributes:
 	* **Display As** - *Block Dropzone*
 	* **Storage Type** - *Table APEX_APPLICATION_TEMP_FILES*
 	* **Purge File at** - *End of Request*
 	* **Allow Multiple Files** - *Toggle off*
-* Next, add two buttons. *Optionally, add a "Cancel" button that returns the user back to the home page.*
+1. Next, add two buttons. *Optionally, add a "Cancel" button that returns the user back to the home page.*
 | Name   | Template | Hot (Y/N) | Region   | Position | Action      | Execute<br>Validations (Y/N) | Server-side<br>Condition                  |
 | ------ | -------- | --------- | -------- | -------- | ----------- | ------------------------- | -------------------------------------- |
 | SAVE   | Text     | Y         | Document | Change   | Submit Page | Y                         | When item `P2_DOCUMENT_ID` is not NULL |
 | CREATE | Text     | Y         | Document | Create   | Submit Page | Y                         | When item `P2_DOCUMENT_ID` is NULL     |
 {: title="Button Configurations"}
 
-* The resulting page should look somewhat like this:
+1. The resulting page should look somewhat like this:
 ![Components of the Document Details page.](./images/components-of-document-details-page.png)
-* Create a page process named *saveDocument* of type *Execute Code*, and enter the following PL/SQL code in the source:
+1. Create a page process named *saveDocument* of type *Execute Code*, and enter the following PL/SQL code in the source:
 	```sql
 	<copy>
 	declare
@@ -221,19 +226,19 @@ This lab assumes you have completed the preceding labs successfully, and have so
 	end;
 	</copy>
 	```
-* Validate the code by click the tick icon in the toolbar, and if successful, click the button *OK*.
+1. Validate the code by click the tick icon in the toolbar, and if successful, click the button *OK*.
 ![Create a page process to save the document record and upload the file to the Object Storage bucket.](./images/create-page-process-to-save-document.png)
-* Set an informative success and error message, and the following server-side condition:
+1. Set an informative success and error message, and the following server-side condition:
 	* **When Button Pressed** - *None selected*
 	* **Type** - *Request is contained in Value*
 	* **Value** - `CREATE,SAVE`
-* Finally, create a branch to redirect the user back to the home page, and then click the button *Save*.
+1. Finally, create a branch to redirect the user back to the home page, and then click the button *Save*.
 ![Save all changes to the page.](./images/save-all-changes-to-document-details-page.png)
 
 ## Task 6: Create a Report to List Documents
 
-* Edit Page 1, the Oracle APEX application's home page.
-* Create a new *Interactive Report* (IR) region using the following SQL query:
+1. Edit Page 1, the Oracle APEX application's home page.
+1. Create a new *Interactive Report* (IR) region using the following SQL query:
 	```sql
 	<copy>
 	select
@@ -247,7 +252,7 @@ This lab assumes you have completed the preceding labs successfully, and have so
 	from document
 	</copy>
 	```
-* Configure the columns according to the table below:
+1. Configure the columns according to the table below:
 | Name               | Type          |
 | ------------------ | ------------- |
 | `DOCUMENT_ID`      | Hidden Column |
@@ -259,7 +264,7 @@ This lab assumes you have completed the preceding labs successfully, and have so
 | `LAST_MODIFIED_ON` | Plain Text    |
 {: title="Interactive Report Column Configurations"}
 
-* Under the IR's attributes, add a *Link Column" to with a *Link to Custom Target*.
+1. Under the IR's attributes, add a *Link Column" to with a *Link to Custom Target*.
 ![Link's target configuration.](./images/configure-link-target-for-interactive-report.png)
 	* **Type** - *Page in this application*
 	* **Page** - *2*
@@ -269,13 +274,13 @@ This lab assumes you have completed the preceding labs successfully, and have so
 			* **VALUE** - `#DOCUMENT_ID#`
 	* **Clear Cache** - *2*
 	* **Action** - *None*
-* For the *Link Icon*, set it to the following HTML element:
+1. For the *Link Icon*, set it to the following HTML element:
 	```html
 	<copy>
 	<span class="fa fa-file-edit" aria-hidden="true"></span>
 	</copy>
 	```
-* Next, add a button to create a new document.
+1. Next, add a button to create a new document.
 	* **Identification:**
 		* **Button Name** - `NEW_DOCUMENT`
 		* **Label** - *New Document*
@@ -292,13 +297,13 @@ This lab assumes you have completed the preceding labs successfully, and have so
 			* **Set Items** - *None*
 			* **Clear Cache** - *2*
 			* **Action** - *None*
-* Finally, click the button *Save* to persists all changes.
+1. Finally, click the button *Save* to persists all changes.
 ![The completed home page.](./images/the-completed-home-page.png)
 
 ## Task 7: Update the Page to Delete Documents
 
-* Edit page 2, the *Document Details* page.
-* Add a new button with the following attributes:
+1. Edit page 2, the *Document Details* page.
+1. Add a new button with the following attributes:
 	* **Identification:**
 		* **Button Name** - `DELETE`
 		* **Label** - *Delete*
@@ -318,7 +323,7 @@ This lab assumes you have completed the preceding labs successfully, and have so
 	* **Server-side Condition:**
 		* **Type** - *Item is NOT NULL*
 		* **Item** - `P2_DOCUMENT_ID`
-* Create a page process named *deleteDocument* of type *Execute Code*, and enter the following PL/SQL code in the source:
+1. Create a page process named *deleteDocument* of type *Execute Code*, and enter the following PL/SQL code in the source:
 	```sql
 	<copy>
 	declare
@@ -347,40 +352,40 @@ This lab assumes you have completed the preceding labs successfully, and have so
 	end;
 	</copy>
 	```
-* Validate the code by click the tick icon in the toolbar, and if successful, click the button *OK*.
+1. Validate the code by click the tick icon in the toolbar, and if successful, click the button *OK*.
 ![Create a page process to delete the document record and file in the Object Storage bucket.](./images/create-page-process-to-delete-document.png)
-* Set an informative success and error message, and the following server-side condition:
+1. Set an informative success and error message, and the following server-side condition:
 	* **When Button Pressed** - `DELETE`
 	* **Type** - *None selected*
-* Update the server-side condition for the *Go to Page 1* branch. The new value should be: `CREATE,SAVE,DELETE`.
-* Click the button *Save* to persist all the changes made.
+1. Update the server-side condition for the *Go to Page 1* branch. The new value should be: `CREATE,SAVE,DELETE`.
+1. Click the button *Save* to persist all the changes made.
 
 ## Task 8: Download a Document
 
 As the documents are uploaded to a private Object Storage bucket, the file cannot be accessed directly by the user's browser. Hence, in this task, we will create an *Application Item* and on-demand *Application Process* that will allow Oracle APEX to retrieve the object on the user's behalf.
 
-* From the application home page, go to the *Shared Components*.
+1. From the application home page, go to the *Shared Components*.
 ![Go to the Shared Components.](./images/navigate-to-shared-components.png)
-* Click the link *Application Items*.
+1. Click the link *Application Items*.
 ![Go to the application items page.](./images/navigate-to-application-items-page.png)
-* Click the button *Create*.
+1. Click the button *Create*.
 ![Create a new application item](./images/create-a-new-application-item.png)
-* Enter the attributes of the application item `APP_DOCUMENT_ID`, and then click the button *Create Application Item*.
+1. Enter the attributes of the application item `APP_DOCUMENT_ID`, and then click the button *Create Application Item*.
 ![Create an application item with the prescribed attributes.](./images/enter-required-attributes-for-application-item-app-document-id.png)
 	* **Name** - `APP_DOCUMENT_ID`
 	* **Scope** - *Application*
 	* **Session State Protection** - *Checksum Required - Session Level*
 	* **Escape Special Characters** - *Enabled*
-* Return to the *Shared Components* page, but this time, click on the link *Application Processes* instead.
+1. Return to the *Shared Components* page, but this time, click on the link *Application Processes* instead.
 ![Go to the application processes page.](./images/navigate-to-application-processes-page.png)
-* Click the button *Create*.
+1. Click the button *Create*.
 ![Create a new application process.](./images/create-a-new-application-process.png)
-* Enter the attributes of the application process `DOWNLOAD_OBJECT`, and then click the button *Next*.
+1. Enter the attributes of the application process `DOWNLOAD_OBJECT`, and then click the button *Next*.
 ![Enter the attributes of the new application process.](./images/enter-required-attributes-for-application-process-download-object.png)
 	* **Name** - `DOWNLOAD_OBJECT`
 	* **Sequence** - *1*
 	* **Point** - *Ajax Callback: Run this application process when requested by a page process.*
-* In the next step, enter the following PL/SQL procedure for the application process' source:
+1. In the next step, enter the following PL/SQL procedure for the application process' source:
 	```sql
 	<copy>
 	declare
@@ -439,14 +444,14 @@ As the documents are uploaded to a private Object Storage bucket, the file canno
 	end;
 	</copy>
 	```
-* Click the button *Next* to proceed.
+1. Click the button *Next* to proceed.
 ![Enter the PL/SQL source code and then go to the next step.](./images/enter-plsql-code-for-application-process.png)
-* Restrict access to the application process by ensuring that the *Condition Type* is set to *User is Authenticated (not public), then click the button *Create Process* to complete and end the wizard.
+1. Restrict access to the application process by ensuring that the *Condition Type* is set to *User is Authenticated (not public), then click the button *Create Process* to complete and end the wizard.
 ![Restrict access to the application process to authenticated users.](./images/restrict-access-to-application-process.png)
-* Return to edit Page 1.
-* Modify the IR column `FILENAME` in the *Documents* region to display as a link.
-* The *Link Text* should be set to `#FILENAME#.
-* For the *Target*, set it to the below, and then click the button *OK*.
+1. Return to edit Page 1.
+1. Modify the IR column `FILENAME` in the *Documents* region to display as a link.
+1. The *Link Text* should be set to `#FILENAME#.
+1. For the *Target*, set it to the below, and then click the button *OK*.
 ![Set the required attributes for the IR column's link target.](./images/set-required-attributes-for-interactive-report-column-link-target.png)
 	* **Type** - *Page in this application*
 	* **Page** - *0*
@@ -462,26 +467,31 @@ As the documents are uploaded to a private Object Storage bucket, the file canno
 
 In this final task, we will run the Oracle APEX application and validate the functionalities that were created in the preceding tasks.
 
-* On the application's home page, click the *Run Application* icon.
+1. On the application's home page, click the *Run Application* icon.
 ![Run the Oracle APEX application.](./images/run-oracle-apex-application.png)
-* Login using a valid *Oracle APEX Account*.
+1. Login using a valid *Oracle APEX Account*.
 ![Login to the Oracle APEX application.](./images/login-to-oracle-apex-application.png)
-* On the Oracle APEX application's home page, click the button *New Document*.
+1. On the Oracle APEX application's home page, click the button *New Document*.
 ![Create a new document.](./images/create-a-new-document.png)
-* Enter a *Document Name* and optionally, a *Description*. Select a file or simply drag and drop it from your operating system, and then click the button *Create*.
+1. Enter a *Document Name* and optionally, a *Description*. Select a file or simply drag and drop it from your operating system, and then click the button *Create*.
 ![Enter the required document metadata and file, and then create the database record.](./images/enter-required-document-metadata-and-select-file.png)
-* Validate that both the database record was created, and a corresponding object was created in the target Object Storage bucket.
+1. Validate that both the database record was created, and a corresponding object was created in the target Object Storage bucket.
 ![Check that the file was uploaded to the Object Storage bucket successfully.](./images/validate-file-uploaded-to-object-storage-bucket.png)
-* Back on the home page, click on the document's filename to download the file. Ensure that the file opens and contains the expected content.
+1. Back on the home page, click on the document's filename to download the file. Ensure that the file opens and contains the expected content.
 ![Click on the document's filename to download the file.](./images/click-to-download-file.png)
-* Next, click the document's edit icon.
+1. Next, click the document's edit icon.
 ![Click on the docuoment's edit icon to edit the record.](./images/click-to-edit-document.png)
-* Attempt to change one or more fields, including the file binary, and then click the button *Save*.
-* Check that the modifications to the record were saved successfully.
-* Return to the *Document Details* page, and then this time, click the button *Delete*.
+1. Attempt to change one or more fields, including the file binary, and then click the button *Save*.
+1. Check that the modifications to the record were saved successfully.
+1. Return to the *Document Details* page, and then this time, click the button *Delete*.
 ![Click on the delete button.](./images/click-on-delete-button.png)
-* A modal dialog will present itself to confirm the action. Click the button *Delete*.
+1. A modal dialog will present itself to confirm the action. Click the button *Delete*.
 ![Confirm the deletion.](./images/confirm-deletion.png)
-* Validate that the record and file were deleted from the database and bucket respectively.
+1. Validate that the record and file were deleted from the database and bucket respectively.
 
 Congratulations! You have **completed** all the necessary labs and tasks.
+
+## Acknowledgements
+
+* **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
+* **Last Updated By/Date** - Adrian Png, December 2022
