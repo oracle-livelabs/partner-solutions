@@ -1,10 +1,7 @@
 {
-    "workshoptitle": "Using OCI Object Storage for Storing Files in Oracle APEX Applications",
+    "workshoptitle": "Use OCI Object Storage to Store Files in Oracle APEX Applications",
     "include": {
     },
-    "variables": [
-        "../../variables/variables.json"
-    ],
     "help": "llivelabs-help-community_us@oracle.com",
     "tutorials": [
         {
