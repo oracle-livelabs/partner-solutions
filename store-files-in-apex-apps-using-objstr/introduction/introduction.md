@@ -2,9 +2,15 @@
 
 ## About this Workshop
 
+![Insum Logo](./images/insum-logo.png =300x300)
+
+**Community Contributed Workshop**
+
+* **Author:** *Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.*
+
 There are many options for web application developers when deciding how to store files alongside data in the database. In this workshop, you will learn how to implement an external file storage solution for *Oracle Application Express* (APEX) applications using the *Oracle Cloud Infrastructure* (OCI) Object Storage.
 
-Estimated Time: 120 minutes
+Estimated Time: 90 minutes
 
 ### Objectives
 
@@ -31,4 +37,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, October 2022
+* **Last Updated By/Date** - Adrian Png, December 2022
