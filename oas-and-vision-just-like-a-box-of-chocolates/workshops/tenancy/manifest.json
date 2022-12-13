@@ -5,28 +5,28 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
-            "filename": "../../1-introduction/1-introduction.md"
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Prepare Environment",
             "description": "In this lab, you will create a new user, group, assign some privileges and similar. This lab is not mandatory if you have OCI Administrator privleges",
-            "filename": "../../2-prepare-environment/2-prepare-environment.md"
+            "filename": "../../prepare-environment/prepare-environment.md"
         },
         {
             "title": "Lab 1: Image Library",
-            "filename": "../../3-object-storage/3-object-storage.md"
+            "filename": "../../object-storage/object-storage.md"
         },
         {
             "title": "Lab 2: Data Labeling",
-            "filename": "../../4-data-labeling/4-data-labeling.md"
+            "filename": "../../data-labeling/data-labeling.md"
         },
         {
             "title": "Lab 3: Create a model in Vision",
-            "filename": "../../5-vision/5-vision.md"
+            "filename": "../../vision/vision.md"
         },
         {
             "title": "Lab 4: Using Vision model in Analytics",
-            "filename": "../../6-oac-vision/6-oac-vision.md"
+            "filename": "../../oac-vision/oac-vision.md"
         },
         {
             "title": "Need Help?",
