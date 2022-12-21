@@ -87,7 +87,9 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
 2. Step 2: Choose **Identity Provider**
 
-    Under **Federation** menu option on the left side of the page, you will see the list of all available Identity Providers. Locate and click on **OracleIdentityCloudService** link.
+    **Federation** page is displayed. You will see the list of all available Identity Providers.
+    
+    Locate and click on **OracleIdentityCloudService** link.
 
     ![Image alt text](images/pre-lab_005.jpg " ")
 
@@ -105,17 +107,21 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
 5. Step 5: Add a new user using **Add User** wizard
 
-    The two-step process starts. Follow the **Add user** dialog and provide user details in the first step:
+    The two-step process starts. Follow the **Add user** dialog and provide user details in the first step. Provide your own email address to receive Welcome email to activate the user.
 
     ![Image alt text](images/pre-lab_008.jpg =50%x*)
 
-    In our example, we created a new user with username *Candy.Sweets*. In the following second step, you will provide a *password* of your choice.
+    In example above, a new user with username *Candy.Sweets* is created. In the following second step, you should assign a new user to groups. However, this step is optional as there is no group you can assign to. So simply click **Finish**.
 
 6. Check newly created user details
 
     You can check and verify details for the newly created user.
 
     ![Image alt text](images/pre-lab_009.png " ")
+
+    You should also check your inbox for the Welcome email. Once received, follow the links from email and activate your new user.
+
+    ![Image alt text](images/pre-lab_009-2.png =50%x*)
 
 ## Task 4: Create a new user group in IDCS
 
@@ -159,7 +165,10 @@ In order to create policies for the compartment you've just created, you need to
 
     You now need to map previously created **IDCS User Group** to the new **OCI Group**. This is required because all privileges, defined with policies will be created against the OCI Group. You can not assign privileges directly to IDCS User Groups.
 
-    Navigate back to **OracleIdentityCloudService** details page.
+    Navigate back to **OracleIdentityCloudService** details page: 
+    
+    * Navigate first to **Identity** and then to **Federation**. 
+    * From **Federation** page click **OracleIdentityCloudService** link to open **OracleIdentityCloudService** page.
 
     Observe **Resources** menu on the left side of the page. There are three links: **Users**, **Groups** and **Group Mappings**. Click on **Group Mappings** and when page is refreshed, click **Add Mappings**.
 
