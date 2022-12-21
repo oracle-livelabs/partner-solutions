@@ -95,7 +95,7 @@ It's time to prepare an image library for new images which are going to be class
 
 3. Step 3: Download validation dataset
 
-    Download and unzip [validation-dataset.zip](./files/validation_dataset.zip) to your laptop. 
+    Download and unzip [validation-dataset.zip](./files/validation-dataset.zip) to your laptop. 
 
 4. Step 4: Upload images from validation dataset to newly create bucket.
 
@@ -362,7 +362,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
     The first step of the data flow is completed:
 
-    ![](./images/lab4_259.png 50%x*)
+    ![](./images/lab4_259.png =50%x*)
 
 7. Step 7: Add Apply AI Model
 
@@ -374,7 +374,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
     **Select AI Model** dialog opens. Select the model you've created in the previous lab, **Pneumonia X-Ray Image Classification** for example.
 
-        ![](./images/lab4_261.png =50%x*)
+    ![](./images/lab4_261.png =50%x*)
 
 9. Step 9: Define AI Model
 
