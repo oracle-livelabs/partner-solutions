@@ -16,6 +16,8 @@ In this lab, you will:
 * Create a new group in OCI and map it to the group in IDCS
 * Create a new compartment
 * Set policies for the new OCI group to manage a new compartment
+* Create a new Dynamic Group and required Policies for  Data Labeling
+* Create new Policies for AI Vision Service
 
 ### Prerequisites
 
@@ -180,7 +182,7 @@ In order to create policies for the compartment you've just created, you need to
 
     Click **Add Mappings** to add a new mapping.
 
-## Task 6: Create a new Policy
+## Task 6: Create a new Policy for Compartment management
 
 Finally, you need to create a **policy** which grants manage privileges in a new compartment to the new OCI group.
 
@@ -222,7 +224,161 @@ Finally, you need to create a **policy** which grants manage privileges in a new
 
      This is not the only required policy that is required for this workshop. You will return to this step to create additional policies later.
 
-## Task 7: Logout
+## Task 7: Create a Dynamic Group and Policies for Data Labeling
+
+Before you can start your data labeling process, you must perform prerequisete steps to:
+
+* set additional dynamic group and
+* to set some required policies for your existing OCI Group and for the new Dynamic Group.
+
+To find out which dynamic groups and policies are required navigate to **Data Labeling** page as follows:
+
+1. Step 1: Navigate to **Data Labeling** page
+
+    From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
+
+    ![](./images/lab2_001.png " ")
+
+2. Step 2: Create a new Dataset
+
+    Click on **Datasets** link under **Data Labeling** on the left side of the page. This will open **Dataset list** page in selected Compartment (you might change Compartment to Compartment you've created for this workshop).
+
+    ![](./images/lab2_002.png " ")
+
+3. Step 3: Verify **Data Labeling Prerequisites**
+
+    Expand **Show more information** to display what prerequisites have to be met before you can start your data labeling exercise. If these are not met, then Data Labeling might not run properly.
+
+    ![](./images/lab2_004.png " ")
+
+    In *Step 1)*, you can use OCI Group you've created earlier, so you can skip the *Step 1)* and continue with creating a new Dynamic Group.
+
+4. Step 4: Navigate to **Dynamic Groups** page
+
+    From **Navigator** menu choose **Identity & Security** and then **Dynamic Groups**.
+
+     ![](./images/lab2_005.png " ")
+
+5. Step 5: Create a new **Dynamic Group**
+
+    Click **Create** and define a new **Dynamic Group**.
+
+    Provide **Name**, **Description** and enter the following statement to the **Matching Rules**:
+
+    ```console
+    ALL { resource.type = 'datalabelingdataset' }
+    ```
+
+    ![](./images/lab2_006.png " ")
+
+6. Step 6: Verify your new **Dynamic Group**
+
+    Verify that your **Dynamic Group** is properly defined.
+
+    ![](./images/lab2_007.png " ")
+
+7. Step 7: Set policies for **Data Labeling**
+
+    From the **Navigator** menu select **Identity & Security** and then choose **Policies**.
+
+    ![](./images/lab2_008.png " ")
+
+8. Step 8: Create a new policy for **Non-Administrative users**
+
+    Make sure that you've selected your *root* compartment first. Then click **Create Policy**.
+
+    The first policy is for Non-Administrative users. These are members of previously created OCI Group.
+
+    OCI Group needs the following privileges (assuming OCI Group is called *OCI_Chocolate-Group* and compartment's name is *Box-of-Chocolates*):
+
+    ```console
+    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to read objectstorage-namespaces in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage data-labeling-family in compartment Box-of-Chocolates
+    ```
+
+    ![](./images/lab2_010.png " ")
+
+    Verify and double check all policies statements are properly entered and click **Create**.
+
+    ![](./images/lab2_011.png " ")
+
+9. Step 9: Create a new policy for Dynamic Group
+
+    Repeat **Create Policy** for Dynamic Group you've created in the previous step. 
+
+    Enter the following statements (again assuming Dynamic Group is called *Box-of-Chocolates_DataLabeling* and compartment's name is *Box-of-Chocolates*):
+
+    ```console
+    allow dynamic-group Box-of-Chocolates_DataLabeling to read buckets in compartment Box-of-Chocolates
+    allow dynamic-group Box-of-Chocolates_DataLabeling to read objects in compartment Box-of-Chocolates
+    allow dynamic-group Box-of-Chocolates_DataLabeling to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE'}
+    ```
+
+    ![](./images/lab2_012.png " ")
+
+    Verify and double check all policies statements are properly entered and click **Create**.
+
+    ![](./images/lab2_013.png " ")
+
+    You are now ready to start with Data Labeling.
+
+## Task 8: Create new Policies for AI Vision Service
+
+1. Step 1: Navigate to **Vision**
+
+    Using **Navigator** (on the left) navigate to **Analytics & AI** and then choose **Vision**.
+
+    ![Navigate to Vision](./images/lab3_001.png " ")
+
+2. Step 2: Create a custom **Project**
+
+    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
+
+    In your case, you will create your own custom model. So, Click **Projects**
+
+    ![Navigate to Vision](./images/lab3_002.png " ")
+
+3. Step 3: Projects
+
+    When you open the **Projects** page, pay attention to **important information** note that is displayed at the top of the page. There are some policies required which need to be set before you create a new custom project and before you start training your models.
+
+    ![Navigate to Vision](./images/lab3_003.png " ")
+
+4. Step 4: Setting policies for Vision
+
+    If you haven't set policies for Vision before, then open a new browser tab and navigate to **Policies** page.
+
+    ![Navigate to Vision](./images/lab3_004.png =50%x*)
+
+5. Step 5: Create a new policy
+
+    Click **Create Policy**.
+
+    ![Navigate to Vision](./images/lab3_005.png =30%x*)
+
+6. Step 6: Define policies to access Vision service
+
+    Provide a name of a new policy and description in **Create Policy** dialog page. In the **Policy Builder** section enable **Show manual editor** and enter the following policy
+
+    ```console
+    allow group OCI_Chocolate-Group to manage ai-service-vision-family in tenancy
+    ```
+
+    ![Navigate to Vision](./images/lab3_006.png " ")
+
+    Click **Create**.
+
+7. Step 7: Confirm Policy
+
+    Wait till policy is created and verify it has been properly set.
+
+    ![Navigate to Vision](./images/lab3_007.png " ")
+
+    You can close your 2nd tab page now.
+
+## Task 9: Logout
 
 Once finished with prerequisite tasks, simply logout from [cloud.oracle.com](https://cloud.oracle.com) as you will (optionally) continue with your newly created user.
 

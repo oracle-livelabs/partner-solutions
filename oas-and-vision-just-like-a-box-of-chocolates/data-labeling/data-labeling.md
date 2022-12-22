@@ -26,107 +26,7 @@ This lab assumes you have:
 
 * Completed previous labs of this workshop: **Prepare Environment** and **Lab 1: Image Library**.
 
-## Task 1: Set privileges for Data Labeling
-
-Before you can start your data labeling process, you must perform prerequisete steps to:
-
-* set additional dynamic group and
-* to set some required policies for your existing OCI Group and for the new Dynamic Group.
-
-To find out which dynamic groups and policies are required navigate to **Data Labeling** page as follows:
-
-1. Step 1: Navigate to **Data Labeling** page
-
-    From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
-
-    ![](./images/lab2_001.png " ")
-
-2. Step 2: Create a new Dataset
-
-    Click on **Datasets** link under **Data Labeling** on the left side of the page. This will open **Dataset list** page in selected Compartment.
-
-    ![](./images/lab2_002.png " ")
-
-3. Step 3: Verify **Data Labeling Prerequisites**
-
-    Expand **Show more information** to display what prerequisites have to be met before you can start your data labeling exercise. If these are not met, then Data Labeling might not run properly.
-
-    ![](./images/lab2_004.png " ")
-
-    You can use OCI Group you've created in the beginning of this workshop (see **Prepare Environment**), so you can skip the first step and continue with creating a new Dynamic Group.
-
-4. Step 4: Navigate to **Dynamic Groups** page
-
-    From **Navigator** menu choose **Identity & Security** and then **Dynamic Groups**.
-
-     ![](./images/lab2_005.png " ")
-
-5. Step 5: Create a new **Dynamic Group**
-
-    Click **Create** and define a new **Dynamic Group**.
-
-    Provide **Name**, **Description** and enter the following statement to the **Matching Rules**:
-
-    ```console
-    ALL { resource.type = 'datalabelingdataset' }
-    ```
-
-    ![](./images/lab2_006.png " ")
-
-6. Step 6: Verify your new **Dynamic Group**
-
-    Verify that your **Dynamic Group** is properly defined.
-
-    ![](./images/lab2_007.png " ")
-
-7. Step 7: Set policies for **Data Labeling**
-
-    From the **Navigator** menu select **Identity & Security** and then choose **Policies**.
-
-    ![](./images/lab2_008.png " ")
-
-8. Step 8: Create a new policy for **Non-Administrative users**
-
-    Make sure that you've selected your *root* compartment first. Then click **Create Policy**.
-
-    The first policy is for Non-Administrative users. These are members of previously created OCI Group.
-
-    OCI Group needs the following privileges (assuming OCI Group is called *OCI_Chocolate-Group* and compartment's name is *Box-of-Chocolates*):
-
-    ```console
-    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to read objectstorage-namespaces in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage data-labeling-family in compartment Box-of-Chocolates
-    ```
-
-    ![](./images/lab2_010.png " ")
-
-    Verify and double check all policies statements are properly entered and click **Create**.
-
-    ![](./images/lab2_011.png " ")
-
-9. Step 9: Create a new policy for Dynamic Group
-
-    Repeat **Create Policy** for Dynamic Group you've created in the previous step. 
-
-    Enter the following statements (again assuming Dynamic Group is called *Box-of-Chocolates_DataLabeling* and compartment's name is *Box-of-Chocolates*):
-
-    ```console
-    allow dynamic-group Box-of-Chocolates_DataLabeling to read buckets in compartment Box-of-Chocolates
-    allow dynamic-group Box-of-Chocolates_DataLabeling to read objects in compartment Box-of-Chocolates
-    allow dynamic-group Box-of-Chocolates_DataLabeling to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE'}
-    ```
-
-    ![](./images/lab2_012.png " ")
-
-    Verify and double check all policies statements are properly entered and click **Create**.
-
-    ![](./images/lab2_013.png " ")
-
-    You are now ready to start with Data Labeling.
-
-## Task 2: Label images using Data Labeling tool
+## Task 1: Label images using Data Labeling tool
 
 Basic data labeling tool is provided within OCI. With this labeling tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the next session.
 
@@ -202,7 +102,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![](./images/lab2_024.png " ")
 
-## Task 3: Bulk image labeling
+## Task 2: Bulk image labeling
 
 We have 4881 images to label. This is too much to label images manually, hence we will use Python program to label images programmatically.
 

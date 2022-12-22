@@ -71,65 +71,13 @@ Vision service, when running predictions, requires additional storage, a staging
 
 In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision**, image classification, model and you will run some test to confirm it is working properly.
 
-1. Step 1: Navigate to **Vision**
-
-    Using **Navigator** (on the left) navigate to **Analytics & AI** and then choose **Vision**.
-
-    ![Navigate to Vision](./images/lab3_001.png " ")
-
-2. Step 2: Create a custom **Project**
-
-    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
-
-    In your case, you will create your own custom model. So, Click **Projects**
-
-    ![Navigate to Vision](./images/lab3_002.png " ")
-
-3. Step 3: Projects
-
-    When you open the **Projects** page, pay attention to **important information** note that is displayed at the top of the page. There are some policies required which need to be set before you create a new custom project and before you start training your models.
-
-    ![Navigate to Vision](./images/lab3_003.png " ")
-
-4. Step 4: Setting policies for Vision
-
-    If you haven't set policies for Vision before, then open a new browser tab and navigate to **Policies** page.
-
-    ![Navigate to Vision](./images/lab3_004.png =50%x*)
-
-5. Step 5: Create a new policy
-
-    Click **Create Policy**.
-
-    ![Navigate to Vision](./images/lab3_005.png =30%x*)
-
-6. Step 6: Define policies to access Vision service
-
-    Provide a name of a new policy and description in **Create Policy** dialog page. In the **Policy Builder** section enable **Show manual editor** and enter the following policy
-
-    ```console
-    allow group OCI_Chocolate-Group to manage ai-service-vision-family in tenancy
-    ```
-
-    ![Navigate to Vision](./images/lab3_006.png " ")
-
-    Click **Create**.
-
-7. Step 7: Confirm Policy
-
-    Wait till policy is created and verify it has been properly set.
-
-    ![Navigate to Vision](./images/lab3_007.png " ")
-
-    You can close your 2nd tab page now.
-
-8. Step 8: Continue with customer Project setup
+1. Step 8: Continue with customer Project setup
 
     Click **Projects** on the left side menu list, confirm you are in correct **Compartment** (ie. Box-of-Chocolates) and click **Create Project**
 
     ![Navigate to Vision](./images/lab3_008.png " ")
 
-9. Step 9: Define custom project
+2. Step 1: Define custom project
 
     Select compartment in which you would like to create your Vision model.
 
@@ -137,7 +85,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_009.png " ")
 
-10. Step 10: Verify your project
+3. Step 2: Verify your project
 
     You can monitor creation of your new project. This should be completed pretty quickly. Once done, your project should have status **ACTIVE**.
 
@@ -145,7 +93,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click on your **project name**.
 
-11. Step 11: Create a new vision model
+4. Step 3: Create a new vision model
 
     Project page opens. You can see there is a list of **Models** that is currently empty. So, let's create your first Vision model.
 
@@ -153,7 +101,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_011.png " ")
 
-12. Step 12: Create and Train Model - Step 1
+4. Step 4: Create and Train Model - Step 1
 
     Create and Train Model wizard will now take you through a few simple steps.
 
@@ -163,7 +111,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_012.png " ")
 
-13. Step 13: Create and Train Model - Step 2
+5. Step 5: Create and Train Model - Step 2
 
     In this second step, you need to define parameters for the model itself. As you can see, there isn't much to do. Provide a name and description and then define **training duration**.
 
@@ -173,19 +121,19 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click **Next** to proceed to the **Review** step.
 
-14. Step 14: Create and Train Model - Step 3
+6. Step 6: Create and Train Model - Step 3
 
     In this step you will only review and confirm the settings. If you are ok with them, click **Create and train**.
 
     ![Navigate to Vision](./images/lab3_014.png " ")
 
-15. Step 15: Training in progress ...
+7. Step 7: Training in progress ...
 
     Model training is now in progress. In the **Project details: models** page you can monitor the progress by clicking the **Work Request** operation (in this case **CREATE_MODEL).
 
     ![Navigate to Vision](./images/lab3_015.png " ")
 
-16. Step 16: Work request log monitoring
+8. Step 8: Work request log monitoring
 
     You can now monitor the progress by reviewing **Log Messages**.
 
@@ -193,7 +141,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_017.png " ")
 
-17. Step 17: Evaluate your model
+9. Step 9: Evaluate your model
 
     When model training is completed - **State** is *Succeeded* and **% Complete** is *100%*.
 
