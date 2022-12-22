@@ -18,6 +18,7 @@ In this lab, you will:
 * Set policies for the new OCI group to manage a new compartment
 * Create a new Dynamic Group and required Policies for  Data Labeling
 * Create new Policies for AI Vision Service
+* Create a new Policy for Cloud Shall access
 
 ### Prerequisites
 
@@ -378,7 +379,16 @@ To find out which dynamic groups and policies are required navigate to **Data La
 
     You can close your 2nd tab page now.
 
-## Task 9: Logout
+## Task 9: Create a Policy to grant access to Cloud Shell
+
+1. Step 1: TO DO TO DO TO DO
+
+    ```console
+    allow group OCI-Box_Group to use cloud-shell in tenancy
+
+    ```
+
+## Task 10: Logout
 
 Once finished with prerequisite tasks, simply logout from [cloud.oracle.com](https://cloud.oracle.com) as you will (optionally) continue with your newly created user.
 

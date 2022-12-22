@@ -164,6 +164,34 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files. Let's show how to update and configure */data-labeling/config.py* first.
 
+    *config.py* is empty at beggining:
+
+    ```python
+    # for help, run:
+    # python3 help.py
+
+    # config file path
+    config_file_path="/home/.oci/config"
+    # config file profile
+    config_profile="DEFAULT"
+    # region identifier of DLS Dataset
+    # for example: eu-frankfurt-1
+    region_identifier="< YOUR REGION >"
+    # compartment where DLS Dataset exists
+    compartment_id = "ocid1.compartment.oc1.... <YOUR COMPARTMENT OCID> ..."
+    # ocid of the DLS Dataset
+    dataset_id = "ocid1.datalabelingdataset.oc1.eu-frankfurt-1.... <YOUR DATASET OCID> ..."
+    # an array where the elements are all of the labels that you will use to annotate records in your DLS Dataset with. Each element is a separate label.
+    labels = ["NORMAL", "PNEUMONIA"]
+    # the algorithm that will be used to assign labels to DLS Dataset records
+    labeling_algorithm = "first_match"
+    # use for first_match labeling algorithm
+    first_match_regex_pattern = r'^([^/]*)/.*$'
+    # maximum number of DLS Dataset records that can be retrieved from the list_records API operation for labeling
+    # limit=1000 is the hard limit for list_records
+    list_records_limit = 1000
+    ```
+
     **4.1 YOUR REGION**
 
     Probably the easiest way to obtain your region information is to look at the URL. Spot *region* section and copy the value succeeding '=' simbol.
@@ -188,18 +216,59 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     ![](./images/lab2_312.png " ")
 
+    When updated, *config.py* file should look like this:
+
+    ```python
+    # for help, run:
+    # python3 help.py
+
+    # config file path
+    config_file_path="/home/Candy_Swee/.oci/config"
+    # config file profile
+    config_profile="DEFAULT"
+    # region identifier of DLS Dataset
+    # for example: eu-frankfurt-1
+    region_identifier="eu-frankfurt-1"
+    # compartment where DLS Dataset exists
+    compartment_id = "ocid1.compartment.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    # ocid of the DLS Dataset
+    dataset_id = "ocid1.datalabelingdataset.oc1.eu-frankfurt-1.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    # an array where the elements are all of the labels that you will use to annotate records in your DLS Dataset with. Each element is a separate label.
+    labels = ["NORMAL", "PNEUMONIA"]
+    # the algorithm that will be used to assign labels to DLS Dataset records
+    labeling_algorithm = "first_match"
+    # use for first_match labeling algorithm
+    first_match_regex_pattern = r'^([^/]*)/.*$'
+    # maximum number of DLS Dataset records that can be retrieved from the list_records API operation for labeling
+    # limit=1000 is the hard limit for list_records
+    list_records_limit = 1000
+    ```
+
 5. Update *config* with required configuration parameters
 
     *config* file is located in *.oci* folder. This is the file to which *config.py* is referring to in the first line.
 
-    Check this entry in *config.py*:
+    Pay attention to the following entry from *config.py*:
 
-    ```console
+    ```python
     # config file path
-    config_file_path="/home/.oci/config"
+    config_file_path="/home/Candy_Swee/.oci/config"
     ```
 
-    There are several entries in the *config* file that you need to set:
+    This is the location of the *config* file is. It is placed in *.oci* folder.
+
+    Initial content of *config* is as follows:
+
+    ```console
+    [DEFAULT]
+    user=<YOUR USER OCID>
+    fingerprint=<FINGERPRINT FOR PRIVATE API KEY>
+    key_file=<PATH TO YOUR PRIVATE API KEY>
+    tenancy=<YOUR TENANCY OCID>
+    region=<YOUR REGION>
+    ```
+
+    As you can see above, there are several entries in the *config* file that you also need to set and configure:
 
     **5.1 YOUR USER OCID**
 
@@ -251,6 +320,17 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     You can save *config* file.
 
+    After updates, *config* should like like this:
+
+    ```console
+    [DEFAULT]
+    user=ocid1.user.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    fingerprint=11:22:33:44:55:66:77:88:99:00:aa:bb:cc:dd:ee:ff
+    key_file=~/.oci/oci_api_key.pem
+    tenancy=ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    region=eu-frankfurt-1
+    ```
+
 6. Step: Upload your **Private Key** file
 
     You have already generated and downloaded **Private Key** for your user from OCI.
@@ -260,12 +340,14 @@ We have used original Python code and adjusted it to this labs requirements. You
     ```console
     -12-01-13-16.pem
     ```
-    Rename this *.pem* file to *oci\_api\_key.pem*.
+    
+    You'll upload it to OCI, but just before doing that, rename it into *oci\_api\_key.pem*.
 
     ```console
     mv -12-01-13-16.pem oci_api_key.pem
     ```
-    You can now upload your private key to OCI. 
+
+    You can now upload your private key to OCI.
 
     In your OCI Console click **Restore** (it should be left-bottom in your console) or open **Cloud Shell** again.
 
