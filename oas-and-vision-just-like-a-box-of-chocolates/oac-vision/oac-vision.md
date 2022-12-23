@@ -27,9 +27,13 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you have:
+This lab assumes you have successfully completed all three labs of this workshop:
 
-* An Oracle Cloud account
+* Prepare Environment,
+* Lab 1: Image Library,
+* Lab 2: Image (Data) Labeling and
+* Lab 3: Image Classification Model.
+
 
 ## Task 1: Create a new OAC instance
 
