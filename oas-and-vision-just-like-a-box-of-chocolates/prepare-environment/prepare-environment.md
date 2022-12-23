@@ -2,21 +2,29 @@
 
 ## Introduction
 
-Before you begin with the workshop, there are some prerequisites required which you might ask your OCI administrator to perform for you in case you don't have OCI and IDCS administration privileges.
+Oracle Analytics and OCI Vision: Just like a Box of Chocolates workshop is using several OCI services, such as Object Storage, Data Labeling, Vision and Analytics Cloud.
 
-In this lab you will create a new user and a user group which you will use throughout this workshop. Using a new user is optional as you can use your user account. You will also create a compartment and set some base policies that are required.
+There are several assumptions which this workshop is prepared. These assumptions are:
 
-Estimated Time: 20 minutes
+* Starting point for this workshop is your own, paid, tenancy. Services that are used in this workshop are not included within Free Tenancy option.
+* You will create all services from scratch. If you have more experience working with OCI, you can adopt some of the scripts to use instances/resources already in use.
+* If your user has OCI and IDCS administration privileges, then you can use that user to perform environment preparation steps, otherwise you should ask you OCI Administrator to perform those steps for you.
+
+In this lab you will create a new compartment where you will create all of your objects used in this workshop. You will also create a new user which will have privileges to manage all resources in the new compartment. Additionally, you will set policies which will enable you to run data labeling and vision model creation.
+
+When finished, you will login as a newly created user and continue with the labs.
+
+Estimated Time: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
 
+* Create a new compartment for objects used in workshop
 * Create (optionally) a new user and a new group in IDCS
 * Create a new group in OCI and map it to the group in IDCS
-* Create a new compartment
 * Set policies for the new OCI group to manage a new compartment
-* Create a new Dynamic Group and required Policies for  Data Labeling
+* Create a new Dynamic Group and required Policies for Data Labeling
 * Create new Policies for AI Vision Service
 * Create a new Policy for Cloud Shall access
 
@@ -24,35 +32,34 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* An Oracle Cloud account with OCI and IDCS administration privileges
+* An Oracle Cloud account with OCI and IDCS administration privileges or
+* OCI and IDCS administrator performs the following steps for you
 
 ## Task 1: Login to OCI
 
 1. Step 1: Enter your **Cloud Account Name**
 
-    Go to Oracle Cloud [cloud.oracle.com](https://cloud.oracle.com). Login into OCI is a 3-step process. Provide your Cloud Account Name and click **Next**.
+    Open [cloud.oracle.com](https://cloud.oracle.com) in your browser.
+
+    Login into OCI is a 3-step process in which you should provide your Cloud Account Name (not your user name!) in the first step and click **Next**.
 
     ![Login screen (1)](./images/pre-lab_001.png " ")
 
 2. Step 2: Select your **Identity Provider**
 
-    Your tenancy might be using several Identity Providers. Choose the right one (in our example it is **oracleidentityservice**)  and click **Continue**.
+    In the second step, you should choose your Identity Provider. Your tenancy (not in case of an empty tenancy) might be using several Identity Providers. Choose the right one. Most likely this (as in example below) would be **oracleidentityservice**. Click **Continue**.
 
     ![Login screen (2)](images/pre-lab_002.jpg =50%x*)
 
 3. Step 3: Enter your **Credentials**.
 
-    Enter your **username** and **password**. Click **Sign In**
+    In order to complete login process, enter your **User Name** and **Password**. Click **Sign In**
 
     ![Login screen (3)](images/pre-lab_003.jpg =50%x*)
 
 ## Task 2: Create a new compartment
 
-We will use one compartment for all required objects in this workshop.
-
-In the following steps, you will create users/groups who will be assigned privileges to manage all objects in this new compartment.
-
-NOTE: If you want to use any of existing Compartments in your OCI environment, you can use them, just pay attention when assigning privileges and creating policies.
+You will use one compartment for all required objects in this workshop, hence you need to create one.
 
 1. Step 1: Navigate to **Compartments** page
 
@@ -76,9 +83,9 @@ NOTE: If you want to use any of existing Compartments in your OCI environment, y
 
 ## Task 3: (optional) Create a new user in IDCS
 
-This task is to create a new user which will be used throughout this workshop. 
+In this task you will create a new user which will be used throughout this workshop.
 
-If you have your user already created (for example your user account you are logged in), then you might decide to use that user and not to create another user. In this case, this step is optional and can be skipped.
+This step is optional, if you would like to use any other existing user (for example, your user account you normally log into Oracle Cloud). Then you might decide to use that user and not to create another user. In this case, this step is optional and can be skipped.
 
 You will create a new user in **Oracle Identity Cloud Service** (and not in **OCI Console**!)
 
@@ -91,8 +98,8 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 2. Step 2: Choose **Identity Provider**
 
     **Federation** page is displayed. You will see the list of all available Identity Providers.
-    
-    Locate and click on **OracleIdentityCloudService** link.
+
+    Locate and click on **OracleIdentityCloudService**.
 
     ![Image alt text](images/pre-lab_005.jpg " ")
 
@@ -104,17 +111,19 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
 4. Step 4: Create a new user from IDCS Console
 
-    **Oracle Identity Cloud Service Console** opens in a new tab. To add a new user simply click on **Add a user** icon.
+    **Oracle Identity Cloud Service Console** opens in a new tab.
+
+    To add a new user simply click on **Add a user** icon.
 
     ![Image alt text](images/pre-lab_007.png " ")
 
 5. Step 5: Add a new user using **Add User** wizard
 
-    The two-step process starts. Follow the **Add user** dialog and provide user details in the first step. Provide your own email address to receive Welcome email to activate the user.
+    Follow the two-step **Add user** dialog and provide user details in the first step. Make sure that you provide **your own email address** to receive Welcome email to activate the user.
 
     ![Image alt text](images/pre-lab_008.jpg =50%x*)
 
-    In example above, a new user with username *Candy.Sweets* is created. In the following second step, you should assign a new user to groups. However, this step is optional as there is no group you can assign to. So simply click **Finish**.
+    In example above, a new user with username *Candy.Sweets* is created. In the second step, you should assign a new user to groups. However, this step is optional as there is no group at the moment you can assign new user to. So simply ignore it and click **Finish**.
 
 6. Check newly created user details
 
@@ -128,23 +137,25 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
 ## Task 4: Create a new user group in IDCS
 
-New or existing user should become a member of the **User Group** which has privileges (ie., compartment manage privileges) required later in this workshop. At this point that user group hasn't been created, so you should create one.
+Your new or existing user should become a member of the **User Group** which will be assigned privileges (ie., compartment manage privileges) required to use services in this workshop. At this point that user group hasn't been created, so you should create one.
 
 1. Step 1: Create a new User Group
 
-    Stay in IDCS Console. If you skipped previous task, you will still need to perform steps 1-3 to open the IDCS Console.
+    Stay in IDCS Console. If you skipped previous task, you will still need to perform steps 1-3 to navigate to the IDCS Console.
 
-    From the **IDCS Console Home Page** or from the **Navigator** menu (top-left corner) choose an option to **Create a new Group**. This is again a two-step process. In the first step provide group's **Name** and optionally **Description**. In our example, we have named our new group *Chocolates-Group*.
+    From the **IDCS Console Home Page** or from the **Navigator** menu (top-left corner) choose an option to **Create a new Group**. 
+
+    This is again a two-step process. In the first step provide group's **Name** and optionally **Description**. In our example, user group is named  *Chocolates-Group*.
 
     ![Image alt text](images/pre-lab_010.png =50%x*)
 
-    In the second step add users to this new group. To add a user, search for users by entering (parts of) their names in the search field and add the user to the new group - check the check-box in front of the user's name and click **Finish**.
+    In the second step add your user to this new group. To add a user, search for users by entering (parts of) their names in the search field and add the user to the new group - check the check-box in front of the user's name and click **Finish**.
 
     ![Image alt text](images/pre-lab_011.png =50%x*)
 
 ## Task 5: Create a new OCI Group and map it to an IDCS Group
 
-In order to create policies for the compartment you've just created, you need to create a new **OCI Group**. This group will map to previously created **IDCS Group**.
+Next step is to create a new OCI Group and map it to the IDCS Group you've just created. This step is required because you can't create policies, needed for example to create dataset for data labeling, for IDCS Groups, but for OCI Groups. Hence a new OCI Group has to be created and mapped to IDCS Group.
 
 1. Step 1: Navigate to **Groups** page
 
@@ -160,24 +171,24 @@ In order to create policies for the compartment you've just created, you need to
 
 3. Step 3: Define a new group
 
-    In the dialog form, provide **Name** and **Description** for the new group and click **Create**. In our example we named our group *OCI_Chocolate-Group*
+    In the dialog form, provide **Name** and **Description** for the new group and click **Create**. In example below, group is called *OCI_Chocolate-Group*.
 
     ![Image alt text](images/pre-lab_018.jpg =60%x*)
 
 4. Step 4: Define mapping between IDCS Group and OCI Group
 
-    You now need to map previously created **IDCS User Group** to the new **OCI Group**. This is required because all privileges, defined with policies will be created against the OCI Group. You can not assign privileges directly to IDCS User Groups.
+    Now, you need to map previously created **IDCS Group** to the new **OCI Group**. This is required because all privileges, defined with policies will be created against the OCI Group. You can not assign privileges directly to IDCS Groups.
 
-    Navigate back to **OracleIdentityCloudService** details page: 
-    
-    * Navigate first to **Identity** and then to **Federation**. 
+    Navigate back to **OracleIdentityCloudService** details page:
+
+    * Navigate first to **Identity** and then to **Federation**.
     * From **Federation** page click **OracleIdentityCloudService** link to open **OracleIdentityCloudService** page.
 
     Observe **Resources** menu on the left side of the page. There are three links: **Users**, **Groups** and **Group Mappings**. Click on **Group Mappings** and when page is refreshed, click **Add Mappings**.
 
     ![Image alt text](images/pre-lab_019.png " ")
 
-    **Add Mappings** popup window opens. Choose your IDCS User Group from **Identity Provider Group** list and your OCI Group from the **OCI Group** list.
+    **Add Mappings** popup window opens. Choose your IDCS Group from **Identity Provider Group** list and your OCI Group from the **OCI Group** list.
 
     ![Image alt text](images/pre-lab_020.jpg =50%x*)
 
@@ -227,32 +238,32 @@ Finally, you need to create a **policy** which grants manage privileges in a new
 
 ## Task 7: Create a Dynamic Group and Policies for Data Labeling
 
-Before you can start your data labeling process, you must perform prerequisete steps to:
+One of the tasks in this workshop will be data labeling. This is a process in which all images from your training image library will be assigned a single label that describe that specific image.  To be able to perform your data labeling process, you must perform the following prerequisite steps to:
 
-* set additional dynamic group and
-* to set some required policies for your existing OCI Group and for the new Dynamic Group.
+* create one new dynamic group and
+* set required policies for data labeling
 
-To find out which dynamic groups and policies are required navigate to **Data Labeling** page as follows:
+To find out which steps you need to perfom, you can navigate to **Data Labeling** page. You will find detailed instructions there.
 
-1. Step 1: Navigate to **Data Labeling** page
+1. Step 1: (optional) Navigate to **Data Labeling** page
 
     From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
 
     ![](./images/lab2_001.png " ")
 
-2. Step 2: Create a new Dataset
+2. Step 2: Datasets
 
-    Click on **Datasets** link under **Data Labeling** on the left side of the page. This will open **Dataset list** page in selected Compartment (you might change Compartment to Compartment you've created for this workshop).
+    Click on **Datasets** link under **Data Labeling** on the left side of the page. This will open **Dataset list** page in selected Compartment (you might need to change compartment to the one you've created for this workshop).
 
     ![](./images/lab2_002.png " ")
 
-3. Step 3: Verify **Data Labeling Prerequisites**
+3. Step 3: (optional) Verify **Data Labeling Prerequisites**
 
     Expand **Show more information** to display what prerequisites have to be met before you can start your data labeling exercise. If these are not met, then Data Labeling might not run properly.
 
     ![](./images/lab2_004.png " ")
 
-    In *Step 1)*, you can use OCI Group you've created earlier, so you can skip the *Step 1)* and continue with creating a new Dynamic Group.
+    In *Step 1)* of the instructions, you will use OCI Group you've created earlier, so you will skip the *Step 1)* and continue with creating a new Dynamic Group.
 
 4. Step 4: Navigate to **Dynamic Groups** page
 
@@ -288,7 +299,7 @@ To find out which dynamic groups and policies are required navigate to **Data La
 
     Make sure that you've selected your *root* compartment first. Then click **Create Policy**.
 
-    The first policy is for Non-Administrative users. These are members of previously created OCI Group.
+    The first policy is for Non-Administrative users. These users are members of previously created OCI Group.
 
     OCI Group needs the following privileges (assuming OCI Group is called *OCI_Chocolate-Group* and compartment's name is *Box-of-Chocolates*):
 
@@ -323,17 +334,19 @@ To find out which dynamic groups and policies are required navigate to **Data La
 
     ![](./images/lab2_013.png " ")
 
-    You are now ready to start with Data Labeling.
+    You are now ready to start using Data Labeling service.
 
-## Task 8: Create new Policies for AI Vision Service
+## Task 8: Create new Policies for OCI Vision Service
 
-1. Step 1: Navigate to **Vision**
+Similarly to Data Labeling service, you will require some privileges to use OCI Vision service. 
+
+1. Step 1: (optional) Navigate to **Vision**
 
     Using **Navigator** (on the left) navigate to **Analytics & AI** and then choose **Vision**.
 
     ![Navigate to Vision](./images/lab3_001.png " ")
 
-2. Step 2: Create a custom **Project**
+2. Step 2: (optional) Custom **Project**
 
     You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
 
@@ -341,7 +354,7 @@ To find out which dynamic groups and policies are required navigate to **Data La
 
     ![Navigate to Vision](./images/lab3_002.png " ")
 
-3. Step 3: Projects
+3. Step 3: (optional) Projects
 
     When you open the **Projects** page, pay attention to **important information** note that is displayed at the top of the page. There are some policies required which need to be set before you create a new custom project and before you start training your models.
 
@@ -349,7 +362,7 @@ To find out which dynamic groups and policies are required navigate to **Data La
 
 4. Step 4: Setting policies for Vision
 
-    If you haven't set policies for Vision before, then open a new browser tab and navigate to **Policies** page.
+    From the **Navigator** menu select **Identity & Security** and then choose **Policies**.
 
     ![Navigate to Vision](./images/lab3_004.png =50%x*)
 
@@ -361,10 +374,10 @@ To find out which dynamic groups and policies are required navigate to **Data La
 
 6. Step 6: Define policies to access Vision service
 
-    Provide a name of a new policy and description in **Create Policy** dialog page. In the **Policy Builder** section enable **Show manual editor** and enter the following policy
+    Provide a name of a new policy and description in **Create Policy** dialog page. In the **Policy Builder** section enable **Show manual editor** and enter the following policy:
 
     ```console
-    allow group OCI_Chocolate-Group to manage ai-service-vision-family in tenancy
+    allow group <OCI Group> to manage ai-service-vision-family in tenancy
     ```
 
     ![Navigate to Vision](./images/lab3_006.png " ")
@@ -373,20 +386,35 @@ To find out which dynamic groups and policies are required navigate to **Data La
 
 7. Step 7: Confirm Policy
 
-    Wait till policy is created and verify it has been properly set.
+    Wait until policy is created and verify it has been properly set.
 
     ![Navigate to Vision](./images/lab3_007.png " ")
 
-    You can close your 2nd tab page now.
-
 ## Task 9: Create a Policy to grant access to Cloud Shell
 
-1. Step 1: TO DO TO DO TO DO
+1. Step 1: Navigate to **Policies**
+
+    Once again, from the **Navigator** menu select **Identity & Security** and then choose **Policies**.
+
+    ![Navigate to Vision](./images/pre-lab_901.png " ")
+
+2. Step 2: Create a new policy that grants access to cloud shell
+
+    Enable **Show manual editor** in **Policy Builder** area and enter the following policy statement:
 
     ```console
-    allow group OCI-Box_Group to use cloud-shell in tenancy
-
+    allow group <OCI Group> to use cloud-shell in tenancy
     ```
+
+    ![Navigate to Vision](./images/pre-lab_902.png " ")
+
+    Click **Create**.
+
+3. Step 3: Verify policy
+
+    Verify entered policy.
+
+    ![Navigate to Vision](./images/pre-lab_903.png " ")
 
 ## Task 10: Logout
 

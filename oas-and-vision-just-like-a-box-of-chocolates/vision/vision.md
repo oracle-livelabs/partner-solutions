@@ -56,7 +56,7 @@ Vision service, when running predictions, requires additional storage, a staging
 
     ![Define a new bucket](./images/lab3_104.png " ")
 
-5. Step 5: Set policies for access and manage objects in new bucket
+5. Step 5: Set policies for access and manage objects in your compartment
 
     To access, read and manage objects in a staging bucket the following policies are required (replace User Group and Compartment names as required for your settings):
 
@@ -65,19 +65,35 @@ Vision service, when running predictions, requires additional storage, a staging
     allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}
     ```
 
+    Pay attention to the compartment selected. This policy is created at your compartment level and not on *root* compartment as most of policies in this workshop.
+
     ![Define a new bucket](./images/lab3_105.png " ")
 
 ## Task 2: Create your first Vision model
 
 In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision**, image classification, model and you will run some test to confirm it is working properly.
 
-1. Step 8: Continue with customer Project setup
+1. Step 1: Navigate to **Vision**
+
+    Using **Navigator** (on the left) navigate to **Analytics & AI** and then choose **Vision**.
+
+    ![Navigate to Vision](./images/lab3_001.png " ")
+
+2. Step 2: Custom **Project**
+
+    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
+
+    In your case, you will create your own custom model. So, Click **Projects**
+
+    ![Navigate to Vision](./images/lab3_002.png " ")
+
+3. Step 3: Continue with customer Project setup
 
     Click **Projects** on the left side menu list, confirm you are in correct **Compartment** (ie. Box-of-Chocolates) and click **Create Project**
 
     ![Navigate to Vision](./images/lab3_008.png " ")
 
-2. Step 1: Define custom project
+4. Step 4: Define custom project
 
     Select compartment in which you would like to create your Vision model.
 
@@ -85,7 +101,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_009.png " ")
 
-3. Step 2: Verify your project
+5. Step 5: Verify your project
 
     You can monitor creation of your new project. This should be completed pretty quickly. Once done, your project should have status **ACTIVE**.
 
@@ -93,7 +109,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click on your **project name**.
 
-4. Step 3: Create a new vision model
+6. Step 6: Create a new vision model
 
     Project page opens. You can see there is a list of **Models** that is currently empty. So, let's create your first Vision model.
 
@@ -101,17 +117,17 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_011.png " ")
 
-4. Step 4: Create and Train Model - Step 1
+7. Step 7: Create and Train Model - Select data step
 
     Create and Train Model wizard will now take you through a few simple steps.
 
-    In the first step, you need to provide data for the model to be trained on. You are obviously using your X-Ray Images dataset, which was labeled, using **Data Labeling Service** in the previous exercise.
+    In the first step, you need to provide data for the model to be trained on. You are obviously using your X-Ray Images dataset, which was labeled, using **Data Labeling Service** in the previous lab.
 
     Click **Next** to proceed to the second step.
 
     ![Navigate to Vision](./images/lab3_012.png " ")
 
-5. Step 5: Create and Train Model - Step 2
+8. Step 8: Create and Train Model - Train model step
 
     In this second step, you need to define parameters for the model itself. As you can see, there isn't much to do. Provide a name and description and then define **training duration**.
 
@@ -121,27 +137,27 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click **Next** to proceed to the **Review** step.
 
-6. Step 6: Create and Train Model - Step 3
+9. Step 9: Create and Train Model - Review step
 
     In this step you will only review and confirm the settings. If you are ok with them, click **Create and train**.
 
     ![Navigate to Vision](./images/lab3_014.png " ")
 
-7. Step 7: Training in progress ...
+10. Step 10: Training in progress ...
 
-    Model training is now in progress. In the **Project details: models** page you can monitor the progress by clicking the **Work Request** operation (in this case **CREATE_MODEL).
+    Model training is in progress. In the **Project details: models** page you can monitor the progress by clicking the **Work Request** operation (in this case **CREATE_MODEL**).
 
     ![Navigate to Vision](./images/lab3_015.png " ")
 
-8. Step 8: Work request log monitoring
+11. Step 11: Work request log monitoring
 
-    You can now monitor the progress by reviewing **Log Messages**.
+    You can monitor the progress by reviewing **Log Messages**.
 
     ![Navigate to Vision](./images/lab3_016.png " ")
 
     ![Navigate to Vision](./images/lab3_017.png " ")
 
-9. Step 9: Evaluate your model
+12. Step 12: Evaluate your model
 
     When model training is completed - **State** is *Succeeded* and **% Complete** is *100%*.
 
@@ -189,22 +205,22 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Navigate to Vision](./images/lab3_208.png =30%x*)
 
-    Expand *Request*. This is request code for JSON call which is requesting prediction to be performed on the selected image.
+    Expand *Request*. This is request code for JSON call which is requesting prediction to be performed on the selected image (some values are masked).
 
     ![Navigate to Vision](./images/lab3_209.png =30%x*)
 
     ```json
     {
-    "compartmentId": "ocid1.compartment.oc1..aaaaaaaa5pczgqb5i6dcs2sew52ztgesfx7yuuvrlsujgwa6xmsfio3em3pa",
+    "compartmentId": "ocid1.compartment.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "image": {
         "source": "OBJECT_STORAGE",
-        "namespaceName": "frly8pi3k85f",
+        "namespaceName": "xxxxxxxxxxxx",
         "bucketName": "X-Ray-Images-for-Training",
         "objectName": "PNEUMONIA/person1000_bacteria_2931.jpeg"
     },
     "features": [
         {
-        "modelId": "ocid1.aivisionmodel.oc1.eu-frankfurt-1.amaaaaaa4qfwndya2bdnv3rkfyj2fxqpiim2yeo7fjw2iuzkv4vfebf5pnwa",
+        "modelId": "ocid1.aivisionmodel.oc1.eu-frankfurt-1.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         "featureType": "IMAGE_CLASSIFICATION",
         "maxResults": 5
         }

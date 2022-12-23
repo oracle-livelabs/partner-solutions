@@ -1,8 +1,8 @@
-# Data (Image) Labaling
+# Lab 2: Image (Data) Labeling
 
 ## Introduction
 
-This lab walks you through the steps to create a new dataset of records using images from your image library and to label those images with one of two labels: PNEUMONIA and NORMAL.
+This lab walks you through the steps to create a new dataset of records using images from your image library and to label those images with one of the two labels: PNEUMONIA and NORMAL.
 
 Estimated Time: 60 minutes
 
@@ -18,7 +18,7 @@ In this lab, you will:
 
 * Create a new dataset using images from object storage
 * Label images using Data Labeling utility
-* Programmatic (Bulk) Image labeling
+* Label images programmatically
 
 ### Prerequisites
 
@@ -26,21 +26,33 @@ This lab assumes you have:
 
 * Completed previous labs of this workshop: **Prepare Environment** and **Lab 1: Image Library**.
 
-## Task 1: Label images using Data Labeling tool
+## Task 1: Label images using Data Labeling utility
 
-Basic data labeling tool is provided within OCI. With this labeling tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the next session.
+Basic data labeling tool is provided within OCI. With this data labeling tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the second task.
 
-But before you continue, you need to perform the first step, **Create Dataset** based on your object storage based Image Library.
+But before you continue, you need to perform the first step, **Create Dataset** based on your object storage based image library.
 
-1. Step 1: **Create Dataset**
+1. Step 1: Navigate to **Data Labeling** page
 
-    Navigate again to **Data Labeling** page you've entered in the first task of this Lab.
+    From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
 
-    Make sure you've selected your *root* compartment, ie. **Box-of-Chocolates** and then click **Create dataset**.
+    ![](./images/lab2_001.png " ")
+
+2. Step 2: Open **Datasets**
+
+    Click on **Datasets** link under **Data Labeling** on the left side of the page.
+
+    ![](./images/lab2_002.png " ")
+
+3. Step 3: **Create Dataset**
+
+    This will open **Dataset list** page in selected compartment (make sure you are in correct compartment as you might need to change compartment to the one you've created for this workshop).
+
+    Make sure you've selected your compartment where your image library resides, ie. **Box-of-Chocolates** and then click **Create dataset**.
 
     ![](./images/lab2_014.png " ")
 
-2. Step 2: Define your dataset - **Add dataset details**
+4. Step 4: Define your dataset - **Add dataset details**
 
     Use **Create dataset** wizard and set the parameters of your dataset.
 
@@ -52,15 +64,15 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Click **Next**
 
-3. Step 3: Define your dataset - **Add files and labels**
+5. Step 5: Define your dataset - **Add files and labels**
 
-    In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. Box-of-Choclates) where you've put all of your images.
+    In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. Box-of-Chocolates) where you've put all of your images.
 
     ![](./images/lab2_016.png " ")
 
     Then *scroll* down to the lower section of this step.
 
-    Your images will be displayed.
+    You will see your images displayed in a gallery view.
 
     ![](./images/lab2_017.png " ")
 
@@ -70,17 +82,17 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Click **Next**.
 
-4. Step 4: Define your dataset - **Review** and **Create**
+6. Step 6: Define your dataset - **Review** and **Create**
 
     Review your dataset details and click **Create**
 
-5. Step 5: Generating records
+7. Step 7: Generating records
 
     Records for your dataset will be generated. You will have to wait for approx. 30 minutes. You can track the progress in top right corner.
 
     ![](./images/lab2_019.png " ")
 
-6. Step 6: Review your dataset
+8. Step 8: Review your dataset
 
     When finished, you can review the result of the records generation activity. For example, you can see that there were 4881 records generated, none of them have been labeled yet.
 
@@ -90,7 +102,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![](./images/lab2_021.png " ")
 
-7. Step 7: Open Data Labeling tool and set labels manually
+9. Step 9: Open Data Labeling tool and set labels manually
 
     You can click on the first image and **Data Labeling** tool will open. Since the first image is from *PNEUMONIA* folder, you should label it as *PNEUMONIA*.
 
@@ -102,21 +114,23 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![](./images/lab2_024.png " ")
 
+    There should be alternative, bulk labeling option to label your images.
+
 ## Task 2: Bulk image labeling
 
-We have 4881 images to label. This is too much to label images manually, hence we will use Python program to label images programmatically.
+We have 4881 images to label. This is too much to label images manually, hence we will use a python program to label images programmatically.
 
 Oracle provides code which can be adjusted and used in your specific case. You can find the *original code* on [Github](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/data_labeling_examples).
 
 ![](./images/lab2_025.png " ")
 
-We have used original Python code and adjusted it to this labs requirements. You will upload this adjusted code to your OCI environment and run it there.
+For the purpose of this labe, we have used original python code and adjusted it already to this workshop requirements. You will upload this adjusted code to your OCI environment and run bulk image labeling from there.
 
 1. Step 1: Download Python code.
 
     Download [lab2.zip](./files/lab2.zip) to your computer.
 
-    You don't have to extract the zip file to your laptop as you will upload it as such to your OCI environment.
+    You don't have to extract downloaded zip file to your laptop as you will upload it as such to your OCI environment.
 
     If unzipped, *lab2.zip* has the following structure:
 
@@ -124,7 +138,7 @@ We have used original Python code and adjusted it to this labs requirements. You
 
 2. Step 2: Open **Cloud Shell**
 
-    In the OCI Console, on the top bar, click **Developer Tools** icon to open associated menu and choose **Cloud Shell** option. That would open **Cloud Shell** terminal window.
+    In the OCI console, on the top bar, click **Developer Tools** icon to open associated menu and choose **Cloud Shell** option. That would open **Cloud Shell** terminal window.
 
     ![](./images/lab2_302.png " ")
 
@@ -144,15 +158,16 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     ![](./images/lab2_305.png =50%x*)
 
-    Now you can unzip *lab2.zip* file in your home directory.
+    Now you can unzip *lab2.zip* file in your home directory (run *pwd* command to review your location).
 
     ```console
+    pwd
     unzip lab2.zip
     ```
 
     ![](./images/lab2_306.png =50%x*)
 
-    Please check that unzip created 2 folders: *data-labeling* and *.oci* (this folder should be hidden) with files as presented in image below:
+    Please check that unzip created 2 folders: *data-labeling* and *.oci* (this folder is hidden) with files as presented in image below:
 
     ![](./images/lab2_307.png =50%x*)
 
@@ -160,11 +175,13 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     ![](./images/lab2_308.png =150x*)
 
-4. Update *config.py* with required configuration parameters
+4. Step 4: Update *config.py* with required configuration parameters
 
-    In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files. Let's show how to update and configure */data-labeling/config.py* first.
+    In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files. 
+    
+    Let's update and configure */data-labeling/config.py* first.
 
-    *config.py* is empty at beggining:
+    Pre-prepared *config.py* is basically empty at the beginning:
 
     ```python
     # for help, run:
@@ -192,13 +209,24 @@ We have used original Python code and adjusted it to this labs requirements. You
     list_records_limit = 1000
     ```
 
+    The first attribute to change is *config_file_path*. This is path to *config* file located in *.oci* folder. You should amend it to something like this:
+
+    ```python
+    # config file path
+    config_file_path="/home/Candy_Swee/.oci/config"
+    ```
+
+    where *Candy_Swee* is slightly transformed your user name (*Candy.Sweet* to *Candy_Swee*)
+
+    To obtain other values and populate missing information in *config.py* check the following tasks:
+
     **4.1 YOUR REGION**
 
-    Probably the easiest way to obtain your region information is to look at the URL. Spot *region* section and copy the value succeeding '=' simbol.
+    Probably the easiest way to obtain your region information is to look at the URL. Spot *region* section and copy the value succeeding '=' symbol.
 
     ![](./images/lab2_309.png =50%x*)
 
-    In our example, region is *eu-frankfurt-1*, but it can not be the case with your instance.
+    In our example, region is *eu-frankfurt-1*, but it can not be the case with your tenancy.
 
     **4.2 YOUR COMPARTMENT OCID**
 
@@ -206,7 +234,7 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     ![](./images/lab2_310.png " ")
 
-    Your **Compartment OCID** is located in **Compartment Information** tab (default). Click **Show** to display complete OCID and **Copy** to copy it clipboard.
+    Your **Compartment OCID** is located in **Compartment Information** tab (displayed as default). Click **Show** to display complete OCID and **Copy** to copy it clipboard.
 
     ![](./images/lab2_311.png =60%x*)
 
@@ -216,7 +244,7 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     ![](./images/lab2_312.png " ")
 
-    When updated, *config.py* file should look like this:
+    When updated, *config.py* file should look like this (some values are masked):
 
     ```python
     # for help, run:
@@ -244,15 +272,15 @@ We have used original Python code and adjusted it to this labs requirements. You
     list_records_limit = 1000
     ```
 
-5. Update *config* with required configuration parameters
+5. Step 5: Update *config* with required configuration parameters
 
-    *config* file is located in *.oci* folder. This is the file to which *config.py* is referring to in the first line.
+    *config* file is located in *.oci* folder and path to *config* file is specified in *config.py* file - see previous setp. This is the file to which *config.py* is referring to in the first line.
 
     Pay attention to the following entry from *config.py*:
 
     ```python
     # config file path
-    config_file_path="/home/Candy_Swee/.oci/config"
+    config_file_path="/home/<USER>/.oci/config"
     ```
 
     This is the location of the *config* file is. It is placed in *.oci* folder.
@@ -268,7 +296,7 @@ We have used original Python code and adjusted it to this labs requirements. You
     region=<YOUR REGION>
     ```
 
-    As you can see above, there are several entries in the *config* file that you also need to set and configure:
+    As you can see above, there are several entries in the *config* file that you need to set and configure:
 
     **5.1 YOUR USER OCID**
 
@@ -302,7 +330,7 @@ We have used original Python code and adjusted it to this labs requirements. You
     key_file=~/.oci/oci_api_key.pem
     ```
 
-    You have generated and downloaded this file in the previous step, but so far you haven't uploaded it. This will be done in the next step.
+    You have generated and downloaded this file (still to be renamed) in the previous step, but so far you haven't uploaded it. This will be done in the next step.
 
     **5.4 YOUR TENANCY OCID**
 
@@ -320,7 +348,7 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     You can save *config* file.
 
-    After updates, *config* should like like this:
+    After updates, *config* should like like this (some values are masked):
 
     ```console
     [DEFAULT]
@@ -331,7 +359,7 @@ We have used original Python code and adjusted it to this labs requirements. You
     region=eu-frankfurt-1
     ```
 
-6. Step: Upload your **Private Key** file
+6. Step 6: Upload your **Private Key** file
 
     You have already generated and downloaded **Private Key** for your user from OCI.
 
@@ -340,7 +368,7 @@ We have used original Python code and adjusted it to this labs requirements. You
     ```console
     -12-01-13-16.pem
     ```
-    
+
     You'll upload it to OCI, but just before doing that, rename it into *oci\_api\_key.pem*.
 
     ```console
@@ -349,9 +377,9 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     You can now upload your private key to OCI.
 
-    In your OCI Console click **Restore** (it should be left-bottom in your console) or open **Cloud Shell** again.
+    In your OCI Console click **Restore** (it should be in left-bottom corner in your console) or open **Cloud Shell** again.
 
-    Click on **Cloud Shell Menu** again and select **Upload**.
+    When **Cloud Shell** is opened, click on **Cloud Shell Menu** again and select **Upload**.
 
     ![](./images/lab2_318.png =100x*)
 
@@ -381,16 +409,17 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     ![](./images/lab2_322.png =50%x*)
 
-    You are now ready to run the data labeling program. 
+    You are now ready to run the data labeling program.
 
 7. Step 7: Run *main.py*
 
-    You can finally start bulk labeling. Make sure you are in *data-labeling* folder and run *main.py*.
+    You can finally start with bulk image labeling. Make sure you are in *data-labeling* folder in **Cloud Shell** and run *main.py*.
 
     ```console
     python3 main.py
     ```
-    Program will run approx. 20-30 minutes.
+
+    Program will run approx. 30 minutes.
 
     ![](./images/lab2_327.png " ")
 
@@ -398,7 +427,7 @@ We have used original Python code and adjusted it to this labs requirements. You
 
     ![](./images/lab2_328.png " ")
 
-    This concludes this session, and now you can start training your new vision model.
+    This concludes this lab, and now you can start training your new vision model.
 
 ## Learn More
 

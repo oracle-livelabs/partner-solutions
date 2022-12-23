@@ -46,6 +46,12 @@ The workshop is using the following dataset:
 
     For the analysis of chest x-ray images, all chest radiographs were initially screened for quality control by removing all low quality or unreadable scans. The diagnoses for the images were then graded by two expert physicians before being cleared for training the AI system. In order to account for any grading errors, the evaluation set was also checked by a third expert [https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
 
+## Task: Download and extract images
+
+Go to [https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) and download image files (one zipped file will be downloaded).
+
+Extract downloaded zip file to you local files system. You will use images from **Train** and **Validate** folders in this workshop.
+
 ## Learn More
 
 Oracle Documentation

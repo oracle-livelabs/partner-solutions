@@ -1,8 +1,8 @@
-# Image Library
+# Lab 1: Image Library
 
 ## Introduction
 
-This lab walks you through the steps to organize an image library in Object Storage and to upload X-Ray images to the this image library.
+This lab walks you through the steps to organize an image library in Object Storage. You will then upload your X-Ray images to folders set in your image library.
 
 Estimated Time: 60 minutes
 
@@ -23,7 +23,8 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed *Prepare Environment* lab
+* Completed *Prepare Environment* lab.
+* Downloaded and extracted a zip file, containing images, to your local files system.
 
 ## Task 1: Create a new Bucket
 
@@ -31,7 +32,7 @@ You will organize your image library in a new **Object Storage Bucket**.
 
 1. Step 1: Login into OCI
 
-    Login as a user who will manage your image library and will also perform the rest of activities in this workshop.
+    Login as a user who will manage your image library and will also perform the rest of the activities in this workshop.
 
     Select your Identity Provider, **oracleidentitycloudservice** in this case, ...
 
@@ -88,9 +89,9 @@ In order to make your image library visible to other users/service, you have to 
 
     ![Update visibility](./images/lab1_009.jpg =50%x*)
 
-4. Step 4: (optional) Set Pre-Authenticated Request
+4. Step 4: (alternative option) Set Pre-Authenticated Request
 
-    Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**. This gives you more control over what can public see and do with your images.
+    Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**. This gives you more control over what can users see and do with your images.
 
     In this case click **Pre-Authentication Requests** link under **Resources** and then **Create Pre-Authenticated Request**.
 
@@ -100,7 +101,7 @@ In order to make your image library visible to other users/service, you have to 
 
     ![Create PAR](./images/lab1_011.png " ")
 
-    Pre-Authenticated Request details popup window is shown. **NOTE:** Please copy URL for your reference as it won't be shown again.
+    Pre-Authenticated Request details popup window is displayed. **NOTE:** Please copy URL for your reference as it won't be shown again.
 
     ![PAR URL](./images/lab1_012.png " ")
 
@@ -110,14 +111,14 @@ In order to make your image library visible to other users/service, you have to 
 
 ## Task 3: Setup required folder structure
 
-As already explained in the **Introduction** chapter of this workshop, this workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset. Check for more details **Introduction** chapter.
+As already explained in the **Introduction** chapter of this workshop, this workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset. Check for more details **Introduction** chapter. If you haven't downloaded image, this might be the right time to do so. Images are downloaded as a zip file, which you should unzip to your local drive.
 
 In this task you will setup the folder structure and load images into proper folders.
 
-Start with the library folder structure. Image library is organized into two folders:
+Start with the library folder structure. Image library will contain two folders:
 
-* PNEUMONIA folder contains x-ray images of bacteria or virus infected lungs, and
-* NORMAL, which contains x-ray images of normal, unaffected, lungs.
+* PNEUMONIA: this folder contains x-ray images of bacteria or virus infected lungs, and
+* NORMAL: this folder contains x-ray images of normal and unaffected lungs.
 
 1. Step 1: Create a new folder
 
@@ -149,7 +150,7 @@ We are now ready to load images into appropriate folders. The following steps mi
 
 The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx. 30 minutes to complete.
 
-1. Step 1: Initiate images Upload
+1. Step 1: Initiate images **Upload**
 
     You should still be located in the **Objects** sub-page of the **Bucket Details** page of your bucket.
 
@@ -161,31 +162,31 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
 2. Step 2: Upload images for *PNEUMONIA*
 
-    In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged.
+    In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged, ie. *Standard*.
 
-    Then **drag image files** or **select files** from your computer onto **Choose Files from your Computer Area**. When ready, **Upload** button will become enabled (blue). Please note that you can upload approx. 200 images in one upload job.
+    Then **drag image files** or **select files** from your computer (images from local folder *TRAIN/PNEUMONIA*) onto **Choose Files from your Computer Area**. When ready, **Upload** button will become enabled (blue). Please note that you can upload approx. 200 images in one upload job and that you will need to make several iterations to upload all of approx 3.500 images for *PNEUMONIA*.
 
     Click **Upload** and wait all images are uploaded.
 
     ![Upload pneumonia images](./images/lab1_019.png " ")
 
-    Repeat this step for all 3000+ images for *PNEUMONIA*.
+    Repeat this step for all 3500 images for *PNEUMONIA*.
 
 3. Step 3: Upload images for *NORMAL*
 
-    Repeat the previous step, except this time navigate to *NORMAL* folder and upload images for *NORMAL*.
+    Repeat the previous step, except this time navigate to *NORMAL* folder and upload images from *TRAIN/NORMAL* local folder.
 
     ![Upload normal images](./images/lab1_020.png " ")
 
-    There should be approx. 1000+ images for NORMAL.
+    There should be approx. 1300 images for *NORMAL*.
 
 4. Step 4: Verify images are correctly loaded
 
-    Before you continue to the next lab, just make sure that you've uploaded all images and that images are correctly placed into PNEUMONIA and NORMAL folders:
+    Before you continue to the next lab, just make sure that you've uploaded all images and that images are correctly placed into *PNEUMONIA* and *NORMAL* folders:
 
     ![Verify loaded images](./images/lab1_022.png " ")
 
-    You should see and review all details of uploaded images in corresponding folders.
+    You can check and review details of uploaded images in corresponding folders.
 
     ![Verify loaded images](./images/lab1_021.png " ")
 
