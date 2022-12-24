@@ -2,15 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the steps to ...
+This lab walks you through the steps to setup a new Analytics Cloud instance with connection to OCI Vision. You will register your ML model from the previous lab and deploy it using data flows to classify new set of images for pneumonia. Finally, you will visualize results and use them in an analysis.
 
-Estimated Time: 20 minutes
+Estimated Time: 30-60 minutes
 
-### About OCI Object Storage
+### About Analytics Cloud
 
-The Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability.
-
-The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+Oracle Analytics empowers business users, data engineers, and data scientists to access and process data, evaluate predictions, and make quick, accurate decisions. Oracle Analytics addresses the entire analytics process, including data ingestion, data preparation and enrichment, and data visualization and collaboration. Machine learning (ML) is embedded throughout the platform to help organizations go beyond being data-driven to become analytics-driven.
 
 ### Objectives
 
@@ -37,7 +35,9 @@ This lab assumes you have successfully completed all three labs of this workshop
 
 ## Task 1: Create a new OAC instance
 
-This lab assumes you don't have any OAC instance available at the moment. That is why you should create one. You will create one Non-Production instance with features that are available in Professional Edition. To perform this lab, you don't have to setup an OAC Enterprise Edition, but of course, you can.
+This lab assumes you don't have any OAC instance available at the moment. That is why you will create one. 
+
+To perform this lab, OAC Professional Edition using 1 OCPU (non-production) will be enough. Of course you are free to set OAC Enterprise Edition too, but for this lab it is not required.
 
 1. Step 1: Navigate to **Analytics** page
 
@@ -49,11 +49,13 @@ This lab assumes you don't have any OAC instance available at the moment. That i
 
     Make sure you are looking at your Compartment, in our case this is **Box-of-Chocolates** Compartment.
 
+    Click **Create Instance**.
+
     ![Analytics Cloud page](./images/lab4_002.png " ")
 
 3. Step 3: Define a new Analytics Cloud instance
 
-    Provide a name for your new instance and optionally description. Confirm Compartment is correct.
+    **Create Analytics Instance** dialog opens. Provide a name for your new instance and optionally description. Make sure that you have selected correct Compartment.
 
     Then scroll down to **Capacity** section and pick one of the two options. In this case select **OCPU** as **Capacity Type** and select **OCPU Count**. **1 (Non-production)** should be enough.
 
@@ -63,7 +65,7 @@ This lab assumes you don't have any OAC instance available at the moment. That i
 
     ![Create Instance step 1b/2](./images/lab4_004.png " ")
 
-    Click **Create** to start provisioning your new Oracle Analytics Cloud
+    Click **Create** to start provisioning your new Oracle Analytics Cloud.
 
     ![Creating instance](./images/lab4_005.png " ")
 
@@ -73,9 +75,7 @@ This lab assumes you don't have any OAC instance available at the moment. That i
 
     ![Instance created](./images/lab4_006.png " ")
 
-    Instance should be in **Active** state.
-
-    In your Oracle Analytics console page, click **Analytics Home Page**.
+    When finished, your new OAC instance should be in **Active** state. Click on your instance name to navigate to the Oracle Analytics console page for your instance for review and to start using it. Click **Analytics Home Page**.
 
     ![Instance created](./images/lab4_007.png " ")
 
@@ -89,7 +89,7 @@ It's time to prepare an image library for new images which are going to be class
 
 1. Step 1: Navigate to **Buckets**
 
-    Once again, navigate to **Buckets** page and create a new bucket. 
+    Once again, navigate to **Buckets** page and create a new bucket.
 
     ![](./images/lab4_011.png " ")
 
@@ -101,7 +101,7 @@ It's time to prepare an image library for new images which are going to be class
 
     Download and unzip [validation-dataset.zip](./files/validation-dataset.zip) to your laptop. 
 
-4. Step 4: Upload images from validation dataset to newly create bucket.
+4. Step 4: Upload images from validation dataset to newly created bucket.
 
     Return to your new bucket and click **Upload**.
 
@@ -115,13 +115,13 @@ It's time to prepare an image library for new images which are going to be class
 
     ![](./images/lab4_015.png " ")
 
-    Validation images are now uploaded. You can return to Oracle Analytics and continue with this lab.
+    Validation images are now uploaded. You can return to Oracle Analytics and continue there.
 
     ![](./images/lab4_016.png " ")
 
 ## Task 3: Connect Oracle Analytics to OCI Vision
 
-You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is a native **Oracle Cloud** connector available in Oracle Analytics, which you will use to retrive and register your Vision model with Oracle Analytics Cloud.
+You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is a native **OCI Resource** connector available in Oracle Analytics, which you will use to retrieve and register your Vision model with Oracle Analytics Cloud.
 
 1. Step 1: Navigate to **Connections**
 
@@ -129,7 +129,7 @@ You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is
 
     ![](./images/lab4_201.png =30%x*)
 
-    Click **Connections** tab to review if there are any existing connections. At this point, there shouldn't be any (if case you've just provisioned OAC instance).
+    Click **Connections** tab to review if there are any existing connections. At this point, there shouldn't be any (in case you've just provisioned OAC instance).
 
     ![](./images/lab4_202.png =50%x*)
 
@@ -147,7 +147,7 @@ You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is
 
 4. Step 4: Provide **Connection details**
 
-    In the second step, define details for your connection. You will need to know in which **region** is your instance running. Then you also have to provide the **Tenancy OCID** and **User OCID** that would connect to OCI Vision. 
+    In this step, you will define details for your connection. You need to know in which **region** is your instance running. Then you also have to provide the **Tenancy OCID** and **User OCID** that would connect to OCI Vision.
 
     Based on the information provided you will then **generate API Key** and register it with the user whose OCID you've provided.
 
@@ -155,25 +155,27 @@ You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is
 
 5. Step 5: (optional) Obtain **Tenancy OCID**
 
-    This is an optional step. You will have to open a new OCI Console page in a separate tab or window. If you have already obtained your **Tenancy OCID**, then you should use it. If you haven't got your **Tenancy OCID**, then open the **Profile** menu (top-right in your OCI console, not in Oracle Analytics Cloud Home Page) and select **Tenancy** menu option. 
+    This is an optional step as you obtained this information in one of previous labs. 
+
+    Open a new OCI Console page in a separate tab or window. If you have already obtained your **Tenancy OCID**, then you should use it. If you haven't got your **Tenancy OCID**, then open the **Profile** menu (top-right in your OCI console, not in Oracle Analytics Cloud Home Page) and select **Tenancy** menu option.
 
     ![](./images/lab4_206.png =30%x*)
 
     Tenancy page opens and you can copy **OCID** into clipboard from there.
 
-    ![](./images/lab4_207.png =50%x*)
+    ![](./images/lab4_207.png =30%x*)
 
     You can navigate to your original page and paste **Tenancy OCID** information in **Connection details**.
 
 6. Step 6: (optional) Obtain **User OCID**
 
-    This is also optional step as you have already obtained your **User OCID** when you were labeling images. Nevertheless, you will have to add newly generated API Key with that user, so you might open User page at least for later.
+    This is also optional step as you have already obtained your **User OCID** when you were labeling images. Nevertheless, you will have to add newly generated API Key with that user, so you might open User page at least for the next step.
 
     In any case, open the Profile menu again and select **User settings**. 
 
     ![](./images/lab4_208.png =30%x*)
 
-    You will see user's **OCID** under **User Information** tab. Copy **OCID** into respective field in **Connection details**.
+    User's **OCID** is located in **User Information** tab. Copy **OCID** into respective field in **Connection details**.
 
     ![](./images/lab4_209.png =50%x*)
 
@@ -187,25 +189,25 @@ You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is
 
     ![](./images/lab4_210.png =50%x*)
 
-    API Key Fingerprint will be generated in the **API Key** field. You should click **Copy** now and copy API Key in clipboard.
+    API Key Fingerprint will be generated in the **API Key** field. You should click **Copy** to store API Key in clipboard.
 
     ![](./images/lab4_211.png =50%x*)
 
 8. Step 8: Add **API Key** to **User settings**
 
-    Return back to **User settings** page. 
+    Return back to **User settings** page.
 
     ![](./images/lab4_212.png =30%x*)
 
-    Scroll down to **Resources** menu located at bottom-left. Click **API Keys**. There should be one **API Key** in the **API Keys** list which you created earlier doing **Data Labeling** lab. You are going to create a new one. 
+    Scroll down to **Resources** menu located at bottom-left.
 
-    Click **Add API Key**
+    Click **API Keys** and then click **Add API Key**.
 
     ![](./images/lab4_214.png =50%x*)
 
-    When **Add API Key** dialog window opens, check radio button **Paste Public Key**. Click into **Public Key** field and paste clipboard content. Your public key should now be copied into an empty **Public Key** field.
+    When **Add API Key** dialog window opens, check radio button **Paste Public Key**. Click into **Public Key** field and paste clipboard content (from previous step). Your public key should now be copied into an empty **Public Key** field.
 
-    Click **Add**
+    Click **Add**.
 
     ![](./images/lab4_215-1.png =50%x*)
 
@@ -213,13 +215,13 @@ You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is
 
     ![](./images/lab4_215-2.png =50%x*)
 
-    You should see additional API Key in the **API Keys** list.
+    There should be additional API Key in the **API Keys** list.
 
     ![](./images/lab4_216.png =70%x*)
 
-9. Step 1: Save your OCI Resource connection
+9. Step 9: Save your OCI Resource connection
 
-    Only now, you can save your connection. If you've tried to do it earlier, you would see an error. 
+    You can save your connection now. If you've tried to do it earlier, you would have received an error.
 
     ![](./images/lab4_217.png =50%x*)
 
@@ -265,17 +267,17 @@ In one of the previous step, you have already established a connection between A
 
 2. Step 2: Select a connection
 
-    **Register a Vision model** dialog window opens. In the first step select a connection. That should be the one you've created earlier.
+    **Register a Vision model** dialog window opens. In the first step select a connection from which you will register your model. It is the one you've created earlier.
 
     ![](./images/lab4_242.png =50%x*)
 
 3. Step 3: Select a model
 
-    Based on selected connection, all the list of all available models is displayed. You can review each model details. There should also be your model. Click on it. On the right side the following information will be displayed **Model Name**, **Description** and **Staging Bucket Name**.
+    Based on selected connection, all the list of all available models, including your model, is displayed. You can review each model details. Click on your model to review its details. The following information is displayed **Model Name**, **Description** and **Staging Bucket Name**.
 
     ![](./images/lab4_243.png =50%x*)
 
-    Observe that **Register** button is shaded and inactive. This is because you need to specify **Staging Bucket Name** - remember you have created it in one of the previous steps. Obtain the name of your **staging bucket** and continue with **OCI Vision Model** registration.
+    Observe that **Register** button is shaded and inactive. This is because you need to specify **Staging Bucket Name** - remember you have created it in one of the previous steps. Obtain the name of your **staging bucket**, enter it into **Staging Bucket Name** and continue with **OCI Vision Model** registration.
 
     ![](./images/lab4_244.png =50%x*)
 
@@ -297,9 +299,11 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
   1. Step 1: Obtain Bucket and/or Images URLs
 
-    The input information for your new data flow is the URL of the bucket in which you stored images for prediction or URLs of those images. When you provide only bucket URL then Vision model will be applied to all images found in bucket and when you use direct image URLs then only those images will be used in prediction.
+    The input information for your new data flow is the URL of the bucket in which you stored images for prediction or full URLs of those same images.
 
-    To obtain Bucket URL navigate to the bucket where you keep images for prediction, and simply copy current URL. 
+    When you provide only bucket URL then Vision model will be applied to all images found in that bucket and when you use direct image URLs then only those images will be used in prediction.
+
+    To obtain Bucket URL navigate to the bucket where you keep images for prediction, and simply copy current URL.
 
     ![](./images/lab4_251.png " ")
 
@@ -309,7 +313,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
 2. Step 2: Prepare datasets to be used with Data Flows
 
-    You will then create a csv file, bucket.csv or images.csv, with the following structure and content:
+    You will then create a csv file, *bucket.csv* or *images.csv*, with the following structure and content:
 
     *bucket.csv*
     ```console
@@ -328,13 +332,15 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
     12;bacteria_4883.jpeg;https://objectstorage.../val_PNEUMONIA_person1952_bacteria_4883.jpeg
     ```
 
+    Instead of csv file, you can also use xlsx file format.
+
 3. Step 3: Create a new data flow
 
     Start creating a new data flow.
 
     ![](./images/lab4_253.png =30%x*)
 
-4. Step 4: Add Data by Creating a new dataset
+4. Step 4: Add Data by creating a new dataset
 
     By now, you haven't uploaded either of *bucket.csv* of *images.csv* files to dataset storage. Click **Create Dataset**.
 
@@ -346,7 +352,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
 5. Step 5: Create Dataset
 
-    You will use the **buckets** option, so examples from here on are using this option, but using *images.csv* is no different from using *bucket.csv*.
+    You will use the *buckets.csv* option, so examples from here on are using this option, but using *images.csv* is no different from using *bucket.csv*.
 
     ![](./images/lab4_256.png =50%x*)
 
@@ -382,29 +388,31 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
 9. Step 9: Define AI Model
 
-    In this step you must pay attention to the **Parameters** section. You have to select an **input column as**. Choose **Bucket URL** as this contains the URL of the bucket where images are stored.
+    In this step you must pay attention to the **Parameters** section.
 
-    Leave **Buckets** as **Input Type**.
+    Choose *Bucket URL* as **input column**. *Bucket URL* contains the URL of the bucket where images are stored.
+
+    Leave *Buckets* as **Input Type**.
 
     ![](./images/lab4_262.png =50%x*)
 
-10. Step 10: Save results as new dataset
+10. Step 10: Save results as new **predicted** dataset
 
-    Apply AI Model results in a new dataset generated. This dataset contains information about predictions for each image. Actually two rows are generated for each image, for each label separately (we are using only two labels, hence two rows).
+    **Apply AI Model** results in a new dataset generated. This dataset contains information about predictions for each image. Actually two rows are generated for each image, for each label separately (we are using only two labels, hence two rows).
 
     ![](./images/lab4_263.png =50%x*)
 
-    You can see **Object Name** column which in fact contains different Label values for each image, and you can observe also **Confidence** for each option.
+    You can see **Object Name** column which in fact contains different label values for each image with calculated **Confidence** for each option.
 
     ![](./images/lab4_264.png " ")
 
 11. Step 11: Save and Run your dataflow
 
-    Save.
+    Save your data flow ...
 
     ![](./images/lab4_265.png =30%x*)
 
-    And run.
+    ... and run it.
 
     ![](./images/lab4_266.png =30%x*)
 
@@ -420,7 +428,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
 ## Task 7: Vision Series Plug-in
 
-You are close to your last taks in this lab. But before that, there is one small technicality you need to take care. In order to visualize you X-Ray images you need proper visualisation. Oracle Analytics, out of the box, doesn't support this sort of visualizations, that is why you have to upload it as an **Extension**. 
+You are close to your last tasks in this lab. But before that, there is one small technicality you need to take care. In order to visualize you X-Ray images you need proper visualization for image display. Oracle Analytics, out of the box, doesn't support this sort of visualizations, that is why you have to upload it as an **Extension**.
 
 1. Step 1: Navigate to Oracle Analytics Examples Library
 
@@ -438,7 +446,7 @@ You are close to your last taks in this lab. But before that, there is one small
 
 3. Step 3: Unzip downloaded *zip* file
 
-    Current version of the *AI Vision Series Samples* plug-in is **OAC-vision\_samples\_OCT22.zip**, but this might change through time. In any case, unzip it. 
+    Current version of the *AI Vision Series Samples* plug-in is **OAC-vision\_samples\_OCT22.zip**, but this might change through time. In any case, unzip it.
 
     ![](./images/lab4_273.png " ")
 
@@ -457,14 +465,14 @@ You are close to your last taks in this lab. But before that, there is one small
     In **Extensions** page click **Upload Extension** and upload both extensions, zip files.
 
     ![](./images/lab4_275.png =30%x*)
-    
-     When both extensions are uploaded and you can see them in the Extensions list, **reload** the page. This will activate both extensions. If this is not done, then you will not see these two extensions under Visualisation > Custom Visualisation list. 
+
+     When both extensions are uploaded and you can see them in the Extensions list, **reload** the page. This will activate both extensions. If this is not done, then you will not see these two extensions under Visualisation > Custom Visualisation list.
 
     ![](./images/lab4_276.png " ")
 
 ## Task 8: Visualize and Analyze
 
-In this last excercise, you will create a visualisation and visualize your predictions. 
+In this last exercise, you will create a visualization and visualize your predictions.
 
  1. Step 1: Navigate to Analytics Home Page.
 
@@ -504,7 +512,7 @@ In this last excercise, you will create a visualisation and visualize your predi
 
     Set **Use as Filter** parameter for this **Pivot Table** visualization.
 
-    ![](./images/lab4_308.png " ")
+    ![](./images/lab4_308.png =50%x*)
 
 5. Step 5: Add **Vision Plugin** to the canvas
 
@@ -530,7 +538,7 @@ In this last excercise, you will create a visualisation and visualize your predi
 
     ![](./images/lab4_311.png " ")
 
-This concludes this Lab. Thank you!
+This concludes this Workshop. Thank you!
 
 ## Learn More
 
