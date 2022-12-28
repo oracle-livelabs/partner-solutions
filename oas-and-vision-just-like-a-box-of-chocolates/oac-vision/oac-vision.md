@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to setup a new Analytics Cloud instance with connection to OCI Vision. You will register your ML model from the previous lab and deploy it using data flows to classify new set of images for pneumonia. Finally, you will visualize results and use them in an analysis.
 
-Estimated Time: 30-60 minutes
+Estimated Time: 60 minutes
 
 ### About Analytics Cloud
 
@@ -97,7 +97,9 @@ It's time to prepare an image library for new images which are going to be class
 
     ![](./images/lab4_012.png " ")
 
-3. Step 3: Download validation dataset
+    **Set visibility** for this new bucket to *public*.
+
+3. Step 4: Download validation dataset
 
     Download and unzip [validation-dataset.zip](./files/validation-dataset.zip) to your laptop. 
 
@@ -322,6 +324,8 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
     ```
 
+    Here, you can also [download](./files/buckets.csv) a sample buckets.csv file.
+
     *images.csv*
     ```console
     ID;Image Name;File Location
@@ -333,6 +337,8 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
     ```
 
     Instead of csv file, you can also use xlsx file format.
+
+    Here, you can also [download](./files/images.csv) a sample *images.csv* file.
 
 3. Step 3: Create a new data flow
 
@@ -469,6 +475,20 @@ You are close to your last tasks in this lab. But before that, there is one smal
      When both extensions are uploaded and you can see them in the Extensions list, **reload** the page. This will activate both extensions. If this is not done, then you will not see these two extensions under Visualisation > Custom Visualisation list.
 
     ![](./images/lab4_276.png " ")
+
+6. Step 6: (optional) FOR CHROME USERS
+
+    ```console
+    Extensions that you've just uploaded and activated might cause some issues when presenting images. The solution to this issue is described in the README file that is added in the extension zip file:
+
+    Browser requirements:
+    In Google Chrome, open the browser and type in the URL: chrome://flags/#block-insecure-private-network-requests
+
+    The following extension might be needed with Google Chrome:
+    https://chrome.google.com/webstore/detail/always-disable-content-se/ffelghdomoehpceihalcnbmnodohkibj?utm_source=chrome-ntp-icon
+
+    Also temporarily disable “Block insecure private network requests”, if you have issues accessing your object storage as a debugging test.
+    ```
 
 ## Task 8: Visualize and Analyze
 

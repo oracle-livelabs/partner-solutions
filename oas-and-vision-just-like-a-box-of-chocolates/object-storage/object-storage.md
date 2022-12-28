@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to organize an image library in Object Storage. You will then upload your X-Ray images to folders set in your image library.
 
-Estimated Time: 60 minutes
+Estimated Time: 45 minutes
 
 ### About OCI Object Storage
 
