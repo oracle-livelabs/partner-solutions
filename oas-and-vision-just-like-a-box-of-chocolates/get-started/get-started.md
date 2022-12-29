@@ -1,4 +1,4 @@
-# Prepare environment
+# Get started
 
 ## Introduction
 
@@ -20,6 +20,7 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 
+* Download images
 * Create a new compartment for objects used in workshop
 * Create (optionally) a new user and a new group in IDCS
 * Create a new group in OCI and map it to the group in IDCS
@@ -34,6 +35,16 @@ This lab assumes you have:
 
 * An Oracle Cloud account with OCI and IDCS administration privileges or
 * OCI and IDCS administrator performs the following steps for you
+
+## Task1: Download and extract images
+
+1. Step 1: Download images
+
+    Go to [https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) and download image files (one zipped file will be downloaded).
+
+2. Step 2: Extract images from downloaded zip file
+
+    Extract downloaded zip file to you local files system. You will use images from **Train** and **Validate** folders in this workshop.
 
 ## Task 1: Login to OCI
 

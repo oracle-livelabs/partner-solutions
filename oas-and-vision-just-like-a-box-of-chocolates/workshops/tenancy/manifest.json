@@ -8,9 +8,9 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Prepare Environment",
+            "title": "Get started",
             "description": "In this lab, you will create a new user, group, assign some privileges and similar. This lab is not mandatory if you have OCI Administrator privleges",
-            "filename": "../../prepare-environment/prepare-environment.md"
+            "filename": "../../get-started/get-started.md"
         },
         {
             "title": "Lab 1: Image Library",
