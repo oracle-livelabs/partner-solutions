@@ -23,8 +23,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed *Prepare Environment* lab.
-* Downloaded and extracted a zip file, containing images, to your local files system.
+* Completed **Get started** lab.
 
 ## Task 1: Create a new bucket
 

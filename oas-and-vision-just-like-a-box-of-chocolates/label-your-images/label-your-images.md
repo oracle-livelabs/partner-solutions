@@ -24,9 +24,9 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed previous labs of this workshop: **Prepare Environment** and **Lab 1: Image Library**.
+* Completed previous labs of this workshop: **Get started** and **Lab 1: Image Library**.
 
-## Task 1: Label images using Data Labeling utility
+## Task 1: Label images using Data Labeling tool
 
 Basic data labeling tool is provided within OCI. With this data labeling tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the second task.
 
@@ -36,13 +36,13 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
 
-    ![](./images/lab2_001.png " ")
+    ![Navigate to Data Labeling](./images/navigate-to-data-labeling.png " ")
 
 2. Step 2: Open **Datasets**
 
     Click on **Datasets** link under **Data Labeling** on the left side of the page.
 
-    ![](./images/lab2_002.png " ")
+    ![Open Datasets page](./images/open-datasets-page.png " ")
 
 3. Step 3: **Create Dataset**
 
@@ -50,7 +50,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Make sure you've selected your compartment where your image library resides, ie. **Box-of-Chocolates** and then click **Create dataset**.
 
-    ![](./images/lab2_014.png " ")
+    ![Create a new dataset](./images/create-a-new-dataset.png " ")
 
 4. Step 4: Define your dataset - **Add dataset details**
 
@@ -58,7 +58,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     First, **Name** your dataset and optionally add **Description** and provide **Labeling instructions**
 
-    ![](./images/lab2_015.png " ")
+    ![Define dataset details](./images/define-dataset-details.png " ")
 
     Click *Images* from **Dataset format** and *Single label* for **Annotation class**.
 
@@ -68,17 +68,17 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. Box-of-Chocolates) where you've put all of your images.
 
-    ![](./images/lab2_016.png " ")
+    ![Define dateset by adding files and labels](./images/define-dataset-files-and-labels.png " ")
 
     Then *scroll* down to the lower section of this step.
 
     You will see your images displayed in a gallery view.
 
-    ![](./images/lab2_017.png " ")
+    ![Define dataset - gallery view](./images/define-dataset-gallery-view.png " ")
 
     Enter two labels: *PNEUMONIA* and *NORMAL* in **Labels set** field.
 
-    ![](./images/lab2_018.png " ")
+    ![Define dataset - specify labels](./images/define-dataset-specify-labels.png " ")
 
     Click **Next**.
 
@@ -90,17 +90,17 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Records for your dataset will be generated. You will have to wait for approx. 30 minutes. You can track the progress in top right corner.
 
-    ![](./images/lab2_019.png " ")
+    ![Dataset records generation](./images/dataset-records-generation.png " ")
 
 8. Step 8: Review your dataset
 
     When finished, you can review the result of the records generation activity. For example, you can see that there were 4881 records generated, none of them have been labeled yet.
 
-    ![](./images/lab2_020.png " ")
+    ![Review dataset](./images/review-dataset.png " ")
 
     You can switch between **Data records** and **Gallery view** details.
 
-    ![](./images/lab2_021.png " ")
+    ![Switch views for dataset](./images/review-dataset-switch-views.png " ")
 
 9. Step 9: Open Data Labeling tool and set labels manually
 
@@ -108,11 +108,11 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Click **Save & next** and continue with manual labeling process.
 
-    ![](./images/lab2_023.png " ")
+    ![Set labels using data labeling tool](./images/set-labels-using-data-labeling-tool.png " ")
 
     When you're done with labeling, exit by clicking **Cancel**. You can now check how many records have been labeled. In our example, only 1 out of 4881 records.
 
-    ![](./images/lab2_024.png " ")
+    ![Review dataset - labeled records](./images/review-dataset-labeled-records.png " ")
 
     There should be alternative, bulk labeling option to label your images.
 
@@ -122,11 +122,11 @@ We have 4881 images to label. This is too much to label images manually, hence w
 
 Oracle provides code which can be adjusted and used in your specific case. You can find the *original code* on [Github](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/data_labeling_examples).
 
-![](./images/lab2_025.png " ")
+![Data labeling examples on Github](./images/data-labeling-examples.png " ")
 
 For the purpose of this labe, we have used original python code and adjusted it already to this workshop requirements. You will upload this adjusted code to your OCI environment and run bulk image labeling from there.
 
-1. Step 1: Download Python code.
+1. Step 1: Download python code.
 
     Download [lab2.zip](./files/lab2.zip) to your computer.
 
@@ -134,51 +134,50 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     If unzipped, *lab2.zip* has the following structure:
 
-    ![](./images/lab2_301.png =60%x*)
+    ![Lab2 ZIP file content and structure](./images/lab2-zip-file-content.png =60%x*)
 
-2. Step 2: Open **Cloud Shell**
+2. Step 2: Open Cloud Shell
 
     In the OCI console, on the top bar, click **Developer Tools** icon to open associated menu and choose **Cloud Shell** option. That would open **Cloud Shell** terminal window.
 
-    ![](./images/lab2_302.png " ")
+    ![Open Cloud Shell](./images/open-cloud-shell.png " ")
 
 3. Step 3: Upload pre-prepared files for data labeling.
 
     In the **Cloud Shell** click **Cloud Shell Menu** icon (top right icon). Select **Upload**.
 
-    ![](./images/lab2_303.png =200px*)
+    ![Upload lab2.zip file to cloud shell](./images/upload-files-using-cloud-shell.png =200px*)
 
     This opens a dialog window. Drop lab2.zip file onto designated area or browse your computer and upload it. Observe that file name appears in the list of files for upload.
 
     Click **Upload**.
 
-    ![](./images/lab2_304.png =50%x*)
+    ![Loading lab2.zip file to Cloud shell](./images/loading-lab2-files-to-cloudshell.png =50%x*)
 
     You can check the upload status during the upload. Once *Completed*, click **Hide**.
 
-    ![](./images/lab2_305.png =50%x*)
+    ![Verify successful lab2.zip file load in Cloud shell](./images/review-loading-lab2-files-to-cloudshell.png =50%x*)
 
     Now you can unzip *lab2.zip* file in your home directory (run *pwd* command to review your location).
 
     ```console
-    pwd
     unzip lab2.zip
     ```
 
-    ![](./images/lab2_306.png =50%x*)
+    ![Unzipping lab2.zip file in home directory](./images/unzip-lab2-zip-file.png =50%x*)
 
     Please check that unzip created 2 folders: *data-labeling* and *.oci* (this folder is hidden) with files as presented in image below:
 
-    ![](./images/lab2_307.png =50%x*)
+    ![Review unzipped folders and files](./images/review-unzipped-folders-and-files.png =50%x*)
 
     You can now minimize **Cloud Shell** terminal as you will need it again a little bit later.
 
-    ![](./images/lab2_308.png =150x*)
+    ![Minimize Cloud shell window](./images/minimize-cloudshell.png =150x*)
 
-4. Step 4: Update *config.py* with required configuration parameters
+4. Step 4: Update config.py file with required configuration parameters
 
     In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files. 
-    
+
     Let's update and configure */data-labeling/config.py* first.
 
     Pre-prepared *config.py* is basically empty at the beginning:
@@ -209,14 +208,14 @@ For the purpose of this labe, we have used original python code and adjusted it 
     list_records_limit = 1000
     ```
 
-    The first attribute to change is *config_file_path*. This is path to *config* file located in *.oci* folder. You should amend it to something like this:
+    The first attribute to change is *config\_file\_path*. This is path to *config* file located in *.oci* folder. You should amend it to something like this:
 
     ```python
     # config file path
     config_file_path="/home/Candy_Swee/.oci/config"
     ```
 
-    where *Candy_Swee* is slightly transformed your user name (*Candy.Sweet* to *Candy_Swee*)
+    where *Candy\_Swee* is slightly transformed your user name (*Candy.Sweet* to *Candy\_Swee*)
 
     To obtain other values and populate missing information in *config.py* check the following tasks:
 
@@ -224,7 +223,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     Probably the easiest way to obtain your region information is to look at the URL. Spot *region* section and copy the value succeeding '=' symbol.
 
-    ![](./images/lab2_309.png =50%x*)
+    ![Obtain your region information](./images/obtain-region-information.png =50%x*)
 
     In our example, region is *eu-frankfurt-1*, but it can not be the case with your tenancy.
 
@@ -232,17 +231,18 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     To obtain your compartment OCID navigate to **Compartments** page.
 
-    ![](./images/lab2_310.png " ")
+    ![Navigate to Compartments page](./images/navigate-to-compartments.png " ")
 
     Your **Compartment OCID** is located in **Compartment Information** tab (displayed as default). Click **Show** to display complete OCID and **Copy** to copy it clipboard.
 
-    ![](./images/lab2_311.png =60%x*)
+    ![Obtain your compartment OCID information](./images/obtain-compartment-ocid.png =60%x*)
 
     **4.3 YOUR DATASET OCID**
 
-    **Dataset OCID** can be found on your **Dataset Details Page** under **Data Labeling**. **Dataset OCID** can be found under **Dataset information** tab.
+    **Dataset OCID** can be found on your **Dataset Details Page** under **Data Labeling**.
+    **Dataset OCID** information is located in **Dataset information** tab.
 
-    ![](./images/lab2_312.png " ")
+    ![Obtain dataset OCID information](./images/obtain-dataset-ocid.png " ")
 
     When updated, *config.py* file should look like this (some values are masked):
 
@@ -272,9 +272,9 @@ For the purpose of this labe, we have used original python code and adjusted it 
     list_records_limit = 1000
     ```
 
-5. Step 5: Update *config* with required configuration parameters
+5. Step 5: Update config file with required configuration parameters
 
-    *config* file is located in *.oci* folder and path to *config* file is specified in *config.py* file - see previous setp. This is the file to which *config.py* is referring to in the first line.
+    *config* file is located in *.oci* folder and path to *config* file is specified in *config.py* file - see previous step. This is the file to which *config.py* is referring to in the first line.
 
     Pay attention to the following entry from *config.py*:
 
@@ -302,11 +302,11 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     In your OCI Console, navigate to **Profile** (top right corner icon) and choose **User settings** from the menu.
 
-    ![](./images/lab2_313.png =250x*)
+    ![Navigate to user profile](./images/navigate-to-user-profile.png =250x*)
 
     **User Details Page** opens. You can copy your user OCID information from **User Information** tab. Click **Show** to display complete OCID and click **Copy** to copy OCID to *config* file.
 
-    ![](./images/lab2_314.png " ")
+    ![Obtain user OCID information](./images/obtain-user-ocid.png " ")
 
     **5.2 FINGERPRINT FOR PRIVATE API KEY**
 
@@ -314,17 +314,17 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     Click **API Keys** under **Resources** menu on the left and then click **Add API Key**.
 
-    ![](./images/lab2_315.png =60%x*)
+    ![Add API key](./images/add-api-key.png =60%x*)
 
-    In the dialog box, click **Download Private Key**. A new *.pem* file will be generated and downloaded to your computer.
+    In the dialog box, click **Download Private Key**. A new *.pem* file will be generated and downloaded to your computer. You will work with this file a bit later.
 
     In the **API Keys** section check and copy **Fingerprint** - 16 2-digit string, separated by ':'. Copy this string to *config* file.
 
-    ![](./images/lab2_315-2.png " ")
+    ![Obtain fingerprint information](./images/obtain-fingerprint.png " ")
 
     **5.3 PATH TO YOUR PRIVATE API KEY**
 
-    Set this entry to
+    Set this entry to:
 
     ```console
     key_file=~/.oci/oci_api_key.pem
@@ -336,11 +336,11 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     For your tenancy OCID, open again **Profile** menu and select Tenancy option. 
 
-    ![](./images/lab2_325.png =200x*)
+    ![Navigate to Tenancy profile](./images/navigate-to-tenancy-profile.png =200x*)
 
     Copy **OCID** from **Tenancy Information** tab and paste it into *config* files
 
-    ![](./images/lab2_326.png " ")
+    ![Obtain tenancy OCID information](./images/obtain-tenancy-oci.png " ")
 
     **5.5 YOUR REGION**
 
@@ -359,7 +359,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     region=eu-frankfurt-1
     ```
 
-6. Step 6: Upload your **Private Key** file
+6. Step 6: Rename your private key (.pem you've downloaded) file to oci_api_key.pem
 
     You have already generated and downloaded **Private Key** for your user from OCI.
 
@@ -369,31 +369,35 @@ For the purpose of this labe, we have used original python code and adjusted it 
     -12-01-13-16.pem
     ```
 
-    You'll upload it to OCI, but just before doing that, rename it into *oci\_api\_key.pem*.
+    You'll upload it to OCI in the next step, but just before doing that, rename the file into *oci\_api\_key.pem*.
 
     ```console
     mv -12-01-13-16.pem oci_api_key.pem
     ```
 
-    You can now upload your private key to OCI.
+7. Step 7: Upload oci_api_key.pem to OCI.
 
     In your OCI Console click **Restore** (it should be in left-bottom corner in your console) or open **Cloud Shell** again.
 
+    ![Restore Cloud shell window](./images/restore-cloudshell.png =100x*)
+
     When **Cloud Shell** is opened, click on **Cloud Shell Menu** again and select **Upload**.
 
-    ![](./images/lab2_318.png =100x*)
+    ![Open menu to start loading files to Cloud Shell](./images/upload-files-using-cloud-shell.png =200x*)
 
-    When dialog window opens, choose *oci\_api\_key.pem* file to upload, and click **Upload*
+    New dialog window opens. Drop *oci\_api\_key.pem* file to the upload area or select it from your computer. Check file is ready for upload and click **Upload*
 
-    ![](./images/lab2_319.png =200x*)
+    ![Upload oci_api_key.pem file to Cloud shell](./images/upload-oci-api-key-pem-file.png =50%x*)
 
-    Confirm *oci\_api\_key.pem* file was uploaded and click **Hide**
+    You can monitor the upload process and when completed, confirm *oci\_api\_key.pem* file was uploaded and click **Hide**
 
-    ![](./images/lab2_320.png =50%x*)
+    ![Verify oci_api_key.pem is uploaded](./images/check-oci-api-key-pem-is-uploaded.png =50%x*)
 
     *oci\_api_key.pem* file is now in your user home folder. (Upload utility always loads file there)
 
-    ![](./images/lab2_321.png =50%x*)
+8. Step 8: Copy oci_api_key.pem to .oci folder
+
+    You have to put oci_api_key.pem into *.oci* folder as specified in configuration, *config* and *config.py*, files. 
 
     Move *oci\_api\_key.pem* file to *.oci* folder.
 
@@ -407,11 +411,11 @@ For the purpose of this labe, we have used original python code and adjusted it 
     ls ./.oci -l
     ```
 
-    ![](./images/lab2_322.png =50%x*)
+    ![Verify oci_api_key.pem file has been copied into .oci folder](./images/verify-oci-api-key-pem-is-in-oci-folder.png =50%x*)
 
     You are now ready to run the data labeling program.
 
-7. Step 7: Run *main.py*
+9. Step 9: Run bulk image labeling program
 
     You can finally start with bulk image labeling. Make sure you are in *data-labeling* folder in **Cloud Shell** and run *main.py*.
 
@@ -421,13 +425,13 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     Program will run approx. 30 minutes.
 
-    ![](./images/lab2_327.png " ")
+    ![Python program main.py is running](./images/main-py-running.png " ")
 
     Once finished, check if all images are labeled now:
 
-    ![](./images/lab2_328.png " ")
+    ![Data Labeling is completed](./images/data-labeling-completed.png " ")
 
-    This concludes this lab, and now you can start training your new vision model.
+    This concludes this lab. You can **proceed to the next lab, Lab 3: Train image classification model**.
 
 ## Learn More
 
