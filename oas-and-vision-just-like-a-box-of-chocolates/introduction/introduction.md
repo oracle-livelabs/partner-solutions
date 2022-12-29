@@ -1,6 +1,6 @@
 # Introduction
 
-## About this Workshop
+## About this workshop
 
 In this workshop you will learn how train the model for image classification using OCI Vision and how to use that model in Oracle Analytics in order to classify new X-Ray images.
 
@@ -29,7 +29,7 @@ This lab assumes you have:
 * Basic understanding of Oracle Cloud Infrastructure management, such as creating user and groups, creating policies, creating OCI services.
 * An Oracle Cloud account, which has to be paid account as most of the services are not included in free account.
 * Privileges to create and use OCI services: OCI Object Storage, Data Labeling, Data Science, Vision, Analytics.
-* Really bBasic understanding of Python programming. 
+* Really basic understanding of Python programming.
 
 ### Data
 
@@ -49,6 +49,7 @@ The workshop is using the following dataset:
 ## Learn More
 
 Oracle Documentation
+
 * [OCI Vision](https://docs.oracle.com/en-us/iaas/vision/vision/using/home.htm)
 * [OCI Data Labeling](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/home.htm)
 * [OCI Data Science](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/home.htm)
