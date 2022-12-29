@@ -32,19 +32,19 @@ Basic data labeling tool is provided within OCI. With this data labeling tool, y
 
 But before you continue, you need to perform the first step, **Create Dataset** based on your object storage based image library.
 
-1. Step 1: Navigate to **Data Labeling** page
+1. Step 1: Navigate to Data Labeling page
 
     From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
 
     ![Navigate to Data Labeling](./images/navigate-to-data-labeling.png " ")
 
-2. Step 2: Open **Datasets**
+2. Step 2: Go to datasets
 
     Click on **Datasets** link under **Data Labeling** on the left side of the page.
 
     ![Open Datasets page](./images/open-datasets-page.png " ")
 
-3. Step 3: **Create Dataset**
+3. Step 3: Create a new dataset
 
     This will open **Dataset list** page in selected compartment (make sure you are in correct compartment as you might need to change compartment to the one you've created for this workshop).
 
@@ -52,7 +52,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![Create a new dataset](./images/create-a-new-dataset.png " ")
 
-4. Step 4: Define your dataset - **Add dataset details**
+4. Step 4: Define your dataset - Add dataset details
 
     Use **Create dataset** wizard and set the parameters of your dataset.
 
@@ -64,7 +64,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Click **Next**
 
-5. Step 5: Define your dataset - **Add files and labels**
+5. Step 5: Define your dataset - Add files and labels
 
     In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. Box-of-Chocolates) where you've put all of your images.
 
@@ -82,7 +82,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Click **Next**.
 
-6. Step 6: Define your dataset - **Review** and **Create**
+6. Step 6: Define your dataset - Review and Create
 
     Review your dataset details and click **Create**
 
@@ -102,7 +102,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![Switch views for dataset](./images/review-dataset-switch-views.png " ")
 
-9. Step 9: Open Data Labeling tool and set labels manually
+9. Step 9: Use data labeling tool and set labels manually
 
     You can click on the first image and **Data Labeling** tool will open. Since the first image is from *PNEUMONIA* folder, you should label it as *PNEUMONIA*.
 
@@ -136,7 +136,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Lab2 ZIP file content and structure](./images/lab2-zip-file-content.png =60%x*)
 
-2. Step 2: Open Cloud Shell
+2. Step 2: Open cloud shell
 
     In the OCI console, on the top bar, click **Developer Tools** icon to open associated menu and choose **Cloud Shell** option. That would open **Cloud Shell** terminal window.
 
@@ -219,7 +219,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     To obtain other values and populate missing information in *config.py* check the following tasks:
 
-    **4.1 YOUR REGION**
+    **YOUR REGION**
 
     Probably the easiest way to obtain your region information is to look at the URL. Spot *region* section and copy the value succeeding '=' symbol.
 
@@ -227,7 +227,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     In our example, region is *eu-frankfurt-1*, but it can not be the case with your tenancy.
 
-    **4.2 YOUR COMPARTMENT OCID**
+    **YOUR COMPARTMENT OCID**
 
     To obtain your compartment OCID navigate to **Compartments** page.
 
@@ -237,7 +237,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Obtain your compartment OCID information](./images/obtain-compartment-ocid.png =60%x*)
 
-    **4.3 YOUR DATASET OCID**
+    **YOUR DATASET OCID**
 
     **Dataset OCID** can be found on your **Dataset Details Page** under **Data Labeling**.
     **Dataset OCID** information is located in **Dataset information** tab.
@@ -298,7 +298,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     As you can see above, there are several entries in the *config* file that you need to set and configure:
 
-    **5.1 YOUR USER OCID**
+    **YOUR USER OCID**
 
     In your OCI Console, navigate to **Profile** (top right corner icon) and choose **User settings** from the menu.
 
@@ -308,7 +308,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Obtain user OCID information](./images/obtain-user-ocid.png " ")
 
-    **5.2 FINGERPRINT FOR PRIVATE API KEY**
+    **FINGERPRINT FOR PRIVATE API KEY**
 
     On the same, **User Details** page, you can now obtain also **fingerprint for your private API key**. You will generate your private API key, download it and then upload it into your *.oci* folder.
 
@@ -322,7 +322,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Obtain fingerprint information](./images/obtain-fingerprint.png " ")
 
-    **5.3 PATH TO YOUR PRIVATE API KEY**
+    **PATH TO YOUR PRIVATE API KEY**
 
     Set this entry to:
 
@@ -332,7 +332,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     You have generated and downloaded this file (still to be renamed) in the previous step, but so far you haven't uploaded it. This will be done in the next step.
 
-    **5.4 YOUR TENANCY OCID**
+    **YOUR TENANCY OCID**
 
     For your tenancy OCID, open again **Profile** menu and select Tenancy option. 
 
@@ -342,7 +342,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Obtain tenancy OCID information](./images/obtain-tenancy-oci.png " ")
 
-    **5.5 YOUR REGION**
+    **YOUR REGION**
 
     You should have already obtain information about your region. Just reuse it from the previous step.
 
@@ -359,7 +359,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     region=eu-frankfurt-1
     ```
 
-6. Step 6: Rename your private key (.pem you've downloaded) file to oci_api_key.pem
+6. Step 6: Rename your private key (.pem file you've downloaded) file to oci_api_key.pem
 
     You have already generated and downloaded **Private Key** for your user from OCI.
 
