@@ -433,7 +433,7 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
 
 Once finished with prerequisite tasks, simply logout from [cloud.oracle.com](https://cloud.oracle.com) as you will (optionally) continue with your newly created user.
 
-You can now proceed to the next lab.
+You can now **proceed to the next lab, Lab1: Create image library**.
 
 ## Learn More
 

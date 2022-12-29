@@ -26,27 +26,27 @@ This lab assumes you have:
 * Completed *Prepare Environment* lab.
 * Downloaded and extracted a zip file, containing images, to your local files system.
 
-## Task 1: Create a new Bucket
+## Task 1: Create a new bucket
 
 You will organize your image library in a new **Object Storage Bucket**.
 
-1. Step 1: Login into OCI
+1. Step 1: Log into OCI
 
     Login as a user who will manage your image library and will also perform the rest of the activities in this workshop.
 
     Select your Identity Provider, **oracleidentitycloudservice** in this case, ...
 
-    ![](./images/lab1_001.jpg =50%x*)
+    ![Log into OCI](./images/log-into-oci.jpg =50%x*)
 
     ... and provide your user's credentials. For example, Candy.Sweets.
 
-    ![](./images/lab1_002.jpg =50%x*)
+    ![Provide Credentials](./images/provide-credentials.jpg =50%x*)
 
-2. Step 2: Navigate to **Buckets** page
+2. Step 2: Navigate to Buckets page
 
     From the **Navigator** menu (top-left corner) select **Storage** and then **Buckets**.
 
-    ![Navigate to Buckets page](./images/lab1_004.png " ")
+    ![Navigate to Buckets page](./images/navigate-to-buckets.png " ")
 
 3. Step 3: Create a new bucket
 
@@ -54,7 +54,7 @@ You will organize your image library in a new **Object Storage Bucket**.
 
     Then click **Create Bucket**.
 
-    ![Click Create Buckets](./images/lab1_005.jpg " ")
+    ![Create a new buckets](./images/create-a-new-bucket.jpg " ")
 
 4. Step 4: Define bucket
 
@@ -63,7 +63,7 @@ You will organize your image library in a new **Object Storage Bucket**.
     * use *Encrypt* using Oracle managed keys for **Encryption** and
     * provide some **Tags** if you want to improve your OCI management and control.
 
-    ![Define a new bucket](./images/lab1_006.png " ")
+    ![Define a new bucket](./images/define-a-new-bucket.png " ")
 
     Finally click **Create** to create a new bucket.
 
@@ -71,43 +71,43 @@ You will organize your image library in a new **Object Storage Bucket**.
 
 In order to make your image library visible to other users/service, you have to update its visibility. Default visibility is set to *Private*. One way of changing visibility settings is simply to set visibility to **Public**. This can be a bit tricky from security reasons, but for this workshop we could squint in one eye.
 
-1. Step 1: Change visibility to Public.
+1. Step 1: Change visibility
 
     From your bucket list choose your newly created bucket.
 
-    ![Buckets List](./images/lab1_007.jpg " ")
+    ![Buckets List](./images/buckets-list.jpg " ")
 
-2. Step 2: Edit Visibility
+2. Step 2: Click on edit visibility
 
     In the Bucket Details page, click **Edit Visibility**.
 
-    ![Bucket Details Page](./images/lab1_008.jpg " ")
+    ![Bucket Details Page](./images/edit-bucket-visibility.jpg " ")
 
-3. Step 3: Update Visibility
+3. Step 3: Update visibility to public
 
     Check **Public** radio button and click **Save Changes**
 
-    ![Update visibility](./images/lab1_009.jpg =50%x*)
+    ![Update visibility to public](./images/update-visibility-to-public.jpg =50%x*)
 
-4. Step 4: (alternative option) Set Pre-Authenticated Request
+4. Step 4: (alternative option) Set Pre-Authenticated Request (PAR)
 
     Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**. This gives you more control over what can users see and do with your images.
 
-    In this case click **Pre-Authentication Requests** link under **Resources** and then **Create Pre-Authenticated Request**.
+    In this case click **Pre-Authentication Requests** link under **Resources** and then **Create Pre-Authenticated Request**, otherwise simply skip this step.
 
-    ![PAR](./images/lab1_010.png " ")
+    ![PAR](./images/par.png " ")
 
     Fill required field in PAR definition and finally click **Create Pre-Authenticated Request**.
 
-    ![Create PAR](./images/lab1_011.png " ")
+    ![Create PAR](./images/define-par.png " ")
 
     Pre-Authenticated Request details popup window is displayed. **NOTE:** Please copy URL for your reference as it won't be shown again.
 
-    ![PAR URL](./images/lab1_012.png " ")
+    ![Store PAR URL](./images/store-par-url.png " ")
 
     Click **Close** to return to the **Bucket Details** page.
 
-    ![Bucket Details Page](./images/lab1_013.png " ")
+    ![Bucket Details Page - PAR list](./images/par-list.png " ")
 
 ## Task 3: Setup required folder structure
 
@@ -126,23 +126,23 @@ Start with the library folder structure. Image library will contain two folders:
 
     Click **More Actions** (next to **Upload**) and choose **Create New Folder** from the menu.
 
-    ![Create folder](./images/lab1_014.png " ")
+    ![Create folder from More Actions menu](./images/more-actions-menu.png " ")
 
-2. Step 2: Define folder
+2. Step 2: Define folders
 
     **Name** your new folder *PNEUMONIA* and click **Create**
 
-    ![Pneumonia folder](./images/lab1_015.jpg " ")
+    ![Create folder for x-ray images for pneumonia](./images/create-pneumonia-folder.jpg " ")
 
     Repeat this step for another new folder called *NORMAL*.
 
-    ![Normal folder](./images/lab1_016.png " ")
+    ![Create folder for normal x-ray images](./images/create-normal-folder.png " ")
 
 3. Step 3: Verify your folder structure
 
     Please verify that you've created two folders, PNEUMONIA and NORMAL, under the *root*.
 
-    ![Verify folders](./images/lab1_017.jpg " ")
+    ![Verify folders](./images/verify-folders.jpg " ")
 
 ## Task 4: Load images
 
@@ -156,7 +156,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     Navigate to the **PNEUMONIA** folder first.
 
-    ![Pneumonia folder](./images/lab1_018.png " ")
+    ![Upload images to PNEUMONIA folder](./images/upload-to-pneumonia-folder.png " ")
 
     And click **Upload**.
 
@@ -168,7 +168,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     Click **Upload** and wait all images are uploaded.
 
-    ![Upload pneumonia images](./images/lab1_019.png " ")
+    ![Upload pneumonia images in iterations](./images/iterative-upload.png " ")
 
     Repeat this step for all 3500 images for *PNEUMONIA*.
 
@@ -176,7 +176,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     Repeat the previous step, except this time navigate to *NORMAL* folder and upload images from *TRAIN/NORMAL* local folder.
 
-    ![Upload normal images](./images/lab1_020.png " ")
+    ![Upload images to NORMAL folder](./images/upload-to-normal-folder.png " ")
 
     There should be approx. 1300 images for *NORMAL*.
 
@@ -184,11 +184,13 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     Before you continue to the next lab, just make sure that you've uploaded all images and that images are correctly placed into *PNEUMONIA* and *NORMAL* folders:
 
-    ![Verify loaded images](./images/lab1_022.png " ")
+    ![Verify loaded images for pneumonia](./images/verify-pneumonia-folder.png " ")
 
     You can check and review details of uploaded images in corresponding folders.
 
-    ![Verify loaded images](./images/lab1_021.png " ")
+    ![Verify loaded images for normal](./images/verify-normal-folder.png " ")
+
+    Once verified, you can **proceed to the next lab, Lab 2: Label your images**.
 
 ## Learn More
 
