@@ -1,4 +1,4 @@
-# Image Classification Model
+# Train image classification model
 
 ## Introduction
 

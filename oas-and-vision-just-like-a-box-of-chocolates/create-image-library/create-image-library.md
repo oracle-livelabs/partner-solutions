@@ -1,4 +1,4 @@
-# Lab 1: Image Library
+# Lab 1: Create image library
 
 ## Introduction
 

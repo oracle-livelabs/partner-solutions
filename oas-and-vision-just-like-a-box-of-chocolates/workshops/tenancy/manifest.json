@@ -13,20 +13,20 @@
             "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 1: Image Library",
-            "filename": "../../object-storage/object-storage.md"
+            "title": "Lab 1: Create image library",
+            "filename": "../../create-image-library/create-image-library.md"
         },
         {
-            "title": "Lab 2: Image (Data) Labeling",
-            "filename": "../../data-labeling/data-labeling.md"
+            "title": "Lab 2: Label your images",
+            "filename": "../../data-labeling/label-your-images<.md"
         },
         {
-            "title": "Lab 3: Image Classification Model",
-            "filename": "../../vision/vision.md"
+            "title": "Lab 3: Train image classification model",
+            "filename": "../../train-image-classification-model/train-image-classification-model.md"
         },
         {
-            "title": "Lab 4: Using Vision model in Analytics",
-            "filename": "../../oac-vision/oac-vision.md"
+            "title": "Lab 4: Use Vision model in Analytics",
+            "filename": "../../use-vision-model-in-analytics/use-vision-model-in-analytics.md"
         },
         {
             "title": "Need Help?",

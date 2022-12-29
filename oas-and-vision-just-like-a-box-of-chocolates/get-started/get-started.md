@@ -14,7 +14,7 @@ In this lab you will create a new compartment where you will create all of your 
 
 When finished, you will login as a newly created user and continue with the labs.
 
-Estimated Time: 30 minutes
+Estimated Time: 60 minutes incl. images download
 
 ### Objectives
 
@@ -31,28 +31,28 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you have:
+This lab assumes:
 
-* An Oracle Cloud account with OCI and IDCS administration privileges or
-* OCI and IDCS administrator performs the following steps for you
+* You have an Oracle Cloud account with OCI and IDCS administration privileges or
+* Your OCI and IDCS administrator can perform steps in this lab for you.
 
 ## Task1: Download and extract images
 
 1. Step 1: Download images
 
-    Go to [https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) and download image files (one zipped file will be downloaded).
+    Go to [https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) and download image files (one zipped file will be downloaded). To do this, you will most likely be asked to register as a new Kaggle users
 
 2. Step 2: Extract images from downloaded zip file
 
     Extract downloaded zip file to you local files system. You will use images from **Train** and **Validate** folders in this workshop.
 
-## Task 1: Login to OCI
+## Task 1: Log into OCI
 
-1. Step 1: Enter your **Cloud Account Name**
+1. Step 1: Enter your Cloud Account Name
 
     Open [cloud.oracle.com](https://cloud.oracle.com) in your browser.
 
-    Login into OCI is a 3-step process in which you should provide your Cloud Account Name (not your user name!) in the first step and click **Next**.
+    Login into OCI is a 3-step process in which you should provide your Cloud Account Name (this is not your user name!) in the first step and click **Next**.
 
     ![Login screen (1)](./images/pre-lab_001.png " ")
 
