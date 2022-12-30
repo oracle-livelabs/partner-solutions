@@ -38,7 +38,7 @@ This lab assumes you don't have any OAC instance available at the moment. That i
 
 To perform this lab, OAC Professional Edition using 1 OCPU (non-production) will be enough. Of course you are free to set OAC Enterprise Edition too, but for this lab it is not required.
 
-**Note**: This task can be performed anytime during the workshop. For example while waiting on model training to complete. This will save some time as OAC creating will run at least for 30 minutes.
+> **Note:** This task can be performed anytime during the workshop. For example while waiting on model training to complete. This will save some time as OAC creating will run at least for 30 minutes.
 
 1. Step 1: Navigate to Analytics page
 
@@ -250,8 +250,8 @@ You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is
 
     Click **add domain** and add your domain. For example, if you are using eu-frankfurt-1 region, then domain entry should be as follows:
 
-    ```console
-    *.eu-franfurt-1.oraclecloud.com
+    ```text
+    <copy>*.eu-franfurt-1.oraclecloud.com</copy>
     ```
 
     Check **Image** and **Connect** checkboxes, indicating that you are going to connect to that domain and you will download images from there.
@@ -298,7 +298,7 @@ In one of the previous step, you have already established a connection between A
 
 ## Task 6: Apply Vision model using data flows
 
-In Oracle Analytics, **Vision based machine learning model** is applied (as any other ML model) using **Data Flows**. 
+In Oracle Analytics, **Vision based machine learning model** is applied (as any other ML model) using **Data Flows**.
 
   1. Step 1: Obtain bucket and/or images URLs
 
@@ -319,22 +319,23 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
     You will then create a csv file, *bucket.csv* or *images.csv*, with the following structure and content:
 
     *bucket.csv*
-    ```console
-    ID;Bucket Name;Bucket URL
-    1;Pneumonia;https://cloud.oracle.com/object-storage/buckets/...
-
+    ```text
+    <copy>ID;Bucket Name;Bucket URL
+    1;Pneumonia;https://cloud.oracle.com/object-storage/buckets/...</copy>
     ```
 
     Here, you can also [download](./files/buckets.csv) a sample buckets.csv file.
 
     *images.csv*
-    ```console
+    ```text
+    <copy>
     ID;Image Name;File Location
     1;IM-1427-0001.jpeg;https://objectstorage.../val_NORMAL_NORMAL2-IM-1427-0001.jpeg
     2;IM-1430-0001.jpeg;https://objectstorage.../val_NORMAL_NORMAL2-IM-1430-0001.jpeg
     …
     11;bacteria_4881.jpeg;https://objectstorage.../val_PNEUMONIA_person1950_bacteria_4881.jpeg
     12;bacteria_4883.jpeg;https://objectstorage.../val_PNEUMONIA_person1952_bacteria_4883.jpeg
+    </copy>
     ```
 
     Instead of csv file, you can also use xlsx file format.
@@ -443,7 +444,7 @@ You are close to your last tasks in this lab. But before that, there is one smal
 
     ![Navigate to Oracle Analytics Examples Library](./images/oracle-analytics-examples-library.png " ")
 
-2. Step 2: Search for *AI Vision Series Samples* plug-in
+2. Step 2: Search for AI Vision Series Samples plug-in
 
     Locate the *AI Vision Series Samples* plug-in ...
 
@@ -451,7 +452,7 @@ You are close to your last tasks in this lab. But before that, there is one smal
 
     ... and download it to your computer.
 
-3. Step 3: Unzip downloaded *zip* file
+3. Step 3: Unzip downloaded ZIP file
 
     Current version of the *AI Vision Series Samples* plug-in is **OAC-vision\_samples\_OCT22.zip**, but this might change through time. In any case, unzip it.
 
@@ -459,7 +460,7 @@ You are close to your last tasks in this lab. But before that, there is one smal
 
     Among others, there should be two *zip* files extracted *customviz_com-company-visionseries_JUNE2022.zip* and *customviz_com-company-imageGalleryViz_JUNE2022.zip*. Make sure these two files or similar are present.
 
-4. Step 4: Navigate to **Console** to Analytics Cloud
+4. Step 4: Navigate Analytics Cloud console
 
     In Oracle Analytics, navigate to Console page.
 
@@ -479,17 +480,14 @@ You are close to your last tasks in this lab. But before that, there is one smal
 
 6. Step 6: (optional) FOR CHROME USERS
 
-    ```console
-    Extensions that you've just uploaded and activated might cause some issues when presenting images. The solution to this issue is described in the README file that is added in the extension zip file:
+    > **Note:** Extensions that you've just uploaded and activated might cause some issues when presenting images. The solution to this issue is described in the README file located in downloaded extension ZIP file.
 
-    Browser requirements:
-    In Google Chrome, open the browser and type in the URL: chrome://flags/#block-insecure-private-network-requests
+    In Google Chrome, open the browser and type in the URL: chrome://flags/#block-insecure-private-network-requests.
 
     The following extension might be needed with Google Chrome:
     https://chrome.google.com/webstore/detail/always-disable-content-se/ffelghdomoehpceihalcnbmnodohkibj?utm_source=chrome-ntp-icon
 
     Also temporarily disable “Block insecure private network requests”, if you have issues accessing your object storage as a debugging test.
-    ```
 
 ## Task 8: Visualize and analyze
 

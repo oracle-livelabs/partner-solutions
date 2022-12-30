@@ -6,7 +6,7 @@ Oracle Analytics and OCI Vision: Just like a Box of Chocolates workshop is using
 
 There are several assumptions based on which this workshop is prepared. These assumptions are:
 
-* Starting point for this workshop is your own, paid, tenancy. Services that are used in this workshop are not included within Free Tenancy option.
+* Starting point for this workshop is your own tenancy.
 * You will create all services from scratch. If you have more experience working with OCI, you can adopt some of the scripts to use instances/resources already in use.
 * If your user has OCI and IDCS administration privileges, then you can use that user to perform environment preparation (Get Started) steps, otherwise you should ask you OCI Administrator to perform those steps for you.
 
@@ -186,7 +186,7 @@ Next step is to create a new OCI group and map it to the IDCS group you've just 
 
     In the dialog form, provide **Name** and **Description** for the new group and click **Create**. In example below, group is called *OCI_Chocolate-Group*.
 
-    ![Define a new OCI Group](images/define-OCI-group.jpg =60%x*)
+    ![Define a new OCI Group](images/define-oci-group.jpg =60%x*)
 
 4. Step 4: Define mapping between IDCS group and OCI group
 
@@ -237,8 +237,8 @@ Finally, you need to create a **policy** which grants manage privileges in a new
 
     Your policy should look like this:
 
-     ```console
-     Allow group <OCI Group> to manage all-resources in tenancy <root compartment>
+     ```text
+     <copy>Allow group <OCI Group> to manage all-resources in tenancy <root compartment></copy>
      ```
 
 4. Step 4: Finish creating a new policy
@@ -290,8 +290,8 @@ To find out which steps you need to perform, you can navigate to **Data Labeling
 
     Provide **Name**, **Description** and enter the following statement to the **Matching Rules**:
 
-    ```console
-    ALL { resource.type = 'datalabelingdataset' }
+    ```text
+    <copy>ALL { resource.type = 'datalabelingdataset' }</copy>
     ```
 
     ![Define dynamic group for data labeling](./images/define-dynamic-group-for-data-labeling.png " ")
@@ -316,11 +316,11 @@ To find out which steps you need to perform, you can navigate to **Data Labeling
 
     OCI Group needs the following privileges (assuming OCI Group is called *OCI_Chocolate-Group* and compartment's name is *Box-of-Chocolates*):
 
-    ```console
-    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
+    ```text
+    <copy>allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
     allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates
     allow group OCI_Chocolate-Group to read objectstorage-namespaces in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage data-labeling-family in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage data-labeling-family in compartment Box-of-Chocolates</copy>
     ```
 
     ![Define data labeling policy for non-administrative users](./images/define-policy-for-non-admin-users.png " ")
@@ -335,10 +335,10 @@ To find out which steps you need to perform, you can navigate to **Data Labeling
 
     Enter the following statements (again assuming Dynamic Group is called *Box-of-Chocolates_DataLabeling* and compartment's name is *Box-of-Chocolates*):
 
-    ```console
-    allow dynamic-group Box-of-Chocolates_DataLabeling to read buckets in compartment Box-of-Chocolates
+    ```text
+    <copy>allow dynamic-group Box-of-Chocolates_DataLabeling to read buckets in compartment Box-of-Chocolates
     allow dynamic-group Box-of-Chocolates_DataLabeling to read objects in compartment Box-of-Chocolates
-    allow dynamic-group Box-of-Chocolates_DataLabeling to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE'}
+    allow dynamic-group Box-of-Chocolates_DataLabeling to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE'}</copy>
     ```
 
     ![Define data labeling policy for Dynamic Groups](./images/define-policy-for-dynamic-groups.png " ")
@@ -389,8 +389,8 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
 
     Provide a name of a new policy and description in **Create Policy** dialog page. In the **Policy Builder** section enable **Show manual editor** and enter the following policy:
 
-    ```console
-    allow group <OCI Group> to manage ai-service-vision-family in tenancy
+    ```text
+    <copy>allow group <OCI Group> to manage ai-service-vision-family in tenancy</copy>
     ```
 
     ![Define a new policy for Vision](./images/define-a-new-policy-for-vision.png " ")
@@ -415,8 +415,8 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
 
     Enable **Show manual editor** in **Policy Builder** area and enter the following policy statement:
 
-    ```console
-    allow group <OCI Group> to use cloud-shell in tenancy
+    ```text
+    <copy>allow group <OCI Group> to use cloud-shell in tenancy</copy>
     ```
 
     ![Create a policy to grant access to Cloud Shell](./images/create-new-policy-for-cloud-shell.png " ")

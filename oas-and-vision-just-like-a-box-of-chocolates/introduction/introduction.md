@@ -6,7 +6,7 @@ In this workshop you will learn how train the model for image classification usi
 
 The use case for this workshop is **x-ray image classification for pneumonia**.
 
-You will begin this workshop by performing some of the prerequisite steps which are (not all) required to perform the workshop. These prerequisite steps need to be done by your tenancy administrator. When prerequisites are completed, you will setup an image library in Object Storage. Then you will load all X-ray images for model training into your image library. Setting image library and putting X-ray images into respective folders is not enough for OCI Vision to start training models. You will have to label all your images, giving them one of two labels: pneumonia and normal. 
+You will begin this workshop by performing some of the prerequisite steps which are (not all) required to perform the workshop. These prerequisite steps need to be done by your tenancy administrator. When prerequisites are completed, you will setup an image library in Object Storage. Then you will load all X-ray images for model training into your image library. Setting image library and putting X-ray images into respective folders is not enough for OCI Vision to start training models. You will have to label all your images, giving them one of two labels: pneumonia and normal.
 
 Once all images in a training dataset are labeled, you will create and deploy an image classification model using OCI Vision. To conclude this workshop, you will register OCI Vision machine learning model with Oracle Analytics and use it for new images classification.
 
@@ -27,7 +27,7 @@ In this workshop, you will learn how to:
 This lab assumes you have:
 
 * Basic understanding of Oracle Cloud Infrastructure management, such as creating user and groups, creating policies, creating OCI services.
-* An Oracle Cloud account, which has to be paid account as most of the services are not included in free account.
+* An Oracle Cloud account.
 * Privileges to create and use OCI services: OCI Object Storage, Data Labeling, Data Science, Vision, Analytics.
 * Really basic understanding of Python programming.
 

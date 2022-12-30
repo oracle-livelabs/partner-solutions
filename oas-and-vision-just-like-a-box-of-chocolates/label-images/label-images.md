@@ -160,8 +160,8 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     Now you can unzip *lab2.zip* file in your home directory (run *pwd* command to review your location).
 
-    ```console
-    unzip lab2.zip
+    ```text
+    <copy>unzip lab2.zip</copy>
     ```
 
     ![Unzipping lab2.zip file in home directory](./images/unzip-lab2-zip-file.png =50%x*)
@@ -183,7 +183,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     Pre-prepared *config.py* is basically empty at the beginning:
 
     ```python
-    # for help, run:
+    <copy># for help, run:
     # python3 help.py
 
     # config file path
@@ -205,14 +205,14 @@ For the purpose of this labe, we have used original python code and adjusted it 
     first_match_regex_pattern = r'^([^/]*)/.*$'
     # maximum number of DLS Dataset records that can be retrieved from the list_records API operation for labeling
     # limit=1000 is the hard limit for list_records
-    list_records_limit = 1000
+    list_records_limit = 1000</copy>
     ```
 
     The first attribute to change is *config\_file\_path*. This is path to *config* file located in *.oci* folder. You should amend it to something like this:
 
     ```python
     # config file path
-    config_file_path="/home/Candy_Swee/.oci/config"
+    <copy>config_file_path="/home/Candy_Swee/.oci/config"</copy>
     ```
 
     where *Candy\_Swee* is slightly transformed your user name (*Candy.Sweet* to *Candy\_Swee*)
@@ -247,7 +247,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     When updated, *config.py* file should look like this (some values are masked):
 
     ```python
-    # for help, run:
+    <copy># for help, run:
     # python3 help.py
 
     # config file path
@@ -269,7 +269,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     first_match_regex_pattern = r'^([^/]*)/.*$'
     # maximum number of DLS Dataset records that can be retrieved from the list_records API operation for labeling
     # limit=1000 is the hard limit for list_records
-    list_records_limit = 1000
+    list_records_limit = 1000</copy>
     ```
 
 5. Step 5: Update config file with required configuration parameters
@@ -279,21 +279,21 @@ For the purpose of this labe, we have used original python code and adjusted it 
     Pay attention to the following entry from *config.py*:
 
     ```python
-    # config file path
-    config_file_path="/home/<USER>/.oci/config"
+    <copy># config file path
+    config_file_path="/home/<USER>/.oci/config"</copy>
     ```
 
     This is the location of the *config* file is. It is placed in *.oci* folder.
 
     Initial content of *config* is as follows:
 
-    ```console
-    [DEFAULT]
+    ```text
+    <copy>[DEFAULT]
     user=<YOUR USER OCID>
     fingerprint=<FINGERPRINT FOR PRIVATE API KEY>
     key_file=<PATH TO YOUR PRIVATE API KEY>
     tenancy=<YOUR TENANCY OCID>
-    region=<YOUR REGION>
+    region=<YOUR REGION></copy>
     ```
 
     As you can see above, there are several entries in the *config* file that you need to set and configure:
@@ -326,8 +326,8 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     Set this entry to:
 
-    ```console
-    key_file=~/.oci/oci_api_key.pem
+    ```text
+    <copy>key_file=~/.oci/oci_api_key.pem</copy>
     ```
 
     You have generated and downloaded this file (still to be renamed) in the previous step, but so far you haven't uploaded it. This will be done in the next step.
@@ -350,13 +350,13 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     After updates, *config* should like like this (some values are masked):
 
-    ```console
-    [DEFAULT]
+    ```text
+    <copy>[DEFAULT]
     user=ocid1.user.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     fingerprint=11:22:33:44:55:66:77:88:99:00:aa:bb:cc:dd:ee:ff
     key_file=~/.oci/oci_api_key.pem
     tenancy=ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    region=eu-frankfurt-1
+    region=eu-frankfurt-1</copy>
     ```
 
 6. Step 6: Rename your private key (.pem file you've downloaded) file to oci_api_key.pem
@@ -365,14 +365,14 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     The file has a name something like this:
 
-    ```console
-    -12-01-13-16.pem
+    ```text
+    <copy>-12-01-13-16.pem</copy>
     ```
 
     You'll upload it to OCI in the next step, but just before doing that, rename the file into *oci\_api\_key.pem*.
 
-    ```console
-    mv -12-01-13-16.pem oci_api_key.pem
+    ```text
+    <copy>mv -12-01-13-16.pem oci_api_key.pem</copy>
     ```
 
 7. Step 7: Upload oci_api_key.pem to OCI.
@@ -401,14 +401,14 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     Move *oci\_api\_key.pem* file to *.oci* folder.
 
-    ```console
-    mv oci_api_key.pem ./.oci
+    ```text
+    <copy>mv oci_api_key.pem ./.oci</copy>
     ```
 
     Check *.oci* folder and confirm it contains to files:  *oci\_api\_key.pem* and *config*.
 
-    ```console
-    ls ./.oci -l
+    ```text
+    <copy>ls ./.oci -l</copy>
     ```
 
     ![Verify oci_api_key.pem file has been copied into .oci folder](./images/verify-oci-api-key-pem-is-in-oci-folder.png =50%x*)
@@ -419,8 +419,8 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     You can finally start with bulk image labeling. Make sure you are in *data-labeling* folder in **Cloud Shell** and run *main.py*.
 
-    ```console
-    python3 main.py
+    ```text
+    <copy>python3 main.py</copy>
     ```
 
     Program will run approx. 30 minutes.

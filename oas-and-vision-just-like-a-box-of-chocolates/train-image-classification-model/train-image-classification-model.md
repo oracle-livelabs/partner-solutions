@@ -60,9 +60,9 @@ Vision service, when running predictions, requires additional storage, a staging
 
     To access, read and manage objects in a staging bucket the following policies are required (replace User Group and Compartment names as required for your settings):
 
-    ```console
-    allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}
+    ```text
+    <copy>allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
+    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}</copy>
     ```
 
     Pay attention to the compartment selected. This policy is created at your compartment level and not on *root* compartment as most of policies in this workshop.
@@ -212,7 +212,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     ![Request generated as JSON file](./images/json-request.png =30%x*)
 
     ```json
-    {
+    <copy>{
     "compartmentId": "ocid1.compartment.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "image": {
         "source": "OBJECT_STORAGE",
@@ -227,7 +227,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
         "maxResults": 5
         }
     ]
-    }
+    }</copy>
     ```
 
     Expand *Response* and observe the JSON response with prediction results.
@@ -235,7 +235,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     ![Prediction response in JSON file format](./images/json-response.png =30%x*)
 
     ```json
-    {
+    <copy>{
     "imageObjects": null,
     "labels": [
         {
@@ -264,7 +264,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     "objectDetectionModelVersion": null,
     "textDetectionModelVersion": null,
     "errors": []
-    }
+    }</copy>
     ```
 
     This concludes this lab and you can **proceed to the next lab, Lab 4: Use Vision model in Analytics**.
