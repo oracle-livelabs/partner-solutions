@@ -1,4 +1,4 @@
-# Lab 2: Label your images
+# Lab 2: Label images
 
 ## Introduction
 

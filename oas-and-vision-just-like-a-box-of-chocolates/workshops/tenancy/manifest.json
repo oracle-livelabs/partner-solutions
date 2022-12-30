@@ -17,16 +17,16 @@
             "filename": "../../create-image-library/create-image-library.md"
         },
         {
-            "title": "Lab 2: Label your images",
-            "filename": "../../label-your-images/label-your-images.md"
+            "title": "Lab 2: Label images",
+            "filename": "../../label-images/label-images.md"
         },
         {
             "title": "Lab 3: Train image classification model",
             "filename": "../../train-image-classification-model/train-image-classification-model.md"
         },
         {
-            "title": "Lab 4: Use Vision model in Analytics",
-            "filename": "../../use-vision-model-in-analytics/use-vision-model-in-analytics.md"
+            "title": "Lab 4: Predict, visualize, analyze",
+            "filename": "../../predict-visualize-analyze/predict-visualize-analyze.md"
         },
         {
             "title": "Need Help?",

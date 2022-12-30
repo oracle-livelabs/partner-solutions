@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to train custom Image Classification model and to perform basic testing using OCI Vision.
 
-Estimated Time: 90 minutes (up to 6 hours if max. training duration is selected).
+Estimated Time: 90 minutes (up to 6 hours if maximum training duration is selected).
 
 ### About OCI Vision
 
@@ -22,31 +22,31 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed previous labs of this workshop: **Prepare Environment**, **Lab 1: Image Library** and **Lab 2: Data Labeling**.
+* Completed previous labs of this workshop: **Get started**, **Lab 1: Create image library** and **Lab 2: Label images**.
 
 ## Task 1: Create a staging bucket for Vision
 
-Before you begin with model training, one small prerequisite is needed. 
+Before you begin with model training, one small prerequisite is needed.
 
 Vision service, when running predictions, requires additional storage, a staging bucket, where each prediction's results are stored temporarily. You need to create a staging bucket and then allow access and manage privileges to your user group.
 
-1. Step 1: Navigate to **Storage** and then to **Buckets**.
+1. Step 1: Navigate to Buckets page
 
     As you've done this for the Image Library, open **Navigator** menu, select **Storage** and then choose **Buckets**
 
-    ![Define a new bucket](./images/lab3_101.png " ")
+    ![Navigate to buckets](./images/navigate-to-buckets.png " ")
 
-2. Step 2: Create a **new Bucket**
+2. Step 2: Create a new bucket
 
     In the **Object Storage & Archive Storage** page confirm you are in your compartment, ie. **Box-of-Chocolates** and click **Create Bucket**
 
-    ![Define a new bucket](./images/lab3_102.png " ")
+    ![Create a new bucket](./images/create-a-new-bucket.png " ")
 
-3. Step 3: Define your **Bucket**
+3. Step 3: Define your staging bucket
 
     Provide **Bucket Name**, and simply leave all other parameters as default.
 
-    ![Define a new bucket](./images/lab3_103.png " ")
+    ![Define staging bucket](./images/define-staging-bucket.png " ")
 
     Click **Create** to create a new bucket.
 
@@ -54,7 +54,7 @@ Vision service, when running predictions, requires additional storage, a staging
 
     You can now verify that a new bucket has been correctly created.
 
-    ![Define a new bucket](./images/lab3_104.png " ")
+    ![Verify staging bucket](./images/verify-staging-bucket.png " ")
 
 5. Step 5: Set policies for access and manage objects in your compartment
 
@@ -67,45 +67,45 @@ Vision service, when running predictions, requires additional storage, a staging
 
     Pay attention to the compartment selected. This policy is created at your compartment level and not on *root* compartment as most of policies in this workshop.
 
-    ![Define a new bucket](./images/lab3_105.png " ")
+    ![Set policies for staging bucket](./images/set-policies-for-staging-bucket.png " ")
 
-## Task 2: Create your first Vision model
+## Task 2: Create your first custom Vision model
 
 In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision**, image classification, model and you will run some test to confirm it is working properly.
 
-1. Step 1: Navigate to **Vision**
+1. Step 1: Navigate to Vision page
 
     Using **Navigator** (on the left) navigate to **Analytics & AI** and then choose **Vision**.
 
-    ![Navigate to Vision](./images/lab3_001.png " ")
+    ![Navigate to Vision](./images/navigate-to-vision.png " ")
 
-2. Step 2: Custom **Project**
+2. Step 2: Review Vision page and navigate to custom projects
 
     You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
 
     In your case, you will create your own custom model. So, Click **Projects**
 
-    ![Navigate to Vision](./images/lab3_002.png " ")
+    ![Review Vision page and navigate to custom projects](./images/review-vision-page.png " ")
 
-3. Step 3: Continue with customer Project setup
+3. Step 3: Continue with customer project setup
 
     Click **Projects** on the left side menu list, confirm you are in correct **Compartment** (ie. Box-of-Chocolates) and click **Create Project**
 
-    ![Navigate to Vision](./images/lab3_008.png " ")
+    ![Create a new project in Vision](./images/create-a-new-vision-project.png " ")
 
-4. Step 4: Define custom project
+4. Step 4: Define new custom project
 
     Select compartment in which you would like to create your Vision model.
 
     Give your model a name and provide short description. Click **Create project**.
 
-    ![Navigate to Vision](./images/lab3_009.png " ")
+    ![Define project](./images/define-project.png " ")
 
 5. Step 5: Verify your project
 
     You can monitor creation of your new project. This should be completed pretty quickly. Once done, your project should have status **ACTIVE**.
 
-    ![Navigate to Vision](./images/lab3_010.png " ")
+    ![Verify project](./images/verify-project.png " ")
 
     Click on your **project name**.
 
@@ -115,9 +115,9 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click **Create Model**
 
-    ![Navigate to Vision](./images/lab3_011.png " ")
+    ![Create a new Vision model](./images/create-a-new-model.png " ")
 
-7. Step 7: Create and Train Model - Select data step
+7. Step 7: Create and train model - Select data step
 
     Create and Train Model wizard will now take you through a few simple steps.
 
@@ -125,7 +125,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click **Next** to proceed to the second step.
 
-    ![Navigate to Vision](./images/lab3_012.png " ")
+    ![Create and train model wizard - select data](./images/create-model-select-data.png " ")
 
 8. Step 8: Create and Train Model - Train model step
 
@@ -133,7 +133,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     As you can see you can choose between *up to 24 hours*, *about an hour* and *custom duration*. In the script, **the recommended** option is chosen, which means up to 24 hours. In fact it should take approx. 5 hours to complete. But feel free to pick your option.
 
-    ![Navigate to Vision](./images/lab3_013.png " ")
+    ![Create and train model wizard - train model](./images/create-model-train.png " ")
 
     Click **Next** to proceed to the **Review** step.
 
@@ -141,21 +141,21 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     In this step you will only review and confirm the settings. If you are ok with them, click **Create and train**.
 
-    ![Navigate to Vision](./images/lab3_014.png " ")
+    ![Create and train model wizard - review](./images/create-model-review.png " ")
 
 10. Step 10: Training in progress ...
 
     Model training is in progress. In the **Project details: models** page you can monitor the progress by clicking the **Work Request** operation (in this case **CREATE_MODEL**).
 
-    ![Navigate to Vision](./images/lab3_015.png " ")
+    ![Model training in progress](./images/model-training-in-progress.png " ")
 
 11. Step 11: Work request log monitoring
 
     You can monitor the progress by reviewing **Log Messages**.
 
-    ![Navigate to Vision](./images/lab3_016.png " ")
+    ![Model training in progress](./images/model-training-in-progress-monitoring-1.png " ")
 
-    ![Navigate to Vision](./images/lab3_017.png " ")
+    ![Model training in progress](./images/model-training-in-progress-monitoring-2.png " ")
 
 12. Step 12: Evaluate your model
 
@@ -163,37 +163,39 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     In the **training metrics** area calculated metrics that were automatically calculated using 10% of images as test dataset. Training metrics **Precision**, **Recall** and **F1 Score** are in this case around 95%.
 
-    ![Navigate to Vision](./images/lab3_201.png " ")
+    ![Evaluate model and review metrics](./images/evaluate-model.png " ")
 
     Additionally, you can review more detailed metrics for each label used in the model. Click on **Training metrics** link on the left side (under **Resources**). Table reveals, that training metrics for *PNEUMONIA* are slightly higher than for *NORMAL*.
 
-    ![Navigate to Vision](./images/lab3_201-2.png " ")
+    ![Evaluate model and review metrics by label](./images/evaluate-model-by-label.png " ")
 
-## Task 3: Testing your model
+## Task 3: Test and evaluate your model
 
 1. Step 1: Test you model using known images
 
     Open bucket with your training image library (ie. *X-Ray-Images-for-Training*) in the second tab. Navigate to *NORMAL* folder and open details of any image. Copy **Image URL** to clipboard.
 
-    ![Navigate to Vision](./images/lab3_202.png " ")
+    ![Obtain URL for NORMAL image - example](./images/obtain-url-for-normal-example.png " ")
 
     Navigate back to tab with your Project model's details.
 
-    Check **Object Storage** as your **Image Source** and paste **Image URL** from clipboard into **Enter Image URL** field. Click **Upload**. 
+    Check **Object Storage** as your **Image Source** and paste **Image URL** from clipboard into **Enter Image URL** field. Click **Upload**.
+
+    ![Upload NORMAL image](./images/upload-image-normal.png " ")
 
     Image will be uploaded and automatically analyzed. **Image** and prediction **Results** are displayed. And we can see that this image has been classified as *NORMAL* with very high **Confidence**.
 
-    ![Navigate to Vision](./images/lab3_204.png " ")
+    ![Test model for NORMAL image](./images/test-model-for-normal.png " ")
 
     You can repeat and perform prediction for one image which is clearly showing *PNEUMONIA* infected lungs.
 
     Copy **Image URL** to clipboard again ...
 
-    ![Navigate to Vision](./images/lab3_205.png " ")
+    ![Obtain URL for PNEUMONIA image - example](./images/obtain-url-for-pneumonia-example.png " ")
 
-    ... and copy it to **Enter Image URL** field and click **Uplaod**
+    ... and copy it to **Enter Image URL** field and click **Upload**
 
-    ![Navigate to Vision](./images/lab3_207.png " ")
+    ![Upload and test PNEUMONIA image]](./images/upload-image-pneumonia.png " ")
 
     You can see that image is now classified as *PNEUMONIA* as expected with almost 100% confidence.
 
@@ -203,11 +205,11 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Beside a table showing **Prediction Confidence** for each of the **Labels** you can see two additional items in the **Results** area: *Request* and *Response*.
 
-    ![Navigate to Vision](./images/lab3_208.png =30%x*)
+    ![Prediction result example](./images/prediction-result-example.png =30%x*)
 
     Expand *Request*. This is request code for JSON call which is requesting prediction to be performed on the selected image (some values are masked).
 
-    ![Navigate to Vision](./images/lab3_209.png =30%x*)
+    ![Request generated as JSON file](./images/json-request.png =30%x*)
 
     ```json
     {
@@ -230,7 +232,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Expand *Response* and observe the JSON response with prediction results.
 
-    ![Navigate to Vision](./images/lab3_210.png =30%x*)
+    ![Prediction response in JSON file format](./images/json-response.png =30%x*)
 
     ```json
     {
@@ -265,7 +267,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     }
     ```
 
-    This concludes the third lab. You will register created model in Analytics Cloud and deploy it with new images that require classification.
+    This concludes this lab and you can **proceed to the next lab, Lab 4: Use Vision model in Analytics**.
 
 ## Learn More
 
