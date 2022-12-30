@@ -34,7 +34,7 @@ Vision service, when running predictions, requires additional storage, a staging
 
     As you've done this for the Image Library, open **Navigator** menu, select **Storage** and then choose **Buckets**
 
-    ![Navigate to buckets](./images/navigate-to-buckets.png " ")
+    ![Navigate to buckets](https://oracle-livelabs.github.io/common/images/console/storage-buckets.png " ")
 
 2. Step 2: Create a new bucket
 

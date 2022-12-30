@@ -60,13 +60,13 @@ This lab assumes:
 
     In the second step, you should choose your Identity Provider. Your tenancy (not in case of an empty tenancy) might be using several Identity Providers. Choose the right one. Most likely this (as in example below) would be **oracleidentityservice**. Click **Continue**.
 
-    ![Login screen - Identity Provider](images/select-identity-provider.jpg =50%x*)
+    ![Login screen - Identity Provider](./images/select-identity-provider.jpg =50%x*)
 
 3. Step 3: Enter your credentials
 
     In order to complete login process, enter your **User Name** and **Password**. Click **Sign In**
 
-    ![Login screen - Username and Password](images/enter-username-and-password.jpg =50%x*)
+    ![Login screen - Username and Password](./images/enter-username-and-password.jpg =50%x*)
 
 ## Task 3: Create a new compartment
 
@@ -76,13 +76,13 @@ You will use one compartment for all required objects in this workshop, hence yo
 
     In OCI console, open the **Navigator** menu. Navigate to **Identity & Security** and then choose **Compartments**.
 
-    ![Navigate to Compartments](images/navigate-to-compartments.png " ")
+    ![Navigate to Compartments](https://oracle-livelabs.github.io/common/images/console/id-compartment.png " ")
 
 2. Step 2: Create a new compartment
 
     The list of all active compartments is displayed. Click **Create Compartment** to start creating a new compartment.
 
-    ![Create a new Compartment](images/create-a-new-compartment.png " ")
+    ![Create a new Compartment](./images/create-a-new-compartment.png " ")
 
 3. Step 3: Define compartment details
 
@@ -90,7 +90,7 @@ You will use one compartment for all required objects in this workshop, hence yo
 
     Finally, click **Create Compartment**.
 
-    ![Define a new Compartment](images/define-a-new-compartment.png =50%x*)
+    ![Define a new Compartment](./images/define-a-new-compartment.png =50%x*)
 
 ## Task 4: (optional) Create a new user in IDCS
 
@@ -104,7 +104,7 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
     From the **Navigator** menu (top-left corner) select **Identity & Security** and then **Federation**.
 
-    ![Navigate to Federation](images/navigate-to-federation.png " ")
+    ![Navigate to Federation](https://oracle-livelabs.github.io/common/images/console/id-federation.png " ")
 
 2. Step 2: Choose identity provider
 
@@ -112,13 +112,13 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
     Locate and click on **OracleIdentityCloudService**.
 
-    ![Open OracleIdentityCloudService](images/open-oracleidentitycloudservice.jpg " ")
+    ![Open OracleIdentityCloudService](./images/open-oracleidentitycloudservice.jpg " ")
 
 3. Step 3: Navigate to OracleIdentityCloudService from the Identity Provider page
 
     **OracleIdentityCloudService** page opens. Search for **Oracle Identity Cloud Service Console** link in **Identity Provider Information** tab and click on the IDCS Console URL.
 
-    ![Click on IDCS Console URL](images/click-idcs-console-url.jpg " ")
+    ![Click on IDCS Console URL](./images/click-idcs-console-url.jpg " ")
 
 4. Step 4: Create a new user from IDCS console
 
@@ -126,13 +126,13 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
     To add a new user simply click on **Add a user** icon.
 
-    ![Add a new user in IDCS](images/add-user-in-idcs.png " ")
+    ![Add a new user in IDCS](./images/add-user-in-idcs.png " ")
 
 5. Step 5: Add a new user using Add User wizard
 
     Follow the two-step **Add user** dialog and provide user details in the first step. Make sure that you provide **your own email address** to receive Welcome email to activate the user.
 
-    ![Define a new user](images/define-a-new-user.jpg =50%x*)
+    ![Define a new user](./images/define-a-new-user.jpg =50%x*)
 
     In example above, a new user with username *Candy.Sweets* is created. In the second step, you should assign a new user to groups. However, this step is optional as there is no group at the moment you can assign new user to. So simply ignore it and click **Finish**.
 
@@ -140,13 +140,13 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
     You can check and verify details for the newly created user.
 
-    ![Verify user information](images/verify-user-information.png " ")
+    ![Verify user information](./images/verify-user-information.png " ")
 
 7. Step 7: Activate user
 
     You should also check your inbox for the Welcome email. Once received, follow the links from email and activate your new user.
 
-    ![A new user Welcome e-mail](images/welcome-email.png =50%x*)
+    ![A new user Welcome e-mail](./images/welcome-email.png =50%x*)
 
 ## Task 5: Create a new user group in IDCS
 
@@ -160,11 +160,11 @@ Your new or existing user should become a member of the **User Group** which wil
 
     This is again a two-step process. In the first step provide group's **Name** and optionally **Description**. In our example, user group is named  *Chocolates-Group*.
 
-    ![Define a new User Group](images/define-user-group.png =50%x*)
+    ![Define a new User Group](./images/define-user-group.png =50%x*)
 
     In the second step add your user to this new group. To add a user, search for users by entering (parts of) their names in the search field and add the user to the new group - check the check-box in front of the user's name and click **Finish**.
 
-    ![Assign users to the new group](images/assign-users-to-group.png =50%x*)
+    ![Assign users to the new group](./images/assign-users-to-group.png =50%x*)
 
 ## Task 6: Create a new OCI group and map it to an IDCS group
 
@@ -174,19 +174,19 @@ Next step is to create a new OCI group and map it to the IDCS group you've just 
 
     Use **Navigator** to navigate again to **Identity & Security** and then choose **Groups**.
 
-    ![Navigate to OCI Groups](images/navigate-to-oci-groups.png " ")
+    ![Navigate to OCI Groups](./images/navigate-to-oci-groups.png " ")
 
 2. Step 2: Start adding a new OCI group
 
     Click **Create Group** to start creating a new group.
 
-    ![Create a new OCI Group](images/create-a-new-oci-group.png " ")
+    ![Create a new OCI Group](./images/create-a-new-oci-group.png " ")
 
 3. Step 3: Define a new OCI group
 
     In the dialog form, provide **Name** and **Description** for the new group and click **Create**. In example below, group is called *OCI_Chocolate-Group*.
 
-    ![Define a new OCI Group](images/define-oci-group.jpg =60%x*)
+    ![Define a new OCI Group](./images/define-oci-group.jpg =60%x*)
 
 4. Step 4: Define mapping between IDCS group and OCI group
 
@@ -199,11 +199,11 @@ Next step is to create a new OCI group and map it to the IDCS group you've just 
 
     Observe **Resources** menu on the left side of the page. There are three links: **Users**, **Groups** and **Group Mappings**. Click on **Group Mappings** and when page is refreshed, click **Add Mappings**.
 
-    ![Group mappings](images/group-mappings.png " ")
+    ![Group mappings](./images/group-mappings.png " ")
 
     **Add Mappings** popup window opens. Choose your IDCS Group from **Identity Provider Group** list and your OCI Group from the **OCI Group** list.
 
-    ![Add a new IDCS - OCI Group mapping](images/add-group-mapping.jpg =50%x*)
+    ![Add a new IDCS - OCI Group mapping](./images/add-group-mapping.jpg =50%x*)
 
     Click **Add Mappings** to add a new mapping.
 
@@ -215,13 +215,13 @@ Finally, you need to create a **policy** which grants manage privileges in a new
 
     Once again use **Navigator** to navigate to **Identity & Security** and now choose **Policies**.
 
-    ![Navigate to Policies](images/navigate-to-policies.png " ")
+    ![Navigate to Policies](https://oracle-livelabs.github.io/common/images/console/id-policies.png " ")
 
 2. Step 2: Create a new policy
 
     In the **Policies** page click **Create Policy**.
 
-    ![Create a new policy](images/create-a-new-policy.png =30%x*)
+    ![Create a new policy](./images/create-a-new-policy.png =30%x*)
 
 3. Step 3: Define a new policy
 
@@ -233,7 +233,7 @@ Finally, you need to create a **policy** which grants manage privileges in a new
 
     Make sure **Groups** option is selected and then choose your newly created OCI Group from the list of available OCI Groups. For **Location**, select tenancy *root* compartment.
 
-    ![Policy for compartment admins to manage the compartment](images/policy-for-compartment-admins.png " ")
+    ![Policy for compartment admins to manage the compartment](./images/policy-for-compartment-admins.png " ")
 
     Your policy should look like this:
 
@@ -245,7 +245,7 @@ Finally, you need to create a **policy** which grants manage privileges in a new
 
      Click **Create** to create a new policy in your *root* compartment.
 
-     ![Verify policy for compartment admins to manage the compartment](images/verify-policy-for-compartment-admins.jpg)
+     ![Verify policy for compartment admins to manage the compartment](./images/verify-policy-for-compartment-admins.jpg)
 
      This is not the only required policy that is required for this workshop. You will return to this step to create additional policies later.
 
@@ -306,7 +306,7 @@ To find out which steps you need to perform, you can navigate to **Data Labeling
 
     From the **Navigator** menu select **Identity & Security** and then choose **Policies**.
 
-    ![Navigate to policies](./images/navigate-to-policies.png " ")
+    ![Navigate to policies](https://oracle-livelabs.github.io/common/images/console/id-policies.png " ")
 
 8. Step 8: Create a new policy for non-administrative users
 
@@ -377,7 +377,7 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
 
     From the **Navigator** menu select **Identity & Security** and then choose **Policies**.
 
-    ![Navigate to policies](./images/navigate-to-policies.png =50%x*)
+    ![Navigate to policies](https://oracle-livelabs.github.io/common/images/console/id-policies.png " ")
 
 5. Step 5: Create a new policy
 
@@ -409,7 +409,7 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
 
     Once again, from the **Navigator** menu select **Identity & Security** and then choose **Policies**.
 
-    ![Navigate to policies](./images/navigate-to-policies.png " ")
+    ![Navigate to policies](https://oracle-livelabs.github.io/common/images/console/id-policies.png " ")
 
 2. Step 2: Create a new policy that grants access to Cloud Shell
 

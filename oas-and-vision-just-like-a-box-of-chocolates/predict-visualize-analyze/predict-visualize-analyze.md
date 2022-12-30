@@ -44,7 +44,7 @@ To perform this lab, OAC Professional Edition using 1 OCPU (non-production) will
 
     From the **Navigator** menu (top-left corner) select **Analytics & AI** and then **Analytics Cloud**.
 
-    ![Navigate to Analytics Cloud page](./images/navigate-to-analytics.png " ")
+    ![Navigate to Analytics Cloud page](https://oracle-livelabs.github.io/common/images/console/analytics-oac.png " ")
 
 2. Step 2: Create a new Analytics instance
 

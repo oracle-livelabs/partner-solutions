@@ -231,7 +231,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     To obtain your compartment OCID navigate to **Compartments** page.
 
-    ![Navigate to Compartments page](./images/navigate-to-compartments.png " ")
+    ![Navigate to Compartments page](https://oracle-livelabs.github.io/common/images/console/id-compartment.png " ")
 
     Your **Compartment OCID** is located in **Compartment Information** tab (displayed as default). Click **Show** to display complete OCID and **Copy** to copy it clipboard.
 
