@@ -32,19 +32,19 @@ Basic data labeling tool is provided within OCI. With this data labeling tool, y
 
 But before you continue, you need to perform the first step, **Create Dataset** based on your object storage based image library.
 
-1. Step 1: Navigate to Data Labeling page
+1. Navigate to Data Labeling page
 
     From the **Navigator** menu select **Analytics & AI** and then **Data Labeling**.
 
     ![Navigate to Data Labeling](./images/navigate-to-data-labeling.png " ")
 
-2. Step 2: Go to datasets
+2. Go to datasets
 
     Click on **Datasets** link under **Data Labeling** on the left side of the page.
 
     ![Open Datasets page](./images/open-datasets-page.png " ")
 
-3. Step 3: Create a new dataset
+3. Create a new dataset
 
     This will open **Dataset list** page in selected compartment (make sure you are in correct compartment as you might need to change compartment to the one you've created for this workshop).
 
@@ -52,7 +52,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![Create a new dataset](./images/create-a-new-dataset.png " ")
 
-4. Step 4: Define your dataset - Add dataset details
+4. Define your dataset - Add dataset details
 
     Use **Create dataset** wizard and set the parameters of your dataset.
 
@@ -64,7 +64,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Click **Next**
 
-5. Step 5: Define your dataset - Add files and labels
+5. Define your dataset - Add files and labels
 
     In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. Box-of-Chocolates) where you've put all of your images.
 
@@ -82,17 +82,17 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Click **Next**.
 
-6. Step 6: Define your dataset - Review and Create
+6. Define your dataset - Review and Create
 
     Review your dataset details and click **Create**
 
-7. Step 7: Generating records
+7. Generating records
 
     Records for your dataset will be generated. You will have to wait for approx. 30 minutes. You can track the progress in top right corner.
 
     ![Dataset records generation](./images/dataset-records-generation.png " ")
 
-8. Step 8: Review your dataset
+8. Review your dataset
 
     When finished, you can review the result of the records generation activity. For example, you can see that there were 4881 records generated, none of them have been labeled yet.
 
@@ -102,7 +102,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![Switch views for dataset](./images/review-dataset-switch-views.png " ")
 
-9. Step 9: Use data labeling tool and set labels manually
+9. Use data labeling tool and set labels manually
 
     You can click on the first image and **Data Labeling** tool will open. Since the first image is from *PNEUMONIA* folder, you should label it as *PNEUMONIA*.
 
@@ -126,7 +126,7 @@ Oracle provides code which can be adjusted and used in your specific case. You c
 
 For the purpose of this labe, we have used original python code and adjusted it already to this workshop requirements. You will upload this adjusted code to your OCI environment and run bulk image labeling from there.
 
-1. Step 1: Download python code.
+1. Download python code.
 
     Download [lab2.zip](./files/lab2.zip) to your computer.
 
@@ -136,13 +136,13 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Lab2 ZIP file content and structure](./images/lab2-zip-file-content.png =60%x*)
 
-2. Step 2: Open cloud shell
+2. Open cloud shell
 
     In the OCI console, on the top bar, click **Developer Tools** icon to open associated menu and choose **Cloud Shell** option. That would open **Cloud Shell** terminal window.
 
     ![Open Cloud Shell](./images/open-cloud-shell.png " ")
 
-3. Step 3: Upload pre-prepared files for data labeling.
+3. Upload pre-prepared files for data labeling.
 
     In the **Cloud Shell** click **Cloud Shell Menu** icon (top right icon). Select **Upload**.
 
@@ -174,7 +174,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Minimize Cloud shell window](./images/minimize-cloudshell.png =150x*)
 
-4. Step 4: Update config.py file with required configuration parameters
+4. Update config.py file with required configuration parameters
 
     In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files. 
 
@@ -272,7 +272,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     list_records_limit = 1000</copy>
     ```
 
-5. Step 5: Update config file with required configuration parameters
+5. Update config file with required configuration parameters
 
     *config* file is located in *.oci* folder and path to *config* file is specified in *config.py* file - see previous step. This is the file to which *config.py* is referring to in the first line.
 
@@ -359,7 +359,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     region=eu-frankfurt-1</copy>
     ```
 
-6. Step 6: Rename your private key (.pem file you've downloaded) file to oci_api_key.pem
+6. Rename your private key (.pem file you've downloaded) file to oci_api_key.pem
 
     You have already generated and downloaded **Private Key** for your user from OCI.
 
@@ -375,7 +375,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     <copy>mv -12-01-13-16.pem oci_api_key.pem</copy>
     ```
 
-7. Step 7: Upload oci_api_key.pem to OCI.
+7. Upload oci_api_key.pem to OCI.
 
     In your OCI Console click **Restore** (it should be in left-bottom corner in your console) or open **Cloud Shell** again.
 
@@ -395,7 +395,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     *oci\_api_key.pem* file is now in your user home folder. (Upload utility always loads file there)
 
-8. Step 8: Copy oci_api_key.pem to .oci folder
+8. Copy oci_api_key.pem to .oci folder
 
     You have to put oci_api_key.pem into *.oci* folder as specified in configuration, *config* and *config.py*, files. 
 
@@ -415,7 +415,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     You are now ready to run the data labeling program.
 
-9. Step 9: Run bulk image labeling program
+9. Run bulk image labeling program
 
     You can finally start with bulk image labeling. Make sure you are in *data-labeling* folder in **Cloud Shell** and run *main.py*.
 

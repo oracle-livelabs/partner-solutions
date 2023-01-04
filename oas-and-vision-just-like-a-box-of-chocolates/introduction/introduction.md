@@ -17,6 +17,7 @@ Estimated Workshop Time: 4-8 hours (depending on training duration selection)
 ### Objectives
 
 In this workshop, you will learn how to:
+
 * Setup an image library in Object Storage
 * Create a dataset and label images from image library in Data Labeling service
 * Train a custom model using OCI Vision for image classification

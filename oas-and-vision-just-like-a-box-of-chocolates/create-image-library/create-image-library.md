@@ -29,7 +29,7 @@ This lab assumes you have:
 
 You will organize your image library in a new **Object Storage Bucket**.
 
-1. Step 1: Log into OCI
+1. Log into OCI
 
     Login as a user who will manage your image library and will also perform the rest of the activities in this workshop.
 
@@ -41,13 +41,13 @@ You will organize your image library in a new **Object Storage Bucket**.
 
     ![Provide Credentials](./images/provide-credentials.jpg =50%x*)
 
-2. Step 2: Navigate to Buckets page
+2. Navigate to Buckets page
 
     From the **Navigator** menu (top-left corner) select **Storage** and then **Buckets**.
 
     ![Navigate to Buckets page](./images/navigate-to-buckets.png " ")
 
-3. Step 3: Create a new bucket
+3. Create a new bucket
 
     Please pay attention that you've selected correct compartment, ie. *Box-of-Chocolates*.
 
@@ -55,7 +55,7 @@ You will organize your image library in a new **Object Storage Bucket**.
 
     ![Create a new buckets](./images/create-a-new-bucket.jpg " ")
 
-4. Step 4: Define bucket
+4. Define bucket
 
     When defining a new bucket, you should provide a **Bucket Name** of your choosing and then leave everything else as default:
     * choose *Standard* for **Default Storage Tier**,
@@ -70,25 +70,25 @@ You will organize your image library in a new **Object Storage Bucket**.
 
 In order to make your image library visible to other users/service, you have to update its visibility. Default visibility is set to *Private*. One way of changing visibility settings is simply to set visibility to **Public**. This can be a bit tricky from security reasons, but for this workshop we could squint in one eye.
 
-1. Step 1: Change visibility
+1. Change visibility
 
     From your bucket list choose your newly created bucket.
 
     ![Buckets List](./images/buckets-list.jpg " ")
 
-2. Step 2: Click on edit visibility
+2. Click on edit visibility
 
     In the Bucket Details page, click **Edit Visibility**.
 
     ![Bucket Details Page](./images/edit-bucket-visibility.jpg " ")
 
-3. Step 3: Update visibility to public
+3. Update visibility to public
 
     Check **Public** radio button and click **Save Changes**
 
     ![Update visibility to public](./images/update-visibility-to-public.jpg =50%x*)
 
-4. Step 4: (alternative option) Set Pre-Authenticated Request (PAR)
+4. (alternative option) Set Pre-Authenticated Request (PAR)
 
     Please note that you have an option to set **Pre-Authentication Request** instead of changing visibility to **Public**. This gives you more control over what can users see and do with your images.
 
@@ -119,7 +119,7 @@ Start with the library folder structure. Image library will contain two folders:
 * PNEUMONIA: this folder contains x-ray images of bacteria or virus infected lungs, and
 * NORMAL: this folder contains x-ray images of normal and unaffected lungs.
 
-1. Step 1: Create a new folder
+1. Create a new folder
 
     You should still be in the **Bucket Details page**. Scroll to the **Objects** section on the page (if you don't see **Objects** then click on **Objects** link under **Resources**.
 
@@ -127,7 +127,7 @@ Start with the library folder structure. Image library will contain two folders:
 
     ![Create folder from More Actions menu](./images/more-actions-menu.png " ")
 
-2. Step 2: Define folders
+2. Define folders
 
     **Name** your new folder *PNEUMONIA* and click **Create**
 
@@ -137,7 +137,7 @@ Start with the library folder structure. Image library will contain two folders:
 
     ![Create folder for normal x-ray images](./images/create-normal-folder.png " ")
 
-3. Step 3: Verify your folder structure
+3. Verify your folder structure
 
     Please verify that you've created two folders, PNEUMONIA and NORMAL, under the *root*.
 
@@ -149,7 +149,7 @@ We are now ready to load images into appropriate folders. The following steps mi
 
 The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx. 30 minutes to complete.
 
-1. Step 1: Initiate images **Upload**
+1. Initiate images **Upload**
 
     You should still be located in the **Objects** sub-page of the **Bucket Details** page of your bucket.
 
@@ -159,7 +159,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     And click **Upload**.
 
-2. Step 2: Upload images for *PNEUMONIA*
+2. Upload images for *PNEUMONIA*
 
     In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged, ie. *Standard*.
 
@@ -171,7 +171,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     Repeat this step for all 3500 images for *PNEUMONIA*.
 
-3. Step 3: Upload images for *NORMAL*
+3. Upload images for *NORMAL*
 
     Repeat the previous step, except this time navigate to *NORMAL* folder and upload images from *TRAIN/NORMAL* local folder.
 
@@ -179,7 +179,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     There should be approx. 1300 images for *NORMAL*.
 
-4. Step 4: Verify images are correctly loaded
+4. Verify images are correctly loaded
 
     Before you continue to the next lab, just make sure that you've uploaded all images and that images are correctly placed into *PNEUMONIA* and *NORMAL* folders:
 
@@ -189,7 +189,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     ![Verify loaded images for normal](./images/verify-normal-folder.png " ")
 
-    Once verified, you can **proceed to the next lab, Lab 2: Label your images**.
+    Once verified, you can **proceed to the next lab**.
 
 ## Learn More
 

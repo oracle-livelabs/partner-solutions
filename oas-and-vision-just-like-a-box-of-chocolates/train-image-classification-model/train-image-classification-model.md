@@ -30,19 +30,19 @@ Before you begin with model training, one small prerequisite is needed.
 
 Vision service, when running predictions, requires additional storage, a staging bucket, where each prediction's results are stored temporarily. You need to create a staging bucket and then allow access and manage privileges to your user group.
 
-1. Step 1: Navigate to Buckets page
+1. Navigate to Buckets page
 
     As you've done this for the Image Library, open **Navigator** menu, select **Storage** and then choose **Buckets**
 
     ![Navigate to buckets](https://oracle-livelabs.github.io/common/images/console/storage-buckets.png " ")
 
-2. Step 2: Create a new bucket
+2. Create a new bucket
 
     In the **Object Storage & Archive Storage** page confirm you are in your compartment, ie. **Box-of-Chocolates** and click **Create Bucket**
 
     ![Create a new bucket](./images/create-a-new-bucket.png " ")
 
-3. Step 3: Define your staging bucket
+3. Define your staging bucket
 
     Provide **Bucket Name**, and simply leave all other parameters as default.
 
@@ -50,13 +50,13 @@ Vision service, when running predictions, requires additional storage, a staging
 
     Click **Create** to create a new bucket.
 
-4. Step 4: Verify new bucket is correctly created
+4. Verify new bucket is correctly created
 
     You can now verify that a new bucket has been correctly created.
 
     ![Verify staging bucket](./images/verify-staging-bucket.png " ")
 
-5. Step 5: Set policies for access and manage objects in your compartment
+5. Set policies for access and manage objects in your compartment
 
     To access, read and manage objects in a staging bucket the following policies are required (replace User Group and Compartment names as required for your settings):
 
@@ -73,13 +73,13 @@ Vision service, when running predictions, requires additional storage, a staging
 
 In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision**, image classification, model and you will run some test to confirm it is working properly.
 
-1. Step 1: Navigate to Vision page
+1. Navigate to Vision page
 
     Using **Navigator** (on the left) navigate to **Analytics & AI** and then choose **Vision**.
 
     ![Navigate to Vision](./images/navigate-to-vision.png " ")
 
-2. Step 2: Review Vision page and navigate to custom projects
+2. Review Vision page and navigate to custom projects
 
     You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
 
@@ -87,13 +87,13 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Review Vision page and navigate to custom projects](./images/review-vision-page.png " ")
 
-3. Step 3: Continue with customer project setup
+3. Continue with customer project setup
 
     Click **Projects** on the left side menu list, confirm you are in correct **Compartment** (ie. Box-of-Chocolates) and click **Create Project**
 
     ![Create a new project in Vision](./images/create-a-new-vision-project.png " ")
 
-4. Step 4: Define new custom project
+4. Define new custom project
 
     Select compartment in which you would like to create your Vision model.
 
@@ -101,7 +101,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Define project](./images/define-project.png " ")
 
-5. Step 5: Verify your project
+5. Verify your project
 
     You can monitor creation of your new project. This should be completed pretty quickly. Once done, your project should have status **ACTIVE**.
 
@@ -109,7 +109,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click on your **project name**.
 
-6. Step 6: Create a new vision model
+6. Create a new vision model
 
     Project page opens. You can see there is a list of **Models** that is currently empty. So, let's create your first Vision model.
 
@@ -117,7 +117,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Create a new Vision model](./images/create-a-new-model.png " ")
 
-7. Step 7: Create and train model - Select data step
+7. Create and train model - Select data step
 
     Create and Train Model wizard will now take you through a few simple steps.
 
@@ -127,7 +127,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Create and train model wizard - select data](./images/create-model-select-data.png " ")
 
-8. Step 8: Create and Train Model - Train model step
+8. Create and Train Model - Train model step
 
     In this second step, you need to define parameters for the model itself. As you can see, there isn't much to do. Provide a name and description and then define **training duration**.
 
@@ -137,19 +137,19 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     Click **Next** to proceed to the **Review** step.
 
-9. Step 9: Create and Train Model - Review step
+9. Create and Train Model - Review step
 
     In this step you will only review and confirm the settings. If you are ok with them, click **Create and train**.
 
     ![Create and train model wizard - review](./images/create-model-review.png " ")
 
-10. Step 10: Training in progress ...
+10. Training in progress ...
 
     Model training is in progress. In the **Project details: models** page you can monitor the progress by clicking the **Work Request** operation (in this case **CREATE_MODEL**).
 
     ![Model training in progress](./images/model-training-in-progress.png " ")
 
-11. Step 11: Work request log monitoring
+11. Work request log monitoring
 
     You can monitor the progress by reviewing **Log Messages**.
 
@@ -157,7 +157,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Model training in progress](./images/model-training-in-progress-monitoring-2.png " ")
 
-12. Step 12: Evaluate your model
+12. Evaluate your model
 
     When model training is completed - **State** is *Succeeded* and **% Complete** is *100%*.
 
@@ -171,7 +171,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
 ## Task 3: Test and evaluate your model
 
-1. Step 1: Test you model using known images
+1. Test you model using known images
 
     Open bucket with your training image library (ie. *X-Ray-Images-for-Training*) in the second tab. Navigate to *NORMAL* folder and open details of any image. Copy **Image URL** to clipboard.
 
@@ -199,7 +199,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     You can see that image is now classified as *PNEUMONIA* as expected with almost 100% confidence.
 
-2. Step 2: Analyze predictions, confidence, requests and responses
+2. Analyze predictions, confidence, requests and responses
 
     You have already checked **Results** on the right side of the page. 
 
@@ -267,7 +267,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     }</copy>
     ```
 
-    This concludes this lab and you can **proceed to the next lab, Lab 4: Use Vision model in Analytics**.
+    This concludes this lab and you can **proceed to the next lab**.
 
 ## Learn More
 
