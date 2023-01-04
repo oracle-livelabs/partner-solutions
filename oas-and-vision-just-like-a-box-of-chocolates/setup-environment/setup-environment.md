@@ -1,4 +1,4 @@
-# Get started
+# Workshop setup
 
 ## Introduction
 
@@ -48,25 +48,11 @@ This lab assumes:
 
 ## Task 2: Log into OCI
 
-1. Enter your cloud account name
+1. Login into OCI
 
-    Open [cloud.oracle.com](https://cloud.oracle.com) in your browser.
+    To setup environment, you need OCI Administrators privileges. If you've got these privileges, login into OCI as described in the instructions in previous, **Get started**, lab.
 
-    Login into OCI is a 3-step process in which you should provide your Cloud Account Name (this is not your user name!) in the first step and click **Next**.
-
-    ![Login screen - Cloud Account](./images/enter-cloud-account.png " ")
-
-2. Select your identity provider
-
-    In the second step, you should choose your Identity Provider. Your tenancy (not in case of an empty tenancy) might be using several Identity Providers. Choose the right one. Most likely this (as in example below) would be **oracleidentityservice**. Click **Continue**.
-
-    ![Login screen - Identity Provider](./images/select-identity-provider.jpg =50%x*)
-
-3. Enter your credentials
-
-    In order to complete login process, enter your **User Name** and **Password**. Click **Sign In**
-
-    ![Login screen - Username and Password](./images/enter-username-and-password.jpg =50%x*)
+    In case you haven't got OCI Admistrators privileges, you should ask your OCI administrator to perform the rest of the tasks in this lab.
 
 ## Task 3: Create a new compartment
 

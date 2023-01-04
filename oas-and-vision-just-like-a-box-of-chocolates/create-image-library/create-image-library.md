@@ -29,17 +29,11 @@ This lab assumes you have:
 
 You will organize your image library in a new **Object Storage Bucket**.
 
-1. Log into OCI
+1. Login into OCI using your (new) workshop user
 
-    Login as a user who will manage your image library and will also perform the rest of the activities in this workshop.
+    Login as a user, whom you created in the previous lab and who will manage your image library. You will use this same user to perform the rest of the activities in this workshop.
 
-    Select your Identity Provider, **oracleidentitycloudservice** in this case, ...
-
-    ![Log into OCI](./images/log-into-oci.jpg =50%x*)
-
-    ... and provide your user's credentials. For example, Candy.Sweets.
-
-    ![Provide Credentials](./images/provide-credentials.jpg =50%x*)
+    You can follow log into OCI steps as described in **Get started** lab.
 
 2. Navigate to Buckets page
 

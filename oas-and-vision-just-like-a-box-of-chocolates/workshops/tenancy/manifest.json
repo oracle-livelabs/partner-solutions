@@ -9,8 +9,13 @@
         },
         {
             "title": "Get started",
+            "description": "In this lab, you will login into OCI environment as OCI administrator",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Setup environment",
             "description": "In this lab, you will create a new user, group, assign some privileges and similar. This lab is not mandatory if you have OCI Administrator privleges",
-            "filename": "../../get-started/get-started.md"
+            "filename": "../../setup-environment/setup-environment.md"
         },
         {
             "title": "Lab 1: Create image library",
