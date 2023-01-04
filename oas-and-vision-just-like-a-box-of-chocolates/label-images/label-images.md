@@ -176,7 +176,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
 4. Update config.py file with required configuration parameters
 
-    In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files. 
+    In order to run the data labeling program properly, you need to make some changes in */data-labeling/config.py* and */.oci/config* files.
 
     Let's update and configure */data-labeling/config.py* first.
 
@@ -359,7 +359,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     region=eu-frankfurt-1</copy>
     ```
 
-6. Rename your private key (.pem file you've downloaded) file to oci_api_key.pem
+6. Rename your private key (.pem file you've downloaded) file to oci\_api\_key.pem
 
     You have already generated and downloaded **Private Key** for your user from OCI.
 
@@ -375,7 +375,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     <copy>mv -12-01-13-16.pem oci_api_key.pem</copy>
     ```
 
-7. Upload oci_api_key.pem to OCI.
+7. Upload oci\_api\_key.pem to OCI.
 
     In your OCI Console click **Restore** (it should be in left-bottom corner in your console) or open **Cloud Shell** again.
 
@@ -393,11 +393,11 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Verify oci_api_key.pem is uploaded](./images/check-oci-api-key-pem-is-uploaded.png =50%x*)
 
-    *oci\_api_key.pem* file is now in your user home folder. (Upload utility always loads file there)
+    *oci\_api\_key.pem* file is now in your user home folder. (Upload utility always loads file there)
 
-8. Copy oci_api_key.pem to .oci folder
+8. Copy oci\_api\_key.pem to .oci folder
 
-    You have to put oci_api_key.pem into *.oci* folder as specified in configuration, *config* and *config.py*, files. 
+    You have to put *oci_\api\_key.pem* into *.oci* folder as specified in configuration, *config* and *config.py*, files. 
 
     Move *oci\_api\_key.pem* file to *.oci* folder.
 
