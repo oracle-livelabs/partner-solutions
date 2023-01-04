@@ -431,7 +431,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Data Labeling is completed](./images/data-labeling-completed.png " ")
 
-    This concludes this lab. You can **proceed to the next lab, Lab 3: Train image classification model**.
+    This concludes this lab. You can **proceed to the next lab**.
 
 ## Learn More
 
