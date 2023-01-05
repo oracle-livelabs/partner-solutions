@@ -102,7 +102,7 @@ It's time to prepare an image library for new images which are going to be class
 
 3. Download validation dataset
 
-    Download and unzip [validation-dataset.zip](./files/validation-dataset.zip) to your laptop. 
+    Download and unzip [validation-dataset.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/validation-dataset.zip) to your laptop. 
 
 4. Upload images from validation dataset to newly created bucket.
 
@@ -324,7 +324,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
     1;Pneumonia;https://cloud.oracle.com/object-storage/buckets/...</copy>
     ```
 
-    Here, you can also [download](./files/buckets.csv) a sample buckets.csv file.
+    Here, you can also [download](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/buckets.csv) a sample buckets.csv file.
 
     *images.csv*
     ```text
@@ -340,7 +340,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
     Instead of csv file, you can also use xlsx file format.
 
-    Here, you can also [download](./files/images.csv) a sample *images.csv* file.
+    Here, you can also [download](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/images.csv) a sample *images.csv* file.
 
 3. Create a new data flow
 
