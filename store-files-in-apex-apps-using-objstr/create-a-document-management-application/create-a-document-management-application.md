@@ -232,7 +232,17 @@ This lab assumes that you have:
 	* **When Button Pressed** - *None selected*
 	* **Type** - *Request is contained in Value*
 	* **Value** - `CREATE,SAVE`
-1. Finally, create a branch to redirect the user back to the home page, and then click the button *Save*.
+1. Create a branch to redirect the user back to the home page (page 1).
+![Create a branch to return to the home page.](./images/create-branch-to-return-to-page-one.png)
+	* **Name** - Go to Page 1
+	* **Target**
+		* **Type** - *Page in this application*
+		* **Page** - 1
+	* **Server-side Condition**
+		* **Type** - *Request is contained in Value*
+		* **Value** - `CREATE,SAVE`
+
+1. Finally, click the button *Save* to save all changes to this page.
 ![Save all changes to the page.](./images/save-all-changes-to-document-details-page.png)
 
 ## Task 6: Create a Report to List Documents
