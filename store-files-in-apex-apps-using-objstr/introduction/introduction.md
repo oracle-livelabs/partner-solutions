@@ -8,7 +8,7 @@
 
 * **Author:** *Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.*
 
-There are many options for web application developers when deciding how to store files alongside data in the database. In this workshop, you will learn how to implement an external file storage solution for *Oracle Application Express* (APEX) applications using the *Oracle Cloud Infrastructure* (OCI) Object Storage.
+There are many options for web application developers when deciding how to store files alongside data in the database. In this workshop, you will learn how to implement an external file storage solution for Oracle APEX applications using the *Oracle Cloud Infrastructure* (OCI) Object Storage.
 
 Estimated Time: 90 minutes
 
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Oracle Application Express](https://apex.oracle.com/learnmore)
+* [Oracle APEX](https://apex.oracle.com/learnmore)
 * [Oracle Cloud Infrastructure](https://www.oracle.com/cloud/)
 
 ## Acknowledgements

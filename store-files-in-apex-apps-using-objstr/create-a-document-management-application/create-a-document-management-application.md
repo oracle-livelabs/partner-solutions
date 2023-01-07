@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab puts theory into practice by having you create a very basic *Oracle Application Express* (APEX) application for managing documents and their metadata in a database.
+This lab puts theory into practice by having you create a very basic Oracle APEX application for managing documents and their metadata in a database.
 
 Estimated Time: 60 minutes
 

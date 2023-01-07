@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will provision the required Oracle Cloud Infrastructure (OCI) components to support the Oracle Application Express (APEX) application that we will create in the next lab.
+In this lab, we will provision the required Oracle Cloud Infrastructure (OCI) components to support the Oracle APEX application that we will create in the next lab.
 
 Estimated Time: 15 minutes
 
