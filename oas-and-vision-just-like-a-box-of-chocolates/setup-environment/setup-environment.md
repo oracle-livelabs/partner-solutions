@@ -224,7 +224,7 @@ Finally, you need to create a **policy** which grants manage privileges in a new
     Your policy should look like this:
 
      ```text
-     <copy>Allow group <OCI Group> to manage all-resources in tenancy <root compartment></copy>
+     <copy>Allow group <OCI Group> to manage all-resources in tenancy</copy>
      ```
 
 4. Finish creating a new policy

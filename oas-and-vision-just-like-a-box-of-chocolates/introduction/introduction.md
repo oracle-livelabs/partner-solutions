@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-In this workshop you will learn how train the model for image classification using OCI Vision and how to use that model in Oracle Analytics in order to classify new X-Ray images.
+Oracle Cloud Infrastructure (OCI) is **just like a box of chocolates** with a lot of various services, including several AI services such as  Vision or Language. In this workshop you will learn how **train the model for image classification using OCI Vision** and **how to use that model in Oracle Analytics in order to classify new X-Ray images**.
 
 The use case for this workshop is **x-ray image classification for pneumonia**.
 
@@ -12,7 +12,7 @@ Once all images in a training dataset are labeled, you will create and deploy an
 
 Estimated Workshop Time: 4-8 hours (depending on training duration selection)
 
-[Just like a box of chocolated @ Youtube](youtube:vIn7ujfadx4)
+[Just like a box of chocolates @ Youtube](youtube:vIn7ujfadx4)
 
 ### Objectives
 
