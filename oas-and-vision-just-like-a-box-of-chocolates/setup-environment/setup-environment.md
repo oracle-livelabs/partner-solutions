@@ -36,7 +36,9 @@ This lab assumes:
 * You have an Oracle Cloud account with OCI and IDCS administration privileges or
 * Your OCI and IDCS administrator can perform steps in this lab for you.
 
-## Task1: Download and extract images
+## Task1: (optional) Download and extract images
+
+This step is optional because you will download images directly to OCI, so the step of downloading is not required.
 
 1. Download images
 
@@ -50,9 +52,9 @@ This lab assumes:
 
 1. Login into OCI
 
-    To setup environment, you need OCI Administrators privileges. If you've got these privileges, login into OCI as described in the instructions in previous, **Get started**, lab.
+    To setup environment, you need OCI administrator's privileges. If you've got these privileges, login into OCI as described in the instructions in previous, **Get started**, lab.
 
-    In case you haven't got OCI Admistrators privileges, you should ask your OCI administrator to perform the rest of the tasks in this lab.
+    In case you haven't got OCI administrator's privileges, you should ask your OCI administrator to perform the rest of the tasks in this lab.
 
 ## Task 3: Create a new compartment
 
@@ -120,9 +122,9 @@ You will create a new user in **Oracle Identity Cloud Service** (and not in **OC
 
     Follow the two-step **Add user** dialog and provide user details in the first step. Make sure that you provide **your own email address** to receive Welcome email to activate the user.
 
-    ![Define a new user](./images/define-a-new-user.jpg =50%x*)
+    ![Define a new user](./images/define-a-new-user.png =50%x*)
 
-    In example above, a new user with username *Candy.Sweets* is created. In the second step, you should assign a new user to groups. However, this step is optional as there is no group at the moment you can assign new user to. So simply ignore it and click **Finish**.
+    In example above, a new user with username *X.Ray* is created. In the second step, you should assign a new user to groups. However, this step is optional as there is no group at the moment you can assign new user to. So simply ignore it and click **Finish**.
 
 6. Check newly created user's details
 
@@ -168,15 +170,11 @@ Next step is to create a new OCI group and map it to the IDCS group you've just 
 
     Click **Create Group** to start creating a new group.
 
+    In the dialog form, provide **Name** and **Description** for the new group and click **Create**. In example below, group is called *OCI-X-Ray-Group*.
+
     ![Create a new OCI Group](./images/create-a-new-oci-group.png " ")
 
-3. Define a new OCI group
-
-    In the dialog form, provide **Name** and **Description** for the new group and click **Create**. In example below, group is called *OCI_Chocolate-Group*.
-
-    ![Define a new OCI Group](./images/define-oci-group.jpg =60%x*)
-
-4. Define mapping between IDCS group and OCI group
+3. Define mapping between IDCS group and OCI group
 
     Now, you need to map previously created **IDCS Group** to the new **OCI Group**. This is required because all privileges, defined with policies will be created against the OCI Group. You can not assign privileges directly to IDCS Groups.
 
@@ -191,7 +189,7 @@ Next step is to create a new OCI group and map it to the IDCS group you've just 
 
     **Add Mappings** popup window opens. Choose your IDCS Group from **Identity Provider Group** list and your OCI Group from the **OCI Group** list.
 
-    ![Add a new IDCS - OCI Group mapping](./images/add-group-mapping.jpg =50%x*)
+    ![Add a new IDCS - OCI Group mapping](./images/add-group-mapping.png =50%x*)
 
     Click **Add Mappings** to add a new mapping.
 
@@ -226,7 +224,7 @@ Finally, you need to create a **policy** which grants manage privileges in a new
     Your policy should look like this:
 
      ```text
-     <copy>Allow group <OCI Group> to manage all-resources in tenancy</copy>
+     <copy>Allow group OCI-X-Ray-Group to manage all-resources in compartment X-Rays-Image-Classification</copy>
      ```
 
 4. Finish creating a new policy
@@ -302,13 +300,13 @@ To find out which steps you need to perform, you can navigate to **Data Labeling
 
     The first policy is for Non-Administrative users. These users are members of previously created OCI Group.
 
-    OCI Group needs the following privileges (assuming OCI Group is called *OCI_Chocolate-Group* and compartment's name is *Box-of-Chocolates*):
+    OCI Group needs the following privileges (assuming OCI Group is called *OCI-X-Ray-Group* and compartment's name is *X-Rays-Image-Classification*):
 
     ```text
-    <copy>allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to read objectstorage-namespaces in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage data-labeling-family in compartment Box-of-Chocolates</copy>
+    <copy>allow group OCI-X-Ray-Group to read buckets in compartment X-Rays-Image-Classification
+    allow group OCI-X-Ray-Group to manage objects in compartment X-Rays-Image-Classification
+    allow group OCI-X-Ray-Group to read objectstorage-namespaces in compartment X-Rays-Image-Classification
+    allow group OCI-X-Ray-Group to manage data-labeling-family in compartment X-Rays-Image-Classification</copy>
     ```
 
     ![Define data labeling policy for non-administrative users](./images/define-policy-for-non-admin-users.png " ")
@@ -321,12 +319,12 @@ To find out which steps you need to perform, you can navigate to **Data Labeling
 
     Repeat **Create Policy** for Dynamic Group you've created in the previous step.
 
-    Enter the following statements (again assuming Dynamic Group is called *Box-of-Chocolates_DataLabeling* and compartment's name is *Box-of-Chocolates*):
+    Enter the following statements (again assuming Dynamic Group is called *X-Ray-Image-Classification\_Dynamic\_Group* and compartment's name is *X-Rays-Image-Classification*):
 
     ```text
-    <copy>allow dynamic-group Box-of-Chocolates_DataLabeling to read buckets in compartment Box-of-Chocolates
-    allow dynamic-group Box-of-Chocolates_DataLabeling to read objects in compartment Box-of-Chocolates
-    allow dynamic-group Box-of-Chocolates_DataLabeling to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE'}</copy>
+    <copy>allow dynamic-group X-Ray-Image-Classification_Dynamic_Group to read buckets in compartment X-Rays-Image-Classification
+    allow dynamic-group X-Ray-Image-Classification_Dynamic_Group to read objects in compartment X-Rays-Image-Classification
+    allow dynamic-group X-Ray-Image-Classification_Dynamic_Group to manage objects in compartment X-Rays-Image-Classification where any {request.permission='OBJECT_CREATE'}</copy>
     ```
 
     ![Define data labeling policy for Dynamic Groups](./images/define-policy-for-dynamic-groups.png " ")
@@ -378,7 +376,7 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
     Provide a name of a new policy and description in **Create Policy** dialog page. In the **Policy Builder** section enable **Show manual editor** and enter the following policy:
 
     ```text
-    <copy>allow group <OCI Group> to manage ai-service-vision-family in tenancy</copy>
+    <copy>allow group OCI-X-Ray-Group to manage ai-service-vision-family in tenancy</copy>
     ```
 
     ![Define a new policy for Vision](./images/define-a-new-policy-for-vision.png " ")
@@ -404,7 +402,7 @@ Similarly to Data Labeling service, you will require some privileges to use OCI 
     Enable **Show manual editor** in **Policy Builder** area and enter the following policy statement:
 
     ```text
-    <copy>allow group <OCI Group> to use cloud-shell in tenancy</copy>
+    <copy>allow group OCI-X-Ray-Group to use cloud-shell in tenancy</copy>
     ```
 
     ![Create a policy to grant access to Cloud Shell](./images/create-new-policy-for-cloud-shell.png " ")
