@@ -72,9 +72,11 @@ You will use one compartment for all required objects in this workshop, hence yo
 
 3. Define compartment details
 
-    This step is fairly straight forward. You just have to provide **Name**, **Description** and **Parent Compartment**. For better management and administration of your OCI environment you can optionally add Tags.
+    This step is fairly straight forward. You just have to provide **Name**, **Description** and **Parent Compartment**. Since we started to talk about OCI like a box of chocolates, we have named our compartment Box-of-Chocolates.
 
-    Finally, click **Create Compartment**.
+    Additionally, for better management and administration of your OCI environment you can optionally add Tags.
+
+    Finally, click **Create Compartment**. 
 
     ![Define a new Compartment](./images/define-a-new-compartment.png =50%x*)
 

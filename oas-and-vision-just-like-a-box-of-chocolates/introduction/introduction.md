@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-Oracle Cloud Infrastructure (OCI) is **just like a box of chocolates** with a lot of various services, including several AI services such as  Vision or Language. In this workshop you will learn how **train the model for image classification using OCI Vision** and **how to use that model in Oracle Analytics in order to classify new X-Ray images**.
+Oracle Cloud Infrastructure (OCI) is **just like a box of chocolates** with offering a variety of cloud services, including serverless and very user friendly AI services such as  Vision or Language. In this workshop you will learn how **train the model for image classification using OCI Vision** and **how to use that model in Oracle Analytics in order to classify new X-Ray images**.
 
 The use case for this workshop is **x-ray image classification for pneumonia**.
 
