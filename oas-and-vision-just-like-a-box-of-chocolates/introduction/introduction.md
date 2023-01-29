@@ -31,6 +31,13 @@ This lab assumes you have:
 * An Oracle Cloud account.
 * Privileges to create and use OCI services: OCI Object Storage, Data Labeling, Data Science, Vision, Analytics.
 * Really basic understanding of Python programming.
+* Kaggle.com account. If you haven't got one, you can set it very easy. And is free.
+
+### Internet browser requirement
+
+This lab assumes that you are using Google Chrome. In the Create Image Library, you will download images directly into OCI Cloudshell.
+
+This requires cookie information copied to OCI Cloud to log in Kaggle.com directly. If you are not using Google Chrome, please make sure you make changes to your browser setting accordingly. We user these instructions[https://wdeback.gitlab.io/post/2018-03-08-how-to-download-kaggle-dataset-from-command-line/], which are described in details later in this workshop too.
 
 ### Data
 
