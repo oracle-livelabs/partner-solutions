@@ -334,4 +334,4 @@ When you have successfully completed the task of loading images to Object Storag
 ## Acknowledgements
 * **Author** - Žiga Vaupot, Oracle ACE Pro, Qubix
 * **Contributors** -  Grega Dvoršak, Qubix
-* **Last Updated By/Date** - Žiga Vaupot, December 2022
+* **Last Updated By/Date** - Žiga Vaupot, January 2023

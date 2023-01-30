@@ -61,8 +61,8 @@ Vision service, when running predictions, requires additional storage, a staging
     To access, read and manage objects in a staging bucket the following policies are required (replace User Group and Compartment names as required for your settings):
 
     ```text
-    <copy>allow group OCI_Chocolate-Group to read buckets in compartment Box-of-Chocolates
-    allow group OCI_Chocolate-Group to manage objects in compartment Box-of-Chocolates where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}</copy>
+    <copy>allow group OCI-X-Ray-Group to read buckets in compartment X-Rays-Image-Classification
+    allow group OCI-X-Ray-Group to manage objects in compartment X-Rays-Image-Classification where any {request.permission='OBJECT_CREATE', request.permission='OBJECT_INSPECT'}</copy>
     ```
 
     Pay attention to the compartment selected. This policy is created at your compartment level and not on *root* compartment as most of policies in this workshop.
@@ -157,6 +157,8 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ![Model training in progress](./images/model-training-in-progress-monitoring-2.png " ")
 
+    ![Model training in progress](./images/model-training-in-progress-monitoring-3.png " ")
+
 12. Evaluate your model
 
     When model training is completed - **State** is *Succeeded* and **% Complete** is *100%*.
@@ -195,7 +197,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
     ... and copy it to **Enter Image URL** field and click **Upload**
 
-    ![Upload and test PNEUMONIA image]](./images/upload-image-pneumonia.png " ")
+    ![Upload and test PNEUMONIA image](./images/upload-image-pneumonia.png " ")
 
     You can see that image is now classified as *PNEUMONIA* as expected with almost 100% confidence.
 
@@ -208,8 +210,6 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     ![Prediction result example](./images/prediction-result-example.png =30%x*)
 
     Expand *Request*. This is request code for JSON call which is requesting prediction to be performed on the selected image (some values are masked).
-
-    ![Request generated as JSON file](./images/json-request.png =30%x*)
 
     ```json
     <copy>{
@@ -231,8 +231,6 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     ```
 
     Expand *Response* and observe the JSON response with prediction results.
-
-    ![Prediction response in JSON file format](./images/json-response.png =30%x*)
 
     ```json
     <copy>{
@@ -277,4 +275,4 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 ## Acknowledgements
 * **Author** - Žiga Vaupot, Oracle ACE Pro, Qubix
 * **Contributors** -  Grega Dvoršak, Qubix
-* **Last Updated By/Date** - Žiga Vaupot, November 2022
+* **Last Updated By/Date** - Žiga Vaupot, January 2023
