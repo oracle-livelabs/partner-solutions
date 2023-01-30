@@ -263,7 +263,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     # python3 help.py
 
     # config file path
-    config_file_path="/home/Candy_Swee/.oci/config"
+    config_file_path="/home/X_Ray/.oci/config"
     # config file profile
     config_profile="DEFAULT"
     # region identifier of DLS Dataset
@@ -397,7 +397,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Open menu to start loading files to Cloud Shell](./images/upload-files-using-cloud-shell.png =200x*)
 
-    New dialog window opens. Drop *oci\_api\_key.pem* file to the upload area or select it from your computer. Check file is ready for upload and click **Upload*
+    New dialog window opens. Drop *oci\_api\_key.pem* file to the upload area or select it from your computer. Check file is ready for upload and click **Upload**.
 
     ![Upload oci_api_key.pem file to Cloud shell](./images/upload-oci-api-key-pem-file.png =50%x*)
 
@@ -414,7 +414,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     Move *oci\_api\_key.pem* file to *.oci* folder.
 
     ```text
-    <copy>mv oci_api_key.pem ./.oci</copy>
+    <copy>mv oci_api_key.pem .oci</copy>
     ```
 
     Check *.oci* folder and confirm it contains to files:  *oci\_api\_key.pem* and *config*.
