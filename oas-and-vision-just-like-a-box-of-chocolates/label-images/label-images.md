@@ -88,13 +88,25 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
 7. Generating records
 
-    Records for your dataset will be generated. You will have to wait for approx. 30 minutes. You can track the progress in top right corner.
+    Records for your dataset will be generated. This will take approx. 15-30 minutes. You can track the progress in top right corner.
 
     ![Dataset records generation](./images/dataset-records-generation.png " ")
 
+    For more details click **More Actions** and select **View work request** menu option.
+
+    ![Work requests list](./images/more-actions-menu.png =30%x*)
+
+    Work requests list opens.
+
+    ![Work requests list](./images/work-requests.png " ")
+
+    Click on your work request name for more details.
+
+    ![Work request details](./images/work-requests-details.png " ")
+
 8. Review your dataset
 
-    When finished, you can review the result of the records generation activity. For example, you can see that there were 4881 records generated, none of them have been labeled yet.
+    When finished, you can review the result of the records generation activity. For example, you can see that there were 4938 records generated, none of them have been labeled yet.
 
     ![Review dataset](./images/review-dataset.png " ")
 
@@ -110,7 +122,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![Set labels using data labeling tool](./images/set-labels-using-data-labeling-tool.png " ")
 
-    When you're done with labeling, exit by clicking **Cancel**. You can now check how many records have been labeled. In our example, only 1 out of 4881 records.
+    When you're done with labeling, exit by clicking **Cancel**. You can now check how many records have been labeled. In our example, only 1 out of 4938 records.
 
     ![Review dataset - labeled records](./images/review-dataset-labeled-records.png " ")
 
@@ -118,7 +130,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
 ## Task 2: Bulk image labeling
 
-We have 4881 images to label. This is too much to label images manually, hence we will use a python program to label images programmatically.
+We have cca 5000 images to label. This is too much to label images manually, hence we will use a python program to label images programmatically.
 
 Oracle provides code which can be adjusted and used in your specific case. You can find the *original code* on [Github](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/data_labeling_examples).
 
@@ -212,10 +224,10 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ```python
     # config file path
-    <copy>config_file_path="/home/Candy_Swee/.oci/config"</copy>
+    <copy>config_file_path="/home/X_Ray/.oci/config"</copy>
     ```
 
-    where *Candy\_Swee* is slightly transformed your user name (*Candy.Sweet* to *Candy\_Swee*)
+    where *X\_Ray* is slightly transformed your user name (*X.Ray* to *X\_Ray*)
 
     To obtain other values and populate missing information in *config.py* check the following tasks:
 

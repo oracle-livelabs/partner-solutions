@@ -114,42 +114,7 @@ One way of changing visibility settings is simply to set visibility to **Public*
 
     ![Bucket Details Page - PAR list](./images/par-list.png " ")
 
-## Task 3: Setup required folder structure
-
-As already explained in the **Introduction** chapter of this workshop, this workshop is using [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset. Check for more details **Introduction** chapter. If you haven't downloaded image, this might be the right time to do so. Images are downloaded as a zip file, which you should unzip to your local drive.
-
-In this task you will setup the folder structure and load images into proper folders.
-
-Start with the library folder structure. Image library will contain two folders:
-
-* PNEUMONIA: this folder contains x-ray images of bacteria or virus infected lungs, and
-* NORMAL: this folder contains x-ray images of normal and unaffected lungs.
-
-1. Create a new folder
-
-    You should still be in the **Bucket Details page**. Scroll to the **Objects** section on the page (if you don't see **Objects** then click on **Objects** link under **Resources**.
-
-    Click **More Actions** (next to **Upload**) and choose **Create New Folder** from the menu.
-
-    ![Create folder from More Actions menu](./images/more-actions-menu.png " ")
-
-2. Define folders
-
-    **Name** your new folder *PNEUMONIA* and click **Create**
-
-    ![Create folder for x-ray images for pneumonia](./images/create-pneumonia-folder.png " ")
-
-    Repeat this step for another new folder called *NORMAL*.
-
-    ![Create folder for normal x-ray images](./images/create-normal-folder.png " ")
-
-3. Verify your folder structure
-
-    Please verify that you've created two folders, *PNEUMONIA* and *NORMAL*, under the *root*.
-
-    ![Verify folders](./images/verify-folders.jpg " ")
-
-## Task 4: Prepare browser for image bulk load
+## Task 3: Prepare browser for image bulk load
 
 Original image dataset resides on Kaggle.com. There are several options how to load data into Object Storage. The simplest (but also longest) way is to download all images to your laptop and then upload them to the bucket using upload utility from console. This is fine when dealing with smaller datasets, but with 5000+ images this process could be a bit lengthy and unproductive. That is why, you can use better and much faster approach:
 
@@ -197,7 +162,7 @@ This procedure will probably save you more than 90% of the time if you decided t
 
     ![Save kaggle-cookies.txt](./images/save-cookie-txt.png " ")
 
-## Task 5a: Load images to Object Storage
+## Task 4a: Load images to Object Storage
 
 When your cookie.txt file is locally stored, you can start the loading process.
 
@@ -261,8 +226,7 @@ When your cookie.txt file is locally stored, you can start the loading process.
 
     ```console
     <copy>
-    oci os object bulk-upload -ns frly8pi3k85f -bn X-Ray-Images-for-Training --src-dir /home/X_Ray/pneumonia-dataset/chest_xray/train/PNEUMONIA --prefix PNEUMONIA/
-    oci os object bulk-upload -ns frly8pi3k85f -bn X-Ray-Images-for-Training --src-dir /home/X_Ray/pneumonia-dataset/chest_xray/train/NORMAL --prefix NORMAL/
+    oci os object bulk-upload -ns frly8pi3k85f -bn X-Ray-Images-for-Training --src-dir /home/X_Ray/pneumonia-dataset/chest_xray/chest_xray/train --overwrite --content-type 'image/jpeg'
     </copy>
     ```
 
@@ -270,7 +234,7 @@ When your cookie.txt file is locally stored, you can start the loading process.
 
     ![Check the number of images downloaded to Object Storage](./images/x-ray-images-for-training.png " ")
 
-## Task 5b: Alternative option to load images into Object Storage
+## Task 4b: Alternative option to load images into Object Storage
 
 If you successfully completed Task 4, then simply skip this Task. If not, then you can load yur images manually as described below.
 
@@ -298,7 +262,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     ![Upload pneumonia images in iterations](./images/iterative-upload.png " ")
 
-    Repeat this step for all 3500 images for *PNEUMONIA*.
+    Repeat this step for all 3800 images for *PNEUMONIA*.
 
 3. Upload images for *NORMAL*
 
@@ -310,7 +274,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
 ## Task 5: Verify images are loaded properly
 
-When you have successfully completed the task of loading images to Object Storage, make sure that you've uploaded all images and that images are correctly placed into *PNEUMONIA* and *NORMAL* folders:
+When you have successfully completed the task of loading images to Object Storage, make sure that you've uploaded all images and that images are correctly placed in *PNEUMONIA* and *NORMAL* folders:
 
 1. Verify images are loaded into proper folders.
 
@@ -320,8 +284,6 @@ When you have successfully completed the task of loading images to Object Storag
 
     ![Verify loaded images for normal](./images/verify-normal-folder.png " ")
 
-    Once verified, you can **proceed to the next lab**.
-
 2. Check if you can see your images
 
     You are using a private bucket with pre-authenticated request. This means, that you will not be able to see your image using URL provided in object details.
@@ -330,7 +292,7 @@ When you have successfully completed the task of loading images to Object Storag
 
     ![View object details menu](./images/view-object-details.png " ")
 
-    This opens details of selected image. 
+    This opens details of selected image.
 
     ![Image URL](./images/image-url.png " ")
 
@@ -360,9 +322,9 @@ When you have successfully completed the task of loading images to Object Storag
 
     If you don't use combined URL, then your browser would display the following error:
 
-    ![Image URL using error](./images/image-url-error.png " ").
+    ![Image URL using error](./images/image-url-error.png " ")
 
-    This concludes this lab. You can proceed now to the next lab.
+    This concludes this lab. You can **proceed now to the next lab**.
 
 ## Learn More
 
