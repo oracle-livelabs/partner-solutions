@@ -429,4 +429,4 @@ You can now **proceed to the next lab**.
 
 * **Author** - Žiga Vaupot, Oracle ACE Pro, Qubix
 * **Contributors** -  Grega Dvoršak, Qubix
-* **Last Updated By/Date** - Žiga Vaupot, December 2022
+* **Last Updated By/Date** - Žiga Vaupot, January 2023
