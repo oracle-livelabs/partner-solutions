@@ -24,9 +24,9 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed previous labs of this workshop: **Lab 1: Setup environment** and **Lab 2: Image library**.
+* Completed previous labs of this workshop: **Lab 1: Setup environment** and **Lab 2: Create image library**.
 
-## Task 1: Label images using Data Labeling tool
+## Task 1: Generate dataset records and label images using Data Labeling tool
 
 Basic data labeling tool is provided within OCI. With this data labeling tool, you can label one image at the time, which is useful if your image library is not too large. In case of larger libraries, manual image labeling can be very time consuming and error prone. That is why, you will use programmatic data labeling using utilities provided by Oracle. Required code and instructions will be provided in the second task.
 
@@ -48,7 +48,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     This will open **Dataset list** page in selected compartment (make sure you are in correct compartment as you might need to change compartment to the one you've created for this workshop).
 
-    Make sure you've selected your compartment where your image library resides, ie. **Box-of-Chocolates** and then click **Create dataset**.
+    Make sure you've selected your compartment where your image library resides, ie. *X-Rays-Image-Classification* and then click **Create dataset**.
 
     ![Create a new dataset](./images/create-a-new-dataset.png " ")
 
@@ -66,11 +66,11 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
 5. Define your dataset - Add files and labels
 
-    In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. Box-of-Chocolates) where you've put all of your images.
+    In the 2nd step choose *Select from Object Storage* and provide **Object Storage location** details. This should be your bucket (ie. *X-Rays-Image-Classification*) where you've put all of your images.
 
     ![Define dateset by adding files and labels](./images/define-dataset-files-and-labels.png " ")
 
-    Then *scroll* down to the lower section of this step.
+    Then scroll down to the lower section of this step.
 
     You will see your images displayed in a gallery view.
 
@@ -78,11 +78,11 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     Enter two labels: *PNEUMONIA* and *NORMAL* in **Labels set** field.
 
-    ![Define dataset - specify labels](./images/define-dataset-specify-labels.png " ")
-
     Click **Next**.
 
 6. Define your dataset - Review and Create
+
+    ![Define dataset - specify labels](./images/define-dataset-specify-labels.png " ")
 
     Review your dataset details and click **Create**
 
@@ -94,7 +94,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     For more details click **More Actions** and select **View work request** menu option.
 
-    ![Work requests list](./images/more-actions-menu.png =30%x*)
+    ![Work requests list](./images/more-actions-menu.png =20%x*)
 
     Work requests list opens.
 
@@ -106,7 +106,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
 8. Review your dataset
 
-    When finished, you can review the result of the records generation activity. For example, you can see that there were 4938 records generated, none of them have been labeled yet.
+    When finished, you can review the results of the records generation activity. For example, you can see that there were 4938 records generated, none of them have been labeled yet.
 
     ![Review dataset](./images/review-dataset.png " ")
 
@@ -116,7 +116,7 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
 9. Use data labeling tool and set labels manually
 
-    You can click on the first image and **Data Labeling** tool will open. Since the first image is from *PNEUMONIA* folder, you should label it as *PNEUMONIA*.
+    Click on the first image and **Data Labeling** tool will open. Since the first image is from *PNEUMONIA* folder, you should label it as *PNEUMONIA*.
 
     Click **Save & next** and continue with manual labeling process.
 
@@ -126,11 +126,11 @@ But before you continue, you need to perform the first step, **Create Dataset** 
 
     ![Review dataset - labeled records](./images/review-dataset-labeled-records.png " ")
 
-    There should be alternative, bulk labeling option to label your images.
+    There should be alternative, bulk labeling option, to label your images.
 
 ## Task 2: Bulk image labeling
 
-We have cca 5000 images to label. This is too much to label images manually, hence we will use a python program to label images programmatically.
+We have 5000+ images to label. This is too much to label images manually, hence we will use a python program to label images programmatically.
 
 Oracle provides code which can be adjusted and used in your specific case. You can find the *original code* on [Github](https://github.com/oracle-samples/oci-data-science-ai-samples/tree/master/data_labeling_examples).
 
@@ -160,7 +160,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Upload lab2.zip file to cloud shell](./images/upload-files-using-cloud-shell.png =200px*)
 
-    This opens a dialog window. Drop lab2.zip file onto designated area or browse your computer and upload it. Observe that file name appears in the list of files for upload.
+    This opens a dialog window. Drop *lab2.zip* file onto designated area or browse your computer and upload it. Observe that file name appears in the list of files for upload.
 
     Click **Upload**.
 
@@ -245,7 +245,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Navigate to Compartments page](https://oracle-livelabs.github.io/common/images/console/id-compartment.png " ")
 
-    Your **Compartment OCID** is located in **Compartment Information** tab (displayed as default). Click **Show** to display complete OCID and **Copy** to copy it clipboard.
+    Your **Compartment OCID** is located in **Compartment Information** tab (displayed as default). Click **Show** to display complete OCID and **Copy** to copy it to clipboard.
 
     ![Obtain your compartment OCID information](./images/obtain-compartment-ocid.png =60%x*)
 
@@ -295,7 +295,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
     config_file_path="/home/<USER>/.oci/config"</copy>
     ```
 
-    This is the location of the *config* file is. It is placed in *.oci* folder.
+    This is the location of the *config* file. It is placed in *.oci* folder.
 
     Initial content of *config* is as follows:
 
@@ -439,7 +439,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
     ![Python program main.py is running](./images/main-py-running.png " ")
 
-    Once finished, check if all images are labeled now:
+    Once finished, check if all images are labeled:
 
     ![Data Labeling is completed](./images/data-labeling-completed.png " ")
 

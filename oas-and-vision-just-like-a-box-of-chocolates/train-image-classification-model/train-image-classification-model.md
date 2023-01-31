@@ -38,7 +38,7 @@ Vision service, when running predictions, requires additional storage, a staging
 
 2. Create a new bucket
 
-    In the **Object Storage & Archive Storage** page confirm you are in your compartment, ie. **Box-of-Chocolates** and click **Create Bucket**
+    In the **Object Storage & Archive Storage** page confirm you are in your compartment, ie. *X-Rays-Image-Classification* and click **Create Bucket**
 
     ![Create a new bucket](./images/create-a-new-bucket.png " ")
 
@@ -71,7 +71,7 @@ Vision service, when running predictions, requires additional storage, a staging
 
 ## Task 2: Create your first custom Vision model
 
-In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision**, image classification, model and you will run some test to confirm it is working properly.
+In the previous lab, you have labeled all images (records) in your dataset, which is prerequisite to start working with **Vision** service. In this lab, you will create your first **vision**, image classification, model and you will run some tests to confirm it is working properly.
 
 1. Navigate to Vision page
 
@@ -81,7 +81,7 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
 2. Review Vision page and navigate to custom projects
 
-    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These there services are ready to use services, so you can try them without any preparation.
+    You will see a menu of Vision options on the left side of the page. As you can see **Vision** service can be used for **Image Classification**, **Object Recognition** and **Document AI**. These services are ready to use services, so you can try them without any preparation.
 
     In your case, you will create your own custom model. So, Click **Projects**
 
@@ -89,15 +89,13 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
 
 3. Continue with customer project setup
 
-    Click **Projects** on the left side menu list, confirm you are in correct **Compartment** (ie. Box-of-Chocolates) and click **Create Project**
+    Click **Projects** on the left side menu list, confirm you are in correct **Compartment** (ie. *X-Rays-Image-Classification*) and click **Create Project**
 
     ![Create a new project in Vision](./images/create-a-new-vision-project.png " ")
 
 4. Define new custom project
 
-    Select compartment in which you would like to create your Vision model.
-
-    Give your model a name and provide short description. Click **Create project**.
+    Select compartment in which you would like to create your vision model. Give your model **name** and provide **short description**. Click **Create project**.
 
     ![Define project](./images/define-project.png " ")
 
@@ -206,8 +204,6 @@ In the previous lab, you have labeled all images (records) in your dataset, whic
     You have already checked **Results** on the right side of the page. 
 
     Beside a table showing **Prediction Confidence** for each of the **Labels** you can see two additional items in the **Results** area: *Request* and *Response*.
-
-    ![Prediction result example](./images/prediction-result-example.png =30%x*)
 
     Expand *Request*. This is request code for JSON call which is requesting prediction to be performed on the selected image (some values are masked).
 

@@ -2,6 +2,11 @@
 
 ## About this workshop
 
+#### Community Contributed Workshop
+
+* **Authors:** *Žiga Vaupot, Oracle ACE Pro - Business Intelligence, Qubix*
+* **Contributor & Reviewer:** *Grega Dvoršak, ML/AI Consultant, Qubix*
+
 Oracle Cloud Infrastructure (OCI) is **just like a box of chocolates**. It is offering a variety of cloud services, including serverless and very user friendly AI services such as  Vision or Language. In this workshop you will learn how **train the model for image classification using OCI Vision** and **how to use that model in Oracle Analytics in order to classify new X-Ray images**.
 
 The use case for this workshop is **x-ray image classification for pneumonia**.

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to organize an image library in Object Storage. You will then upload your X-Ray images to folders set in your image library.
+This lab walks you through the steps to organize an image library in Object Storage. You will have an option to download images directlty to OCI Cloud Shell and then from Cloud Shell into Object Storage. Alternatively, you can also load images to Object Storage from your laptop, assuming you have already download images to your laptop. The first approach is faster and recommended.
 
-Estimated Time: 45 minutes
+Estimated time: 30 minutes
 
 ### About OCI Object Storage
 
@@ -15,9 +15,10 @@ OCI Object Storage service is an internet-scale, high-performance storage platfo
 In this lab, you will:
 
 * Create a new bucket within Object Storage
-* Set bucket visibility
-* Setup required folder structure
-* Load images
+* Set bucket visibility and access
+* Download images from Kaggle.com to OCI Cloud Shell
+* Load images from OCI Cloud Shell to your bucket
+* Alternatively, load images to Object Storage from your computer
 
 ### Prerequisites
 
@@ -31,7 +32,7 @@ You will organize your image library in a new **Object Storage Bucket**.
 
 1. Login into OCI using your (new) workshop user
 
-    Login as a user, whom you created in the previous lab and who will manage your image library. You will use this same user to perform the rest of the activities in this workshop.
+    Login as a user which will be used for managing the image library. Most likely this is the user you've created in the previous lab. You will use this same user to perform the rest of the activities in this workshop.
 
     You can follow log into OCI steps as described in **Get started** lab.
 
@@ -45,7 +46,7 @@ You will organize your image library in a new **Object Storage Bucket**.
 
 3. Create a new bucket
 
-    Please pay attention that you've selected correct compartment, ie. *Box-of-Chocolates*.
+    Please pay attention that you've selected correct compartment, ie. *X-Rays-Image-Classification*.
 
     Then click **Create Bucket**.
 
@@ -64,9 +65,9 @@ You will organize your image library in a new **Object Storage Bucket**.
 
 ## Task 2: Set visibility
 
-In order to make your image library visible to other users/service, you have to update its visibility. Default visibility is set to *Private*. 
+In order to make your image library visible to other users or services, you have to update its visibility. Default visibility is set to *Private*.
 
-One way of changing visibility settings is simply to set visibility to **Public**. However, it is not recommended to use this option from security reasons. It is much better to manage visibility using Pre-Authenticated Request (PAR), which is explained in the next task.
+One way of changing visibility settings is simply to set visibility to **Public**. However, it is not recommended to use this option from security reasons. It is much better to control visibility and access using Pre-Authenticated Request (PAR), which is explained in the next task.
 
 1. Change visibility
 
@@ -106,29 +107,29 @@ One way of changing visibility settings is simply to set visibility to **Public*
 
     Pre-Authenticated Request details popup window is displayed.
 
-    **NOTE:** Make sure you **make a copy of the URL** as you will require it later to access and view images. This URL won't be shown again.
+    > **NOTE**: Make sure you **make a copy of the URL** as you will require it later to access and view images. This URL won't be shown again.
 
-    ![Store PAR URL](./images/store-par-url.png " ")
+    ![Store PAR URL](./images/store-par-url.png =60%x*)
 
     Click **Close** to return to the **Bucket Details** page.
 
     ![Bucket Details Page - PAR list](./images/par-list.png " ")
 
-## Task 3: Prepare browser for image bulk load
+## Task 3a: Load images to Object Storage from Cloud Shell
 
-Original image dataset resides on Kaggle.com. There are several options how to load data into Object Storage. The simplest (but also longest) way is to download all images to your laptop and then upload them to the bucket using upload utility from console. This is fine when dealing with smaller datasets, but with 5000+ images this process could be a bit lengthy and unproductive. That is why, you can use better and much faster approach:
+Original image dataset resides on Kaggle.com. There are several options how to load data into Object Storage. The simplest (but most time consuming) way is to download all images to your laptop and then upload them to the bucket using upload utility from console. This is fine when you are dealing with smaller datasets, but with 5000+ images this process could be a bit lengthy and unproductive. That is why, you can use better and much faster approach:
 
 * download image to OCI Cloud Shell,
 * unzip downloaded image dataset to OCI Cloud Shell file system (each user has 5GB of free space available by default)
 * perform images bulk load to Object Storage into respective folders in bucket folders.
 
-This procedure will probably save you more than 90% of the time if you decided to load images manually. But before you start you need to perform some short setup steps:
+This procedure will probably save you more than 90% of the time if you don't decide to load images manually. But before you start you need to perform some short setup steps:
 
 1. Install GetCookies in Chrome
 
     In Chrome, navigate to Chrome Web Store and install *Get cookies.txt* extension. This will help you to store cookie information which is needed to connect and download images from Kaggle.com from command line interface.
 
-    Navigate to:
+    In Chrome, navigate to:
 
     ```text
     <copy>https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/related</copy>
@@ -146,7 +147,7 @@ This procedure will probably save you more than 90% of the time if you decided t
 
 2. Login to Kaggle.com using your account and save GetCookies.txt file
 
-    In order to obtain proper cookies, log into Kaggle.com and obtain cookie information using **Get cookie.txt** extension. If you don't have Kaggle.com account, create one. It is not complicated and is free.
+    In order to obtain proper cookies, log into Kaggle.com and obtain cookie information using **Get cookie.txt** extension. If you don't have Kaggle.com account, create one. It is not complicated and is free. And you will need it anyway.
 
     In your browser search for GetCookie.txt extension and open it.
 
@@ -162,11 +163,9 @@ This procedure will probably save you more than 90% of the time if you decided t
 
     ![Save kaggle-cookies.txt](./images/save-cookie-txt.png " ")
 
-## Task 4a: Load images to Object Storage
+    When your cookie.txt file is locally stored, you can start the loading process.
 
-When your cookie.txt file is locally stored, you can start the loading process.
-
-1. Open Cloud Shell
+4. Open Cloud Shell
 
     Return to your OCI console and open Cloud Shell. You can do it by clicking on **Developer tools** menu icon. From the list of available options, select **Cloud Shell**.
 
@@ -176,19 +175,25 @@ When your cookie.txt file is locally stored, you can start the loading process.
 
     ![Cloud Shell CLI](./images/cloud-shell-cli.png " ")
 
-2. Upload your cookie.txt file to Cloud Shell
+5. Upload your cookie.txt file to Cloud Shell
 
     To start downloading images from Kaggle.com, you must first upload your cookie.txt file to Cloud Shell.
 
-    ![Upload utility to Cloud Shell](./images/upload-cookie-file.png =30%x*)
+    ![Upload utility to Cloud Shell](./images/upload-cookie-file.png =20%x*)
 
-    ![Upload file to Cloud Shell](./images/upload-file-to-home-folder.png " ")
+    ![Upload file to Cloud Shell](./images/upload-file-to-home-folder.png =50%x*)
 
-    ![Cookie file uploaded](./images/cookie-file-uploaded.png " ")
+    ![Cookie file uploaded](./images/cookie-file-uploaded.png =50%x*)
 
-    ![Confirm cookie file is uploaded](./images/confirm-cookie-file-is-uploaded.png " ")
+    ![Confirm cookie file is uploaded](./images/confirm-cookie-file-is-uploaded.png =50%x*)
 
-3. Download images to Cloud Shell
+    When you've confirmed cookie.txt file has been uploaded, run the following command:
+
+     ```console
+    <copy>chmod u=rwx kaggle_cookies.txt</copy>
+    ```
+
+6. Download images to Cloud Shell
 
     Images can be downloaded from Kaggle.com by issuing the following command:
 
@@ -200,7 +205,7 @@ When your cookie.txt file is locally stored, you can start the loading process.
 
     ![Downloading images from Kaggle](./images/downloading-from-kaggle.png " ")
 
-4. Unzip image archive
+7. Unzip image archive
 
     When image archive is downloaded, create a new folder for images and unzip all images into that folder.
 
@@ -218,11 +223,11 @@ When your cookie.txt file is locally stored, you can start the loading process.
 
     ![Image count by folder](./images/image-count-by-folder.png =50%x*)
 
-5. Load images to Object Storage
+8. Load images to Object Storage
 
     In the last step, you will load images from Cloud Shell to Object storage. 
 
-    Return to Cloud Shell and issue the following two command to load images for NORMAL and PNEUMONIA respectively:
+    Return to Cloud Shell and issue the following command to load images. The content of the *train* folder will be uploaded. This will also create two new folders, NORMAL and PNEUMONIA. respectively:
 
     ```console
     <copy>
@@ -234,19 +239,19 @@ When your cookie.txt file is locally stored, you can start the loading process.
 
     ![Check the number of images downloaded to Object Storage](./images/x-ray-images-for-training.png " ")
 
-## Task 4b: Alternative option to load images into Object Storage
+## Task 3b: Alternative option to manually load images to Object Storage
 
-If you successfully completed Task 4, then simply skip this Task. If not, then you can load yur images manually as described below.
+If you successfully completed previous task, task 3a, then simply skip this this one. If not, then you can load our images manually as described below.
 
-The following steps might seem a bit time consuming and far from being optimal as all images will be loaded using **Upload** utility provided on **Bucket Details** page. More elegant way of uploading is already described and performed in previous Task.
+The following steps might seem a bit time consuming and far from being optimal as all images will be loaded using **Upload** utility provided on **Bucket Details** page. More elegant way of uploading is already described and performed in previous task.
 
-The main issue with **Upload** is that you can only load approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx. 30 minutes to complete.
+The main issue with **Upload** is that you can only upload approx. 200 images in one attempt. This means repeating the upload step several times to upload all 5000 images. This step can take approx. 30 minutes to complete.
 
 1. Initiate images **Upload**
 
     You should still be located in the **Objects** sub-page of the **Bucket Details** page of your bucket.
 
-    Navigate to the **PNEUMONIA** folder first.
+    Navigate to the *PNEUMONIA* folder. You will have to create *PNEUMONIA* folder first: click **More Actions** and select **Create Folder**.
 
     ![Upload images to PNEUMONIA folder](./images/upload-to-pneumonia-folder.png " ")
 
@@ -256,7 +261,7 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
     In the dialog window leave **Object Name Prefix** empty, and leave **Storage Tier** unchanged, ie. *Standard*.
 
-    Then **drag image files** or **select files** from your computer (images from local folder *TRAIN/PNEUMONIA*) onto **Choose Files from your Computer Area**. When ready, **Upload** button will become enabled (blue). Please note that you can upload approx. 200 images in one upload job and that you will need to make several iterations to upload all of approx 3.500 images for *PNEUMONIA*.
+    Then **drag image files** or **select files** from your computer (images from local folder *TRAIN/PNEUMONIA*) onto **Choose Files from your Computer Area**. When ready, **Upload** button will become enabled (blue). Please note that you can upload approx. 200 images in one upload job and that you will need to make several iterations to upload all of approx 3800 images for *PNEUMONIA*.
 
     Click **Upload** and wait all images are uploaded.
 
@@ -266,21 +271,19 @@ The main issue with **Upload** is that you can only load approx. 200 images in o
 
 3. Upload images for *NORMAL*
 
-    Repeat the previous step, except this time navigate to *NORMAL* folder and upload images from *TRAIN/NORMAL* local folder.
+    Repeat the previous two steps, except this time for *NORMAL* folder and upload images from *TRAIN/NORMAL* local folder.
 
     ![Upload images to NORMAL folder](./images/upload-to-normal-folder.png " ")
 
     There should be approx. 1300 images for *NORMAL*.
 
-## Task 5: Verify images are loaded properly
+## Task 4: Verify images are loaded properly
 
 When you have successfully completed the task of loading images to Object Storage, make sure that you've uploaded all images and that images are correctly placed in *PNEUMONIA* and *NORMAL* folders:
 
 1. Verify images are loaded into proper folders.
 
     ![Verify loaded images for pneumonia](./images/verify-pneumonia-folder.png " ")
-
-    You can check and review details of uploaded images in corresponding folders.
 
     ![Verify loaded images for normal](./images/verify-normal-folder.png " ")
 
@@ -292,11 +295,11 @@ When you have successfully completed the task of loading images to Object Storag
 
     ![View object details menu](./images/view-object-details.png " ")
 
-    This opens details of selected image.
+    This opens details of selected image. If the visibility is set to public, then image URL will contain active link and you will be able to view an image. If it is set to private, then image URL is simple text.
 
     ![Image URL](./images/image-url.png " ")
 
-    When applied, this image URL will not display an image, because visibility for the bucket is set to *private*. In order to be able to view an image, you must replace first part of the url with the URL that you stored when you were creating pre-authenticated request (PAR).
+    Copying image URL into your browser will not display an image, because visibility for the bucket is set to *private*. In order to be able to view an image, you must replace first part of the image URL with the URL that you stored when you were creating pre-authenticated request (PAR).
 
     For example, if the URL of an image is:
 
@@ -310,7 +313,7 @@ When you have successfully completed the task of loading images to Object Storag
     https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/...some code.../n/...domain.../b/X-Ray-Images-for-Training/o/
     ```
 
-    then replace first part of the image URL with PAR URL and add only image name at the end: `PNEUMONIA/person1000_bacteria_2931.jpg`. New URL should look like this:
+    then replace first part of the image URL with PAR URL and add only image name at the end, for example: `PNEUMONIA/person1000_bacteria_2931.jpg`. New URL should look like this:
 
      ```text
     https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/...some code.../n/...domain.../b/X-Ray-Images-for-Training/o/PNEUMONIA%2Fperson1000_bacteria_2931.jpeg
@@ -329,6 +332,7 @@ When you have successfully completed the task of loading images to Object Storag
 ## Learn More
 
 * [OCI Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
+* [OCI CLI Command Reference](https://docs.oracle.com/en-us/iaas/tools/oci-cli/3.22.3/oci_cli_docs/oci.html)
 
 
 ## Acknowledgements
