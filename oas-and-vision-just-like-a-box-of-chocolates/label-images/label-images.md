@@ -1,4 +1,4 @@
-# Lab 2: Label images
+# Lab 3: Label images
 
 ## Introduction
 
@@ -24,7 +24,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed previous labs of this workshop: **Get started** and **Lab 1: Image Library**.
+* Completed previous labs of this workshop: **Lab 1: Setup environment** and **Lab 2: Image library**.
 
 ## Task 1: Label images using Data Labeling tool
 

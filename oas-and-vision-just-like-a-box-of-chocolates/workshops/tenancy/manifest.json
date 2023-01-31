@@ -13,24 +13,24 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Setup environment",
+            "title": "Lab 1: Setup environment",
             "description": "In this lab, you will create a new user, group, assign some privileges and similar. This lab is not mandatory if you have OCI Administrator privleges",
             "filename": "../../setup-environment/setup-environment.md"
         },
         {
-            "title": "Lab 1: Create image library",
+            "title": "Lab 2: Create image library",
             "filename": "../../create-image-library/create-image-library.md"
         },
         {
-            "title": "Lab 2: Label images",
+            "title": "Lab 3: Label images",
             "filename": "../../label-images/label-images.md"
         },
         {
-            "title": "Lab 3: Train image classification model",
+            "title": "Lab 4: Train image classification model",
             "filename": "../../train-image-classification-model/train-image-classification-model.md"
         },
         {
-            "title": "Lab 4: Predict, visualize, analyze",
+            "title": "Lab 5: Predict, visualize, analyze",
             "filename": "../../predict-visualize-analyze/predict-visualize-analyze.md"
         },
         {

@@ -2,15 +2,13 @@
 
 ## About this workshop
 
-Oracle Cloud Infrastructure (OCI) is **just like a box of chocolates** with offering a variety of cloud services, including serverless and very user friendly AI services such as  Vision or Language. In this workshop you will learn how **train the model for image classification using OCI Vision** and **how to use that model in Oracle Analytics in order to classify new X-Ray images**.
+Oracle Cloud Infrastructure (OCI) is **just like a box of chocolates**. It is offering a variety of cloud services, including serverless and very user friendly AI services such as  Vision or Language. In this workshop you will learn how **train the model for image classification using OCI Vision** and **how to use that model in Oracle Analytics in order to classify new X-Ray images**.
 
 The use case for this workshop is **x-ray image classification for pneumonia**.
 
-You will begin this workshop by performing some of the prerequisite steps which are (not all) required to perform the workshop. These prerequisite steps need to be done by your tenancy administrator. When prerequisites are completed, you will setup an image library in Object Storage. Then you will load all X-ray images for model training into your image library. Setting image library and putting X-ray images into respective folders is not enough for OCI Vision to start training models. You will have to label all your images, giving them one of two labels: pneumonia and normal.
+You will begin this workshop by performing some of the prerequisite steps which are (not all) required to perform the workshop. These prerequisite steps need to be done by your tenancy administrator. When prerequisites are completed, you will setup an image library in Object Storage. Then you will load all X-ray images for model training into your image library. Setting image library and putting X-ray images into respective folders is not enough for OCI Vision to start training models. That is why, you will have to label all your images, using data labeling utility, giving them one of the two labels: pneumonia or normal. Once all images in a training dataset are labeled, you will create and deploy an image classification model using OCI Vision. To conclude this workshop, you will register OCI Vision machine learning model with Oracle Analytics and use it for new images classification.
 
-Once all images in a training dataset are labeled, you will create and deploy an image classification model using OCI Vision. To conclude this workshop, you will register OCI Vision machine learning model with Oracle Analytics and use it for new images classification.
-
-Estimated Workshop Time: 4-8 hours (depending on training duration selection)
+Estimated workshop time: 4-8 hours (depending on training duration selection)
 
 [Just like a box of chocolates @ Youtube](youtube:vIn7ujfadx4)
 
@@ -18,10 +16,10 @@ Estimated Workshop Time: 4-8 hours (depending on training duration selection)
 
 In this workshop, you will learn how to:
 
-* Setup an image library in Object Storage
-* Create a dataset and label images from image library in Data Labeling service
-* Train a custom model using OCI Vision for image classification
-* Register and deploy OCI Vision based machine learning model in Oracle Analytics
+* Setup an image library in Object Storage.
+* Create a dataset and label images from image library using Data Labeling service.
+* Train a custom model using OCI Vision for image classification.
+* Register and deploy OCI Vision based machine learning model in Oracle Analytics.
 
 ### Prerequisites
 
@@ -29,15 +27,15 @@ This lab assumes you have:
 
 * Basic understanding of Oracle Cloud Infrastructure management, such as creating user and groups, creating policies, creating OCI services.
 * An Oracle Cloud account.
-* Privileges to create and use OCI services: OCI Object Storage, Data Labeling, Data Science, Vision, Analytics.
+* Privileges to create and use OCI services: OCI Object Storage, Data Labeling, Vision and Analytics.
 * Really basic understanding of Python programming.
 * Kaggle.com account. If you haven't got one, you can set it very easy. And is free.
 
 ### Internet browser requirement
 
-This lab assumes that you are using Google Chrome. In the Create Image Library, you will download images directly into OCI Cloudshell.
+This lab assumes that you are using Google Chrome. 
 
-This requires cookie information copied to OCI Cloud to log in Kaggle.com directly. If you are not using Google Chrome, please make sure you make changes to your browser setting accordingly. We user these instructions[https://wdeback.gitlab.io/post/2018-03-08-how-to-download-kaggle-dataset-from-command-line/], which are described in details later in this workshop too.
+In one of the labs, you will be required to download images directly into OCI Cloud Shell. This requires cookie information copied to OCI Cloud to log into Kaggle.com directly. If you are not using Google Chrome, please make sure you make changes to your browser setting accordingly. As a reference, these instructions[https://wdeback.gitlab.io/post/2018-03-08-how-to-download-kaggle-dataset-from-command-line/] have been used in the workshop. More detailed steps are described in later labs of this workshop.
 
 ### Data
 
@@ -48,7 +46,7 @@ The workshop is using the following dataset:
     Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification”, Mendeley Data, V2, doi: 10.17632/rscbjbr9sj.2 [https://data.mendeley.com/datasets/rscbjbr9sj/2](https://data.mendeley.com/datasets/rscbjbr9sj/2)
 
 * Images used for this workshop are using **Chest X-Ray Images (Pneumonia)** dataset, which is a slightly adjusted from the original dataset:
-    The dataset is organized into 3 folders (train, test, val) and contains sub-folders for each image category (Pneumonia/Normal). There are 5,863 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal).
+    The dataset is organized into 3 folders (train, test, val) and contains sub-folders for each image category (Pneumonia/Normal). There are 5000+ X-Ray images (JPEG) and 2 categories (Pneumonia/Normal).
 
     Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care.
 
@@ -60,7 +58,6 @@ Oracle Documentation
 
 * [OCI Vision](https://docs.oracle.com/en-us/iaas/vision/vision/using/home.htm)
 * [OCI Data Labeling](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/home.htm)
-* [OCI Data Science](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/home.htm)
 * [OCI Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
 * [Oracle Analytics Cloud](https://docs.oracle.com/en-us/iaas/analytics-cloud/index.html)
 

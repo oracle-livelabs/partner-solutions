@@ -1,4 +1,4 @@
-# Lab 1: Create image library
+# Lab 2: Create image library
 
 ## Introduction
 
@@ -23,7 +23,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed **Get started** lab.
+* Completed **Lab 1: Setup environment** lab.
 
 ## Task 1: Create a new bucket
 

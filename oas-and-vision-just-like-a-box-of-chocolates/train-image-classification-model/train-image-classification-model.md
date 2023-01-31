@@ -1,4 +1,4 @@
-# Train image classification model
+# Lab 4: Train image classification model
 
 ## Introduction
 
@@ -22,7 +22,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Completed previous labs of this workshop: **Get started**, **Lab 1: Create image library** and **Lab 2: Label images**.
+* Completed previous labs of this workshop: **Lab 1: Setup environment**, **Lab 2: Create image library** and **Lab 3: Label images**.
 
 ## Task 1: Create a staging bucket for Vision
 

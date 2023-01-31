@@ -1,4 +1,4 @@
-# Predict, visualize, analyze
+# Lab 5: Predict, visualize, analyze
 
 ## Introduction
 
@@ -27,10 +27,10 @@ In this lab, you will:
 
 This lab assumes you have successfully completed all three labs of this workshop:
 
-* Get started
-* Lab 1: Create image library,
-* Lab 2: Label images and
-* Lab 3: Train image classification model.
+* Lab 1: Setup environment
+* Lab 2: Create image library,
+* Lab 3: Label images and
+* Lab 4: Train image classification model.
 
 ## Task 1: Create a new OAC instance
 
@@ -86,7 +86,7 @@ To perform this lab, OAC Professional Edition using 1 OCPU (non-production) will
 
 ## Task 2: Create a new bucket for prediction images
 
-It's time to prepare an image library for new images which are going to be classified for *PNEUMONIA* and *NORMAL*
+It's time to prepare a new image library for images which are going to be classified for *PNEUMONIA* and *NORMAL*. You will create a new bucket for this purpose and load images from validation dataset to this new bucket.
 
 1. Navigate to Buckets page and create a new bucket
 
@@ -98,13 +98,35 @@ It's time to prepare an image library for new images which are going to be class
 
     ![Define a new bucket for new images](./images/define-a-new-bucket-for-new-images.png " ")
 
-    **Set visibility** for this new bucket to *public*.
+    Set visibility of this bucket to *public*.
 
-3. Download validation dataset
+    ![Set visibility to Public](./images/set-visibility-to-public.png " ")
+
+3. Upload images from validation dataset
+
+    There are two alternatives how to load images which will be used for prediction.
+
+    In one of the previous labs, you have already downloaded images that you used in your image library. Part of that dataset is also validation dataset which we will use for the prediction exercise later in this lab.
+
+    First, you have to load images from validation dataset to the new bucket you've just created.
+
+    Open **Cloud Shell** and perform the following two commands:
+
+    ```text
+    oci os object bulk-upload -ns <...NAMESPACE...> -bn X-Ray-Images-for-Prediction --src-dir /home/X_Ray/pneumonia-dataset/chest_xray/chest_xray/val/PNEUMONIA --overwrite --content-type 'image/jpeg'
+    ```
+
+    ```text
+    oci os object bulk-upload -ns <...NAMESPACE...> -bn X-Ray-Images-for-Prediction --src-dir /home/X_Ray/pneumonia-dataset/chest_xray/chest_xray/val/NORMAL --overwrite --content-type 'image/jpeg'
+    ```
+
+    Images from *NORMAL* and *PNEUMONIA* folders are copied to the *root* in bucket *X-Rat-Images-for-Prediction*.
+
+4. Alternative for uploading images from validation dataset to newly created bucket
+
+    This step isn' required if you successfully completed previous step and already successfully uploaded images. You can skip this step in this case, otherwise follow these to upload images:
 
     Download and unzip [validation-dataset.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/validation-dataset.zip) to your laptop. 
-
-4. Upload images from validation dataset to newly created bucket.
 
     Return to your new bucket and click **Upload**.
 
@@ -118,9 +140,13 @@ It's time to prepare an image library for new images which are going to be class
 
     ![Upload new images for prediction](./images/upload-new-images-for-prediction.png " ")
 
-    Validation images are now uploaded. You can return to Oracle Analytics and continue there.
+5. Check images in your new bucket
+
+    Validation images are now uploaded.
 
     ![Review uploaded images](./images/uploaded-new-images.png " ")
+
+    You can return to Oracle Analytics and continue there.
 
 ## Task 3: Connect Oracle Analytics to OCI Vision
 
@@ -232,33 +258,7 @@ You are ready now to connect from Oracle Analytics Cloud to OCI Vision. There is
 
     ![Connections list](./images/connections-list.png " ")
 
-## Task 4: Update safe domains
-
-1. Navigate to console
-
-    From Analytics Cloud home page click **Navigator menu** icon and navigate to **Console**
-
-    ![Navigate to Safe Domains](./images/navigate-to-safe-domains.png =30%x*)
-
-2. Open safe domains
-
-    Click **Safe Domains**
-
-    ![Open Safe Domains](./images/open-safe-domains.png " ")
-
-3. Add domain
-
-    Click **add domain** and add your domain. For example, if you are using eu-frankfurt-1 region, then domain entry should be as follows:
-
-    ```text
-    <copy>*.eu-franfurt-1.oraclecloud.com</copy>
-    ```
-
-    Check **Image** and **Connect** checkboxes, indicating that you are going to connect to that domain and you will download images from there.
-
-    ![Add Safe Domain](./images/add-safe-domain.png " ")
-
-## Task 5: Register Vision model with Oracle Analytics
+## Task 4: Register Vision model with Oracle Analytics
 
 In one of the previous step, you have already established a connection between Analytics Cloud and Vision. Now, you can register machine learning from Vision with Analytics Cloud using that connection.
 
@@ -296,7 +296,7 @@ In one of the previous step, you have already established a connection between A
 
     ![Inspect model - Details tab](./images/inspect-model-details.png =50%x*)
 
-## Task 6: Apply Vision model using data flows
+## Task 5: Apply Vision model using data flows
 
 In Oracle Analytics, **Vision based machine learning model** is applied (as any other ML model) using **Data Flows**.
 
@@ -434,7 +434,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
     ![Review created dataset with predictions](./images/review-created-dataset-with-predictions.png " ")
 
-## Task 7: Vision Series Plug-in
+## Task 6: Vision Series Plug-in
 
 You are close to your last tasks in this lab. But before that, there is one small technicality you need to take care. In order to visualize you X-Ray images you need proper visualization for image display. Oracle Analytics, out of the box, doesn't support this sort of visualizations, that is why you have to upload it as an **Extension**.
 
@@ -489,7 +489,7 @@ You are close to your last tasks in this lab. But before that, there is one smal
 
     Also temporarily disable “Block insecure private network requests”, if you have issues accessing your object storage as a debugging test.
 
-## Task 8: Visualize and analyze
+## Task 7: Visualize and analyze
 
 In this last exercise, you will create a visualization and visualize your predictions.
 
@@ -509,13 +509,23 @@ In this last exercise, you will create a visualization and visualize your predic
 
     ![Two new custom visualizations](./images/custom-visualizations.png =30%x*)
 
-3. Create your first visualization
+3. Before your first visualization
 
-    From your dataset on the left, select *Object Name*, *Confidence* and *Image File from Bucket* columns and drag them onto empty canvas.
+    Dataset contains *Image File from Bucket* attribute which is a good identifier for each and every image. However, displaying 50+ long names is a bit unpractical. That is why you shoud extract *Image Name* from image URL.
+
+    One way of doing so is to create a new calculation under **My Calculation** called *Image Name*. Click **My Calculation**, then right mouse click and choose **Add Calculation**.
+
+    ![Image name calculation](./images/image-name-calculation.png =50%x*)
+
+    Build a formula and click save.
+
+4. Create your first visualization
+
+    You can now start creating your first visualization. From your dataset on the left, select *Object Name*, *Confidence* and *Image File from Bucket* columns and drag them onto empty canvas.
 
     ![Select columns to create first visualization](./images/select-columns-for-first-visualization.png " ")
 
-4. Re-arrange visualisation
+5. Re-arrange visualisation
 
     **Auto-Visualization** was activated, hence **Bar** was automatically selected. Simply change **Bar** to **Pivot Table** (used in this example) or **Table**.
 
@@ -529,11 +539,21 @@ In this last exercise, you will create a visualization and visualize your predic
 
     ![Change column display formats](./images/change-column-display-formats.png =30%x*)
 
+5. Add Image Gallery plugin to the canvas
+
+    Drag and drop Image Gallery plugin visualization to the canvas.
+
+    ![Add Image Gallery visualization](./images/add-image-gallery-plugin.png " ")
+
+    Now, add *Image File from Bucket* to the **Image URL** and *Image Name* to **Description**. You should see X-ray images galery.
+
+    ![Re-arrange Image Gallery visualization](./images/re-arrange-image-gallery.png " ")
+
     Set **Use as Filter** parameter for this **Pivot Table** visualization.
 
     ![Set Use as Filter in Pivot Table visualization](./images/set-use-as-filter.png =50%x*)
 
-5. Add **Vision Plugin** to the canvas
+6. Add Vision Plugin to the canvas
 
     In the left panel, click on **Visualizations** tab and drag custom vizualization **Vision Plugin** to the canvas.
 
@@ -543,13 +563,21 @@ In this last exercise, you will create a visualization and visualize your predic
 
 6. Save your work
 
-    ![Save workbook](./images/save-workbook.png " ")
+    Your workbook should look something like this:
+
+    ![Analysis workbook](./images/analysis-workbook.png " ")
+
+    You can save it now.
+
+    ![Save workbook](./images/save-workbook.png =50%x*)
 
 7. Test your visualizations and review predictions.
 
     You can now start testing your solution.
 
-    Clicking the rows in the **Pivot Table** filters and changes X-Ray images of the **Vision Plugin**. Review them and observe results of predictions. There might be some incorrectly classified images for the label *NORMAL*. As you have already observed from the training metrics, predicion for *PNEUMONIA* is much more confident than *NORMAL*.
+    Images in **Image Gallery** plugin visualization act as filters for the **Pivot Table** which shows prediction confidence whether image shows infected lungs or not, and **Vision Plugin** displays bigger version of the selected image.
+
+    Review them and observe results of predictions. There might be some incorrectly classified images for the label *NORMAL*. As you have already observed from the training metrics, prediction for *PNEUMONIA* is much more confident than *NORMAL*.
 
     ![Display predictions with image](./images/display-predictions-with-image-1.png " ")
 
