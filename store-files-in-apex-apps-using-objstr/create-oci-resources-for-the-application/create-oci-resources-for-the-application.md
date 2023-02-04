@@ -42,7 +42,7 @@ This lab assumes that you have created the following OCI *Identity and Access Ma
 1. Scroll down once more. If this is an Always Free ADB, then the license type choice is set. If not, select the license type that is appropriate to the tenancy. Next, optionally provide an email address to be contacted about announcements and notifications concerning the newly provisioned instance. Finally, click the *Create Autonomous Database* button.
 ![Select the license type and provide contacts for the ADB.](./images/select-license-type-and-provide-contacts-for-autonomous-database.png)
 
-## Task 2: Create an Oracle APEX and Database Schema
+## Task 2: Create an Oracle APEX Workspace and Database Schema
 
 1. Once the ADB has been fully provisioned, return to the *Autonomous Database* page, locate the instance's display name, and then click on it to view the ADB's details page. Click the *Tools* tab.
 ![Navigate to the ADB's tools page.](./images/navigate-to-autonomous-database-tools-page.png)
