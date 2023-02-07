@@ -2,8 +2,9 @@
 
 ## About this workshop
 
-#### Community Contributed Workshop
+**Community Contributed Workshop**
 
+![Qubix Logo](./images/qubix-logo.png =300x300)
 * **Authors:** *Žiga Vaupot, Oracle ACE Pro - Business Intelligence, Qubix*
 * **Contributor & Reviewer:** *Grega Dvoršak, ML/AI Consultant, Qubix*
 
