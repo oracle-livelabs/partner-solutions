@@ -1,0 +1,47 @@
+{
+    "workshoptitle": "Classify X-Ray images for pneumonia using Analytics Cloud and Vision AI Services",
+    "help": "livelibs-help-oci-us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get started",
+            "description": "In this lab, you will login into OCI environment as OCI administrator",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Setup environment",
+            "description": "In this lab, you will create a new user, group, assign some privileges and similar. This lab is not mandatory if you have OCI Administrator privleges",
+            "filename": "../../setup-environment/setup-environment.md"
+        },
+        {
+            "title": "Lab 2: Create image library",
+            "filename": "../../create-image-library/create-image-library.md"
+        },
+        {
+            "title": "Lab 3: Label images",
+            "filename": "../../label-images/label-images.md"
+        },
+        {
+            "title": "Lab 4: Train image classification model",
+            "filename": "../../train-image-classification-model/train-image-classification-model.md"
+        },
+        {
+            "title": "Lab 5: Predict, visualize, analyze",
+            "filename": "../../predict-visualize-analyze/predict-visualize-analyze.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Other LiveLabs you might like",
+            "description": "Other LiveLabs you might like",
+            "filename": "../../other-livelabs/other-livelabs.md"
+        }
+    ]
+}
