@@ -1,0 +1,48 @@
+{
+    "workshoptitle": "Monitor Oracle APEX Applications with OCI Monitoring Custom Metrics",
+    "include": {
+    },
+    "help": "llivelabs-help-community_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Create OCI Identity and Access Management Resources",
+            "description": "Create the required Identity and Access Management (IAM) user, group, policies, and setup OCI API keys.",
+            "filename": "../../create-oci-iam-resources/create-oci-iam-resources.md"
+        },
+        {
+            "title": "Lab 2: Set Up an Oracle APEX Development Environment",
+            "description": "Set up an Oracle APEX development environment by creating an Oracle Autonomous Database, an Oracle APEX Workspace and database schema.",
+            "filename": "../../set-up-an-oracle-apex-development-environment/set-up-an-oracle-apex-development-environment.md"
+        },
+        {
+            "title": "Lab 3: Create an Oracle APEX Automation to Publish Custom Metrics",
+            "description": "Create an Oracle APEX Automation to Publish Custom Metrics.",
+            "filename": "../../create-an-oracle-apex-automation-to-publish-custom-metrics/create-an-oracle-apex-automation-to-publish-custom-metrics.md"
+        },
+        {
+            "title": "Lab 4: Create an OCI Alarm and Notification to Alert Administrators",
+            "description": "Create an OCI Alarm and Notification to Alert Administrators",
+            "filename": "../../create-oci-alarm-and-notification/create-oci-alarm-and-notification.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Other LiveLabs you might like",
+            "description": "Other LiveLabs you might like",
+            "filename": "../../other-livelabs/other-livelabs.md"
+        }
+    ]
+}
