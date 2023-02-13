@@ -49,6 +49,8 @@ This lab assumes that you have:
 1. Once the group has been created, check the details, and then click the breadcrumb *Identity* on the top-left of the page in preparation for the next task.
 ![Check the details of the group created.](./images/check-details-of-group-created.png)
 
+> **Note:** This workshop was prepared using a tenancy that does **not** have identity domains. For tenancies with identity domains, groups are managed under a domain.
+
 ## Task 3: Create a Policy
 
 1. After the last task, you should be on the *Users* page. Again, under the *Identity* menu on the left, click the *Policies* link.
@@ -64,6 +66,8 @@ This lab assumes that you have:
 	</copy>
 	```
 ![Enter the policy statements manually.](./images/enter-policy-statements-manually.png)
+
+> **Note:** For tenancies with identity domains, if you have multiple identity domains, then the policy's subject should include the identity domain name, for example, `group 'MyDomain'/'CustomMetricsPublishers'`. If the identity domain is not specified, then the policy statement is evaluated with the assumption that the group specified belongs to the default identity domain.
 
 ## Task 4: Create a User
 
