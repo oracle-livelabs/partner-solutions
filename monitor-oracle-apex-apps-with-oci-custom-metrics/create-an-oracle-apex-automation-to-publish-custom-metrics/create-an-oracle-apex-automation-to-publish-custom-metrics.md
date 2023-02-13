@@ -197,6 +197,8 @@ Although the automation task is now running successfully, we should validate tha
 1. If the custom metrics were published successfully, then it show up in the graphs. You may have to attempt a few failed logins on the application to see a chart similar to the one below.
 ![Custom metrics showing some failed user logins.](./images/view-the-posted-custom-metrics.png)
 
+> **Note:** It may take a while for the posted custom metrics to show up in the Metrics Explorer. If you do not see the expected changes in the chart, try again later, adjusting the start and end times as necessary.
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
