@@ -2,24 +2,25 @@
 
 ## About this Workshop
 
-This workshop will serve as a stepwise guide to create a Freeform application in EPM Cloud. Important tips, tricks and considerations will be part of the constituent labs to empower developers and implementers address common pitfalls and doubts on when, how and what to create as a Freeform application in EPM Cloud.
+The workshop is a stepwise guide to create an Oracle FreeForm application in EPM Cloud. Important tips, tricks and considerations will be part of the constituent labs to empower developers and implementers address common pitfalls and doubts on when, how and what to create as a FreeForm applications in EPM Cloud.
 
-Estimated Workshop Time: 00 hours 20 minutes. This estimate is for the entire workshop. Please know that depending on the needs of your application, times may wary.
+Estimated Workshop Time: **25 minutes**. The estimated time will vary depending on the complexity of the application being deployed.
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
+*Video with important prerequisite information on **Oracle EPM Enterprise Cloud Planning***
 
-  [](youtube:zNKxJjkq0Pw)
+  [](youtube:tdgeyav2yvo)
 
 ### Objectives
 In this workshop, you will learn how to:
-* Create Freeform application using an on-premises Essbase outline                                                                                                                       
-* Configuring a Freeform application from scratch
-* Optimal Freeform application design tips and tricks
+* Create FreeForm application using an on-premises Essbase outline                                                                                                                       
+* Configuring a FreeForm application from scratch
+* Optimal FreeForm application design tips and tricks
 
 ### Prerequisites (Optional)
 
 This lab assumes you have:
 * Understanding of Oracle Enterprise Performance Management (EPM)
+* EPM Enterprise Cloud subscription
 * Basic understanding of Essbase
 
 ## Learn More
