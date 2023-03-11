@@ -6,7 +6,7 @@ The workshop is a stepwise guide to create an Oracle FreeForm application in EPM
 
 Estimated Workshop Time: **25 minutes**. The estimated time will vary depending on the complexity of the application being deployed.
 
-*Video with important prerequisite information on **Oracle EPM Enterprise Cloud Planning***
+*Video with important prerequisite information on **Oracle EPM Enterprise Cloud Planning**:*
 
   [](youtube:tdgeyav2yvo)
 
@@ -16,9 +16,9 @@ In this workshop, you will learn how to:
 * Configuring a FreeForm application from scratch
 * Optimal FreeForm application design tips and tricks
 
-### Prerequisites (Optional)
+### Prerequisites
 
-This lab assumes you have:
+This workshop and its constituent labs assume you have:
 * Understanding of Oracle Enterprise Performance Management (EPM)
 * EPM Enterprise Cloud subscription
 * Basic understanding of Essbase

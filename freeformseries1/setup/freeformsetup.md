@@ -2,7 +2,7 @@
 
 ### **Prerequisites**
 
-Ensure the following that:
+Ensure that:
 * You have an Oracle EPM Enterprise Cloud subscription
 * You are a service administrator for the instance where you are going to create the FreeForm application
 
