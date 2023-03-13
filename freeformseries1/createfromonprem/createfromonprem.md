@@ -1,12 +1,14 @@
-# Title of the Lab
+# Create FreeForm application using an Oracle Essbase Outline
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+One of the main use cases for FreeForm application is the ease with which an Essbase outline can be used to build this application in EPM Cloud. 
+	![Image alt text](images/usecasesummary.png)
+In this lab, we will use an existing Essbase outline for Aggregate Storage Option (ASO) and create a FreeForm application from it.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: **8 minutes**
 
-### About <Product/Technology> (Optional)
+### About
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
@@ -87,6 +89,5 @@ This lab assumes you have:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2023

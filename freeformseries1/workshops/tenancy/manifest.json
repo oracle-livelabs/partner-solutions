@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle EPM Cloud FreeForm Application - Workshop 1",
+    "workshoptitle": "Create and configure Oracle EPM Cloud FreeForm applications",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
@@ -17,11 +17,11 @@
         },
         {
             "title": "Lab 2: Create from Sctrach",
-            "filename": "../../setup/freeformsetup.md"
+            "filename": "../../createfromscratch/createfromscratch.md"
         },
         {
             "title": "Lab 3: Optimize FreeForm Configuration",
-            "filename": "../../data-load/data-load.md"
+            "filename": "../../optimizeconfig/optimizeconfig.md"
         },
         {
             "title": "Need Help?",
