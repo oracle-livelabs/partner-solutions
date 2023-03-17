@@ -9,39 +9,37 @@ In this lab, we will use an existing Essbase outline for Aggregate Storage Optio
 Estimated Lab Time: **8 minutes**
 
 ### About
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+Use EPM Cloud FreeForm application to migrate on-premises Essbase outline. The process will use an outline file from on-premises application to build the FreeForm ASO application.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Import an ASO outline to EPM Cloud
+* Create a FreeForm application using the ASO outline
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+* Access to an Essbase on-premises outline file
+* An Oracle EPM Enterprise Cloud subscription
+* Service administrator to the instance where you are going to create the FreeForm application
 
 
-*This is the "fold" - below items are collapsed by default*
-
-## Task 1: Concise Task Description
+## Creation Process
 
 (optional) Task 1 opening paragraph.
 
-1. Step 1
+1. Hit **Start** under **Create a new application**
 
-	![Image alt text](images/sample1.png)
+	![Image alt text](images/selectstartonprem.png)
 
-2. Step 2
+2. Populate **Name** and **Description** for the FreeForm application being created
 
-  ![Image alt text](images/sample1.png)
+  ![Image alt text](images/namedescription.png)
+
+3. Populate **Name** and **Description** for the FreeForm application being created
+
+  ![Image alt text](images/namedescription.png)
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
