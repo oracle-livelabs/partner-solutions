@@ -18,7 +18,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle EPM Enterprise Cloud subscription
-* Service administrator to the instance where you are going to create the FreeForm application
+* Service administrator rights to the instance where you are going to create the FreeForm application
 
 
 ## Creation Process
@@ -35,8 +35,19 @@ This lab assumes you have:
 
   ![Image alt text](images/applicationsetup.png)
 
-4. 
-   
+4. You can select upto 12 cubes to create.
+  ![Image alt text](images/upto12cubes.png) 
+
+5. These cubes can be a combination of **block storage (BSO)** and/ or  **aggregate storage (ASO cubes)**. For more information on **Multi-Cube FreeForm Applications** check [Understanding FreeForm Applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html). For this exercise we will select 2 cubes. We will make one of the cubes an ASO cube.
+  ![Image alt text](images/numberofcubes.png)
+
+6. Upon hitting **Next** the **Create Dimensions** screen shows up.
+  ![Image alt text](images/createdimensionsff.png)
+
+7. 
+
+
+
 ## Learn More
 
 *Learn more about FreeForm applications by using the links below*
