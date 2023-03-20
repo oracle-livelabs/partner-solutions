@@ -22,69 +22,40 @@ In this lab, you will:
 This lab assumes you have:
 * Access to an Essbase on-premises outline file
 * An Oracle EPM Enterprise Cloud subscription
-* Service administrator to the instance where you are going to create the FreeForm application
+* Service administrator rights to the instance where you are going to create the FreeForm application
 
 
 ## Creation Process
 
-(optional) Task 1 opening paragraph.
-
-1. Hit **Start** under **Create a new application**
+1. Hit **Start** under **Create a new application**.
 
 	![Image alt text](images/selectstartonprem.png)
 
-2. Populate **Name** and **Description** for the FreeForm application being created
+2. Populate **Name** and **Description** for the FreeForm application being created.
 
   ![Image alt text](images/namedescription.png)
 
-3. Populate **Name** and **Description** for the FreeForm application being created
+3. Ensure **Application Setup** is set to **Import Essbase OTL/LCM**. You will need to specificy the **Location** of the file which could either be your **Local drive*** or the **Application Inbox**.
 
-  ![Image alt text](images/namedescription.png)
+  ![Image alt text](images/setuplocation.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+4. Once the **Import File (Outline File)** is selected you will see the outline populated. Hit **Next**.
 
-5. Example with bold **text**.
+  ![Image alt text](images/onpremoutline.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+5. **Review** all your details before hitting **Create**. Once your hit **Create**, an **Application Creation Status** will guide you through the creation process.
+  ![Image alt text](images/beforecreate.png)
+  ![Image alt text](images/creationstatus.png)
 
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
+6. You have created you **FreeForm application using an Oracle Essbase outline** (an on-premises outline).
+  ![Image alt text](images/creationcomplete.png)
+   
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+*Learn more about FreeForm applications by using the links below*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Create using Outline or a LCM package aka snapshot](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/creating_a_freeform_app_using_an_outline_file_or_snapshot.html)
+* [FreeForm Apps FAQs](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/freeform_apps_faq.html)
 
 ## Acknowledgements
 * **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC

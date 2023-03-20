@@ -1,92 +1,49 @@
-# Title of the Lab
+# Create FreeForm application using the Application Creation Wizard (from Scratch)
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+You can also use the **Application Creation Wizard** in Oracle EPM Cloud to create FreeForm applications. This lab will walkthrough the steps of creating a FreeForm application with multiple cubes in the application.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: **12 minutes**
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+### About
+While a few initial steps will be the same, creating FreeForm application using the **Application Creation Wizard** vastly differs from importing an Outline or a Snapshot. You will learn how to quickly get a FreeForm application stood along with its dimensions across multiple cubes.
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a FreeForm application using the **Application Creation Wizard** aka **Create from Scratch**
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+* An Oracle EPM Enterprise Cloud subscription
+* Service administrator to the instance where you are going to create the FreeForm application
 
 
-*This is the "fold" - below items are collapsed by default*
+## Creation Process
 
-## Task 1: Concise Task Description
+1. Hit **Start** under **Create a new application**.
 
-(optional) Task 1 opening paragraph.
+	![Image alt text](images/selectstartforscratch.png)
 
-1. Step 1
+2. Populate **Name** and **Description** for the FreeForm application being created.
 
-	![Image alt text](images/sample1.png)
+  ![Image alt text](images/namedescription.png)
 
-2. Step 2
+3. Under **Application Setup** select **Create Cubes**. 
 
-  ![Image alt text](images/sample1.png)
+  ![Image alt text](images/applicationsetup.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
+4. 
+   
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+*Learn more about FreeForm applications by using the links below*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Create using Application Creation Wizard](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/creating_a_freeform_app_using_the_application_creation_wizard.html)
+* [FreeForm Apps FAQs](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/freeform_apps_faq.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2023
