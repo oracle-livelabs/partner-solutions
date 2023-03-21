@@ -1,92 +1,42 @@
-# Title of the Lab
+# Optimal configuration tips
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+There are certain considerations to optimize a FreeForm application. This lab will walk-through and/ or describe two such important configurations, one of which was already done during the creation of the **Scratch** FreeForm application during the previous lab. 
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: **7 minutes**
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+### About
+In addition to adjusting application artifacts such as substitution variables, you will also be uploading additional dimensions using Smart View Planning Admin Extension
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Adjust configurations of FreeForm application namely **Scratch** that you just created using the **Application Creation Wizard**.
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+* An Oracle EPM Enterprise Cloud subscription
+* Service administrator rights to the instance where you are going to create the FreeForm application
+* Oracle Smart View for Office Planning Admin Extension installed on your machine
 
 
-*This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Task Description
+## Tips
 
-(optional) Task 1 opening paragraph.
+1. Hit **Start** under **Create a new application**.
 
-1. Step 1
+	![Image alt text](images/selectstartforscratch.png)
 
-	![Image alt text](images/sample1.png)
-
-2. Step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+*Learn more about FreeForm applications by using the links below*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Create using Application Creation Wizard](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/creating_a_freeform_app_using_the_application_creation_wizard.html)
+* [FreeForm Apps FAQs](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/freeform_apps_faq.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2023

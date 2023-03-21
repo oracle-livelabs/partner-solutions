@@ -4,7 +4,7 @@
 
 You can also use the **Application Creation Wizard** in Oracle EPM Cloud to create FreeForm applications. This lab will walkthrough the steps of creating a FreeForm application with multiple cubes in the application.
 
-Estimated Lab Time: **12 minutes**
+Estimated Lab Time: **10 minutes**
 
 ### About
 While a few initial steps will be the same, creating FreeForm application using the **Application Creation Wizard** vastly differs from importing an Outline or a Snapshot. You will learn how to quickly get a FreeForm application stood along with its dimensions across multiple cubes.
@@ -42,11 +42,19 @@ This lab assumes you have:
   ![Image alt text](images/numberofcubes.png)
 
 6. Upon hitting **Next** the **Create Dimensions** screen shows up.
-  ![Image alt text](images/createdimensionsff.png)
+  ![Image alt text](images/createdimensionff.png)
 
-7. 
+7. Enable both **Account** and **Period** type dimension and rename them to **Measures** and **FiscalPeriod** respectively. We will discuss why this is important during the **Optimize FreeForm Configuration** lab (next lab). Hit **Next** after this dimension configuration.
+  ![Image alt text](images/accountfiscalperiod.png)
 
+8. Review and hit **Create** in this next step. 
+  ![Image alt text](images/createffscratch.png)
 
+9. Track the status through Creation for the FreeForm application. 
+  ![Image alt text](images/ffscratchcreationstatus.png)
+  ![Image alt text](images/ffscratchcreated.png)
+
+10. Keep your FreeForm application intact that was created from this lab for next lab. 
 
 ## Learn More
 
