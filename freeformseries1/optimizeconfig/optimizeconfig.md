@@ -19,17 +19,16 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle EPM Enterprise Cloud subscription
 * Service administrator rights to the instance where you are going to create the FreeForm application
-* Oracle Smart View for Office Planning Admin Extension installed on your machine
 
 
+## Tip 1
 
-## Tips
-
-1. Hit **Start** under **Create a new application**.
-
-	![Image alt text](images/selectstartforscratch.png)
-
-
+1. Navigate to dimensions in the application created in the previous lab. Click on **Overview** and the navigate to **Dimensions**.
+	![Image alt text](images/appoverview.png)
+	![Image alt text](images/appdimensions.png)
+	
+2. When in **Dimensions** toggle or ensure that you have picked **All** in the dropdown.
+	![Image alt text](images/alldimensions.png)
 ## Learn More
 
 *Learn more about FreeForm applications by using the links below*
