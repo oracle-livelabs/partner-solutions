@@ -1,4 +1,4 @@
-# Welcome
+# Welcome.
 
 [![](https://oracle-livelabs.github.io/common/images/livelabs-banner-formarketplace.png)](https://developer.oracle.com/livelabs)
 ---
