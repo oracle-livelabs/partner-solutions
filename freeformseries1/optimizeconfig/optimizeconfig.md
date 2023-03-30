@@ -1,4 +1,4 @@
-# Optimal configuration tips
+# Optimal configuration
 
 ## About
 
@@ -44,9 +44,36 @@ This lab assumes you have:
 6. From **Overview>Dimensions** hit **Import**.
 	![Image alt text](images/importdimensions.png)
 
-7. Hit **Create** and navigate to assign files 
+7. Hit **Create** and navigate to select the downloaded files to build dimensions.
 	![Image alt text](images/createimportjob.png)
+	![Image alt text](images/choosedimfiles.png)
+	![Image alt text](images/clickimport.png)
+   
+   Check the **Refresh Database if Import Metadata is successful** option and hit **OK**.
+	![Image alt text](images/refreshoption.png)
 
+   Job successfully submitted window appears - Hit **OK**.
+   	![Image alt text](images/jobsubmitted.png)
+
+8. Hit **Close** on open windows for the application and go to **Jobs** to check the status of dimension build.
+	![Image alt text](images/jobs.png)
+   
+   Check to ensure both **Import Metadata** and **Refresh Database** were successful. You have completed the build of dimensions.
+   ![Image alt text](images/jobsuccessful.png)
+   
+
+## Tips and Techniques
+### Period dimension assignment
+Setting up of **FiscalPeriod** dimension in the application as a **Period** dimension. You can confirm that your **FiscalPeriod** dimension is a **Period** or **Time** dimension by navigation to **Application>Overview>Dimensions** and checking the **time** icon on the cube in front of the dimension name.
+	![Image alt text](images/timedimension.png)
+
+Assigning the time or period dimension appropriately aids in two main aspects - 
+* Ensuring seamless period mapping with **Data Integration** which is an integration layer for EPM Cloud applications. For more info check  [Data Integration](https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/diepm/integrations_about_110x65a03764.html)
+* For ASO (Aggregate Storage Option) databases in an application, setting a compression dimension ensures performant ASO database. It is always recommended to the most dense dimension in an ASO database as the compression dimension, yet at the same time EPM Cloud does not expose the ability to pick a compression dimension. By virue of picking a **Period** or **Time** dimension, ASO in EPM Cloud automatically makes that dimension in this case **FiscalPeriod** a compression dimension, thereby ensuring optimal performance.
+
+### Additional Tips and Techniques
+A following workshop will share tips and techniques on optimizing FreeForm applications for following - 
+* How to 
 
 ## Learn More
 

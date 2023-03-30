@@ -21,7 +21,7 @@ In this workshop, you will learn how to:
 This workshop and its constituent labs assume you have:
 * Understanding of Oracle Enterprise Performance Management (EPM)
 * EPM Enterprise Cloud subscription
-* Basic understanding of Essbase
+* Basic knowledge about EPM Cloud platform
 
 ## Learn More
 
