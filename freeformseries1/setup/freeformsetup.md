@@ -1,13 +1,26 @@
-# Setting up the EPM Cloud instance
+# Setup the EPM Cloud instance
+## Introduction
 
-### **Prerequisites**
+Once you login into the Cloud environment, you will then be setting up the environment for a **FreeForm** application.
+
+Estimated Lab Time: 3 minutes
+
+### About
+Enable environment as a **FreeForm** application instance.
+
+### Objectives
+
+In this lab, you will:
+* Enable the environment as a FreeForm application instance
+
+### Prerequisites
 
 Ensure that:
 * You have an Oracle EPM Enterprise Cloud subscription
 * You are a service administrator for the instance where you are going to create the FreeForm application
 
 
-## Task: FreeForm Application creation readiness
+## Task 1: FreeForm Application creation readiness
 
 1. *Check whether you have Oracle EPM Enterprise Cloud subscription* 
   

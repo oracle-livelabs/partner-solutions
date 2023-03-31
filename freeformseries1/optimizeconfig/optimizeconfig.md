@@ -20,7 +20,7 @@ This lab assumes you have:
 * Service administrator rights to the instance where you are going to create the FreeForm application
 
 
-## Dimension configuration
+## Task 1: Dimension configuration
 
 1. Navigate to dimensions in the application created in the previous lab. Click on **Overview** and the navigate to **Dimensions**.
 	![Image alt text](images/appoverview.png)
@@ -61,7 +61,7 @@ This lab assumes you have:
    ![Image alt text](images/jobsuccessful.png)
    
 
-## Tips and Techniques
+## Task 2: Tips and Techniques
 ### Period dimension assignment
 You can confirm that your **FiscalPeriod** dimension is a **Period** or **Time** dimension by navigation to **Application>Overview>Dimensions** and checking the **time** icon on the cube in front of dimension name.
 	![Image alt text](images/timedimension.png)

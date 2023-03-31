@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Create and configure Oracle EPM Cloud FreeForm applications",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-community_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -8,19 +8,24 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Setup EPM Environment",
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Setup EPM Environment",
             "filename": "../../setup/freeformsetup.md"
         },
         {
-            "title": "Lab 1: Create from On-premises Outline",
+            "title": "Lab 2: Create from On-premises Outline",
             "filename": "../../createfromonprem/createfromonprem.md"
         },
         {
-            "title": "Lab 2: Create from Sctrach",
+            "title": "Lab 3: Create from Sctrach",
             "filename": "../../createfromscratch/createfromscratch.md"
         },
         {
-            "title": "Lab 3: Optimizing FreeForm Applications",
+            "title": "Lab 4: Optimize FreeForm Applications",
             "filename": "../../optimizeconfig/optimizeconfig.md"
         },
         {

@@ -22,7 +22,7 @@ This lab assumes you have:
 * Service administrator rights to the instance where you are going to create the FreeForm application
 
 
-## Creation Process
+## Task 1: Creation Process
 
 1. Hit **Start** under **Create a new application**.
 
