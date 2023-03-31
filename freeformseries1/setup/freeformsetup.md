@@ -21,7 +21,7 @@ Ensure that:
 
   ![Selecting FreeForm](images/selectfreeform.png)
 
-  The instance will be created as a **FreeForm** application instance. You are now ready to create a **FreeForm** application.
+  The instance will be created as a **FreeForm** application instance.
 
   ![FreeForm Instance](images/freeforminstance.png)
 
