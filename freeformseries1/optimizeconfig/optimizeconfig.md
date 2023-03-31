@@ -1,4 +1,4 @@
-# Optimal configuration
+# Optimize configuration
 
 ## About
 
