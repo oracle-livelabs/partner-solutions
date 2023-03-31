@@ -11,7 +11,7 @@ Ensure that:
 
 1. *Check whether you have Oracle EPM Enterprise Cloud subscription* 
   
-  When you login to your EPM Cloud environment, check whether you have an ability to pick from the below applications as shown. You will be selecting **FreeForm** from the below.
+  When you login to your EPM Cloud environment, check whether you have an ability to pick from the below applications as shown. If you have all these applications available that means you have an **Enterprise** subscription. You will be selecting **FreeForm** from the below.
 
 	![Readiness to create EPM Enterprise Cloud Service Application](images/enterpriseappreadiness.png)
 
@@ -21,7 +21,7 @@ Ensure that:
 
   ![Selecting FreeForm](images/selectfreeform.png)
 
-  The instance will be created as a **FreeForm** application instance.
+  The instance will be created as a **FreeForm** application instance. You are now ready to create a **FreeForm** application.
 
   ![FreeForm Instance](images/freeforminstance.png)
 

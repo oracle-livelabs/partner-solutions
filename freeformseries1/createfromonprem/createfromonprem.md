@@ -2,11 +2,11 @@
 
 ## Introduction
 
-One of the main use cases for FreeForm application is the ease with which an Essbase outline can be used to build this application in EPM Cloud. 
+One of the main use cases for FreeForm application is the ease with which an Essbase outline can be used to build FreeForm application in EPM Cloud. 
 	![Image alt text](images/usecasesummary.png)
 In this lab, we will use an existing Essbase outline for Aggregate Storage Option (ASO) and create a FreeForm application from it.
 
-Estimated Lab Time: **8 minutes**
+Estimated Lab Time: **7 minutes**
 
 ### About
 Use EPM Cloud FreeForm application to migrate on-premises Essbase outline. The process will use an outline file from on-premises application to build the FreeForm ASO application.
@@ -35,7 +35,7 @@ This lab assumes you have:
 
   ![Image alt text](images/namedescription.png)
 
-3. Ensure **Application Setup** is set to **Import Essbase OTL/LCM**. You will need to specificy the **Location** of the file which could either be your **Local drive*** or the **Application Inbox**.
+3. Ensure **Application Setup** is set to **Import Essbase OTL/LCM**. You will need to specificy the **Location** of the file which could either be your **Local drive** or the **Application Inbox**.
 
   ![Image alt text](images/setuplocation.png)
 
@@ -43,11 +43,11 @@ This lab assumes you have:
 
   ![Image alt text](images/onpremoutline.png)
 
-5. **Review** all your details before hitting **Create**. Once your hit **Create**, an **Application Creation Status** will guide you through the creation process.
+5. **Review** all your details before hitting **Create**. Once you hit **Create**, an **Application Creation Status** window will guide you through the creation process.
   ![Image alt text](images/beforecreate.png)
   ![Image alt text](images/creationstatus.png)
 
-6. You have created you **FreeForm application using an Oracle Essbase outline** (an on-premises outline).
+6. You have created a **FreeForm application using an Oracle Essbase outline** (an on-premises outline).
   ![Image alt text](images/creationcomplete.png)
    
 ## Learn More

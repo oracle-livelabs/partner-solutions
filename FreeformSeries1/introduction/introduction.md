@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-The workshop is a stepwise guide to create an Oracle FreeForm application in EPM Cloud. Important tips, tricks and considerations will be part of the constituent labs to empower developers and implementers address common pitfalls and doubts on when, how and what to create as a FreeForm applications in EPM Cloud.
+The workshop is a stepwise guide to create an Oracle FreeForm application in EPM Cloud. Important tips, tricks and considerations will be part of the constituent labs to empower developers and implementers address common pitfalls and doubts on when, how and what to create as FreeForm applications in EPM Cloud.
 
 Estimated Workshop Time: **25 minutes**. The estimated time will vary depending on the complexity of the application being deployed.
 

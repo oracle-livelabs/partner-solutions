@@ -2,17 +2,18 @@
 
 ## Introduction
 
-You can also use the **Application Creation Wizard** in Oracle EPM Cloud to create FreeForm applications. This lab will walkthrough the steps of creating a FreeForm application with multiple cubes in the application.
+You can also use the **Application Creation Wizard** in Oracle EPM Cloud to create FreeForm applications. This lab will walk you through the steps of creating a FreeForm application with multiple plan types or cubes. For more information check [Managing cubes](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/plantype.html)
 
-Estimated Lab Time: **10 minutes**
+Estimated Lab Time: **8 minutes**
 
 ### About
-While a few initial steps will be the same, creating FreeForm application using the **Application Creation Wizard** vastly differs from importing an Outline or a Snapshot. You will learn how to quickly get a FreeForm application stood along with its dimensions across multiple cubes.
+While a few initial steps will be the same as the previous lab, creating FreeForm application using the **Application Creation Wizard** vastly differs from importing an Outline or a Snapshot. You will learn how to quickly get a FreeForm application stood up with dimensions across multiple cubes.
 
 ### Objectives
 
 In this lab, you will:
 * Create a FreeForm application using the **Application Creation Wizard** aka **Create from Scratch**
+* Create multiple **cubes** in the application
 
 ### Prerequisites
 
@@ -35,7 +36,7 @@ This lab assumes you have:
 
   ![Image alt text](images/applicationsetup.png)
 
-4. You can select upto 12 cubes to create.
+4. You can select upto 12 cubes to create. We will be creating 2 cubes in this lab.
   ![Image alt text](images/upto12cubes.png) 
 
 5. These cubes can be a combination of **block storage (BSO)** and/ or  **aggregate storage (ASO cubes)**. For more information on **Multi-Cube FreeForm Applications** check [Understanding FreeForm Applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html). For this exercise we will select 2 cubes. We will make one of the cubes an ASO cube.
@@ -44,17 +45,17 @@ This lab assumes you have:
 6. Upon hitting **Next** the **Create Dimensions** screen shows up.
   ![Image alt text](images/createdimensionff.png)
 
-7. Enable both **Account** and **Period** type dimension and rename them to **Measures** and **FiscalPeriod** respectively. We will discuss why this is important during the **Optimize FreeForm Configuration** lab (next lab). Hit **Next** after this dimension configuration.
+7. Enable both **Account** and **Period** type dimension and rename them to **Measures** and **FiscalPeriod** respectively. We will discuss why this is important during the **Optimizing FreeForm Applications** lab (next lab). Hit **Next**.
   ![Image alt text](images/accountfiscalperiod.png)
 
 8. Review and hit **Create** in this next step. 
   ![Image alt text](images/createffscratch.png)
 
-9. Track the status through Creation for the FreeForm application. 
+9. Track the status through Creation of the FreeForm application. 
   ![Image alt text](images/ffscratchcreationstatus.png)
   ![Image alt text](images/ffscratchcreated.png)
-
-10. Keep your FreeForm application intact that was created from this lab for next lab. 
+  
+   Keep your FreeForm application intact that was created from this lab for the next lab. 
 
 ## Learn More
 
