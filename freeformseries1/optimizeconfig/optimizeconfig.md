@@ -73,8 +73,8 @@ Assigning the time or period dimension appropriately aids in two main aspects -
 
 ### Additional Tips and Techniques
 A following workshop will share tips and techniques on optimizing FreeForm applications for following - 
-* How to design optimal Data forms in absence of start and end periods from scenario management. More information on [Designing Data Forms](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/creating_a_freeform_app_using_the_application_creation_wizard.html)
-* Using subvars and groovy scripting to create data form open and close periods
+* How to design optimal Data forms in absence of start and end periods from scenario management. More information on [Designing Data Forms](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/forms.html)
+* Using subvars and groovy scripting to create data form open and close periods. More information on [About Substitution Variables](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/about_substitution_variables.html)
 * Using groovy scripting to ensure focused data pushes between ASO and BSO plan types
 
 
