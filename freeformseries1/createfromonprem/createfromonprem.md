@@ -6,7 +6,7 @@ One of the main use cases for FreeForm application is the ease with which an Ess
 	![Image alt text](images/usecasesummary.png)
 In this lab, we will use an existing Essbase outline for Aggregate Storage Option (ASO) and create a FreeForm application from it.
 
-Estimated Lab Time: **7 minutes**
+Estimated Lab Time: 7 minutes
 
 ### About
 Use EPM Cloud FreeForm application to migrate on-premises Essbase outline. The process will use an outline file from on-premises application to build the FreeForm ASO application.

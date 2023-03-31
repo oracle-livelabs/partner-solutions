@@ -4,7 +4,7 @@
 
 There are certain considerations to optimize a FreeForm application. This lab will start the process of building to optimize some such configurations, one of which was already done in the previous lab for **Period** dimension during the creation of the **Scratch** FreeForm application. In addition to understanding **Period** dimension configuration, you will also be uploading additional dimensions to pave the way for follow-on optimal configurations in the following workshop and labs.
 
-Estimated Lab Time: **10 minutes**
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 

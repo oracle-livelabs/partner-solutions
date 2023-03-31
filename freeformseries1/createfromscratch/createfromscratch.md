@@ -4,7 +4,7 @@
 
 You can also use the **Application Creation Wizard** in Oracle EPM Cloud to create FreeForm applications. This lab will walk you through the steps of creating a FreeForm application with multiple plan types or cubes. For more information check [Managing cubes](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/plantype.html)
 
-Estimated Lab Time: **8 minutes**
+Estimated Lab Time: 8 minutes
 
 ### About
 While a few initial steps will be the same as the previous lab, creating FreeForm application using the **Application Creation Wizard** vastly differs from importing an Outline or a Snapshot. You will learn how to quickly get a FreeForm application stood up with dimensions across multiple cubes.
