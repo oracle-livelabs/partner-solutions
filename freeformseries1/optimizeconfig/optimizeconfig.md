@@ -1,10 +1,12 @@
 # Optimize configuration
-
-## About
-
-There are certain considerations to optimize a FreeForm application. This lab will start the process of building to optimize some such configurations, one of which was already done in the previous lab for **Period** dimension during the creation of the **Scratch** FreeForm application. In addition to understanding **Period** dimension configuration, you will also be uploading additional dimensions to pave the way for follow-on optimal configurations in the following workshop and labs.
+## Introduction
+In this lab, you will create and add members to dimensions in the FreeForm application. Additionally, you will also gather understanding of optimal FreeForm application configuration settings.  
 
 Estimated Lab Time: 10 minutes
+
+### About optimizing FreeForm applications
+There are certain considerations to optimize a FreeForm application. This lab will start the process of building to optimize some such configurations, one of which was already done in the previous lab for **Period** dimension during the creation of the **Scratch** FreeForm application. In addition to understanding **Period** dimension configuration, you will also be uploading additional dimensions to pave the way for follow-on optimal configurations in the following workshop and labs.
+
 
 ### Objectives
 
@@ -23,22 +25,22 @@ This lab assumes you have:
 ## Task 1: Dimension configuration
 
 1. Navigate to dimensions in the application created in the previous lab. Click on **Overview** and the navigate to **Dimensions**.
-	![Image alt text](images/appoverview.png)
-	![Image alt text](images/appdimensions.png)
+	![Overview of the application](images/appoverview.png)
+	![Go to application dimensions](images/appdimensions.png)
 
 2. When in **Dimensions** toggle or ensure that you have picked **All** in the dropdown.
-	![Image alt text](images/alldimensions.png)
-	![Image alt text](images/measureaccount.png)
+	![Toggle to view all cubes dimensions](images/alldimensions.png)
+	![FiscalPeriod and Measures dimension for both cubes](images/measureaccount.png)
 
 3. Create 3 more dimensions namely **Scenario**, **FiscalYear** and **Company**
-    ![Image alt text](images/createdim.png)
-	![Image alt text](images/scenariodim.png)
-	![Image alt text](images/scenariocreated.png)
+    ![Create additional dimensions](images/createdim.png)
+	![Scenario dimension and its setup](images/scenariodim.png)
+	![Scenario dimension created](images/scenariocreated.png)
 
 4. Similary create **FiscalYear** and **Company**. Next we will import members into these dimensions using files.
-	![Image alt text](images/fiscalyearcompany.png)
+	![Create FiscalYear and Company like Scenario dimension](images/fiscalyearcompany.png)
 
-5. Download the files with members below to your local drive
+5. Download the files with dimension members below to your local drive
 	* [Company dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Company.csv) 
 	* [Measures dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Measures.csv) 
 	* [FiscalYear dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalYear.csv) 
@@ -46,24 +48,24 @@ This lab assumes you have:
 	* [Scenario dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Scenario.csv) 
 
 6. From **Overview>Dimensions** hit **Import**.
-	![Image alt text](images/importdimensions.png)
+	![Import dimensions](images/importdimensions.png)
 
 7. Hit **Create** and navigate to select the downloaded files to build dimensions.
-	![Image alt text](images/createimportjob.png)
-	![Image alt text](images/choosedimfiles.png)
-	![Image alt text](images/clickimport.png)
+	![Create import dimension job](images/createimportjob.png)
+	![Choose downloaded import files](images/choosedimfiles.png)
+	![Run the import](images/clickimport.png)
    
    Check the **Refresh Database if Import Metadata is successful** option and hit **OK**.
-	![Image alt text](images/refreshoption.png)
+	![Check Refresh Database on the pop up window](images/refreshoption.png)
 
    Job successfully submitted window appears - Hit **OK**.
-   	![Image alt text](images/jobsubmitted.png)
+    ![Job successfully submitted window](images/jobsubmitted.png)
 
 8. Hit **Close** on open windows for the application and go to **Jobs** to check the status of dimension build.
-	![Image alt text](images/jobs.png)
+	![Go to Jobs to check status of Import and Refresh Database](images/jobs.png)
    
    Check to ensure both **Import Metadata** and **Refresh Database** were successful. You have completed the build of dimensions.
-   ![Image alt text](images/jobsuccessful.png)
+   ![Successful import and refresh jobs](images/jobsuccessful.png)
    
 
 ## Task 2: Tips and Techniques

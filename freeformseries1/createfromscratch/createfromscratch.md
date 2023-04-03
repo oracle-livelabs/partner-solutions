@@ -6,7 +6,7 @@ You can also use the **Application Creation Wizard** in Oracle EPM Cloud to crea
 
 Estimated Lab Time: 8 minutes
 
-### About
+### About creating FreeForm application using Application Creation Wizard
 While a few initial steps will be the same as the previous lab, creating FreeForm application using the **Application Creation Wizard** vastly differs from importing an Outline or a Snapshot. You will learn how to quickly get a FreeForm application stood up with dimensions across multiple cubes.
 
 ### Objectives
@@ -26,34 +26,34 @@ This lab assumes you have:
 
 1. Hit **Start** under **Create a new application**.
 
-	![Image alt text](images/selectstartforscratch.png)
+	![Create a new FreeForm application](images/selectstartforscratch.png)
 
 2. Populate **Name** and **Description** for the FreeForm application being created.
 
-  ![Image alt text](images/namedescription.png)
+  ![Populate name and description](images/namedescription.png)
 
 3. Under **Application Setup** select **Create Cubes**. 
 
-  ![Image alt text](images/applicationsetup.png)
+  ![Setup cubes for FreeForm application](images/applicationsetup.png)
 
 4. You can select upto 12 cubes to create. We will be creating 2 cubes in this lab.
-  ![Image alt text](images/upto12cubes.png) 
+  ![Select 2 cubes to create](images/upto12cubes.png) 
 
 5. These cubes can be a combination of **block storage (BSO)** and/ or  **aggregate storage (ASO cubes)**. For more information on **Multi-Cube FreeForm Applications** check [Understanding FreeForm Applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html). For this exercise we will select 2 cubes. We will make one of the cubes an ASO cube.
-  ![Image alt text](images/numberofcubes.png)
+  ![Name the 2 cubes](images/numberofcubes.png)
 
 6. Upon hitting **Next** the **Create Dimensions** screen shows up.
-  ![Image alt text](images/createdimensionff.png)
+  ![Creating dimensions page](images/createdimensionff.png)
 
 7. Enable both **Account** and **Period** type dimension and rename them to **Measures** and **FiscalPeriod** respectively. We will discuss why this is important during the **Optimizing FreeForm Applications** lab (next lab). Hit **Next**.
-  ![Image alt text](images/accountfiscalperiod.png)
+  ![Rename to Measures and FiscalPeriod](images/accountfiscalperiod.png)
 
 8. Review and hit **Create** in this next step. 
-  ![Image alt text](images/createffscratch.png)
+  ![Create application](images/createffscratch.png)
 
 9. Track the status through Creation of the FreeForm application. 
-  ![Image alt text](images/ffscratchcreationstatus.png)
-  ![Image alt text](images/ffscratchcreated.png)
+  ![Application creation status](images/ffscratchcreationstatus.png)
+  ![Application created](images/ffscratchcreated.png)
   
    Keep your FreeForm application intact that was created from this lab for the next lab. 
 
