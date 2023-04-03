@@ -38,7 +38,12 @@ This lab assumes you have:
 4. Similary create **FiscalYear** and **Company**. Next we will import members into these dimensions using files.
 	![Image alt text](images/fiscalyearcompany.png)
 
-5. Download the files with members for [Company dimension](files/Company.csv) [Measures dimension](files/Measures.csv) [FiscalYear dimension](files/FiscalYear.csv) [FiscalPeriod dimension](files/FiscalPeriod.csv) and [Scenario dimension](files/Scenario.csv) to your local drive. 
+5. Download the files with members below to your local drive
+	* [Company dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Company.csv) 
+	* [Measures dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Measures.csv) 
+	* [FiscalYear dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalYear.csv) 
+	* [FiscalPeriod dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalPeriod.csv)
+	* [Scenario dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Scenario.csv) 
 
 6. From **Overview>Dimensions** hit **Import**.
 	![Image alt text](images/importdimensions.png)
