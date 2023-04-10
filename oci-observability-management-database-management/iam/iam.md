@@ -61,14 +61,14 @@ Policy to allow the service Database Management (dpd) to read secret in the Vaul
 
 	Enter the following rule and click Create.
 	```
-	Allow service dpd to read secret-family in tenancy
+	<copy>Allow service dpd to read secret-family in tenancy</copy>
 	```
 
 3. Click the Create Policy button. Enter the required details, the Name *DBMGMT_User_Policy_LiveLabs* and Description *User policy for Database Management service for compartement LiveLabs*. Select the *root* compartment where this resource will be created in. Switch the Show manual editor toggle to enable.
 
 	Enter the following rule and click Create.
 	```
-	Allow group 'DBMGMT_LiveLabs_Group' to manage dbmgmt-family in tenancy where any {target.compartment.name = 'LiveLabs'}
+	<copy>Allow group 'DBMGMT_LiveLabs_Group' to manage dbmgmt-family in tenancy where any {target.compartment.name = 'LiveLabs'}
 	Allow group 'DBMGMT_LiveLabs_Group' to manage metrics in tenancy where any {target.compartment.name = 'LiveLabs'}
 	Allow group 'DBMGMT_LiveLabs_Group' to manage alarms in tenancy where any {target.compartment.name = 'LiveLabs'}
 	Allow group 'DBMGMT_LiveLabs_Group' to manage objects in tenancy where any {target.compartment.name = 'LiveLabs'}
@@ -77,7 +77,7 @@ Policy to allow the service Database Management (dpd) to read secret in the Vaul
 	Allow group 'DBMGMT_LiveLabs_Group' to use external-database-family in tenancy where any {target.compartment.name = 'LiveLabs'}
 	Allow group 'DBMGMT_LiveLabs_Group' to use autonomous-database-family in tenancy where any {target.compartment.name = 'LiveLabs'}
 	Allow group 'DBMGMT_LiveLabs_Group' to manage virtual-network-family in tenancy where any {target.compartment.name = 'LiveLabs'}
-	Allow group 'DBMGMT_LiveLabs_Group' to manage secret-family in tenancy where any {target.compartment.name = 'LiveLabs'}
+	Allow group 'DBMGMT_LiveLabs_Group' to manage secret-family in tenancy where any {target.compartment.name = 'LiveLabs'}</copy>
 	```
 
 ## Acknowledgements
