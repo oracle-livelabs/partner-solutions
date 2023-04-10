@@ -46,35 +46,31 @@ This lab assumes you have the necessary privileges for the creation of all the c
 
 ## Task 2: Create the DBCS
 
-1. Step 1 - tables sample
+1. Click the navigation menu, click the link *Oracle Database*, and then *Oracle Base Database (VM, BM)*.
 
-  Use tables sparingly:
+	![Image alt text](images/image7.png)
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+2. Select the compartment *LiveLabs* and clikc on *Create DB system*.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+	![Image alt text](images/image8.png)
 
-    - List item 1
-    - List item 2
+3. Provide the following information, Name of the DB System *DBSystem-LiveLabs*, Change the shape for *1 core*
 
-3. Code examples
+	![Image alt text](images/image9.png)
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
 
-4. Code examples that include variables
+4. Change the Oracle Database software edition to *Enterprise Edition*. Add your SSH key and select *Bring Your Own License (BYOL)*.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+	![Image alt text](images/image10.png)
+
+5. Provide the VCN and private subnet information and the hostname and click on *Next*.
+
+	![Image alt text](images/image11.png)
+
+6. Provide the Database name, the PDB name and password with sys and TDE. You can also disable database backups. Click on *Create DB system*.
+
+	![Image alt text](images/image12.png)
+
 
 ## Task 3: Create the ADB
 
