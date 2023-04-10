@@ -26,7 +26,6 @@ This lab assumes you have:
 * An Oracle Cloud account
 * All previous labs successfully completed
 
-
 *Below, is the "fold"--where items are collapsed by default.*
 
 ## Task 1: Concise Task Description
