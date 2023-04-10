@@ -20,17 +20,29 @@ This lab assumes you have the necessary privileges for the creation of all the c
 
 ## Task 1: Create the network components
 
-1. Step 1
+1. From OCI Console main page, click on *Set up a network with wizard*.
 
-	![Image alt text](images/sample1.png)
+	![Image alt text](images/image1.png)
 
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
+2. Click on *Start VCN Wizard*
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click *Navigation*.
+	![Image alt text](images/image2.png)
 
-5. Example with bold **text**.
+3. Provide the VCN Name and the Compartment *LiveLabs*. You have to provide the VCN CIDR block.
 
-   If you add another paragraph, add 3 spaces before the line.
+	![Image alt text](images/image3.png)
+
+4. Provide the CIDR block for the public and private subnets and click on *Next*.
+
+	![Image alt text](images/image4.png)
+
+5. Validate the *Review and create* page and click on *Create*.
+
+	![Image alt text](images/image5.png)
+
+6. The VCN is successfully created.
+
+	![Image alt text](images/image6.png)
 
 ## Task 2: Create the DBCS
 

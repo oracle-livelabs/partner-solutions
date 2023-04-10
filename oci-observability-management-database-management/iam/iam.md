@@ -25,7 +25,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image1.png)
 
-2. Click the Create Compartment button. Enter the required details, the Name and Description, and optionally, select a Parent Compartment. Click the Create Compartment button to create the desired compartment.
+2. Click the Create Compartment button. Enter the required details, the Name *LiveLab* and Description *Compartment for the LiveLabs*, select a Parent Compartment. Click the Create Compartment button to create the desired compartment.
 
 	![Image alt text](images/image2.png)
 
@@ -43,7 +43,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image5.png)
 
-4. Enter the required details, the Name and Description and select users to add to this group. Click on Create.
+4. Enter the required details, the Name *DBMGMT_LiveLabs_Group* and Description *Database Management Group associated to the compartement LiveLabs* and select users to add to this group. Click on Create.
 
 	![Image alt text](images/image6.png)
 
