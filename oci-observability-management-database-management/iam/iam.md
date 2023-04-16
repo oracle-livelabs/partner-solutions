@@ -35,7 +35,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image3.png)
 
-	**_NOTE:_** For old tenancy without *Domains*, you will find the menu *Group* under *Identity*
+	> **_NOTE:_** For old tenancy without *Domains*, you will find the menu *Group* under *Identity*
 
 2. Make sure you are in the root compartment and click on the Default domain.
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image5.png)
 
-4. Enter the required details, the Name *DBMGMT_LiveLabs_Group* and Description *Database Management Group associated to the compartement LiveLabs* and select users to add to this group. Click on Create.
+4. Enter the required details, the Name `DBMGMT_LiveLabs_Group` and Description *Database Management Group associated to the compartement LiveLabs* and select users to add to this group. Click on Create.
 
 	![Image alt text](images/image6.png)
 
@@ -61,7 +61,7 @@ Policy to allow the service Database Management (dpd) to read secret in the Vaul
 
 	![Image alt text](images/image8.png)
 
-	Enter the following rule and click Create.
+	Enter the following rule and click *Create*.
 	```
 	<copy>Allow service dpd to read secret-family in tenancy</copy>
 	```

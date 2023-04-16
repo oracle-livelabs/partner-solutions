@@ -131,7 +131,7 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image22.png)
 
-	**_NOTE:_** The information for the Network Security Group will be provided later in the lab. Leave the section empty.
+	> **_NOTE:_** The information for the Network Security Group will be provided later in the lab. Leave the section empty.
 
 4. Click on the newly created private endpoint and take note of the *Private IP*.
 

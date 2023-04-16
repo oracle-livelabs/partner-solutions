@@ -33,16 +33,12 @@
             "filename": "../../registeradb/registeradb.md"
         },
         {
-            "title": "Lab 5: Explore Database Management Metrics",
-            "filename": "../../exploremetrics/exploremetrics.md"
-        },
-        {
-            "title": "Lab 6: Explore Database Basic Management Option",
-            "filename": "../../databasebasicmanagement/databasebasicmanagement.md"
-        },
-        {
-            "title": "Lab 7: Explore Database Full Management Option",
+            "title": "Lab 5: Explore Database Full Management Option with DBCS",
             "filename": "../../databasefullmanagement/databasefullmanagement.md"
+        },
+        {
+            "title": "Lab 6: Explore Database Management Metrics",
+            "filename": "../../exploremetrics/exploremetrics.md"
         },
         {
             "title": "Need Help?",

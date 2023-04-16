@@ -1,85 +1,64 @@
-# Title of the Lab
+# Register the DBCS in Database Management service
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, we will register the DBCS in Observability & Management Database Management service. The Database Management Private Endpoint allows the communication between the subnet where the database is running on the Database Management service. Vault is also used to securely use DBSNMP password.
 
-Estimated Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 10 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1-Setup
-* Objective 2
-* Objective 3
+* Register the DBS in Database Management Service
 
-### Prerequisites (Optional)
+### Prerequisites
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+This lab assumes you have the necessary privileges for the creation of all the components.
 
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+## Task 1: Check the status of Database Management
 
+1. Click the navigation menu, click the link *Oracle Database*, and then *Oracle Base Database (VM, BM)*.
 
-*This is the "fold" - below items are collapsed by default*
+  ![Image alt text](images/image1.png)
 
-## Task 1: Concise Step Description
+2. Select the DBCS *DBSystem-LiveLabs*. Make sure to be in the compartement *LiveLabs*.
 
-(optional) Step 1 opening paragraph.
+  ![Image alt text](images/image2.png)
 
-1. Sub step 1
+3. From the *DBSystem-LiveLabs* homepage, click on the database *CDB01* under the menu *Databases (1)*.
 
-	![Image alt text](images/sample1.png)
+  ![Image alt text](images/image3.png)
 
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
+4. From the *CDB01* homepage, go down the page and you will see the status of *Database Management* is *Not enabled*. You will notice some metrics displayed coming the namespace *oci_database*. This namespace is the default metric namespace when Database Management is not enabled and provides 13 different metrics.
 
-2. Sub step 2
+  ![Image alt text](images/image4.png)
 
-  ![Image alt text](images/sample1.png)
+## Task 2: Enable Database Management for the CDB
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+1. In the *CDB01* homepage, under *Associated services / Database Management:*, click *Enable*.
 
-5. Example with bold **text**.
+  ![Image alt text](images/image5.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+2. Validate the following information.
 
-## Task 2: Concise Step Description
+  ![Image alt text](images/image6.png)
 
-1. Sub step 1 - tables sample
+3. Provide the Database user name *dbsnmp* you have configured in Lab #2, the secret information `DBSystem-LiveLabs_DBSNMP` and the private endpoint `LiveLabs_DBMGMT_PrivateEndpoint` also created in Lab #2.
 
-  Use tables sparingly:
+  ![Image alt text](images/image7.png)
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+4. Select the Management option *Full Management*, and click on *Enable Database Management*.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+  ![Image alt text](images/image8.png)
 
-    - List item 1
-    - List item 2
+5. You can follow the progression of the process under *Work requests* menu. If the process fails, you can also have the log and error messages.
 
-3. Code examples
+  ![Image alt text](images/image9.png)
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+6. Once the registration is completed, you will notice the status of Database management is either *Full* or *Basic* and you will be able to select another metric namespace `oracle_oci_database`. This namespace provides more database metrics (38) than the default one (13).
 
-4. Code examples that include variables
+  ![Image alt text](images/image10.png)
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 ## Learn More
 
