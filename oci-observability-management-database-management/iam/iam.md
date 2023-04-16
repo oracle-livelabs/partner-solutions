@@ -13,7 +13,7 @@ In this lab, you will:
 * Create a group
 * Create policies
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * A valid Oracle Cloud Infrastructure paid account.
@@ -34,6 +34,8 @@ This lab assumes you have:
 1. Click the navigation menu, click the link Identity & Security, and then Domains.
 
 	![Image alt text](images/image3.png)
+
+	**_NOTE:_** For old tenancy without *Domains*, you will find the menu *Group* under *Identity*
 
 2. Make sure you are in the root compartment and click on the Default domain.
 
