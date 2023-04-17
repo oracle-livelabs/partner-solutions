@@ -77,12 +77,12 @@ This lab assumes you have the necessary privileges for the creation of all the c
 6. Using your prefered client tool, connect to the new CDB using *sys* user. Run the following SQL statements to configure the DBSNMP user account. This user will be used by Database Management.
 
 	```
-	<copy>GRANT CREATE PROCEDURE TO DBSNMP;</copy>
-	<copy>GRANT SELECT ANY DICTIONARY, SELECT_CATALOG_ROLE TO DBSNMP;</copy>
-	<copy>GRANT ALTER SYSTEM TO DBSNMP;</copy>
-	<copy>GRANT ADVISOR TO DBSNMP;</copy>
-	<copy>GRANT EXECUTE ON DBMS_WORKLOAD_REPOSITORY TO DBSNMP;</copy>
-	<copy>GRANT CREATE SESSION TO DBSNMP;</copy>
+	<copy>GRANT CREATE PROCEDURE TO DBSNMP CONTAINER=ALL;</copy>
+	<copy>GRANT SELECT ANY DICTIONARY, SELECT_CATALOG_ROLE TO DBSNMP CONTAINER=ALL;</copy>
+	<copy>GRANT ALTER SYSTEM TO DBSNMP CONTAINER=ALL;</copy>
+	<copy>GRANT ADVISOR TO DBSNMP CONTAINER=ALL;</copy>
+	<copy>GRANT EXECUTE ON DBMS_WORKLOAD_REPOSITORY TO DBSNMP CONTAINER=ALL;</copy>
+	<copy>GRANT CREATE SESSION TO DBSNMP CONTAINER=ALL;</copy>
 	<copy>ALTER USER DBSNMP ACCOUNT UNLOCK;</copy>
 	<copy>ALTER USER DBSNMP IDENTIFIED BY "<password>";</copy>
 	```

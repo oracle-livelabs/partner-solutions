@@ -25,11 +25,11 @@
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 3: Register the DBCS in Database Management",
+            "title": "Lab 3: Enable Database Management for the DBCS",
             "filename": "../../registerdbcs/registerdbcs.md"
         },
         {
-            "title": "Lab 4: Register the ADB in Database Management",
+            "title": "Lab 4: Enable Database Management for the ADB",
             "filename": "../../registeradb/registeradb.md"
         },
         {
