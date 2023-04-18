@@ -83,6 +83,5 @@ Policy to allow the service Database Management (dpd) to read secret in the Vaul
 	```
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.
+* **Last Updated By/Date** - Luc Demanche, April 2023

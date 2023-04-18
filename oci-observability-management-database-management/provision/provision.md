@@ -199,17 +199,6 @@ The database management private endpoint resides in the database subnet and allo
 	![Image alt text](images/image98.png)
 
 
-
-
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.
+* **Last Updated By/Date** - Luc Demanche, April 2023
