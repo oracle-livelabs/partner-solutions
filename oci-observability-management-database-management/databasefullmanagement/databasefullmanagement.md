@@ -2,93 +2,34 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, we will see capabilities that come with Database Full Management option.
 
-Estimated Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 15 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1-Setup
-* Objective 2
-* Objective 3
+* Explore the Fleet Summary
+* Explore monitoring a specific database
+* Explore alert log details
+* Explore tablespace details
+* Explore SQL Tuning Advisor
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+* This lab assumes you have the necessary privileges
 
+## Task 1: Explore the Fleet Summary
 
-*This is the "fold" - below items are collapsed by default*
+## Task 2: Explore monitoring a specific database
 
-## Task 1: Concise Step Description
+## Task 3: Explore alert log details
 
-(optional) Step 1 opening paragraph.
+## Task 4: Explore tablespace details
 
-1. Sub step 1
-
-	![Image alt text](images/sample1.png)
-
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
-
-2. Sub step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Step Description
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+## Task 5: Explore SQL Tuning Advisor
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.
+* **Last Updated By/Date** - Luc Demanche, April 2023
