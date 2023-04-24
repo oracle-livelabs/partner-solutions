@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-As a database administrators, we manage a fleet of databases composed of Autonomous, Standard and Enterprise Edition databases. Everyone has their own way to monitor the fleet, that includes scripts, tools and utilities.
+As a database administrators, we manage a fleet of Autonomous, Standard and Enterprise Edition databases. Everyone has their way of monitoring the fleet, which includes scripts, tools and utilities.
 
 Oracle Cloud Infrastructure has a cloud service called "Database Management", an unified console for on-premises and cloud databases with lifecycle database management capabilities for monitoring, performance management, tuning, and administration.
 
-This workshop will cover the configuration and how to register databases. Once registered, we will explore the capabilities of Database Management and how it could ease the database management of your fleet of databases.
+This workshop will begin by covering the configuration and how to register databases. Once registered, we will explore the capabilities of Database Management and how it could ease your fleet management.
 
 Estimated Time: 2 hours
 

@@ -2,9 +2,7 @@
 
 ## Introduction
 
-In this lab, we will create the infrastructure that will be use to complete all the following labs. The infrastructure will contain the network components (VCN, subnets, NSG, etc), one Database Cloud Service (DBCS) and one Autonomous Database (ADB).
-
-To enable Database Management for the DBCS, we will need to create a Vault entry to securely store the password as well as the Database Management Private Endpoint.
+In this lab, we will create the infrastructure that will be used to complete the following labs. The infrastructure will contain the network components (VCN, subnets, NSG, etc), one Database Cloud Service (DBCS) and one Autonomous Database (ADB). We must create a Vault entry to securely store the password. Database Management Private Endpoint will also need to be created to allow communication between Database Management service and the DBCS.
 
 Estimated Time: 45 minutes
 
@@ -19,7 +17,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you have the necessary privileges for the creation of all the components.
+This lab assumes you have the necessary privileges to create all the components.
 
 ## Task 1: Create the network components
 
@@ -31,7 +29,7 @@ This lab assumes you have the necessary privileges for the creation of all the c
 
 	![Image alt text](images/image2.png)
 
-3. Provide the VCN Name and the Compartment *LiveLabs*. You have to provide the VCN CIDR block.
+3. Provide the VCN Name and the *LiveLabs* Compartment. You have to provide the VCN CIDR block.
 
 	![Image alt text](images/image3.png)
 
@@ -53,11 +51,11 @@ This lab assumes you have the necessary privileges for the creation of all the c
 
 	![Image alt text](images/image7.png)
 
-2. Select the compartment *LiveLabs* and click on *Create DB system*.
+2. Select the *LiveLabs* compartment and click on *Create DB system*.
 
 	![Image alt text](images/image8.png)
 
-3. Provide the following information, Name of the DB System *DBSystem-LiveLabs*, Change the shape for *1 core*
+3. Provide the following information: Name of the DB System *DBSystem-LiveLabs*. Change the shape to *1 core*
 
 	![Image alt text](images/image9.png)
 
@@ -74,7 +72,7 @@ This lab assumes you have the necessary privileges for the creation of all the c
 
 	![Image alt text](images/image12.png)
 
-6. Using your prefered client tool, connect to the new CDB using *sys* user. Run the following SQL statements to configure the DBSNMP user account. This user will be used by Database Management.
+7. Using your prefered client tool, connect to the new CDB using *sys* user. Run the following SQL statements to configure the DBSNMP user account. This user will be used by Database Management.
 
 	```
 	<copy>GRANT CREATE PROCEDURE TO DBSNMP CONTAINER=ALL;</copy>
@@ -87,47 +85,47 @@ This lab assumes you have the necessary privileges for the creation of all the c
 	<copy>ALTER USER DBSNMP IDENTIFIED BY "<password>";</copy>
 	```
 
-7. The service Vault is necessary to securely store DBSNMP password. Click the navigation menu, click the link *Identity & Security* and click on *Vault*
+8. The service Vault is necessary to securely store the DBSNMP password. Click the navigation menu, click the link *Identity & Security* and click on *Vault*
 
 	![Image alt text](images/image13.png)
 
-8. Make sure you are in the compartment *LiveLabs* and click on *Create Vault*
+9. Make sure you are in the *LiveLabs* compartment and click on *Create Vault*
 
 	![Image alt text](images/image14.png)
 
-9. Provide the name *LiveLabs_Vault1* and click on *Create Vault*
+10. Provide the name *LiveLabs_Vault1* and click on *Create Vault*
 
 	![Image alt text](images/image15.png)
 
-10. Select the newly created vault and click on *Master Encryption Keys* under *Resources*. Click on *Create Key*.
+11. Select the newly created vault and click on *Master Encryption Keys* under *Resources*. Click on *Create Key*.
 
 	![Image alt text](images/image16.png)
 
-11. Make sure you are in the compartment *LiveLabs*, use Protection Mode *Software* and provide the name *DBSystem-LiveLabs_Key*. Click on *Create Key*.
+12. Make sure you are in the *LiveLabs* compartment, use Protection Mode *Software* and provide the name *DBSystem-LiveLabs_Key*. Click on *Create Key*.
 
 	![Image alt text](images/image17.png)
 
-12. Select the newly created vault and click on *Secret* under *Resources*. Click on *Create Secret*.
+13. Select the newly created vault and click on *Secret* under *Resources*. Click on *Create Secret*.
 
 	![Image alt text](images/image18.png)
 
-13. Make sure you are in the compartment *LiveLabs*, provide the name *DBSystem-LiveLabs_DBSNMP*, the description *Password of the user DBSNMP*, select the Encrytion Key previously created, and provide the secret content, the password of DBSNMP. Click on *Create Secret*.
+14. Make sure you are in the *LiveLabs* compartment, provide the name *DBSystem-LiveLabs_DBSNMP*, the description *Password of the user DBSNMP*, select the Encrytion Key previously created, and provide the secret content, the DBSNMP password. Click on *Create Secret*.
 
 	![Image alt text](images/image19.png)
 
 ## Task 3: Create the Database Management Private Endpoint and Network Security Group (NSG)
 
-The database management private endpoint resides in the database subnet and allows the communication between the database and Database Management service.
+The database management private endpoint resides in the database subnet and allows communication between the database and Database Management service.
 
-1. Click the navigation menu, click the link *Observability & Management*, and then *Administration * under *Database Management*.
+1. Click the navigation menu, click the *Observability & Management* menu item, and then *Administration * under *Database Management*.
 
 	![Image alt text](images/image20.png)
 
-2. Select *Private Endpoint* under *Administration*. Make sure you are in the compartement *LiveLabs* and click on *Create private endpoint*.
+2. Select *Private Endpoint* under *Administration*. Make sure you are in the *LiveLabs* compartement and click on *Create private endpoint*.
 
 	![Image alt text](images/image21.png)
 
-3. Provide the name *LiveLabs_DBMGMT_PrivateEndpoint*, the description *Database Management PrivateEndpoint for compartment LiveLabs*, make sure you are in the compartment *LiveLabs* and provide the VCN and public subnet information where the DBCS resides. Click on *Create private endpoint*.
+3. Provide the name LiveLabs_DBMGMT_PrivateEndpoint, the description *Database Management PrivateEndpoint for LiveLabs compartment*, make sure you are in the *LiveLabs* compartment and provide the VCN and public subnet information where the DBCS resides. Click on *Create private endpoint*.
 
 	![Image alt text](images/image22.png)
 
@@ -137,15 +135,15 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image23.png)
 
-5. The NSG will allow the communication between the database systems and the Database Management service through the private endpoint. Click the navigation menu, click the link *Virtual cloud networks*, select the VCN *VCN_LiveLabs*, click on *Network Security Groups (0)* and click on *Create Network Security Group*
+5. The NSG will allow communication between the database systems and the Database Management service through the private endpoint. Click the navigation menu, click the link *Virtual cloud networks*, select the VCN *VCN_LiveLabs*, click on *Network Security Groups (0)* and click on *Create Network Security Group*
 
 	![Image alt text](images/image24.png)
 
-5. Provide the name *NetworkSecurityGroup_LiveLabs_DatabaseManagement* and make sure you are in the compartment *LiveLabs*. Click on *Next*.
+6. Provide the name NetworkSecurityGroup_LiveLabs_DatabaseManagement and make sure you are in the compartment *LiveLabs*. Click on *Next*.
 
 	![Image alt text](images/image25.png)
 
-6. Provide the required 2 *Security Rules*. Click on *Create*.
+7. Provide the required 2 *Security Rules*. Click on *Create*.
 
 	![Image alt text](images/image26.png)
 
@@ -154,19 +152,19 @@ The database management private endpoint resides in the database subnet and allo
 | Ingress  | CIDR  | IP address of the Database Management Private Endpoint (10.0.0.172/32) | TCP | 1521 | Connection from Database Management from any port to any database system on port 1521 in the database subnet |
 | Egress  | CIDR  | Range IP address of the database subnet (10.0.0.0/24) | TCP | 1521 | Database Management is sending request to the any database system on port 1521 in the database subnet |
 
-6. Assign the new NSG to the database system. From the DBCS homepage, click on *Edit* next to *Network security groups*.
+8. Assign the new NSG to the database system. From the DBCS homepage, click on *Edit* next to *Network security groups*.
 
 	![Image alt text](images/image27.png)
 
-7. Select `NetworkSecurityGroup_LiveLabs_DatabaseManagement` and click on *Save changes*.
+9. Select `NetworkSecurityGroup_LiveLabs_DatabaseManagement` and click on *Save changes*.
 
 	![Image alt text](images/image28.png)
 
-8. Assign the new NSG to the Database Management Private Endpoint. Select the private endpoint and click on *Network Security Groups: 0*.
+10. Assign the new NSG to the Database Management Private Endpoint. Select the private endpoint and click on *Network Security Groups: 0*.
 
 	![Image alt text](images/image29.png)
 
-9. Select `NetworkSecurityGroup_LiveLabs_DatabaseManagement` and click on *Save changes*.
+11. Select `NetworkSecurityGroup_LiveLabs_DatabaseManagement` and click on *Save changes*.
 
 	![Image alt text](images/image30.png)
 
@@ -178,11 +176,11 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image93.png)
 
-2. Select the compartment *LiveLabs* and click on *Create Autonomous Database*.
+2. Select the *LiveLabs* compartment and click on *Create Autonomous Database*.
 
 	![Image alt text](images/image94.png)
 
-3. Provide the following information, Compartment *LiveLabs*, Display Name, Database Name. Select the desired workload type.
+3. Provide the following information, *LiveLabs* Compartment, Display Name, Database Name. Select the desired workload type.
 
 	![Image alt text](images/image95.png)
 
@@ -190,11 +188,11 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image96.png)
 
-5. Continue by providing the *ADMIN* password. To ease the access to the ADB during the lab, select *Secure access from everywhere*.
+5. Continue by providing the *ADMIN* password. To ease access to the ADB during the lab, select *Secure access from everywhere*.
 
 	![Image alt text](images/image97.png)
 
-6. Complete by providing the licence type, Database Edition *Enterprise Edition* and a contact email. Click on *Create Autonomous Database*.
+6. Complete by providing the license type, Database Edition *Enterprise Edition* and a contact email. Click on *Create Autonomous Database*.
 
 	![Image alt text](images/image98.png)
 

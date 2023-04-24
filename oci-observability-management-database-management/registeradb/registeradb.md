@@ -1,4 +1,4 @@
-# Register the Autonomous Database in Database Management service
+# Enable Database Management for the ADB
 
 ## Introduction
 
@@ -21,7 +21,7 @@ This lab assumes you have the necessary privileges for the creation of all the c
 
 	![Image alt text](images/image1.png)
 
-2. Select the ADB you have created. Make sure to be in the compartment *LiveLabs*.
+2. Select the ADB you have created. Make sure to be in the *LiveLabs* compartment.
 
 3. Under *Associated services*, you can see Database Management is not enabled.
 
