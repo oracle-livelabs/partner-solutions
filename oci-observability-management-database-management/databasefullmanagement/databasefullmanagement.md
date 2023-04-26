@@ -12,7 +12,7 @@ In this lab, you will:
 * Explore the Fleet Summary
 * Explore monitoring a specific database
 * Explore alert log details
-* Explore tablespace details
+* Explore tablespace actions
 * Explore SQL Tuning Advisor
 
 ### Prerequisites
@@ -58,7 +58,33 @@ From this page, you can also open the *Performance Hub*, *AWR Explorer* and *Das
 
   > **_NOTE:_** *Attention log* is a feature available on database 21c or higher.
 
-## Task 4: Explore tablespace details
+## Task 4: Explore tablespace actions
+
+Database Management provides a way to manage tablespaces. You can create, alter and drop a tablespace. You can also add and edit datafiles.
+
+1- Click on *Tablespaces* under the *Resources* menu. You will have the list of tablespace. 
+
+![Image alt text](images/image5.png)
+
+2- You can create a new tablespace by clicking on *Create*. Provide the *Name*, *Type*, *Bigfile*, *Status*, *Encryption* information. Provide the *datafiles* information.
+
+![Image alt text](images/image6.png)
+
+3- Continue by providing the *Space* and *Credentials* information. The credential was created in the Lab #2, task #2. Click on *Create*
+
+![Image alt text](images/image7.png)
+
+  > **_NOTE:_** Same tablespace creation process for PDBs.
+
+You will then see the newly created tablespace in the list.
+
+3- If you click on the 3 dots at the end of any tablespace line, you will have these options.
+
+![Image alt text](images/image8.png)
+
+4- If you click on the arrow to expend the tablespace details, you will see the datafile information. If you click on the 3 dots at the end of any datafile line, you will be able to edit this datafile. You can make any changes, provide credentiel and click on *Save changes*.
+
+![Image alt text](images/image9.png)
 
 ## Task 5: Explore SQL Tuning Advisor
 

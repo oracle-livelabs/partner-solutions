@@ -113,6 +113,11 @@ This lab assumes you have the necessary privileges to create all the components.
 
 	![Image alt text](images/image19.png)
 
+15. Using the same procedure, create a secret with the name *DBSystem-LiveLabs_SYS*, the description *Password of the user SYS*, select the Encrytion Key previously created, and provide the secret content, the SYS password. Click on *Create Secret*. This will be use in the lab #5.
+
+
+	![Image alt text](images/image37.png)
+
 ## Task 3: Create the Database Management Private Endpoint and Network Security Group (NSG)
 
 The database management private endpoint resides in the database subnet and allows communication between the database and Database Management service.
@@ -174,27 +179,27 @@ The database management private endpoint resides in the database subnet and allo
 
 1. Click the navigation menu, click the link *Oracle Database*, and then *Autonomous Transaction Processing*.
 
-	![Image alt text](images/image93.png)
+	![Image alt text](images/image31.png)
 
 2. Select the *LiveLabs* compartment and click on *Create Autonomous Database*.
 
-	![Image alt text](images/image94.png)
+	![Image alt text](images/image32.png)
 
 3. Provide the following information, *LiveLabs* Compartment, Display Name, Database Name. Select the desired workload type.
 
-	![Image alt text](images/image95.png)
+	![Image alt text](images/image33.png)
 
 4. Select the Deployment type. Make sure not to use *Always Free* ADB.
 
-	![Image alt text](images/image96.png)
+	![Image alt text](images/image34.png)
 
 5. Continue by providing the *ADMIN* password. To ease access to the ADB during the lab, select *Secure access from everywhere*.
 
-	![Image alt text](images/image97.png)
+	![Image alt text](images/image35.png)
 
 6. Complete by providing the license type, Database Edition *Enterprise Edition* and a contact email. Click on *Create Autonomous Database*.
 
-	![Image alt text](images/image98.png)
+	![Image alt text](images/image36.png)
 
 
 ## Acknowledgements
