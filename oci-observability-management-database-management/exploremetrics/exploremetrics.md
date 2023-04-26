@@ -2,34 +2,25 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Using OCI Monitoring service, you can activily monitoring your OCI components using *Metrics* and *Alarms*. Monitoring service receives metrics coming from OCI components like the Compute sending metrics on CPU utilization, DBCS sending metrics on Storage Utilization by tablespace, etc. Custom Metrics can also be sent to the Monitoring service.
 
-Estimated Time: -- minutes
+We will see how to create *alarms* based on these metrics.
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Estimated Time: 20 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1-Setup
-* Objective 2
-* Objective 3
+* Create a Notification Topic
+* Create a Database Alarm using metric
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+* A valid Oracle Cloud Infrastructure paid account.
+* The necessary privileges to create the resources in this lab.
 
-
-*This is the "fold" - below items are collapsed by default*
-
-## Task 1: Concise Step Description
+## Task 1: Create a Notification Topic
 
 (optional) Step 1 opening paragraph.
 

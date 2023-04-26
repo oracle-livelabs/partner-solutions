@@ -17,7 +17,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you have the necessary privileges to create all the components.
+This lab assumes you have:
+* A valid Oracle Cloud Infrastructure paid account.
+* The necessary privileges to create the resources in this lab.
 
 ## Task 1: Create the network components
 

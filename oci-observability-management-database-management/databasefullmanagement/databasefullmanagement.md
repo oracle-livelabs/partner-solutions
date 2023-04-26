@@ -13,12 +13,12 @@ In this lab, you will:
 * Explore monitoring a specific database
 * Explore alert log details
 * Explore tablespace actions
-* Explore SQL Tuning Advisor
 
 ### Prerequisites
 
 This lab assumes you have:
-* This lab assumes you have the necessary privileges
+* A valid Oracle Cloud Infrastructure paid account.
+* The necessary privileges to create the resources in this lab.
 
 ## Task 1: Explore the Fleet Summary
 
@@ -86,7 +86,6 @@ You will then see the newly created tablespace in the list.
 
 ![Image alt text](images/image9.png)
 
-## Task 5: Explore SQL Tuning Advisor
 
 ## Acknowledgements
 * **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.
