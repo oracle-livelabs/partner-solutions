@@ -39,6 +39,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image4.png)
 
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.

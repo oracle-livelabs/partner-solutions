@@ -203,6 +203,7 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image36.png)
 
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.

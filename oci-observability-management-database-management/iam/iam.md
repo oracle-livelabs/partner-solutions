@@ -82,6 +82,8 @@ Policy allowing the Management (dpd) service to read the secret in the Vault ser
 	Allow group 'DBMGMT_LiveLabs_Group' to manage secret-family in tenancy where any {target.compartment.name = 'LiveLabs'}</copy>
 	```
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 * **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.
 * **Last Updated By/Date** - Luc Demanche, April 2023

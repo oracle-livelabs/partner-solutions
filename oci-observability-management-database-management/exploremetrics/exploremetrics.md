@@ -13,6 +13,7 @@ Estimated Time: 20 minutes
 In this lab, you will:
 * Create a Notification Topic
 * Create a Database Alarm using metric
+* Check Alarm history
 
 ### Prerequisites
 
@@ -21,65 +22,83 @@ This lab assumes you have:
 * The necessary privileges to create the resources in this lab.
 
 ## Task 1: Create a Notification Topic
+The Notification Topic is required for the creation of an *alarm*. 
 
-(optional) Step 1 opening paragraph.
+1. Click the navigation menu, click the link *Developer Services*, and then *Notifications*.
 
-1. Sub step 1
+	![Image alt text](images/image1.png)
 
-	![Image alt text](images/sample1.png)
+2. Make sure you are location in the *LiveLabs* compartment and click on *Create Topic*.
 
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
+	![Image alt text](images/image2.png)
 
-2. Sub step 2
+3. Provide the following information, Name *LiveLabs_NotificationTopic* and Description *Notification Topic used by Monitoring service*. Click on *Create*.
 
-  ![Image alt text](images/sample1.png)
+	![Image alt text](images/image3.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+4. Once the topic is created, we have to create a subscription. Click on the newly created topic and click on *Create Subscription*.
 
-5. Example with bold **text**.
+	![Image alt text](images/image4.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+5. There several options for selecting the subscription protocol, for example, email, Oracle Cloud Function, or Slack. For this lab, create an email type subscription. Select Email in the *Protocol* dropdown list and provide the email address. Your request will show as *Pending* until you approve this new subscription.
 
-## Task 2: Concise Step Description
+	![Image alt text](images/image5.png)
 
-1. Sub step 1 - tables sample
+> **_NOTE:_** If you are not getting the email, please look in your spam folder.
 
-  Use tables sparingly:
+6. Check your email inbox to approve the subscription. Click on *Confirm subscription*.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+	![Image alt text](images/image5-1.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+7. A new browser tab will open to confirm the activation.
 
-    - List item 1
-    - List item 2
+	![Image alt text](images/image5-2.png)
 
-3. Code examples
+## Task 2: Create a Database Alarm using metric
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+We will create an alarm based on the CPU utilization of
+1. Click the navigation menu, click the link *Observability & Management*, and then *Alert Definitions*.
 
-4. Code examples that include variables
+	![Image alt text](images/image6.png)
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+2. Make sure you are location in the *LiveLabs* compartment and click on *Create Alarm*.
 
-## Learn More
+	![Image alt text](images/image7.png)
 
-*(optional - include links to docs, white papers, blogs, etc)*
+3. Provide Alarm information, Alarm name `CDB01_CPUCriticalAlarm` and Alarm body *CPU Critical Alarm on CDB01*. Provide Metric information, *LiveLabs* compartment, Metric namespace `oracle_oci_database`, Metric name *CpuUtilization*.
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+	![Image alt text](images/image8.png)
+
+  > **_NOTE:_** To utilize the metrics that come with *Database Management*, you must use the namespace `oracle_oci_database`.
+
+4. Provide Metric dimensions information, Dimension name *resourceName* and Dimension value *CDB01*. Provide trigger rule information, operator *greater than*, Value *1*, Trigger delay minutes *1*. You will notice the graph automatically updated with the previous information. The red dotted line represents the trigger value. An alarm will be created when CDB01 will utilize 1% of the database allocated CPU.
+
+	![Image alt text](images/image9.png)
+
+5. Provide Destination information, Destination service *Notifications*, *LiveLabs* compartment and Topic previously created *LiveLabs_NotificationTopic*. Make sure to checked *Enable this alarm?* and click on *Save alarm*
+
+	![Image alt text](images/image10.png)
+
+6. You will have the summary of the newly created alarm.
+
+	![Image alt text](images/image11.png)
+
+## Task 3: Check alarm history
+
+1. Click the navigation menu, click the link *Observability & Management*, and then *Alert Definitions*.
+
+	![Image alt text](images/image6.png)
+
+2. Make sure you are location in the *LiveLabs* compartment and click on the desire *Alarm name*.
+
+	![Image alt text](images/image12.png)
+
+3. Go to the bottom of the page, select the desire period and you will see the alarm history. In this example, the alarm fired 2 times. You should have received emails for each transition changes.
+
+	![Image alt text](images/image13.png)
+
+Congratulations! You have completed all the necessary labs and tasks.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.
+* **Last Updated By/Date** - Luc Demanche, April 2023

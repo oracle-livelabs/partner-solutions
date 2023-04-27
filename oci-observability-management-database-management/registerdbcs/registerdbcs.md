@@ -105,6 +105,8 @@ This lab assumes you have:
 
   I strongly encourage you to explore *Performance Hub*. This is a powerful tool to help you identify performance issues from the database point of view.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 * **Author** - Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.
 * **Last Updated By/Date** - Luc Demanche, April 2023
