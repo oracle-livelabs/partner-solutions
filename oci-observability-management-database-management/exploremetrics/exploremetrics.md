@@ -1,4 +1,4 @@
-# Explore Database Management Metrics
+# Create an alarm using Database Management metrics
 
 ## Introduction
 
