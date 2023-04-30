@@ -4,7 +4,7 @@
 
 In this lab, we will create the required Identity and Access Management (IAM) resources needed to support this workshop.
 
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -51,13 +51,12 @@ This lab assumes you have:
 
 ## Task 3: Create policies
 
-Policy allowing the Management (dpd) service to read the secret in the Vault service for the tenancy.
-
-1. Under the Identity menu on the left, click the Policies link.
+This policy allows the Management (dpd) service to read the secret in the Vault service for the tenancy.
+1. Click the navigation menu, click the *Identity & Security* menu item, and then *Policies*.
 
 	![Image alt text](images/image7.png)
 
-2. Click the Create Policy button. Enter the required details, the Name DBMGMT_Service_Policy_Tenancy and Description *Service policy required for Database Management service to read secrets in Vault for the tenancy*. Select the *root* compartment where this resource will be created. Switch the Show manual editor toggle to enable.
+2. Click the *Create Policy* button. Enter the required details, the Name `DBMGMT_Service_Policy_Tenancy` and Description *Service policy required for Database Management service to read secrets in Vault for the tenancy*. Select the *root* compartment where this resource will be created. Switch the Show manual editor toggle to enable.
 
 	![Image alt text](images/image8.png)
 
@@ -66,7 +65,8 @@ Policy allowing the Management (dpd) service to read the secret in the Vault ser
 	<copy>Allow service dpd to read secret-family in tenancy</copy>
 	```
 
-3. Click the Create Policy button. Enter the required details, the Name DBMGMT_User_Policy_LiveLabs and Description *User policy for Database Management service for LiveLabs compartement*. Select the *root* compartment where this resource will be created. Switch the Show manual editor toggle to enable.
+This policy provides the necessary permissions to Database Management service.
+3. Click the *Create Policy* button. Enter the required details, the Name `DBMGMT_User_Policy_LiveLabs` and Description *User policy for Database Management service for LiveLabs compartement*. Select the *root* compartment where this resource will be created. Switch the Show manual editor toggle to enable.
 
 	Enter the following rules and click *Create*.
 	```

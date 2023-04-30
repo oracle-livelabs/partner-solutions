@@ -4,7 +4,7 @@
 
 In this lab, we will create the infrastructure that will be used to complete the following labs. The infrastructure will contain the network components (VCN, subnets, NSG, etc), one Database Cloud Service (DBCS) and one Autonomous Database (ADB). We must create a Vault entry to securely store the password. Database Management Private Endpoint will also need to be created to allow communication between Database Management service and the DBCS.
 
-Estimated Time: 45 minutes
+Estimated Time: 90 minutes
 
 ### Objectives
 
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image2.png)
 
-3. Provide the VCN Name and the *LiveLabs* Compartment. You have to provide the VCN CIDR block.
+3. Provide the VCN Name *VCN_LabLives* and the *LiveLabs* Compartment. You have to provide a VCN CIDR block of your choice.
 
 	![Image alt text](images/image3.png)
 
@@ -57,7 +57,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image8.png)
 
-3. Provide the following information: Name of the DB System *DBSystem-LiveLabs*. Change the shape to *1 core*
+3. Provide the following information: Name of the DB System *DBSystem-LiveLabs*. Click on *Change shape* and change for *1 core*
 
 	![Image alt text](images/image9.png)
 
@@ -70,7 +70,7 @@ This lab assumes you have:
 
 	![Image alt text](images/image11.png)
 
-6. Provide the Database name, the PDB name. and password with sys and TDE. You can also disable database backups. Click on *Create DB system*.
+6. Provide the Database name *CDB01*, the PDB name *PDB01*. and password with sys and TDE. You can also disable database backups. Click on *Create DB system*.
 
 	![Image alt text](images/image12.png)
 
@@ -86,6 +86,7 @@ This lab assumes you have:
 	<copy>ALTER USER DBSNMP ACCOUNT UNLOCK;</copy>
 	<copy>ALTER USER DBSNMP IDENTIFIED BY "<password>";</copy>
 	```
+	> **_NOTE:_** Change `<password>` by a password of your choice.
 
 8. The service Vault is necessary to securely store the DBSNMP password. Click the navigation menu, click the link *Identity & Security* and click on *Vault*
 
@@ -122,9 +123,9 @@ This lab assumes you have:
 
 ## Task 3: Create the Database Management Private Endpoint and Network Security Group (NSG)
 
-The database management private endpoint resides in the database subnet and allows communication between the database and Database Management service.
+The database management private endpoint should resides in the database subnet and allows communication between the database and Database Management service.
 
-1. Click the navigation menu, click the *Observability & Management* menu item, and then *Administration * under *Database Management*.
+1. Click the navigation menu, click the *Observability & Management* menu item, and then *Administration* under *Database Management*.
 
 	![Image alt text](images/image20.png)
 
@@ -132,7 +133,7 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image21.png)
 
-3. Provide the name LiveLabs_DBMGMT_PrivateEndpoint, the description *Database Management PrivateEndpoint for LiveLabs compartment*, make sure you are in the *LiveLabs* compartment and provide the VCN and public subnet information where the DBCS resides. Click on *Create private endpoint*.
+3. Provide the name `LiveLabs_DBMGMT_PrivateEndpoint`, the description *Database Management PrivateEndpoint for LiveLabs compartment*, make sure you are in the *LiveLabs* compartment and provide the VCN and public subnet information where the DBCS resides. Click on *Create private endpoint*.
 
 	![Image alt text](images/image22.png)
 
@@ -146,7 +147,7 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image24.png)
 
-6. Provide the name NetworkSecurityGroup_LiveLabs_DatabaseManagement and make sure you are in the compartment *LiveLabs*. Click on *Next*.
+6. Provide the name `NetworkSecurityGroup_LiveLabs_DatabaseManagement` and make sure you are in the compartment *LiveLabs*. Click on *Next*.
 
 	![Image alt text](images/image25.png)
 
@@ -167,7 +168,7 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image28.png)
 
-10. Assign the new NSG to the Database Management Private Endpoint. Select the private endpoint and click on *Network Security Groups: 0*.
+10. Assign the new NSG to the Database Management Private Endpoint. Select the newly created private endpoint and click on *Network Security Groups: 0*.
 
 	![Image alt text](images/image29.png)
 
@@ -191,7 +192,7 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image33.png)
 
-4. Select the Deployment type. Make sure not to use *Always Free* ADB.
+4. Select the Deployment type *Shared infrastructure*. Make sure not to use *Always Free* ADB.
 
 	![Image alt text](images/image34.png)
 
@@ -199,7 +200,7 @@ The database management private endpoint resides in the database subnet and allo
 
 	![Image alt text](images/image35.png)
 
-6. Complete by providing the license type, Database Edition *Enterprise Edition* and a contact email. Click on *Create Autonomous Database*.
+6. Complete by providing the license type *Bring your own license (BYOL)*, Database Edition *Enterprise Edition* and a contact email. Click on *Create Autonomous Database*.
 
 	![Image alt text](images/image36.png)
 

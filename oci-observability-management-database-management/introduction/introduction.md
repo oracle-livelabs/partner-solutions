@@ -6,17 +6,17 @@ As a database administrators, we manage a fleet of Autonomous, Standard and Ente
 
 Oracle Cloud Infrastructure has a cloud service called "Database Management", an unified console for on-premises and cloud databases with lifecycle database management capabilities for monitoring, performance management, tuning, and administration.
 
-This workshop will begin by covering the configuration and how to register databases. Once registered, we will explore the capabilities of Database Management and how it could ease your fleet management.
+This workshop will begin with the creation of databases and how to register them in Database Management service. Once registered, we will explore the capabilities of Database Management and how it could ease your fleet management.
 
-Estimated Time: 2 hours
+Estimated Time: 4 hours
 
 ### Objectives
 
 In this workshop, you will:
-* Create OCI Identity and Access Management (IAM) Resources
-* Provision the infrastructure (Virtual Cloud Network (VCN), subnets, Database Cloud Service (DBCS), Autonomous Database (ADB), etc)
-* Enable Database Management for DBCS and explore the capabilites
-* Enable Database Management for ADB and explore the capabilities
+* Create OCI Identity and Access Management (IAM) Resources.
+* Provision the infrastructure including Virtual Cloud Network (VCN), Database Cloud Service (DBCS), Autonomous Database (ADB), etc.
+* Enable Database Management for DBCS and explore the capabilites.
+* Enable Database Management for ADB and explore the capabilities.
 
 ### Prerequisites
 
