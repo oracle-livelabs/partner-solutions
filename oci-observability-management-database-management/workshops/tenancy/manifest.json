@@ -26,11 +26,11 @@
         },
         {
             "title": "Lab 3: Enable Database Management for the DBCS",
-            "filename": "../../registerdbcs/registerdbcs.md"
+            "filename": "../../enabledbcs/enabledbcs.md"
         },
         {
             "title": "Lab 4: Enable Database Management for the ADB",
-            "filename": "../../registeradb/registeradb.md"
+            "filename": "../../enableadb/enableadb.md"
         },
         {
             "title": "Lab 5: Explore Database Full Management Option with DBCS",

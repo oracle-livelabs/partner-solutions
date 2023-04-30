@@ -8,7 +8,7 @@ Oracle Cloud Infrastructure has a cloud service called "Database Management", an
 
 This workshop will begin with the creation of databases and how to register them in Database Management service. Once registered, we will explore the capabilities of Database Management and how it could ease your fleet management.
 
-Estimated Time: 4 hours
+Estimated Time: 2 hours, 20 mins
 
 ### Objectives
 

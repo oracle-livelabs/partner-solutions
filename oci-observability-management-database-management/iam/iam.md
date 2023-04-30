@@ -23,42 +23,42 @@ This lab assumes you have:
 
 1. Click the navigation menu, click the *Identity & Security* menu item, and then *Compartments*.
 
-	![Image alt text](images/image1.png)
+	![Image alt text](images/home-compartment.png)
 
 2. Click the Create Compartment button. Enter the required details, the Name *LiveLabs* and Description *Compartment for LiveLabs*, select a Parent Compartment. Then, click the *Create Compartment* button to create the desired compartment.
 
-	![Image alt text](images/image2.png)
+	![Image alt text](images/create-compartment.png)
 
 ## Task 2: Create a group
 
 1. Click the navigation menu, click the *Identity & Security* menu item, and then *Domains*.
 
-	![Image alt text](images/image3.png)
+	![Image alt text](images/home-group.png)
 
 	> **_NOTE:_** For old tenancy without *Domains*, you will find the menu *Group* under *Identity*
 
 2. Make sure you are in the root compartment and click on the *Default domain*.
 
-	![Image alt text](images/image4.png)
+	![Image alt text](images/default-domain.png)
 
 3. Click on Groups and Create Group
 
-	![Image alt text](images/image5.png)
+	![Image alt text](images/create-group.png)
 
 4. Enter the required details, the Name `DBMGMT_LiveLabs_Group` and Description *Database Management Group associated to the compartement LiveLabs* and select users to add to this group. Click on *Create*.
 
-	![Image alt text](images/image6.png)
+	![Image alt text](images/create-group-info.png)
 
 ## Task 3: Create policies
 
 This policy allows the Management (dpd) service to read the secret in the Vault service for the tenancy.
 1. Click the navigation menu, click the *Identity & Security* menu item, and then *Policies*.
 
-	![Image alt text](images/image7.png)
+	![Image alt text](images/home-policy.png)
 
 2. Click the *Create Policy* button. Enter the required details, the Name `DBMGMT_Service_Policy_Tenancy` and Description *Service policy required for Database Management service to read secrets in Vault for the tenancy*. Select the *root* compartment where this resource will be created. Switch the Show manual editor toggle to enable.
 
-	![Image alt text](images/image8.png)
+	![Image alt text](images/create-policy.png)
 
 	Enter the following rule and click *Create*.
 	```

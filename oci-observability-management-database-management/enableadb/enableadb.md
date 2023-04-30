@@ -21,23 +21,23 @@ This lab assumes you have:
 
 1. Click the navigation menu, click the link *Oracle Database*, and then *Autonomous Transaction Processing*.
 
-	![Image alt text](images/image1.png)
+	![Image alt text](images/home-atp.png)
 
 2. Select the ADB you have created. Make sure to be in the *LiveLabs* compartment.
 
 3. Under *Associated services*, you can see Database Management is not enabled.
 
-	![Image alt text](images/image2.png)
+	![Image alt text](images/dm-disabled.png)
 
 ## Task 2: Enable Database Management for the ADB
 
 1. Click on *Enable* and confirm you want to enable Database Management.
 
-	![Image alt text](images/image3.png)
+	![Image alt text](images/dm-enable.png)
 
 2. Once the registration is completed, you will notice the status of Database management is *Enabled*.
 
-	![Image alt text](images/image4.png)
+	![Image alt text](images/dm-enabled.png)
 
 You may now proceed to the next lab.
 
