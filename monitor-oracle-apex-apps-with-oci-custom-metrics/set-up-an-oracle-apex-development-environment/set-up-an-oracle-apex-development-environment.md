@@ -1,31 +1,28 @@
-# Create OCI Resources for the Application
+# Set Up an Oracle APEX Development Environment
 
 ## Introduction
 
-In this lab, we will provision the required Oracle Cloud Infrastructure (OCI) components to support the Oracle APEX application that we will create in the next lab.
+In this lab, we will provision and *Always Free* Oracle Autonomous Database (ADB) that comes with Oracle APEX preinstalled. However, for this workshop, all you need is an Oracle APEX development environment that supports *Automations*. You may optionally create the application on any of the following options:
+
+* A paid instance of an Oracle Autonomous Database, including the APEX service.
+* An on-premises Oracle APEX instance.
 
 Estimated Time: 15 minutes
 
 ### About the OCI Resources
 
-Oracle APEX is a low-code software development platform that is included with every Oracle Autonomous Database (ADB) provisioned. The OCI Object Storage is a storage solution that is accessible over both public and private networks, highly-performant, and resistant to hardware failures. It offers different storage tiers and features that cater to different use cases and requirements.
+Oracle APEX is a rapid application development environment that is available free to all editions of the Oracle Database, and comes preinstalled on the Oracle Autonomous Database. The ADB is a fully-managed, converged database solution that also includes out-of-the-box support for machine learning, spatial and graph, and JSON.
 
 ### Objectives
 
 In this lab, you will:
 
 * Provision a new Oracle Autonomous Database to host the web application.
-* Create an Oracle APEX workspace and database schema to create a web application to store documents.
-* Create an Object Storage bucket that will store uploaded documents.
+* Create an Oracle APEX workspace and database schema for this workshop.
 
 ### Prerequisites
 
-This lab assumes that you have created the following OCI *Identity and Access Management* (IAM) resources:
-
-* A compartment for placing the Object Storage bucket.
-* A group that is used in policy statements.
-* A policy and statements that define actions that members of a group may perform.
-* A user assigned to a group with the required permissions to manage objects in the target bucket, and generated the API key pair.
+This lab assumes that you have the necessary permissions on the Oracle Cloud Infrastructure (OCI) tenancy to create an Oracle Autonomous Database. If you have an existing Oracle APEX workspace and application that you wish to use, please ensure that the version of Oracle APEX **must** support Automations, and that it should have the necessary privileges to access the OCI REST APIs. The instance should also be installed on an Oracle Database version that will support OCI web credentials.
 
 ## Task 1: Provision an Autonomous Database
 
@@ -63,20 +60,10 @@ This lab assumes that you have created the following OCI *Identity and Access Ma
 1. After successful authentication, the browser will redirect to the default App Builder landing page where workspace administrators and developers will have access to various functionalities to develop and manage APEX applications.
 ![Once signed in, the workspace administrator and developers have access to the App Builder and a few other utilities.](./images/oracle-apex-development-environment-home-page.png)
 
-## Task 3: Create an Object Storage Bucket
-
-1. In the final task of this lab, we will create an OCI Object Storage that will be used to store documents uploaded by the APEX application's users. Launch the navigation menu, click *Storage*, and then *Buckets*.
-![Go to the Bucket page on the OCI Console.](./images/navigate-to-the-bucket-page.png)
-1. On the Buckets page, ensure that the intended compartment has been selected, and then click the *Create Bucket* button.
-![Click the Create Bucket button.](./images/create-a-new-bucket.png)
-1. Enter the desired *Bucket Name* and select the *Standard* storage tier. For this workshop, it is not necessary to select any other Object Storage features. Click the *Create* button to create the new bucket.
-![Enter the preferred name of the bucket.](./images/enter-preferred-name-of-bucket.png)
-1. Verify that the bucket has been created successfully.
-![Check that the bucket was successfully created.](./images/validate-bucket-created-successfully.png)
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, December 2022
+* **Last Updated By/Date** - Adrian Png, February 2023
