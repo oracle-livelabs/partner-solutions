@@ -9,7 +9,7 @@ Estimated Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Register the DBS in Database Management Service
+* Register the DBCS in Database Management Service
 
 ### Prerequisites
 

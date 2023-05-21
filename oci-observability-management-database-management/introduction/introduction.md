@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-As a database administrators, we manage a fleet of Autonomous, Standard and Enterprise Edition databases. Everyone has their way of monitoring the fleet, which includes scripts, tools and utilities.
+As database administrators you are expected to manage a variety of Oracle deployments, such as Autonomous, Standard Edition, and Enterprise Edition databases.  Often monitoring and administration tasks are performed through a mixture of tools and utilities, including customized scripts, leading to extra monitoring overhead, configuration issues and incomplete database coverage or insight.
 
-Oracle Cloud Infrastructure has a cloud service called "Database Management", an unified console for on-premises and cloud databases with lifecycle database management capabilities for monitoring, performance management, tuning, and administration.
+Oracle Cloud Infrastructure provides a managed cloud-native service, Database Management, which offers a unified console for on-premises and cloud databases with lifecycle database management capabilities for monitoring, performance management, tuning, and administration.
 
-This workshop will begin with the creation of databases and how to register them in Database Management service. Once registered, we will explore the capabilities of Database Management and how it could ease your fleet management.
+This workshop begins with provisioning of database resources and registering them with the Database Management service.  Once registered, you will explore and learn the capabilities of Database Management and how it eases management of many databases (fleet management).
 
 Estimated Time: 2 hours, 20 mins
 
@@ -14,15 +14,15 @@ Estimated Time: 2 hours, 20 mins
 
 In this workshop, you will:
 * Create OCI Identity and Access Management (IAM) Resources.
-* Provision the infrastructure including Virtual Cloud Network (VCN), Database Cloud Service (DBCS), Autonomous Database (ADB), etc.
+* Provision infrastructure resources including Virtual Cloud Network (VCN), Database Cloud Service (DBCS), Autonomous Database (ADB), etc.
 * Enable Database Management for DBCS and explore the capabilites.
 * Enable Database Management for ADB and explore the capabilities.
 
 ### Prerequisites
 
-This lab assumes you have:
-* A valid Oracle Cloud Infrastructure paid account
-* Knowledge of Database Cloud Service and Autonomous Database
+To perform this workshop you should have:
+* A valid Oracle Cloud Infrastructure tenancy (paid account)
+* Knowledge of the Database Cloud Service and Autonomous Database
 * Basic Knowledge of database management
 
 ## Learn More

@@ -31,7 +31,7 @@ This lab assumes you have:
 
 	![Image alt text](images/start-wizard.png)
 
-3. Provide the VCN Name *VCN_LabLives* and the *LiveLabs* Compartment. You have to provide a VCN CIDR block of your choice.
+3. Provide the VCN Name *VCN_LiveLabs* and the *LiveLabs* Compartment. You have to provide a VCN CIDR block of your choice.
 
 	![Image alt text](images/vcn-info.png)
 

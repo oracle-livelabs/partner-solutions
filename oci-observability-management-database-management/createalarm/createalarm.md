@@ -89,15 +89,15 @@ You will now receive an email when the CPU Utilization will be greater then the 
 
 ## Task 3: Check alarm history
 
-1. Click the navigation menu, click the link *Observability & Management*, and then *Alert Definitions*.
+1. Click the navigation menu, click the link *Observability & Management*, and then *Alarm Definitions*.
 
 	![Image alt text](images/home-alarm.png)
 
-2. Make sure you are location in the *LiveLabs* compartment and click on the desire *Alarm name*.
+2. Make sure you are located in the *LiveLabs* compartment and click on the desired *Alarm name*.
 
 	![Image alt text](images/alarm-select.png)
 
-3. Go to the bottom of the page, select the desire period and you will see the alarm history. In this example, the alarm fired 2 times. You should have received emails for each transition changes.
+3. Go to the bottom of the page, select the desired period and you will see the alarm history. In this example, the alarm fired 2 times. You should have received emails for each transition change.
 
 	![Image alt text](images/alarm-history.png)
 

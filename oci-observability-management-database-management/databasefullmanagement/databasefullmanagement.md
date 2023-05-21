@@ -41,7 +41,7 @@ From this page, you can also open the *Performance Hub*, *AWR Explorer* and *Das
 
 From the *Managed database details*, we can see the following information:
 * Name of the component: *CDB01*
-* Configuration: *SI CDB*, which means Standalone CDB
+* Configuration: *SI CDB*, which means Single Instance CDB
 * Connection status: *OK*
 * Alarms: *No open alarms*
 
