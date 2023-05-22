@@ -32,6 +32,10 @@ Fleet summary provides a unified view of your Oracle databases. In this single p
 
   ![Image alt text](images/fleet-summary.png)
 
+3. For each database, we have the current CPU and storage consumption but also the change percentage that shows the comparison of database metrics between the selected time period and the comparison time period. Using this capability, we can have the database resource usage trend.
+
+  ![Image alt text](images/fleet-summary-comparison.png)
+
 ## Task 2: Explore monitoring a specific database
 
 1. From the *Fleet Summary* page, click on *CDB01* to go to *Managed database details* page.

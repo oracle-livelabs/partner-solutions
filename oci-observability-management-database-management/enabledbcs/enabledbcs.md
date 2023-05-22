@@ -65,6 +65,9 @@ This lab assumes you have:
 
   ![Image alt text](images/dbcs-perfhub.png)
 
+  > **_NOTE:_** You must enable Database Management in order to use *Performance Hub*.
+  ![Image alt text](images/dbcs-perfhub-notenabled.png)
+
 8. The *Performance Hub* provides a view of the activity during a specific period. Once you have selected the period, you will be able to analyze the running SQL using *ASH Analytics*, a list of SQL using *SQL Monitoring*, recommendations from *ADDM* as well as *Blocking Sessions*.
 
   ![Image alt text](images/dbcs-perfhub-info.png)
