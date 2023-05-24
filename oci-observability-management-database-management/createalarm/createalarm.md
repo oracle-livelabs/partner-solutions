@@ -81,6 +81,8 @@ We will create an alarm based on the CPU utilization of the database. The metric
 
 	![Image alt text](images/alarm-notification.png)
 
+  > **_NOTE:_** *Troubleshooting Tip*: Be sure to verify the destination email address used for Notifications doesn’t block external emails or end up in a SPAM folder.
+
 6. You will have the summary of the newly created alarm.
 
 	![Image alt text](images/alarm-created.png)
