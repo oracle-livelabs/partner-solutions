@@ -1,0 +1,54 @@
+{
+    "workshoptitle": "OCI Observability & Management - Database Management Service",
+    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
+                "sample.json":"../../data-load/files/sample.json",
+                "step2.md":"../../data-load/files/step2.md"},
+    "variables": ["../../variables/variables.json",
+                 "../../variables/variables-in-another-file.json"],
+    "help": "llivelabs-help-community_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://oracle-livelabs.github.io/common//labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Create OCI Identify and Access Management Resources",
+            "filename": "../../iam/iam.md"
+        },
+        {
+            "title": "Lab 2: Provision the Environment",
+            "filename": "../../provision/provision.md"
+        },
+        {
+            "title": "Lab 3: Enable Database Management for the DBCS",
+            "filename": "../../enabledbcs/enabledbcs.md"
+        },
+        {
+            "title": "Lab 4: Enable Database Management for the ADB",
+            "filename": "../../enableadb/enableadb.md"
+        },
+        {
+            "title": "Lab 5: Explore Database Full Management Option with DBCS",
+            "filename": "../../databasefullmanagement/databasefullmanagement.md"
+        },
+        {
+            "title": "Lab 6: Create an alarm with Database Management metrics",
+            "filename": "../../createalarm/createalarm.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Other LiveLabs you might like",
+            "description": "Other LiveLabs you might like",
+            "filename": "../../other-livelabs/other-livelabs.md"
+        }
+    ]
+}
