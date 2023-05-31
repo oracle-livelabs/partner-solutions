@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "OCI Observability & Management - Database Management Service",
+    "workshoptitle": "Configuring OCI Database Management to centralize Oracle Cloud database management and to leverage other OCI services like OCI Events and Alarms",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
