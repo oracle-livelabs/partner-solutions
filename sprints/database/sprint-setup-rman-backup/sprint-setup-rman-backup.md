@@ -1,54 +1,16 @@
-# How do I Create Oracle Recovery Manager (RMAN) Catalog?
+# How do I setup Oracle RMAN Backup? 
 
-Duration: 10 minutes
+Duration: 12-15 minutes
 
-## Create Oracle Recovery Manager (RMAN) Catalog
+## Setup Oracle RMAN Backup? 
 
-In Oracle, Recovery Manager (RMAN) is a utility that can be used to backup and recovery the database and it simplifies backing up, restoring, and recovering database or database files. 
+In Oracle, Recovery Manager (RMAN) is a utility that can be used to backup and recovery the database. To backup the target database it needs to be registered in Recovery catalog to store metadata. When you backup using RMAN all backups will be registered in Recovery catalog. If you have taken backup without catalog and you can also register manually.
 
-Recovery catalog is schema used by RMAN to store one or more Oracle databases metadata. The 
-metadata includes information about target database, RMAN config settings, Stored scripts configuration and keeps track of database files names, online redo logs files, standby redo log files, temp files, archived redo log files, image copies, backup pieces and backup sets for both primary and standby databases. 
-
-It is highly recommended to create recovery catalog schema in a separate database instead of the target databases and enable ARCHIVELOG mode for Recovery Catalog database
-
-1.	Create recovery catalog tablespace and user
+1.	Connect to recovery catalog and register Database 
 
 	```
 	<copy>
-	SQL> CREATE TABLESPACE rcatbs 
-	datafile '/oracle/oradata/rcat/rcattbs01.dbf' size 100m
-	reuse autoextend on;
-	</copy>
-
-	Tablespace created.
-	```
-
-	```
-	<copy>
-	SQL> CREATE USER rcat IDENTIFIED BY rcatpassword
-	DEFAULT TABLESPACE rcattbs
-	TEMPORARY TABLESPACE temp
-	QUOTA UNLIMITED ON rcattbs;
-	</copy>
-
-	User created.
-	```
-
-2.	Grants recovery catalog access recovery catalog user
-
-	```
-	<copy>
-	SQL> GRANT recovery_catalog_owner TO rcat;
-	</copy>
-	
-	Grant succeeded.
-	```
-
-3.	Create Recovery Catalog
-
-	```
-	<copy>
-	$rman target / catalog rcat/ rcatpassword@rcatdb
+	$rman target / catalog rcat/ rcatpassword@rcatdb	
 	</copy>
 
 	Recovery Manager: Release 19.0.0.0.0 - Production on Wed May 31 12:55:27 2023
@@ -58,12 +20,135 @@ It is highly recommended to create recovery catalog schema in a separate databas
 
 	connected to target database: RCATDB (DBID=4567445670)
 	connected to recovery catalog database
-
-	RMAN> CREATE CATALOG TABLESPACE  rcattbs;
-	recovery catalog created.
 	```
 
-	Recovery catalog helps as centralized metadata location for all databases, and it helps easily report from once location. In addition, you can store metadata history longer than Control file.
+	```
+	<copy>
+	RMAN> REGISTER DATABASE;
+	</copy>
+
+	database registered in recovery catalog
+	starting full resync of recovery catalog
+	full resync complete
+	```
+
+    When the database is registered RMAN provides defaults for parameters that will allow basic backup and recovery. You can set the persistent configuration settings for each target database to configure backup retention policy, default backup device type, default backup destination, controlfile auto backup and so on.  
+
+2.	Show the RMAN configuration for the target database
+
+    Use “SHOW ALL” to see the parameter defaults of the target database and you can also use SHOW command with parameter name
+
+	```
+	<copy>
+	RMAN> SHOW ALL; 
+	</copy>
+	```
+
+	```
+	<copy>
+	RMAN > SHOW RETENTION POLICY.
+	</copy>
+	RMAN configuration parameters for database with db_unique_name ORCL are:
+	CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 3 DAYS;
+	```
+
+3.  How to change RMAN Configuration settings for the target database
+
+    Use CONFUGURE to view or change the configuration.
+
+    * To change backup retention policy to 30 days
+
+		```
+		<copy>
+		RMAN> CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 30 DAYS;
+		</copy>
+
+		starting full resync of recovery catalog
+		full resync complete
+		new RMAN configuration parameters:
+		CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 30 DAYS;
+		new RMAN configuration parameters are successfully stored
+		starting full resync of recovery catalog
+		full resync complete
+		```
+    * To turn on controlfile auto backup 
+
+		```
+		<copy>
+		RMAN> CONFIGURE CONTROLFILE AUTOBACKUP ON;
+		</copy>
+
+		new RMAN configuration parameters:
+		CONFIGURE CONTROLFILE AUTOBACKUP ON;
+		new RMAN configuration parameters are successfully stored
+		starting full resync of recovery catalog
+		full resync complete
+		```
+
+    * To change default backup destination and format
+
+		```
+		<copy>
+		RAMN> CONFIGURE CHANNEL DEVICE TYPE DISK FORMAT '/backup/ORCL/db_%d_t%t_s%s_p%p.bkp';
+		</copy>
+
+		starting full resync of recovery catalog
+		full resync complete
+		new RMAN configuration parameters:
+		CONFIGURE CHANNEL DEVICE TYPE DISK FORMAT '/backup/ORCL/db_%d_t%t_s%s_p%p.bkp';
+		new RMAN configuration parameters are successfully stored
+		starting full resync of recovery catalog
+		full resync complete
+		```
+
+    * To change default backup destination of controlfile auto backup and format
+
+		```
+		<copy>
+		RMAN> CONFIGURE CONTROLFILE AUTOBACKUP FORMAT FOR DEVICE TYPE DISK TO '/backup/ORCL/cf_%d_t%t_s%s_p%p.bkp;
+		</copy>
+
+		starting full resync of recovery catalog
+		full resync complete
+		new RMAN configuration parameters:
+		CONFIGURE CONTROLFILE AUTOBACKUP FORMAT FOR DEVICE TYPE DISK TO '/backup/ORCL/cf_%d_t%t_s%s_p%p.bkp;
+		new RMAN configuration parameters are successfully stored
+		starting full resync of recovery catalog
+		full resync complete
+
+		```
+4.	Take database backup using RMAN 
+
+    * To backup database and archive logs
+		```
+		<copy>
+		RMAN> RUN {
+		ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+		BACKUP DATABASE PLUS ARCHIVELOG; 
+		}
+		</copy>
+		```
+
+    * To backup Pluggable Database and archive logs
+		```
+		<copy>
+		RMAN> RUN {
+		ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+		BACKUP PLUGGABLE DATABASE ORCL_PDB1 PLUS ARCHIVELOG;
+		}
+		</copy>
+		```
+
+    * To backup archive logs and delete archived logs after they backed up
+
+		```
+		<copy>
+		RMAN> RUN {
+		ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+		BACKUP ARCHIVELOG ALL DELETE INPUT;
+		}
+		</copy>
+		```
 
 ## Learn More
 
