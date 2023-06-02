@@ -4,6 +4,10 @@
 
 ![Insum Logo](./images/insum-logo.png =300x300)
 
+**Community Contributed Workshop**
+
+* **Author:** *Luc Demanche, Cloud & DBA Practice Director, Insum Solutions Inc.*
+
 As database administrators you are expected to manage a variety of Oracle deployments, such as Autonomous, Standard Edition, and Enterprise Edition databases.  Often monitoring and administration tasks are performed through a mixture of tools and utilities, including customized scripts, leading to extra monitoring overhead, configuration issues and incomplete database coverage or insight.
 
 Oracle Cloud Infrastructure provides a managed cloud-native service, Database Management, which offers a unified console for on-premises and cloud databases with lifecycle database management capabilities for monitoring, performance management, tuning, and administration.
