@@ -1,10 +1,5 @@
 {
     "workshoptitle": "OCI Observability & Management - Database Management Service - OCI Events and Alarms",
-    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
-                "sample.json":"../../data-load/files/sample.json",
-                "step2.md":"../../data-load/files/step2.md"},
-    "variables": ["../../variables/variables.json",
-                 "../../variables/variables-in-another-file.json"],
     "help": "llivelabs-help-community_us@oracle.com",
     "tutorials": [
         {
