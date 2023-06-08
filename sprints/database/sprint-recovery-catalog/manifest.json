@@ -1,0 +1,17 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-community_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "How do I Create Oracle Recovery Manager (RMAN) Catalog?",
+         "description": "In this sprint, we will provide the steps how to create Oracle Recovery Manager Catalog to store information on RMAN backups",
+         "filename": "sprint-recovery-catalog.md"
+      },
+      {
+         "title": "Other related Sprints - How do I setup Oracle RMAN Backup?",
+         "description": "In this sprint, we will provide the steps how to register database, configure parameters and take database backup using RMAN",
+         "filename": "../sprint-setup-rman-backup/sprint-setup-rman-backup.md"
+      }
+   ],
+   "task_type": "Sections"
+}
