@@ -69,12 +69,9 @@ It is highly recommended to create recovery catalog schema in a separate databas
 
 * [Oracle RMAN Backup Reference](https://www.oracleracexpert.com/search/label/RMAN%20Backup)
 * [Oracle Backup and Recovery Reference](https://docs.oracle.com/en/database/oracle/oracle-database/19/rcmrf/index.html)
-<<<<<<< HEAD
 * [Zero Data Loss Recovery Appliance](https://www.oracle.com/engineered-systems/zero-data-loss-recovery-appliance/)
 * [Zero Data Loss Autonomous Recovery Service](https://www.oracle.com/database/zero-data-loss-autonomous-recovery-service/)
 * [Oracle Database Backup Cloud Service](https://docs.oracle.com/en/cloud/paas/db-backup-cloud/index.html)
-=======
->>>>>>> upstream/main
 
 ## Acknowledgements
 
