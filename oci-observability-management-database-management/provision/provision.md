@@ -192,7 +192,11 @@ The database management private endpoint should resides in the database subnet a
 
 	![Image alt text](images/atp-name.png)
 
-4. Select the Deployment type *Shared infrastructure*. Make sure not to use *Always Free* ADB.
+4. Select the Deployment type *Serverless*.
+
+	![Image alt text](images/atp-deployment.png)
+
+5. Make sure not to use *Always Free* ADB.
 
 	![Image alt text](images/atp-infra.png)
 
