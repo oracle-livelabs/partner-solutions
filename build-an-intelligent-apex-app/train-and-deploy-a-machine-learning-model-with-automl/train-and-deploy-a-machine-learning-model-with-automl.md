@@ -1,12 +1,16 @@
 # Train and Deploy a Machine Learning Model with AutoML
 
-The AutoML user interface within the Oracle Autonomous Database simplifies the process of developing machine learning models. It offers a visual interface that guides users through the end-to-end process of data preprocessing, feature selection, model training, and model evaluation. With AutoML, users without extensive knowledge of machine learning can still leverage the power of AI to gain insights from their data. The user interface automates the selection of the best algorithms and hyperparameters based on the data characteristics, making it easier for users to create accurate and effective machine learning models.
+In this lab, we will train a machine learning model to using the open data set we had downloaded and prepared in Lab 2, to predict resale flat prices, without the need for any code.
 
 ## Introduction
 
 In this lab, we will create an AutoML experiment that will train a machine learning (ML) model for predicting the resale flat prices using data set prepared in Lab 2.
 
-Estimated Time: 15 minutes
+Estimated Time: 30 minutes
+
+### Oracle Machine Learning AutoML User Interface
+
+The AutoML user interface within the Oracle Autonomous Database simplifies the process of developing machine learning models. It offers a visual interface that guides users through the end-to-end process of data preprocessing, feature selection, model training, and model evaluation. With AutoML, users without extensive knowledge of machine learning can still leverage the power of AI to gain insights from their data. The user interface automates the selection of the best algorithms and hyperparameters based on the data characteristics, making it easier for users to create accurate and effective machine learning models.
 
 ### Objectives
 

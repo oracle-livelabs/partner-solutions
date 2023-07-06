@@ -6,6 +6,7 @@ In this lab, we will prepare the environment for performing machine learning tas
 
 Estimated Time: 15 minutes
 
+
 ### Objectives
 
 In this lab, you will learn how to:

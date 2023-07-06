@@ -8,25 +8,26 @@
 
 * **Author:** *Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.*
 
-There are many options for web application developers when deciding how to store files alongside data in the database. In this workshop, you will learn how to implement an external file storage solution for Oracle APEX applications using the *Oracle Cloud Infrastructure* (OCI) Object Storage.
+Machine learning has been used in many industries and applications to support decision making, augment control systems, and optimizing processes. In this workshop, you will learn how to prepare data, train and deploy a machine learning model, and then use it in an Oracle APEX application to predict resale flat prices, using little or no code.
 
-Estimated Time: 60 minutes
+Estimated Time: 90 minutes
 
 ### Objectives
 
 In this workshop, you will:
 
-* Create an Oracle Autonomous Database instance and configure the database for
-* Create a machine learning model using OML Notebooks
-
-* Create the required OCI resources to support using the *Object Storage Service* (OSS) in Oracle APEX applications.
-* Interact with the OSS in an Oracle APEX application using the OCI REST APIs.
+* Provision an Oracle Autonomous Database.
+* Provision an Oracle APEX workspace and database schema.
+* Load data from external data sources.
+* Train and deploy a machine learning model using Oracle Machine Learning AutoML user interface.
+* Build an Oracle APEX application that integrates machine learning.
 
 ### Prerequisites
 
 This lab assumes you have:
 
 * Access to an Oracle Cloud tenancy.
+* Heard about *Machine Learning*.
 * Basic knowledge of Oracle APEX and PL/SQL development.
 * Familiarity with Database is desirable, but not required.
 * Some understanding of cloud and database terms is helpful.
@@ -34,6 +35,7 @@ This lab assumes you have:
 
 ## Learn More
 
+* [Oracle Machine Learning](https://www.oracle.com/artificial-intelligence/database-machine-learning/)
 * [Oracle APEX](https://apex.oracle.com/learnmore)
 * [Oracle Cloud Infrastructure](https://www.oracle.com/cloud/)
 

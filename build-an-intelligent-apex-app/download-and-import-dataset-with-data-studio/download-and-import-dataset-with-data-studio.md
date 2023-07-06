@@ -10,6 +10,10 @@ Estimated Time: 15 minutes
 
 Open data refers to the concept of making data freely available and accessible to the public, without restrictions on its use, reuse, or redistribution. It encompasses the idea that certain types of information, such as government datasets, scientific research findings, or public records, should be openly shared in a standardized and machine-readable format. Open data aims to promote transparency, collaboration, and innovation by enabling individuals, businesses, and organizations to analyze and derive insights from the available data. By facilitating the free flow of information, open data initiatives foster greater accountability, informed decision-making, and the development of new solutions to societal challenges.
 
+### Oracle Data Studio
+
+Oracle Data Studio is a visual tool included with the Autonomous Database, and accessed through Database Actions. It allows users to load, catalog, transform, visualize, gain insights, and share data.
+
 ### Objectives
 
 In this lab, you will:
