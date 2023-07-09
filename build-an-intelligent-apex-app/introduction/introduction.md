@@ -10,7 +10,7 @@
 
 Machine learning has been used in many industries and applications to support decision making, augment control systems, and optimizing processes. In this workshop, you will learn how to prepare data, train and deploy a machine learning model, and then use it in an Oracle APEX application to predict resale flat prices, using little or no code.
 
-Estimated Time: 90 minutes
+Estimated Workshop Time: 90 minutes
 
 ### Objectives
 

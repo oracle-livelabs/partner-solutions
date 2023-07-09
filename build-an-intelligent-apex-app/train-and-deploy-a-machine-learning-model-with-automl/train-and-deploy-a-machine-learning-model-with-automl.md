@@ -1,10 +1,8 @@
 # Train and Deploy a Machine Learning Model with AutoML
 
-In this lab, we will train a machine learning model to using the open data set we had downloaded and prepared in Lab 2, to predict resale flat prices, without the need for any code.
-
 ## Introduction
 
-In this lab, we will create an AutoML experiment that will train a machine learning (ML) model for predicting the resale flat prices using data set prepared in Lab 2.
+In this lab, we will create an AutoML experiment to train a machine learning (ML) model for predicting the resale flat prices using data set prepared in Lab 2, without writing any code.
 
 Estimated Time: 30 minutes
 
