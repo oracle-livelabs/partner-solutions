@@ -82,4 +82,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, June 2023
+* **Last Updated By/Date** - Adrian Png, July 2023

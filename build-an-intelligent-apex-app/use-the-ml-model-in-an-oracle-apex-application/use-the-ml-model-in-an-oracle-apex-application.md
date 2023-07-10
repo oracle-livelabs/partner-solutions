@@ -102,7 +102,7 @@ In this task, you will login to the Oracle APEX Development Environment that was
 1. Login to apex
 ![Login to the Oracle APEX workspace.](./images/login-to-apex-workspace.png)
 1. Go to *SQL Command*.
-![](./images/launch-sql-command.png)
+![Launch the SQL Command tool in APEX.](./images/launch-sql-command.png)
 1. Copy the SQL statement below, and paste the content into the worksheet.
     ```sql
     <copy>
@@ -121,20 +121,20 @@ In this task, you will login to the Oracle APEX Development Environment that was
     /
     </copy>
     ```
-![](./images/create-table-using-sql-command.png)
+![Create a table using the SQL Command tool in APEX.](./images/create-table-using-sql-command.png)
 1. Click the link *App Builder* to return to the App Builder.
-![](./images/return-to-app-builder.png)
+![Return to the App Builder.](./images/return-to-app-builder.png)
 
 ## Task 3: Create an Oracle APEX Application to Manage Records of HDB Flats
 
 1. Click to create new app
-![](./images/click-to-create-a-new-app.png)
+![Create a new application.](./images/click-to-create-a-new-app.png)
 1. Click the button *New Application*.
-![](./images/select-new-application.png)
+![Click to select and create a new application.](./images/select-new-application.png)
 1. Enter the desired name for the application, for example, *My Real Estate Inventory*.
-![](./images/name-the-application.png)
+![Name the application.](./images/name-the-application.png)
 1. Scroll down and modify the authentication scheme to use *Database Accounts*, and then click the button *Create Application* to create the application.
-![](./images/change-the-authentication-scheme.png)
+![Change the application's authentication scheme.](./images/change-the-authentication-scheme.png)
 1. After the application has been created, the browser will redirect to the application's homepage. Click the button *Create Page >* to launch the *Create a Page* wizard.
 ![Click button to launch the create a page wizard.](./images/create-a-page.png)
 1. On the second page of this application, we want a list of properties displayed as a table. Select to create an *Interactive Report*.
@@ -185,6 +185,16 @@ In this task, you will login to the Oracle APEX Development Environment that was
     | `G_OML_SERVICE_URL` | `https://{TENANCY_ID}-{DATABASE_NAME}.adb.{REGION}.oraclecloudapps.com` |
     | `G_TOKEN_PATH`      | `/omlusers/api/oauth2/v1/token`                                         |
     | `G_MODEL_PATH`      | `/omlmod/v1/deployment/{URI}/score`                                     |
+
+    > *where*
+    > * `{TENANCY_ID}` - this is a shortened version of the tenancy's *OCID* that unfortunately, is not easy to retrieve.
+    > * `{DATABASE_NAME}` - the ADB's database name.
+    > * `{REGION}` - the identifier for the region where the ADB was provisioned in. A full list of the region identifiers can be found [here](https://bit.ly/oci-docs-regions).
+    > * `{URI}` - the URI was specified when the ML model was deployed in Lab 3, Task 3.
+    >
+    > **Note:**
+    >
+    > This URL format **does not** apply to ADBs deployed with a private endpoint. The required endpoint URL can also be looked up in the ADB's *Tools configuration* page on the OCI Console, described in Lab 1, Task 2.
 
 1. Return to the *Resale Flat Details* page by using the search functionality. Click inside the search field, enter the term *resale flat details*, and then click the target page.
 ![Search and navigate to the resale flat details page.](./images/search-and-navigate-to-resale-flat-details-page.png)
@@ -290,4 +300,4 @@ Congratulations! You have **completed** all the necessary labs and tasks.
 ## Acknowledgements
 
 * **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, June 2023
+* **Last Updated By/Date** - Adrian Png, July 2023
