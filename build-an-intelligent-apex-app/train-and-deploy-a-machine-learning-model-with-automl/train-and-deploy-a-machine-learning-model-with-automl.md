@@ -61,7 +61,7 @@ When time permits, please consider trying other parameter tweaks, and running th
 In this final task, we will deploy the top performing ML model.
 
 1. From the *Leader Board*, select the top performing ML model, which in the example below, is an *Artificial Neural Network* (ANN) that yields an *R2* value of `0.9576`. R2 values close to `1` are ideal. Then, click the button *Deploy*.
-![](./images/select-the-top-performing-ml-model.png)
+![Select the top performing ML models.](./images/select-the-top-performing-ml-model.png)
 1. In the modal, rename the model if so desired. Otherwise, enter the mandatory values for *URI* and *Version*. The URI is added to the model's request path when the model is deployed. Optionally, enter a value for the model's *Namespace*, and indicate if the model should be shared with every user that has access to the schema. Click the button *OK* to deploy the model.
 ![Enter the required variables required for deploying the ML model.](./images/define-model-deployment-variables.png)
 
@@ -70,4 +70,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, June 2023
+* **Last Updated By/Date** - Adrian Png, July 2023

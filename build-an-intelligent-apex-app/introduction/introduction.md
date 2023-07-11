@@ -42,4 +42,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, December 2022
+* **Last Updated By/Date** - Adrian Png, July 2023
