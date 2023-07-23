@@ -91,7 +91,7 @@ This lab assumes that you have:
 ![Start the process for adding an API key for the user.](./images/add-api-keys-for-user.png)
 1. Select the *Generate API Key Pair* option to have the OCI Console generate the encryption key pair. Click the *Download Private Key* button to download the private key, and optionally, click the *Download Public Key* button to download its public counterpart. The latter can be generated from the private key later if required. Store the private key securely. Finally, click the *Add* button.
 ![Generate and download the API key pair.](./images/generate-download-api-key-pair.png)
-1. Once the key pair has been created, the OCI Console will display configuration information that can be added to the OCI [*Command Line Interface*](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm) (CLI) configuration file. The same information is required for creating the Oracle APEX *Web Credentials* later, so please not the values of the fields listed below the image.
+1. Once the key pair has been created, the OCI Console will display configuration information that can be added to the OCI [*Command Line Interface*](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm) (CLI) configuration file. The same information is required for creating the Oracle APEX *Web Credentials* later, so please note the values of the fields listed below the image.
 ![Collect information.](./images/collect-information.png)
 	* **user** - The [Oracle Cloud ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (OCID) for the user.
 	* **fingerprint** - The fingerprint of the API's public key.
