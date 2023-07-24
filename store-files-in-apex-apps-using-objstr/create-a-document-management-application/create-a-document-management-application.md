@@ -490,7 +490,7 @@ In this final task, we will run the Oracle APEX application and validate the fun
 1. Back on the home page, click on the document's filename to download the file. Ensure that the file opens and contains the expected content.
 ![Click on the document's filename to download the file.](./images/click-to-download-file.png)
 1. Next, click the document's edit icon.
-![Click on the docuoment's edit icon to edit the record.](./images/click-to-edit-document.png)
+![Click on the document's edit icon to edit the record.](./images/click-to-edit-document.png)
 1. Attempt to change one or more fields, including the file binary, and then click the button *Save*.
 1. Check that the modifications to the record were saved successfully.
 1. Return to the *Document Details* page, and then this time, click the button *Delete*.

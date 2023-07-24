@@ -8,7 +8,7 @@ Estimated Time: 15 minutes
 
 ### About Identity and Access Management
 
-The OCI IAM provides the necessary resources for managing user authentication, logically dividing resources into compartments, and managing authorizations using groups and policies. Tenancies today have access to IAM either with or without *Identity Domains*. The latter is the older version of IAM and on which this lab is based on.
+The OCI IAM provides the necessary resources for managing user authentication, logically dividing resources into compartments, and managing authorizations using groups and policies. Tenancies today have access to IAM either with or without *Identity Domains*. In this lab, we will provision the resources using identity domains.
 
 ### Objectives
 
@@ -16,8 +16,8 @@ In this lab, you will create the following IAM resources:
 
 * A compartment for placing the Object Storage bucket.
 * A group that is used in policy statements.
-* A policy and its statements that define actions that members of a group may perform.
 * A user that is used in applications to authenticate to the OCI REST APIs. Users are assigned to groups with the appropriate permissions.
+* A policy and its statements that define actions that members of a group may perform.
 
 ### Prerequisites
 
@@ -36,11 +36,17 @@ This lab assumes that you have:
 1. Click the *Create Compartment* button.
 ![Start the process for creating a new compartment.](./images/create-a-new-compartment.png)
 1. Enter the required details, the *Name* and *Description*, and optionally, select a *Parent Compartment*. Click the *Create Compartment* button to create the desired compartment.
-![Enter the required detais and create the compartment.](./images/enter-required-details-about-new-compartment.png)
+![Enter the required details and create the compartment.](./images/enter-required-details-about-new-compartment.png)
 
 ## Task 2: Create a Group
 
-1. Next, create an IAM group. Back on the *Compartments* page, under the *Identity* menu on the left, click the *Groups* link.
+In tenancies provisioned with IAM using *identity domains*, users and groups are managed within domains. Such tenancies will have a *Default* domain created by default. We will create a new group in this task.
+
+1. Access the navigation menu, and click the link *Identity & Security*. Under the *Identity* heading, click the link *Domains*.
+![Navigate to the Domains page.](./images/navigate-to-the-domains-page.png)
+1. Under the table of domains, click on the link to the *Default* domain. If you do not see the correct domain, on the left side of the page, check that the *root* compartment is selected.
+![Navigate to the Default domain's page.](./images/navgate-to-the-default-domains-page.png)
+1. On the left navigation menu, click the link *Groups*.
 ![Navigate to the Groups page.](./images/navigate-to-the-groups-page.png)
 1. Click the *Create Group* button.
 ![Start the process for creating a new group.](./images/create-a-new-group.png)
@@ -49,15 +55,48 @@ This lab assumes that you have:
 1. Once the group has been created, check the details, and then click the breadcrumb *Identity* on the top-left of the page in preparation for the next task.
 ![Check the details of the group created.](./images/check-details-of-group-created.png)
 
-## Task 3: Create a Policy
+## Task 3: Create a User
 
-1. After the last task, you should be on the *Users* page. Again, under the *Identity* menu on the left, click the *Policies* link.
+1. While on the group's details page, a the top, click on the breadcrumb link *Default domain*, to return to the domain's details page.
+![Navigate to the Default domain's details page.](./images/navigate-from-the-group-to-domains-details-page.png)
+1. In the left navigation menu, click the link *Users*.
+![Navigate to the Users page.](./images/navigate-to-the-users-page.png)
+1. Click the *Create User* button.
+![Start the process for creating a new user.](./images/create-a-new-user.png)
+1. At minimum, enter a *Last name* and the desired *Username*. Depending on domain's settings, an email address is required. If a different username is desired, uncheck the option *Use the email address as the username*, and then enter **both** the *Username* and *Email* fields.
+![Enter the details about the new user.](./images/enter-details-about-new-user.png)
+1. Scroll down and assign the user to the group created in Task 1 by selecting the checkbox next to the desired group's name. Click the *Create* button to create the user.
+![Assign user to the DocumentManagers group.](./images/assign-user-to-group.png)
+1. On the user's details page, click the *Edit user capabilities* button.
+![Click to edit the user capabilities.](./images/edit-user-capabilities.png)
+1. Uncheck all capabilities except *API keys*, and then click the *Save changes* button.
+![Allow the user to generate and use only API keys for all OCI operations.](./images/allow-user-to-generate-api-keys-only.png)
+
+## Task 4: Generate API Keys for the User to Call OCI REST APIs Securely
+
+1. From the user's details page, under the *Resources* menu, click the *API keys* link, and then click the *Add API key* button.
+![Start the process for adding an API key for the user.](./images/add-api-keys-for-user.png)
+1. Select the *Generate API key pair* option to have the OCI Console generate the encryption key pair. Click the *Download private key* button to download the private key, and optionally, click the *Download public key* button to download its public counterpart. The latter can be generated from the private key later if required. Store the private key securely. Finally, click the *Add* button.
+![Generate and download the API key pair.](./images/generate-download-api-key-pair.png)
+1. Once the key pair has been created, the OCI Console will display configuration information that can be added to the OCI [*Command Line Interface*](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm) (CLI) configuration file. The same information is required for creating the Oracle APEX *Web Credentials* later, so please copy and safely store the values of the fields listed below the image. Click the *Close* button when done.
+![Collect information.](./images/collect-information.png)
+	* **user** - The [Oracle Cloud ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (OCID) for the user.
+	* **fingerprint** - The fingerprint of the API's public key.
+	* **tenancy** - The OCID for the tenancy.
+
+> **NOTE:**
+>
+> Here, the API keys were generated using the OCI Console. Other alternative ways to create the private and public keys is to use either the OCI CLI, or [OpenSSL](https://www.openssl.org) that is installed in most modern operating systems.
+
+## Task 5: Create a Policy
+
+1. Access the navigation menu, and click the link *Identity & Security*. Under the *Identity* heading, click the link *Policies*.
 ![Navigate to the Policies page.](./images/navigate-to-the-policies-page.png)
 1. Click the *Create Policy* button.
 ![Start the process for creating a new policy.](./images/create-a-new-policy.png)
 1. Create a policy named *DocumentManagementPolicy* and enter an appropriate description. Select the "root" compartment where this resource will be created in. Next, switch the *Show manual editor* toggle to enable.
 ![Enter details of the policy.](./images/enter-required-details-about-new-policy.png)
-1. Enter the two statements below (tweak if necessary) and then click the *Create Policy* button.
+1. Enter the two statements below (tweak if necessary) and then click the *Create* button.
 	```text
 	<copy>
 	Allow group DocumentManagers to read buckets in compartment LiveLabs
@@ -68,38 +107,7 @@ This lab assumes that you have:
 
 > **NOTE:**
 >
-> A more restrictive policy can be used to restrict which buckets the *DocumentManagers* group members can manage objects. Look up the OCI document for [details](https://docs.oracle.com/iaas/Content/Identity/Reference/objectstoragepolicyreference.htm) on how these policy statements can be further modified to restrict access.
-
-## Task 4: Create a User
-
-1. Return to the *Users* page on the OCI console and click the *Create User* button.
-![Start the process for creating a new user.](./images/create-a-new-user.png)
-1. Select *IAM User* and enter a name and description for the user. Entering an email address is not necessary. Click the *Create* button to create the user.
-![Enter a name and description for the user.](./images/enter-details-about-new-user.png)
-1. On the user's details page, click the *Edit User Capabilities* button.
-![Click to edit the user capabilities.](./images/edit-user-capabilities.png)
-1. Uncheck all capabilities except *API Keys*, and then click the *Save Changes* button.
-![Allow the user to generate and use only API keys for all OCI operations.](./images/allow-user-to-generate-api-keys-only.png)
-1. Back on the user's details page, scroll down and then under the *Resources* menu on the left, click the *Groups* link. Then, click the *Add User to Group* button.
-![Navigate to add user to a group.](./images/navigate-to-add-user-to-group.png)
-1. Select the group created in Task 2, and then click the *Add* button.
-![Add user to the group created in Task 2.](./images/add-user-to-group.png)
-
-## Task 5: Generate API Keys for the User to Call OCI REST APIs Securely
-
-1. The final task in this lab is to generate an API key. Under the *Resources* menu, click the *API Keys* link, and then click the *Add API Key* button.
-![Start the process for adding an API key for the user.](./images/add-api-keys-for-user.png)
-1. Select the *Generate API Key Pair* option to have the OCI Console generate the encryption key pair. Click the *Download Private Key* button to download the private key, and optionally, click the *Download Public Key* button to download its public counterpart. The latter can be generated from the private key later if required. Store the private key securely. Finally, click the *Add* button.
-![Generate and download the API key pair.](./images/generate-download-api-key-pair.png)
-1. Once the key pair has been created, the OCI Console will display configuration information that can be added to the OCI [*Command Line Interface*](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm) (CLI) configuration file. The same information is required for creating the Oracle APEX *Web Credentials* later, so please not the values of the fields listed below the image.
-![Collect information.](./images/collect-information.png)
-	* **user** - The [Oracle Cloud ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (OCID) for the user.
-	* **fingerprint** - The fingerprint of the API's public key.
-	* **tenancy** - The OCID for the tenancy.
-
-> **NOTE:**
->
-> Here, the API keys were generated using the OCI Console. Other alternative ways to create the private and public keys is to use either the OCI CLI, or [OpenSSL](https://www.openssl.org) that is installed in most modern operating systems.
+> A more restrictive policy can be used to restrict which buckets the *DocumentManagers* group members can manage objects. Look up the OCI document for [details](https://docs.oracle.com/iaas/Content/Identity/policyreference/objectstoragepolicyreference.htm) on how these policy statements can be further modified to restrict access.
 
 You may now **proceed to the next lab**.
 
