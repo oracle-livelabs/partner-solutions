@@ -52,7 +52,7 @@ In tenancies provisioned with IAM using *identity domains*, users and groups are
 ![Start the process for creating a new group.](./images/create-a-new-group.png)
 1. Create a group named *DocumentManagers* and enter an appropriate description. Click the *Create* button to create the group.
 ![Enter the required details and create the group.](./images/enter-required-details-about-new-group.png)
-1. Once the group has been created, check the details, and then click the breadcrumb *Identity* on the top-left of the page in preparation for the next task.
+1. Validate that the group was created successfully.
 ![Check the details of the group created.](./images/check-details-of-group-created.png)
 
 ## Task 3: Create a User
