@@ -14,6 +14,7 @@ Watch the video below for a quick walk through of the lab.
 ### Objectives
 
 Learn how to
+
 -  create a database user with the appropriate roles and privileges required for accessing **Graph Studio**
 
 
@@ -37,7 +38,7 @@ Learn how to
 
     ![Click Create User](./images/db-actions-create-user.png "Click Create User ")
 
-2. Enter the required details, i.e. user name and password. Turn on the **Graph Enable** and **Web Access** radio buttons. And select a quota, e.g. **UNLIMITED**,  to allocate on the `DATA` tablespace.   
+2. Enter the required details, i.e. user name and password. Turn on the **Graph Enable** and **Web Access** radio buttons. And select a quota, e.g. **UNLIMITED**,  to allocate on the `DATA` tablespace.  
 
    	Note: The password should meet the following requirements:
 
@@ -49,7 +50,7 @@ Learn how to
 
 	![Set Graph username and password, and select Create User](images/db-actions-create-graph-user.png "Set Graph username and password, and select Create User ")
 
-	**Note: Please do not Graph Enable the ADMIN user and do not login to Graph Studio as the ADMIN user. The ADMIN user has additional privileges by default. Create and use an account with only the necessary privileges for with with graph data and analytics.**
+	**Note: Please do not login to Graph Studio as the ADMIN user. The ADMIN user has additional privileges by default. Create and use an account with only the necessary privileges for use with graph data and analytics.**
 
 	Click the **Create User** button at the bottom of the panel to create the user with the specified credentials.
 
@@ -58,10 +59,11 @@ Learn how to
 	![The newly created user will be listed](./images/db-actions-graph-user-created.png "The newly created user will be listed ")   
 
 
-
-Please **proceed to the next lab** to learn how to create and analyze graphs in Autonomous Database.
+This concludes this lab.  
+**You may now proceed to the next lab.** 
 
 ## Acknowledgements
+
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  
 * **Last Updated By/Date** - Jayant Sharma, July 2023

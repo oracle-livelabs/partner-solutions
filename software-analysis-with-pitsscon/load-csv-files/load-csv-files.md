@@ -16,6 +16,7 @@ Watch the video below for a quick walk through of the lab.
 ### Objectives
 
 Learn how to
+
 - load CSV files into an Autonomous Database using Database Actions
 
 ### Prerequisites
@@ -36,7 +37,8 @@ Learn how to
    
     ![Login as the graph-enabled user](./images/db-actions-graphuser-login.png "Login as the graph-enabled user")  
 
-    >**Note:** *If necessary, do the following to create the user with the right roles and privileges*:
+    **Note:** *If necessary, do the following to create the user with the right roles and privileges*:  
+
     - Log in to Database Actions as the **ADMIN** user for your Autonomous Database
     - Select **Administration** and then **Database Users** from the navigation menu
     - Click **Create User**
@@ -133,9 +135,11 @@ Learn how to
    
   
 
-    Please **proceed to the next lab** to create a graph from these tables.
+    This consludes this lab.  
+    **You may now proceed to the next lab**.
 
 ## Acknowledgements
+
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  
 * **Last Updated By/Date** - Jayant Sharma, July 2023

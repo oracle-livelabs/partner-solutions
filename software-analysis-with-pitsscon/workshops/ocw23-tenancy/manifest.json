@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Use Graph Algorithms to Modernize and Refactor Legacy Applications",
+    "workshoptitle": "Analyze Application Dependencies with Graph Studio",
     "include": {
       "adb-goto-service-body.md":"https://oracle-livelabs.github.io/common/building-blocks/tasks/adb/goto-service-body.md",
       "adb-provision-body.md":"https://oracle-livelabs.github.io/common/building-blocks/tasks/adb/provision-body.md"
@@ -24,7 +24,7 @@
             "filename": "https://oracle-livelabs.github.io/common/building-blocks/blocks/adb/provision/provision-console.md"
         },
         {
-            "title": "Lab 2: Create Database User",
+            "title": "Lab 2: Create a Database User",
             "filename": "../../create-database-user/create-database-user.md"
         },
         {

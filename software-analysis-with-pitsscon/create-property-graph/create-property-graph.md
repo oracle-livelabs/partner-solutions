@@ -1,12 +1,12 @@
-# Graph Studio: Create a graph using PGQL CREATE PROPERTY GRAPH statement
+# Graph Studio: Create a property graph view on database content
 
 ## Introduction
 
-In this lab you will create a graph from the `ocw_nodes` and `ocw_edges` tables using Graph Studio and the CREATE PROPERTY GRAPH statement.
+In this lab you will create a graph from the `ocw_nodes` and `ocw_edges` tables using Graph Studio.
 
 
 
-Estimated Time: 15 minutes.
+Estimated Time: 10 minutes.
 
 <!--
 Watch the video below for a quick walk through of the lab.
@@ -17,7 +17,8 @@ Watch the video below for a quick walk through of the lab.
 ### Objectives
 
 Learn how to
-- use Graph Studio and PGQL DDL (that is, CREATE PROPERTY GRAPH statement) to model and create a graph from existing tables or views.
+
+- Use Graph Studio to model and create a graph from existing tables or views.
 
 ### Prerequisites
 
@@ -109,6 +110,7 @@ Graph Studio is a feature of Autonomous Database. It is available as an option o
     This concludes this lab. **You may now proceed to the next lab.**
 
 ## Acknowledgements
+
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  , Product Management
 * **Last Updated By/Date** - Jayant Sharma, July 2023
