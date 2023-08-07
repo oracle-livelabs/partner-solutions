@@ -37,7 +37,7 @@
         },
         {
             "title": "Lab 5: Run Graph Algorithms and Visualize Results",
-            "filename": "../../qeury-and-analyze-graph/query-and-analyze-graph.md"
+            "filename": "../../query-and-analyze-graph/query-and-analyze-graph.md"
         },
         {
             "title": "Lab 6: (Optional) Cleanup: Terminate ADB Instance",

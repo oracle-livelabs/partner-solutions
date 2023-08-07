@@ -115,9 +115,9 @@ Learn how to
       
      alter table ocw_edges add constraint ocw_edges_pk primary key (edge_id);
 
-     alter table ocw_edges add constraint ocw_edges_fk1 foreign key source_id references ocw_nodes (object_id);
+     alter table ocw_edges add constraint ocw_edges_fk1 foreign key (source_id) references ocw_nodes (object_id);
 
-     alter table ocw_edges add constraint ocw_edges_fk2 foreign key target_id references ocw_nodes (object_id);
+     alter table ocw_edges add constraint ocw_edges_fk2 foreign key (target_id) references ocw_nodes (object_id);
 
      </copy>      
      ```
