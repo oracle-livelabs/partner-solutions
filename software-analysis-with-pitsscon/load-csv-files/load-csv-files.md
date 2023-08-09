@@ -7,11 +7,11 @@ Oracle Autonomous Database instance.
 
 
 Estimated Time: 10 minutes.
-<!--
+
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:wkKKO-RO0lA)
--->
+[Link to video of lab](videohub:1_o3nivuib)
+
 
 ### Objectives
 

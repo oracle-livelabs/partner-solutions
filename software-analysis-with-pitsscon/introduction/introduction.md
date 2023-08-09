@@ -4,6 +4,8 @@
 
 This workshop covers one workflow, among several, in a software modernization project to migrate legacy Oracle Forms based applications to a newer low-code platform such as Oracle APEX using tools and methodolody developed by PITSS Gmbh. The complete workflow uses graph analytics to find clusters of code modules related to a business process, or common functionlaity such as logging or security, redundancy among code blocks, and unused or dead code. This workshop will focus on cluster determination.
 
+
+
 ### Why Graph Analytics
 
 Graphs have uses in unexpected places, like analyzing software apps in hours instead of weeks. Software development is a complex ever-evolving process. The longer any software exists in the market the more complex it is to maintain. Development frameworks like Oracle Forms have been in the market for over 40 years and used to build mission critical applications over the years. Incremental development often results in increased complexity and higher maintenance costs or difficulty finding people with the necessary skills and knowledge of the framewrok. Hence there is a need for tools that semi-automate the analysis and modernization of legacy software.
@@ -28,6 +30,9 @@ That is just one step in a workflow which helps identify bounded application con
 
 Estimated Time: 1 hour.
 
+Watch the video below for a quick walk through of the workshop.
+
+[Link to video of this workshop](videohub:1_gtz3wqxr)  
 
 ### Objectives
 

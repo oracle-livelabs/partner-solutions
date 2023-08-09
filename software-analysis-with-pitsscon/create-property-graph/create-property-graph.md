@@ -8,11 +8,11 @@ In this lab you will create a graph from the `ocw_nodes` and `ocw_edges` tables 
 
 Estimated Time: 10 minutes.
 
-<!--
+
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:tNPY4xmVFMk)
--->
+[Link to video of lab](videohub:1_12j0i1tw)
+
 
 ### Objectives
 

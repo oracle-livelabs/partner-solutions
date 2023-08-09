@@ -9,7 +9,7 @@ Estimated Time: 5 minutes.
 
 Watch the video below for a quick walk through of the lab.
 
-[Link to video of this workshop](youtube:CQh8Q24Rboc)
+[Link to video of this workshop](videohub:1_8wpdqv25)
 
 ### Objectives
 

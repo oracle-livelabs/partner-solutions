@@ -5,14 +5,15 @@
 In this lab you will query and analyze the newly created graph (that is, `ocw_software_analysis`) in a notebook.
 
 Estimated Time: 30 minutes.
-<!--
+
 Watch the video below for a quick walk-through of the lab.
-[Query and visualize the property graph](videohub:1_e7nc0l1w)
--->
+[Query and visualize the property graph](videohub:1_krj0gcys)
+
 
 ### Objectives
 
 Learn how to
+
 - Import a notebook
 - Use Graph Studio notebooks and PGQL and Python paragraphs to query, analyze, and visualize a graph
 
