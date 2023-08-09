@@ -35,7 +35,7 @@ This lab assumes that you have created the following OCI *Identity and Access Ma
 ![Click the Create Autonomous Database button.](./images/create-a-new-autonomous-database.png)
 1. Begin by choosing the target compartment to create the database. Next, enter a suitable *Display name* and *Database name*. Then, select the desired the workload type, for example, *Transaction Processing*.
 ![Enter a suitable display and database name, and then choose the desired workload type.](./images/enter-required-details-for-new-autonomous-database.png)
-1. Scroll down and select the *Serverless* deployment type. 
+1. Scroll down and select the *Serverless* deployment type.
 ![Choose deployment type](./images/choose-deployment-type.png)
 1. For this workshop, select *Always Free* option if within the tenancy's service limits. For Always Free databases, the *OCPU count* and storage limits are fixed. Also, auto scaling is not available for both OCPU and storage. Select the database version *19c* and then scroll down again.
 ![Specify if this is an Always Free instance, and if required, provide the OCPU and storage limits.](./images/configure-autonomous-database-resources.png)
@@ -48,7 +48,7 @@ This lab assumes that you have created the following OCI *Identity and Access Ma
 
 1. Once the ADB has been fully provisioned, return to the *Autonomous Database* page, locate the instance's display name, and then click on it to view the ADB's details page. Click the *Tools* tab.
 ![Navigate to the ADB's tools page.](./images/navigate-to-autonomous-database-tools-page.png)
-1. Click the *Open APEX* button to launch the *App Builder* in a new browser tab/window.
+1. In the description column for *Oracle APEX*, and click the *Copy* link to copy the link to the development environment. Open the link in a new browser tab/window.
 ![Launch the Oracle APEX App Builder.](./images/launch-oracle-apex-app-builder.png)
 1. For new ADB instances, this should launch the *Administration Services* login screen. Enter the password for the *admin* user and click the *Sign In to Administration* button.
 ![Login to the Oracle APEX Administration Services.](./images/login-to-oracle-apex-administration-services.png)
