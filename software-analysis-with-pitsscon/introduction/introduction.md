@@ -2,6 +2,12 @@
 
 ## About this Workshop
 
+#### Community Contributed Workshop
+
+![PITSS Logo](images/pitss-logo.jpg "PITSS Gmbh logo")
+
+**Contributor:** *Stephan LaRocca, Senior Business Development Director, PITSS Gmbh.* 
+
 This workshop covers one workflow, among several, in a software modernization project to migrate legacy Oracle Forms based applications to a newer low-code platform such as Oracle APEX using tools and methodolody developed by PITSS Gmbh. The complete workflow uses graph analytics to find clusters of code modules related to a business process, or common functionlaity such as logging or security, redundancy among code blocks, and unused or dead code. This workshop will focus on cluster determination.
 
 

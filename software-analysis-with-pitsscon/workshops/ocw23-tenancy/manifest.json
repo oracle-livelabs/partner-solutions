@@ -4,7 +4,7 @@
       "adb-goto-service-body.md":"https://oracle-livelabs.github.io/common/building-blocks/tasks/adb/goto-service-body.md",
       "adb-provision-body.md":"https://oracle-livelabs.github.io/common/building-blocks/tasks/adb/provision-body.md"
     },
-    "variables": ["../../variables/variables.json"],
+    "variables": ["../../variables/files/variables.json"],
     "help": "livelabs-help-community_us@oracle.com",
     "tutorials": [
         {
