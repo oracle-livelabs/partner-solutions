@@ -6,6 +6,10 @@ This lab puts theory into practice by having you create a very basic Oracle APEX
 
 Estimated Time: 60 minutes
 
+Watch the video below for a quick walk-through of the lab.
+
+[Lab 3: Create a Document Management Application](videohub:1_bftobu31)
+
 ### About <Product/Technology>
 
 Oracle APEX is a low-code software development platform that is included with every Oracle *Autonomous Database* (ADB) provisioned. The *Oracle Cloud Infrastructure* (OCI) REST API will be used by the platform's `APEX_WEB_SERVICE` PL/SQL package to interface with the OCI *Object Storage Service* (OSS). It is worthwhile to note that on ADB's, in addition to the prescribe approach, one can also work with the OSS using either the [OCI PL/SQL software development kit](https://docs.oracle.com/iaas/Content/API/SDKDocs/plsqlsdk.htm) (SDK) or the [DBMS_CLOUD](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html) PL/SQL package.

@@ -6,6 +6,10 @@ In this lab, we will create the required *Identity and Access Management* (IAM) 
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+
+[Lab 1: Create OCI Identity and Access Management Resources](videohub:1_o6gtme7g)
+
 ### About Identity and Access Management
 
 The OCI IAM provides the necessary resources for managing user authentication, logically dividing resources into compartments, and managing authorizations using groups and policies. Tenancies today have access to IAM either with or without *Identity Domains*. In this lab, we will provision the resources using identity domains.
