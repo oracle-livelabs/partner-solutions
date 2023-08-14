@@ -6,6 +6,10 @@ In this lab, we will provision the required Oracle Cloud Infrastructure (OCI) co
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+
+[Lab 2: Create OCI Resources for the Application](videohub:1_dcxsokuh)
+
 ### About the OCI Resources
 
 Oracle APEX is a low-code software development platform that is included with every Oracle Autonomous Database (ADB) provisioned. The OCI Object Storage is a storage solution that is accessible over both public and private networks, highly-performant, and resistant to hardware failures. It offers different storage tiers and features that cater to different use cases and requirements.
