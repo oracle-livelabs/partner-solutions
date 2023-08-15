@@ -12,6 +12,10 @@ There are many options for web application developers when deciding how to store
 
 Estimated Time: 90 minutes
 
+Watch the video below for a quick walk-through of the workshop.
+
+[Walkthrough for the entire workshop.](videohub:1_oxmt3x1w)
+
 ### Objectives
 
 In this workshop, you will:
