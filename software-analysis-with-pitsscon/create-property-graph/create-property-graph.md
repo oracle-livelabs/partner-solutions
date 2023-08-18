@@ -52,7 +52,7 @@ Graph Studio is a feature of Autonomous Database. It is available as an option o
 
 ## Task 2: Create a graph of application artefacts and their and connections
 
-1. Click the **Graph** icon to navigate to page for creating a new graph and listing existing ones.  
+1. Click the **Graph** icon to navigate to page where you can create a new graph and list existing ones.  
    
     ![Go to the graphs page](images/goto-graphs-page.png "Go to the graphs page")  
 
@@ -102,7 +102,7 @@ Graph Studio is a feature of Autonomous Database. It is available as an option o
 
     ![Shows in-memory enabled and the create graph button](./images/create-graph.png "Create Graph button ")
 
-    You will be taken to the Jobs page which lists the spawned tasks. Refresh the page to see their status. 
+    You will be taken to the Jobs page which lists the spawned tasks. 
 
    ![Job status page](./images/jobs-create-graph.png "Create Graph job status ")
 
@@ -113,5 +113,5 @@ Graph Studio is a feature of Autonomous Database. It is available as an option o
 
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  , Product Management
-* **Last Updated By/Date** - Jayant Sharma, July 2023
+* **Last Updated By/Date** - Jayant Sharma, August 2023
 
