@@ -20,7 +20,7 @@
         {
             "title": "Lab 1: Provision an Autonomous Database",
             "description": "Provisioning an Autonomous Database Instance",
-            "type": "freetier",
+            "type": "livelabs",
             "filename": "https://oracle-livelabs.github.io/common/building-blocks/blocks/adb/provision/provision-console.md"
         },
         {

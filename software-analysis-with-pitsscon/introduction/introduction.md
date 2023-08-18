@@ -8,15 +8,15 @@
 
 **Contributor:** *Stephan LaRocca, Senior Business Development Director, PITSS Gmbh.* 
 
-This workshop covers one workflow, among several, in a software modernization project to migrate legacy Oracle Forms based applications to a newer low-code platform such as Oracle APEX using tools and methodolody developed by PITSS Gmbh. The complete workflow uses graph analytics to find clusters of code modules related to a business process, or common functionlaity such as logging or security, redundancy among code blocks, and unused or dead code. This workshop will focus on cluster determination.
+This workshop covers one workflow, among several, in a software modernization project to migrate legacy Oracle Forms based applications to a newer low-code platform such as Oracle APEX using tools and methodolody developed by PITSS Gmbh. The complete workflow uses graph analytics to find clusters of code modules related to a business process, or common functionality such as logging or security, redundancy among code blocks, and unused or dead code. This workshop will focus on cluster determination.
 
 
 
 ### Why Graph Analytics
 
-Graphs have uses in unexpected places, like analyzing software apps in hours instead of weeks. Software development is a complex ever-evolving process. The longer any software exists in the market the more complex it is to maintain. Development frameworks like Oracle Forms have been in the market for over 40 years and used to build mission critical applications over the years. Incremental development often results in increased complexity and higher maintenance costs or difficulty finding people with the necessary skills and knowledge of the framewrok. Hence there is a need for tools that semi-automate the analysis and modernization of legacy software.
+Graphs have uses in unexpected places, like analyzing software apps in hours instead of weeks. Software development is a complex ever-evolving process. The longer any software exists in the market the more complex it is to maintain. Development frameworks like Oracle Forms have been in the market for over 40 years and used to build mission critical applications over the years. Incremental development often results in increased complexity and higher maintenance costs or difficulty finding people with the necessary skills and knowledge of the framework. Hence there is a need for tools that semi-automate the analysis and modernization of legacy software.
 
-### What are some concerns with leagcy applications  
+### What are some concerns with legacy applications  
 
 - They do not differentiate between layers of responsibility and therefore are harder to maintain as distinct tasks. Data management, business logic, and user interfaces are often intertwined.
 - They combine functionality into one mass of code rather than components with specific functionality. Therefore, it becomes cumbersome to uptake newer technology for a specific function such as security or notifications or mobile app development. In today's modern software frameworks, these functionalities are handled by independent libraries or frameworks.
@@ -58,7 +58,7 @@ This lab assumes you have:
 * An Oracle Cloud tenancy with available credits
 * Some familiarity with SQL
 * Familiarity with Python is helpful
-* Familiarity Oracle Cloud Infrastructure is helpful
+* Familiarity with Oracle Cloud Infrastructure is helpful
 * Familiarity with Oracle Autonomous Database is helpful
 * Familiarity with interactive notebooks such as Zeppelin or Jupyter is helpful
 
