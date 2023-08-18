@@ -48,27 +48,29 @@ First **import** the sample notebook and then execute the relevant paragraph for
 
 ## Task 2: Load and query the `OCW_SOFTWARE_ANALYSIS` graph and visualize the results
 
-The notebook explores the dataset and the property graph view of the data. It shows you how to create a subgraph of interest, from the original graph, and then run a community detection algorithm on it and query and visualize the results of that analysis. 
+The notebook explores the dataset and the property graph view of the data. It shows you how to create a subgraph of interest, from the original graph, and then run a community detection algorithm on it and query and visualize the results of that analysis.  
+
+We use the Louvain community detection algorithm which identifies groups, or clusters, of vertices that have more connections among themselves than with other vertices in the graph. Each cluster is assigned an ID value. A transient property is added to the vertices and the corresponding cluster ID assigned to a vertex is returned in this property. 
 
 In this task, we will run the graph queries and use the settings tool to customize the graphs. You can alter the settings to explore available options.
 
->**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*.
+>**Note:** *You can simply read and execute the paragraphs in the notebook itself from here on. The descriptions below only explain a few of the paragraphs and optional additional steps such as changing **Visualization Settings** or adding **Highlights**, i.e. customizing the way a graph is displayed based on vertex or edge properties*.
 If the compute environment is not ready as yet and the code cannot be executed then you will see a blue line moving across the bottom of the paragraph to indicate that a background task is in progress.  
 
 
-1. The first few paragraphs contain SQL queries to explore the `OCW_NODES` and `OCW_EDGES` tables. Note that edges have a `REASON` attribute with possible values being {`Forms Dependency`, `Data Model`, `Data access`, `Implementation`, `Process Flow`}. We will these when loading the subgraph to analyze.  
+1. The first few paragraphs contain SQL queries to explore the `OCW_NODES` and `OCW_EDGES` tables. Note that edges have a `REASON` attribute with possible values being {`Forms Dependency`, `Data Model`, `Data access`, `Implementation`, `Process Flow`}. We will use these when loading the subgraph to analyze.  
 
   ![Edges types in the graph](images/notebook-edge-types.png "Edge types in the graph")
 
-2. Next, we load the graph into the in-memory graph server in order to execute some graph algorithms.
+2. We will load the graph into the in-memory graph server in order to execute some graph algorithms.
 
     Run the first **%python-pgx** paragraph, which uses the built-in `session` object to read the graph into memory from the database and creates a `PGXGraph`` object.
 
     The code snippet in that paragraph is:  
 
      ```
-     <copy>
-     %python-pgx
+    <copy>
+    %python-pgx
 
     GRAPH_NAME="OCW_SOFTWARE_ANALYSIS"
     # try getting the graph from the in-memory graph server
@@ -79,7 +81,8 @@ If the compute environment is not ready as yet and the code cannot be executed t
          print("Graph "+ GRAPH_NAME + " successfully loaded")
          graph = session.get_graph(GRAPH_NAME)
     else :
-         print("Graph '"+ GRAPH_NAME + "' already loaded")</copy>
+         print("Graph '"+ GRAPH_NAME + "' already loaded")
+    </copy>
      ```
 
 
@@ -94,19 +97,19 @@ If the compute environment is not ready as yet and the code cannot be executed t
      </copy>
      ```
 
-    The above PGQL query fetches the first some elements of the graph and displays them.  
+    The above PGQL query fetches some elements of the graph and displays them.  
     The **MATCH** clause specifies a graph pattern.  
-    - `(s)` is the source node
-    - `[t]` is an edge
-    - `->` indicates the edge direction, that is, from the source `s` to a destination `d`
-    - `(d)` is the destination node
+    - `(n)` is the source node
+    - `[e]` is an edge
+    - `->` indicates the edge direction, that is, from the source `n` to a destination `m`
+    - `(m)` is the destination node
 
     The **WHERE** clause specifies a filter constraint on the edges, and hence nodes, the query should return.
 
     See the [PGQL site](https://pgql-lang.org) and specification for more details on the syntax and features of the language.  
     The Getting Started notebook folder also has a tutorial on PGQL.  
 
-4.   Note that dependency graph is essetianlly a tree with one Forms module at the root, i.e. the landing page, connected to all others (i.e. screens you can navigate to in the application). 
+4.   Note that dependency graph is essentially a tree with one Forms module at the root, i.e. the landing page, connected to all others (i.e. screens you can navigate to in the application). 
     So this isn't a very useful avenue for exploration. Let's instead look at the graph of relationships between the database tables as defined either in the data model or in the application logic. That is, we load and view the subgraph with edges having a reason of `Data Model` or `Implementation`.  
     That query is similar to one above with just a simple change to the WHERE clause.  
 
@@ -138,7 +141,7 @@ Click the **Highlights** tab and then on New Highlight.
 
 ![Add a highlight](images/notebook-highlights-tab.png "Add a highlight") 
 
-Click on Edges to add one specific to edges.  
+Click on Edges to add one specific to edges.  Click the `+` sign next to **Conditions** to add one for the edges.  
 Choose `REASON` as the edge property and `Data Model` as its value.  
 
 ![Highlight data model edges](images/notebook-edge-data-model-1.png "Highlight Data Model edges")
@@ -189,21 +192,21 @@ Once you're done you should have something similar to the following screenshot. 
      </copy>
      ```
 
-   Next we'll execute the Louvain algorithm.  
+    Next we'll execute the Louvain algorithm.  
 
-   ```
-   <copy>
-   %python-pgx
-   # Run louvain on this graph 
-   # get edge weight property first
-     edgeWeightTV = tableViewGraph.get_or_create_edge_property(name="WEIGHT", data_type="double", dim=0);
-   # then run louvain
-     louvainTV = analyst.louvain(tableViewGraph, edgeWeightTV, community='louvainTV');
+    ```
+    <copy>
+    %python-pgx
+    # Run louvain on this graph 
+    # get edge weight property first
+    edgeWeightTV = tableViewGraph.get_or_create_edge_property(name="WEIGHT", data_type="double", dim=0);
+    # then run louvain
+    louvainTV = analyst.louvain(tableViewGraph, edgeWeightTV, community='louvainTV');
     
     </copy>
-   ```
-
-   The next few paragraphs query the graph to count the number of communitites and visualize the members of the largest community.  
+    ```
+    
+    The next few paragraphs query the graph to count the number of communitites and visualize the members of the largest community.  
 
 6. Lastly, we repeat the same steps for a subgraph which represents the data access patterns (reason='Data Access') of the application. 
 
