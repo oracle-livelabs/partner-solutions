@@ -56,7 +56,7 @@ In this task, we will run the graph queries and use the settings tool to customi
 If the compute environment is not ready as yet and the code cannot be executed then you will see a blue line moving across the bottom of the paragraph to indicate that a background task is in progress.  
 
 
-1. The first few paragraphs contain SQL queries to explore the `OCW_NODES` and `OCW_EDGES` tables. Note that edges have a `REASON` attribute with possible values being {`Forms Dependecy`, `Data Model`, `Data access`, `Implementation`}. We will these when loading the subgraph to analyze.  
+1. The first few paragraphs contain SQL queries to explore the `OCW_NODES` and `OCW_EDGES` tables. Note that edges have a `REASON` attribute with possible values being {`Forms Dependency`, `Data Model`, `Data access`, `Implementation`, `Process Flow`}. We will these when loading the subgraph to analyze.  
 
   ![Edges types in the graph](images/notebook-edge-types.png "Edge types in the graph")
 
@@ -83,14 +83,14 @@ If the compute environment is not ready as yet and the code cannot be executed t
      ```
 
 
-3. Next, we look at the dependecny graph among Forms modules, i.e. the subset of edges with reaso='Forms Dependecy'.   
+3. Next, we look at the dependency graph among Forms modules, i.e. the subset of edges with reason='Forms Dependency'.   
 
      ```
      <copy>
      %pgql-pgx
      /* Query and visualize a subset (nodes and edges) of OCW_SOFTWARE_ANALYSIS */
      SELECT n,e,m FROM MATCH (n) -[e]-> (m) ON ocw_software_analysis 
-     where e.reason = 'Forms Dependecy'
+     where e.reason = 'Forms Dependency'
      </copy>
      ```
 

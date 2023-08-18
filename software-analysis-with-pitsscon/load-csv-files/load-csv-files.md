@@ -33,16 +33,10 @@ Learn how to
  
 ## Task 2: Login as the graph-enabled user
 
-1. Login as the graph user (for example, `GRAPHUSER`) for your Autonomous Database instance. 
+1. Login as the graph user (for example, `GRAPHUSER`) for your Autonomous Database instance in the previous Lab. 
    
     ![Login as the graph-enabled user](./images/db-actions-graphuser-login.png "Login as the graph-enabled user")  
 
-    **Note:** *If necessary, do the following to create the user with the right roles and privileges*:  
-
-    - Log in to Database Actions as the **ADMIN** user for your Autonomous Database
-    - Select **Administration** and then **Database Users** from the navigation menu
-    - Click **Create User**
-    - Turn on the **Web-Access** and **Graph** buttons
 
 ## Task 3: Download the sample datasets from the ObjectStore
 
