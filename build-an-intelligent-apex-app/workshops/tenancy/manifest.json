@@ -1,0 +1,48 @@
+{
+    "workshoptitle": "Build an Intelligent Oracle APEX Application",
+    "include": {
+    },
+    "help": "llivelabs-help-community_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Prepare Environment for Machine Learning on an Oracle Autonomous Database",
+            "description": "Instantiate an Oracle Autonomous Database (ADB), create an Oracle APEX workspace and database schema, and get set up for Oracle Machine Learning (OML) Notebooks.",
+            "filename": "../../prepare-environment-for-machine-learning-on-adb/prepare-environment-for-machine-learning-on-adb.md"
+        },
+        {
+            "title": "Lab 2: Download and Import Data Set with Data Studio",
+            "description": "Download a publicly available, open data set, and load it into the Oracle Autonomous Database schema.",
+            "filename": "../../download-and-import-dataset-with-data-studio/download-and-import-dataset-with-data-studio.md"
+        },
+        {
+            "title": "Lab 3: Train and Deploy a Machine Learning Model with AutoML",
+            "description": "Use Oracle Machine Learning Notebooks and AutoML UI to train and deploy a machine learning model to predict prices.",
+            "filename": "../../train-and-deploy-a-machine-learning-model-with-automl/train-and-deploy-a-machine-learning-model-with-automl.md"
+        },
+        {
+            "title": "Lab 4: Use the ML Model in an Oracle APEX Application",
+            "description": "Use Oracle Machine Learning Notebooks and AutoML UI to create a machine learning model to predict prices.",
+            "filename": "../../use-the-ml-model-in-an-oracle-apex-application/use-the-ml-model-in-an-oracle-apex-application.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
+        },
+        {
+            "title": "Other LiveLabs you might like",
+            "description": "Other LiveLabs you might like",
+            "filename": "../../other-livelabs/other-livelabs.md"
+        }
+    ]
+}
