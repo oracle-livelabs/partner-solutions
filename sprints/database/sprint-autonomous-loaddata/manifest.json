@@ -1,0 +1,22 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-community_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "How do I load data into Oracle Autonomous Database?",
+         "description": "In this sprint, we will provide the steps how to load data into How do I load data into Oracle Autonomous Database using Local file",
+         "filename": "sprint-autonomous-loaddata.md"
+      },
+      {
+         "title": "Other related Sprints - How to connect to Oracle Autonomous Database using SQL*Plus?",
+         "description": "In this sprint, we will provide the steps how to connect to Oracle Autonomous Database using SQL*Plus",
+         "filename": "../sprint-autonomous-connectsql/sprint-autonomous-connectsql.md"
+      },
+	  {
+         "title": "Other related Sprints - How do I connect to the Oracle Autonomous Database and execute queries and scripts?",
+         "description": "In this sprint, we will provide the steps to connect to Oracle Autonomous Database, launch Database Actions and run the queries in the worksheet window",
+         "filename": "../sprint-autonomous-execqueries/sprint-autonomous-execqueries.md"
+      }
+   ],
+   "task_type": "Sections"
+}
