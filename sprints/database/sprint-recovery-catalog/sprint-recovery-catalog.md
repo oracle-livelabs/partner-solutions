@@ -2,6 +2,10 @@
 
 Duration: 10 minutes
 
+**Community Contributed Workshop**
+
+* **Author:** *Satishbabu Gunukula, Oracle ACE Pro.*
+
 ## Create Oracle Recovery Manager (RMAN) Catalog
 
 In Oracle, Recovery Manager (RMAN) is a utility that can be used to backup and recovery the database and it simplifies backing up, restoring, and recovering database or database files. 

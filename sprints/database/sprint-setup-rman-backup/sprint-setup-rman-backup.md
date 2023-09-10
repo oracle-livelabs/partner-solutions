@@ -2,6 +2,10 @@
 
 Duration: 12-15 minutes
 
+**Community Contributed Workshop**
+
+* **Author:** *Satishbabu Gunukula, Oracle ACE Pro.*
+
 ## Setup Oracle RMAN Backup? 
 
 In Oracle, Recovery Manager (RMAN) is a utility that can be used to backup and recovery the database. To backup the target database it needs to be registered in Recovery catalog to store metadata. When you backup using RMAN all backups will be registered in Recovery catalog. If you have taken backup without catalog and you can also register manually.
