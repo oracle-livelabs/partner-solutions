@@ -11,16 +11,16 @@ To execute the SQL Statements and scripts in the Oracle Autonomous Database, you
 1.	Sign-in into Oracle Cloud Account using credentials (URL: https://cloud.oracle.com/)
 
 2.	Open the “Navigation” Menu and click on “Oracle Database”, select “Autonomous Database.”
-![ Autonomous Database](images/pic2.png)
+    ![ Autonomous Database](images/pic2.png)
 
 3.  Select the Autonomous Database that you want to connect click “Database Actions” to launch. 
-![ Database Actions](images/pic3.png)
+    ![ Database Actions](images/pic3.png)
 
 4.  Under Development, click “SQL” to launch work SQL Query window to execute the queries and scripts.
-![ SQL Query Window](images/pic4.png)
+    ![ SQL Query Window](images/pic4.png)
 
 5. 	You can save the worksheet by clicking “Save”  and provide a Name and select “Device” where you want to save.
-![ Save Worksheet](images/pic5.png)
+    ![ Save Worksheet](images/pic5.png)
 
 ## Learn More
 

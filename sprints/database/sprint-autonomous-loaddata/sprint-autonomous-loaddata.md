@@ -14,28 +14,28 @@ To Load data into Oracle Autonomous Database, you should already have an Oracle 
 ![ Autonomous Database](images/pic2.png)
 
 3.  Select the Autonomous Database that you want to connect click “Database Actions” to launch. 
-![ Database Actions](images/pic3.png)
+    ![ Database Actions](images/pic3.png)
 
 4. Under Development, click “SQL” to launch work SQL Query window to load data or Click “DATALOAD” to load data from local files or remote databases. 
-![ Data Load](images/pic4.png)
+    ![ Data Load](images/pic4.png)
 
 5.	Data Load using SQL under Development: Launch “SQL” Query window and Click on “Data Load”
-![ Data Load using SQL](images/pic5-1.png)
+    ![ Data Load using SQL](images/pic5-1.png)
 
 Click on “Add file” to select the file you want to load and “Run” to load data. 
-![ Select the file and Run](images/pic5-2.png)
+    ![ Select the file and Run](images/pic5-2.png)
 
 The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
-![ Data loaded successfully](images/pic5-3.png)
+    ![ Data loaded successfully](images/pic5-3.png)
 
 6.	Data Load using “Data Load” under Data Studio: Launch “DataLoad” and select the data location. 
-![ Data Load using Data Sutido](images/pic6-1.png)
+    ![ Data Load using Data Sutido](images/pic6-1.png)
 
 In the Next screen “Select files” or “Drag and drop here to upload”. Click on “Start” and “Run” Data load job. 
-![ Select the file and Run](images/pic6-2.png)
+    ![ Select the file and Run](images/pic6-2.png)
 
 The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
-![ Data loaded successfully](images/pic6-3.png)
+    ![ Data loaded successfully](images/pic6-3.png)
 
 ## Learn More
 
