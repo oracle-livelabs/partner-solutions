@@ -22,7 +22,7 @@ To Load data into Oracle Autonomous Database, you should already have an Oracle 
 5.	Data Load using SQL under Development: Launch “SQL” Query window and Click on “Data Load”
     ![ Data Load using SQL](images/pic5-1.png)
 
-    Click on “Add file” to select the file you want to load and “Run” to load data. 
+    Click on “Add file” to select the file you want to load and “Run” to load data.
     ![ Select the file and Run](images/pic5-2.png)
 
     The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
@@ -30,8 +30,8 @@ To Load data into Oracle Autonomous Database, you should already have an Oracle 
 
 6.	Data Load using “Data Load” under Data Studio: Launch “DataLoad” and select the data location. 
     ![ Data Load using Data Sutido](images/pic6-1.png)
-
-    In the Next screen “Select files” or “Drag and drop here to upload”. Click on “Start” and “Run” Data load job. 
+    
+    In the Next screen “Select files” or “Drag and drop here to upload”. Click on “Start” and “Run” Data load job.
     ![ Select the file and Run](images/pic6-2.png)
 
     The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
