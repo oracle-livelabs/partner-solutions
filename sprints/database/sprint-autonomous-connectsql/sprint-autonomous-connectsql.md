@@ -1,6 +1,6 @@
 # How to connect to Oracle Autonomous Database using SQL*Plus?
 
-Duration: 10 minutes
+Duration: 12 minutes
 
 Oracle Autonomous Database provides autonomous data management in the cloud, and it takes care of routine maintenance tasks such as auto upgrades, patching and tuning. Autonomous databases offer scalability, high availability, security for different types of workloads. 
 
@@ -61,7 +61,7 @@ Oracle Autonomous database supports both TLS authentication and Mutual TLS Authe
 
 9. You should be able to connect Oracle Autonomous database using SQL*Plus or SQLcl with credentials and connection string.
 
-Using SQL*Plus
+	Using SQL*Plus
 	For ex: sqlplus username/password@'conn_string'
 
 	```
@@ -69,7 +69,9 @@ Using SQL*Plus
 	C:\> sqlplus admin/password@zamr6kjq51hirsam_high
 	</copy>
 	```
-Using SQLcl
+
+	Using SQLcl
+
 	For ex: sql -cloudconfig wallet.zip admin/password@'conn-string' 
 	```
 	<copy>

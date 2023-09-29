@@ -1,6 +1,6 @@
 # How do I load data into Oracle Autonomous Database?
 
-Duration: 10 minutes
+Duration: 12-15 minutes
 
 ## Load Data into Oracle Autonomous Database
 

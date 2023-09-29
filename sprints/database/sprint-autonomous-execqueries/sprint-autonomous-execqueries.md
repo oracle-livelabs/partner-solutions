@@ -1,6 +1,6 @@
 # How do I connect to the Oracle Autonomous Database and execute queries and scripts?
 
-Duration: 5 minutes
+Duration: 8 minutes
 
 ## Execute Queries in SQL Query Window using Database Actions
 
