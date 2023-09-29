@@ -2,9 +2,9 @@
 
 Duration: 5 minutes
 
-## Execute Queries in  SQL Query Window using Database Actions
+## Execute Queries in SQL Query Window using Database Actions
 
-Oracle Autonomous Database provides Database Actions web interface for users to provide development, Data Studio, Administration, Downloads and Monitoring. The main features under development are to execute queries and scripts, browse and manage database objects, load data, optimize queries…etc   The Database actions available for on-premises or Oracle Database cloud services. 
+Oracle Autonomous Database provides Database Actions web interface for users to provide development, Data Studio, Administration, Downloads and Monitoring. In this sprint you will learn how to execute SQL Statements and scripts using SQL Worksheet.
 
 To execute the SQL Statements and scripts in the Oracle Autonomous Database, you should already have an Oracle Cloud account and Database.
 
@@ -13,10 +13,10 @@ To execute the SQL Statements and scripts in the Oracle Autonomous Database, you
 2.	Open the “Navigation” Menu and click on “Oracle Database”, select “Autonomous Database.”
     ![ Autonomous Database](images/pic2.png)
 
-3.  Select the Autonomous Database that you want to connect click “Database Actions” to launch. 
-    ![ Database Actions](images/pic3.png)
+3.  Select the Autonomous Database that you want to connect click “Database Actions” click “Database Actions” drop-down. 
+    ![ Database Actions](images/newpic3.png)
 
-4.  Under Development, click “SQL” to launch work SQL Query window to execute the queries and scripts.
+4.  Click “SQL” from the drop-down to launch SQL Query window or Worksheet to execute the queries and scripts.
     ![ SQL Query Window](images/pic4.png)
 
 5. 	You can save the worksheet by clicking “Save”  and provide a Name and select “Device” where you want to save.

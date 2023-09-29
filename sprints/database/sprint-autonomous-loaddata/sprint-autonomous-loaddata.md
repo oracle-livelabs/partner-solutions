@@ -4,38 +4,62 @@ Duration: 10 minutes
 
 ## Load Data into Oracle Autonomous Database
 
-Oracle Autonomous Database provides Database Actions web interface for users to provide development, Data Studio, Administration, Downloads and Monitoring. You can load data into Oracle Autonomous Database using “SQL” under development or “Data Load” under “Data Studio” interface.
+Oracle Autonomous Database provides Database Actions web interface for users to provide development, Data Studio, Administration, Downloads and Monitoring. 
+You can load data into Oracle Autonomous Database using “SQL” under development or “Data Load” under “Data Studio” interface.
+
+There are two different ways of loading data into Oracle Autonomous Database 
+
+1. Load Data using SQL Worksheet
+2. Load data using Data Studio 
 
 To Load data into Oracle Autonomous Database, you should already have an Oracle Cloud account and Database.  
+
+## Load Data using SQL Worksheet
+In this method you will be using "SQL Worksheet" under development to load data into Oracle Autonomous Database
 
 1.	Sign-in into Oracle Cloud Account using credentials (URL: https://cloud.oracle.com/)
 
 2.	Open the “Navigation” Menu and click on “Oracle Database”, select “Autonomous Database.”
 ![ Autonomous Database](images/pic2.png)
 
-3.  Select the Autonomous Database that you want to connect click “Database Actions” to launch. 
-    ![ Database Actions](images/pic3.png)
+3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down. 
+    ![ Database Actions](images/newpic3.png)
 
-4. Under Development, click “SQL” to launch work SQL Query window to load data or Click “DATALOAD” to load data from local files or remote databases. 
+4. Select “SQL” to launch SQL Worksheet window 
     ![ Data Load](images/pic4.png)
 
-5.	Data Load using SQL under Development: Launch “SQL” Query window and Click on “Data Load”
+5.	In SQL Worksheet window and Click on “Data Load” to load data 
     ![ Data Load using SQL](images/pic5-1.png)
 
-        Click on “Add file” to select the file you want to load and “Run” to load data.
-        ![ Select the file and Run](images/pic5-2.png)
+    Click on “Add file” to select the file you want to load and “Run” to load data.
+    ![ Select the file and Run](images/pic5-2.png)
 
-        The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
-        ![ Data loaded successfully](images/pic5-3.png)
+    The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
+    ![ Data loaded successfully](images/pic5-3.png)
 
-6.	Data Load using “Data Load” under Data Studio: Launch “DataLoad” and select the data location. 
+## Load data using Data Studio 
+In this method you will be using  Data Studio to load data into Oracle Autonomous Database
+
+1.	Sign-in into Oracle Cloud Account using credentials (URL: https://cloud.oracle.com/)
+
+2.	Open the “Navigation” Menu and click on “Oracle Database”, select “Autonomous Database.”
+![ Autonomous Database](images/pic2.png)
+
+3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down. 
+    ![ Database Actions](images/newpic3.png)
+
+4. Select "DATA LOAD" to load data from local files or remote databases
+    ![ Data Load](images/pic4.png)
+
+5.	A new page will be where you will select "LOAD DATA" and the data location. 
+
     ![ Data Load using Data Sutido](images/pic6-1.png)
     
-        In the Next screen “Select files” or “Drag and drop here to upload”. Click on “Start” and “Run” Data load job.
-       ![ Select the file and Run](images/pic6-2.png)
+    In the Next screen “Select files” or “Drag and drop here to upload”. Click on “Start” and “Run” Data load job.
+    ![ Select the file and Run](images/pic6-2.png)
 
-        The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
-        ![ Data loaded successfully](images/pic6-3.png)
+    The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
+    ![ Data loaded successfully](images/pic6-3.png)
 
 ## Learn More
 
