@@ -17,7 +17,7 @@ This lab assumes you have:
 
 * An Oracle Cloud account
 * A Portworx Central Account
-* All previous labs successfully completed
+* A working knowledge of Kubernetes
 
 ## Task 1: Generate Specification
 
@@ -109,11 +109,32 @@ Once you've installed Portworx, you can perform the following tasks to verify th
     Enter the following kubectl get pods command to list and filter the results for Portworx pods:
 
     ```bash
-    <copy>kubectl get pods -n kube-system -o wide | grep -e portworx -e px </copy>
+    <copy>kubectl get pods -n portworx -l name=portworx</copy>
     ```
 
     Example output
 
+    ```bash
+    NAME                                                    READY   STATUS    RESTARTS   AGE
+px-cluster-d82572aa-852f-4ca8-b097-28aeb5975b2b-5jkdj   2/2     Running   0          9m47s
+px-cluster-d82572aa-852f-4ca8-b097-28aeb5975b2b-rmg97   2/2     Running   0          9m47s
+px-cluster-d82572aa-852f-4ca8-b097-28aeb5975b2b-sf28n   2/2     Running   0          9m47s
+    ```
+
 3. Verify Portworx cluster status
 
+    Set up   environmental variable
+    ```bash
+    <copy>PX_POD=$(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}')</copy>
+    ```
+   
+   Confirm Portworx version
+   ```bash
+   <copy>kubectl exec $PX_POD -n portworx -- /opt/pwx/bin/pxctl --version</copy>
+   ```
+   example output:
+   ```bash
+   Defaulted container "portworx" out of: portworx, csi-node-driver-registrar
+pxctl version 2.13.10-ebd8383
+   ```
     You can find the status of the Portworx cluster by running **pxctl** status commands from a pod. Enter the following kubectl exec command, specifying the pod name you retrieved in the previous section:

@@ -1,10 +1,10 @@
-# Title of the Lab
+# Provision Oracle Container Engine for Kubernetes (OKE) Cluster
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab will create an Oracle Container Engine for Kubernetes (OKE) cluster.
 
-Estimated Time: -- minutes
+Estimated Time: 10 minutes
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
@@ -14,9 +14,8 @@ Enter background information here about the technology/feature or product used i
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Use the Oracle Cloud WebUI to provision an OKE cluster
+* USe kubectl to confirm installation details
 
 ### Prerequisites (Optional)
 
@@ -24,7 +23,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle Cloud account
-* All previous labs successfully completed
+* Basic Kubernetes knowledge
 
 
 *This is the "fold" - below items are collapsed by default*
@@ -49,46 +48,28 @@ This lab assumes you have:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## Task 2: Concise Task Description
+## Task 2: Concise Task Descriptio
 
-1. Step 1 - tables sample
+1. Code examples that include variables
 
-  Use tables sparingly:
+	```bash
+  <copy>kubectl get nodes -L topology.kubernetes.io/region,topology.kubernetes.io/zone,oci.oraclecloud.com/fault-domain</copy>
+  ```
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
+  ```bash
+  NAME          STATUS   ROLES   AGE     VERSION   REGION        ZONE               FAULT-DOMAIN
+10.0.10.119   Ready    node    2m47s   v1.25.4   uk-london-1   UK-LONDON-1-AD-1   FAULT-DOMAIN-3
+10.0.10.149   Ready    node    2m48s   v1.25.4   uk-london-1   UK-LONDON-1-AD-3   FAULT-DOMAIN-1
+10.0.10.226   Ready    node    2m46s   v1.25.4   uk-london-1   UK-LONDON-1-AD-2   FAULT-DOMAIN-2
   ```
 
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Container Engine for Kubernetes](https://docs.oracle.com/en-us/iaas/Content/ContEng/home.htm)
+* [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Ron Ekins, Oracle ACE Director, EMEA Practice Leader, Databases, Pure Storage
+* **Last Updated By/Date** - Ron Ekins, September 2023
