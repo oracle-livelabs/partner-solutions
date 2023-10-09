@@ -49,7 +49,7 @@ In this method you will be using  Data Studio to load data into Oracle Autonomou
     ![ Database Actions](images/pic3.png)
 
 4. Select "DATA LOAD" to load data from local files or remote databases
-    ![ DataLoad-DataStudio](images/pic41.png)
+    ![ DataLoad-DataStudio](images/pic41.PNG)
 
 5.	A new page will be where you will select "LOAD DATA" and the data location. 
 
