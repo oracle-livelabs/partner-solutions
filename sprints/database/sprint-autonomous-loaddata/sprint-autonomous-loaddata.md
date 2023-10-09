@@ -1,4 +1,4 @@
-# How do I load data into Oracle Autonomous Database?
+# How do I load data into Oracle Autonomous Database from local files?
 
 Duration: 12-15 minutes
 
@@ -23,7 +23,7 @@ In this method you will be using "SQL Worksheet" under development to load data 
 ![ Autonomous Database](images/pic2.png)
 
 3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down. 
-    ![ Database Actions](images/newpic3.png)
+    ![ Database Actions](images/pic3.png)
 
 4. Select “SQL” to launch SQL Worksheet window 
     ![ Data Load](images/pic4.png)
@@ -46,10 +46,10 @@ In this method you will be using  Data Studio to load data into Oracle Autonomou
 ![ Autonomous Database](images/pic2.png)
 
 3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down. 
-    ![ Database Actions](images/newpic3.png)
+    ![ Database Actions](images/pic3.png)
 
 4. Select "DATA LOAD" to load data from local files or remote databases
-    ![ Data Load](images/pic4.png)
+    ![ Data Load](images/pic41.png)
 
 5.	A new page will be where you will select "LOAD DATA" and the data location. 
 

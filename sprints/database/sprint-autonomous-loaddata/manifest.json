@@ -3,7 +3,7 @@
    "help": "livelabs-help-community_us@oracle.com",
    "tutorials": [
       {
-         "title": "How do I load data into Oracle Autonomous Database?",
+         "title": "How do I load data into Oracle Autonomous Database from local files?",
          "description": "In this sprint, we will provide the steps how to load data into How do I load data into Oracle Autonomous Database using Local file",
          "filename": "sprint-autonomous-loaddata.md"
       },

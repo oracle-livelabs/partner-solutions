@@ -13,7 +13,7 @@
          "filename": "../sprint-autonomous-execqueries/sprint-autonomous-execqueries.md"
       },
 	  {
-         "title": "Other related Sprints - How do I load data into Oracle Autonomous Database?",
+         "title": "Other related Sprints - How do I load data into Oracle Autonomous Database from local files?",
          "description": "In this sprint, we will provide the steps how to load data into How do I load data into Oracle Autonomous Database using Local file",
          "filename": "../sprint-autonomous-loaddata/sprint-autonomous-loaddata.md"
       }
