@@ -26,7 +26,7 @@ In this method you will be using "SQL Worksheet" under development to load data 
     ![ Database Actions](images/pic3.png)
 
 4. Select “SQL” to launch SQL Worksheet window 
-    ![ Data Load](images/pic4.png)
+    ![ DataLoad-SQL](images/pic4.png)
 
 5.	In SQL Worksheet window and Click on “Data Load” to load data 
     ![ Data Load using SQL](images/pic5-1.png)
@@ -49,7 +49,7 @@ In this method you will be using  Data Studio to load data into Oracle Autonomou
     ![ Database Actions](images/pic3.png)
 
 4. Select "DATA LOAD" to load data from local files or remote databases
-    ![ Data Load](images/pic41.png)
+    ![ DataLoad-DataStudio](images/pic41.png)
 
 5.	A new page will be where you will select "LOAD DATA" and the data location. 
 
