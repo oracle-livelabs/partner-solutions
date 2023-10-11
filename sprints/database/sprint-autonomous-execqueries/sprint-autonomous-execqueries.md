@@ -14,7 +14,7 @@ To execute the SQL Statements and scripts in the Oracle Autonomous Database, you
     ![ Autonomous Database](images/pic2.png)
 
 3.  Select the Autonomous Database that you want to connect click “Database Actions” click “Database Actions” drop-down. 
-    ![ Database Actions](images/newpic3.png)
+    ![ Database Actions](images/pic3.png)
 
 4.  Click “SQL” from the drop-down to launch SQL Query window or Worksheet to execute the queries and scripts.
     ![ SQL Query Window](images/pic4.png)
