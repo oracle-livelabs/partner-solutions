@@ -20,22 +20,22 @@ In this method you will be using "SQL Worksheet" under development to load data 
 1.	Sign-in into Oracle Cloud Account using credentials (URL: https://cloud.oracle.com/)
 
 2.	Open the “Navigation” Menu and click on “Oracle Database”, select “Autonomous Database.”
-![ Autonomous Database](images/pic2.png)
+![ Autonomous Database](images/pic2-adb-navigation.png)
 
 3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down. 
-    ![ Database Actions](images/pic3.png)
+    ![ Database Actions](images/pic3-adb-actions.png)
 
 4. Select “SQL” to launch SQL Worksheet window 
-    ![ DataLoad-SQL](images/pic4.png)
+    ![ DataLoad-SQL](images/pic4-adb-sqlworksheet.png)
 
 5.	In SQL Worksheet window and Click on “Data Load” to load data 
-    ![ Data Load using SQL](images/pic5-1.png)
+    ![ Data Load using SQL](images/pic5-1-dataload.png)
 
     Click on “Add file” to select the file you want to load and “Run” to load data.
-    ![ Select the file and Run](images/pic5-2.png)
+    ![ Select the file and Run](images/pic5-2-addfile.png)
 
     The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
-    ![ Data loaded successfully](images/pic5-3.png)
+    ![ Data loaded successfully](images/pic5-3-dataloaded.png)
 
 ## Load data using Data Studio 
 In this method you will be using  Data Studio to load data into Oracle Autonomous Database
@@ -43,23 +43,23 @@ In this method you will be using  Data Studio to load data into Oracle Autonomou
 1.	Sign-in into Oracle Cloud Account using credentials (URL: https://cloud.oracle.com/)
 
 2.	Open the “Navigation” Menu and click on “Oracle Database”, select “Autonomous Database.”
-![ Autonomous Database](images/pic2.png)
+![ Autonomous Database](images/pic2-adb-navigation.png)
 
 3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down. 
-    ![ Database Actions](images/pic3.png)
+    ![ Database Actions](images/pic3-adb-actions.png)
 
 4. Select "DATA LOAD" to load data from local files or remote databases
-    ![ DataLoad-DataStudio](images/pic41.PNG)
+    ![ DataLoad-DataStudio](images/pic41-adb-dataload.png)
 
 5.	A new page will be where you will select "LOAD DATA" and the data location. 
 
-    ![ Data Load using Data Sutido](images/pic6-1.png)
+    ![ Data Load using Data Sutido](images/pic5-4-dataload-file.png)
     
     In the Next screen “Select files” or “Drag and drop here to upload”. Click on “Start” and “Run” Data load job.
-    ![ Select the file and Run](images/pic6-2.png)
+    ![ Select the file and Run](images/pic5-5-selectfiles.png)
 
     The data should be loaded successfully. In case if the table doesn’t exist, it will create the table with appropriate data types.
-    ![ Data loaded successfully](images/pic6-3.png)
+    ![ Data loaded successfully](images/pic5-6-loadsuccess.png)
 
 ## Learn More
 
