@@ -62,6 +62,7 @@ Oracle Autonomous database supports both TLS authentication and Mutual TLS Authe
 9. You should be able to connect Oracle Autonomous database using SQL*Plus or SQLcl with credentials and connection string.
 
 	Using SQL*Plus
+
 	For ex: sqlplus username/password@'conn_string'
 
 	```
@@ -73,6 +74,7 @@ Oracle Autonomous database supports both TLS authentication and Mutual TLS Authe
 	Using SQLcl
 
 	For ex: sql -cloudconfig wallet.zip admin/password@'conn-string' 
+	
 	```
 	<copy>
 	C:\> sql -cloudconfig wallet.zip admin/password@zamr6kjq51hirsam_high
