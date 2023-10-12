@@ -23,7 +23,7 @@ In this method you will be using "SQL Worksheet" under development to load data 
 ![ Autonomous Database](images/pic2-adb-navigation.png)
 
 3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down.
-    ![ Database Actions](images/pic3-1-adb-actions.png)
+    ![ Database Actions](images/pic3-1-adb-actions.PNG)
 
 4. Select “SQL” to launch SQL Worksheet window
     ![ DataLoad-SQL](images/pic4-adb-sqlworksheet.PNG) 
