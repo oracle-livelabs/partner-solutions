@@ -17,15 +17,15 @@ Oracle Autonomous database supports both TLS authentication and Mutual TLS Authe
 
 3. Open the “Navigation” Menu and click on “Oracle Database”, select “Autonomous Database.”
 
-    ![ Autonomous Database](images/pic3.png)
+    ![ Autonomous Database](images/pic3-adb-navigation.png)
 
 4. Select the Autonomous Database that you want to connect using SQL*Plus and Select “Database Connection” and click on “Download wallet”. It will ask you to create password for the wallet. 
 
-    ![ Download Wallet](images/pic4.png)
+    ![ Download Wallet](images/pic4-db-connection.png)
 
 5. Unzip and copy the Wallet into a secure location on the client machine. 
 
-    ![ Copy Wallet](images/pic5.png)
+    ![ Copy Wallet](images/pic5-dbwallet.png)
 
 6. Copy the sqlnet.ora and tnsnames.ora into %ORACLE_CLIENT%\network\admin location.
 
@@ -88,4 +88,4 @@ Oracle Autonomous database supports both TLS authentication and Mutual TLS Authe
 ## Acknowledgements
 
 * **Author** - Satishbabu Gunukula, Oracle ACE Pro
-* **Last Updated By/Date** - Satishbabu Gunukula,  Sept 2023
+* **Last Updated By/Date** - Satishbabu Gunukula,  Oct 2023
