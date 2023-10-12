@@ -23,10 +23,10 @@ In this method you will be using "SQL Worksheet" under development to load data 
 ![ Autonomous Database](images/pic2-adb-navigation.png)
 
 3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down.
-    ![ Database Actions](images/pic3-adb-actions.png)
+    ![ Database Actions](images/pic3-1-adb-actions.png)
 
 4. Select “SQL” to launch SQL Worksheet window
-    ![ DataLoad-SQL](images/pic4-adb-sqlworksheet.png) 
+    ![ DataLoad-SQL](images/pic4-adb-sqlworksheet.PNG) 
 
 5.	In SQL Worksheet window and Click on “Data Load” to load data 
     ![ Data Load using SQL](images/pic5-1-dataload.png)
@@ -46,10 +46,10 @@ In this method you will be using  Data Studio to load data into Oracle Autonomou
 ![ Autonomous Database](images/pic2-adb-navigation.png)
 
 3.  Select the Autonomous Database that you want to connect, click “Database Actions” drop-down.
-    ![ Database Actions](images/pic3-adb-actions.png) 
+    ![ Database Actions](images/pic3-2-adb-actions.PNG) 
 
 4. Select "DATA LOAD" to load data from local files or remote databases
-    ![ DataLoad-DataStudio](images/pic41-adb-dataload.png) 
+    ![ DataLoad-DataStudio](images/pic41-adb-dataload.PNG) 
 
 5.	A new page will be where you will select "LOAD DATA" and the data location. 
 
