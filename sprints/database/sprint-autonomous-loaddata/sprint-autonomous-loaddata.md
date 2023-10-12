@@ -71,4 +71,4 @@ In this method you will be using  Data Studio to load data into Oracle Autonomou
 ## Acknowledgements
 
 * **Author** - Satishbabu Gunukula, Oracle ACE Pro
-* **Last Updated By/Date** - Satishbabu Gunukula,  Sept 2023
+* **Last Updated By/Date** - Satishbabu Gunukula,  Oct 2023
