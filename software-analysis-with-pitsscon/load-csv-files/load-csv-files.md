@@ -44,7 +44,7 @@ Learn how to
 
      ```
      <copy>
-     https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
+     https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
      </copy>
      ```
 
@@ -53,7 +53,7 @@ Learn how to
 
      ```
      <copy>
-     curl -G -o pitss-ocw-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
+     curl -G -o pitss-ocw-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
      </copy>
      ```
 
