@@ -1,92 +1,145 @@
-# Title of the Lab
+# Create Portworx managed PVC
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab will learn how to create a Kubernetes Persistent Volume Claim using a Portworx Storage Class.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 10 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than two sections/paragraphs, please utilize the "Learn More" section.
+**Portworx** is a software defined storage overlay that allows you to:
+
+* Run containerized stateful applications that are highly-available (HA) across multiple nodes, cloud instances, regions, data centers or even clouds
+* Migrate workflows between multiple clusters running across same or hybrid clouds
+* Run hyperconverged workloads where the data resides on the same host as the applications
+* Have programmatic control on your storage resources
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
 
-### Prerequisites (Optional)
+* Review available Kubernetes Storage Classes
+* Create a Portworx managed Persistent Volume Claim (PVC)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
 
+* A running OKE Cluster
+* Portworx Cloud Native Storage deployed
+* OCI CLI configured
+* kubectl configured
 
-*This is the "fold" - below items are collapsed by default*
+## Task 1: Review Storage Classes
 
-## Task 1: Concise Task Description
+A Storage Class provides a way for administrators to describe the “classes” of storage they offer. Different classes might map to quality-of-service levels, or to backup policies, or to arbitrary policies determined by the cluster administrators.
 
-(optional) Task 1 opening paragraph.
+By default OKE provides two Kubernetes Storage Classes *oci-bv* and *oci*, Portworx provides a number of additional Kubernetes Storage Classes which can be used to provide persistent storage to applications.
 
-1. Step 1
+1. Review Storage Classes using *kubectl get storageclass* or *sc* to list available Storage Classes
 
-	![Image alt text](images/sample1.png)
+     ```bash
+     <copy>kubectl get sc</copy>
+     ```
 
-2. Step 2
+    Example output:
 
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Task Description
-
-1. Step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    ```bash
+    % kubectl get sc
+    NAME                                 PROVISIONER                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+    oci                                  oracle.com/oci                    Delete          Immediate              false                  3d
+    oci-bv (default)                     blockvolume.csi.oraclecloud.com   Delete          WaitForFirstConsumer   true                   3d
+    px-csi-db                            pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-csi-db-cloud-snapshot             pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-csi-db-cloud-snapshot-encrypted   pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-csi-db-encrypted                  pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-csi-db-local-snapshot             pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-csi-db-local-snapshot-encrypted   pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-csi-replicated                    pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-csi-replicated-encrypted          pxd.portworx.com                  Delete          Immediate              true                   3h36m
+    px-db                                kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    px-db-cloud-snapshot                 kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    px-db-cloud-snapshot-encrypted       kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    px-db-encrypted                      kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    px-db-local-snapshot                 kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    px-db-local-snapshot-encrypted       kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    px-replicated                        kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    px-replicated-encrypted              kubernetes.io/portworx-volume     Delete          Immediate              true                   3h36m
+    stork-snapshot-sc                    stork-snapshot                    Delete          Immediate              true                   3h36m
     ```
 
-4. Code examples that include variables
+## Task 2. Describe Storage Class
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+Every StorageClass has a **Provisioner**, **Parameters** and **ReclaimPolicy**, we can review the details using *kubectl describe storageclass* or *sc*
+
+1. Describe StorageClass *px-csi-db*
+
+     ```bash
+     <copy>kubectl describe sc/px-csi-db</copy>
+     ```
+
+## Task 3. Create Portworx Managed Persistent Volume Claim (PVC)
+
+Create Persistent Volume Claim referencing the *px-csi-db* StorageClass
+
+1. Create a file called **px-ora-pvc.yaml** file using the example below.
+
+    ```bash
+    <copy>
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: px-ora-pvc
+    spec:
+      storageClassName: px-csi-db
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+            storage: 10Gi
+    </copy>
+    ```
+
+    In the above example
+
+    * **name**: *px-ora-pvc* name of the PVC.
+    * **storageClassName**: *px-csi-db* indicates that PVC should be created using the provisioner and parameters specified in the StorageClass
+    * **accessMode**: *ReadWriteOnce* indicates that only one pod is allowed to read and write to the volume.
+    * **storage**: *10Gi* indicates this is a 10GiB PVC.
+
+2. Run the *kubectl apply -f* command to create a new PVC
+
+     ```bash
+     <copy>kubectl apply -f px-ora-pvc.yaml</copy>
+     ```
+
+3. Describe the newly created PVC using *kubectl describe pvc*
+
+     ```bash
+     <copy>kubectl describe pvc/px-ora-pvc</copy>
+     ```
+
+4. Use *kubectl get pvc* to check status of the PVC
+
+     ```bash
+     <copy>kubectl get pvc/px-ora-pvc</copy>
+     ```
+
+   Example output
+
+     ```bash
+     kubectl get pvc/px-ora-pvc
+     NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+     px-ora-pvc   Bound    pvc-7e15fb55-d9f0-456b-9b47-8ed9b2fac0d0   10Gi       RWO          px-csi-db      108
+     ```
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Container Engine for Kubernetes](https://docs.oracle.com/en-us/iaas/Content/ContEng/home.htm)
+* [Kubernetes Documentation](https://kubernetes.io/docs/home/)
+* [Portworx Documentation](https://docs.portworx.com/portworx-enterprise/)
+* [ronekins.com](https://ronekins.com/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+* **Author** - [Ron Ekins](https://ace.oracle.com/apex/ace/profile/ronekins), Oracle ACE Director, Database Practice Lead for EMEA & LATAM @ Pure Storage
+* **Last Updated By/Date** - Ron Ekins, January 2024

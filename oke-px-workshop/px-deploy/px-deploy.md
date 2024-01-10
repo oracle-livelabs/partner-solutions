@@ -1,140 +1,183 @@
-# Install Portworx on Oracle Container Engine for Kubernetes
+# Install Portworx on Oracle Container Engine for Kubernetes (OKE)
 
 ## Introduction
 
-In this lab will use Portworx Central to create Kubernetes manifests that will be used to deploy
+In this lab will learn how to deploy Portworx Enterprise for OKE into an existing OKE cluster.
 
 Estimated Time: 10 minutes
 
-### Prerequisites
+**Portworx** is a software defined storage overlay that allows you to:
 
-* An OKE cluster that meets the Portworx prerequisites.
-* An Oracle API signing key and fingerprint.
-    Download and store the key with the name oci\_api\_key.pem, and record the fingerprint of the key for use during this procedure.
-* Your Oracle user OCID. Record the OCID for use during this procedure.
+* Run containerized stateful applications that are highly-available (HA) across multiple nodes, cloud instances, regions, data centers or even clouds
+* Migrate workflows between multiple clusters running across same or hybrid clouds
+* Run hyperconverged workloads where the data resides on the same host as the applications
+* Have programmatic control on your storage resources
+
+### Objectives
+
+In this lab, you will:
+
+* Create Portworx specification
+* Deploy Portworx Operator
+* Deploy Portworx Storage Cluster
+* Review Portworx install
+
+### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle Cloud account
+* An OKE cluster that meets the Portworx prerequisites
 * A Portworx Central Account
 * A working knowledge of Kubernetes
+* OCI CLI configured
+* kubectl installed
 
 ## Task 1: Generate Specification
 
 To install Portworx with Kubernetes, you must first generate Kubernetes manifests that you will deploy in your cluster. Once the spec is generated you must also install the Portworx Operator.
 
 1. Navigate to [Portworx Central](https://central.portworx.com/) and sign-in using Portworx account details.
-    ![Portworx Central](images/px-signin.png)
+  ![Portworx Central](images/px-signin.png)
 
 2. Select **Portworx Enterprise**.
-    ![Portworx Catalog](images/px-catalog.png)
+  ![Portworx Catalog](images/px-catalog.png)
 
 3. Select required version of Portworx, for this lab we use **Portworx Enterprise**, select and click continue.
-    ![Portworx Catalog](images/px-product.png)
+  ![Portworx Catalog](images/px-product.png)
 
 4. For **Platform**, select **Oracle**, then click **Customize** at the bottom of the **Summary** section.
-    ![Portworx Catalog](images/px-platform.png)
+  ![Portworx Catalog](images/px-platform.png)
 
-5. Ensure that **Use the Portworx Operator** is selected, then select Portworx version 2.13 or newer. Update your cluster's **Kubernetes version**, then click **Next**.
-    ![Portworx Catalog](images/px-basic.png)
+5. Ensure that **Use the Portworx Operator** is selected, then select Portworx version 3.0 or higher. Update your cluster's **Kubernetes version**, then click **Next**.
+  ![Portworx Catalog](images/px-basic.png)
 
-6. In the **Storage** section, Portworx recommends that you select **Create using a Spec**, specify your own values for **Select number of VPUs** for required OCI Oracle block volumes as per performance.
-For details see: [OCI Block Volume Performance](https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
-    ![Portworx Catalog](images/px-storage.png)
+6. In the **Storage** section, update **Select number of VPUs** (Volume Performance Units) for required OCI Oracle block volumes as per performance, defaulted to 10 (Balanced), and **Size(GBs) default (150GBs)
+For Volume Performance Units (VPUs) options see: [OCI Block Volume Performance](https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
+   ![Portworx Catalog](images/px-storage.png)
 
-7. In the **Networking** section, click **Next**.
-     ![Portworx Catalog](images/px-network.png)
+7. In the **Networking** section, accept defaults and click **Next**.
+   ![Portworx Catalog](images/px-network.png)
 
-8. In the **Customize** section, select **(OKE) Oracle Kubernetes Engine** and click **Finish** to generate the specs.
-    ![Portworx Catalog](images/px-customize.png)
+8. In the **Customize** section, click **Finish** to generate the specs.
+  ![Portworx Catalog](images/px-customize.png)
 
 9. Within the Portworx Operator section, we can see 2 kubectl apply commands which we will use to deploy the Portworx Operator and Storage Cluster.
-    ![Portworx Catalog](images/px-operator.png)
+  ![Portworx Catalog](images/px-operator.png)
 
-## Task 2: Deploy the Operator
+## Task 2: Deploy Portworx
 
-To deploy the Operator, run the command that Portworx Central provided, which looks similar to the following:
+Deploy Portworx using the commands provided from Portworx Central UI
 
-```bash
-kubectl apply -f 'https://install.portworx.com/<portworx_version>?comp=pxoperator&kbver=<k8s-version>&ns=portworx'
-```
+1. Deploy Portworx Operator
 
-## Task 3: Deploy the Storage Cluster
+   To deploy the Operator, run the generated *kubectl apply -f* command.
 
-To deploy the StorageCluster, run the command that Portworx Central provided, which looks similar to the following:
+     ```bash
+     <copy>kubectl apply -f 'https://install.portworx.com/3.0?comp=pxoperator&kbver=1.27.2&ns=portworx'</copy>
+     ```
 
-```bash
-kubectl apply -f “https://install.portworx.com/<portworx_version>?operator=true&mc=false&kbver=<k8s-version>&ns=portworx&b=true&kd=type%3Dpv-10%2Csize%3D150&mz=2&cp=oracle&s=%22type%3Dpv-10%2Csize%3D150%22%2C%22type%3Dpv-20%2Csize%3D150%22&j=auto&c=px-cluster-703d279b-ed06-4c39-9ff5-1f911204536e&oke=true&stork=true&csi=true&mon=true&tel=false&st=k8s&promop=true”
-```
+2. Deploy Storage Cluster
 
-## Task 4: Verify your Portworx installation
+   To deploy the StorageCluster, run the command that Portworx Central provided, which looks similar to the following:
+
+     ```bash
+     kubectl apply -f “https://install.portworx.com/<portworx_version>?operator=true&mc=false&kbver=<k8s-version>&ns=portworx&b=true&kd=type%3Dpv-10%2Csize%3D150&mz=2&cp=oracle&s=%22type%3Dpv-10%2Csize%3D150%22%2C%22type%3Dpv-20%2Csize%3D150%22&j=auto&c=px-cluster-703d279b-ed06-4c39-9ff5-1f911204536e&oke=true&stork=true&csi=true&mon=true&tel=false&st=k8s&promop=true”
+     ```
+
+## Task 3: Review Portworx deployment
 
 Once you've installed Portworx, you can perform the following tasks to verify that Portworx has installed correctly.
 
-1. Verify OCI OKE Storage Classes.
+1. Verify Portworx pods are running.
 
-    Previously **kubectl get sc** only returned two storage classes, we should now see additional Kubernetes storage classes generated by Portworx.
+   Enter the following kubectl get pods command to list and filter the results for Portworx pods:
 
-    ```bash
-    <copy>kubectl get sc</copy>
-    ```
-
-    Example Output
-
-    ```bash
-    NAME                                 PROVISIONER                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-    oci                                  oracle.com/oci                    Delete          Immediate              false                  9d
-    oci-bv (default)                     blockvolume.csi.oraclecloud.com   Delete          WaitForFirstConsumer   true                   9d
-    px-csi-db                            pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-csi-db-cloud-snapshot             pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-csi-db-cloud-snapshot-encrypted   pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-csi-db-encrypted                  pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-csi-db-local-snapshot             pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-csi-db-local-snapshot-encrypted   pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-csi-replicated                    pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-csi-replicated-encrypted          pxd.portworx.com                  Delete          Immediate              true                   9d
-    px-db                                kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    px-db-cloud-snapshot                 kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    px-db-cloud-snapshot-encrypted       kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    px-db-encrypted                      kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    px-db-local-snapshot                 kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    px-db-local-snapshot-encrypted       kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    px-replicated                        kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    px-replicated-encrypted              kubernetes.io/portworx-volume     Delete          Immediate              true                   9d
-    stork-snapshot-sc                    stork-snapshot                    Delete          Immediate              true                   9d
-    ```
-
-2. Verify Portworx pods are running.
-
-    Enter the following kubectl get pods command to list and filter the results for Portworx pods:
-
-    ```bash
-    <copy>kubectl get pods -n portworx -l name=portworx</copy>
-    ```
+     ```bash
+     <copy>kubectl get pods -n portworx -l name=portworx</copy>
+     ```
 
     Example output
 
-    ```bash
-    NAME                                                    READY   STATUS    RESTARTS   AGE
-px-cluster-d82572aa-852f-4ca8-b097-28aeb5975b2b-5jkdj   2/2     Running   0          9m47s
-px-cluster-d82572aa-852f-4ca8-b097-28aeb5975b2b-rmg97   2/2     Running   0          9m47s
-px-cluster-d82572aa-852f-4ca8-b097-28aeb5975b2b-sf28n   2/2     Running   0          9m47s
+     ```bash
+     % kubectl get pods -n portworx -l name=portworx
+     NAME                                                    READY   STATUS    RESTARTS      AGE
+     px-cluster-5273270c-2996-4191-9d96-bfdb6e7459f5-qhbrd   2/2     Running   1 (50m ago)   65m
+     px-cluster-5273270c-2996-4191-9d96-bfdb6e7459f5-rstx5   2/2     Running   1 (49m ago)   65m
+     px-cluster-5273270c-2996-4191-9d96-bfdb6e7459f5-xwx2g   2/2     Running   1 (49m ago)   65m
+     ```
+
+2. Set up Portworx Control *pxctl*
+
+   Export environmental variable
+
+     ```bash
+     <copy>export PX_POD=$(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}')</copy>
     ```
 
-3. Verify Portworx cluster status
+    And alias
 
-    Set up   environmental variable
-    ```bash
-    <copy>PX_POD=$(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}')</copy>
-    ```
-   
-   Confirm Portworx version
-   ```bash
-   <copy>kubectl exec $PX_POD -n portworx -- /opt/pwx/bin/pxctl --version</copy>
-   ```
-   example output:
-   ```bash
-   Defaulted container "portworx" out of: portworx, csi-node-driver-registrar
-pxctl version 2.13.10-ebd8383
-   ```
-    You can find the status of the Portworx cluster by running **pxctl** status commands from a pod. Enter the following kubectl exec command, specifying the pod name you retrieved in the previous section:
+     ```bash
+     <copy>alias pxctl='kubectl exec $PX_POD -n portworx -- /opt/pwx/bin/pxctl'</copy>
+     ```
+
+3. Portworx version
+
+   Confirm version of Portworx using *pxctl --version*
+
+     ```bash
+     <copy>pxctl --version</copy>
+     ```
+
+    Example output
+
+     ```bash
+     % pxctl --version
+     Defaulted container "portworx" out of: portworx, csi-node-driver-registrar
+     pxctl version 3.0.4.0-1396ef3
+     ```
+
+4. Deployment Status
+
+   Use **Status** of Portworx deployment using *pxctl status*
+
+     ```bash
+     <copy>pxctl status</copy>
+     ```
+
+5. Storage pools
+
+   Use the *pxctl cluster provision-status* command to view OCI **Region** and **Availability Domain** of storage pools within the Portworx cluster.
+
+     ```bash
+     <copy>pxctl cluster provision-status</copy>
+     ```
+
+6. Cloud Drives
+
+   The *pxctl clouddrive* command is useful for getting more insight into the OCI block volumes provisioned by Portworx, including the **OCID** for each block volume.
+
+     ```bash
+     <copy>pxctl clouddrive list</copy>
+     ```
+
+7. OCI Block Volumes
+
+   Use *oci bv volume list* command with *–lifecyle-state* “Available” to list OCI block volumes in a JSON format, use grep to limit output to the display-name, for example.
+
+     ```bash
+     <copy>oci bv volume list --compartment-id <compartment id> --lifecycle-state "Available" | grep display-name</copy>
+     ```
+
+   Replace the *`<compartment id>`* with OCI compartment id
+
+## Learn More
+
+* [Container Engine for Kubernetes](https://docs.oracle.com/en-us/iaas/Content/ContEng/home.htm)
+* [Kubernetes Documentation](https://kubernetes.io/docs/home/)
+* [Portworx Documentation](https://docs.portworx.com/portworx-enterprise/)
+* [ronekins.com](https://ronekins.com/)
+
+## Acknowledgements
+
+* **Author** - [Ron Ekins](https://ace.oracle.com/apex/ace/profile/ronekins), Oracle ACE Director, Database Practice Lead for EMEA & LATAM @ Pure Storage
+* **Last Updated By/Date** - Ron Ekins, January 2024

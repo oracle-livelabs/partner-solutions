@@ -18,20 +18,16 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Provision an OKE Cluster",
+            "title": "Lab 1: Provision Oracle Kubernetes Engine for Kubernetes Cluster",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../provision-oke/provision-oke.md"
         },
         {
-            "title": "Lab 2: Setup the OKE Environment",
-            "filename": "../../setup-oke/setup-oke.md"
-        },
-        {
-            "title": "Lab 3: Deploy Portworx Enterprise for OKE",
+            "title": "Lab 2: Deploy Portworx Enterprise for OKE",
             "filename": "../../px-deploy/px-deploy.md"
         },
         {
-            "title": "Lab 4: Create your first PVC",
+            "title": "Lab 3: Create Persistent Volume Claim (PVC)",
             "description": "Create Portworx Enterprise managed PVC",
             "filename": "../../create-pvc/create-pvc.md"
         }
