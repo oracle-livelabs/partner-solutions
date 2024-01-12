@@ -4,7 +4,7 @@
 
 In this lab will create a new Oracle Container Engine for Kubernetes (OKE) cluster
 
-Estimated Time: 10 minutes
+Estimated Time: 30 minutes
 
 ### Oracle Container Engine for Kubernetes (OKE)
 
@@ -34,14 +34,14 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
 
    Logon to Oracle Cloud Infrastructure (OCI) account using the hamburger menu navigate to Developer Services and click **Kubernetes Clusters (OKE)**
 
-   ![OKE](images/oke-menu.png)
+   ![OKE Developer Services](images/oke-menu.png)
 
    > **Note:** Use OCI Pins to bookmark frequently used services.
 
 2. Select **Compartment**
 
    Select required Compartment and click **Create cluster**
-   ![OKE](images/oke-create.png)
+   ![Create OKE Cluster](images/oke-create.png)
 
 3. Create **cluster**
 
@@ -49,23 +49,23 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
 
    New network resources include one regional subnet for the Kubernetes API endpoint, one regional subnet for worker nodes, and another regional subnet for load balancers, click **Submit**.
 
-   ![OKE](images/oke-quick-create.png)
+   ![Create OKE Quick Cluster](images/oke-quick-create.png)
 
    Update cluster **Name**, **Compartment**, **Kubernetes version**, **Node type** and **Kubernetes worker type**, for example Kubernetes version **1.27.2**, Node type **Managed** and **Public workers**
 
-   ![OKE](images/oke-quick-create1.png)
+   ![OPE Configuration](images/oke-quick-create1.png)
 
    Within the **Shape and image** section and update number of **OCPUs**, and amount of **memory** as required, for example **8** OCPUs and **32GB** of memory.
 
-   ![OKE](images/oke-quick-create2.png)
+   ![OKE Configuration](images/oke-quick-create2.png)
 
    Review settings and if OK click **Create cluster**
 
-   ![OKE](images/oke-quick-review.png)
+   ![OKE Configuration Review](images/oke-quick-review.png)
 
    The OKE wizard will launch the creation of the OKE cluster, click **Close** once all tasks are reported as **Done**.
 
-   ![OKE](images/oke-creating.png)
+   ![Creating OKE Cluster](images/oke-creating.png)
 
    > ***Note:*** Before clicking **Create cluster** review [Portworx prerequisites](https://docs.portworx.com/portworx-enterprise/install-portworx/prerequisites) for latest installation requirements and supported OKE versions.
 
@@ -81,7 +81,7 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
 
    Select **Local Access** and use follow detailed instructions provided.
 
-   ![OKE](images/oke-local-access.png)
+   ![OKE Active Status](images/oke-local-access.png)
 
    Confirm OCI CLI version is higher than minimal requirement.
 
@@ -91,7 +91,7 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
 
    Example output:
 
-    ```bash
+    ```text
     % oci -v
     3.33.3
     ```
@@ -106,7 +106,7 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
 
    Example Output:
 
-    ```bash
+    ```text
     % kubectl get nodes -L topology.kubernetes.io/region,topology.kubernetes.io/zone,oci.oraclecloud.com/fault-domain
     NAME          STATUS   ROLES   AGE   VERSION   REGION        ZONE               FAULT-DOMAIN
     10.0.10.114   Ready    node    15m   v1.27.2   uk-london-1   UK-LONDON-1-AD-1   FAULT-DOMAIN-1
@@ -126,12 +126,12 @@ Before we deploy Portworx Enterprise, we need to create a namespace for the port
 
     Example Output
 
-    ```bash
+    ```text
     % kubectl create namespace portworx
     namespace/portworx created
     ```
 
-## Task 4: Create OCI Secret for Portworx
+## Task 4: Create Kubernetes Secret for Portworx
 
 To install the Portworx Operator we need to create a Kubernetes secret to allow Portworx to manage OCI block storage using our Oracle API signing key and fingerprint details, for example.
 
@@ -155,7 +155,7 @@ To install the Portworx Operator we need to create a Kubernetes secret to allow 
 
     Example Output
 
-    ```bash
+    ```text
     NAME        TYPE     DATA   AGE
     ociapikey   Opaque   3      1d
     ```
@@ -174,7 +174,7 @@ The *oci* class is considered *legacy* and is only used by the **FlexVolume** pl
 
     Example Output
 
-    ```bash
+    ```text
     NAME                                 PROVISIONER                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     oci                                  oracle.com/oci                    Delete          Immediate              false                  9d
     oci-bv (default)                     blockvolume.csi.oraclecloud.com   Delete          WaitForFirstConsumer   true                   9d

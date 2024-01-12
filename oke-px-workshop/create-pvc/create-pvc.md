@@ -43,7 +43,7 @@ By default OKE provides two Kubernetes Storage Classes *oci-bv* and *oci*, Portw
 
     Example output:
 
-    ```bash
+    ```text
     % kubectl get sc
     NAME                                 PROVISIONER                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     oci                                  oracle.com/oci                    Delete          Immediate              false                  3d
@@ -126,7 +126,7 @@ Create Persistent Volume Claim referencing the *px-csi-db* StorageClass
 
    Example output
 
-     ```bash
+     ```text
      kubectl get pvc/px-ora-pvc
      NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
      px-ora-pvc   Bound    pvc-7e15fb55-d9f0-456b-9b47-8ed9b2fac0d0   10Gi       RWO          px-csi-db      108

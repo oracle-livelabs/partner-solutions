@@ -4,7 +4,7 @@
 
 In this lab will learn how to deploy Portworx Enterprise for OKE into an existing OKE cluster.
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 **Portworx** is a software defined storage overlay that allows you to:
 
@@ -37,32 +37,32 @@ This lab assumes you have:
 To install Portworx with Kubernetes, you must first generate Kubernetes manifests that you will deploy in your cluster. Once the spec is generated you must also install the Portworx Operator.
 
 1. Navigate to [Portworx Central](https://central.portworx.com/) and sign-in using Portworx account details.
-  ![Portworx Central](images/px-signin.png)
+  ![Portworx Sign In](images/px-signin.png)
 
 2. Select **Portworx Enterprise**.
   ![Portworx Catalog](images/px-catalog.png)
 
 3. Select required version of Portworx, for this lab we use **Portworx Enterprise**, select and click continue.
-  ![Portworx Catalog](images/px-product.png)
+  ![Portworx Product Catalog](images/px-product.png)
 
 4. For **Platform**, select **Oracle**, then click **Customize** at the bottom of the **Summary** section.
-  ![Portworx Catalog](images/px-platform.png)
+  ![Portworx Platform](images/px-platform.png)
 
 5. Ensure that **Use the Portworx Operator** is selected, then select Portworx version 3.0 or higher. Update your cluster's **Kubernetes version**, then click **Next**.
-  ![Portworx Catalog](images/px-basic.png)
+  ![Portworx Basic](images/px-basic.png)
 
 6. In the **Storage** section, update **Select number of VPUs** (Volume Performance Units) for required OCI Oracle block volumes as per performance, defaulted to 10 (Balanced), and **Size(GBs) default (150GBs)
 For Volume Performance Units (VPUs) options see: [OCI Block Volume Performance](https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
-   ![Portworx Catalog](images/px-storage.png)
+   ![Portworx Storage](images/px-storage.png)
 
 7. In the **Networking** section, accept defaults and click **Next**.
-   ![Portworx Catalog](images/px-network.png)
+   ![Portworx Network](images/px-network.png)
 
 8. In the **Customize** section, click **Finish** to generate the specs.
-  ![Portworx Catalog](images/px-customize.png)
+  ![Portworx Customize](images/px-customize.png)
 
 9. Within the Portworx Operator section, we can see 2 kubectl apply commands which we will use to deploy the Portworx Operator and Storage Cluster.
-  ![Portworx Catalog](images/px-operator.png)
+  ![Portworx Operator](images/px-operator.png)
 
 ## Task 2: Deploy Portworx
 
@@ -80,7 +80,7 @@ Deploy Portworx using the commands provided from Portworx Central UI
 
    To deploy the StorageCluster, run the command that Portworx Central provided, which looks similar to the following:
 
-     ```bash
+     ```text
      kubectl apply -f “https://install.portworx.com/<portworx_version>?operator=true&mc=false&kbver=<k8s-version>&ns=portworx&b=true&kd=type%3Dpv-10%2Csize%3D150&mz=2&cp=oracle&s=%22type%3Dpv-10%2Csize%3D150%22%2C%22type%3Dpv-20%2Csize%3D150%22&j=auto&c=px-cluster-703d279b-ed06-4c39-9ff5-1f911204536e&oke=true&stork=true&csi=true&mon=true&tel=false&st=k8s&promop=true”
      ```
 
@@ -98,7 +98,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
 
     Example output
 
-     ```bash
+     ```text
      % kubectl get pods -n portworx -l name=portworx
      NAME                                                    READY   STATUS    RESTARTS      AGE
      px-cluster-5273270c-2996-4191-9d96-bfdb6e7459f5-qhbrd   2/2     Running   1 (50m ago)   65m
@@ -130,7 +130,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
 
     Example output
 
-     ```bash
+     ```text
      % pxctl --version
      Defaulted container "portworx" out of: portworx, csi-node-driver-registrar
      pxctl version 3.0.4.0-1396ef3
