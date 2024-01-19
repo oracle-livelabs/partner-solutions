@@ -81,7 +81,9 @@ Deploy Portworx using the commands provided from Portworx Central UI
    To deploy the StorageCluster, run the command that Portworx Central provided, which looks similar to the following:
 
      ```text
+     <copy>
      kubectl apply -f “https://install.portworx.com/<portworx_version>?operator=true&mc=false&kbver=<k8s-version>&ns=portworx&b=true&kd=type%3Dpv-10%2Csize%3D150&mz=2&cp=oracle&s=%22type%3Dpv-10%2Csize%3D150%22%2C%22type%3Dpv-20%2Csize%3D150%22&j=auto&c=px-cluster-703d279b-ed06-4c39-9ff5-1f911204536e&oke=true&stork=true&csi=true&mon=true&tel=false&st=k8s&promop=true”
+     </copy>
      ```
 
 ## Task 3: Review Portworx deployment
@@ -99,11 +101,13 @@ Once you've installed Portworx, you can perform the following tasks to verify th
     Example output
 
      ```text
+     <copy>
      % kubectl get pods -n portworx -l name=portworx
      NAME                                                    READY   STATUS    RESTARTS      AGE
      px-cluster-5273270c-2996-4191-9d96-bfdb6e7459f5-qhbrd   2/2     Running   1 (50m ago)   65m
      px-cluster-5273270c-2996-4191-9d96-bfdb6e7459f5-rstx5   2/2     Running   1 (49m ago)   65m
      px-cluster-5273270c-2996-4191-9d96-bfdb6e7459f5-xwx2g   2/2     Running   1 (49m ago)   65m
+     </copy>
      ```
 
 2. Set up Portworx Control *pxctl*
@@ -131,9 +135,11 @@ Once you've installed Portworx, you can perform the following tasks to verify th
     Example output
 
      ```text
+     <copy>
      % pxctl --version
      Defaulted container "portworx" out of: portworx, csi-node-driver-registrar
      pxctl version 3.0.4.0-1396ef3
+     </copy>
      ```
 
 4. Deployment Status

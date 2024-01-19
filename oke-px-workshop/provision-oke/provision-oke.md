@@ -92,8 +92,10 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
    Example output:
 
     ```text
+    <copy>
     % oci -v
     3.33.3
+    </copy>
     ```
 
    Apply OKE provided **oci ce cluster create-kubeconfig** command to desktop and test local access using **kubectl get nodes**.
@@ -101,17 +103,21 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
    Use the Kubernetes **topology.kubernetes.io** labels to see OCI Region, Availability Domain and Fault Domain.
 
     ```bash
-    <copy>kubectl get nodes -L topology.kubernetes.io/region,topology.kubernetes.io/zone,oci.oraclecloud.com/fault-domain</copy>
+    <copy>
+    kubectl get nodes -L topology.kubernetes.io/region,topology.kubernetes.io/zone,oci.oraclecloud.com/fault-domain
+    </copy>
     ```
 
    Example Output:
 
     ```text
+    <copy>
     % kubectl get nodes -L topology.kubernetes.io/region,topology.kubernetes.io/zone,oci.oraclecloud.com/fault-domain
     NAME          STATUS   ROLES   AGE   VERSION   REGION        ZONE               FAULT-DOMAIN
     10.0.10.114   Ready    node    15m   v1.27.2   uk-london-1   UK-LONDON-1-AD-1   FAULT-DOMAIN-1
     10.0.10.67    Ready    node    14m   v1.27.2   uk-london-1   UK-LONDON-1-AD-2   FAULT-DOMAIN-3
     10.0.10.85    Ready    node    15m   v1.27.2   uk-london-1   UK-LONDON-1-AD-3   FAULT-DOMAIN-2
+    </copy>
     ```
 
 ## Task 3: Create Portworx Namespace
@@ -127,8 +133,10 @@ Before we deploy Portworx Enterprise, we need to create a namespace for the port
     Example Output
 
     ```text
+    <copy>
     % kubectl create namespace portworx
     namespace/portworx created
+    </copy>
     ```
 
 ## Task 4: Create Kubernetes Secret for Portworx
@@ -138,11 +146,13 @@ To install the Portworx Operator we need to create a Kubernetes secret to allow 
 1. Create Secret
 
     ```bash
-    <copy>kubectl create secret generic ociapikey \
+    <copy>
+    kubectl create secret generic ociapikey \
     --namespace portworx \
     --from-file=oci_api_key.pem=oci_api_key.pem \
     --from-literal=PX_ORACLE_user_ocid="<ocid>" \
-    --from-literal=PX_ORACLE_fingerprint="<fingerprint>"</copy>
+    --from-literal=PX_ORACLE_fingerprint="<fingerprint>"
+    </copy>
     ```
 
     Replace *`<ocid>`* with Oracle user OCID and *`<fingerprint>`* with fingerprint for your Oracle API signing key
@@ -156,8 +166,10 @@ To install the Portworx Operator we need to create a Kubernetes secret to allow 
     Example Output
 
     ```text
+    <copy>
     NAME        TYPE     DATA   AGE
     ociapikey   Opaque   3      1d
+    </copy>
     ```
 
 ## Task 5: Inspect Kubernetes Storage Classes
@@ -175,9 +187,11 @@ The *oci* class is considered *legacy* and is only used by the **FlexVolume** pl
     Example Output
 
     ```text
+    <copy>
     NAME                                 PROVISIONER                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     oci                                  oracle.com/oci                    Delete          Immediate              false                  9d
     oci-bv (default)                     blockvolume.csi.oraclecloud.com   Delete          WaitForFirstConsumer   true                   9d
+    </copy>
     ```
 
 ## Learn More
