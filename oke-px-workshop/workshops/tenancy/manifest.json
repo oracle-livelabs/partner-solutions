@@ -1,10 +1,14 @@
 {
     "workshoptitle": "Deploy Portworx Enterprise Cloud Native Storage in OKE",
-    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
-                "sample.json":"../../data-load/files/sample.json",
-                "step2.md":"../../data-load/files/step2.md"},
-    "variables": ["../../variables/variables.json",
-                 "../../variables/variables-in-another-file.json"],
+    "include": {
+        "starter-file.sql": "../../data-load/files/starter-file.sql",
+        "sample.json": "../../data-load/files/sample.json",
+        "step2.md": "../../data-load/files/step2.md"
+    },
+    "variables": [
+        "../../variables/variables.json",
+        "../../variables/variables-in-another-file.json"
+    ],
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
@@ -30,6 +34,11 @@
             "title": "Lab 3: Create Persistent Volume Claim (PVC)",
             "description": "Create Portworx Enterprise managed PVC",
             "filename": "../../create-pvc/create-pvc.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
