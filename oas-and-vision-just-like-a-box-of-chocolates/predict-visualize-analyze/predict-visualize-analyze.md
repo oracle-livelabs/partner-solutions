@@ -125,7 +125,7 @@ It's time to prepare a new image library for images which are going to be classi
 
     This step isn't required if you successfully completed previous step and already successfully uploaded images. You can skip this step in this case, otherwise follow these steps to upload images:
 
-    Download and unzip [validation-dataset.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/validation-dataset.zip) to your laptop. 
+    Download and unzip [validation-dataset.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/validation-dataset.zip) to your laptop. 
 
     Return to your new bucket and click **Upload**.
 
@@ -323,7 +323,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
     1;Pneumonia;https://cloud.oracle.com/object-storage/buckets/...</copy>
     ```
 
-    Here, you can also [download](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/buckets.csv) a sample buckets.csv file.
+    Here, you can also [download](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/buckets.csv) a sample buckets.csv file.
 
     *images.csv*
     ```text
@@ -339,7 +339,7 @@ In Oracle Analytics, **Vision based machine learning model** is applied (as any 
 
     Instead of csv file, you can also use xlsx file format.
 
-    Here, you can also [download](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/images.csv) a sample *images.csv* file.
+    Here, you can also [download](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/images.csv) a sample *images.csv* file.
 
 3. Create a new data flow
 
