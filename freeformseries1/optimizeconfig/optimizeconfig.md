@@ -41,11 +41,11 @@ This lab assumes you have:
 	![Create FiscalYear and Company like Scenario dimension](images/fiscalyearcompany.png)
 
 5. Download the files with dimension members below to your local drive
-	* [Company dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Company.csv) 
-	* [Measures dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Measures.csv) 
-	* [FiscalYear dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalYear.csv) 
-	* [FiscalPeriod dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalPeriod.csv)
-	* [Scenario dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Scenario.csv) 
+	* [Company dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Company.csv) 
+	* [Measures dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Measures.csv) 
+	* [FiscalYear dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalYear.csv) 
+	* [FiscalPeriod dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalPeriod.csv)
+	* [Scenario dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Scenario.csv) 
 
 6. From **Overview>Dimensions** hit **Import**.
 	![Import dimensions](images/importdimensions.png)
