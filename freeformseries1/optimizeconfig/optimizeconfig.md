@@ -75,7 +75,7 @@ You can confirm that your **FiscalPeriod** dimension is a **Period** or **Time**
 
 Assigning the time or period dimension appropriately aids in two main aspects - 
 * Ensuring seamless period mapping with **Data Integration** which is an integration layer for EPM Cloud applications. For more information check  [Data Integration](https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/diepm/integrations_about_110x65a03764.html)
-* For ASO (Aggregate Storage Option) databases in an application, setting a compression dimension ensures performant ASO databases. It is always recommended to make the most dense dimension in an ASO database as the compression dimension, yet at the same time EPM Cloud does not expose the ability to pick a compression dimension. By virue of picking a **Period** or **Time** dimension, ASO in EPM Cloud automatically makes that dimension (in this case **FiscalPeriod**) a compression dimension, thereby ensuring optimal performance.
+* For ASO (Aggregate Storage Option) databases in an application, setting a compression dimension ensures performant ASO databases. It is always recommended to make the most dense dimension in an ASO database as the compression dimension, yet at the same time EPM Cloud does not expose the ability to pick a compression dimension. By virtue of picking a **Period** or **Time** dimension, ASO in EPM Cloud automatically makes that dimension (in this case **FiscalPeriod**) a compression dimension, thereby ensuring optimal performance.
 
 ### Additional Tips and Techniques
 A following workshop will share tips and techniques on optimizing FreeForm applications in areas of - 
