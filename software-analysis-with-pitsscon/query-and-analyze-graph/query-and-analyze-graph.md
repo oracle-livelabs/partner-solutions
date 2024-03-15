@@ -26,7 +26,7 @@ Learn how to
 The instructions below show you how to import the sample notebook, and change default visualization settings as needed.  
 First **import** the sample notebook and then execute the relevant paragraph for each step in task 2.   
 
-1. If you did not download the workshop resources in Lab 3 or need to do that again, use this [**link**](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/ahMJ_iEi0eYYghm8bSASXsTTjZYy2eul9w-cpW_XyqMtq64r6ELoZWTK36cuatCS/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip "URL for workshop resources").
+1. If you did not download the workshop resources in Lab 3 or need to do that again, use this [**link**](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip "URL for workshop resources").
 
 2. Click the **Notebooks** menu icon and then on the **Import** notebook icon on the top right.  
 
