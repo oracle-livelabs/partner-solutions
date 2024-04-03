@@ -1,0 +1,41 @@
+{
+  "workshoptitle": "Building a weather chatbot with Oracle Digital Assistant",
+  "help": "livelabs-help-community_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "In this lab you will learn how to login to Oracle Cloud",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Oracle Digital Assistant instance provisioning",
+      "description": "In this lab you will provision an Oracle Digital Assistant instance.",
+      "filename": "../../provisioning/provisioning.md"
+    },
+    {
+      "title": "Lab 2: Intents and Entities definition",
+      "description": "In this lab you will create an ODA Skill and define Intents and Entities.",
+      "filename": "../../skill-definition/skill-definition.md"
+    },
+    {
+      "title": "Lab 3: Dialog flow implementation",
+      "description": "In this lab you will implement the conversation flow",
+      "filename": "../../skill-flow-implementation/skill-flow-implementation.md"
+    },
+    {
+      "title": "Lab 4: Custom Components implementation to access external data sources",
+      "description": "In this lab you will implement create a custom component to integrate a weather service API",
+      "filename": "../../skill-custom-components/skill-custom-components.md"
+    },
+    {
+      "title": "Lab 5: Exposing your Weather Forecast Skill",
+      "description": "In this scenario you will configure a web widget for your website.",
+      "filename": "../../channels/channels.md"
+    }
+  ]
+}
