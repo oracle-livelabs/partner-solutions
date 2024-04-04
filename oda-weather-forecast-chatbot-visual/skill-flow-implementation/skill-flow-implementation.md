@@ -14,6 +14,8 @@ In the Visual Flow Designer it is organized in flows and the intent matching is 
 
 In this lab you will implement the dialog flow for your skill and, as you have not implemented the REST call to OpenWeatherMap API, you will just set static data as response to the user requests.
 
+Estimated Time: 15 minutes
+
 ## Task 1: Create Flows
 
 

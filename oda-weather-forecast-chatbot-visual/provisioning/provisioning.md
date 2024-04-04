@@ -10,6 +10,7 @@ The assumption is that you are the administrator of the tenancy - either a fresh
 
 If you don't have an OCI Tenancy yet, you can request a free trial here: https://oracle.com/free
 
+Estimated Time: 15 minutes
 
 ## Task 1: Provisioning an Oracle Digital Assistant instance in OCI Console
 

@@ -9,6 +9,8 @@ This lab will help you to setup and configure a web widget to expose the Skill y
 
 ![Oracle Digital Assistant widget](images/widget-intro.jpg)
 
+Estimated Time: 20 minutes
+
 ## Task 1: Create a new channel
 
 In your Oracle Digital Assistant console menu, under Development click on 'Channels'.

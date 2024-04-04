@@ -11,6 +11,7 @@ In these labs you will read a lot the word skill. An skill is an individual chat
 
 In this first lab you are going to define the intents needed for the skill and training the NLP model so the input provided is matched with the correct intent.
 
+Estimated Time: 15 minutes
 
 ## Task 1: Enable Location entity
 

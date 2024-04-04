@@ -13,6 +13,8 @@ There are two prerequisites for this lab:
 * You have to create a free account on [OpenWeatherMap API](https://openweathermap.org/) and get a API Key.
 * You need a IDE such as Visual Studio Code (VSCode).
 
+Estimated Time: 15 minutes
+
 ## Chatch up (optional):
 
 I you had problems with the previous lab, you can download the working skill that can be imported into Oracle Digital Assistant here: https://github.com/rsantrod/katacoda-scenarios/blob/master/oda-course-redwood/oda04-skill-custom-components/images/WeatherSkill(1.0).zip
