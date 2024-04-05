@@ -59,7 +59,7 @@ First, you have to create a folder where the component will be created
 
 <pre>mkdir ODAComponents</pre>
 
-For a production environment you want to download the SDK from the [Oracle ODA Downloads](https://www.katacoda.com/rsantrod/scenarios/oda04-skill-custom-components) page, but for this hands-on there is a node application preconfigured on Github.
+For a production environment you want to download the SDK from the [Oracle ODA Downloads](https://docs.oracle.com/en/cloud/paas/digital-assistant/sdks.html) page, but for this hands-on there is a node application preconfigured on Github.
 Clone the repository where the widget app is stored. You will need to download GIT if you don't have it installed. [GIT](https://git-scm.com/)
 
 <pre>git clone https://github.com/rsantrod/katacoda-oda-widget-runable.git</pre>

@@ -17,7 +17,7 @@ Estimated Time: 15 minutes
 
 ## Chatch up (optional):
 
-I you had problems with the previous lab, you can download the working skill that can be imported into Oracle Digital Assistant here: https://github.com/rsantrod/katacoda-scenarios/blob/master/oda-course-redwood/oda04-skill-custom-components/images/WeatherSkill(1.0).zip
+I you had problems with the previous lab, you can download the working skill that can be imported into Oracle Digital Assistant here: https://github.com/oracle-livelabs/partner-solutions/blob/main/oda-weather-forecast-chatbot-visual/skill-custom-components/files/weatherskill(1.0).zip
 
 First make sure to remove the previous skill
 
@@ -319,7 +319,7 @@ If you check bellow, in the variables list, under weather array, the first posit
 &nbsp;
 &nbsp;
 
-If you have missed something or the code is not working, you can get the full flow definition in the following link: [Scenario 4 Flow Definition](https://github.com/rsantrod/katacoda-scenarios/blob/master/oda-course/oda04-skill-custom-components/images/flow.yaml)
+If you have missed something or the code is not working, you can get the full flow definition in the following link: [Scenario 4 Flow Definition](https://github.com/oracle-livelabs/partner-solutions/blob/main/oda-weather-forecast-chatbot-visual/skill-custom-components/images/flow.yaml)
 
 &nbsp;
 &nbsp;

@@ -50,7 +50,7 @@ It is recommended to give descriptive names to the states so read what the flow 
 
 Then to finish adding it, just click on 'Insert' button.
 
-![Alt text](images/visual/help-message.JPG)
+![Alt text](images/visual/help-message.jpg)
 
 Now you can set the message that will be sent by clicking on the state and typing it in the properties panel that will appear.
 
@@ -71,58 +71,58 @@ You can achive this by adding an Invoke flow nexst to the send message state.
 
 By clicking the invokeFlow state, you can select the flow where you will redirect the conversation.
 
-![Alt text](images/visual/configure-invoke-flow.JPG)
+![Alt text](images/visual/configure-invoke-flow.jpg)
 
 ## Task 4: Weather Forecast implementation.
 
 The frst thing you are going to do in the Weather Forecast flow is to add a resolve bag component as the first state, this component help us to fill the variables inlcuded in the composite bag you defined before.
 
-![Alt text](images/visual/2/create-resolve-bag.JPG)
+![Alt text](images/visual/2/create-resolve-bag.jpg)
 
 As you can see, the resolve component has a variable to select and since you don't have any variable created, first you need to do so.
 
-![Alt text](images/visual/2/no-variables-resolve.JPG) 
+![Alt text](images/visual/2/no-variables-resolve.jpg) 
 
 Click on create variable button and select flow variable.
 Give it a name and select entity as type and select the composit bag you created in the previous lab.
 
-![Alt text](images/visual/2/create-flow-variable.JPG) 
+![Alt text](images/visual/2/create-flow-variable.jpg) 
 
 After finishing the creation you can see the component fully filled. Also, it displays the first prompt that you defined previously.
 
-![Alt text](images/visual/2/resolve-state-completed.JPG) 
+![Alt text](images/visual/2/resolve-state-completed.jpg) 
 
 Remember that the requirements are that the date can be optionally provided by the user. This is why you don't included it inside the composite bag. Anyway, if the user provides it, you need to retrive it.
 
 Next, you are going to add a set variable state. 
 
-![Alt text](images/visual/2/create-set-variable.JPG) 
+![Alt text](images/visual/2/create-set-variable.jpg) 
 
 In this component, as you can see, you have to provide a variable as well.
 Create another flow variable called DateVariable and in the nexxt dialog, select entity, DATE_TIME and the subtype Date.
 
-![Alt text](images/visual/2/create-date-variable.JPG) 
+![Alt text](images/visual/2/create-date-variable.jpg) 
 
 Also, you have to fill the value of this variable by 'manually' retrieving the value of the DATA_TIME entity associated with the WeatherForecast intent. Select the switch next to Expression and copy and paste the following Apache Freemarker expression.
 What you are doing here is accessing the nlpresult system variable that stores the intent and entities matching information to retrieve the first position of the array of values that are matching with the DATE_TIME entity.
 
 <pre>${(skill.system.nlpresult.value.entityMatches['DATE_TIME'][0])!}</pre>
 
-![Alt text](images/visual/2/set-date-expression.JPG) 
+![Alt text](images/visual/2/set-date-expression.jpg) 
 
 The last thing you are going to add to this flow before testing it is a state to print the weather data.
 In this case, you are going to use a component called Common Response that enabled you from sending a simple text to build complex structures.
 
 You can go ahead and filter by 'message' and select 'Display Text Message'
-![Alt text](images/visual1/2/create-print-weather.JPG)  
+![Alt text](images/visual1/2/create-print-weather.jpg)  
 
 As you can see, it has many configurations.
 
-![Alt text](images/visual/2/crc-properties.JPG) 
+![Alt text](images/visual/2/crc-properties.jpg) 
 
 For this example you are going to create another flow variable of type List.
 
-![Alt text](images/visual/2/create-list-variable.JPG) 
+![Alt text](images/visual/2/create-list-variable.jpg) 
 
 And also, since you are going to display the data in a card format you have to define a response items structure.
 Be careful when adding the following code. The ident of the YAML code in two spaces and it will not work if it is not provided properly.
@@ -138,7 +138,7 @@ responseItems:
     type: cards
 </pre>
 
-![Alt text](images/visual/2/fill-response-items.JPG) 
+![Alt text](images/visual/2/fill-response-items.jpg) 
 
 
 ## Task 5: Testing your dialog flow
@@ -155,7 +155,7 @@ As you can see in the image below, theres three buttons.
 Feel free to click on 'Validate' to ensure that your flow does not have any error. 
 Once it is validated, you can click on the play button.
 
-![Alt text](images/visual/2/tester-2.JPG)
+![Alt text](images/visual/2/tester-2.jpg)
 
 
 On the left-hand side you can have a conversation with the bot, and on the right-hand side you have some information that let you debug your flow such as variable values, states history, etc.
@@ -170,17 +170,17 @@ You can try to play with it using different phrases, for example, the ones you u
 
 As you can see, if there is no location provided, the chatbot will ask for it, but if you don't provide the date, as it was an optional requirement in this workshop, the chatbot will just display the weather information.
 
-![Alt text](images/visual/2/tester-1.JPG) 
+![Alt text](images/visual/2/tester-1.jpg) 
 
 On the other hand, if you provide the date, it will be retrieved and stored in the date flow variable that we created.
 
-![Alt text](images/visual/2/tester-3.JPG) 
+![Alt text](images/visual/2/tester-3.jpg) 
 
 ## Summary
 
 You have learned how to implement the dialog flow of your skill using some of the built-in components such as Intent, List and CommonResponse.
 
-If you have missed something or the code is not working, you can get the full flow definition in the following link: [Lab 3 Flow Definition](https://github.com/rsantrod/katacoda-scenarios/blob/master/oda-course/oda03-skill-flow-implementation/images/flow.yaml)
+If you have missed something or the code is not working, you can get the full flow definition in the following link: [Lab 3 Flow Definition](https://github.com/oracle-livelabs/partner-solutions/blob/main/oda-weather-forecast-chatbot-visual/skill-flow-implementation/images/flow.yaml)
 
 In the next lab you will be implementing you own Custom Component and integrating it in the dialog flow.
 
