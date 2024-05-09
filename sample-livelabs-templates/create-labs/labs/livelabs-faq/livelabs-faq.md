@@ -70,7 +70,7 @@ For questions related to Oracle LiveLabs please review this FAQ. If you do not s
     -	Email us the changes to update / workshop status / your questions to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com).
 5. Where can I locate the Self QA Checklist?
     -   When you are ready to Self-QA, mail us to change your workshop status to "Self QA.
-    -   We will send an e-mail containing the Self QA Checklist. It can also be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx).
+    -   We will send an e-mail containing the Self QA Checklist.
 6.	What binary files are not allowed in Github?
     -	The Oracle GitHub Organization wants to avoid executable files that can contain malicious code (PDFs, PSDs, ZIPs, JARs, WARs, EARs, BINs, EXEs) to host on Oracle GitHub projects.
 7.	Where do I put my workshop files/objects?

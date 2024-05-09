@@ -30,7 +30,6 @@ Also use the sample workshop that is found in [https://github.com/oracle-livelab
 
 Another important step is to take look at the QA document since it provides how to do images, format markdown and gets you started in the right direction for the workshop standards.
 
-* [QA Document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx)
 
 ### Workshop Objectives
 
