@@ -1,4 +1,4 @@
-# Setup the Cloud EPM instance
+# Setup the EPM Cloud instance
 ## Introduction
 
 Once you login into the Cloud environment, you will then be setting up the environment for a **Freeform** application.
@@ -47,4 +47,4 @@ Ensure that:
 
 ## Acknowledgements
 * **Author** - Vatsal Gaonkar, Director - Oracle Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, 15 May 2024
+* **Last Updated By/Date** - Vatsal Gaonkar, June 2024

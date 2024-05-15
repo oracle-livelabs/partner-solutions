@@ -43,7 +43,7 @@ This lab assumes you have:
   ![Outline uploaded](images/onpremoutline.png)
 
 5. **Review** all your details before hitting **Create**. Once you hit **Create**, an **Application Creation Status** window will guide you through the creation process.
-  ![Review before creating](images/beforecreate.png)
+  ![Review before creating](images/beforecreate.png)  
   ![Application creation status](images/creationstatus.png)
 
 6. You have created a **Freeform application using an Oracle Essbase outline** (an on-premises outline).
