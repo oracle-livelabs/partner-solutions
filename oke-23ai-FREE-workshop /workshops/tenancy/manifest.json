@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Deploy Portworx Enterprise Cloud Native Storage in OKE",
+    "workshoptitle": "Provision Containerized Oracle Database 23ai Free on OKE using the OraOperator and Portworx",
     "include": {
         "starter-file.sql": "../../data-load/files/starter-file.sql",
         "sample.json": "../../data-load/files/sample.json",
@@ -27,13 +27,19 @@
             "filename": "../../provision-oke/provision-oke.md"
         },
         {
-            "title": "Lab 2: Deploy Portworx Enterprise for OKE",
+            "title": "Lab 2: Deploy Portworx Enterprise Cloud Native Storage",
+            "description": "Deploy Portworx Enterprise Cloud Native Storage",
             "filename": "../../px-deploy/px-deploy.md"
         },
         {
-            "title": "Lab 3: Create Persistent Volume Claim (PVC)",
-            "description": "Create Portworx Enterprise managed PVC",
-            "filename": "../../create-pvc/create-pvc.md"
+            "title": "Lab 3: Enable Oracle Database Operator for Kubernetes",
+            "description": "Enable Oracle Database Operator for Kubernetes (OraOperator)",
+            "filename": "../../ora-operator/ora-operator.md"
+        },
+        {
+            "title": "Lab 4: Provision containerized Oracle Database 23ai Free",
+            "description": "Provision containerized Oracle Database 23ai Free into OKE Cluster",
+            "filename": "../../provision-23ai/provision-23ai.md"
         },
         {
             "title": "Need Help?",
