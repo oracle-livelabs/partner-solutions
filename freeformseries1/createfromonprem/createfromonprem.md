@@ -53,7 +53,7 @@ This lab assumes you have:
 
 *Learn more about FreeForm applications by using the links below*
 
-* [Information on Oracle Cloud EPM FreeForm](https://www.oracle.com/performance-management/FreeForm/) 
+* [Information on Oracle Cloud EPM FreeForm](https://www.oracle.com/performance-management/freeform/) 
 * [Create using Outline or a LCM package aka snapshot](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/creating_a_freeform_app_using_an_outline_file_or_snapshot.html)
 * [Freeform Apps FAQs](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/freeform_apps_faq.html)
 
