@@ -1,49 +1,49 @@
-# Setup the EPM Cloud instance
+# Setup the Cloud EPM instance
 ## Introduction
 
-Once you login into the Cloud environment, you will then be setting up the environment for a **Freeform** application.
+Once you login into the Cloud environment, you will then be setting up the environment for a **FreeForm** application.
 
 Estimated Lab Time: 3 minutes
 
-### About enabling Cloud environment as a Freeform application instance
+### About enabling Cloud environment as a FreeForm application instance
 
 ### Objectives
 
 In this lab, you will:
-* Enable the environment as a Freeform application instance
+* Enable the environment as a FreeForm application instance
 
 ### Prerequisites
 
 Ensure that:
 * You have an Oracle Cloud EPM Enterprise subscription
-* You are a service administrator for the instance where you are going to create the Freeform application
+* You are a service administrator for the instance where you are going to create the FreeForm application
 
 
-## Task 1: Freeform Application creation readiness
+## Task 1: FreeForm Application creation readiness
 
 1. Check whether you have Oracle Cloud EPM Enterprise subscription 
   
-  When you login to your Cloud EPM environment, check whether you have an ability to pick from the below applications as shown. If you have all these applications available that means you have an **Enterprise** subscription. You will be selecting **Freeform** from the below.
+  When you login to your Cloud EPM environment, check whether you have an ability to pick from the below applications as shown. If you have all these applications available that means you have an **Enterprise** subscription. You will be selecting **FreeForm** from the below.
 
   ![Readiness to create application](images/enterpriseappreadiness.png)
 
-2. Enable the instance as a Freeform application instance
+2. Enable the instance as a FreeForm application instance
 
-  Hit **Select** under Freeform.
+  Hit **Select** under FreeForm.
 
-  ![Selecting Freeform from Cloud applications](images/selectfreeform.png)
+  ![Selecting FreeForm from Cloud applications](images/selectfreeform.png)
 
-  The instance will be created as a **Freeform** application instance.
+  The instance will be created as a **FreeForm** application instance.
 
-  ![Freeform Instance Selection](images/freeforminstance.png)
+  ![FreeForm Instance Selection](images/freeforminstance.png)
 
-  You are now ready to start the Freeform application creation process. In the next 3 labs you will navigate options to create and configure Freeform applications as per your business needs.
+  You are now ready to start the FreeForm application creation process. In the next 3 labs you will navigate options to create and configure FreeForm applications as per your business needs.
 
 
 ## Learn More
 
-* [Creating an Cloud EPM Enterprise Service Application](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/about_epm_enterprise_landing_page.html)
-* [Understanding Freeform applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html)
+* [Creating a Cloud EPM Enterprise Service Application](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/about_epm_enterprise_landing_page.html)
+* [Understanding FreeForm applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html)
 
 ## Acknowledgements
 * **Author** - Vatsal Gaonkar, Director - Oracle Cloud & Digital, PwC

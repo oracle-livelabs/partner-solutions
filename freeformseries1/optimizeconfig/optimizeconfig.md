@@ -1,17 +1,17 @@
 # Optimize configuration
 ## Introduction
-In this lab, you will create and add members to dimensions in the Freeform application. Additionally, you will also gather understanding of optimal Freeform application configuration settings.  
+In this lab, you will create and add members to dimensions in the FreeForm application. Additionally, you will also gather understanding of optimal FreeForm application configuration settings.  
 
 Estimated Lab Time: 10 minutes
 
-### About optimizing Freeform applications
-There are certain considerations to optimize a Freeform application. This lab will start the process of building to optimize some such configurations, one of which was already done in the previous lab for **Period** dimension during the creation of the **Scratch** Freeform application. In addition to understanding **Period** dimension configuration, you will also be uploading additional dimensions to pave the way for follow-on optimal configurations in the following workshop and labs.
+### About optimizing FreeForm applications
+There are certain considerations to optimize a FreeForm application. This lab will start the process of building to optimize some such configurations, one of which was already done in the previous lab for **Period** dimension during the creation of the **Scratch** FreeForm application. In addition to understanding **Period** dimension configuration, you will also be uploading additional dimensions to pave the way for follow-on optimal configurations in the following workshop and labs.
 
 
 ### Objectives
 
 In this lab, you will:
-* Adjust configurations of Freeform application namely **Scratch** that you created in the previous lab using **Application Creation Wizard**.
+* Adjust configurations of FreeForm application namely **Scratch** that you created in the previous lab using **Application Creation Wizard**.
 * Add dimensions and members to the **Scratch** application using **Import Metadata** feature.
 * Understand an optimal configuration for **Period** dimension vis-a-vis **BSO** and **ASO** plan types.
 
@@ -19,7 +19,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle EPM Enterprise Cloud subscription
-* Service administrator rights to the instance where you are going to create the Freeform application
+* Service administrator rights to the instance where you are going to create the FreeForm application
 
 
 ## Task 1: Dimension configuration
@@ -78,11 +78,11 @@ Assigning the time or period dimension appropriately aids in two main aspects -
 * For ASO (Aggregate Storage Option) databases in an application, setting a compression dimension ensures performant ASO databases. It is always recommended to make the most dense dimension in an ASO database as the compression dimension, yet at the same time Cloud EPM does not expose the ability to pick a compression dimension. By virue of picking a **Period** or **Time** dimension, ASO in Cloud EPM automatically makes that dimension (in this case **FiscalPeriod**) a compression dimension, thereby ensuring optimal performance.
 
 ### Additional Tips and Techniques
-A following workshop will share tips and techniques on optimizing Freeform applications in areas of - 
+A following workshop will share tips and techniques on optimizing FreeForm applications in areas of - 
 * How to design optimal Data forms in absence of start and end periods from scenario management. For more information check [Designing Data Forms](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/forms.html)
 * Using subvars and groovy business rules to create data form open and close periods. For more information check [About Substitution Variables](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/about_substitution_variables.html)
 * Using groovy business rules to ensure focused data pushes between ASO and BSO plan types. For more information check [Groovy business rules](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/epm/Groovy/Introduction/index.html)
 
 ## Acknowledgements
 * **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, 15 May 2024
+* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
