@@ -1,0 +1,119 @@
+main: true
+name: WeatherSkill
+context:
+  # Define the variables which will be used throughout the dialog flow here.
+  # The syntax for defining the variables is variablename: "variableType".
+  # The "variableType" can be defined as a primitive type ("string", "boolean", "int", "float", "double"), "list", "map" or an entity name. A variable can also hold the results returned by the Intent Engine. For these variables, the "variableType" must be "nlpresult" (for example, iResult: "nlpresult").
+  # The variable 'rb' of type 'resourcebundle' is pre-defined, and can be used to resolve resource bundle entries in the language of the user: ${rb('rbKey','rbArg1', 'rbArg2')}
+  variables:
+    # greeting is a variable that references the Greeting composite bag entity.
+    # This composite bag entity has items to prompt for greeting type and name
+    location: "LOCATION"
+    date: "DATE"
+    iResult: "nlpresult"
+# states is where you can define the various states within your flow.
+# The syntax for defining a state is
+# statename:
+#   component:Specify the component you want to use. This can be either a built-in or custom component.
+#   properties:
+#     property1: "value" (These are the properties to the specified component
+#   transitions: You can specify one of the following four
+#     next: Specify the state you want to execute next after this state. By default it will execute the state specified after this
+#     error: Specify the state you want to execute in case the component encounters any error in execution.
+#     actions: You can handle various actions returned by the components here the syntax is actionName: "statename"
+#        action1: state1
+#     return: "done" You can exit the flow using the return statement
+states:
+  intent:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"
+    transitions:
+      actions:
+        Greetings: "greet"
+        WeatherForecast: "initWeatherForecast"
+        Help: "help"
+        unresolvedIntent: "unresolved"
+        
+  greet:
+    component: "System.Output"
+    properties:
+      text: "Welcome to the Weather Forecast Assistant!"
+      keepTurn: true
+    transitions:
+      next: "help"
+
+  help:
+    component: "System.Output"
+    properties:
+      text: "I can help you with the weather forecast for the next 7 days. Try to ask for a Location and a day."
+    transitions:
+      return: "done"
+      
+  unresolved:
+    component: "System.List"
+    properties:
+      prompt: "I'm sorry but I cannot help you with that! Do you want to know the weather forecast?"
+      options: "Yes, No"
+    transitions:
+      actions:
+        Yes: "initWeatherForecast"
+        No: "endUnresolved"
+
+  endUnresolved:
+    component: "System.Output"
+    properties:
+      text: "Please come back once you need to know more about the weather forecast!"
+    transitions:
+      return: "done"
+
+  initWeatherForecast:
+    component: "System.SetVariable"
+    properties:
+      variable: "date"
+      value: "${iResult.value.entityMatches['DATE'][0]}"
+    transitions:
+      next: "setAskForLocation"
+
+  setAskForLocation:
+    component: "System.Text"
+    properties:
+      prompt: "Please let me know what city do you want to search for"
+      variable: "location"
+      maxPrompts: 2
+      nlpResultVariable: "iResult"      
+    transitions:
+      next: "printWeather"
+      actions:
+        cancel: "noLocation"
+
+  printWeather:
+    component: "System.CommonResponse"
+    properties:
+      keepTurn: true
+      processUserMessage: false
+      metadata: 
+        responseItems:         
+        - type: "cards" 
+          cardLayout: "vertical"
+          cards:
+          - title: "Madrid - 15/07/2020"
+            description: "20º - Clear"
+            imageUrl: "http://openweathermap.org/img/wn/10d@2x.png"
+            cardUrl: "https://www.redexpertalliance.com" 
+    transitions:
+      next: "endConversationThanks"
+      
+  noLocation:
+    component: "System.Output"
+    properties:
+      text: "I need a location to provide the weather. Please type for example 'What's the weather in London'"
+    transitions:
+      return: "done"
+      
+  endConversationThanks:
+    component: "System.Output"
+    properties:
+      text: "Thanks for using my services. Feel free to ask me again before leaving your home!"
+    transitions:
+      return: "done"

@@ -202,7 +202,7 @@ You have finished developing your workshop. To publish your workshop, you still 
 
 3. Confirm if the **Level**, **Role**, **Focus Area**, and **Product** tags details shared with us while submitting the workshop are up-to-date. Tags help people find your workshop in LiveLabs.
 
-4. Download this [Self QA document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx). To align with the LiveLabs standards, check your workshop against the form, make changes to your changes to your workshop as needed and fill out the form. Create a new pull request if necessary with the changes made.
+4. To align with the LiveLabs standards, check your workshop against the form, make changes to your changes to your workshop as needed and fill out the form. Create a new pull request if necessary with the changes made.
 
 	Workshop author or the team can watch the video below on how to self-QA or verify QA of the workshop.
 
