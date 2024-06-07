@@ -12,7 +12,7 @@ In this lab, you will learn how to reach out for help if you have any questions 
 
 1. To get the most complete and updated information about LiveLabs workshops, read this LiveLabs Step by Step guide.
 
-2. To make sure your workshop follows all LiveLabs standards, read this [Self QA checklist](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx).
+2. To make sure your workshop follows all LiveLabs standards.
 
 ## Option 2: Send an Email
 

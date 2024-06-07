@@ -6,6 +6,10 @@ In this lab, we will provision the required Oracle Cloud Infrastructure (OCI) co
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+
+[Lab 2: Create OCI Resources for the Application](videohub:1_dcxsokuh)
+
 ### About the OCI Resources
 
 Oracle APEX is a low-code software development platform that is included with every Oracle Autonomous Database (ADB) provisioned. The OCI Object Storage is a storage solution that is accessible over both public and private networks, highly-performant, and resistant to hardware failures. It offers different storage tiers and features that cater to different use cases and requirements.
@@ -35,7 +39,9 @@ This lab assumes that you have created the following OCI *Identity and Access Ma
 ![Click the Create Autonomous Database button.](./images/create-a-new-autonomous-database.png)
 1. Begin by choosing the target compartment to create the database. Next, enter a suitable *Display name* and *Database name*. Then, select the desired the workload type, for example, *Transaction Processing*.
 ![Enter a suitable display and database name, and then choose the desired workload type.](./images/enter-required-details-for-new-autonomous-database.png)
-1. Scroll down and select the *Shared infrastructure* deployment type. For this workshop, select *Always Free* option if within the tenancy's service limits. For Always Free databases, the *OCPU count* and storage limits are fixed. Also, auto scaling is not available for both OCPU and storage. Select the database version *19c* and then scroll down again.
+1. Scroll down and select the *Serverless* deployment type.
+![Choose deployment type](./images/choose-deployment-type.png)
+1. For this workshop, select *Always Free* option if within the tenancy's service limits. For Always Free databases, the *OCPU count* and storage limits are fixed. Also, auto scaling is not available for both OCPU and storage. Select the database version *19c* and then scroll down again.
 ![Specify if this is an Always Free instance, and if required, provide the OCPU and storage limits.](./images/configure-autonomous-database-resources.png)
 1. Enter a password (twice) that meets the database's password complexity rules. It must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It should not include the word *admin*.
 ![Enter a valid password for the autonomous database.](./images/enter-valid-password-for-autonomous-database.png)
@@ -46,7 +52,7 @@ This lab assumes that you have created the following OCI *Identity and Access Ma
 
 1. Once the ADB has been fully provisioned, return to the *Autonomous Database* page, locate the instance's display name, and then click on it to view the ADB's details page. Click the *Tools* tab.
 ![Navigate to the ADB's tools page.](./images/navigate-to-autonomous-database-tools-page.png)
-1. Click the *Open APEX* button to launch the *App Builder* in a new browser tab/window.
+1. In the description column for *Oracle APEX*, and click the *Copy* link to copy the link to the development environment. Open the link in a new browser tab/window.
 ![Launch the Oracle APEX App Builder.](./images/launch-oracle-apex-app-builder.png)
 1. For new ADB instances, this should launch the *Administration Services* login screen. Enter the password for the *admin* user and click the *Sign In to Administration* button.
 ![Login to the Oracle APEX Administration Services.](./images/login-to-oracle-apex-administration-services.png)

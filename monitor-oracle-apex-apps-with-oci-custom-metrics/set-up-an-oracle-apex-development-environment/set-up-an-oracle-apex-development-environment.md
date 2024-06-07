@@ -32,7 +32,9 @@ This lab assumes that you have the necessary permissions on the Oracle Cloud Inf
 ![Click the Create Autonomous Database button.](./images/create-a-new-autonomous-database.png)
 1. Begin by choosing the target compartment to create the database. Next, enter a suitable *Display name* and *Database name*. Then, select the desired the workload type, for example, *Transaction Processing*.
 ![Enter a suitable display and database name, and then choose the desired workload type.](./images/enter-required-details-for-new-autonomous-database.png)
-1. Scroll down and select the *Shared infrastructure* deployment type. For this workshop, select *Always Free* option if within the tenancy's service limits. For Always Free databases, the *OCPU count* and storage limits are fixed. Also, auto scaling is not available for both OCPU and storage. Select the database version *19c* and then scroll down again.
+1. Scroll down and select *Serverless* deployment type. 
+![Choose deployment type](./images/choose-deployment-type.png)
+1. For this workshop, select *Always Free* option if within the tenancy's service limits. For Always Free databases, the *OCPU count* and storage limits are fixed. Also, auto scaling is not available for both OCPU and storage. Select the database version *19c* and then scroll down again.
 ![Specify if this is an Always Free instance, and if required, provide the OCPU and storage limits.](./images/configure-autonomous-database-resources.png)
 1. Enter a password (twice) that meets the database's password complexity rules. It must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It should not include the word *admin*.
 ![Enter a valid password for the autonomous database.](./images/enter-valid-password-for-autonomous-database.png)

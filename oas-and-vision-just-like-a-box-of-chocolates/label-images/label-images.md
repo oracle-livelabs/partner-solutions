@@ -140,7 +140,7 @@ For the purpose of this labe, we have used original python code and adjusted it 
 
 1. Download python code.
 
-    Download [lab2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/lab2.zip) to your computer.
+    Download [lab2.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/oas-and-vision/lab2.zip) to your computer.
 
     You don't have to extract downloaded zip file to your laptop as you will upload it as such to your OCI environment.
 

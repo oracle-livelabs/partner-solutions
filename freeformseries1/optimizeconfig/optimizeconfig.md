@@ -41,6 +41,7 @@ This lab assumes you have:
 	![Create FiscalYear and Company like Scenario dimension](images/fiscalyearcompany.png)
 
 5. Download the files with dimension members below to your local drive
+
 	* [Company dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Company.csv) 
 	* [Measures dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Measures.csv) 
 	* [FiscalYear dimension](https://objectstorage.us-ashburn-1.oraclecloud.com/p/b1_vZe_9llVqw_oTDq-SQyRrkDshcuABTHc6QuUDG984jfUi0mbk5x7pOZ7mPDPh/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalYear.csv) 
