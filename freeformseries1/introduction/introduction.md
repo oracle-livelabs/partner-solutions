@@ -9,8 +9,7 @@ The workshop is a stepwise guide to create an Oracle FreeForm application in Ora
 
 Estimated Workshop Time: 33 minutes. The estimated time will vary depending on the complexity of the application being deployed.
 
-Video with important prerequisite information on ***Oracle EPM Enterprise Cloud Planning***: 
-[](https://www.youtube.com/watch?v=tdgeyav2yvo)
+Video with important prerequisite information on [***Oracle EPM Enterprise Cloud Planning***](https://www.youtube.com/watch?v=tdgeyav2yvo)
 
 ### Objectives
 In this workshop, you will learn how to:
