@@ -97,7 +97,7 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
    Example output:
 
     ```text
-    % oci -v
+    <copy>% oci -v</copy>
     3.37.1
     ```
 
@@ -111,10 +111,10 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
     </copy>
     ```
 
-   Example Output:
+   Example output:
 
     ```text
-    % kubectl get nodes -L topology.kubernetes.io/region,topology.kubernetes.io/zone,oci.oraclecloud.com/fault-domain
+    % <copy>kubectl get nodes -L topology.kubernetes.io/region,topology.kubernetes.io/zone,oci.oraclecloud.com/fault-domain</copy>
     NAME         STATUS   ROLES   AGE    VERSION   REGION        ZONE               FAULT-DOMAIN
     10.0.10.57   Ready    node    101s   v1.29.1   uk-london-1   UK-LONDON-1-AD-1   FAULT-DOMAIN-2
     10.0.10.64   Ready    node    119s   v1.29.1   uk-london-1   UK-LONDON-1-AD-3   FAULT-DOMAIN-3
@@ -141,6 +141,7 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
    Example output:
 
     ```text
+    <copy>kubectl get --raw "/api/v1/nodes/<node name IP Address>/proxy/stats/summary"</copy>
     "rootfs": {
     "time": "2024-05-30T10:58:52Z",
     "availableBytes": 19952750592,
@@ -201,9 +202,11 @@ Create Oracle Container Engine for Kubernetes (OKE) Cluster.
     ```bash
     <copy>kubectl get --raw "/api/v1/nodes/<node name IP Address>/proxy/stats/summary"</copy>
     ```
+
    Example output:
 
     ```text
+    <copy>kubectl get --raw "/api/v1/nodes/<node name IP Address>/proxy/stats/summary"</copy>
     "rootfs": {
     "time": "2024-05-30T12:03:16Z",
     "availableBytes": 107350925312,

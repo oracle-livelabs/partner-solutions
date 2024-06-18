@@ -72,7 +72,7 @@ This lab assumes you have:
 
 6. For Custom Scripts
 
-  For automatic execution of custom scripts post database setup or startup apply the **rbac/persistent-volume-rbac.yaml** file
+   For automatic execution of custom scripts post database setup or startup apply the **rbac/persistent-volume-rbac.yaml** file.
 
     ```bash
     <copy>kubectl apply -f rbac/persistent-volume-rbac.yaml</copy>
@@ -88,9 +88,10 @@ This lab assumes you have:
     <copy>kubectl get all -n oracle-database-operator-system</copy>
     ```
 
-   Example Output:
+   Example output:
 
     ```text
+    % <copy>kubectl get all -n oracle-database-operator-system</copy>
     NAME                                                               READY   STATUS    RESTARTS   AGE
     pod/oracle-database-operator-controller-manager-56c588cc6d-f2pg2   1/1     Running   0          4m40s
     pod/oracle-database-operator-controller-manager-56c588cc6d-g4wmv   1/1     Running   0          4m40s

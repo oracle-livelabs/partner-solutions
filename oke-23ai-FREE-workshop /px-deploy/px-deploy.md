@@ -39,7 +39,7 @@ This lab assumes you have:
 
 Before we deploy Portworx Enterprise, we need to create a namespace for the portworx operator.
 
-1. Create Kubernetes namespace 
+1. Create Kubernetes namespace
 
    Use **kubectl create namespace** to create Kubernetes namespace for Portworx
 
@@ -50,7 +50,7 @@ Before we deploy Portworx Enterprise, we need to create a namespace for the port
     Example output:
 
     ```text
-    % kubectl create namespace portworx
+    % <copy>kubectl create namespace portworx</copy>
     namespace/portworx created
     ```
 
@@ -70,7 +70,7 @@ Before we deploy Portworx Enterprise, we need to create a namespace for the port
 
     Replace *`<ocid>`* with Oracle user OCID and *`<fingerprint>`* with fingerprint for your Oracle API signing key
 
-2. Get Secret
+3. Get Secret
 
     ```bash
     <copy>kubectl get secret/ociapikey -n portworx</copy>
@@ -117,7 +117,6 @@ For Volume Performance Units (VPUs) options see: [OCI Block Volume Performance](
 9. Within the Portworx Operator section, we can see 2 kubectl apply commands which we will use to deploy the Portworx Operator and Storage Cluster.
   ![Portworx Operator](images/px-operator.png)
 
-
 ## Task 3: Deploy Portworx
 
 Deploy Portworx using the commands provided from Portworx Central UI
@@ -155,7 +154,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
    Example output:
 
     ```text
-    % kubectl -n portworx get storagenodes -l name=portworx
+    % <copy>kubectl -n portworx get storagenodes -l name=portworx</copy>
     NAME          ID                                     STATUS   VERSION           AGE
     10.0.10.107   fd569097-11fa-4984-8816-f3ff894d3db8   Online   3.1.1.1-9341d08   8m59s
     10.0.10.109   ade50a83-c380-4091-a8ef-cc3f2a79794e   Online   3.1.1.1-9341d08   8m59s
@@ -173,7 +172,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
     Example output:
 
      ```text
-     % kubectl get pods -n portworx -l name=portworx
+     % <copy>kubectl get pods -n portworx -l name=portworx</copy>
      NAME                                                    READY   STATUS    RESTARTS   AGE
      px-cluster-28f9ba86-8066-4c86-aafc-0cd7c7fa83a5-25zh5   1/1     Running   0          11m
      px-cluster-28f9ba86-8066-4c86-aafc-0cd7c7fa83a5-2lpsz   1/1     Running   0          11m
@@ -194,7 +193,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
      <copy>alias pxctl='kubectl exec $PX_POD -n portworx -- /opt/pwx/bin/pxctl'</copy>
      ```
 
-3. Portworx version
+4. Portworx version
 
    Confirm version of Portworx using **pxctl --version**
 
@@ -202,14 +201,14 @@ Once you've installed Portworx, you can perform the following tasks to verify th
      <copy>pxctl --version</copy>
      ```
 
-    Example output
+    Example output:
 
      ```text
-     % pxctl --version
+     % <copy>pxctl --version</copy>
      pxctl version 3.1.1.1-9341d08
      ```
 
-4. Deployment Status
+5. Deployment Status
 
    Confirm Portworx deployment using **pxctl status**
 
@@ -217,7 +216,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
      <copy>pxctl status</copy>
      ```
 
-5. Storage pools
+6. Storage pools
 
    Use the **pxctl cluster provision-status** command to view OCI *Region* and *Availability Domain* of storage pools within the Portworx cluster.
 
@@ -225,7 +224,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
      <copy>pxctl cluster provision-status</copy>
      ```
 
-6. Cloud Drives
+7. Cloud Drives
 
    The **pxctl clouddrive** command is useful for getting more insight into the OCI block volumes provisioned by Portworx, including the *OCID* for each block volume.
 
@@ -233,7 +232,7 @@ Once you've installed Portworx, you can perform the following tasks to verify th
      <copy>pxctl clouddrive list</copy>
      ```
 
-7. OCI Block Volumes
+8. OCI Block Volumes
 
    Use **oci bv volume list** command with **–lifecyle-state** “Available” to list OCI block volumes in a JSON format, use grep to limit output to the display-name, for example.
 
@@ -247,52 +246,51 @@ Once you've installed Portworx, you can perform the following tasks to verify th
 
    1. Create new Kubernetes Storage Class
 
-   Create a new additional Portworx StorageClass called *px-csi-ora*
+      Copy the below and paste into an editor, save as **px-csi-ora.yaml**
 
-   Copy the below and paste into an editor, save as **px-csi-ora.yaml**
-
-    ```bash
-    <copy>
+      ```bash
+      <copy>
       apiVersion: storage.k8s.io/v1
       kind: StorageClass
-     metadata:
-       name: px-csi-ora
-     provisioner: pxd.portworx.com
-     parameters:
-       repl: "3"
-       io_profile: "auto"
-       priority_io: "high"
-     allowVolumeExpansion: true
-    </copy>
-    ```
+      metadata:
+        name: px-csi-ora
+      provisioner: pxd.portworx.com
+      parameters:
+        repl: "3"
+        io_profile: "auto"
+        priority_io: "high"
+      allowVolumeExpansion: true
+      </copy>
+      ```
 
-  Use **kubectl apply -f < filename>** to create a new Kubernetes StorageClass.
+      Use **kubectl apply -f < filename>** to create **px-csi-ora** Kubernetes StorageClass.
 
-    ```bash
-     <copy>kubectl apply -f px-csi-ora.yaml</copy>
-     ```
+      ```bash
+      <copy>kubectl apply -f px-csi-ora.yaml</copy>
+      ```
 
-  Use **kubectl describe sc** to inspect the new Kubernetes StorageClass.
+      Use **kubectl describe sc** to inspect the **px-csi-ora** Kubernetes StorageClass.
 
-    ```bash
-    <copy>kubectl describe sc/px-csi-ora</copy>
-    ```
+      ```bash
+      <copy>kubectl describe sc/px-csi-ora</copy>
+      ```
 
-   Example output:
+      Example output:
 
-    ```text
-    Name:            px-csi-ora
-    IsDefaultClass:  No
-    Annotations:     kubectl.kubernetes.io/last-applied-configuration={"allowVolumeExpansion":true,"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"px-csi-ora"},"parameters":{"io_profile":"auto","priority_io":"high","repl":"3"},"provisioner":"pxd.portworx.com"}
+      ```text
+      <copy>kubectl describe sc/px-csi-ora</copy>
+      Name:            px-csi-ora
+      IsDefaultClass:  No
+      Annotations:     kubectl.kubernetes.io/last-applied-configuration={"allowVolumeExpansion":true,"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"px-csi-ora"},"parameters":{"io_profile":"auto","priority_io":"high","repl":"3"},"provisioner":"pxd.portworx.com"}
 
-    Provisioner:           pxd.portworx.com
-    Parameters:            io_profile=auto,priority_io=high,repl=3
-    AllowVolumeExpansion:  True
-    MountOptions:          <none>
-    ReclaimPolicy:         Delete
-    VolumeBindingMode:     Immediate
-    Events:                <none>
-    ```
+      Provisioner:           pxd.portworx.com
+      Parameters:            io_profile=auto,priority_io=high,repl=3
+      AllowVolumeExpansion:  True
+      MountOptions:          <none>
+      ReclaimPolicy:         Delete
+      VolumeBindingMode:     Immediate
+      Events:                <none>
+      ```
 
 ## Learn More
 

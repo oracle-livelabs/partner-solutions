@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Provision Containerized Oracle Database 23ai Free on OKE using the OraOperator and Portworx",
+    "workshoptitle": "Containerized Oracle Database 23ai Free (OKE) - OraOperator and Portworx",
     "include": {
         "starter-file.sql": "../../data-load/files/starter-file.sql",
         "sample.json": "../../data-load/files/sample.json",

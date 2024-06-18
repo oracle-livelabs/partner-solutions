@@ -45,6 +45,7 @@ This lab assumes you have:
     Example Output:
 
     ```text
+    % <copy>kubectl get sc </copy>
     NAME               PROVISIONER                       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     oci                oracle.com/oci                    Delete          Immediate              false                  53m
     oci-bv (default)   blockvolume.csi.oraclecloud.com   Delete          WaitForFirstConsumer   true                   53m
@@ -119,8 +120,8 @@ This lab assumes you have:
       ## accessMode can only accept one of ReadWriteOnce, ReadWriteMany
       persistence:
         size: 50Gi
-        ## oci-bv applies to OCI block volumes,
-        ## update as required
+        ## oci-bv applies to OCI block volumes, update as required
+        ## storageClass: "oci-bv"
         storageClass: "px-csi-ora"
         accessMode: "ReadWriteOnce"
 
@@ -140,7 +141,7 @@ This lab assumes you have:
     Example output:
 
      ```text
-     % kubectl create -f singleinstancedatabase_free.yaml -n oracle23ai
+     % <copy>kubectl create -f singleinstancedatabase_free.yaml -n oracle23ai</copy>
      singleinstancedatabase.database.oracle.com/freedb-livelabs created
     ```
 
@@ -157,7 +158,7 @@ This lab assumes you have:
       Example output:
 
       ```text
-      kubectl get singleinstancedatabase  -n oracle23ai
+      % <copy>kubectl get singleinstancedatabase  -n oracle23ai</copy>
       NAME              EDITION   STATUS    ROLE      VERSION        CONNECT STR              TCPS CONNECT STR   OEM EXPRESS URL
       freedb-livelabs   Free      Healthy   PRIMARY   23.4.0.24.05   10.0.10.133:30623/FREE   Unavailable        Unavailable
       ```
@@ -173,6 +174,7 @@ This lab assumes you have:
       Example output:
 
       ```text
+      % <copy>kubectl describe singleinstancedatabase freedb-livelabs -n oracle23ai</copy>
       Name:         freedb-livelabs
       Namespace:    default
       Labels:       <none>
@@ -264,7 +266,23 @@ This lab assumes you have:
         Normal  Datapatch Check     5m42s                  SingleInstanceDatabase  datapatch not supported for free edition
       ```
 
-   3. Review Single Instance Database
+   3. Review network
+
+      Use **kubectl get service** to inspect services
+
+      ```bash
+      <copy>kubectl get services -n oracle23ai</copy>
+      ```
+
+      Example output:
+
+      ```text
+      % <copy>kubectl get services -n oracle23ai</copy>
+      freedb-livelabs       ClusterIP   10.96.36.196   <none>        1521/TCP                        23h
+      freedb-livelabs-ext   NodePort    10.96.164.80   <none>        5500:31237/TCP,1521:30623/TCP   23h
+      ```
+
+   4. Review single instance database
 
       Get Database Health
 
@@ -286,7 +304,7 @@ This lab assumes you have:
 
       Pluggable Database (PDB) Name
 
-      ```
+      ```text
       <copy>kubectl get singleinstancedatabase freedb-livelabs -n oracle23ai -o "jsonpath={.status.pdbName}"</copy>
       ```
 
@@ -298,32 +316,44 @@ This lab assumes you have:
 
 ## Task 4: Connect to Database 23ai Free
 
-  1. Connect to Database
+   1. Setup environment
 
-      Use **kubectl get singleinstancedatabase** to return database status, the status will change from *Pending* -> *Creating* -> *Patching* -> *Healthly*
-
-      Get Database Name
+      Setup database password
 
       ```bash
-      <copy>export ORA_NAME=$(kubectl get singleinstancedatabase -n oracle23ai -o 'jsonpath={.items[0].metadata.name}')</copy>
+      <copy>export ORA_PASS=$(kubectl get secret/freedb-admin-secret -n oracle23ai -o jsonpath='{.data.oracle_pwd}' | base64 -d)</copy>
       ```
 
-      Get Pod
+      Setup database name
+
+      ```bash
+      <copy>export ORACLE_SID=$(kubectl get singleinstancedatabase -n oracle23ai -o 'jsonpath={.items[0].metadata.name}')</copy>
+      ```
+
+      Setup pod name
 
       ```bash
       <copy>export ORA_POD=$(kubectl get pods -n oracle23ai -o jsonpath='{.items[0].metadata.name}')</copy>
       ```
 
-      Run sqlplus with Oracle Database 23ai Free container
+      Setup connection string
 
       ```bash
-      <copy>kubectl exec -it pods/${ORA_POD} -n oracle23ai -- sqlplus sys/LiveLabs1@${ORA_NAME} as sysdba</copy>
+      <copy>export ORA_CONN=$(kubectl get singleinstancedatabase ${ORACLE_SID} -n oracle23ai -o "jsonpath={.status.connectString}")</copy>
+      ```
+
+   2. Connect to database via container
+
+      Run sqlplus within Oracle database container
+
+      ```bash
+      <copy>kubectl exec -it pods/${ORA_POD} -n oracle23ai -- sqlplus sys/${ORA_PASS}@${ORACLE_SID} as sysdba</copy>
       ```
 
       Example output:
 
       ```text
-      % kubectl exec -it pods/${ORA_POD} -n oracle23ai -- sqlplus sys/LiveLabs1@${ORA_NAME} as sysdba
+      % <copy>kubectl exec -it pods/${ORA_POD} -n oracle23ai -- sqlplus sys/${ORA_PASS}@${ORACLE_SID} as sysdba</copy>
       Defaulted container "freedb-livelabs" out of: freedb-livelabs, init-prebuiltdb (init)
 
       SQL*Plus: Release 23.0.0.0.0 - Production on Tue Jun 4 16:42:08 2024
@@ -339,22 +369,88 @@ This lab assumes you have:
       SQL>
       ```
 
-  2. Confirm Oracle version
+      Review database details
 
-     Check Oracle Database version using the v$version view.
+      ```sql
+      <copy>select INSTANCE_NAME, HOST_NAME, VERSION_FULL, EDITION from v$instance;</copy>
+      ```
 
-     ```sql
-     <copy>select BANNER_FULL from v$version;</copy>
-     ```
+      Example output:
 
-     Example output:
+      ```text
+      SQL> <copy>select INSTANCE_NAME, HOST_NAME, VERSION_FULL, EDITION from v$instance;</copy>
+      INSTANCE_NAME  HOST_NAME                VERSION_FULL      EDITION
+      -------------- ------------------------ ----------------- -------
+      FREE           freedb-livelabs-bmu14    23.4.0.24.05      FREE
+      ```
 
-     ```text
-     BANNER_FULL
-     --------------------------------------------------------------------------------
-     Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-     Version 23.4.0.24.05
-     ```
+   3. Connect to database using LoadBalancer
+
+      Patch SingleInstance database to use LoadBalancer
+
+      ```bash
+      <copy>kubectl --type=merge -p '{"spec":{"loadBalancer": true}}' patch singleinstancedatabase ${ORACLE_SID} -n oracle23ai</copy>
+      ```
+
+      Repeat **kubectl get service** to inspect updated services
+
+      ```bash
+      <copy>kubectl get services -n oracle23ai</copy>
+      ```
+
+      Example output:
+
+      ```text
+      % <copy>kubectl get services -n oracle23ai</copy>
+      NAME                  TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                         AGE
+      freedb-livelabs       ClusterIP      10.96.36.196   <none>           1521/TCP                        24h
+      freedb-livelabs-ext   LoadBalancer   10.96.164.80   130.162.188.54   5500:31237/TCP,1521:30623/TCP   24h
+      ```
+
+      Re-evaluate database connection string
+
+      ```bash
+      <copy>export ORA_CONN=$(kubectl get singleinstancedatabase ${ORACLE_SID} -n oracle23ai -o "jsonpath={.status.connectString}")</copy>
+      ```
+
+      Now connect using the OCI LoadBalancer **EXTERNAL-IP**
+
+      ```bash
+      <copy>sql sys/${ORA_PASS}@//${ORA_CONN} as sysdba</copy>
+      ```
+
+      Example output:
+
+      ```text
+      % <copy>sql sys/${ORA_PASS}@//${ORA_CONN} as sysdba</copy>
+
+
+      SQLcl: Release 24.1 Production on Fri Jun 07 12:22:54 2024
+
+      Copyright (c) 1982, 2024, Oracle.  All rights reserved.
+
+
+      Connected to:
+      Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
+      Version 23.4.0.24.05
+
+      SQL>
+      ```
+
+      Review database details
+
+      ```sql
+      <copy>select INSTANCE_NAME, HOST_NAME, VERSION_FULL, EDITION from v$instance;</copy>
+      ```
+
+      Example output:
+
+      ```text
+      SQL> <copy>select INSTANCE_NAME, HOST_NAME, VERSION_FULL, EDITION from v$instance;</copy>
+      INSTANCE_NAME    HOST_NAME                VERSION_FULL    EDITION
+      ________________ ________________________ _______________ __________
+      FREE             freedb-livelabs-27ny4    23.4.0.24.05    FREE
+      ```
 
 ## Learn More
 

@@ -2,7 +2,9 @@
 
 ## About this Workshop
 
-Author: Ron Ekins, Oracle ACE Director, Director Field Solution Architecture, EMEA & LATAM, Pure Storage
+![Portworx Logo](./images/portworx-logo.png =220x84)
+
+**Author:** Ron Ekins, Oracle ACE Director, Director Field Solution Architecture, EMEA & LATAM, Pure Storage
 
 In this lab you will learn how to provision a new Container Engine for Kubernetes (OKE) Cluster, deploy Portworx Enterprise Cloud Native Storage, install the Oracle Database Operator for Kubernetes (OraOperator) and then deploy a containerized Oracle Database 23ai Free using the Oracle Database Operator (OraOperator) into the OKE cluster.
 
@@ -11,7 +13,7 @@ Estimated Workshop Time: 40 minutes
 ### Objectives
 
 * Provision an Oracle Container Engine for Kubernetes (OKE) Cluster
-* Deploy Portworx (PX) Enterprise Cloud Native Storage
+* Deploy Portworx Enterprise (PX) Cloud Native Storage
 * Enable the Oracle Database Operator for Kubernetes (OraOperator)
 * Provision containerized Oracle Database 23ai Free
 
