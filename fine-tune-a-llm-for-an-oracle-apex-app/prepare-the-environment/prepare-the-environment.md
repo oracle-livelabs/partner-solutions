@@ -101,15 +101,22 @@ First, create a dynamic group that includes various Data Science resources. This
 ![Select the Domain where the IAM resources will be managed.](./images/click-create-dynamic-group.png)
 1. Enter the name, description, and a first rule for the new dynamic group. Replace the `resource.compartment.id` with the appropriate OCID where the Data Science resources will be created in.
     ```
+    <copy>
     ALL { resource.type = 'datasciencenotebooksession', resource.compartment.id = 'ocid1.compartment.oc1...' }
+    </copy>
     ```
 ![Enter the name, description, and a first rule for the new dynamic group.](./images//provide-details-for-the-data-science-service-dynamic-group.png)
-1. Click the button *+ Additional rule* button twice to add two more rules.
+1. Click the button *+ Additional rule* button twice to add two more rules:
     ```
+    <copy>
     ALL { resource.type = 'datasciencemodeldeployment', resource.compartment.id = 'ocid1.compartment.oc1...' }
+    </copy>
     ```
+    and
     ```
+    <copy>
     ALL { resource.type = 'datasciencejobrun', resource.compartment.id = 'ocid1.compartment.oc1...' }
+    </copy>
     ```
 ![Add two more rules to the dynamic group.](./images/add-rules-to-the-data-science-service-dynamic-group.png)
 1. Click the button *Create* to complete this task.
@@ -131,14 +138,17 @@ First, create a dynamic group that includes various Data Science resources. This
 ![Enter the policy statements manually.](./images/enter-policy-statements-manually.png)
 1. Repeat the steps 1 to 3, and create another policy called *DataScienceWorkPolicy* required for training and deploying the machine learning model on the OCI Data Science Service. It must contain the following policy statements:
     ```
+    <copy>
     allow service datascience to use virtual-network-family in tenancy
+    allow dynamic-group 'Default'/'DataScienceService' to read log-groups in compartment LiveLabs
     allow dynamic-group 'Default'/'DataScienceService' to use log-content in compartment LiveLabs
     allow dynamic-group 'Default'/'DataScienceService' to read virtual-network-family in compartment LiveLabs
     allow dynamic-group 'Default'/'DataScienceService' to manage data-science-family in compartment LiveLabs
-    allow dynamic-group 'Default'/'DataScienceService' to use object-family in compartment LiveLabs
+    allow dynamic-group 'Default'/'DataScienceService' to manage object-family in compartment LiveLabs
     allow dynamic-group 'Default'/'DataScienceService' to read repos in compartment LiveLabs
     allow dynamic-group 'Default'/'DataScienceService' to use vaults in compartment LiveLabs
     allow dynamic-group 'Default'/'DataScienceService' to manage keys in compartment LiveLabs
+    </copy>
     ```
 
 ## Task 7: Provision an Oracle Autonomous Database
