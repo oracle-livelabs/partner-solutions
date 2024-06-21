@@ -2,9 +2,11 @@
 
 ## Introduction
 
-In this lab, ...
+The OCI Data Science service allows you to deploy machine learning models as HTTP endpoints for real-time predictions. You can save trained models in the model catalog, specify an inference conda environment, and create model deployments. These deployments run in a Python runtime environment, distributed across a pool of VM instances with load balancing to handle concurrent requests. It’s a convenient way to serve predictions via HTTP APIs. Additionally, you can share models with rich metadata and deploy them for real-time endpoints.
 
-Estimated Time: 15 minutes
+The [Oracle Accelerated Data Science](https://accelerated-data-science.readthedocs.io) (ADS) is a Python package managed by the OCI Data Science service team. It provides utilities for assisting data scientists to work with OCI components and performing common data science tasks. In this lab, we will use ADS to prepare the model artifacts, registering the model, and then deploying it to the OCI Data Science platform.
+
+Estimated Time: 30 minutes
 
 ### Objectives
 
