@@ -36,6 +36,11 @@
       "title": "Lab 5: Exposing your Weather Forecast Skill",
       "description": "In this scenario you will configure a web widget for your website.",
       "filename": "../../channels/channels.md"
+    },
+    {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }
