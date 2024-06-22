@@ -10,7 +10,7 @@
 
 Large Language Models (LLMs) are machine learning models that have been pre-trained or vast amounts of text data, and have exhibited an extraordinary capability in generating and summarizing content. In this workshop, we will learn how to fine-tune an open-sourced [Hugging Face](https://huggingface.co/) model to automatically score a user's product review using the Oracle Cloud Infrastructure (OCI) Data Science service. We will then deploy the fine-tuned model to the OCI's managed infrastructure, and then use its prediction REST endpoint in a product catalog web application built using Oracle APEX.
 
-Estimated Workshop Time: 90 minutes
+Estimated Workshop Time: 120 minutes
 
 ### Objectives
 
