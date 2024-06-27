@@ -1,4 +1,9 @@
 # How do I use Schema Privileges feature in Oracle 23ai?
+
+**Community Contributed Workshop**
+
+**Author:** *Nagatanmayee Gunukula*
+
 Duration: 10 minute
 
 Oracle 23ai Offers “Schema Privileges” to simplify Access control. This feature helps to simplify individual schema level privileges instead of granting system level (*ANY privileges) on all objects in a schema.  User can grant privileges on their own schema without having any special privileges. This will help separation of duties with least privilege model by reducing the risk.
@@ -85,11 +90,13 @@ To grant Schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	This “Schema Privileges” feature provides least privilege model and helps to lower the risk if account is compromised.
 
 ## Learn More
-
-* [Oracle Documentation on Oracle 23c New features](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/index.html)
-* [Configuring Privilege and Role Authorization (oracle.com)](https://docs.oracle.com/en/database/oracle/oracle-database/23/dbseg/configuring-privilege-and-role-authorization.html#GUID-1C2A996E-8D01-4B94-BE9F-E5042AA15B15)
+* [Oracle Database New Features Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/index.html)
+* [Configuring Privilege and Role Authorization Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/dbseg/configuring-privilege-and-role-authorization.html#GUID-1C2A996E-8D01-4B94-BE9F-E5042AA15B15)
 * [Oracle Database 23c Security New Features](https://www.oracleracexpert.com/2023/12/webinar-oracle-database-23c-security.html)
 
+>Note: In May 2024 *Oracle Database 23c* was renamed to **Oracle Database 23ai**. Learning materials referencing 23c are applicable to 23ai.
+
 ## Acknowledgements
-* **Author** - Nagatanmayee Gunukula
+* **Author** - Nagatanmayee Gunukula, LiveLabs Contributor
 * **Last Updated By/Date** - Hope Fisher,  June 2024
+

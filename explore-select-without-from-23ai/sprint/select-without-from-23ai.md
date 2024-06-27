@@ -1,6 +1,7 @@
 # How do I use SELECT without FROM in Oracle 23ai?
 
 **Community Contributed Workshop**
+
 **Author:** *Nagatanmayee Gunukula*
 
 Duration: 10 minute
