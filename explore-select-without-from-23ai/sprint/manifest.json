@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-db_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "Explore SELECT without FROM feature in Oracle 23ai",
+         "description": "",
+         "filename": "select-without-from-23ai.md"
+      }
+   ],
+   "task_type": "Sections"
+}
