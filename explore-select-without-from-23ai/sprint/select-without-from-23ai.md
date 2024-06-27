@@ -14,10 +14,11 @@ Databases such as Microsoft SQL Server, MYSQL, etc. support without FROM clause 
 
 Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23ai
 
-1. Select current date for easier data Manipulation
+1. Select current date for easier data manipulation.
         ```
         <copy>
         SQL> SELECT CURRENT_DATE;
+
         SYSDATE
         -------------------
         2024-03-25:16:56:41
@@ -26,49 +27,48 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
 
 2. Mathematical operations or calculations without involving table data.
         ```
-        <copy>
-        SQL> SELECT 5*5;
+        SQL> <copy>SELECT 5*5</copy>;
 
         5*5
         ----------
                 25
-
-</copy>
-```
-
-3. PL/SQL Block without using FROM Clause.
         ```
-        <copy>
-        SQL> CREATE SEQUENCE empno_seq INCREMENT BY 1 START WITH 1 MINVALUE 1 MAXVALUE 1000;
 
+3. PL/SQL block without using FROM clause.
+        ```
+        SQL> <copy>CREATE SEQUENCE empno_seq INCREMENT BY 1 START WITH 1 MINVALUE 1 MAXVALUE 1000;
+        </copy>
         Sequence created.
+        ```
 
-        SQL> declare
+        ```
+        SQL> <copy>declare
         v1 number;
         begin
         select empno_seq.nextval into v1;
         dbms_output.put_line ('v1= '||v1);
         end;
-        /  
+        </copy>
+        /
         v1= 1
 
         PL/SQL procedure successfully completed.
-        </copy>
         ```
 
-4. Built-in or User defined Functions to perform operations or retrieve vales.
+4. Built-in or user defined functions to perform operations or retrieve values.
         ```
-        SQL> SELECT DBMS_RANDOM.VALUE() as random_number;
+        SQL> <copy>SELECT DBMS_RANDOM.VALUE() as random_number;
+        </copy>
 
         RANDOM_NUMBER
         -------------
         .798816772
         ```
 
-5. String Manipulations or conversions without relying on table data.
+5. String manipulations or conversions without relying on table data.
         ```
-        <copy>
-        SQL> SELECT UPPER('oracle') AS uppercase_text;
+        SQL> <copy>SELECT UPPER('oracle') AS uppercase_text;
+        </copy>
 
         UPPER
         ------
@@ -78,8 +78,8 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
 
 6. Conditional or logical expressions without using a table.
         ```
-        <copy>
-        SQL> SELECT CASE WHEN 10 > 5 THEN 'True' ELSE 'False' END AS result;
+        SQL> <copy>SELECT CASE WHEN 10 > 5 THEN 'True' ELSE 'False' END AS result;
+        </copy>
 
         RESULT
         -----
@@ -87,7 +87,7 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
         </copy>
         ```
 
-Unlock all Oracle Database 23ai by upgrading your database and take advantage of all new features.
+Unlock all Oracle Database 23ai by upgrading your database and taking advantage of all the new features.
 
 ## Learn More
 
