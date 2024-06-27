@@ -20,17 +20,20 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	User created.
 	```
 
+
 	```
 	SQL> <copy>GRANT CONNECT, RESOURCE to sales;
 	</copy>
 	Grant succeeded.
 	```
 
+
 	```
 	SQL> <copy>CREATE USER nat IDENTIFIED BY natpwdXXXX QUOTA UNLIMITED ON USERS;
 	</copy>
 	User created.
 	```
+
 
 	```
 	SQL> <copy>GRANT CREATE SESSION to NAT;
@@ -45,6 +48,7 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	</copy>
 	Connected.
 	```
+
 
 	```
 	SQL> <copy>CREATE TABLE PRODUCT (
@@ -78,6 +82,7 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	</copy>
 	User Connected.
 	```
+
 
 	```
 	SQL> <copy>SELECT * FROM SALES.PRODUCT;

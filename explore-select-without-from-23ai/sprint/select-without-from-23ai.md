@@ -16,18 +16,17 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
 
 1. Select current date for easier data manipulation.
         ```
-        <copy>
-        SQL> SELECT CURRENT_DATE;
+        SQL> <copy>SELECT CURRENT_DATE;
+        </copy>
 
         SYSDATE
         -------------------
         2024-03-25:16:56:41
-        </copy>
         ```
 
 2. Mathematical operations or calculations without involving table data.
         ```
-        SQL> <copy>SELECT 5*5</copy>;
+        SQL> <copy>SELECT 5*5;</copy>
 
         5*5
         ----------
@@ -40,6 +39,7 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
         </copy>
         Sequence created.
         ```
+
 
         ```
         SQL> <copy>declare
