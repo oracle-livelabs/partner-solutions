@@ -39,8 +39,7 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
         </copy>
         Sequence created.
         ```
-
-
+ 
         ```
         SQL> <copy>declare
         v1 number;
