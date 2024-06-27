@@ -12,45 +12,31 @@ Before Oracle 23ai, users either grant privileges on each table, view to a schem
 
 To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA or GRANT ANY PRIVILEGE system privilege.
 
-1. Create SALES, NAT users in Oracle 23ai Database and grant CONNECT, RESOURCE privileges to SALES user and CREATE SESSION to NAT user
-
+1. Create SALES, NAT users in Oracle 23ai Database and grant CONNECT, RESOURCE privileges to SALES user and CREATE SESSION to NAT user.
 	```
 	SQL> <copy>CREATE USER sales IDENTIFIED BY salespwdXXXX QUOTA UNLIMITED ON USERS;
 	</copy>
 	User created.
-	```
 
-
-	```
 	SQL> <copy>GRANT CONNECT, RESOURCE to sales;
 	</copy>
 	Grant succeeded.
-	```
 
-
-	```
 	SQL> <copy>CREATE USER nat IDENTIFIED BY natpwdXXXX QUOTA UNLIMITED ON USERS;
 	</copy>
 	User created.
-	```
 
-
-	```
 	SQL> <copy>GRANT CREATE SESSION to NAT;
 	</copy>
 	Grant succeeded.
 	```
 
 2. Connect to SALES user and create PRODUCT table.
-
 	```
 	SQL> <copy>CONNECT sales/salespwdXXXX;
 	</copy>
 	Connected.
-	```
 
-
-	```
 	SQL> <copy>CREATE TABLE PRODUCT (
 		PRODUCT_ID     		NUMBER(10),
 		PRODUCT_NAME 	VARCHAR2(20),
@@ -76,15 +62,12 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	Grant succeeded.
 	```
 
-5. Connect to NAT schema and select the PRODUCT table owned by SALES schema
+5. Connect to NAT schema and select the PRODUCT table owned by SALES schema.
 	```
 	SQL> <copy>CONNECT nat/natpwdXXXX;
 	</copy>
 	User Connected.
-	```
 
-
-	```
 	SQL> <copy>SELECT * FROM SALES.PRODUCT;
 	</copy>
 

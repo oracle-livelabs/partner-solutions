@@ -38,9 +38,7 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
         SQL> <copy>CREATE SEQUENCE empno_seq INCREMENT BY 1 START WITH 1 MINVALUE 1 MAXVALUE 1000;
         </copy>
         Sequence created.
-        ```
- 
-        ```
+
         SQL> <copy>declare
         v1 number;
         begin
