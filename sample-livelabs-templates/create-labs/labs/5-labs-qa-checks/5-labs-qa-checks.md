@@ -46,7 +46,7 @@ Now that your workshop is inside the Oracle LiveLabs GitHub project, confirm the
 
 You have finished developing your workshop. To publish your workshop, you still need to perform self-QA on the workshop. If there are changes to the details below, email us to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com) to keep the system updated.
 
-1.  Download this [Self QA document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx). To align with the LiveLabs standards, check your workshop against the form, make changes to your changes to your workshop as needed, push them to your repo (commit your changes by following steps in Lab 3 Task 4) and fill out the form.
+1. To align with the LiveLabs standards, check your workshop against the form, make changes to your changes to your workshop as needed, push them to your repo (commit your changes by following steps in Lab 3 Task 4) and fill out the form.
 
 	Workshop author or the team can watch the video below on how to self-QA or verify QA of the workshop.
 
