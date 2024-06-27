@@ -17,15 +17,21 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	SQL> <copy>CREATE USER sales IDENTIFIED BY salespwdXXXX QUOTA UNLIMITED ON USERS;
 	</copy>
 	User created.
+    ```
 
-	SQL> <copy>GRANT CONNECT, RESOURCE to sales;
+    ```
+	SQL> <copy>GRANT CONNECT,RESOURCE to sales;
 	</copy>
 	Grant succeeded.
+    ```
 
+    ```
 	SQL> <copy>CREATE USER nat IDENTIFIED BY natpwdXXXX QUOTA UNLIMITED ON USERS;
 	</copy>
 	User created.
+    ```
 
+    ```
 	SQL> <copy>GRANT CREATE SESSION to NAT;
 	</copy>
 	Grant succeeded.
@@ -36,12 +42,14 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	SQL> <copy>CONNECT sales/salespwdXXXX;
 	</copy>
 	Connected.
+    ```
 
+    ```
 	SQL> <copy>CREATE TABLE PRODUCT (
-		PRODUCT_ID     		NUMBER(10),
-		PRODUCT_NAME 	VARCHAR2(20),
+		PRODUCT_ID			NUMBER(10),
+		PRODUCT_NAME 		 VARCHAR2(20),
 		PRODUCT_LIST_PRICE	NUMBER(10,2),
-		PRODUCT_STATUS       	VARCHAR2(15));
+		PRODUCT_STATUS   	 VARCHAR2(15));
 	</copy>
 	Table Created.
 	```
@@ -50,14 +58,22 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	```
 	<copy>
 	INSERT INTO PRODUCT VALUES (1, 'Jacket', 39.99, 'InStock');
+	</copy>
+	```
+	```
+	<copy>
 	INSERT INTO PRODUCT VALUES (2, 'Shirt', 25.99, 'InStock');
+	</copy>
+	```
+	```
+	<copy>
 	INSERT INTO PRODUCT VALUES (3, 'Pant', 29.99, 'InStock');
 	</copy>
 	```
 
 4. Grant “SELECT ANY TABLE” system privilege on SALES schema to NAT.
 	```
-	SQL> <copy>GRANT SELECT ANY TALBE ON SCHEMA sales to nat;
+	SQL> <copy>GRANT SELECT ANY TABLE ON SCHEMA sales to nat;
 	</copy>
 	Grant succeeded.
 	```
@@ -67,7 +83,9 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 	SQL> <copy>CONNECT nat/natpwdXXXX;
 	</copy>
 	User Connected.
+    ```
 
+    ```
 	SQL> <copy>SELECT * FROM SALES.PRODUCT;
 	</copy>
 
@@ -82,12 +100,10 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 
 6. Users can query the following Dictionary views to get the information about Schema privileges.
 	```
-	<copy>
 	DBA_SCHEMA_PRIVS
 	USER_SCHEMA_PRIVS
 	ROLE_SCHEMA_PRIVS
 	SESSION_SCHEMA_PRIVS
-	</copy>
 	```
 
 	This “Schema Privileges” feature provides least privilege model and helps to lower the risk if account is compromised.

@@ -26,9 +26,10 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
 
 2. Mathematical operations or calculations without involving table data.
         ```
-        SQL> <copy>SELECT 5*5;</copy>
+        SQL> <copy>SELECT 5*5;
+        </copy>
 
-        5*5
+               5*5
         ----------
                 25
         ```
@@ -37,16 +38,17 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
         ```
         SQL> <copy>CREATE SEQUENCE empno_seq INCREMENT BY 1 START WITH 1 MINVALUE 1 MAXVALUE 1000;
         </copy>
-        Sequence created.
-
+        Sequence created.s
+        ```
+        ```
         SQL> <copy>declare
         v1 number;
         begin
         select empno_seq.nextval into v1;
         dbms_output.put_line ('v1= '||v1);
         end;
-        </copy>
         /
+        </copy>
         v1= 1
 
         PL/SQL procedure successfully completed.
@@ -70,7 +72,6 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
         UPPER
         ------
         ORACLE
-        </copy>
         ```
 
 6. Conditional or logical expressions without using a table.
@@ -81,7 +82,6 @@ Here are some potential benefits of a "SELECT without FROM" feature in Oracle 23
         RESULT
         -----
         True
-        </copy>
         ```
 
 Unlock all Oracle Database 23ai by upgrading your database and taking advantage of all the new features.
