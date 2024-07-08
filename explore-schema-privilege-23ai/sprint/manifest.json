@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-db_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "Explore Schema privileges feature in Oracle 23ai",
+         "description": "",
+         "filename": "schema-privileges-23ai.md"
+      }
+   ],
+   "task_type": "Sections"
+}
