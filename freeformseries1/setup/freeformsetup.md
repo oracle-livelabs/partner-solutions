@@ -1,4 +1,4 @@
-# Setup the EPM Cloud instance
+# Setup the Cloud EPM instance
 ## Introduction
 
 Once you login into the Cloud environment, you will then be setting up the environment for a **FreeForm** application.
@@ -15,17 +15,17 @@ In this lab, you will:
 ### Prerequisites
 
 Ensure that:
-* You have an Oracle EPM Enterprise Cloud subscription
+* You have an Oracle Cloud EPM Enterprise subscription
 * You are a service administrator for the instance where you are going to create the FreeForm application
 
 
 ## Task 1: FreeForm Application creation readiness
 
-1. Check whether you have Oracle EPM Enterprise Cloud subscription 
+1. Check whether you have Oracle Cloud EPM Enterprise subscription 
   
-  When you login to your EPM Cloud environment, check whether you have an ability to pick from the below applications as shown. If you have all these applications available that means you have an **Enterprise** subscription. You will be selecting **FreeForm** from the below.
+  When you login to your Cloud EPM environment, check whether you have an ability to pick from the below applications as shown. If you have all these applications available that means you have an **Enterprise** subscription. You will be selecting **FreeForm** from the below.
 
-	![Readiness to create EPM Enterprise Cloud Service Application](images/enterpriseappreadiness.png)
+  ![Readiness to create application](images/enterpriseappreadiness.png)
 
 2. Enable the instance as a FreeForm application instance
 
@@ -42,9 +42,9 @@ Ensure that:
 
 ## Learn More
 
-* [Creating an EPM Enterprise Cloud Service Application](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/about_epm_enterprise_landing_page.html)
+* [Creating a Cloud EPM Enterprise Service Application](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/about_epm_enterprise_landing_page.html)
 * [Understanding FreeForm applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html)
 
 ## Acknowledgements
 * **Author** - Vatsal Gaonkar, Director - Oracle Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, March 2023
+* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
