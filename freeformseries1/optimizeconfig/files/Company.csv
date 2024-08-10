@@ -1,0 +1,12 @@
+﻿Company, Parent, Alias: Default, Data Storage, Two Pass Calculation, Data Type, Hierarchy Type, Allow Upper Level Entity Input, Process Management Enabled, Plan Type (Scratch1), Aggregation (Scratch1), Data Storage (Scratch1), Plan Type (Scratch2), Aggregation (Scratch2), Data Storage (Scratch2), Operation
+Total Markets,Company,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+Developed Markets,Total Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+United States,Developed Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+Canada,Developed Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+United Kingdom,Developed Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+Emerging Markets,Total Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+Australia,Emerging Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+Mexico,Emerging Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+Brazil,Emerging Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+France,Emerging Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
+Rest of World,Emerging Markets,,never share,FALSE,unspecified,none,FALSE,TRUE,TRUE,+,never share,TRUE,+,never share,
