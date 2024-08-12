@@ -299,5 +299,5 @@ Congratulations! You have **completed** all the necessary labs and tasks.
 
 ## Acknowledgements
 
-* **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, July 2023
+* **Author** - Adrian Png, Director of Innovation, AI and Cloud Solutions, Insum Solutions Inc.
+* **Last Updated By/Date** - Adrian Png, August 2024

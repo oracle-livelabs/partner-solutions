@@ -6,7 +6,7 @@
 
 **Community Contributed Workshop**
 
-* **Author:** *Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.*
+* **Author:** *Adrian Png, Director of Innovation, AI and Cloud Solutions, Insum Solutions Inc.*
 
 Machine learning has been used in many industries and applications to support decision making, augment control systems, and optimizing processes. In this workshop, you will learn how to prepare data, train and deploy a machine learning model, and then use it in an Oracle APEX application to predict resale flat prices, using little or no code.
 
@@ -41,5 +41,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 
-* **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, July 2023
+* **Author** - Adrian Png, Director of Innovation, AI and Cloud Solutions, Insum Solutions Inc.
+* **Last Updated By/Date** - Adrian Png, August 2024
