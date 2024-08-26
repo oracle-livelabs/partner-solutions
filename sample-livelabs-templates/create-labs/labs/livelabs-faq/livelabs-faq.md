@@ -9,7 +9,7 @@ For questions related to Oracle LiveLabs please review this FAQ. If you do not s
 1.	Is Oracle LiveLabs available to customers?
     -	Yes, it is available to everyone.
 2.  How can I access LiveLabs?
-    -   It is accessible globally. Search for Oracle LiveLabs on the search engine of choice, click on the apex link to go to LiveLabs homepage or you access by clicking this link [https://developer.oracle.com/livelabs/](https://developer.oracle.com/livelabs/)
+    -   It is accessible globally. Search for Oracle LiveLabs on the search engine of choice, click on the apex link to go to LiveLabs homepage or you access by clicking this link [https://livelabs.oracle.com/](https://livelabs.oracle.com/)
 3.	Who can run the workshops?
     -   Anyone can run the workshops.
 4.	Is this cloud only?
@@ -21,7 +21,7 @@ For questions related to Oracle LiveLabs please review this FAQ. If you do not s
         -	Run on your tenancy – Customers do need a tenancy to run the workshop.
         -	LiveLabs sandbox tenancy - An account of any type registered with Oracle (Eg: Gmail) to sign into Oracle with SSO.
 7.	How to look for a specific workshop to run?
-    -	Search in [LiveLabs](https://developer.oracle.com/livelabs/). It is self-service.
+    -	Search in [LiveLabs](https://livelabs.oracle.com/). It is self-service.
     -	Click on **View All Workshops** button to look through the catalog or search the workshop using the Search bar on top.
     -   You can also filter the workshops based on the Level, Role, Focus Area, and Product, etc using the filter options on the left side of View All Workshops page.
 8.	How to register for a workshop?
@@ -45,7 +45,7 @@ For questions related to Oracle LiveLabs please review this FAQ. If you do not s
     -	Please make sure you are logged off completely from your own tenancy or use another (private) browser window to connect.
 12.	How do I extend the LiveLabs tenancy workshop execution time?
     -	If you have an active reservation, you can extend the reservation of a workshop:
-        - Navigate to My reservations page on [LiveLabs](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/my-reservations?).
+        - Navigate to My reservations page on [LiveLabs](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/my-reservations?).
         - Click on **Launch Workshop** of the active reservation workshop that you want to extend.
         - Click on **Extend Workshop Reservation** button available on the top right corner of the Workshop below your username.
 13.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content and want to add more content to the existing workshop?

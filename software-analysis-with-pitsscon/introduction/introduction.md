@@ -68,7 +68,7 @@ This lab assumes you have:
 * [PITTSS.CON product page](https://pitss.com/forms2apex-modeler/)
 * [Webcast on modernizing legacy applications](https://www.youtube.com/watch?v=6pzXxvT8BRk)
 * [Information on Graph Studio](https://www.oracle.com/autonomous-database/graph/get-started/)
-* [Livelabs workshop on Graph Studio on Autonmous Database](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=770)
+* [Livelabs workshop on Graph Studio on Autonmous Database](https://livelabs.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=770)
 
 ## Acknowledgements
 
