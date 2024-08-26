@@ -67,10 +67,15 @@ Each of the three CSV file downloaded in the previous task contains the followin
 
 The data from each CSV will be imported into a single database table called `RESALE_FLAT_PRICES`.
 
-1. Login to Database Actions as the user *WKSP_LIVELABS*. See Lab 1, Task 3, to retrieve the URL for Database Actions.
+
+1. In Lab 1, Task 1, you were introduced to the ADB's tools page. Return to the tools page, and then scroll down till you find the section *Database Actions*. Click the button *Copy* to copy the URL to *Database Actions*.
+![Copy link to launch the Database Actions tool.](./images/copy-link-to-database-actions.png)
+1. Open a new browser window or tab, then open the URL copied in the earlier step. Login as the user *WKSP_LIVELABS*.
 ![Sign in to Database Actions as the wksp_livelabs schema.](./images/livelabs-sign-in.png)
-1. Click the navigation menu on the top-left of the landing page, and then navigate to the Database Action's SQL user interface.
-![Navigate to the SQL user interface.](./images/navigate-to-sql.png)
+1. Upon successful login, you will be redirectored to the *Database Action's Launchpad*. Click the tab *SQL*, and then click the button *Open* on the bottom-right.
+![Navigate to the SQL user interface.](./images/load-sql-from-launchpad.png)
+1. If this is the first time that you are accessing *Database Actions*, you will be prompted to walkthrough a tutorial to learn how the tool works. If you wish to skip the tutorial, then click the button *X* to close the modal,
+![Click to skip the tutorial.](./images/skip-tutorial.png)
 1. Copy the SQL statement below, and paste the content into the worksheet.
     ```sql
     <copy>
@@ -99,17 +104,22 @@ The *Data Studio* is an integral component of Database Actions that provides too
 
 1. From the navigation menu on the top-left of the webpage, navigate to Data Studio's *Data Load* tool.
 ![Launch the Data Load tool.](./images/navigate-to-load-data.png)
-1. Select the action, *Load Data*, and the location of the source files, *Local File*. Then click the button *Next*.
-![Setup the action and location of the source data files.](./images/setup-data-load.png)
-1. Go to each file's settings by first clicking the three vertical dots on the top-right of the display card, and then the menu item *Settings*.
-![Edit the settings for each uploaded file.](./images/edit-the-settings-for-each-file.png)
+1. On the *Data Load* page, select the action, *Load Data*.
+![Select data load action.](./images/select-data-load.png)
+1. First, change the *Consumer Group* to *Low*. Then, drag and drop each file into the upload area.
+![Set the consumer group to low, then drag and drop files to begin the upload.](./images/drop-files-and-set-consumer-group-to-low.png)
+1. Click each file's "edit" button to edit its settings.
+![Edit the settings for each file that was uploaded.](./images/edit-the-settings-for-each-file.png)
 1. Select the *Option* to *Insert into Table*, and then choose the target table under the field *Name*. Under the *Mapping* section, check that the source and target columns are correctly mapped. Finally, click the button *Close*.
-![Select the table to insert data to.](./images/select-table-to-insert.png)
+![Configure the table to insert into and ensure the required columns are mapped.](./images/configure-and-map-columns.png)
 1. Once all three files have been correctly configured, click on the button *Start* to begin the data load job.
 ![Start the data load job.](./images/start-data-load-job.png)
 1. Click the button *Run* when prompted to confirm the job execution.
 ![Click the button Run to confirm the job execution.](./images/click-run-when-prompted.png)
+1. If the job statuses are not updated, click the "refresh" button.
+![Click refresh to get an updated status of the data load.](./images/refresh-for-updated-status.png)
 1. When the data load job is completed, there should be a green tick for each file. Click the button *Done* to exit this page, and then proceed to the next task.
+![A successful data load operation for all files.](./images/successful-data-load.png)
 
 ## Task 4: Prepare the Data for Training the Machine Learning Model
 
@@ -143,7 +153,7 @@ The *Data Studio* is an integral component of Database Actions that provides too
             as remaining_lease_month
         , resale_price
     from resale_flat_prices_import
-    where to_number(regexp_substr(month, '(\d+)', 1, 1)) < 2023
+    where to_number(regexp_substr(month, '(\d+)', 1, 1)) < 2024
     /
 
     -- Add a primary key constraint on the column transaction_id
@@ -157,11 +167,11 @@ The *Data Studio* is an integral component of Database Actions that provides too
 
 > **Note:**
 >
-> The data used for training the ML model will contain data for years before 2023. Data for 2023 may be used to check the performance of the trained ML model.
+> The data used for training the ML model will contain data for years before 2024. Data for 2024 may be used to check the performance of the trained ML model.
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, June 2023
+* **Author** - Adrian Png, Director of Innovation, AI and Cloud Solutions, Insum Solutions Inc.
+* **Last Updated By/Date** - Adrian Png, August 2024

@@ -1,0 +1,3 @@
+﻿Scenario, Parent, Alias: Default, Valid For Consolidations, Data Storage, Two Pass Calculation, Data Type, Hierarchy Type, Process Management Enabled, Plan Type (Scratch1), Aggregation (Scratch1), Data Storage (Scratch1), Plan Type (Scratch2), Aggregation (Scratch2), Data Storage (Scratch2), Operation
+Actual,Scenario,,FALSE,never share,FALSE,unspecified,stored,TRUE,TRUE,+,never share,TRUE,+,never share,
+Forecast,Scenario,,FALSE,never share,FALSE,unspecified,stored,TRUE,TRUE,+,never share,TRUE,+,never share,

@@ -32,7 +32,7 @@ This lab assumes that you have:
 ![Enter a suitable display and database name, and then choose the desired workload type.](./images/enter-required-details-for-new-autonomous-database.png)
 1. Scroll down and select the *Serverless* deployment type.
 ![Choose deployment type](./images/choose-deployment-type.png)
-1. For this workshop, select *Always Free* option if within the tenancy's service limits. For Always Free databases, the *OCPU count* and storage limits are fixed. Also, auto scaling is not available for both OCPU and storage. Select the database version *19c* and then scroll down again.
+1. For this workshop, select *Always Free* option if within the tenancy's service limits. For Always Free databases, the *OCPU count* and storage limits are fixed. Also, auto scaling is not available for both OCPU and storage. Select the database version *19c* (or *23ai*) and then scroll down again.
 ![Specify if this is an Always Free instance, and if required, provide the OCPU and storage limits.](./images/configure-autonomous-database-resources.png)
 1. Enter a password (twice) that meets the database's password complexity rules. It must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It should not include the word *admin*.
 ![Enter a valid password for the autonomous database.](./images/enter-valid-password-for-autonomous-database.png)
@@ -64,11 +64,7 @@ This lab assumes that you have:
 
 When the workspace was created in Task 2, the system had automatically created a database schema and attached it to the workspace. The schema name is the workspace's name and prefixed with the characters *WKSP_*. For example, if the workspace name is *LIVELABS*, then the a parsing schema named *WKSP_LIVELABS* is created. Parsing schemas are used by applications to access database objects managed either in the same or associated schemas. We will use the same parsing schema for loading data for training the machine learning model.
 
-1. In Task 1, you were introduced to the ADB's tools page. Return to the tools page, and then scroll down till you find the section *Database Actions*. Click the button *Copy* to copy the URL to *Database Actions*.
-![Copy link to launch the Database Actions tool.](./images/copy-link-to-database-actions.png)
-1. Open a new browser window or tab, then open the URL copied in the earlier step. Login as the ADB's *admin* user.
-![Login to Database Actions as the admin user.](./images/login-to-database-actions-as-admin.png)
-1. Click the navigation (hamburger) menu icon on the top-left corner of the page, and then under the section *Administration*, click the menu item *Database Users*.
+1. Back on the ADB's details page, click on the *Database actions* drop down menu and click on the option *Database Users*. This will launch a new tab, load the *Database Actions* application, login as the *admin* user, and navigate to the *Database Users* page.
 ![Navigate to the database users page.](./images/navigate-to-database-users.png)
 1. From the list of database users, locate the parsing schema, e.g., *WKSP_LIVELABS*, and then click the button with three vertical dots on the top-right corner of the schema's display card. Then, click the menu item *Edit*.
 ![Click to edit the database user/schema.](./images/click-to-edit-database-user-account.png)
@@ -81,5 +77,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Adrian Png, Senior Cloud Solutions Architect, Insum Solutions Inc.
-* **Last Updated By/Date** - Adrian Png, July 2023
+* **Author** - Adrian Png, Director of Innovation, AI and Cloud Solutions, Insum Solutions Inc.
+* **Last Updated By/Date** - Adrian Png, August 2024
