@@ -12,6 +12,7 @@ In this lab, you will:
 
 - Load ONNX LLMs directly into your 23ai database
 - Explore metadata for the newly-loaded LLMs through Oracle 23ai data dictionary views
+- Add a PL/SQL package for eventual use by the APEX application
 
 ### Prerequisites
 
@@ -77,8 +78,16 @@ Our next step is to import the ONNX LLMs directly into our 23ai database.
     - The LLM accepts *text only* as input. As we'll see in later labs, text will be passed into these models as CLOB datatypes.
     - It also returns a **VECTOR** datatype. In this case, up to **384** possible elements of a VECTOR array can be stored as floating point decimal values. These numbers represent *embeddings* that the model creates when processing "chunks" of text data, as we'll see in a later lab.
 
+## Task 2: Add PL/SQL Package
 
-5. **All ONNX LLMs have been successfully loaded into your 23ai database.** You may proceed to the next lab.
+One last step releated to the ONNX LLMs: adding a new PL/SQL package that our APEX application uses for some advanced generative AI processing.
+
+1. Open and execute the script named **pkg-rag-processing.sql** to create a new PL/SQL package (OPG) named **PKG_RAG_PROCESSING.** Our APEX application will use this package's procedures and functions to interface with various database-resident 23ai generative AI features via PL/SQL.
+
+   ![Create PL/SQL package](./images/compile-pkg-rag-processing.png)
+
+
+2. **All ONNX LLMs have been successfully loaded into your 23ai database and related PL/SQL packages are created.** You may proceed to the next lab.
 
 ## Learn More
 - [Importing Pretrained Models in ONNX Format](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/import-pretrained-models-onnx-format-vector-generation-database.html)
