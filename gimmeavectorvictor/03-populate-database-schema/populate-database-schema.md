@@ -80,11 +80,7 @@ This lab assumes you have completed all previous labs successfully.
 
    ![Create OPGs](./images/create-opgs.png)
 
-10. Open and execute the script named **pkg-rag-processing.sql** to create a new PL/SQL package (OPG) named **PKG_RAG_PROCESSING.** Our APEX application will use this package's procedures and functions to interface with various database-resident 23ai generative AI features via PL/SQL.
-
-   ![Create PL/SQL package](./images/compile-pkg-rag-processing.png)
-
-11. **Your schema setup is now complete.** You may proceed to the next lab.
+10. **Your schema setup is now complete.** You may proceed to the next lab.
 
 ## Learn More
 - [Operational Property Graph Fundamentals](https://docs.oracle.com/en/database/oracle/property-graph/24.3/spgdg/introduction-property-graphs.html)
