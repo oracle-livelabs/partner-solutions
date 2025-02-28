@@ -15,9 +15,9 @@ To gain the most from these labs, you should be familiar with basic Oracle Datab
 ### Objectives
 In this lab, you will learn how to:
 - Implement the new 23ai **VECTOR** datatype for use by LLMs and Generative AI applications
-- Translate a specific set of documents into a useful corpus, including embeddings, with **DBMS_VECTOR** and **DBMS_VECTOR_CHAIN**
+- Translate a specific set of documents into a useful corpus, including embeddings, with **DBMS\_VECTOR** and **DBMS\_VECTOR\_CHAIN**
 - Use **VECTOR_DISTANCE** to perform exact and similarity searches against an indexed VECTOR datatype
-- Build a sample APEX application with **APEX_AI** and external LLM APIs to interact with users
+- Build a sample APEX application with **APEX\_AI** and external LLM APIs to interact with users
 
 
 **Estimated Time:** 80 minutes
