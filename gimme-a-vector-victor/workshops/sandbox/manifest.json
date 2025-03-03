@@ -17,39 +17,39 @@
         {
             "title": "Lab 1: Provision an Oracle Autonomous Database",
             "description": "Provision an Oracle 23ai Autonomous Always Free Database",
-            "filename": "../../../01-initialize-livelabs-environment/adb-provision-conditional.md"
+            "filename": "../../01-initialize-livelabs-environment/adb-provision-conditional.md"
         },
         {
             "title": "Lab 2: Prepare Development Environment",
-            "filename": "../../../02-prepare-development-environment/prepare-development-environment.md"
+            "filename": "../../02-prepare-development-environment/prepare-development-environment.md"
         },
         {
             "title": "Lab 3: Populate Database Schema",
-            "filename": "../../../03-populate-database-schema/populate-database-schema.md"
+            "filename": "../../03-populate-database-schema/populate-database-schema.md"
         },
         {
             "title": "Lab 4: Import ONNX Trained LLMs",
-            "filename": "../../../04-import-genai-llms/import-genai-llms.md"
+            "filename": "../../04-import-genai-llms/import-genai-llms.md"
         },
         {
             "title": "Lab 5: Build Document Corpus",
-            "filename": "../../../05-build-llm-corpus/build-llm-corpus.md"
+            "filename": "../../05-build-llm-corpus/build-llm-corpus.md"
         },
         {
             "title": "Lab 6: Create Corpus Embeddings",
-            "filename": "../../../06-create-corpus-embeddings/create-corpus-embeddings.md"
+            "filename": "../../06-create-corpus-embeddings/create-corpus-embeddings.md"
         },
         {
             "title": "Lab 7: Create Vector Indexes",
-            "filename": "../../../07-create-vector-indexes/create-vector-indexes.md"
+            "filename": "../../07-create-vector-indexes/create-vector-indexes.md"
         },
         {
             "title": "Lab 8: Create ChatBot Application",
-            "filename": "../../../08-create-chatbot-application/create-chatbot-application.md"
+            "filename": "../../08-create-chatbot-application/create-chatbot-application.md"
         },
         {
             "title": "Lab 9: Interact With ChatBot Application",
-            "filename": "../../../09-interact-with-chatbot/interact-with-chatbot.md"
+            "filename": "../../09-interact-with-chatbot/interact-with-chatbot.md"
         },
         {
             "title": "Need Help?",
