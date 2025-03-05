@@ -127,7 +127,7 @@ To accomplish this, we'll first need to *gather pertinent information* about our
 
     ![Copy and Retain Compartment OCID](images/copy-compartment-ocid.png)
 
-16. **You've successfully captured all pertinent information for configuring OCI Generative AI Services within APEX.** You can proceed to the next task. 
+16. **You've successfully captured all pertinent information for configuring OCI Generative AI Services within APEX.** You can proceed to the next lab. 
 ## Learn More
 * [APEX Application Builder Concepts](https://docs.oracle.com/en/database/oracle/apex/24.1/htmdb/application-builder-concepts.html)
 * [How To Generate An API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm)
