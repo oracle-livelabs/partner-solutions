@@ -64,11 +64,11 @@ Now let's see how adding a vector index may improve query performance significan
 
    ![Run approximate match search query](./images/approx-match-query-hnsw-index.png)
 
-   The returned results are *considerably* different for the *approximate* search; not only that, the values returned for **RATINGS** are also quite different. That's because the mining function was able to leverage a different LLM algorithm to search through the embeddings that are potentially better matches for the question posed?
+   The returned results are *considerably* different for the *approximate* search; not only that, the values returned for **RATINGS** are also quite different. That's because the mining function was able to leverage a different LLM algorithm to search through the embeddings that are potentially better matches for the question posed.
 
    ![Query EXPLAIN PLAN results](./images/approx-match-query-hnsw-index-explained.png)
 
-   Also note that unlike the exact match query, the **CORPUS_CHUNKS** table was only accessed thru a search of the HNSW index for potential approximate matches. Even within our small corpus, this reduced the optimizer cost significantly - by a factor of almost **96%** (**10** with an indexed search, versus **282** for a full table scan without the index). While this level of resource savings may not hold true for *every* corpus searched, it portends significantly better performance for approximate searches of larger corpuses. 
+   Also note that unlike the exact match query, the **CORPUS_CHUNKS** table was only accessed thru a search of the HNSW index for potential approximate matches. Even within our small corpus, this reduced the optimizer cost significantly - by a factor of almost **96%** (**10** with an indexed search, versus **282** for a full table scan without the index). While this level of resource savings may not hold true for *every* corpus searched, it portends significantly better performance for approximate searches of larger corpuses.
 
 
 ## Task 3: Viewing Vector Index Metadata and Validating Index Selectivity
