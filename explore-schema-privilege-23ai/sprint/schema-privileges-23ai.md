@@ -111,11 +111,10 @@ To grant schema level privileges on other user schemes you need GRANT ANY SCHEMA
 ## Learn More
 * [Oracle Database New Features Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/index.html)
 * [Configuring Privilege and Role Authorization Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/dbseg/configuring-privilege-and-role-authorization.html#GUID-1C2A996E-8D01-4B94-BE9F-E5042AA15B15)
-* [Oracle Database 23c Security New Features](https://www.oracleracexpert.com/2023/12/webinar-oracle-database-23c-security.html)
 
 >Note: In May 2024 *Oracle Database 23c* was renamed to **Oracle Database 23ai**. Learning materials referencing 23c are applicable to 23ai.
 
 ## Acknowledgements
 * **Author** - Nagatanmayee Gunukula, LiveLabs Contributor
-* **Last Updated By/Date** - Hope Fisher,  June 2024
+* **Last Updated By/Date** - Hope Fisher, Aug 2025
 
