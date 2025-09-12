@@ -14,7 +14,7 @@ We organize workshops into GitHub repositories according to their product or fea
 
 ## **LiveLabs Workshop Workflow**
 
-Before you start, please check LiveLabs ([developer.oracle.com/livelabs](https://developer.oracle.com/livelabs)) to see if there is already a workshop similar to the content you want to create. If you see content that resembles yours and can be developed further, please contact that LiveLabs team to see if you can cooperate with the workshop team on the enhancement of the workshop. If not, please proceed.
+Before you start, please check LiveLabs ([livelabs.oracle.com](https://livelabs.oracle.com)) to see if there is already a workshop similar to the content you want to create. If you see content that resembles yours and can be developed further, please contact that LiveLabs team to see if you can cooperate with the workshop team on the enhancement of the workshop. If not, please proceed.
 
 For a workshop to go from an idea to a LiveLabs workshop in production, it has to go through the following phases or statuses. You can refer to this section to see your current and next steps.
 
@@ -60,7 +60,7 @@ Now that you know all about Oracle GitHub project, oracle-livelabs/partner-solut
 
 ## Learn More
 
-* [Oracle LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1)
+* [Oracle LiveLabs](https://livelabs.oracle.com/pls/apex/f?p=133:1)
 * [Get started with GitHub](https://docs.github.com/en/get-started)
 
 ## Acknowledgements

@@ -33,7 +33,7 @@ To get started with Oracle LiveLabs Sprints development, you should have:
 
 ## Task 1: Submit a Sprint Request to the Oracle LiveLabs
 
-> **Note:** Before submitting a new sprint request, check if there is a sprint with the same content in [Oracle LiveLabs](https://developer.oracle.com/livelabs). Please proceed if there is no sprint with the content you want to create.
+> **Note:** Before submitting a new sprint request, check if there is a sprint with the same content in [Oracle LiveLabs](https://livelabs.oracle.com). Please proceed if there is no sprint with the content you want to create.
 
 1. Before you get started, you should submit your new LiveLabs Sprint request by emailing the below required details to [livelabs-help-community_us@oracle.com](livelabs-help-community_us@oracle.com) for the Oracle LiveLabs team to review. Submitting a sprint informs the Oracle ecosystem that you are working on a sprint and submits your idea to the LiveLabs Council. We urge you not to delay this step. There are hundreds of sprints already, this step is important to help us preserve the quality and integrity of the sprint catalog. Failure to provide all the details will prevent your workshop from being approved.
 

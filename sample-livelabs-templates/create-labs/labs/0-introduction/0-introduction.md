@@ -24,7 +24,7 @@ Markdown files and images that are part of the lab instructions are kept in **or
 
 Before you get started with the development of labs and workshop, check out existing workshops on LiveLabs. There are some great examples out there and can give you new ideas.
 
-* [Oracle LiveLabs](https://developer.oracle.com/livelabs/)
+* [Oracle LiveLabs](https://livelabs.oracle.com/)
 
 Also use the sample workshop that is found in [https://github.com/oracle-livelabs/partner-solutions](https://github.com/oracle-livelabs/partner-solutions) under the  sample-livelabs-templates directory. (Steps will be provided later on setting up your GitHub repos).
 
@@ -43,7 +43,7 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Oracle LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1)
+* [Oracle LiveLabs](https://livelabs.oracle.com/pls/apex/f?p=133:1)
 * [Get started with GitHub](https://docs.github.com/en/get-started)
 
 ## Acknowledgements
