@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "Building a Help Desk FAQ with Oracle AI Vector Search",
+   "help": "livelabs-help-sprints_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "Help Desk FAQ with Oracle AI Vector Search",
+         "description": "In this lab, you will build a Help Desk FAQ using Oracle AI Database 26ai Vector Search. You’ll create a table with text and embeddings, insert sample help requests, build a vector index, and perform semantic searches using SQL to find the most relevant answers.",
+         "filename": "help-desk-faq-oracle-ai-vector-search.md"
+      }
+   ],
+   "task_type": "Sections"
+}

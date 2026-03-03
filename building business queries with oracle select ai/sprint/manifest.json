@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "Building Business Queries with Oracle Select AI",
+   "help": "livelabs-help-sprints_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "Building Business Queries with Oracle Select AI",
+         "description": "In this lab, you will explore how Oracle Select AI translates natural language business questions into SQL queries. You will generate AI SQL, validate and refine it, execute queries on structured data, and optionally integrate vector search to retrieve semantic insights from unstructured feedback.",
+         "filename": "business-queries-oracle-select-ai.md"
+      }
+   ],
+   "task_type": "Sections"
+}
