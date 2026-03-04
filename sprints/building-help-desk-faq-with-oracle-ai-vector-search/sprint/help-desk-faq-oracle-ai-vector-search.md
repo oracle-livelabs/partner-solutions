@@ -1,5 +1,5 @@
 # How to build a Help Desk FAQ with Oracle AI Vector Search
-Duration: 30 minutes
+Estimated Time: 30 minutes
 
 ## Introduction
 

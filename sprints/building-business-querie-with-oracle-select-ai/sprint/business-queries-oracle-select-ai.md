@@ -1,5 +1,5 @@
 # How to build Business Queries with Oracle Select AI
-Duration: 30–45 minutes
+Estimated Time: 30–45 minutes
 
 ## Introduction
 
@@ -72,7 +72,7 @@ Convert natural language business questions into executable SQL using Select AI.
 
 Example AI-Generated SQL:
 
-1.  Query 1: Products with orders over $500
+1. Query 1: Products with orders over $500
 
 ```sql
 
@@ -83,7 +83,7 @@ ORDER BY order_amount DESC;
 
 ```
 
-2.  Query 2: Total sales per category for January 2026
+2. Query 2: Total sales per category for January 2026
 
 ```sql
 

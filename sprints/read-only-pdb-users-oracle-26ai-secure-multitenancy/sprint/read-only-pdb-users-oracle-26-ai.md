@@ -1,5 +1,5 @@
 # How to Work with READ-ONLY PDB Users in Oracle Database 26ai for Secure Multitenancy?
-Duration: 15 minutes
+Estimated Time: 15 minutes
 
 Oracle 26ai has introduced a new feature, READ-ONLY PDB user to improve security, developer productivity and performance. This helps multi-tenant environment where data access is critical. The READ-ONLY user cannot perform any DDL or DML activities.
 
@@ -94,7 +94,6 @@ SELECT emp_id, emp_name from employee;
 
 
 The Read-Only PDB Users provide a clean way to enforce non-modifiability of users at the database level. This helps with read intensive applications, as these users restricted to only SELECT and users cannot perform any DDL or DML activities.
-
 
 ## Acknowledgements
 
