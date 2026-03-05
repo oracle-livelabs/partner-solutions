@@ -159,7 +159,7 @@ ORDER BY order_amount DESC;
 
 Retrieve top-selling products along with the most relevant customer feedback using vector search.
 
-Create Feedback Table:
+Create Feedback Table: 
 
 ```sql
 
