@@ -27,19 +27,19 @@ This lab assumes you have:
 
 1. Click on **Topics** and click **Add**.
 
-	![Select Topics](images/SelectTopics.png)
+	![Select Topics](images/selecttopics.png)
 
-    ![Add Topic](images/AddTopic.png)
+    ![Add Topic](images/addtopic.png)
   
 2. Create the **Topic Name**, **Topic Code**, **Family**, **Product** and **Description**   as shown in the picture.
 
-	![Topic Detail1](images/TopicDetail1.png)
+	![Topic Detail1](images/topicdetail1.png)
 
 3. **Instructions** is a key part of any Agent, much like it is when you are creating a Custom GPT. Be specific in providing context. For example, you will see that the instruction written for this Agent has detail for **Required Information**, **Conversation Flow**, **Examples** and **Constraints**. 
 
-	![Topic Detail2](images/TopicDetail2.png)
+	![Topic Detail2](images/topicdetail2.png)
 
-	![Topic Detail3](images/TopicDetail3.png)
+	![Topic Detail3](images/topicdetail3.png)
 
   *Note - it is important to provide the details in Instructions as the instruction will provide the context framing and prompt management for the Agent.*
 
@@ -49,35 +49,35 @@ This lab assumes you have:
 
 1. Click **Agents** and then click **Add**.
 
-	![Select Agents](images/SelectAgents.png)
+	![Select Agents](images/selectagents.png)
 
-	![Add Agent](images/AddAgent.png)
+	![Add Agent](images/addagent.png)
 
 2. Input the **Details** as shown or make it specific to your use case.
 
-	![Agent Details](images/AgentDetails.png)
+	![Agent Details](images/agentdetails.png)
 
   	*Note - **Details** can be specific to your use case. **LLM** selection will dependent upon which ones your subscription has access to.*
 
 3. Add the **Tools** component by searching for **EPM** in the search box.
 
-	![Add Tool to Agent](images/AddTooltoAgent.png)
+	![Add Tool to Agent](images/addtooltoagent.png)
 
 4. Add the **Topics** component by searching for **EPM** in the search box.
 
-	![Add Topic to Agent](images/AddTopictoAgent.png)
+	![Add Topic to Agent](images/addtopictoagent.png)
 
 ## Task 3: Build Agent Team
 
 1. Click **Agent Teams** and then click **Add**.
 
-	![Select Agent Teams](images/SelectAgentTeams.png)
+	![Select Agent Teams](images/selectagentteams.png)
 
-    ![Add Agent Team](images/AddAgentTeam.png)
+    ![Add Agent Team](images/addagentteam.png)
 
 2. Input Details as shown, or make it specific to your needs. 
 
-    ![Agent Team Details](images/AgentTeamDetails.png)
+    ![Agent Team Details](images/agentteamdetails.png)
 
   	*Note - pay particular attention to the **Type** of Agent Team i.e. **Supervisor**. Additional details such as **LLM**, **Security**, **Chat Experience**, **Questions** and **Input Variables** are going to be specific to the kind of agent that is being deployed and to your organization's needs.*
 
