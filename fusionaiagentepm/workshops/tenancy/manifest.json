@@ -15,7 +15,7 @@
         {
             "title": "Lab 1: Build the EPM Tool",
             "description": "Setup an External REST Tool in Agent Studio",
-            "filename": "../../setup/setuptools.md"
+            "filename": "../../setup/setup.md"
         },
         {
             "title": "Lab 2: Build the Agent framework",
