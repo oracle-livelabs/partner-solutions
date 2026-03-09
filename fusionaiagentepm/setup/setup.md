@@ -28,37 +28,37 @@ As a first task let's login and navigate to the Tools
 
 1. Login to **AI Agent Studio**.
 
-	![Agent Studio landing page](images/AgentStudioLogin.png)
+	![Agent Studio landing page](images/agentstudiologin.png)
 
 2. Click **Tools**.
 
-    ![Select Tools](images/SelectTools.png)
+    ![Select Tools](images/selecttools.png)
 
 3. Click **Add** button to create a new Tool.
 
-    ![Add Button](images/HitAdd.png)
+    ![Add Button](images/hitadd.png)
 
 
 ## Task 2: Build the Tool
 
 1. Fill in details for **Tool Type, Tool Name, Tool Code, Family and Product** as shown in the picture below. Additionally leave the **Require human approval** selection turned off. This is the part of setting up the **External REST** Tool.
 
-    ![External REST Setup](images/ToolKeyInfo.png)
+    ![External REST Setup](images/toolkeyinfo.png)
 
 2. In the Authorization tab, setup **Basic** authentication for the EPM Cloud Planning application.
 
-    ![Basic Auth Setup](images/BasicAuth.png)
+    ![Basic Auth Setup](images/basicauth.png)
 
-    ![Auth complete](images/Authsetup.png)
+    ![Auth complete](images/authsetup.png)
 
 3. Next click on **Functions** and hit **Add**.
-    ![Adding Function](images/AddFunction.png)
+    ![Adding Function](images/addfunction.png)
 
 4. Create the payload for **POST** operation for the [Export Data Slice](https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/export_dataslices.html) Cloud EPM REST API.
 
-    ![Setup Detail 1](images/Functionsetup1.png)
+    ![Setup Detail 1](images/functionsetup1.png)
 
-    ![Setup Detail 2](images/Functionsetup2.png)
+    ![Setup Detail 2](images/functionsetup2.png)
 
 *Note - Check REST API call through a REST Client to ensure validity before proceeding*
 
