@@ -57,7 +57,7 @@ This lab assumes you have:
 
 	![Agent Details](images/agentdetails.png)
 
-  	*Note - **Details** can be specific to your use case. **LLM** selection will dependent upon which ones your subscription has access to.*
+  	*Note - **Details** can be specific to your use case. **LLM** selection will depend upon which ones your subscription has access to.*
 
 3. Add the **Tools** component by searching for **EPM** in the search box.
 
