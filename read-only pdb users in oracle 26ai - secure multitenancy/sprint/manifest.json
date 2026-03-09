@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "READ-ONLY PDB users in Oracle 26ai - Secure Multitenancy",
+   "help": "livelabs-help-sprints_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "READ-ONLY PDB users in Oracle 26ai - Secure Multitenancy",
+         "description": "Learn how to strengthen security in Oracle Database 23ai with the new READ-ONLY PDB user feature. In this short course, you’ll discover how to provide secure, query-only access to Pluggable Databases, prevent all DDL and DML operations, and protect data integrity using the READ ONLY clause in the CREATE USER statement—ideal for modern multitenant environments.",
+         "filename": "read-only-pdb-users-oracle-26-ai.md"
+      }
+   ],
+   "task_type": "Sections"
+}
