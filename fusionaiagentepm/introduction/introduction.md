@@ -1,7 +1,7 @@
 # Introduction
 
 ## About this Workshop
-**Author** - Vatsal Gaonkar, Director, PwC
+**Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
 
 The workshop is a stepwise guide for creating an EPM AI Agent in Fusion AI Agent Studio. The workshop will guide you through the process of setting up the building blocks for the agent and also on training the agent for conversational chatbot experience with data in an EPM Cloud Planning application.
 
@@ -32,5 +32,5 @@ This workshop and its constituent labs assume you have:
 * [AI Agent key features and release updates](https://www.oracle.com/applications/fusion-ai/ai-agents/)
 
 ## Acknowledgements
-* **Author** - Vatsal Gaonkar, Director, PwC
+* **Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
 * **Last Updated By/Date** - Vatsal Gaonkar, February 2026
