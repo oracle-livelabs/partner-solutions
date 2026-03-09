@@ -5,7 +5,9 @@
 
 The workshop is a stepwise guide for creating an EPM AI Agent in Fusion AI Agent Studio. The workshop will guide you through the process of setting up the building blocks for the agent and also on training the agent for conversational chatbot experience with data in an EPM Cloud Planning application.
 
-Estimated Workshop Time: 45 minutes. The estimated time can wary on the complexity of building blocks being deployed and the cycles of agent training.  
+Estimated Workshop Time: 45 minutes. 
+
+The estimated time can wary on the complexity of building blocks being deployed and the cycles of agent training.  
 
 Key Oracle AI Agent concepts information available in this video - [**Oracle AI Agent Studio**](https://www.youtube.com/watch?v=Tjj4Rk83iJY)
 
