@@ -49,7 +49,7 @@ This lab assumes you have:
 
 1. Click **Agents** and then click **Add**.
 
-    ![Select Agents](images/selectagents.png)
+    ![Select Agents](images/selectagents.png) 
 
     ![Add Agent](images/addagent.png)
 
