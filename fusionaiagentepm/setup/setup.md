@@ -28,7 +28,7 @@ As a first task let's login and navigate to the Tools
 
 1. Login to **AI Agent Studio**.
 
-	![Agent Studio landing page](images/agentstudiologin.png)
+    ![Agent Studio landing page](images/agentstudiologin.png)
 
 2. Click **Tools**.
 

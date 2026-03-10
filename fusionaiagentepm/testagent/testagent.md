@@ -27,17 +27,17 @@ This lab assumes you have:
 
 1. Go to **Agent Teams** and search for **EPM Data Navigator** and then click the **Edit** pencil.
 
-	![Edit Agent](images/editagent.png)
+    ![Edit Agent](images/editagent.png)
 
 2. Hit the **Debug** button to start prompting and to observe behavior.
 
-	![Debug Agent](images/debugagent.png)
+    ![Debug Agent](images/debugagent.png)
 
 3. In the Agent window ask specific questions with input parameters stated.
 
     *Note - Account and Entity are blurred for confidentiality reasons.*
 
-	![Prompt 1](images/basicprompt1.png)
+    ![Prompt 1](images/basicprompt1.png)
 
 4. Observe the output and behavior of this basic prompt. You will see information on tokens, time taken (latency), input parameters and outputs.
 
@@ -47,11 +47,11 @@ This lab assumes you have:
 
 1. Continue to prompt in the same window as it now has context. Use the following prompt show in the picture below.
 
-	![Advanced Prompt 1](images/advprompt1.png)
+    ![Advanced Prompt 1](images/advprompt1.png)
 
 2. Observe the output and behavior for this Advanced Prompt provided. What has happened is that the Agent has now just substituted the Scenario to be **Plan** instead of **Forecast** and provided information for both Forecast and Plan. Now the Agent is using follow-up context.
 
-	![Advanced Prompt 1 Output](images/advprompt1Output.png)
+    ![Advanced Prompt 1 Output](images/advprompt1output.png)
 
 3. Try the following prompts next: 
 
