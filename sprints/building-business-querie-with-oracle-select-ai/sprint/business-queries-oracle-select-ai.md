@@ -129,7 +129,7 @@ SELECT product, order_amount
 FROM orders
 WHERE order_amount > 500
 ORDER BY order_amount DESC;
-
+ 
 ```
 
 > **Key Concept**: Executing validated AI SQL returns deterministic results that answer the original natural language question.
