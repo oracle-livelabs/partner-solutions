@@ -65,5 +65,5 @@ This lab assumes you have:
 * [FreeForm Apps FAQs](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/freeform_apps_faq.html)
 
 ## Acknowledgements
-* **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
+* **Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2026

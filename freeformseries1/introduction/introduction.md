@@ -3,7 +3,7 @@
 ## About this Workshop
 **Community Contributed Workshop**	![Image alt text](images/pwc.png " ")
 
-**Author** - Vatsal Gaonkar, Director - Oracle Cloud & Digital, PwC
+**Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
 
 The workshop is a stepwise guide to create an Oracle FreeForm application in Oracle Cloud EPM. Important tips, tricks and considerations will be part of the constituent labs to empower developers and implementers address common pitfalls and doubts on when, how and what to create as FreeForm applications in Cloud EPM.
 
@@ -30,5 +30,5 @@ This workshop and its constituent labs assume you have:
 
 
 ## Acknowledgements
-* **Author** - Vatsal Gaonkar, Director - Oracle Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
+* **Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2026

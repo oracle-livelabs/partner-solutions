@@ -46,5 +46,5 @@ Ensure that:
 * [Understanding FreeForm applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html)
 
 ## Acknowledgements
-* **Author** - Vatsal Gaonkar, Director - Oracle Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
+* **Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2026
