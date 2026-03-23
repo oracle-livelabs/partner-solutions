@@ -31,11 +31,11 @@ Ensure that:
 
   Hit **Select** under FreeForm.
 
-  ![Selecting FreeForm from Cloud applications](images/selectfreeform.png)
+    ![Selecting FreeForm from Cloud applications](images/selectfreeform.png)
 
   The instance will be created as a **FreeForm** application instance.
 
-  ![FreeForm Instance Selection](images/freeforminstance.png)
+    ![FreeForm Instance Selection](images/freeforminstance.png)
 
   You are now ready to start the FreeForm application creation process. In the next 3 labs you will navigate options to create and configure FreeForm applications as per your business needs.
 
