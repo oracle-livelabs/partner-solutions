@@ -29,8 +29,7 @@ This lab assumes you have:
     ![Go to application dimensions](images/appdimensions.png)
 
 2. When in **Dimensions** toggle or ensure that you have picked **All** in the dropdown.
-    ![Toggle to view all cubes dimensions](images/alldimensions.png)
-	
+    ![Toggle to view all cubes dimensions](images/alldimensions.png)	
     ![FiscalPeriod and Measures dimension for both cubes](images/measureaccount.png)
 
 3. Create 3 more dimensions namely **Scenario**, **FiscalYear** and **Company**
