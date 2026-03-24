@@ -57,11 +57,9 @@ This lab assumes you have:
     ![Create import dimension job](images/createimportjob.png)
     ![Choose downloaded import files](images/choosedimfiles.png)
     ![Run the import](images/clickimport.png)
-   
-   Check the **Refresh Database if Import Metadata is successful** option and hit **OK**.
+    Check the **Refresh Database if Import Metadata is successful** option and hit **OK**.
     ![Check Refresh Database on the pop up window](images/refreshoption.png)
-
-   Job successfully submitted window appears - Hit **OK**.
+    Job successfully submitted window appears - Hit **OK**.
     ![Job successfully submitted window](images/jobsubmitted.png)
 
 8. Hit **Close** on open windows for the application and go to **Jobs** to check the status of dimension build.
