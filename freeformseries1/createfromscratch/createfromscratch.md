@@ -26,34 +26,34 @@ This lab assumes you have:
 
 1. Hit **Start** under **Create a new application**.
 
-	![Create a new FreeForm application](images/selectstartforscratch.png)
+    ![Create a new FreeForm application](images/selectstartforscratch.png)
 
 2. Populate **Name** and **Description** for the FreeForm application being created.
 
-  ![Populate name and description](images/namedescription.png)
+    ![Populate name and description](images/namedescription.png)
 
 3. Under **Application Setup** select **Create Cubes**. 
 
-  ![Setup cubes for FreeForm application](images/applicationsetup.png)
+    ![Setup cubes for FreeForm application](images/applicationsetup.png)
 
 4. You can select upto 12 cubes to create. We will be creating 2 cubes in this lab.
-  ![Select 2 cubes to create](images/upto12cubes.png) 
+    ![Select 2 cubes to create](images/upto12cubes.png) 
 
 5. These cubes can be a combination of **block storage (BSO)** and/ or  **aggregate storage (ASO cubes)**. For more information on **Multi-Cube FreeForm Applications** check [Understanding FreeForm Applications](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/understanding_freeform_apps.html). For this exercise we will select 2 cubes. We will make one of the cubes an ASO cube.
-  ![Name the 2 cubes](images/numberofcubes.png)
+    ![Name the 2 cubes](images/numberofcubes.png)
 
 6. Upon hitting **Next** the **Create Dimensions** screen shows up.
-  ![Creating dimensions page](images/createdimensionff.png)
+    ![Creating dimensions page](images/createdimensionff.png)
 
 7. Enable both **Account** and **Period** type dimension and rename them to **Measures** and **FiscalPeriod** respectively. We will discuss why this is important during the **Optimizing FreeForm Applications** lab (next lab). Hit **Next**.
-  ![Rename to Measures and FiscalPeriod](images/accountfiscalperiod.png)
+    ![Rename to Measures and FiscalPeriod](images/accountfiscalperiod.png)
 
 8. Review and hit **Create** in this next step. 
-  ![Create application](images/createffscratch.png)
+    ![Create application](images/createffscratch.png)
 
 9. Track the status through Creation of the FreeForm application. 
-  ![Application creation status](images/ffscratchcreationstatus.png)
-  ![Application created](images/ffscratchcreated.png)
+    ![Application creation status](images/ffscratchcreationstatus.png)
+    ![Application created](images/ffscratchcreated.png)
   
    Keep your FreeForm application intact that was created from this lab for the next lab. 
 
@@ -65,5 +65,5 @@ This lab assumes you have:
 * [FreeForm Apps FAQs](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/freeform_apps_faq.html)
 
 ## Acknowledgements
-* **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
+* **Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2026
