@@ -6,6 +6,13 @@ Estimated Time: 15 minutes
 
 In this Sprint, we explore the new IF [NOT] EXISTS DDL clauses in Oracle Database 26ai and beyond. Before Oracle 26ai, the deployment scripts and schema upgrades often fail due to existing objects or attempts to drop non-existent ones, forcing developers to write complex PL/SQL wrappers to handle exceptions. The IF [NOT] EXISTS feature is a game-changer for writing deployment and schema upgrade scripts by making DDL statements repeatable and error-tolerant. It also helps improve CI/CD pipeline reliability.
 
+## Objectives
+
+* Demonstrate the failure modes of pre-26ai DDL when duplicate objects exist or drops target missing objects, highlighting the need for manual PL/SQL exception handling.
+* Implement repeatable DDL workflows using Oracle 26ai IF [NOT] EXISTS syntax for CREATE and DROP statements to show idempotent deployment patterns.
+* Compare execution outcomes between legacy scripts and 26ai enhancements to emphasize reduced CI/CD friction and error handling overhead.
+* Explore advanced behaviors (ALTER ... IF EXISTS, CREATE VIEW combinations) to document current limitations and gotchas for architects planning migrations.
+
 ## 1.   The Problem and the Pre-26ai Solution
 
 We will Demonstrate the pain points in previous versions of Oracle Database.
