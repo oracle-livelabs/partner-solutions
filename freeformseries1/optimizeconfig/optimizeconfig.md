@@ -25,25 +25,25 @@ This lab assumes you have:
 ## Task 1: Dimension configuration
 
 1. Navigate to dimensions in the application created in the previous lab. Click on **Overview** and the navigate to **Dimensions**.
-	![Overview of the application](images/appoverview.png)
-	![Go to application dimensions](images/appdimensions.png)
+    ![Overview of the application](images/appoverview.png)
+    ![Go to application dimensions](images/appdimensions.png)
 
 2. When in **Dimensions** toggle or ensure that you have picked **All** in the dropdown.
-	![Toggle to view all cubes dimensions](images/alldimensions.png)
-	![FiscalPeriod and Measures dimension for both cubes](images/measureaccount.png)
+    ![Toggle to view all cubes dimensions](images/alldimensions.png)	
+    ![FiscalPeriod and Measures dimension for both cubes](images/measureaccount.png)
 
 3. Create 3 more dimensions namely **Scenario**, **FiscalYear** and **Company**
     ![Create additional dimensions](images/createdim.png)
-	![Scenario dimension and its setup](images/scenariodim.png)
-	![Scenario dimension created](images/scenariocreated.png)
+    ![Scenario dimension and its setup](images/scenariodim.png)
+    ![Scenario dimension created](images/scenariocreated.png)
 
 4. Similary create **FiscalYear** and **Company**. Next we will import members into these dimensions using files.
-	![Create FiscalYear and Company like Scenario dimension](images/fiscalyearcompany.png)
+    ![Create FiscalYear and Company like Scenario dimension](images/fiscalyearcompany.png)
 
 5. Download the files with dimension members below to your local drive
 
 
-	* [Company dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Company.csv)
+    * [Company dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Company.csv)
     * [Measures dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/Measures.csv)
     * [FiscalYear dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalYear.csv)
     * [FiscalPeriod dimension](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/freeformseries1/FiscalPeriod.csv)
@@ -51,24 +51,22 @@ This lab assumes you have:
 
 
 6. From **Overview>Dimensions** hit **Import**.
-	![Import dimensions](images/importdimensions.png)
+    ![Import dimensions](images/importdimensions.png)
 
 7. Hit **Create** and navigate to select the downloaded files to build dimensions.
-	![Create import dimension job](images/createimportjob.png)
-	![Choose downloaded import files](images/choosedimfiles.png)
-	![Run the import](images/clickimport.png)
-   
-   Check the **Refresh Database if Import Metadata is successful** option and hit **OK**.
-	![Check Refresh Database on the pop up window](images/refreshoption.png)
-
-   Job successfully submitted window appears - Hit **OK**.
+    ![Create import dimension job](images/createimportjob.png)
+    ![Choose downloaded import files](images/choosedimfiles.png)
+    ![Run the import](images/clickimport.png)
+    Check the **Refresh Database if Import Metadata is successful** option and hit **OK**.
+    ![Check Refresh Database on the pop up window](images/refreshoption.png)
+    Job successfully submitted window appears - Hit **OK**.
     ![Job successfully submitted window](images/jobsubmitted.png)
 
 8. Hit **Close** on open windows for the application and go to **Jobs** to check the status of dimension build.
-	![Go to Jobs to check status of Import and Refresh Database](images/jobs.png)
+    ![Go to Jobs to check status of Import and Refresh Database](images/jobs.png)
    
    Check to ensure both **Import Metadata** and **Refresh Database** were successful. You have completed the build of dimensions.
-   ![Successful import and refresh jobs](images/jobsuccessful.png)
+    ![Successful import and refresh jobs](images/jobsuccessful.png)
    
 
 ## Task 2: Tips and Techniques
@@ -86,8 +84,8 @@ Assigning the time or period dimension appropriately aids in two main aspects -
 A following workshop will share tips and techniques on optimizing FreeForm applications in areas of - 
 * How to design optimal Data forms in absence of start and end periods from scenario management. For more information check [Designing Data Forms](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/forms.html)
 * Using subvars and groovy business rules to create data form open and close periods. For more information check [About Substitution Variables](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/about_substitution_variables.html)
-* Using groovy business rules to ensure focused data pushes between ASO and BSO plan types. For more information check [Groovy business rules](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/epm/Groovy/Introduction/index.html)
+* Using groovy business rules to ensure focused data pushes between ASO and BSO plan types. For more information check [Groovy business rules](https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/groovy-tutorial-introduction/index.html#introduction)
 
 ## Acknowledgements
-* **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
+* **Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2026

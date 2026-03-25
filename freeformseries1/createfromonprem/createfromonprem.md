@@ -28,36 +28,36 @@ This lab assumes you have:
 
 1. Hit **Start** under **Create a new application**.
 
-	![Select start to create new application](images/selectstartonprem.png)
+    ![Select start to create new application](images/selectstartonprem.png)
 
 2. Populate **Name** and **Description** for the FreeForm application being created.
 
-  ![Put in application name and description](images/namedescription.png)
+    ![Put in application name and description](images/namedescription.png)
 
 3. Ensure **Application Setup** is set to **Import Essbase OTL/LCM**. You will need to specificy the **Location** of the file which could either be your **Local drive** or the **Application Inbox**.
 
-  ![Ensure appropriate setup](images/setuplocation.png)
+    ![Ensure appropriate setup](images/setuplocation.png)
 
 4. Once the **Import File (Outline File)** is selected you will see the outline populated. Hit **Next**.
 
-  ![Outline uploaded](images/onpremoutline.png)
+    ![Outline uploaded](images/onpremoutline.png)
 
 5. **Review** all your details before hitting **Create**. Once you hit **Create**, an **Application Creation Status** window will guide you through the creation process.
-  ![Review before creating](images/beforecreate.png)  
-  ![Application creation status](images/creationstatus.png)
+    ![Review before creating](images/beforecreate.png)  
+    ![Application creation status](images/creationstatus.png)
 
 6. You have created a **FreeForm application using an Oracle Essbase outline** (an on-premises outline).
-  ![Creation successful](images/creationcomplete.png)
+    ![Creation successful](images/creationcomplete.png)
    
 ## Learn More
 
 *Learn more about FreeForm applications by using the links below*
 
-* [Information on Oracle Cloud EPM FreeForm](https://www.oracle.com/performance-management/freeform/) 
+* [Information on Oracle Cloud EPM FreeForm](https://docs.oracle.com/en/cloud/saas/freeform/freef/understanding_freeform_apps.html) 
 * [Create using Outline or a LCM package aka snapshot](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/creating_a_freeform_app_using_an_outline_file_or_snapshot.html)
 * [Freeform Apps FAQs](https://docs.oracle.com/en/cloud/saas/planning-budgeting-cloud/pfusa/freeform_apps_faq.html)
 
 ## Acknowledgements
-* **Author** - Vatsal Gaonkar, Director - Cloud & Digital, PwC
-* **Last Updated By/Date** - Vatsal Gaonkar, June 2024
+* **Author** - Vatsal Gaonkar, Director, Digital Core Modernization, PwC
+* **Last Updated By/Date** - Vatsal Gaonkar, March 2026
 
