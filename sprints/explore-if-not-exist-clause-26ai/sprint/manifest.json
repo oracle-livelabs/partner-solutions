@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-sprints_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "Explore “IF NOT EXISTS” Clause in Oracle Database 26ai and Beyond",
+         "description": "Explore “IF NOT EXISTS” Clause in Oracle Database 23ai and Beyond",
+         "filename": "if-not-exists-oracle-db-26ai-beyond.md"
+      }
+   ],
+   "task_type": "Sections"
+}
