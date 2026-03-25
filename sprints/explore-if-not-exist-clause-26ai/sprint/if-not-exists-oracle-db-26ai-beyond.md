@@ -1,6 +1,6 @@
 # Explore “IF NOT EXISTS” Clause in Oracle Database 26ai and Beyond
 
-Duration: 15 minutes
+Estimated Time: 15 minutes
 
 ## Introduction
 
