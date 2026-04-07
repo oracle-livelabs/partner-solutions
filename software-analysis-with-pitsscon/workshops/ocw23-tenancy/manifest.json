@@ -1,8 +1,8 @@
 {
     "workshoptitle": "Break Down the Monolith",
     "include": {
-      "adb-goto-service-body.md":"https://oracle-livelabs.github.io/common/building-blocks/tasks/adb/goto-service-body.md",
-      "adb-provision-body.md":"https://oracle-livelabs.github.io/common/building-blocks/tasks/adb/provision-body.md"
+      "adb-goto-service-body.md":"https://livelabs.oracle.com/cdn/common/building-blocks/tasks/adb/goto-service-body.md",
+      "adb-provision-body.md":"https://livelabs.oracle.com/cdn/common/building-blocks/tasks/adb/provision-body.md"
     },
     "variables": ["../../variables/files/variables.json"],
     "help": "livelabs-help-community_us@oracle.com",
@@ -15,13 +15,13 @@
         {
             "title": "Get Started",
             "description": "This is the prerequisite for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 1: Provision an Autonomous Database",
             "description": "Provisioning an Autonomous Database Instance",
             "type": "freetier",
-            "filename": "https://oracle-livelabs.github.io/common/building-blocks/blocks/adb/provision/provision-console.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/building-blocks/blocks/adb/provision/provision-console.md"
         },
         {
             "title": "Lab 2: Create a Database User",
@@ -47,7 +47,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://oracle-livelabs.github.io/common//labs/need-help/need-help-freetier.md"
+            "filename": "https://livelabs.oracle.com/cdn/common//labs/need-help/need-help-freetier.md"
         }
     ]
 }
