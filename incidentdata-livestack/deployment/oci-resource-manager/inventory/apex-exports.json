@@ -1,0 +1,35 @@
+{
+  "source": "FU40 / CRIME_DATA",
+  "applications": [
+    {
+      "APPLICATION_ID": 319,
+      "APPLICATION_NAME": "DickTracy26ai",
+      "ALIAS": "DICKTRACY26AI",
+      "AUTHENTICATION_SCHEME_TYPE": "Open Door Credentials",
+      "AUTHENTICATION_SCHEME": "Temporary OpenDoor - Synthetic Teaching Demo",
+      "file": "f319.sql",
+      "bytes": 64774780,
+      "sha256": "634d4aa087480f0228c69ef3d069b52aaf0023d5ddb7c72ee9ce058b7b43bd20"
+    },
+    {
+      "APPLICATION_ID": 320,
+      "APPLICATION_NAME": "DickV2",
+      "ALIAS": "DICKV2",
+      "AUTHENTICATION_SCHEME_TYPE": "Open Door Credentials",
+      "AUTHENTICATION_SCHEME": "Temporary OpenDoor - Synthetic Teaching Demo",
+      "file": "f320.sql",
+      "bytes": 72050691,
+      "sha256": "47f08b20a5bbef2417de411b74b7ef85b8898cc75476908388e2d75b3d179c85"
+    },
+    {
+      "APPLICATION_ID": 361,
+      "APPLICATION_NAME": "DickV3",
+      "ALIAS": "DICKV3",
+      "AUTHENTICATION_SCHEME_TYPE": "Oracle APEX Accounts",
+      "AUTHENTICATION_SCHEME": "Oracle APEX Accounts",
+      "file": "f361.sql",
+      "bytes": 73802196,
+      "sha256": "a3e00d17d178333e2b83dd4216bd7dc6f4e96d1820ff7298045ce2cc7d0a5774"
+    }
+  ]
+}

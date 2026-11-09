@@ -1,0 +1,5 @@
+Blank route template with a reused label — EDISON PARK
+
+Authored fictional teaching supplement for Chicago; linked incident SYN-CHI-2026-00087, EDISON PARK.
+A fictional route-form example prints CHI-CORE-04 in its sample-label field. This is a template namespace, separate from the enquiry reference. The repeated characters cannot identify a delivery worker or connect unrelated visits.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

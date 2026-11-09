@@ -1,0 +1,5 @@
+Delivery route copy as an alternative account — Oaklands Park
+
+Authored fictional teaching supplement for Adelaide; linked incident ACI-V2-2026-0002, Oaklands Park.
+A fictional courier route copy repeats ADL-CORE-04 in its enquiry-reference field beside a parcel delivery attempt. The copy gives an approximate window and no recipient signature. It supplies an alternative context, not verified visitor identification.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

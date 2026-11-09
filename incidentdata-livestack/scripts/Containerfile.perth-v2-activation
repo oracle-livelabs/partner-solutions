@@ -1,0 +1,4 @@
+# Preserve the accepted frontend, AI Opps collectors and all other backend code.
+FROM localhost/adelaide-crime-intelligence:perth-v2-tile-20261001
+WORKDIR /app
+COPY backend/setup-profile-selection.js backend/profile-library.js ./backend/

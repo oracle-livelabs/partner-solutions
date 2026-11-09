@@ -1,0 +1,16 @@
+{
+  "knowledgeSetId": "KS-CARE-TRUST-001",
+  "profileCode": "ADELAIDE_DATA_V2",
+  "version": "Adelaide 1.0",
+  "title": "The Care-Trust: Who knows?",
+  "patternCode": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+  "caseRef": "CASE-V2-RES-001",
+  "premise": "A daytime approach raises a concern. A resident depends on help. Who knows their private circumstances, and what did they have permission to do?",
+  "steps": [
+    {"id":"lead","label":"1. A small concern","question":"What connects this public concern to the Marion report?","evidenceRefs":["EV-ADL-H15","EV-ADL-H01","EV-ADL-H21"],"basis":"A separate private follow-up supplies the exact incident reference; the original report and new care context remain separate source layers.","reviewQuestion":"Separate the original report, the public concern and the attributed private follow-up. What supports the comparison edge, and what remains unverified?"},
+    {"id":"access","label":"2. Who knows?","question":"What do assignment, directory and message records each establish?","evidenceRefs":["EV-ADL-H03","EV-ADL-H05","EV-ADL-H06","EV-ADL-H13"],"basis":"The four records describe different relationships. No one record establishes account control, authorship or attendance.","reviewQuestion":"Compare the source-supported roles and information boundary. Which independent records would be needed to verify authorship or permission?"},
+    {"id":"permission","label":"3. Check permission","question":"How far does the second resident's permission extend?","evidenceRefs":["EV-ADL-H04","EV-ADL-H07","EV-ADL-H14","EV-ADL-H16"],"basis":"This comparison deliberately widens from Marion to Oaklands Park. Permission is resident- and purpose-specific.","reviewQuestion":"What is the scope and limit of the transport permission, and what is only an attributed explanation? Keep each resident's circumstances separate."},
+    {"id":"money","label":"4. Check the spending","question":"What changes when the entry list is compared with permission and reconciliation?","evidenceRefs":["EV-ADL-H17","EV-ADL-H18","EV-ADL-H19","EV-ADL-H20"],"basis":"The sources concern personal shopping support. They are not a provider invoice or a care-funding claim.","reviewQuestion":"Compare the concern, permission, entries and later addendum. Separate settled, voided and refund-requested states; identify remaining gaps without assigning a financial helper."},
+    {"id":"countercheck","label":"5. Test the wider pattern","question":"Do the remaining reports establish the same explanation?","evidenceRefs":["EV-ADL-H10","EV-ADL-H08","EV-ADL-H09","EV-ADL-H11","EV-ADL-H12","EV-ADL-H21"],"basis":"The wider watch holds comparison records with different statuses, including a resolved report. Similarity is not a recorded causal link.","reviewQuestion":"Which sources support a lawful alternative or limit the wider hypothesis? Preserve original statuses and distinguish a comparison case from an established offence series."}
+  ]
+}

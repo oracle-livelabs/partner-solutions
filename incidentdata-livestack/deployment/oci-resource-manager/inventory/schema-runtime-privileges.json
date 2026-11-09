@@ -1,0 +1,99 @@
+{
+  "source": "FU40.CRIME_DATA",
+  "roles": [
+    "CONSOLE_DEVELOPER",
+    "DWROLE",
+    "GRAPH_DEVELOPER",
+    "OML_DEVELOPER",
+    "SPATIAL_AUTHOR"
+  ],
+  "systemPrivileges": [
+    "ADMINISTER ANY DATA GRANT",
+    "CREATE DATA GRANT",
+    "CREATE DATA ROLE",
+    "CREATE PROCEDURE",
+    "CREATE PROPERTY GRAPH",
+    "CREATE SEQUENCE",
+    "CREATE SESSION",
+    "CREATE SYNONYM",
+    "CREATE TABLE",
+    "CREATE TRIGGER",
+    "CREATE TYPE",
+    "CREATE VIEW",
+    "SET USE DATA GRANTS ONLY",
+    "UNLIMITED TABLESPACE"
+  ],
+  "objectPrivileges": [
+    {
+      "OWNER": "C##CLOUD$SERVICE",
+      "TABLE_NAME": "DBMS_CLOUD$PDBCS_260904_0",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "C##CLOUD$SERVICE",
+      "TABLE_NAME": "DBMS_CLOUD$PDBCS_260918_1_1",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "C##CLOUD$SERVICE",
+      "TABLE_NAME": "DBMS_CLOUD$PDBCS_261002_0",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "C##CLOUD$SERVICE",
+      "TABLE_NAME": "DBMS_CLOUD_AI",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "C##CLOUD$SERVICE",
+      "TABLE_NAME": "DBMS_CLOUD_AI_AGENT",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "MDSYS",
+      "TABLE_NAME": "SDO_CS",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "MDSYS",
+      "TABLE_NAME": "SDO_GEOM",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "MDSYS",
+      "TABLE_NAME": "SDO_UTIL",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "SYS",
+      "TABLE_NAME": "DBMS_RLS",
+      "PRIVILEGE": "EXECUTE"
+    },
+    {
+      "OWNER": "SYS",
+      "TABLE_NAME": "DBMS_VECTOR",
+      "PRIVILEGE": "EXECUTE"
+    }
+  ],
+  "runtimeRoles": [
+    "CONSOLE_DEVELOPER",
+    "DWROLE",
+    "GRAPH_DEVELOPER",
+    "OML_DEVELOPER"
+  ],
+  "stableRuntimeApiGrants": [
+    "DBMS_CLOUD",
+    "DBMS_CLOUD_AI",
+    "DBMS_CLOUD_AI_AGENT",
+    "SYS.DBMS_RLS",
+    "SYS.DBMS_VECTOR",
+    "MDSYS.SDO_CS",
+    "MDSYS.SDO_GEOM",
+    "MDSYS.SDO_UTIL"
+  ],
+  "notes": [
+    "Versioned DBMS_CLOUD package names use the stable public synonym on the target.",
+    "SPATIAL_AUTHOR is a Spatial Studio authoring role, is not grantable directly by fresh target ADMIN, and is not required by the React/APEX map APIs. Its source membership is recorded; runtime spatial API grants are restored explicitly."
+  ],
+  "firstTargetRuntimeGrantsVerified": true
+}

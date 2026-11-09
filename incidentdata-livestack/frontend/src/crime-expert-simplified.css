@@ -1,0 +1,3 @@
+/* Superseded by the persisted Draft Investigation Board.  Keep the legacy
+   private data routes intact for retention, but remove this UI from Section G. */
+.cdr-expert-grid{display:block;margin-top:14px}.cdr-expert-grid>aside:first-child,.cdr-expert-grid>main{display:none}.cdr-expert-grid>aside:last-child{display:grid;gap:10px;border:1px solid var(--cdr-line);background:#f8fafb;padding:15px}.cdr-expert-grid>aside:last-child h4{margin:0}.cdr-expert-grid>aside:last-child form{display:grid;gap:8px}.cdr-expert-grid>aside:last-child textarea{width:100%;min-height:105px;box-sizing:border-box;border:1px solid #b6c7cf;padding:8px;font:inherit}.cdr-expert-grid>aside:last-child .cdr-expert-prompts{display:flex;flex-wrap:wrap;gap:6px}

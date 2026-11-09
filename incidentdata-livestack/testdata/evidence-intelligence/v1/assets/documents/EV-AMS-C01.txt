@@ -1,0 +1,12 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-C01
+Blank comparison form carrying an administrative code
+
+Blank template
+Form code: K-204
+Reference: [blank]
+Amount: [blank]
+Sender: [blank]
+Recipient: [blank]
+No recorded transaction.
+
+Authored fixture; not a recovered or original incident document.

@@ -1,0 +1,6 @@
+Document: provider comparison and form legend
+Provider label: DEMO-CARE-01
+Client reference: CT-RES-C
+Assigned worker identifier: DEMO-WORKER-42; no identity profile is supplied.
+Printed form catalogue label: DEMO-WORKER-17. In this document it is a form label, not the assigned worker.
+The source incident concerns a storage box and apparent forced entry. Common provider or form wording does not establish the same carer or a disclosure.

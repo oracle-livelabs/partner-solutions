@@ -1,0 +1,5 @@
+Reconciliation resolving the extra authorisation — Delaneys Creek
+
+Authored fictional teaching supplement for Brisbane; linked incident SYN-BNE-2026-00040, Delaneys Creek.
+The fictional reconciliation for BNE-CORE-02 records one settled reservation and one voided authorisation. The additional authorisation did not settle in this teaching account. A requested refund is not recorded as a completed refund.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

@@ -1,0 +1,5 @@
+Reservation copy with a repeated payment suffix — Northwest urban connector (City of Las Vegas)
+
+Authored fictional teaching supplement for Las Vegas; linked incident SYN-LV-2026-00078, Northwest urban connector (City of Las Vegas).
+The fictional print-room reservation shows two entries carrying suffix LV-CORE-02: a framed-print reservation and a display-board reservation. Each quotes 240 units; the currency field is blank. The copy does not establish that either amount settled.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

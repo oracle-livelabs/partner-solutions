@@ -1,0 +1,10 @@
+{
+  "deployed": true,
+  "image": "localhost/incidentdata-livestack:people-quote-fix-20261028-r2",
+  "previousImage": "localhost/incidentdata-livestack:people-quote-fix-20261028-r1",
+  "environmentMountsPortsUnchanged": true,
+  "unrelatedBackendUnchanged": true,
+  "peopleBackendHashVerified": true,
+  "batchHistoryAvailable": true,
+  "at": "2026-10-28T06:31:19.209Z"
+}

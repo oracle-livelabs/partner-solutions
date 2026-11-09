@@ -1,0 +1,5 @@
+Blank route template with a reused label — Oaklands Park
+
+Authored fictional teaching supplement for Adelaide; linked incident ACI-V2-2026-0002, Oaklands Park.
+A fictional route-form example prints ADL-CORE-04 in its sample-label field. This is a template namespace, separate from the enquiry reference. The repeated characters cannot identify a delivery worker or connect unrelated visits.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

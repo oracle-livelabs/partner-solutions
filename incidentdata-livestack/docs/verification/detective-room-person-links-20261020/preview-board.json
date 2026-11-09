@@ -1,0 +1,56 @@
+{
+  "people": [
+    {
+      "name": "George Kaplan (kappa66)",
+      "personRef": "POI-NBNW-GEORGE",
+      "handles": [
+        "kappa66"
+      ],
+      "portrait": true
+    },
+    {
+      "name": "Philip Vandamm (pipp68)",
+      "personRef": "POI-NBNW-PHILIP",
+      "handles": [
+        "pipp68"
+      ],
+      "portrait": true
+    },
+    {
+      "name": "Eve Kendall (evek81)",
+      "personRef": "POI-NBNW-EVE",
+      "handles": [
+        "evek81"
+      ],
+      "portrait": true
+    },
+    {
+      "name": "Clara Thornhill (thorny58)",
+      "personRef": "POI-NBNW-CLARA",
+      "handles": [
+        "thorny58"
+      ],
+      "portrait": true
+    },
+    {
+      "name": "Roger Thornhill",
+      "personRef": null,
+      "handles": [],
+      "portrait": false
+    }
+  ],
+  "photoLinks": [
+    {
+      "from": "person:bac0fb6cfe381e987824",
+      "to": "photo:AliceSprings_Scenario_1A/clara-philip-shopping.png",
+      "color": "red",
+      "label": "Pending visual similarity candidate; Clara Thornhill; cosine 0.8543; search 6df9c4eb-8f4d-40e4-8d06-98bb67a5cf48; no verified identity claim"
+    },
+    {
+      "from": "person:0f8f41d0588aef6c058d",
+      "to": "photo:AliceSprings_Scenario_1A/clara-philip-shopping.png",
+      "color": "red",
+      "label": "Pending visual similarity candidate; Philip Vandamm; cosine 0.7731; search b02160d3-de9c-4143-a434-7cdec296f2e6; no verified identity claim"
+    }
+  ]
+}

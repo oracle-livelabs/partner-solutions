@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "source": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm",
+  "schemaSha256": "d56f6a839c50b66fc8bfb8d3127b1ea635718298a07954d43a85281614eb05ed",
+  "officialMetaSchemaSha256": "eda215b059c80707b68a7b04d2f0c8dfbc944c8988d0f13dddce07abf074f1a2"
+}

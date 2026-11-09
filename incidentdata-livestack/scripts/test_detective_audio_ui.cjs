@@ -1,0 +1,21 @@
+'use strict';
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const assert=require('node:assert/strict'),fs=require('node:fs');
+(async()=>{const browser=await chromium.launch({headless:true});try{
+ const page=await browser.newPage({viewport:{width:1500,height:1050}}),errors=[],writes=[];
+ page.setDefaultTimeout(45000);page.on('pageerror',e=>errors.push(e.message));
+ await page.route('**/*',route=>{const r=route.request(),u=new URL(r.url());if(u.origin!=='http://127.0.0.1:8706')return route.abort();if(r.method()!=='GET'){writes.push(u.pathname);return route.abort();}return route.continue();});
+ await page.goto('http://127.0.0.1:8706/',{waitUntil:'domcontentloaded'});await page.locator('.nav-item').filter({has:page.locator('.nav-item__label>span',{hasText:/^Data Room$/})}).click();
+ const panel=page.getByRole('region',{name:'Virtual Detective Room & Video Briefing'});
+ await panel.getByRole('button',{name:'Generate room & briefing',exact:true}).waitFor();
+ const generate=panel.getByRole('button',{name:'Generate room & briefing',exact:true});
+ await page.waitForFunction(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent==='Generate room & briefing');return b&&!b.disabled;});
+ assert(await page.getByText('Chris_Drugs.zip',{exact:true}).count()>0);
+ await panel.scrollIntoViewIfNeeded();await page.screenshot({path:'detective_audio_fix_20261013/live_ready.png'});
+ const issue='Run Identify/Describe to create a current saved transcript before generating the Detective Room.';
+ await page.route('**/api/data-room/batches/*/room',async route=>{const response=await route.fetch();const data=await response.json();return route.fulfill({response,json:{...data,eligible:false,generationIssue:issue}});});
+ await panel.getByRole('alert').filter({hasText:issue}).waitFor();assert(await generate.isDisabled());
+ await page.setViewportSize({width:390,height:900});await panel.scrollIntoViewIfNeeded();assert(await panel.isVisible());
+ assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);
+ const receipt={passed:true,liveBatchReady:true,missingTranscriptMessage:true,missingTranscriptDisablesGenerate:true,mobile:true,errors,writes};fs.writeFileSync('detective_audio_fix_20261013/browser_validation.json',JSON.stringify(receipt,null,2));console.log(JSON.stringify(receipt));
+}finally{await browser.close();}})().catch(e=>{console.error(e.message);process.exitCode=1});

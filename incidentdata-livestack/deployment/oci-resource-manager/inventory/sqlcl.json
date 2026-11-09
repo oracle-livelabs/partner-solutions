@@ -1,0 +1,8 @@
+{
+  "source": "https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-26.2.2.233.1901.zip",
+  "version": "26.2.2.233.1901",
+  "file": "tools/sqlcl.zip",
+  "sha256": "17f89fddf69722f37d7bde0718e66490647b25b295bf52fba92ba0ad042fa256",
+  "bytes": 121421628,
+  "distribution": "Private tenancy release artifacts only; retain vendor licence notices"
+}

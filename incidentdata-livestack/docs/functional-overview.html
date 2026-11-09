@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IncidentData LiveStack</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a case-file sheet — a header "docket" strip, then the app's own menu walked top to bottom as ledger rows, with a slim index rail on wide screens. */
+:root {
+  --paper: #f7f8f9;
+  --sheet: #ffffff;
+  --ink: #1f242b;
+  --muted: #5b6470;
+  --rule: #d9dde2;
+  --accent: #9f3829;
+  --accent-soft: #f5e6e2;
+  --steel: #2f5d73;
+  --steel-soft: #e3edf2;
+  --f-display: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --f-body: "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #14171b; --sheet: #1b1f24; --ink: #e7e9ec; --muted: #9aa3ad; --rule: #2e343b;
+    --accent: #e0826f; --accent-soft: #3a221d; --steel: #8fc0d6; --steel-soft: #1d2d35;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #14171b; --sheet: #1b1f24; --ink: #e7e9ec; --muted: #9aa3ad; --rule: #2e343b;
+  --accent: #e0826f; --accent-soft: #3a221d; --steel: #8fc0d6; --steel-soft: #1d2d35;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 400 16px/1.6 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+a { color: var(--steel); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 40px; }
+
+/* Docket header */
+.docket { background: var(--sheet); border: 1px solid var(--rule); border-top: 6px solid var(--accent); padding: 28px clamp(18px, 4vw, 40px); display: grid; gap: 18px; }
+.stamp { font: 600 12px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.docket h1 { font-size: clamp(34px, 6vw, 56px); font-weight: 800; font-stretch: 78%; letter-spacing: -.01em; }
+.lede { font-size: 18px; max-width: 64ch; margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
+.facts div { padding: 12px 16px 4px 0; display: grid; gap: 2px; }
+.facts dt { font: 600 11px/1.3 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+/* Body with rail */
+.body { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; }
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: grid; gap: 4px; font-size: 14px; }
+.rail p { font: 600 11px/1.3 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.rail a { color: var(--ink); text-decoration: none; padding: 4px 0 4px 10px; border-left: 2px solid var(--rule); }
+.rail a:hover { border-left-color: var(--accent); color: var(--accent); }
+main { display: grid; gap: 48px; min-width: 0; }
+section { display: grid; gap: 16px; }
+.eyebrow { font: 600 12px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+section > h2 { font-size: 28px; font-weight: 700; font-stretch: 85%; }
+section > p { margin: 0; max-width: 66ch; color: var(--muted); }
+
+/* Persona table */
+.tablebox { overflow-x: auto; background: var(--sheet); border: 1px solid var(--rule); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font: 600 11px/1.3 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+code, .mono { font-family: var(--f-mono); font-size: .88em; }
+td code { color: var(--accent); }
+
+/* Menu ledger */
+.group { display: grid; gap: 0; background: var(--sheet); border: 1px solid var(--rule); }
+.group h3 { font-size: 13px; font-family: var(--f-mono); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 12px 18px; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.row { display: grid; grid-template-columns: 2.2em 13em 1fr; gap: 4px 14px; padding: 14px 18px; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.row:last-child { border-bottom: 0; }
+.glyph { font: 600 18px/1 var(--f-mono); color: var(--accent); }
+.name { font-family: var(--f-display); font-weight: 700; font-stretch: 88%; font-size: 17px; }
+.what { margin: 0; }
+.tags { grid-column: 3; display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font: 400 11.5px/1 var(--f-mono); padding: 4px 7px; background: var(--steel-soft); color: var(--steel); border-radius: 3px; }
+
+/* Data Room pipeline */
+.pipeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); counter-reset: s; }
+.pipeline li { background: var(--sheet); padding: 14px 16px; display: grid; gap: 6px; align-content: start; counter-increment: s; }
+.pipeline li::before { content: "Stage " counter(s); font: 600 11px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.pipeline strong { font-family: var(--f-display); font-stretch: 88%; font-size: 16px; }
+.pipeline span { font-size: 14px; color: var(--muted); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.tile { display: grid; gap: 4px; padding-top: 10px; border-top: 2px solid var(--ink); }
+.tile strong { font-family: var(--f-display); font-stretch: 88%; font-size: 17px; }
+.tile p { margin: 0; font-size: 15px; color: var(--muted); }
+.tile.new { border-top-color: var(--accent); }
+.tile.new strong::after { content: "Oct 2026"; margin-left: 8px; font: 600 10px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 3px 5px; border-radius: 3px; vertical-align: 2px; }
+
+/* Principles */
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.rule { background: var(--accent-soft); padding: 16px 18px; display: grid; gap: 4px; }
+.rule strong { font-family: var(--f-display); font-stretch: 88%; font-size: 17px; }
+.rule p { margin: 0; font-size: 15px; }
+
+.around { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.around dl { margin: 0; display: grid; gap: 2px; }
+.around dt { font-weight: 600; }
+.around dd { margin: 0; font-size: 15px; color: var(--muted); }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 16px; }
+
+@media (max-width: 860px) {
+  .body { grid-template-columns: 1fr; }
+  .rail { display: none; }
+}
+@media (max-width: 620px) {
+  .row { grid-template-columns: 2em 1fr; }
+  .what, .tags { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="docket">
+    <div class="stamp"><span>Functional overview</span><span>Synthetic data only</span><span>October 2026</span></div>
+    <h1>IncidentData LiveStack</h1>
+    <p class="lede">A browser workspace for exploring incident, evidence and case data, built to show Oracle AI Database 26ai in use: relational, JSON, vector, graph, spatial, Deep Data Security, Select AI and native agents. Every record is fictional.</p>
+    <dl class="facts">
+      <div><dt>Lead profile</dt><dd>Adelaide v5 · 21,513 incidents</dd></div>
+      <div><dt>Period</dt><dd>1 May – 30 Jun 2026, ACST</dd></div>
+      <div><dt>City profiles</dt><dd>9 cities, 6 shared watch patterns</dd></div>
+      <div><dt>Database</dt><dd><span class="mono">CRIME_DATA</span> on Autonomous DB</dd></div>
+    </dl>
+  </header>
+
+  <div class="body">
+    <nav class="rail" aria-label="On this page">
+      <p>Contents</p>
+      <a href="#access">Access by persona</a>
+      <a href="#journey">The journey</a>
+      <a href="#dataroom">Data Room</a>
+      <a href="#rules">Ground rules</a>
+      <a href="#around">Around the app</a>
+    </nav>
+
+    <main>
+      <section id="access">
+        <div class="eyebrow">Who sees what</div>
+        <h2>Access depends on who you are</h2>
+        <p>Each session runs as a demo persona. Deep Data Security applies the scope inside the database, so pages, charts, graphs, AI answers and agent results all show only the records that persona may see.</p>
+        <div class="tablebox">
+          <table>
+            <thead><tr><th>Persona</th><th>Scope</th></tr></thead>
+            <tbody>
+              <tr><td><code>statewide_admin</code></td><td>All areas, plus profile setup and restore</td></tr>
+              <tr><td><code>central_analyst</code></td><td>Central area</td></tr>
+              <tr><td><code>northern_analyst</code></td><td>North and west</td></tr>
+              <tr><td><code>southern_analyst</code></td><td>South and east</td></tr>
+              <tr><td><code>read_only_viewer</code></td><td>Central totals only, no individual records</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="journey">
+        <div class="eyebrow">The main menu, top to bottom</div>
+        <h2>The journey</h2>
+        <p>The app's menu follows an investigation: get oriented, read the situation, follow connections, then ask questions. The symbols match the ones in the app's menu.</p>
+
+        <div class="group">
+          <h3>Get oriented</h3>
+          <div class="row"><span class="glyph">◈</span><span class="name">Welcome</span><p class="what">Starting point and a summary of the active city profile.</p></div>
+          <div class="row"><span class="glyph">▥</span><span class="name">Workshop &amp; Guides</span><p class="what">Step-by-step demo scripts, presenter notes and short animated explainers.</p></div>
+          <div class="row"><span class="glyph">▦</span><span class="name">Data Foundation</span><p class="what">Choose a city profile, restore it and check that it loaded correctly.</p><div class="tags"><span class="tag">JSON</span><span class="tag">saved profiles</span></div></div>
+        </div>
+
+        <div class="group">
+          <h3>Read the situation</h3>
+          <div class="row"><span class="glyph">▤</span><span class="name">Incident Activity Center</span><p class="what">Active workload, priority incidents and the busiest suburbs at a glance.</p><div class="tags"><span class="tag">relational</span></div></div>
+          <div class="row"><span class="glyph">⌁</span><span class="name">Incident Pattern Signals</span><p class="what">Six watch patterns per city, alongside public-concern signals and the incidents and evidence behind them.</p><div class="tags"><span class="tag">vector</span><span class="tag">JSON</span></div></div>
+          <div class="row"><span class="glyph">◎</span><span class="name">Incident Map</span><p class="what">Incidents plotted at approximate suburb level.</p><div class="tags"><span class="tag">spatial</span></div></div>
+          <div class="row"><span class="glyph">▤</span><span class="name">Incident Explorer</span><p class="what">Open any incident to see the record, its suburb, similar incidents and recorded links.</p><div class="tags"><span class="tag">vector similarity</span></div></div>
+          <div class="row"><span class="glyph">◌</span><span class="name">Incident and Capacity Analytics</span><p class="what">Tabs for incident demand, area workload, volume trend, vector groups and case context.</p><div class="tags"><span class="tag">analytics</span><span class="tag">vector groups</span></div></div>
+        </div>
+
+        <div class="group">
+          <h3>Follow the connections</h3>
+          <div class="row"><span class="glyph">◉</span><span class="name">Person Intelligence</span><p class="what">Register of fictional persons of interest: portraits, identifiers, aliases, narratives and linked incidents.</p><div class="tags"><span class="tag">JSON</span><span class="tag">image vectors</span></div></div>
+          <div class="row"><span class="glyph">▧</span><span class="name">Evidence Intelligence</span><p class="what">Evidence linked to incidents and people, with six story shortcuts and the original source documents.</p><div class="tags"><span class="tag">JSON</span><span class="tag">graph</span><span class="tag">spatial</span></div></div>
+          <div class="row"><span class="glyph">⌘</span><span class="name">Case Relationships</span><p class="what">Graph of case, incident, person and evidence. Adjust the depth from one to three hops to reveal similarity paths.</p><div class="tags"><span class="tag">property graph</span></div></div>
+        </div>
+
+        <div class="group">
+          <h3>Ask questions</h3>
+          <div class="row"><span class="glyph">✦</span><span class="name">Ask IncidentData</span><p class="what">Ask in plain English. Select AI writes the SQL; choose Explain answer, Show SQL or Run query.</p><div class="tags"><span class="tag">Select AI</span></div></div>
+          <div class="row"><span class="glyph">◉</span><span class="name">AI Agent Console</span><p class="what">Native database agents use read-only tools and cite their sources. Includes a case-readiness check that lists missing items. Every conversation is saved for review.</p><div class="tags"><span class="tag">native ADB agents</span><span class="tag">JSON audit</span></div></div>
+          <div class="row"><span class="glyph">◴</span><span class="name">AI Opps</span><p class="what">Every LLM call recorded: model, attempts, retries, tokens and duration.</p><div class="tags"><span class="tag">telemetry</span></div></div>
+        </div>
+      </section>
+
+      <section id="dataroom">
+        <div class="eyebrow">▣ Data Room</div>
+        <h2>From a ZIP of material to a reviewed case picture</h2>
+        <p>Upload a bundle of mixed files (text, CSV, JSON, audio, photos). The Data Room processes it in seven stages and keeps every result in the database.</p>
+        <ol class="pipeline">
+          <li><strong>Load</strong><span>Upload and store the original archive</span></li>
+          <li><strong>Unzip</strong><span>Count and catalogue each file</span></li>
+          <li><strong>Ingest</strong><span>Store each source with its checksum</span></li>
+          <li><strong>Identify &amp; describe</strong><span>AI description of every file, with previews</span></li>
+          <li><strong>Learn</strong><span>Batch Brief that cites its sources</span></li>
+          <li><strong>Connect</strong><span>Vector and reference links, reviewed by an agent team</span></li>
+          <li><strong>Publish</strong><span>Saved review pack: JSON plus manifest, connections and timeline CSVs</span></li>
+        </ol>
+        <div class="tiles">
+          <div class="tile"><strong>Money Flows</strong><p>Transfer graph with source rows, and a read-only agent that explains a route.</p></div>
+          <div class="tile"><strong>Messages</strong><p>Participant and thread graph with a conversation reader.</p></div>
+          <div class="tile"><strong>People &amp; Photos</strong><p>Compare photo regions with possible register matches. Each decision is audited.</p></div>
+          <div class="tile new"><strong>People mentioned</strong><p>Named people pulled from the material with exact quotes, grouped across sources and checked against the POI register.</p></div>
+          <div class="tile"><strong>Travel</strong><p>Map of places mentioned in the sources.</p></div>
+          <div class="tile"><strong>Select AI Chat</strong><p>Chat about the batch. Threads are saved and private to each user.</p></div>
+        </div>
+      </section>
+
+      <section id="rules">
+        <div class="eyebrow">Applies to every feature</div>
+        <h2>Ground rules</h2>
+        <div class="rules">
+          <div class="rule"><strong>Every claim has a source</strong><p>AI output points to exact excerpts or rows. Anything unverified shows as “Not stated” or is left out with a warning.</p></div>
+          <div class="rule"><strong>AI output is a draft</strong><p>Groupings, matches and connections need a person to review them. They don't establish identity or guilt.</p></div>
+          <div class="rule"><strong>No scoring or prediction</strong><p>No suspect ranking, risk scores, predictions or recommended actions. Agents only read.</p></div>
+          <div class="rule"><strong>Everything is audited</strong><p>Agent tool calls, review decisions and conversations are logged as JSON in the database.</p></div>
+        </div>
+      </section>
+
+      <section id="around">
+        <div class="eyebrow">Same schema, other doors</div>
+        <h2>Around the app</h2>
+        <div class="around">
+          <dl><dt>APEX</dt><dd>DickTracy applications (319, 320, 361) built on the same <span class="mono">CRIME_DATA</span> schema.</dd></dl>
+          <dl><dt>SQL Developer</dt><dd>Direct SQL access through the <span class="mono">CrimeData_ADB</span> connection.</dd></dl>
+          <dl><dt>GitHub</dt><dd>App source in <span class="mono">fucci/CrimeDataLiveStack</span>; Adelaide v5 data in <span class="mono">fucci/CrimeDataLiveStack-data</span>.</dd></dl>
+        </div>
+      </section>
+
+      <footer>Synthetic, non-operational demonstration. No record represents a real person, address or incident. Adelaide profile generator 5.0.0, seed 20260828.</footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

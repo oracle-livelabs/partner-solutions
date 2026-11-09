@@ -1,0 +1,74 @@
+[
+  {
+    "incident_ref": "SYN-AMS-2026-05667",
+    "suburb": "Buiksloterham-Noord",
+    "latitude": 52.393237,
+    "longitude": 4.912434
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-03505",
+    "suburb": "Vondelparkbuurt-West",
+    "latitude": 52.357658,
+    "longitude": 4.857579
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-00207",
+    "suburb": "NDSM terrein",
+    "latitude": 52.403723,
+    "longitude": 4.894348
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-10153",
+    "suburb": "Surinamepleinbuurt",
+    "latitude": 52.355131,
+    "longitude": 4.851376
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-06961",
+    "suburb": "Frederik Hendrikbuurt-Zuidoost",
+    "latitude": 52.373129,
+    "longitude": 4.870711
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-05022",
+    "suburb": "Hemonybuurt",
+    "latitude": 52.356488,
+    "longitude": 4.904656
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-04233",
+    "suburb": "Alfa-driehoek",
+    "latitude": 52.395942,
+    "longitude": 4.846863
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-05199",
+    "suburb": "Oostelijke Handelskade",
+    "latitude": 52.376881,
+    "longitude": 4.922475
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-05000",
+    "suburb": "Rietlanden",
+    "latitude": 52.375723,
+    "longitude": 4.928517
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-09909",
+    "suburb": "Middenmeer area",
+    "latitude": 52.356832,
+    "longitude": 4.948573
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-06208",
+    "suburb": "Hamerstraatkwartier-Oost",
+    "latitude": 52.385957,
+    "longitude": 4.928243
+  },
+  {
+    "incident_ref": "SYN-AMS-2026-11631",
+    "suburb": "Bedrijventerrein-Noord Weesp",
+    "latitude": 52.311466,
+    "longitude": 5.025952
+  }
+]

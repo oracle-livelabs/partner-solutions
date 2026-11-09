@@ -1,0 +1,13 @@
+{
+  "indexable": false,
+  "reviewOnly": true,
+  "assertions": [
+    "Public post alone cannot identify an incident or a person.",
+    "The private follow-up supplies the explicit comparison basis.",
+    "A2 is voided, not a second settled purchase.",
+    "A3 refund requested does not mean refunded.",
+    "Financial helper is unidentified; do not infer Lena Harper.",
+    "No care-funding claim or burglary-payment linkage is supplied.",
+    "Resident B consent does not cover Resident A."
+  ]
+}

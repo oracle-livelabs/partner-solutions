@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "status": "candidate",
+  "packaging_verified": true,
+  "bootstrap_verified": false,
+  "source_commit": "dd663ea2416277fb199cb8ccba2d1299d4ff6896",
+  "acceptance_contract_sha256": "3381242d5951ddacdab1b0df7fbe38c7264d5250643b115324bd318cc813e76f",
+  "destination_restore_tested": false,
+  "artifacts": [
+    {
+      "path": "application-source.tar.gz",
+      "sha256": "8c30559befbb0068d86a9aafa5abd86ede544d25eb586562ad09c2c0336871ca",
+      "bytes": 378265775
+    },
+    {
+      "path": "bootstrap.tar.gz",
+      "sha256": "0eb3d1aae2a14c5994819f5e44abe53d00f1269f8f871e17b7785bde758f86ba",
+      "bytes": 21492
+    },
+    {
+      "path": "baseline.json",
+      "sha256": "77c2e5e705f4d3acb9319150baee223eb52c872294c6b5d1e5641d7788b5be06",
+      "bytes": 18353
+    },
+    {
+      "path": "acceptance-contract.json",
+      "sha256": "3381242d5951ddacdab1b0df7fbe38c7264d5250643b115324bd318cc813e76f",
+      "bytes": 1282
+    },
+    {
+      "path": "ai/configuration.json",
+      "sha256": "da37e381a0786a471a2217375ed97407bee86976c76d13818c6b937bb3941a97",
+      "bytes": 28013
+    },
+    {
+      "path": "apex/manifest.json",
+      "sha256": "62cd502470e566619545fca01c0c0719f4731a1189a077fb688122065912b852",
+      "bytes": 1180
+    },
+    {
+      "path": "tools/sqlcl.zip",
+      "sha256": "17f89fddf69722f37d7bde0718e66490647b25b295bf52fba92ba0ad042fa256",
+      "bytes": 121421628
+    },
+    {
+      "path": "database/manifest.json",
+      "sha256": "622c7a3309249834340fca72fbbb6cba201e0e4d0eee1046dd598d85b39425e3",
+      "bytes": 4886
+    },
+    {
+      "path": "database/security-baseline.json",
+      "sha256": "851ec60e1a773b1ee711ba19601e9d0ab03a41bce062967135c3b55e80982af5",
+      "bytes": 47689
+    },
+    {
+      "path": "apex/f319.sql",
+      "sha256": "634d4aa087480f0228c69ef3d069b52aaf0023d5ddb7c72ee9ce058b7b43bd20",
+      "bytes": 64774780
+    },
+    {
+      "path": "apex/f320.sql",
+      "sha256": "47f08b20a5bbef2417de411b74b7ef85b8898cc75476908388e2d75b3d179c85",
+      "bytes": 72050691
+    },
+    {
+      "path": "apex/f361.sql",
+      "sha256": "a3e00d17d178333e2b83dd4216bd7dc6f4e96d1820ff7298045ce2cc7d0a5774",
+      "bytes": 73802196
+    },
+    {
+      "path": "models/kokoro-v1.0.onnx",
+      "sha256": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+      "bytes": 325505369
+    },
+    {
+      "path": "models/voices-v1.0.bin",
+      "sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+      "bytes": 28214398
+    },
+    {
+      "path": "associations/DR-20261020-68ed95d9-8383-401c.json",
+      "sha256": "702954c5bcc8e777bfa19064883b06bac87c93c0a40d0f4e18ce2c6c9531d9ca",
+      "bytes": 768
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_01.dmp",
+      "sha256": "d183706c00d80f7c8b357eb1bac55a1cc8c12a3ee12fec51b010fe8c0fe70c64",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_02.dmp",
+      "sha256": "9ce067de6be1ca366c403388ea7fb107826e83200f223a3bf37c0dd4eb945664",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_03.dmp",
+      "sha256": "9e4d6f2036c0aa0cb36f24bac521eaa63a808e46e1f738917ed093893e4faecd",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_04.dmp",
+      "sha256": "8052f009368a4b0e23a4cfb889adbd1e0bd8c3c1cdd9a7b5c37da24f9c17afa0",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_05.dmp",
+      "sha256": "40cd80ace0b046643db92d93101f2c324c1ef2982c8d08d41e7f866619ad7d1f",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_06.dmp",
+      "sha256": "3e481da2b128fad39408364dbd88a5817a8886a1d227d63bc28b7014111604dd",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_07.dmp",
+      "sha256": "d63b36033c5419bbc07e9a9341a12fbd6c4e81ec4e1b7d53763e7840ddd444f8",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_08.dmp",
+      "sha256": "eb152acc58f8bb41ae40472511d7a74bd9865c04b8d054b099a2dc2be237a8c2",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_09.dmp",
+      "sha256": "00981cde111b6e3ee720591f06111ee067450aced1523ff0929f54655af6fa20",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_10.dmp",
+      "sha256": "c217bb221510175a498b2c293021abc385c09bcea0dffb899d90c57488122d9b",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_11.dmp",
+      "sha256": "907d6675422452103829bbc78ff97f7a94039833a72b7ad4c33229389a3770e2",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_12.dmp",
+      "sha256": "040757951ad2b69600e8512da1995bdbe8dcc0dcfac627f0eaf065bfb53baf6b",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_13.dmp",
+      "sha256": "cbb79f3c5dc49cdbc83468b6cb36fc187dd8c1008c78ef4eb5983d77623fc8ac",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_14.dmp",
+      "sha256": "ce543992829537071ae798d936c70dbb80e4fc48fd67c5dd73abad8648b1b5cb",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_15.dmp",
+      "sha256": "7da837ada5ad64550c65a46c1e620caa1744c6cc5349d54589353392cf8f75a4",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_16.dmp",
+      "sha256": "ba002623b61895a7996126d413963ab8239a825afffd7f9bd10974eda564854f",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_17.dmp",
+      "sha256": "cafd2ccad6a9aae8a38fef3fd07712a1964751947a82995b4d2e8ab5d83c1144",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_18.dmp",
+      "sha256": "0e77ce374209dbf9d670ead6f9db2012652086260b9cb68d174a60a1ac1d2095",
+      "bytes": 268435456
+    },
+    {
+      "path": "database/ID_RELEASE_MVH80DYX_19.dmp",
+      "sha256": "2524efd5ab5d0e0b9d8fe111d83b52f4fa388216958f29e8a2c540a07e364e86",
+      "bytes": 5791744
+    }
+  ]
+}

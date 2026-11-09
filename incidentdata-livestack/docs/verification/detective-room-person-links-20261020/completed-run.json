@@ -1,0 +1,20 @@
+{
+  "id": "run-1792471817737-af4421d2201e",
+  "batchId": "DR-20261020-68ed95d9-8383-401c",
+  "owner": "statewide_admin",
+  "fingerprint": "4f52b31f29ae31ac994e1f652cd1e8a3d82bfa3092593d70ccea1c4a04a5a83e",
+  "analysisFingerprint": "90cf586402781affaefa21c00651b45ffa477d5a6caf7fadac231305a2293d1a",
+  "engine": "detective-room-1.0.4",
+  "state": "READY",
+  "stage": "Room and briefing ready · analyst review required",
+  "createdAt": "2026-10-20T04:50:17.737Z",
+  "review": "AI draft — analyst review required",
+  "recoverFrom": {
+    "runId": "run-1792469860750-e4f4538e9d55",
+    "authoringSha256": "4f7b05cdfe224ccc5a93e0620557d7f34af371540fccc9b6fdc15b41c88f0895"
+  },
+  "startedAt": "2026-10-20T04:50:18.053Z",
+  "updatedAt": "2026-10-20T04:52:38.445Z",
+  "finishedAt": "2026-10-20T04:52:38.445Z",
+  "durationSeconds": 220.708333
+}

@@ -1,0 +1,5 @@
+Visit sheet with an open sign-out — South Fremantle
+
+Authored fictional teaching supplement for Perth; linked incident SYN-PER-2026-00969, South Fremantle.
+The fictional contractor visit sheet repeats PER-CORE-01 in its work-order field. It records a proposed latch inspection, with no arrival signature and no completed key-return entry. The shared work-order reference connects the paperwork, not an identified visitor.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

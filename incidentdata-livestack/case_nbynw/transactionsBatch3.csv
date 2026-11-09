@@ -1,0 +1,17 @@
+TDATE,SENDER,SENDER_ACCOUNT,RECEIVER,RECEIVER_ACCOUNT,AMOUNT,DESCRIPTION,FLAG
+01-JUN-2025,Aboriginal Art Gallery,976-423-786,DesertWave Logistics,951-908-223,42000.00,"Consulting fee, no contract",No
+01-JUN-2025,Aboriginal Art Gallery,976-423-786,BrushStone Ltd,974-732-118,48000.00,"Art purchase, vague provenance",Yes
+01-JUN-2025,Aboriginal Art Gallery,976-423-786,Yulara Ventures,964-821-887,45000.00,"Marketing services, unverified work",Yes
+05-JUN-2025,DesertWave Logistics,951-908-223,Eve Kendall,902-985-439,46000.00,"Loan repayment, unrelated entities",Yes
+05-JUN-2025,BrushStone Ltd,974-732-118,Clara Thornhill,901-494-173,42000.00,"Advisory payout, shell recipient",No
+05-JUN-2025,Yulara Ventures,964-821-887,Philip Vandamm,921-789-654,48000.00,"Equipment rental, no supporting docs",Yes
+25-JUN-2025,Eve Kendall,902-985-439,Red Sands Trading,993-221-112,15000.00,"High-value gift, non-family",Yes
+25-JUN-2025,Eve Kendall,902-985-439,Blue Horizon Ventures,991-765-432,10000.00,"Services rendered, no deliverables",No
+25-JUN-2025,Clara Thornhill,901-494-173,Greenwood Holdings,992-456-789,12000.00,"Charity donation",No
+25-JUN-2025,Clara Thornhill,901-494-173,Blackwood Capital,994-321-098,8000.00,"Bank transfer, offshore account",Yes
+25-JUN-2025,Philip Vandamm,921-789-654,Whitewave Investments,995-678-901,18000.00,"Crypto conversion, unregistered exchange",Yes
+28-JUN-2025,Red Sands Trading,993-221-112,Roger Thornhill,981-225-563,15000.00,"Loan repayment, unrelated entities",Yes
+28-JUN-2025,Blue Horizon Ventures,991-765-432,Roger Thornhill,981-225-563,10000.00,"Consulting fee, no contract",No
+28-JUN-2025,Greenwood Holdings,992-456-789,Roger Thornhill,981-225-563,12000.00,"Art purchase, vague provenance",No
+28-JUN-2025,Blackwood Capital,994-321-098,Roger Thornhill,981-225-563,8000.00,"Advisory payout, shell recipient",Yes
+28-JUN-2025,Whitewave Investments,995-678-901,Roger Thornhill,981-225-563,18000.00,"Wire transfer, offshore account",Yes

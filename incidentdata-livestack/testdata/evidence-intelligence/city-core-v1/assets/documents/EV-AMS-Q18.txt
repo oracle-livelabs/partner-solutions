@@ -1,0 +1,5 @@
+Supplier catalogue showing a broad part family — Dapperbuurt-Zuid
+
+Authored fictional teaching supplement for Amsterdam; linked incident SYN-AMS-2026-02339, Dapperbuurt-Zuid.
+A fictional supplier catalogue repeats AMS-CORE-05 as a part-family code for several compatible assemblies. It is not a unique serial number. A matching catalogue family does not establish that two observations concern the same physical part.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

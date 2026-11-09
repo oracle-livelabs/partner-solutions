@@ -1,0 +1,5 @@
+Supplier catalogue showing a broad part family — Chasse
+
+Authored fictional teaching supplement for Brussels; linked incident SYN-BRU-2026-10357, Chasse.
+A fictional supplier catalogue repeats BRU-CORE-05 as a part-family code for several compatible assemblies. It is not a unique serial number. A matching catalogue family does not establish that two observations concern the same physical part.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

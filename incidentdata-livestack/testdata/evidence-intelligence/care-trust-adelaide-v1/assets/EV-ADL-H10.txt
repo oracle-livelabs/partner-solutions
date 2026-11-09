@@ -1,0 +1,7 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+Source layer 1: saved report ACI-V2-2026-0005
+Suburb: Mitchell Park; category: SCT - Residence; status: resolved.
+Original title: Weekday residential side-path observation logged
+Original narrative, reproduced verbatim: A fictional household report mentions activity near a side path in Mitchell Park during weekday hours. The account contains no identifying detail and remains a synthetic training record.
+Source layer 2: newly authored teaching supplement
+Separate authored clarification, recorded 25 June: the fictional resident says a neighbour had permission to collect garden cuttings by the side path. This is an attributed lawful explanation, not an independently verified identification. The original resolved status is retained; this note neither reopens the report nor resolves other households’ concerns.

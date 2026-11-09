@@ -1,0 +1,242 @@
+{
+  "checkedAt": "2026-10-27T04:24:09.449431+00:00",
+  "terraformVersion": "1.5.7",
+  "planJsonSha256": "6b553c899957f28255fb1c2b22a2f032f9b4219060a0ee90e8aa063db7ed6bb0",
+  "managedAdditions": 27,
+  "managedResourceCount": 27,
+  "managedChanges": 0,
+  "managedDeletions": 0,
+  "managedPriorStateResources": 0,
+  "ociProviderResources": 15,
+  "releasePublicationSeparate": true,
+  "inboundRules": [
+    {
+      "port": 80,
+      "source": "0.0.0.0/0"
+    },
+    {
+      "port": 443,
+      "source": "0.0.0.0/0"
+    }
+  ],
+  "inboundSshEnabled": false,
+  "vm": {
+    "metadataBytes": null,
+    "metadataCheck": "terraform-precondition-at-apply",
+    "shape": "VM.Standard.E4.Flex",
+    "ocpus": 4,
+    "memoryGB": 32,
+    "bootGB": "100",
+    "imageName": "Oracle-Linux-9.8-2026.10.16-0",
+    "imageIdSha256": "1b2e5ae547f0dc89fe343fe12304c859c62c83b2f79f49c8fd0c74e7537b1a2e"
+  },
+  "adb": {
+    "workload": "OLTP",
+    "apiVersion": "23ai",
+    "computeModel": "ECPU",
+    "ecpus": 2,
+    "storageGB": 100,
+    "publicNetworkEndpoint": true,
+    "mandatoryMtls": true,
+    "computeAutoscaling": false,
+    "storageAutoscaling": false
+  },
+  "resources": [
+    {
+      "address": "oci_core_instance.demo",
+      "type": "oci_core_instance",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_core_internet_gateway.demo",
+      "type": "oci_core_internet_gateway",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_core_public_ip.demo",
+      "type": "oci_core_public_ip",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_core_route_table.demo",
+      "type": "oci_core_route_table",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_core_security_list.demo",
+      "type": "oci_core_security_list",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_core_subnet.demo",
+      "type": "oci_core_subnet",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_core_vcn.demo",
+      "type": "oci_core_vcn",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_database_autonomous_database.demo",
+      "type": "oci_database_autonomous_database",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_database_autonomous_database_wallet.demo",
+      "type": "oci_database_autonomous_database_wallet",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_identity_policy.runtime",
+      "type": "oci_identity_policy",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_objectstorage_bucket.status",
+      "type": "oci_objectstorage_bucket",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_objectstorage_object.runtime",
+      "type": "oci_objectstorage_object",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_objectstorage_object.status",
+      "type": "oci_objectstorage_object",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_objectstorage_preauthrequest.bootstrap_write",
+      "type": "oci_objectstorage_preauthrequest",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "oci_objectstorage_preauthrequest.status",
+      "type": "oci_objectstorage_preauthrequest",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_id.suffix",
+      "type": "random_id",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.admin",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.participant[\"central\"]",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.participant[\"northern\"]",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.participant[\"operator\"]",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.participant[\"southern\"]",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.participant[\"viewer\"]",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.schema",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "random_password.wallet",
+      "type": "random_password",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "terraform_data.bootstrap_credentials",
+      "type": "terraform_data",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "terraform_data.readiness",
+      "type": "terraform_data",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "terraform_data.release_gate",
+      "type": "terraform_data",
+      "actions": [
+        "create"
+      ]
+    }
+  ],
+  "planSucceeded": true,
+  "applyRun": false,
+  "deploymentReady": false,
+  "notes": [
+    "A successful Plan does not reserve capacity or prove resource creation permissions.",
+    "Private release publication, approved spending/retention and service-limit clearance are required before Apply."
+  ]
+}

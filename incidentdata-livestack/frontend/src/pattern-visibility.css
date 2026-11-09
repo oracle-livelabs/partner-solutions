@@ -1,0 +1,22 @@
+.watched-patterns__grid .watched-patterns__hide {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 23px;
+  height: 23px;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid #c1cbcf;
+  border-radius: 50%;
+  background: #fff;
+  color: #52666f;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.watched-patterns__grid .watched-patterns__hide:hover {
+  background: #edf4f5;
+  color: #1d5965;
+}

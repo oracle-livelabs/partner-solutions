@@ -1,0 +1,6 @@
+Document: limited information-sharing consent extract
+Client reference: CT-RES-B
+Provider label: DEMO-CARE-01
+Named care worker: Lena Harper
+Permission recorded before the incident: a limited transport-related enquiry to an outside service contact.
+This consent concerns CT-RES-B only. It neither authorises disclosure for CT-RES-A nor proves that DEMO-MSG-09A served the permitted purpose. The recipient's identity and the exact disclosure require separate review.

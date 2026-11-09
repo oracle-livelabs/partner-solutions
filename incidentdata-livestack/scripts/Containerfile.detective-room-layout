@@ -1,0 +1,2 @@
+FROM localhost/crimedata-detective-worker:citation-feedback-20261019-r2
+COPY detective-worker/room/assets/industrial.css /app/detective-worker/room/assets/industrial.css

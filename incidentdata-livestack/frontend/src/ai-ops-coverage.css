@@ -1,0 +1,7 @@
+.aiops-llm-coverage>header{margin-bottom:16px}
+.aiops-llm-coverage>header p{margin-bottom:0}
+.aiops-coverage-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aiops-coverage-columns .aiops-panel{margin:0;padding:14px;background:#f9fbfb}
+.aiops-coverage-columns .aiops-panel h3{font-size:13px}
+.aiops-coverage-columns .aiops-panel p{font-size:11px}
+@media(max-width:850px){.aiops-coverage-columns{grid-template-columns:1fr}}

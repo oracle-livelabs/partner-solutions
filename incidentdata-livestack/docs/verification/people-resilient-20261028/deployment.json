@@ -1,0 +1,10 @@
+{
+  "deployed": true,
+  "image": "localhost/incidentdata-livestack:people-resilient-20261028-r1",
+  "previousImage": "localhost/incidentdata-livestack:people-llm-ops-20261028-r1",
+  "environmentMountsPortsUnchanged": true,
+  "unrelatedBackendUnchanged": true,
+  "peopleBackendHashVerified": true,
+  "batchHistoryAvailable": true,
+  "at": "2026-10-28T06:47:25.188Z"
+}

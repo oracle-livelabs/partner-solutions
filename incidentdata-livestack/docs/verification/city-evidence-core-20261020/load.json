@@ -1,0 +1,317 @@
+{
+  "mode": "committed",
+  "activeUnchanged": {
+    "CONTROL_ID": 1,
+    "DATASET_PROFILE_ID": 131,
+    "ACTIVATED_AT": "2026-10-20T00:04:07.884Z",
+    "ACTIVATED_BY": "CRIME_DATA",
+    "PROFILE_CODE": "PERTH_DATA_V2"
+  },
+  "addedSaved": {
+    "ADELAIDE_DATA_V2": 24,
+    "PERTH_DATA_V2": 24,
+    "BRISBANE_DATA_V2": 24,
+    "AMSTERDAM_DATA_V1": 24,
+    "BRUSSELS_DATA_V1": 24,
+    "DUBLIN_CITY_DATA_V1": 24,
+    "BOSTON_DATA_V2": 24,
+    "CHICAGO_DATA_V2": 24,
+    "LAS_VEGAS_DATA_V2": 24
+  },
+  "addedLive": 24,
+  "addedVectors": {
+    "text": 216,
+    "image": 36
+  },
+  "before": {
+    "evidence": [
+      {
+        "PROFILE_CODE": "ADELAIDE_DATA",
+        "N": 6653
+      },
+      {
+        "PROFILE_CODE": "ADELAIDE_DATA_V2",
+        "N": 6698
+      },
+      {
+        "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+        "N": 6063
+      },
+      {
+        "PROFILE_CODE": "BOSTON_CITY_DATA_V1",
+        "N": 6050
+      },
+      {
+        "PROFILE_CODE": "BOSTON_DATA_V2",
+        "N": 6037
+      },
+      {
+        "PROFILE_CODE": "BRISBANE_DATA",
+        "N": 181
+      },
+      {
+        "PROFILE_CODE": "BRISBANE_DATA_V2",
+        "N": 17608
+      },
+      {
+        "PROFILE_CODE": "BRUSSELS_DATA_V1",
+        "N": 10620
+      },
+      {
+        "PROFILE_CODE": "CHICAGO_CITY_DATA_V2",
+        "N": 16516
+      },
+      {
+        "PROFILE_CODE": "CHICAGO_DATA_V2",
+        "N": 16383
+      },
+      {
+        "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+        "N": 7536
+      },
+      {
+        "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+        "N": 8060
+      },
+      {
+        "PROFILE_CODE": "LAS_VEGAS_URBAN_DATA_V1",
+        "N": 8037
+      },
+      {
+        "PROFILE_CODE": "PERTH_DATA",
+        "N": 142
+      },
+      {
+        "PROFILE_CODE": "PERTH_DATA_V2",
+        "N": 13835
+      }
+    ],
+    "live": 13835,
+    "vectors": [
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+        "N": 4
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "BOSTON_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "BRISBANE_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "CHICAGO_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "PERTH_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "ADELAIDE_DATA_V2",
+        "N": 21
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+        "N": 54
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "BOSTON_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "BRISBANE_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "CHICAGO_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+        "N": 76
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "PERTH_DATA_V2",
+        "N": 76
+      }
+    ]
+  },
+  "after": {
+    "evidence": [
+      {
+        "PROFILE_CODE": "ADELAIDE_DATA",
+        "N": 6653
+      },
+      {
+        "PROFILE_CODE": "ADELAIDE_DATA_V2",
+        "N": 6722
+      },
+      {
+        "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+        "N": 6087
+      },
+      {
+        "PROFILE_CODE": "BOSTON_CITY_DATA_V1",
+        "N": 6050
+      },
+      {
+        "PROFILE_CODE": "BOSTON_DATA_V2",
+        "N": 6061
+      },
+      {
+        "PROFILE_CODE": "BRISBANE_DATA",
+        "N": 181
+      },
+      {
+        "PROFILE_CODE": "BRISBANE_DATA_V2",
+        "N": 17632
+      },
+      {
+        "PROFILE_CODE": "BRUSSELS_DATA_V1",
+        "N": 10644
+      },
+      {
+        "PROFILE_CODE": "CHICAGO_CITY_DATA_V2",
+        "N": 16516
+      },
+      {
+        "PROFILE_CODE": "CHICAGO_DATA_V2",
+        "N": 16407
+      },
+      {
+        "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+        "N": 7560
+      },
+      {
+        "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+        "N": 8084
+      },
+      {
+        "PROFILE_CODE": "LAS_VEGAS_URBAN_DATA_V1",
+        "N": 8037
+      },
+      {
+        "PROFILE_CODE": "PERTH_DATA",
+        "N": 142
+      },
+      {
+        "PROFILE_CODE": "PERTH_DATA_V2",
+        "N": 13859
+      }
+    ],
+    "live": 13859,
+    "vectors": [
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "ADELAIDE_DATA_V2",
+        "N": 4
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+        "N": 8
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "BOSTON_DATA_V2",
+        "N": 80
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "BRISBANE_DATA_V2",
+        "N": 80
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "BRUSSELS_DATA_V1",
+        "N": 4
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "CHICAGO_DATA_V2",
+        "N": 80
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+        "N": 4
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+        "N": 80
+      },
+      {
+        "MODALITY": "image",
+        "PROFILE_CODE": "PERTH_DATA_V2",
+        "N": 80
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "ADELAIDE_DATA_V2",
+        "N": 45
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+        "N": 78
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "BOSTON_DATA_V2",
+        "N": 100
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "BRISBANE_DATA_V2",
+        "N": 100
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "BRUSSELS_DATA_V1",
+        "N": 24
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "CHICAGO_DATA_V2",
+        "N": 100
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+        "N": 24
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+        "N": 100
+      },
+      {
+        "MODALITY": "text",
+        "PROFILE_CODE": "PERTH_DATA_V2",
+        "N": 100
+      }
+    ]
+  },
+  "existingRecordsOverwritten": 0,
+  "at": "2026-10-20T02:05:57.061Z"
+}

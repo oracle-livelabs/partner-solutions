@@ -1,0 +1,2 @@
+FROM localhost/incidentdata-livestack:city-evidence-core-20261020-r1
+COPY backend/photo-comparison-state.js backend/data-room-people-photos.js backend/detective-room-source.js backend/detective-room-associations.js backend/detective-room-store.js backend/detective-room-api.js /app/backend/

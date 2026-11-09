@@ -1,0 +1,90 @@
+[
+  {
+    "name": "policeadelaide_app-fu40_1",
+    "image": "localhost/incidentdata-livestack:person-links-20261020-r1",
+    "imageId": "4f3eaa7d2f15b44c078f64112fd272a80be0eb54ae26cb47236fcd335316ef0d",
+    "configuration": {
+      "OCI_GENAI_REGION": "us-chicago-1",
+      "CDR_TEXT_MODEL": "google.gemini-2.5-flash",
+      "CDR_IMAGE_MODEL": "google.gemini-2.5-flash",
+      "OLLAMA_MODEL": "qwen2.5-coder:14b",
+      "CDR_LEARNING_MODEL": "xai.grok-4.6",
+      "OCI_GENAI_MODEL": "meta.llama-3.3-70b-instruct",
+      "CDR_AUDIO_MODEL": "google.gemini-2.5-flash"
+    },
+    "mounts": [
+      {
+        "source": "/home/opc/.local/share/containers/storage/volumes/policeadelaide_police-transformers-cache/_data",
+        "destination": "/app/.cache/transformers",
+        "type": "volume",
+        "readWrite": true
+      },
+      {
+        "source": "/home/opc/.oci",
+        "destination": "/root/.oci",
+        "type": "bind",
+        "readWrite": false
+      },
+      {
+        "source": "/home/opc/livestack/detective-room/data",
+        "destination": "/var/lib/detective-room",
+        "type": "bind",
+        "readWrite": true
+      },
+      {
+        "source": "/home/opc/livestack/policeAdelaide/frontend/public/poi",
+        "destination": "/app/frontend/dist/poi",
+        "type": "bind",
+        "readWrite": false
+      },
+      {
+        "source": "/home/opc/wallet",
+        "destination": "/opt/crime-data/wallet",
+        "type": "bind",
+        "readWrite": false
+      }
+    ],
+    "memoryLimitBytes": 0
+  },
+  {
+    "name": "detective-room-worker",
+    "image": "localhost/crimedata-detective-worker:person-links-20261020-r1",
+    "imageId": "ca29fb3a49ccacd8d3afa92839baff6f2c4f413dfa7e234af3b0e381ed881582",
+    "configuration": {
+      "CDR_ROOM_MODELS": "/models"
+    },
+    "mounts": [
+      {
+        "source": "/home/opc/wallet",
+        "destination": "/opt/crime-data/wallet",
+        "type": "bind",
+        "readWrite": false
+      },
+      {
+        "source": "/home/opc/.oci",
+        "destination": "/root/.oci",
+        "type": "bind",
+        "readWrite": false
+      },
+      {
+        "source": "/home/opc/livestack/policeAdelaide/frontend/public",
+        "destination": "/public",
+        "type": "bind",
+        "readWrite": false
+      },
+      {
+        "source": "/home/opc/livestack/detective-room/data",
+        "destination": "/data",
+        "type": "bind",
+        "readWrite": true
+      },
+      {
+        "source": "/home/opc/livestack/detective-room/models",
+        "destination": "/models",
+        "type": "bind",
+        "readWrite": false
+      }
+    ],
+    "memoryLimitBytes": 12884901888
+  }
+]

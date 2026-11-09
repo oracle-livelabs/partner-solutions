@@ -1,0 +1,5 @@
+Authorised relocation awaiting a receiving count — Industrie Nord
+
+Authored fictional teaching supplement for Brussels; linked incident SYN-BRU-2026-01667, Industrie Nord.
+A fictional transfer slip repeats BRU-CORE-06 and authorises an internal move between stores. The dispatch box is completed, but the receiving count is blank. Compare both documents before treating the inventory difference as an unexplained loss.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

@@ -1,0 +1,5 @@
+Access request with an unconfirmed visit — Unley
+
+Authored fictional teaching supplement for Adelaide; linked incident ACI-2026-07569, Unley.
+The fictional facilities desk records a request to inspect the rear service door. Request ADL-CORE-01 has a proposed evening window, but the arrival and key-issue fields are blank. A request does not establish that anyone entered.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

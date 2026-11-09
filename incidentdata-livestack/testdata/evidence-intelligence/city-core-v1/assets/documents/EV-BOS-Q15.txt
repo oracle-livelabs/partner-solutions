@@ -1,0 +1,5 @@
+Follow-up preserving the timing disagreement — Brighton
+
+Authored fictional teaching supplement for Boston; linked incident SYN-BOS-2026-00084, Brighton.
+The fictional follow-up for BOS-CORE-04 records that the resident and route copy give different approximate windows. No independent clock source resolves the difference. A legitimate delivery explanation remains possible; the account does not establish an occupancy test.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

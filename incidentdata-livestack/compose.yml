@@ -1,0 +1,71 @@
+name: policeadelaide
+
+services:
+  db:
+    image: container-registry.oracle.com/database/free:latest
+    hostname: police-db
+    environment:
+      ORACLE_PWD: ${ORACLE_PWD:-oracle}
+      ORACLE_CHARACTERSET: AL32UTF8
+      ORACLE_USER: ${ORACLE_USER:-CRIME_DATA}
+      APP_SCHEMA_PASSWORD: ${APP_SCHEMA_PASSWORD:-crime-demo-only}
+    ports: ["${DB_HOST_PORT:-1533}:1521"]
+    volumes:
+      - police-oracle-data:/opt/oracle/oradata
+      - ./db:/workspace/app/db:ro,Z
+      - ./scripts/bootstrap_db.sh:/opt/oracle/scripts/startup/20-bootstrap_db.sh:ro,Z
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /opt/oracle/oradata/.police_adelaide_ready && echo 'select 1 from dual;' | sqlplus -L -s system/$${ORACLE_PWD}@localhost:1521/FREEPDB1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 40
+      start_period: 180s
+  ords:
+    image: container-registry.oracle.com/database/ords:latest
+    environment:
+      CONN_STRING: db:1521/FREEPDB1
+      DBHOST: db
+      DBPORT: 1521
+      DBSERVICENAME: FREEPDB1
+      ORACLE_PWD: ${ORACLE_PWD:-oracle}
+    ports: ["${ORDS_PORT:-8381}:8080"]
+    depends_on: { db: { condition: service_healthy } }
+  ollama:
+    image: docker.io/ollama/ollama:latest
+    environment: { OLLAMA_HOST: 0.0.0.0:11434 }
+    ports: ["${OLLAMA_HOST_PORT:-11445}:11434"]
+    volumes: ["police-ollama-models:/root/.ollama"]
+  app:
+    build: .
+    image: local/incidentdata-livestack:latest
+    environment:
+      PORT: 3001
+      ORACLE_USER: ${ORACLE_USER:-CRIME_DATA}
+      APP_SCHEMA_PASSWORD: ${APP_SCHEMA_PASSWORD:-crime-demo-only}
+      ORACLE_CONNECTION_STRING: db:1521/FREEPDB1
+      FRONTEND_URL: http://localhost:${APP_PORT:-8705}
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5-coder:14b}
+      OCI_CONFIG_FILE: /root/.oci/config
+      OCI_CONFIG_PROFILE: ${OCI_CONFIG_PROFILE:-DEFAULT}
+      OCI_COMPARTMENT_ID: ${OCI_COMPARTMENT_ID:-}
+      OCI_GENAI_REGION: ${OCI_GENAI_REGION:-us-chicago-1}
+      OCI_GENAI_MODEL: ${OCI_GENAI_MODEL:-meta.llama-3.3-70b-instruct}
+      TRANSFORMERS_CACHE: /app/.cache/transformers
+    volumes:
+      - "police-transformers-cache:/app/.cache/transformers"
+      - "./frontend/public/poi:/app/frontend/dist/poi:ro,z"
+      - "/home/opc/.oci:/root/.oci:ro,z"
+    ports: ["${APP_PORT:-8705}:3001"]
+    depends_on: { db: { condition: service_healthy } }
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('http').get('http://127.0.0.1:3001/api/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))\""]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
+volumes:
+  police-oracle-data:
+  police-ollama-models:
+  police-transformers-cache:

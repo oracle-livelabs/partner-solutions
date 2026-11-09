@@ -1,0 +1,41 @@
+30 October 2026: POI_IDENTIFIERS source-note editorial revision
+
+Later source-reference revision (same date): 1,220 SOURCE_REF values now use
+register: in place of synthetic:. The two exact source groups retain their
+remaining suffixes, dates and versions. The other 63 references are unchanged.
+No actual agent, application, officer or independent reviewer is attributed.
+backend/poi-identifier-sources.js canonicalizes the two old spellings for
+imports while keeping their original source identity for deterministic ID
+calculation. All 1,283 IDENTIFIER_ID values stay unchanged. Historical seeds
+remain historical; both source spellings prepare the same key and current
+SOURCE_REF. Unrelated source names are never canonicalized.
+
+Run node scripts/refresh_poi_identifier_source_refs.cjs --check to verify source
+references and IDs. The latest note verifier accepts both source spellings.
+Backup, mapping CSV and transaction receipts:
+/home/opc/scratch/poi-identifier-source-refs-20261030/
+
+scripts/refresh_poi_identifier_notes.cjs rewrites SOURCE_NOTE for the existing
+1,283 assertions across 12 profiles. Notes use natural register language and
+retain the distinction between declared, proposed and expired assertions.
+Reserved .test mailboxes, reserved-range phone numbers and unverified account
+ownership remain clearly described. No evidence extraction or external account
+verification is claimed, and no author or reviewer is invented.
+
+Only SOURCE_NOTE changes. The importer compares complete rows to protect IDs,
+person/profile keys, values, normalization, namespace, type, source references,
+recorder/reviewer attribution, review status, validity dates and creation dates.
+Live and saved person registers and active-profile state are also compared.
+It verifies Tone resolves, proposed pippy and expired Slate Pipit do not match,
+and the declared username kappa66 still resolves to George Kaplan.
+
+Run node scripts/refresh_poi_identifier_notes.cjs --check for current notes.
+--dry-run validates against the captured baseline and rolls back; --apply
+requires that baseline and refuses to overwrite its before-change backup.
+Backup, prepared notes, review CSV and receipts:
+/home/opc/scratch/poi-identifiers-quality-20261030/
+
+Historical identifier/profile loaders that assert the former SOURCE_NOTE text
+will correctly report an attribution-metadata conflict after this authorised
+editorial revision. Do not replay historical seeds to overwrite current notes.
+The original source and recorder fields retain the creation provenance.

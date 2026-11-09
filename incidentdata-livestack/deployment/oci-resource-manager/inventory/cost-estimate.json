@@ -1,0 +1,109 @@
+{
+  "source": "https://apexapps.oracle.com/pls/apex/cetools/api/v1/products/?currencyCode=USD",
+  "priceListLastUpdated": "2026-10-08T14:38:16.165Z",
+  "currency": "USD",
+  "hoursPerMonthAssumption": 730,
+  "entries": [
+    {
+      "sku": "B93113",
+      "name": "Compute - Standard - E4 - OCPU",
+      "metric": "OCPU Per Hour",
+      "quantity": 4,
+      "rateUSD": 0.025,
+      "billingPeriod": "hour",
+      "subtotalUSD": 0.1,
+      "rateBasis": "Highest published PAY_AS_YOU_GO tier; assumes shared free allowances already consumed"
+    },
+    {
+      "sku": "B93114",
+      "name": "Compute - Standard - E4  - Memory",
+      "metric": "Gigabyte Per Hour",
+      "quantity": 32,
+      "rateUSD": 0.0015,
+      "billingPeriod": "hour",
+      "subtotalUSD": 0.048,
+      "rateBasis": "Highest published PAY_AS_YOU_GO tier; assumes shared free allowances already consumed"
+    },
+    {
+      "sku": "B95702",
+      "name": "Oracle Autonomous AI Transaction Processing - ECPU",
+      "metric": "ECPU Per Hour",
+      "quantity": 2,
+      "rateUSD": 0.336,
+      "billingPeriod": "hour",
+      "subtotalUSD": 0.672,
+      "rateBasis": "Highest published PAY_AS_YOU_GO tier; assumes shared free allowances already consumed"
+    },
+    {
+      "sku": "B95706",
+      "name": "Oracle Autonomous AI Database Storage for Transaction Processing",
+      "metric": "Gigabyte Storage Capacity Per Month",
+      "quantity": 100,
+      "rateUSD": 0.1953,
+      "billingPeriod": "month",
+      "subtotalUSD": 19.53,
+      "rateBasis": "Highest published PAY_AS_YOU_GO tier; assumes shared free allowances already consumed"
+    },
+    {
+      "sku": "B91961",
+      "name": "Storage - Block Volume - Storage",
+      "metric": "Gigabyte Storage Capacity Per Month",
+      "quantity": 100,
+      "rateUSD": 0.0255,
+      "billingPeriod": "month",
+      "subtotalUSD": 2.55,
+      "rateBasis": "Highest published PAY_AS_YOU_GO tier; assumes shared free allowances already consumed"
+    },
+    {
+      "sku": "B91962",
+      "name": "Storage - Block Volume - Performance Units",
+      "metric": "Performance Units Per Gigabyte Per Month",
+      "quantity": 1000,
+      "rateUSD": 0.0017,
+      "billingPeriod": "month",
+      "subtotalUSD": 1.7,
+      "rateBasis": "Highest published PAY_AS_YOU_GO tier; assumes shared free allowances already consumed"
+    },
+    {
+      "sku": "B91628",
+      "name": "Object Storage - Storage",
+      "metric": "Gigabyte Storage Capacity Per Month",
+      "quantity": 25,
+      "rateUSD": 0.0255,
+      "billingPeriod": "month",
+      "subtotalUSD": 0.6375,
+      "rateBasis": "Highest published PAY_AS_YOU_GO tier; assumes shared free allowances already consumed"
+    }
+  ],
+  "computePerHour": 0.8200000000000001,
+  "storagePerMonth": 24.4175,
+  "estimatedDayIncludingProratedStorage": 20.48,
+  "estimated730HourMonth": 623.02,
+  "excluded": [
+    "GenAI usage",
+    "backup storage beyond any included allowance",
+    "network egress and request charges",
+    "DNS/domain costs",
+    "tax",
+    "tenancy discounts",
+    "log retention",
+    "optional future load balancer"
+  ],
+  "notASpendingCap": true,
+  "budgetApproved": true,
+  "estimatedSevenDayTest": 143.38,
+  "checkedAt": "2026-10-20T23:37:00.628724+00:00",
+  "planAssumptions": {
+    "computeHoursPerDay": 24,
+    "adbAutoscaling": false,
+    "objectStorageGBAcrossReleaseAndStatus": 25,
+    "publicIpv4ReservationCount": 1,
+    "newDefaultVault": false,
+    "privateHsmVault": false,
+    "spendingCapEnforced": false,
+    "temporaryPrivateBootstrapCredentials": true
+  },
+  "approvedBudgetUSD": 20,
+  "approvedBudgetScope": "First few-hour replication test only; destroy its new resources afterwards",
+  "estimatedFourHoursIncludingProratedStorage": 3.41
+}

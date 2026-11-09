@@ -1,0 +1,4 @@
+Document: attributed outside-contact clarification
+Morgan Reed describes the volunteered EXT-ACCOUNT-04 directory entry as a contact used for enquiries.
+The account refers to a possible transport enquiry for CT-RES-B, not permission concerning CT-RES-A.
+This statement is not independently corroborated. It does not explain the Resident A reference in DEMO-MSG-09A, identify its author, or establish presence at an incident. No admission of taking property or arranging an offence is made.

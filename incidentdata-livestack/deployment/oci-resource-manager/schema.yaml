@@ -1,0 +1,106 @@
+title: IncidentData LiveStack — full demo candidate
+description: New ADB, React/API/media VM, nine synthetic cities and authenticated public APEX. Review Plan and cost before Apply.
+schemaVersion: 1.1.0
+version: '2026.10.21'
+locale: en
+variableGroups:
+  - title: Destination
+    variables: [tenancy_ocid, compartment_ocid, region, availability_domain, stack_name]
+  - title: Operator access
+    variables: [ssh_public_key, ssh_ingress_cidr, public_hostname]
+  - title: Private versioned release
+    variables: [release_namespace, release_bucket, release_prefix, dump_password, ollama_image, release_manifest_path]
+  - title: Capacity and AI region
+    variables: [vm_shape, vm_ocpus, vm_memory_gbs, boot_volume_gbs, adb_compute_count, adb_storage_gbs, genai_region]
+variables:
+  tenancy_ocid:
+    type: string
+    required: true
+    visible: false
+  compartment_ocid:
+    type: oci:identity:compartment:id
+    required: true
+    title: Destination compartment
+  region:
+    type: oci:identity:region:name
+    required: true
+    default: ap-sydney-1
+  availability_domain:
+    type: oci:identity:availabilitydomain:name
+    required: true
+    dependsOn:
+      compartmentId: compartment_ocid
+  stack_name:
+    type: string
+    default: incidentdata-walkthrough
+  ssh_public_key:
+    type: string
+    required: true
+    title: Operator SSH public key
+  ssh_ingress_cidr:
+    type: string
+    default: ''
+    title: Trusted operator IPv4 CIDR (blank disables SSH)
+  public_hostname:
+    type: string
+    default: ''
+    title: Optional hostname; blank uses reserved public IP
+  release_namespace:
+    type: string
+    required: true
+  release_bucket:
+    type: string
+    required: true
+  release_prefix:
+    type: string
+    required: true
+  dump_password:
+    type: password
+    required: true
+    sensitive: true
+    title: Protected AES dump password
+  ollama_image:
+    type: string
+    default: docker.io/ollama/ollama@sha256:b88c73ace3e115f8ec53dc8761ae1c0aabfa675406e3681786b98757ce050f42
+  release_manifest_path:
+    type: string
+    default: ../release-manifest.json
+    visible: false
+  vm_shape:
+    type: string
+    default: VM.Standard.E4.Flex
+    enum: [VM.Standard.E4.Flex, VM.Standard.E5.Flex, VM.Standard.E6.Flex]
+  vm_ocpus:
+    type: integer
+    default: 4
+    minimum: 4
+    maximum: 16
+  vm_memory_gbs:
+    type: integer
+    default: 32
+    minimum: 32
+    maximum: 128
+  boot_volume_gbs:
+    type: integer
+    default: 100
+  adb_compute_count:
+    type: integer
+    default: 2
+  adb_storage_gbs:
+    type: integer
+    default: 100
+  genai_region:
+    type: string
+    default: us-chicago-1
+    title: AI inference region (separate from infrastructure region)
+outputs:
+  proposed_application_url:
+    type: link
+    title: React application (use generated account)
+  apex_service_urls:
+    type: string
+    title: Managed APEX/ORDS service URLs
+  participant_accounts:
+    type: list
+    sensitive: true
+    title: Generated participant accounts (authorised operator only)

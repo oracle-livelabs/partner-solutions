@@ -1,0 +1,24 @@
+.brief-explain-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap;flex-shrink:0}
+.cdr-page button.brief-explain-trigger{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#f0f1f2;border:1px solid #d3d8dc;color:#c74634;font-weight:750;letter-spacing:.6px;padding:11px 15px;min-height:42px}
+.cdr-page button.brief-explain-trigger:hover{background:#e5e7e9;border-color:#c74634}
+.brief-explain-trigger svg,.brief-explain-eyebrow svg{stroke:currentColor;stroke-width:1.6;flex-shrink:0}
+.brief-explain-dialog{width:min(720px,calc(100vw - 32px));max-height:85vh;max-height:85dvh;padding:0;border:1px solid #cbd5d9;border-radius:8px;color:#294653;background:white;box-shadow:0 16px 60px #152b3b40;font:14px Arial,sans-serif;overflow:auto}
+.brief-explain-dialog:not([open]){display:none}
+.brief-explain-dialog::backdrop{background:#172c3c80}
+.brief-explain-header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 24px;background:#f2f3f4;border-bottom:1px solid #d8e1e4;position:sticky;top:0}
+.brief-explain-eyebrow{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.7px;color:#c74634}
+.brief-explain-header h2{margin:8px 0 0;font-size:22px}
+.brief-explain-header button{padding:9px 12px;border:1px solid #b6c7cf;border-radius:4px;background:white;color:#294653;font:600 12px Arial,sans-serif;cursor:pointer;flex-shrink:0}
+.brief-explain-header button:focus-visible{outline:2px solid #c74634;outline-offset:3px}
+.brief-explain-content{padding:8px 24px 24px;line-height:1.7}
+.brief-explain-lead{font-size:17px;font-weight:600}
+.brief-explain-content h3{font-size:16px;margin:24px 0 8px}
+.brief-explain-flow{padding-left:23px;margin:12px 0}
+.brief-explain-flow li{padding:6px 0 6px 5px}
+.brief-explain-flow li::marker{color:#c74634;font-weight:700}
+.brief-explain-content dt{font-weight:700;margin-top:12px}
+.brief-explain-content dd{margin:3px 0 10px;color:#526873}
+.brief-explain-note{padding:15px;background:#fff4e2;border-left:3px solid #b96a22;margin-top:20px}
+.brief-explain-note p{margin:6px 0 0}
+.brief-explain-content footer{border-top:1px solid #d8e1e4;margin-top:22px;padding-top:14px;font-size:12px;color:#60717b}
+@media(max-width:600px){.brief-explain-header{padding:16px;gap:10px;align-items:flex-start;flex-wrap:wrap}.brief-explain-header h2{font-size:20px}.brief-explain-content{padding:8px 16px 20px}.brief-explain-actions{justify-content:flex-start;flex-shrink:1}}

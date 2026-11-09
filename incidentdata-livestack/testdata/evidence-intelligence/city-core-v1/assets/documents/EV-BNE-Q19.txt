@@ -1,0 +1,5 @@
+Authorised maintenance control — Park Ridge
+
+Authored fictional teaching supplement for Brisbane; linked incident SYN-BNE-2026-01760, Park Ridge.
+The fictional maintenance ledger for BNE-CORE-05 records an authorised replacement and disposal entry. It provides a legitimate comparator for the part family. There is no source-supported link from that disposal to a reported missing assembly.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

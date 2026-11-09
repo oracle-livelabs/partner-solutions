@@ -1,0 +1,11 @@
+{
+  "verifiedAt": "2026-09-24T13:42:22.251Z",
+  "profile": "AMSTERDAM_DATA_V1",
+  "incidentDetailsUnchanged": 12,
+  "personCatalogueUnchanged": true,
+  "existingIncidentEvidenceUnchanged": true,
+  "existingPersonLinksUnchanged": true,
+  "health": "healthy",
+  "databaseWritesPerformed": false,
+  "limitation": "HTTP comparisons of selected anchor details, evidence summaries and POI catalogue; not a complete protected-table database fingerprint."
+}

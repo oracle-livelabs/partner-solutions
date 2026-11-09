@@ -1,0 +1,12 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-W04
+Materials-ledger entry and storage-box inventory gap
+
+Document: materials-ledger extract
+Comparison marker: AMS-5-2
+Stock description: storage box
+Inventory check: incomplete
+Ownership: unverified
+Removal time: unknown
+Ledger disturbance: retained for source comparison.
+
+Authored fixture; not a recovered or original incident document.
