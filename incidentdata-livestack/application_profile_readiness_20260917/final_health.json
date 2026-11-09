@@ -1,0 +1,128 @@
+{
+  "checked_at": "2026-09-17T01:51:23.343Z",
+  "status": "passed",
+  "production_health": {
+    "status": "healthy",
+    "database": {
+      "STATUS": "healthy"
+    },
+    "security": "Deep Sec policy baseline + scoped database view"
+  },
+  "production_dashboard": {
+    "summary": {
+      "INCIDENT_COUNT": 25691,
+      "CATEGORY_COUNT": 11,
+      "OPEN_COUNT": 21920
+    },
+    "categories": [
+      {
+        "CATEGORY_CODE": "VIOLENCE_HARM",
+        "CATEGORY_NAME": "Violence & Harm",
+        "DISPLAY_ORDER": 100,
+        "DISPLAY_COLOR": "#A33A3A",
+        "COUNT": 3600,
+        "DETAIL_CATEGORY_COUNT": 3
+      },
+      {
+        "CATEGORY_CODE": "SEXUAL_OFFENCES",
+        "CATEGORY_NAME": "Sexual Offences",
+        "DISPLAY_ORDER": 203,
+        "DISPLAY_COLOR": "#8A477E",
+        "COUNT": 450,
+        "DETAIL_CATEGORY_COUNT": 2
+      },
+      {
+        "CATEGORY_CODE": "DOMESTIC_VIOLENCE",
+        "CATEGORY_NAME": "Domestic Violence",
+        "DISPLAY_ORDER": 305,
+        "DISPLAY_COLOR": "#B44B67",
+        "COUNT": 2300,
+        "DETAIL_CATEGORY_COUNT": 4
+      },
+      {
+        "CATEGORY_CODE": "PERSONAL_SAFETY",
+        "CATEGORY_NAME": "Personal Safety",
+        "DISPLAY_ORDER": 409,
+        "DISPLAY_COLOR": "#AD682B",
+        "COUNT": 1000,
+        "DETAIL_CATEGORY_COUNT": 5
+      },
+      {
+        "CATEGORY_CODE": "BURGLARY",
+        "CATEGORY_NAME": "Burglary & Break-ins",
+        "DISPLAY_ORDER": 514,
+        "DISPLAY_COLOR": "#916432",
+        "COUNT": 2200,
+        "DETAIL_CATEGORY_COUNT": 3
+      },
+      {
+        "CATEGORY_CODE": "THEFT",
+        "CATEGORY_NAME": "Theft",
+        "DISPLAY_ORDER": 617,
+        "DISPLAY_COLOR": "#437C94",
+        "COUNT": 8500,
+        "DETAIL_CATEGORY_COUNT": 8
+      },
+      {
+        "CATEGORY_CODE": "FRAUD",
+        "CATEGORY_NAME": "Fraud & Scams",
+        "DISPLAY_ORDER": 725,
+        "DISPLAY_COLOR": "#526AAD",
+        "COUNT": 2500,
+        "DETAIL_CATEGORY_COUNT": 5
+      },
+      {
+        "CATEGORY_CODE": "DAMAGE",
+        "CATEGORY_NAME": "Property Damage",
+        "DISPLAY_ORDER": 830,
+        "DISPLAY_COLOR": "#7B7952",
+        "COUNT": 2500,
+        "DETAIL_CATEGORY_COUNT": 2
+      },
+      {
+        "CATEGORY_CODE": "DRUGS",
+        "CATEGORY_NAME": "Drugs",
+        "DISPLAY_ORDER": 932,
+        "DISPLAY_COLOR": "#6C6C9D",
+        "COUNT": 1500,
+        "DETAIL_CATEGORY_COUNT": 3
+      },
+      {
+        "CATEGORY_CODE": "WEAPONS",
+        "CATEGORY_NAME": "Weapons",
+        "DISPLAY_ORDER": 1035,
+        "DISPLAY_COLOR": "#6C596B",
+        "COUNT": 350,
+        "DETAIL_CATEGORY_COUNT": 2
+      },
+      {
+        "CATEGORY_CODE": "COMMUNITY",
+        "CATEGORY_NAME": "Community Safety",
+        "DISPLAY_ORDER": 1137,
+        "DISPLAY_COLOR": "#50796D",
+        "COUNT": 791,
+        "DETAIL_CATEGORY_COUNT": 2
+      }
+    ],
+    "areas": [
+      {
+        "AREA_NAME": "Brussels demonstration coverage (not a police zone)",
+        "COUNT": 25691
+      }
+    ],
+    "signals": {
+      "POST_COUNT_72H": 0,
+      "SOURCE_COUNT_72H": 0,
+      "ELEVATED_COUNT_72H": 0,
+      "LINKED_POST_COUNT": 0,
+      "LINKED_INCIDENT_COUNT": 0
+    },
+    "watchedPatterns": []
+  },
+  "active_profile": "BRUSSELS_DATA_V1",
+  "amsterdam_saved_incidents": 14467,
+  "live_incidents": 25691,
+  "production_container": "running 0 2026-09-15 08:20:49.034966069 +0000 UTC",
+  "production_deployed": false,
+  "amsterdam_activated": false
+}

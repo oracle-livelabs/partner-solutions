@@ -1,0 +1,1031 @@
+{
+  "mode": "--dry-run",
+  "committed": false,
+  "rolled_back": true,
+  "idempotent_existing": false,
+  "package_sha256": "ccc37234489843067ba4bcce3e242023f62ce34011b10aaaac8841c1d42033f2",
+  "preservation_passed": true,
+  "active_unchanged": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 1,
+      "ACTIVATED_AT": "2026-09-17T05:23:40.661177",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ],
+  "completed_at": "2026-09-17T06:10:03.733Z",
+  "profiles": [
+    {
+      "profile": "ADELAIDE_DATA",
+      "total_people": 13,
+      "common_people": 13,
+      "narrative_vectors": 13,
+      "portrait_vectors": 13,
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "BRISBANE_DATA",
+      "total_people": 16,
+      "common_people": 13,
+      "narrative_vectors": 13,
+      "portrait_vectors": 13,
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "PERTH_DATA",
+      "total_people": 25,
+      "common_people": 13,
+      "narrative_vectors": 13,
+      "portrait_vectors": 13,
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "ADELAIDE_DATA_V2",
+      "total_people": 15,
+      "common_people": 13,
+      "narrative_vectors": 13,
+      "portrait_vectors": 13,
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "ACTIVE_ADELAIDE_DATA",
+      "total_people": 13,
+      "common_people": 13,
+      "narrative_vectors": 13,
+      "portrait_vectors": 13,
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "kind": "portrait",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "narrative",
+          "rank": 1
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "kind": "portrait",
+          "rank": 1
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "live_security": [
+    {
+      "user": "statewide_admin",
+      "visible": 13
+    },
+    {
+      "user": "adelaide_central_analyst",
+      "visible": 13
+    },
+    {
+      "user": "northern_analyst",
+      "visible": 0
+    },
+    {
+      "user": "southern_analyst",
+      "visible": 0
+    },
+    {
+      "user": "read_only_viewer",
+      "visible": 13
+    }
+  ],
+  "live_id_mapping": {
+    "POI-NBNW-GEORGE": 69,
+    "POI-NBNW-CLARA": 70,
+    "POI-NBNW-EVE": 71,
+    "POI-NBNW-PHILIP": 72,
+    "POI-FNET-MARA": 73,
+    "POI-FNET-ELIAS": 74,
+    "POI-FNET-NOAH": 75,
+    "POI-FNET-TESSA": 76,
+    "POI-FNET-DARNELL": 77,
+    "POI-V2-VIVIENNE": 78,
+    "POI-V2-JULIAN": 79,
+    "POI-V2-TONY": 80,
+    "POI-V2-GEORGE": 81
+  }
+}

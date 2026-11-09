@@ -1,0 +1,125 @@
+{
+  "created_at": "2026-09-17T01:52:53.337Z",
+  "production_deployed": false,
+  "amsterdam_activated": false,
+  "files": {
+    "backend/server.js": {
+      "operation": "modified",
+      "before_sha256": "41793e2cc836537cdb19b84e22f40b4695790f46f3e57e689137ef2bc3bce75c",
+      "after_sha256": "b1a3d97f99b3fb38103f1334642f66aa6ec74ba844f7e9675ba3a38a55e66b55"
+    },
+    "backend/profile-library.js": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "c6c7958dd64800abb6f7365beabf56b9fa06b64fb904d765f5f6127e08d91d25"
+    },
+    "backend/presentation-copy.js": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "f80d124429c0efe4ea9e2120d90216f22c212af047a664baf990e4c7ccb1e67f"
+    },
+    "backend/setup-mutation-guard.js": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "cc52d39b0a83c86325ba43809829248ca91304670192247b572c381f15e61434"
+    },
+    "backend/live-incident-map.js": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "07594c92692744c4c6bf718be2ddb5862f0178840d58436be613ecd252e18977"
+    },
+    "frontend/src/main.jsx": {
+      "operation": "modified",
+      "before_sha256": "373010b7527445f991b400f693b564d36c2bbafa65456b684319911fc1d19bd2",
+      "after_sha256": "fcb1e748360a7f22de6f8a8d930dec9d650820bebca8c8b76bd21f297374b362"
+    },
+    "frontend/src/app-use-notice.css": {
+      "operation": "modified",
+      "before_sha256": "f56fa51cdbecd6bea75af58d277d4785878f00ba34c3ea46ae2e131910a31a48",
+      "after_sha256": "62933a31dbdd77567a0c45ad625012774065b9ffd50f617ec8d0f6ce5a395639"
+    },
+    "frontend/src/profile-presentation.mjs": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "5c311af5d7bc434229ebd6f208633e00896381e24808e02944328c43cb5c39a0"
+    },
+    "frontend/src/ProfileContext.jsx": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "32c89414fc2634b61ac73d135024b6d427d050aa11584c77a5814015a0b4f521"
+    },
+    "frontend/src/ProfileLibraryPanel.jsx": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "53234c13185b54ef1c7a9f4fd3e9d37fdb9b729642dc4aa44129b89a3a592b15"
+    },
+    "frontend/src/SavedProfileReview.jsx": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "d3498ae8825f7e8bb7aa8d489077981d496af27b5ac5fa2fa75dfe62d96be3c2"
+    },
+    "frontend/src/profile-review.css": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "ca175260a81fce8e0f561d679ec962ea83960be957e01b8f803e9b80b67f333b"
+    },
+    "test/profile-library.test.js": {
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "27da2d5c8d45f3069fa07a498ab4836ecf84a10e152793d6234ffb7c5fc2e843"
+    },
+    "test/ask-crime-v2-results.test.js": {
+      "operation": "modified",
+      "before_sha256": "d981ff79b8fb7416660c500702093991c3f5708348f813841cf471597533d46b",
+      "after_sha256": "099d2266fa0b6cc6af7f6767e5ae8ecefdb10188acb5e6b25d883bb202abc323"
+    }
+  },
+  "checks": [
+    {
+      "name": "unit-tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "profile-unit-tests",
+      "command": [
+        "node",
+        "test/profile-library.test.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "report-regressions",
+      "command": [
+        "node",
+        "test/ask-crime-v2-results.test.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "backend-syntax",
+      "command": [
+        "node",
+        "--check",
+        "backend/server.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "frontend-build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--outDir",
+        "../application_profile_readiness_20260917/frontend-dist"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "built_index_sha256": "6387009896de35b74448c0ee646a82b4ec7ab6101888609262b7eb5d1b4d894c"
+}

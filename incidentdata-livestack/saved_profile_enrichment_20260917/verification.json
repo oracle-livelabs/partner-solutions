@@ -1,0 +1,754 @@
+{
+  "mode": "--verify",
+  "committed": false,
+  "rolled_back": false,
+  "idempotent_existing": true,
+  "package_sha256": "ccc37234489843067ba4bcce3e242023f62ce34011b10aaaac8841c1d42033f2",
+  "active_unchanged": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 1,
+      "ACTIVATED_AT": "2026-09-17T05:23:40.661177",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ],
+  "preservation_passed": true,
+  "completed_at": "2026-09-17T05:40:07.326Z",
+  "profiles": [
+    {
+      "profile": "BRUSSELS_DATA_V1",
+      "people": 13,
+      "narrative_vectors": 13,
+      "visual_vectors": 13,
+      "patterns": 21,
+      "visible_patterns": 6,
+      "local_links": 0,
+      "access_scope": [
+        {
+          "USER_NAME": "adelaide_central_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "northern_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "read_only_viewer",
+          "N": 0
+        },
+        {
+          "USER_NAME": "southern_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "statewide_admin",
+          "N": 13
+        }
+      ],
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "type": "visual",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "type": "visual",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "AMSTERDAM_DATA_V1",
+      "people": 13,
+      "narrative_vectors": 13,
+      "visual_vectors": 13,
+      "patterns": 21,
+      "visible_patterns": 6,
+      "local_links": 0,
+      "access_scope": [
+        {
+          "USER_NAME": "adelaide_central_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "northern_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "read_only_viewer",
+          "N": 0
+        },
+        {
+          "USER_NAME": "southern_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "statewide_admin",
+          "N": 13
+        }
+      ],
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "type": "visual",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "type": "visual",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "DUBLIN_CITY_DATA_V1",
+      "people": 13,
+      "narrative_vectors": 13,
+      "visual_vectors": 13,
+      "patterns": 21,
+      "visible_patterns": 6,
+      "local_links": 0,
+      "access_scope": [
+        {
+          "USER_NAME": "adelaide_central_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "northern_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "read_only_viewer",
+          "N": 0
+        },
+        {
+          "USER_NAME": "southern_analyst",
+          "N": 0
+        },
+        {
+          "USER_NAME": "statewide_admin",
+          "N": 13
+        }
+      ],
+      "self_retrieval": [
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-GEORGE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-CLARA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-EVE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-NBNW-PHILIP",
+          "type": "visual",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-MARA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-ELIAS",
+          "type": "visual",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-FNET-NOAH",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-TESSA",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-FNET-DARNELL",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-VIVIENNE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-JULIAN",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 2.220446049250313e-16
+        },
+        {
+          "ref": "POI-V2-TONY",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "type": "narrative",
+          "rank": 1,
+          "distance": 0
+        },
+        {
+          "ref": "POI-V2-GEORGE",
+          "type": "visual",
+          "rank": 1,
+          "distance": 0
+        }
+      ],
+      "narrative_probes": [
+        {
+          "query": "financial records cash flow informal payments resource allocation",
+          "expected": "POI-FNET-ELIAS",
+          "matches": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.3017979081694677
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "SCORE": 0.29343237825745794
+            },
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "SCORE": 0.2817985862493595
+            }
+          ]
+        },
+        {
+          "query": "Amsterdam technology consultancy executive counterfeit goods",
+          "expected": "POI-V2-JULIAN",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "SCORE": 0.5418143427906504
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.47158997209565445
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.3713553752207325
+            }
+          ]
+        },
+        {
+          "query": "former mathematician logistics broker film vehicle maintenance",
+          "expected": "POI-V2-TONY",
+          "matches": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "SCORE": 0.4525495700158283
+            },
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "SCORE": 0.2807220929000347
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "SCORE": 0.2601161968673438
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

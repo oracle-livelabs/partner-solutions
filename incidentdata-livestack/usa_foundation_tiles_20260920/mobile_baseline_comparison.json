@@ -1,0 +1,113 @@
+{
+  "status": "passed",
+  "measurements": [
+    {
+      "build": "baseline_dist",
+      "viewport": 390,
+      "pageWidth": 455,
+      "overflow": [
+        {
+          "tag": "LABEL",
+          "class": "",
+          "right": 455.09375
+        },
+        {
+          "tag": "SELECT",
+          "class": "",
+          "right": 455.09375
+        },
+        {
+          "tag": "B",
+          "class": "",
+          "right": 423.21875
+        }
+      ],
+      "tileWidths": [
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        }
+      ]
+    },
+    {
+      "build": "dist",
+      "viewport": 390,
+      "pageWidth": 455,
+      "overflow": [
+        {
+          "tag": "LABEL",
+          "class": "",
+          "right": 455.09375
+        },
+        {
+          "tag": "SELECT",
+          "class": "",
+          "right": 455.09375
+        },
+        {
+          "tag": "B",
+          "class": "",
+          "right": 423.21875
+        }
+      ],
+      "tileWidths": [
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        },
+        {
+          "client": 246,
+          "scroll": 246
+        }
+      ]
+    }
+  ]
+}

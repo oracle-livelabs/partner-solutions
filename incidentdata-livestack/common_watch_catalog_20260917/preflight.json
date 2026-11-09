@@ -1,0 +1,66 @@
+{
+  "db": {
+    "USERNAME": "CRIME_DATA",
+    "DB_NAME": "GE1C42BF10AE843_FU40"
+  },
+  "active": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 1,
+      "ACTIVATED_AT": "2026-09-17T05:23:40.661177",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ],
+  "profiles": [
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PROFILE_CODE": "ADELAIDE_DATA",
+      "PROFILE_STATUS": "active"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PROFILE_CODE": "BRISBANE_DATA",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 5,
+      "PROFILE_CODE": "PERTH_DATA",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 10,
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "PROFILE_STATUS": "available"
+    }
+  ],
+  "created_at": "2026-09-17T06:38:18.617Z",
+  "before_sha256": "a4399a885c6523c3d442b892159845ce6caea981a5c5ffc87b820bef2bd2b9f8",
+  "plan_sha256": "9496a4b97088ea80df5e89432cd99e2d4a1455033e076ff1d1459897a8f2529c",
+  "legacy_unresolved_case_references": [
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+      "CASE_REF": "CASE-2026-0421"
+    },
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PATTERN_CODE": "SERVICE_ACCESS",
+      "CASE_REF": "CASE-2026-0317"
+    }
+  ]
+}

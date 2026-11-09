@@ -1,0 +1,5 @@
+FROM localhost/local/adelaide-crime-intelligence:adelaide-v2-tile-20260917
+COPY dist/ /app/frontend/dist/
+COPY runtime_server_after.js /app/backend/server.js
+COPY setup-profile-selection.js /app/backend/setup-profile-selection.js
+RUN node --check /app/backend/server.js && node --check /app/backend/setup-profile-selection.js

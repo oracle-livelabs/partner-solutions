@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+const ROOT=__dirname,PROJECT=path.dirname(ROOT);
+const before=fs.readFileSync(path.join(ROOT,'main_before.jsx'),'utf8').split('\n');
+const after=fs.readFileSync(path.join(ROOT,'frontend/src/main.jsx'),'utf8').split('\n');
+assert.equal(before.length,after.length);
+const changed=before.map((line,i)=>line!==after[i]?i+1:0).filter(Boolean);
+assert.deepEqual(changed,[533,534,595]);
+const output=execFileSync(process.execPath,[path.join(PROJECT,'frontend/node_modules/vite/bin/vite.js'),'build','--outDir',path.join(ROOT,'dist')],{cwd:path.join(ROOT,'frontend'),encoding:'utf8',stdio:'pipe'});
+fs.writeFileSync(path.join(ROOT,'build.log'),output,{flag:'wx'});
+console.log('Built tile-only frontend: default selection, Adelaide mapping/label, and NRT selection updated.');

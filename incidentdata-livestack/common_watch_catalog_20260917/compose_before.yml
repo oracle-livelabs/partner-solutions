@@ -1,0 +1,36 @@
+services:
+  app-fu40:
+    build: .
+    image: local/adelaide-crime-intelligence:ai-ops-v1-20260915
+    environment:
+      PORT: 3001
+      ORACLE_USER: CRIME_DATA
+      APP_SCHEMA_PASSWORD: ${APP_SCHEMA_PASSWORD:?Source the CrimeData FU40 application environment first}
+      ORACLE_CONNECTION_STRING: ${ADB_CONNECT_STRING:-fu40_medium}
+      ORACLE_WALLET_LOCATION: /opt/crime-data/wallet
+      ORACLE_WALLET_PASSWORD: ${ADB_WALLET_PASSWORD:?Source the protected ADB environment first}
+      FRONTEND_URL: ${FU40_CRIME_FRONTEND_URL:-http://localhost:8706}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://ollama:11434}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5-coder:14b}
+      OCI_CONFIG_FILE: /root/.oci/config
+      OCI_CONFIG_PROFILE: ${OCI_CONFIG_PROFILE:-DEFAULT}
+      OCI_COMPARTMENT_ID: ${OCI_COMPARTMENT_ID:-}
+      OCI_GENAI_REGION: ${OCI_GENAI_REGION:-us-chicago-1}
+      OCI_GENAI_MODEL: ${OCI_GENAI_MODEL:-meta.llama-3.3-70b-instruct}
+      CDR_TEXT_MODEL: ${CDR_TEXT_MODEL:-google.gemini-2.5-flash}
+      CDR_IMAGE_MODEL: ${CDR_IMAGE_MODEL:-google.gemini-2.5-flash}
+      CDR_LEARNING_MODEL: ${CDR_LEARNING_MODEL:-xai.grok-4.6}
+      TRANSFORMERS_CACHE: /app/.cache/transformers
+    ports:
+      - "${FU40_CRIME_APP_PORT:-8706}:3001"
+    volumes:
+      # These credentials are also used by controlled, resumable ingestion jobs.
+      # Use a shared SELinux label so such a job cannot lock the live app out.
+      - /home/opc/wallet:/opt/crime-data/wallet:ro,z
+      - /home/opc/.oci:/root/.oci:ro,z
+      - police-transformers-cache:/app/.cache/transformers
+      - ./frontend/public/poi:/app/frontend/dist/poi:ro,Z
+    restart: unless-stopped
+
+volumes:
+  police-transformers-cache:

@@ -1,0 +1,137 @@
+{
+  "status": "passed_live_browser_and_api",
+  "verified_at": "2026-09-17T06:52:45.269Z",
+  "scopes": [
+    {
+      "user": "statewide_admin",
+      "displayed_patterns": 6,
+      "summary": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 21513
+      }
+    },
+    {
+      "user": "adelaide_central_analyst",
+      "displayed_patterns": 6,
+      "summary": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 8024
+      }
+    },
+    {
+      "user": "northern_analyst",
+      "displayed_patterns": 6,
+      "summary": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 7347
+      }
+    },
+    {
+      "user": "southern_analyst",
+      "displayed_patterns": 6,
+      "summary": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 6142
+      }
+    },
+    {
+      "user": "read_only_viewer",
+      "displayed_patterns": 6,
+      "summary": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 8024
+      }
+    }
+  ],
+  "saved_profiles": [
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA",
+      "TOTAL_DEFINITIONS": 21,
+      "DISPLAYED": 6
+    },
+    {
+      "PROFILE_CODE": "BRISBANE_DATA",
+      "TOTAL_DEFINITIONS": 23,
+      "DISPLAYED": 6
+    },
+    {
+      "PROFILE_CODE": "PERTH_DATA",
+      "TOTAL_DEFINITIONS": 23,
+      "DISPLAYED": 6
+    },
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "TOTAL_DEFINITIONS": 21,
+      "DISPLAYED": 6
+    },
+    {
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "TOTAL_DEFINITIONS": 21,
+      "DISPLAYED": 6
+    },
+    {
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "TOTAL_DEFINITIONS": 21,
+      "DISPLAYED": 6
+    },
+    {
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "TOTAL_DEFINITIONS": 21,
+      "DISPLAYED": 6
+    }
+  ],
+  "active": [
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA"
+    }
+  ],
+  "browser": {
+    "pattern_cards": 6,
+    "dashboard_watches": 6,
+    "poi_cards": 13,
+    "poi_portraits_loaded": true,
+    "page_errors": [],
+    "write_requests": [],
+    "semantic_search_not_invoked": true
+  },
+  "health": {
+    "status": "healthy",
+    "database": {
+      "STATUS": "healthy"
+    },
+    "security": "Deep Sec policy baseline + scoped database view"
+  },
+  "displayed_codes": [
+    "ART_MARKET_PAYMENTS",
+    "CONSTRUCTION_SITE_MATERIAL_THEFT",
+    "NIGHT_PRECINCT_ACTIVITY",
+    "RESIDENTIAL_OCCUPANCY_BURGLARY",
+    "SERVICE_ACCESS",
+    "VEHICLE_PARTS_HARVESTING"
+  ]
+}

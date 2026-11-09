@@ -1,0 +1,266 @@
+{
+  "status": "completed_verified",
+  "completed_at": "2026-09-17T07:45:06.731Z",
+  "active_profile": "ADELAIDE_DATA_V2",
+  "restore_performed": false,
+  "unit_tests_passed": 154,
+  "mock_restore_route_tests_passed": 9,
+  "profile_mappings": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "count": 21532,
+      "name": "Adelaide Data Set V2 - Scenario Enrichment"
+    },
+    {
+      "code": "PERTH_DATA",
+      "count": 33511,
+      "name": "Perth Data Set Profile"
+    },
+    {
+      "code": "BRISBANE_DATA",
+      "count": 42317,
+      "name": "Brisbane Data Set Profile"
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "count": 14467,
+      "name": "Amsterdam May-June 2026 V1"
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "count": 25691,
+      "name": "Brussels-Capital May-June 2026 V1"
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "count": 17817,
+      "name": "Dublin City demonstration Data Set V1 - May-June 2026"
+    }
+  ],
+  "database_preservation_passed": true,
+  "deployment": {
+    "status": "deployed_healthy",
+    "completed_at": "2026-09-17T07:42:47.741Z",
+    "image_before": "localhost/local/adelaide-crime-intelligence:adelaide-v2-tile-20260917",
+    "image_after": "localhost/local/adelaide-crime-intelligence:europe-profile-tiles-20260917",
+    "image_id_after": "d880dac1ab6c53b253c597d432e4882a0bd7c55667b2b7eb01cbdd35477d0345",
+    "container_after": "47e7b44a977e69f3eb8ce32ac8d536e5b88a3ea8e164b4a4c76eda61fe353f3c",
+    "started_at": "2026-09-17T07:42:43.263059069Z",
+    "application_environment_unchanged": true,
+    "mounts_unchanged": true,
+    "ports_unchanged": true,
+    "runtime_server_sha256": "2777cfa8398f50a156940109e896c17597c63af8cb661150583e756ca3c27e56",
+    "helper_sha256": "df7057736d801c29bd02e094d284ecc4f371c1d99a274ed695cc05f663975646",
+    "frontend_assets_verified": 11,
+    "profile_mappings": [
+      {
+        "code": "ADELAIDE_DATA_V2",
+        "count": 21532
+      },
+      {
+        "code": "AMSTERDAM_DATA_V1",
+        "count": 14467
+      },
+      {
+        "code": "BRUSSELS_DATA_V1",
+        "count": 25691
+      },
+      {
+        "code": "DUBLIN_CITY_DATA_V1",
+        "count": 17817
+      }
+    ],
+    "active_profile_unchanged": "ADELAIDE_DATA_V2",
+    "restore_invoked": false,
+    "rollback_image_retained": "localhost/local/adelaide-crime-intelligence:adelaide-v2-tile-20260917"
+  },
+  "files": {
+    "README.md": {
+      "sha256": "5a4163b9bb23843fbb89938c06a792181befd160cce090700dce62fca9ccc5a6",
+      "bytes": 5288
+    },
+    "prepare.cjs": {
+      "sha256": "028f559a0e226aa5efd018ceb125a58409107ca4d5650e8903cd52f48e8a30de",
+      "bytes": 2702
+    },
+    "build.cjs": {
+      "sha256": "7c0899c40e7cdcb6b381f9f9a7712dd32e16dba8c963d71a96d5379e69e9bfa3",
+      "bytes": 1773
+    },
+    "audit.cjs": {
+      "sha256": "8b01bb79734fcd13c0b6a5a2290b8b71fcfb13229288314e1f5d5c89d5df25fc",
+      "bytes": 1231
+    },
+    "check_browser.cjs": {
+      "sha256": "977be1a9fa0e30fd88f379751eacf28e9561a184526bb9a5d41f0f48b10e3f64",
+      "bytes": 8344
+    },
+    "restore-routing.test.cjs": {
+      "sha256": "2abc647ee1b9f2f62d3c5d2452df953045820d610f1bfdf79cfecea8b56ed673",
+      "bytes": 2536
+    },
+    "restore_routing_tests.log": {
+      "sha256": "78ae258ae989066be0d549b2f61006271fb40629b6e693c4e1a2c42b83040fb1",
+      "bytes": 1926
+    },
+    "deploy.cjs": {
+      "sha256": "dcbb70863cf26a2668f0c19d482aeca24a5cae865a16a2389e2345a2ad62fda9",
+      "bytes": 5810
+    },
+    "finalize.cjs": {
+      "sha256": "21e8e115d16795a6353b0c0dba948ef3bde1aeb93304f89cc34d753a7de561d1",
+      "bytes": 3478
+    },
+    "Containerfile": {
+      "sha256": "f4f13912b165330034eeda66324b1075a8a0e57a71377c15da7b24697dc58234",
+      "bytes": 326
+    },
+    ".containerignore": {
+      "sha256": "19b83dd54caf4b63afe1703d7dfc39353e22020770141386c147e5169a06930a",
+      "bytes": 85
+    },
+    "rollback_image.yml": {
+      "sha256": "12d2984d7810c25e6d349c4639ba612dbcadfcfd503977ec480e03f8a5f10d06",
+      "bytes": 93
+    },
+    "preflight.json": {
+      "sha256": "9009a0d19a56f157ec2308a5402278b16f1b93c899e71f4dc25d5f56008b2095",
+      "bytes": 819
+    },
+    "deployment.json": {
+      "sha256": "11a5ee24b6b3315604913d75d13ba0a5ae376c6c45aa8722c39695fc12d43879",
+      "bytes": 1293
+    },
+    "preview_browser.json": {
+      "sha256": "9de9124461f56d01a3a6d94e350ff57038c0eb75c50bf2829a95af5b91102bbe",
+      "bytes": 3861
+    },
+    "live_browser.json": {
+      "sha256": "94ed4e9894de77a9d1af157215007ee2e0a1fee95dc5181874e1105d5c995aa7",
+      "bytes": 3865
+    },
+    "database_before.json": {
+      "sha256": "2d5f3dee3a9a9f21333ddae9d1409f2f1797e7561604765253d8555bdd7dfa2b",
+      "bytes": 25231
+    },
+    "database_after.json": {
+      "sha256": "2d5f3dee3a9a9f21333ddae9d1409f2f1797e7561604765253d8555bdd7dfa2b",
+      "bytes": 25231
+    },
+    "main_before.jsx": {
+      "sha256": "e585d7510f197931d871f171d3f5aff536388f114247da21d5376e0ff20af956",
+      "bytes": 202441
+    },
+    "frontend/src/main.jsx": {
+      "sha256": "ffdd1c158200ed5b64349fa99fd79191eb970531c2d2d2d47219487d2f087f59",
+      "bytes": 203407
+    },
+    "frontend/src/app-use-notice.css": {
+      "sha256": "f56fa51cdbecd6bea75af58d277d4785878f00ba34c3ea46ae2e131910a31a48",
+      "bytes": 570
+    },
+    "runtime_server_before.js": {
+      "sha256": "3a4825c1f1fe71b255023c53a341155281efb4f3933c30597e33719fec690d6f",
+      "bytes": 108971
+    },
+    "runtime_server_after.js": {
+      "sha256": "2777cfa8398f50a156940109e896c17597c63af8cb661150583e756ca3c27e56",
+      "bytes": 106435
+    },
+    "setup-profile-selection.js": {
+      "sha256": "df7057736d801c29bd02e094d284ecc4f371c1d99a274ed695cc05f663975646",
+      "bytes": 4672
+    },
+    "runtime_index_before.html": {
+      "sha256": "26cb174cfeb4121e5729df7d9dc4b47768980dfa55f8ef64d56cd58497f80873",
+      "bytes": 436
+    },
+    "compose_before.yml": {
+      "sha256": "558f4733785177d14b92b455052330e62d5516aaeedced21f6682bf031e59b5c",
+      "bytes": 1708
+    },
+    "baseline_build.log": {
+      "sha256": "25ef9e3063f30f7dd92828342cad204ab36d5f4f569c085508f684c8c4c95850",
+      "bytes": 1104
+    },
+    "build.log": {
+      "sha256": "ff980447f9cdc9eec6b9cf150083547cb78a1aa2aea105f907b7e8ad8caa4874",
+      "bytes": 1005
+    },
+    "unit_tests.log": {
+      "sha256": "f9d0c12dde7392b426e20a8ff675212ffe25c7ff240ddb419734c61d57fe406a",
+      "bytes": 31519
+    },
+    "preview_tiles.png": {
+      "sha256": "e9e9c0d17e5b0495e83131cf3b1709ef585372206b97f6f7254a06b931468775",
+      "bytes": 101376
+    },
+    "preview_tiles_mobile.png": {
+      "sha256": "9b8ffded339de1867b25ac83e49b45d4aea70a5feaae28a5bfe93e303db0d903",
+      "bytes": 80084
+    },
+    "live_tiles.png": {
+      "sha256": "e9e9c0d17e5b0495e83131cf3b1709ef585372206b97f6f7254a06b931468775",
+      "bytes": 101376
+    },
+    "live_tiles_mobile.png": {
+      "sha256": "9b8ffded339de1867b25ac83e49b45d4aea70a5feaae28a5bfe93e303db0d903",
+      "bytes": 80084
+    },
+    "dist/index.html": {
+      "sha256": "18b94a2d7f24d1b483cfa903bf0a51a0d5372269f3abcbd9a0c59ba611d04aed",
+      "bytes": 436
+    },
+    "dist/assets/BatchMessages-C0uxd0Co.js": {
+      "sha256": "acd46de87418b91f8dced798a52a9789da377a0fa36fd2e1606f98eaa28c4b00",
+      "bytes": 16205
+    },
+    "dist/assets/BatchMessages-o6iZKUsE.css": {
+      "sha256": "b9c0f41abc6c2dcdda9d065f1fb62abcdf14826c2ce79601cb618f43dfdeccd6",
+      "bytes": 5660
+    },
+    "dist/assets/BatchMoneyFlows-C_1uODlD.js": {
+      "sha256": "2390ceedebad5c55900c74bc146dd02475e5ed60d2d586bfd0d4b8bb4bcc6f45",
+      "bytes": 24696
+    },
+    "dist/assets/BatchMoneyFlows-DrrsbPEl.css": {
+      "sha256": "036334a2169b3f9d7d1fc84511441d374e296356da0e4340349a0e9158296323",
+      "bytes": 5501
+    },
+    "dist/assets/BatchPeoplePhotos-BAAg5R-3.css": {
+      "sha256": "bd7a99af0be65fe5e2525647f1c277f889dd2688e82cbea832c37bc42e2e9344",
+      "bytes": 5960
+    },
+    "dist/assets/BatchPeoplePhotos-ov4Hg-Nv.js": {
+      "sha256": "2ef8d9c8c1b260a6ca1903c1a29337e6ea5339ead399d0300e30cf6c00551e71",
+      "bytes": 20256
+    },
+    "dist/assets/BatchPoiCandidates-BAtclp3e.css": {
+      "sha256": "3702a2e86602c6d5d328bf08df736776b629d9ec977c12774ac24689607acae8",
+      "bytes": 2641
+    },
+    "dist/assets/BatchPoiCandidates-kEowajgV.js": {
+      "sha256": "242185d21802f64123121f696cdf5df282ed75549387ff11394fd717f29232e4",
+      "bytes": 12270
+    },
+    "dist/assets/index-BVQfHIm3.css": {
+      "sha256": "d046e091073bed71b46ddb3d0c79272ec7447e7d1838be76ce721dbda2c4571d",
+      "bytes": 174228
+    },
+    "dist/assets/index-WH75wDGe.js": {
+      "sha256": "60e3e4b49c37ea466a852add032803e20e59dae2f3512f7c7d974767be3732f1",
+      "bytes": 630569
+    }
+  },
+  "workspace_files": {
+    "backend/setup-profile-selection.js": {
+      "sha256": "df7057736d801c29bd02e094d284ecc4f371c1d99a274ed695cc05f663975646"
+    },
+    "test/setup-profile-selection.test.js": {
+      "sha256": "fc07ffba0a69b25c6289b324cb34c3e37c484a5d2c19c16173df02a17833e400"
+    },
+    "compose.fu40.yml": {
+      "sha256": "c553d84bee0652f052469594ac73f0af5e9f5552792f7a8c1ae000bdb1086a3f"
+    }
+  }
+}

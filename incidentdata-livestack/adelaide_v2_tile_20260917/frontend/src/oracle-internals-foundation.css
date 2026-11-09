@@ -1,0 +1,45 @@
+.oracle-internals.foundation .oracle-internals__badges {
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.oracle-internals.foundation .oracle-internals__badges span {
+  border-radius: 2px;
+  font: 10px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.oracle-internals.foundation .oracle-internals__badges span:nth-child(2) {
+  border-color: #dfbda3;
+  background: #fbefe7;
+  color: #805331;
+}
+
+.oracle-internals.foundation .oracle-internals__badges span:nth-child(3) {
+  border-color: #cbbbd8;
+  background: #f2edf6;
+  color: #65506f;
+}
+
+.oracle-internals.foundation .oracle-internals__badges span:nth-child(4) {
+  border-color: #adc9b7;
+  background: #edf5ef;
+  color: #426950;
+}
+
+.oracle-internals.foundation .oracle-internals__badges span:nth-child(5) {
+  border-color: #a9c6d1;
+  background: #edf6f8;
+  color: #356875;
+}
+
+.oracle-internals.foundation .oracle-internals__badges span:nth-child(6) {
+  border-color: #d9aaa4;
+  background: #fcf0ee;
+  color: #88423a;
+}
+
+.oracle-internals.foundation .oracle-internals__badges span:nth-child(7) {
+  border-color: #d6bcc4;
+  background: #f8eef1;
+  color: #74505d;
+}

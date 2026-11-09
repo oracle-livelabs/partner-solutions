@@ -1,0 +1,64 @@
+.use-case-carousel__controls {
+  display: flex;
+  gap: 8px;
+}
+
+.use-case-carousel__controls button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #aeb7be;
+  border-radius: 4px;
+  background: #fff;
+  color: #263640;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.use-case-carousel__controls button:disabled {
+  cursor: not-allowed;
+  opacity: .4;
+}
+
+.use-case-carousel__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -4px 0 13px;
+  color: #69747d;
+  font-size: 12px;
+}
+
+.use-case-carousel__status > div {
+  display: flex;
+  gap: 6px;
+}
+
+.use-case-carousel__status button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #d7dadd;
+  cursor: pointer;
+  transition: width .15s ease, background .15s ease;
+}
+
+.use-case-carousel__status button.active {
+  width: 22px;
+  background: #aa643b;
+}
+
+.use-case-carousel__controls button:focus-visible,
+.use-case-carousel__status button:focus-visible {
+  outline: 2px solid #437c94;
+  outline-offset: 2px;
+}
+
+@media (max-width: 850px) {
+  .section-head {
+    align-items: flex-start;
+    gap: 14px;
+  }
+}

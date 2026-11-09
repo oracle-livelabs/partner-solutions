@@ -1,0 +1,27 @@
+{
+  "mode": "read_only_preview",
+  "checks": [
+    "Six restore tiles and three extra profiles retained; Dublin classic default and stored timezone survive a Los Angeles browser timezone."
+  ],
+  "page_errors": [],
+  "blocked_writes": [],
+  "maps": [
+    {
+      "zoom": 2,
+      "bbox": [
+        -105.46875,
+        -67.0674334,
+        105.46875,
+        67.0674334
+      ],
+      "mode": "clusters",
+      "represented": 0,
+      "matched": 42317,
+      "markers": 0,
+      "clusters": 0
+    }
+  ],
+  "status": "failed",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 42317\n\n    at run (/home/opc/livestack/policeAdelaide/saved_profile_scale_20260920/check_browser.cjs:44:53)\n    at runNextTicks (node:internal/process/task_queues:60:5)\n    at process.processImmediate (node:internal/timers:454:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\n    at async withServer (/home/opc/livestack/policeAdelaide/saved_profile_scale_20260920/harness.cjs:22:52)",
+  "visible_alerts": []
+}
