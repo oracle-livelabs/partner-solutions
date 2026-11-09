@@ -134,3 +134,38 @@ test('duplicate extraction mentions combine without retrying the entire batch',(
  const result=validate(JSON.stringify({people:[person(),person()]}),input,{recoverMentions:true});
  assert.equal(result.people.length,1);assert.match(result.warnings[0].reason,/Duplicate/);
 });
+test('registered POI_IDENTIFIERS aliases match with their validity and every supporting source',()=>{
+ const {groupPeople}=require('../backend/data-room-people-mentioned');
+ const mentions=validate(JSON.stringify({people:[person(),person('S02')]}),inputFromItems([item(),item('two')])).people;
+ mentions[1].attributes.name={value:'Amber Finch',quote:'Amber Finch'};
+ const profile={person_ref:'P1',display_name:'Mara Bell',alias_name:'Bell',portrait_asset_uri:'/poi/mara.jpg',registered_aliases:[{value:'Amber Finch',reviewStatus:'declared',validFrom:'2025-10-23T18:16:43.000Z',validTo:'2026-04-11T07:56:07.000Z',registerSource:'synthetic:test'}]};
+ const [card]=groupPeople(mentions,[profile]);
+ assert.equal(card.mentions.length,2);assert.equal(card.poi.person_ref,'P1');assert.equal(card.groupingBasis,'registered_name_or_alias');
+ assert(!('registered_aliases' in card.poi));
+ assert.deepEqual(card.poi.matches.map(m=>[m.basis,m.value,m.foundIn]),[['display_name','Mara Bell',['S01']],['registered_alias','Amber Finch',['S02']]]);
+ assert.equal(card.poi.matches[1].validTo,'2026-04-11T07:56:07.000Z');
+});
+test('a registered alias identical to the primary alias is reported once, with its register detail',()=>{
+ const {groupPeople}=require('../backend/data-room-people-mentioned');
+ const [mention]=validate(JSON.stringify({people:[person()]}),inputFromItems([item()])).people;
+ mention.attributes.name={value:'Skids',quote:'Skids'};
+ const [card]=groupPeople([mention],[{person_ref:'P1',display_name:'Tony Kapoor',alias_name:'Skids',registered_aliases:[{value:'Skids',reviewStatus:'declared',validFrom:'2026-04-07T05:47:56.000Z',validTo:null}]}]);
+ assert.deepEqual(card.poi.matches.map(m=>m.basis),['registered_alias']);
+});
+test('a registered alias shared by two POIs lists both candidates without choosing a portrait',()=>{
+ const {groupPeople}=require('../backend/data-room-people-mentioned');
+ const [mention]=validate(JSON.stringify({people:[person()]}),inputFromItems([item()])).people;
+ mention.attributes.name={value:'Eli',quote:'Eli'};
+ const alias={value:'Eli',reviewStatus:'declared'};
+ const [card]=groupPeople([mention],[{person_ref:'P1',display_name:'Elias Grant',registered_aliases:[alias]},{person_ref:'P2',display_name:'Eli Moss',alias_name:'Eli',registered_aliases:[]}]);
+ assert.equal(card.poi,null);assert.deepEqual(card.poiCandidates.map(c=>[c.person_ref,c.matches[0].basis]),[['P1','registered_alias'],['P2','primary_alias']]);
+});
+test('only declared or confirmed alias identifiers are loaded for matching',async()=>{
+ const routes=new Map(),queries=[];
+ const db=async(user,fn)=>fn({execute:async sql=>{queries.push(sql);return sql.includes('secure_cdr_batches_v')?{rows:[{STATUS:'ready'}]}:sql.includes('secure_poi_identifiers_v')?{rows:[{PERSON_REF:'P1',IDENTIFIER_VALUE:'Amber Finch',REVIEW_STATUS:'declared',SOURCE_REF:'s'}]}:sql.includes('secure_persons_of_interest_v')?{rows:[{PERSON_REF:'P1',DISPLAY_NAME:'Profile Alder'}]}:{rows:[item()]};}});
+ registerPeopleMentioned({get(){},post:(p,fn)=>routes.set('POST',fn)},db,fn=>fn,async options=>options.validate(JSON.stringify({people:[{...person(),name:{value:'Mara Bell',quote:'Mara Bell'}}]})));
+ const res={set(){},json(r){this.body=r;}};
+ await routes.get('POST')({demoUser:'statewide_admin',params:{id:'B'}},res);
+ const sql=queries.find(q=>q.includes('secure_poi_identifiers_v'));
+ assert.match(sql,/identifier_type='alias'/);assert.match(sql,/review_status IN \('declared','confirmed'\)/);
+});

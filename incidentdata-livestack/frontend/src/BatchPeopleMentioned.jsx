@@ -1,9 +1,16 @@
 import React,{useEffect,useRef,useState} from 'react';
 import './batch-people-mentioned.css';
-import PeoplePoiDialog from './PeoplePoiDialog';
+import PoiIdentifierDialog from './PoiIdentifierDialog';
 import PeopleMentionedExplain from './PeopleMentionedExplain';
 
 function PersonAvatar({poi}){const [failed,setFailed]=useState(false);return <span className="people-mentioned-avatar">{poi?.portrait_asset_uri&&!failed?<img src={poi.portrait_asset_uri} alt={poi.portrait_alt_text||'Possible POI match · register portrait'} onError={()=>setFailed(true)}/>:<PersonIcon/>}</span>;}
+const day=v=>v?new Date(v).toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}):'';
+function MatchBasis({match}){
+ const label={display_name:'Display name',primary_alias:'Primary alias',registered_alias:'Registered alias'}[match.basis];
+ const historical=match.validTo&&Date.parse(match.validTo)<=Date.now();
+ const period=match.basis!=='registered_alias'?'':match.validTo?`recorded ${day(match.validFrom)||'—'} – ${day(match.validTo)}`:match.validFrom?`recorded from ${day(match.validFrom)}`:'';
+ return <li>{historical&&<span className="people-mentioned-historical">Historical alias</span>}{label} “<b>{match.value}</b>”{match.reviewStatus&&` · ${match.reviewStatus}`}{period&&` · ${period}`} · found in {match.foundIn.join(', ')}</li>;
+}
 function PersonIcon(){return <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="21" r="12"/><path d="M10 58v-5c0-25 44-25 44 0v5"/></svg>;}
 export default function BatchPeopleMentioned({batchId,user,api,ready,readOnly,onOpenSource,onAiOps}){
  const [coverage,setCoverage]=useState(null),[result,setResult]=useState(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[selectedPoi,setSelectedPoi]=useState(null),[lastRun,setLastRun]=useState(null);
@@ -29,7 +36,7 @@ export default function BatchPeopleMentioned({batchId,user,api,ready,readOnly,on
    <div className="people-mentioned-grid">{result.people.map(person=><article key={person.id} className="people-mentioned-card">
     <div className="people-mentioned-card-head"><PersonAvatar poi={person.poi}/><div><small>{person.poi?'POSSIBLE POI MATCH · REGISTER PORTRAIT':person.mentions[0].attributes.name?'NAME REPORTED IN SOURCE':'UNNAMED IN SOURCE'}</small><h4>{person.label}</h4><span>{person.mentions.length} mention{person.mentions.length===1?'':'s'} · {new Set(person.mentions.map(m=>m.sourceRef)).size} source{new Set(person.mentions.map(m=>m.sourceRef)).size===1?'':'s'}</span></div></div>
     {person.poiCandidates.length>1&&<p>Multiple POI profiles share this name or alias. Review the candidates below.</p>}
-    {person.poiCandidates.map(poi=><p key={poi.person_ref}><button type="button" aria-haspopup="dialog" onClick={()=>setSelectedPoi(poi)}>View POI details · {poi.display_name} · {poi.person_ref}</button></p>)}
+    {person.poiCandidates.map(poi=><div key={poi.person_ref} className="people-mentioned-candidate"><button type="button" aria-haspopup="dialog" onClick={()=>setSelectedPoi(poi)}>Open register detail · {poi.display_name} · {poi.person_ref}</button>{!!poi.matches?.length&&<ul aria-label={`How ${poi.display_name} matched`}>{poi.matches.map(m=><MatchBasis key={m.basis+m.value} match={m}/>)}</ul>}</div>)}
     {!person.poiCandidates.length&&<p className="cdr-small">No matching registered name or alias found in your authorised POI register.</p>}
     <details open={person.mentions.length===1}><summary>Source mentions and supporting excerpts ({person.mentions.length})</summary>{person.mentions.map(mention=>{const source=result.sources.find(s=>s.ref===mention.sourceRef);return <section className="people-mentioned-source" key={mention.id}>
      <strong>{mention.sourceRef} · {source.path}</strong>
@@ -39,7 +46,7 @@ export default function BatchPeopleMentioned({batchId,user,api,ready,readOnly,on
      <button type="button" onClick={()=>onOpenSource({item_id:source.itemId})}>Inspect source · {mention.sourceRef}</button>
     </section>;})}</details>
    </article>)}</div></>}
-  {selectedPoi&&<PeoplePoiDialog poi={selectedPoi} user={user} onClose={()=>setSelectedPoi(null)}/>}
+  {selectedPoi&&<PoiIdentifierDialog key={`${user}:${selectedPoi.person_ref}`} personRef={selectedPoi.person_ref} user={user} onClose={()=>setSelectedPoi(null)} match={{origin:'PEOPLE MENTIONED',matches:selectedPoi.matches||[]}} portrait={selectedPoi.portrait_asset_uri?<img className="poi-portrait" src={selectedPoi.portrait_asset_uri} alt={selectedPoi.portrait_alt_text||'Possible POI match · register portrait'}/>:null}/>}
 
   {coverage&&<details className="people-mentioned-coverage"><summary>Source coverage and limits</summary><p>Up to 24,000 characters per source and 80,000 combined. At most 60 mentions per run. Original TXT, CSV and JSON excerpts and saved audio transcripts are supported. Images and video are excluded. Truncated or excluded content may contain additional people.</p>{coverage.coverage.map(source=><p key={source.itemId}><strong>{source.path}</strong> · {source.basis==='excluded'?source.reason:`${source.characters.toLocaleString()} characters · ${source.basis==='original_text_excerpt'?'original text':'machine transcript'}${source.truncated?' · partial source':''}`}</p>)}</details>}
  </section>;

@@ -67,22 +67,48 @@ function validate(raw,input,{omitUnsupportedAttributes=false,recoverMentions=fal
 }
 // Group display cards without discarding the independently validated source mentions.
 const normalizeName=value=>String(value||'').normalize('NFKC').toLowerCase().replace(/[’']/gu,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+// How a normalised source name matches one profile. A registered alias carries
+// its review status and validity period; it supersedes an identical primary alias.
+function nameMatches(profile,name){
+ const registered=(profile.registered_aliases||[]).filter(a=>normalizeName(a.value)===name).map(a=>({basis:'registered_alias',...a}));
+ return [
+  ...(normalizeName(profile.display_name)===name?[{basis:'display_name',value:profile.display_name}]:[]),
+  ...(!registered.length&&normalizeName(profile.alias_name)===name?[{basis:'primary_alias',value:profile.alias_name}]:[]),
+  ...registered];
+}
 function groupPeople(mentions,profiles=[]){
  const groups=new Map();
  for(const mention of mentions){
   const name=normalizeName(mention.attributes.name?.value);
-  const candidates=name?profiles.filter(p=>[p.display_name,p.alias_name].some(n=>normalizeName(n)===name)):[];
-  const unique=candidates.length===1?candidates[0]:null;
+  const matched=name?profiles.map(profile=>({profile,matches:nameMatches(profile,name)})).filter(m=>m.matches.length):[];
+  const unique=matched.length===1?matched[0].profile:null;
   // Shared full names and unique registered aliases are reviewable grouping keys.
   // Unnamed people are never merged using demographics or generic roles.
   const key=unique?'poi:'+unique.person_ref:name?'name:'+name:mention.id;
-  if(!groups.has(key))groups.set(key,{id:'person-'+(groups.size+1),label:unique?.display_name||mention.label,mentions:[],poiCandidates:candidates,poi:unique,groupingBasis:unique?'registered_name_or_alias':name?'same_normalized_name':'separate_unnamed_mention'});
-  groups.get(key).mentions.push(mention);
+  if(!groups.has(key))groups.set(key,{id:'person-'+(groups.size+1),label:unique?.display_name||mention.label,mentions:[],candidates:new Map(),groupingBasis:unique?'registered_name_or_alias':name?'same_normalized_name':'separate_unnamed_mention'});
+  const group=groups.get(key);group.mentions.push(mention);
+  for(const {profile,matches} of matched){
+   const {registered_aliases,...poi}=profile;
+   if(!group.candidates.has(poi.person_ref))group.candidates.set(poi.person_ref,{...poi,matches:new Map()});
+   const found=group.candidates.get(poi.person_ref).matches;
+   for(const m of matches){const k=m.basis+':'+m.value;if(!found.has(k))found.set(k,{...m,foundIn:[]});if(!found.get(k).foundIn.includes(mention.sourceRef))found.get(k).foundIn.push(mention.sourceRef);}
+  }
  }
- return [...groups.values()];
+ return [...groups.values()].map(({candidates,...group})=>{
+  const poiCandidates=[...candidates.values()].map(c=>({...c,matches:[...c.matches.values()]}));
+  return {...group,poiCandidates,poi:group.groupingBasis==='registered_name_or_alias'?poiCandidates[0]:null};
+ });
 }
 async function loadProfiles(c){
- return (await rows(c,`SELECT person_ref,display_name,alias_name,portrait_asset_uri,portrait_alt_text FROM secure_persons_of_interest_v ORDER BY person_ref`)).map(p=>Object.fromEntries(Object.entries(p).map(([k,v])=>[k.toLowerCase(),v])));
+ const lower=p=>Object.fromEntries(Object.entries(p).map(([k,v])=>[k.toLowerCase(),v]));
+ const profiles=(await rows(c,`SELECT person_ref,display_name,alias_name,portrait_asset_uri,portrait_alt_text FROM secure_persons_of_interest_v ORDER BY person_ref`)).map(p=>({...lower(p),registered_aliases:[]}));
+ // Additional aliases from POI_IDENTIFIERS for the active profile. Proposed and rejected
+ // assertions never match. Validity is shown, not filtered: source dates are unknown.
+ const aliases=await rows(c,`SELECT person_ref,identifier_value,review_status,valid_from,valid_to,source_ref FROM secure_poi_identifiers_v
+  WHERE identifier_type='alias' AND review_status IN ('declared','confirmed') ORDER BY person_ref,valid_from NULLS FIRST,identifier_id`);
+ const byRef=new Map(profiles.map(p=>[p.person_ref,p]));
+ for(const a of aliases)byRef.get(a.PERSON_REF)?.registered_aliases.push({value:a.IDENTIFIER_VALUE,reviewStatus:a.REVIEW_STATUS,validFrom:a.VALID_FROM||null,validTo:a.VALID_TO||null,registerSource:a.SOURCE_REF});
+ return profiles;
 }
 async function loadInput(c,id){
  const batch=(await rows(c,'SELECT batch_id,status FROM secure_cdr_batches_v WHERE batch_id=:id',{id}))[0];
@@ -123,7 +149,7 @@ function registerPeopleMentioned(router,db,route,generate=structuredGenerate){
    }catch(error){return res.status(502).json({error:generationError(error),llm:llmInfo(),traceId:ops.current().traceId||null,usage:runUsage(error.generation)});}
    const current=await db(req.demoUser,c=>loadInput(c,req.params.id));if(current.fingerprint!==input.fingerprint)throw fail(409,'Sources changed during extraction. Refresh coverage and try again.');
    const profiles=await db(req.demoUser,loadProfiles);
-   res.json({...publicInput(input),people:groupPeople(result.people,profiles),traceId:ops.current().traceId||null,usage:runUsage(result.generation),mentionCount:result.people.length,warnings:result.warnings||[],createdAt:new Date().toISOString(),model:config.textModel,notice:(result.warnings?.length?`${result.warnings.length} source-check warning(s): unsupported details were omitted or replaced with verified name excerpts. Review the warnings and original sources for missing details. `:'')+'AI draft. Repeated names and unique registered aliases share a card; all source mentions are retained. Grouping and POI name/alias matches need review and do not confirm identity. Unnamed people remain separate. Results stay in this workspace until you leave or refresh the page; download to retain them.'});
+   res.json({...publicInput(input),people:groupPeople(result.people,profiles),traceId:ops.current().traceId||null,usage:runUsage(result.generation),mentionCount:result.people.length,warnings:result.warnings||[],createdAt:new Date().toISOString(),model:config.textModel,notice:(result.warnings?.length?`${result.warnings.length} source-check warning(s): unsupported details were omitted or replaced with verified name excerpts. Review the warnings and original sources for missing details. `:'')+'AI draft. Repeated names and unique registered aliases (including declared or confirmed POI_IDENTIFIERS aliases, current or historical) share a card; all source mentions are retained. Grouping and POI name/alias matches need review and do not confirm identity. Unnamed people remain separate. Results stay in this workspace until you leave or refresh the page; download to retain them.'});
   }finally{active.delete(key);}
  }));
 }

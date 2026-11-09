@@ -57,8 +57,55 @@ FETCH FIRST 30 ROWS ONLY;`, 'Read-only catalogue query; it does not restore or c
        SUM(CASE WHEN incident_status NOT IN
          ('resolved', 'closed_no_further_action')
          THEN 1 ELSE 0 END) AS open_count
-FROM secure_crime_incidents_v;`)],
-    point: 'These are descriptive counts from the demonstration dataset, not predictions of future incidents.'
+FROM secure_crime_incidents_v;`, 'Matches the Authorised incidents and Open records cards for the session’s demo user. secure_crime_incidents_v filters rows by SYS_CONTEXT(\'USERENV\', \'CLIENT_IDENTIFIER\'). The application sets that identifier from the Demo user selector; SQL Workshop does not, so this query returns 0 incidents and an empty open_count (SUM over no rows is NULL). In SQLcl or SQL Developer, run EXEC DBMS_SESSION.SET_IDENTIFIER(\'statewide_admin\') first, or use the SQL Workshop block below.'),
+      {kind:'plsql',title:'APEX SQL Workshop: compare with the activity cards',
+        note:'Select the CRIME_DATA schema on FU40 with the Adelaide V3 profile active (the counts below were measured on it). Run this entire block together in SQL Workshop → SQL Commands; separate runs may not keep the identifier. Expected DBMS Output for statewide_admin: incidents 21532, categories 33, open 12955 (the Authorised incidents and Open records cards). Other identities: central_analyst 5488 / 32 / 3294, northern_analyst 8883 / 32 / 5357, southern_analyst 7161 / 32 / 4304, read_only_viewer 5488 / 32 / 3294; their incident counts match the Area coverage bars. Keep only one identity line active. For authorised demo diagnostics: temporarily sets the chosen identity, restores the previous client identifier on success or error and reads data only.',
+        code:`DECLARE
+  previous_id VARCHAR2(64) :=
+    SYS_CONTEXT('USERENV', 'CLIENT_IDENTIFIER');
+  incident_count NUMBER;
+  category_count NUMBER;
+  open_count     NUMBER;
+
+  PROCEDURE restore_context IS
+  BEGIN
+    IF previous_id IS NULL THEN
+      DBMS_SESSION.CLEAR_IDENTIFIER;
+    ELSE
+      DBMS_SESSION.SET_IDENTIFIER(previous_id);
+    END IF;
+  END;
+BEGIN
+  -- Keep only ONE identity line active.
+  DBMS_SESSION.SET_IDENTIFIER('statewide_admin');
+  -- DBMS_SESSION.SET_IDENTIFIER('central_analyst');
+  -- DBMS_SESSION.SET_IDENTIFIER('northern_analyst');
+  -- DBMS_SESSION.SET_IDENTIFIER('southern_analyst');
+  -- DBMS_SESSION.SET_IDENTIFIER('read_only_viewer');
+
+  SELECT COUNT(*),
+         COUNT(DISTINCT category_id),
+         SUM(CASE WHEN incident_status NOT IN
+           ('resolved', 'closed_no_further_action')
+           THEN 1 ELSE 0 END)
+  INTO incident_count, category_count, open_count
+  FROM secure_crime_incidents_v;
+
+  DBMS_OUTPUT.PUT_LINE(
+    'Identity: ' ||
+    SYS_CONTEXT('USERENV', 'CLIENT_IDENTIFIER')
+  );
+  DBMS_OUTPUT.PUT_LINE('Authorised incidents: ' || incident_count);
+  DBMS_OUTPUT.PUT_LINE('Categories: ' || category_count);
+  DBMS_OUTPUT.PUT_LINE('Open records: ' || NVL(open_count, 0));
+
+  restore_context;
+EXCEPTION
+  WHEN OTHERS THEN
+    restore_context;
+    RAISE;
+END;`}],
+    point: 'These are descriptive counts from the demonstration dataset, not predictions of future incidents. The cards and the SQL agree only when both run with the same demo-user identity.'
   },
   signals: {
     title: 'Incident Pattern Signals', engine: 'Vector search · Recorded pattern links',
@@ -76,12 +123,13 @@ JOIN secure_incident_reports_v r
   ON r.incident_id = i.incident_id
 GROUP BY e.profile_code, e.embedding_model
 ORDER BY e.profile_code, e.embedding_model
-FETCH FIRST 20 ROWS ONLY;`, 'Counts stored vectors by profile and model; no embedding request is sent. SQL Workshop uses its own session identifier, so these secure joins can return no rows. Use the SQL Workshop block below for an authorised Statewide Admin demo check.'),
-      {kind:'plsql',title:'APEX SQL Workshop: check Adelaide V2 vector coverage',
-        note:'Select the CRIME_DATA schema on FU40 with Adelaide V2 active. Run this entire block together in SQL Workshop → SQL Commands. Expected DBMS Output: Visible report vectors: 21532. Keep only one identity line active: comment out statewide_admin and uncomment an alternative to test its geographic scope. Other identities have smaller scoped counts. For authorised demo diagnostics: temporarily sets the chosen identity, restores the previous client identifier on success or error, reads data only and makes no embedding requests.',
+FETCH FIRST 20 ROWS ONLY;`, 'Counts stored narrative vectors visible to the session’s demo user, by profile and model; no embedding request is sent. secure_crime_incidents_v and secure_incident_reports_v filter rows by SYS_CONTEXT(\'USERENV\', \'CLIENT_IDENTIFIER\'). The application sets that identifier from the Demo user selector; SQL Workshop does not, so this query returns “no data found” (GROUP BY over no rows returns no rows, not a zero). In SQLcl or SQL Developer, run EXEC DBMS_SESSION.SET_IDENTIFIER(\'statewide_admin\') first, or use the SQL Workshop block below. Expected for statewide_admin with Adelaide V3 active: one row, ADELAIDE_DATA_V3 · cohere.embed-v4.0 · 21532.'),
+      {kind:'plsql',title:'APEX SQL Workshop: check active-profile vector coverage',
+        note:'Select the CRIME_DATA schema on FU40. Run this entire block together in SQL Workshop → SQL Commands; separate runs may not keep the identifier. The block reads the active dataset profile itself, so it follows profile switches. Expected DBMS Output with Adelaide V3 active: statewide_admin 21532 visible report vectors; central_analyst 5488, northern_analyst 8883, southern_analyst 7161, read_only_viewer 5488 (the same split as the Area coverage bars on the Incident Activity Center). Keep only one identity line active. For authorised demo diagnostics: temporarily sets the chosen identity, restores the previous client identifier on success or error, reads data only and makes no embedding requests.',
         code:`DECLARE
   previous_id VARCHAR2(64) :=
     SYS_CONTEXT('USERENV', 'CLIENT_IDENTIFIER');
+  active_profile VARCHAR2(128);
   vector_count NUMBER;
 
   PROCEDURE restore_context IS
@@ -100,6 +148,14 @@ BEGIN
   -- DBMS_SESSION.SET_IDENTIFIER('southern_analyst');
   -- DBMS_SESSION.SET_IDENTIFIER('read_only_viewer');
 
+  -- The profile the application is currently serving.
+  SELECT p.profile_code
+  INTO active_profile
+  FROM z_base_active_dataset_profile a
+  JOIN z_base_dataset_profiles p
+    ON p.dataset_profile_id = a.dataset_profile_id
+  WHERE a.control_id = 1;
+
   SELECT COUNT(*)
   INTO vector_count
   FROM incident_narrative_embeddings_v4 e
@@ -107,13 +163,14 @@ BEGIN
     ON i.incident_ref = e.incident_ref
   JOIN secure_incident_reports_v r
     ON r.incident_id = i.incident_id
-  WHERE e.profile_code = 'ADELAIDE_DATA_V2'
+  WHERE e.profile_code = active_profile
     AND e.embedding_model = 'cohere.embed-v4.0';
 
   DBMS_OUTPUT.PUT_LINE(
     'Identity: ' ||
     SYS_CONTEXT('USERENV', 'CLIENT_IDENTIFIER')
   );
+  DBMS_OUTPUT.PUT_LINE('Active profile: ' || active_profile);
   DBMS_OUTPUT.PUT_LINE(
     'Visible report vectors: ' || vector_count
   );
@@ -150,7 +207,73 @@ JOIN secure_persons_of_interest_v p
 CROSS JOIN selected_profile s
 WHERE p.person_ref <> s.person_ref
 ORDER BY similarity_score DESC, p.person_ref
-FETCH FIRST 6 ROWS ONLY;`, 'Uses the first visible stored narrative as the comparison seed. No new embeddings are generated.')],
+FETCH FIRST 6 ROWS ONLY;`, 'Uses the first visible stored narrative as the comparison seed. No new embeddings are generated. secure_persons_of_interest_v filters profiles by SYS_CONTEXT(\'USERENV\', \'CLIENT_IDENTIFIER\'). The application sets that identifier from the Demo user selector; SQL Workshop does not, so this query returns “no data found”. In SQLcl or SQL Developer, run EXEC DBMS_SESSION.SET_IDENTIFIER(\'statewide_admin\') first, or use the SQL Workshop block below. Expected for statewide_admin: seed POI-ADL-CARE-W01, top match POI-ADL-CARE-X01 at 0.5833, six rows. Only profiles with a stored narrative vector take part: POI-2026-0317A and POI-2026-0317B appear in the page’s profile list but have no stored narrative vector, so this query never returns them and the seed is not the first profile shown on screen.'),
+      {kind:'plsql',title:'APEX SQL Workshop: compare stored narratives for a demo user',
+        note:'Select the CRIME_DATA schema on FU40. Run this entire block together in SQL Workshop → SQL Commands; separate runs may not keep the identifier. The seed is the first profile the chosen identity can see, so it changes with the identity. Expected DBMS Output: statewide_admin sees 15 narratives, seed POI-ADL-CARE-W01, top match POI-ADL-CARE-X01 0.5833; central_analyst and read_only_viewer see 13, seed POI-FNET-DARNELL, top match POI-V2-JULIAN 0.5342; southern_analyst sees 2 and gets one comparison; northern_analyst sees no stored narratives, so it prints only the zero count. The page’s profile list shows more profiles than this count (statewide_admin 17, central_analyst and read_only_viewer 15, southern_analyst 3, northern_analyst 2) because POI-2026-0317A and POI-2026-0317B have no stored narrative vector; northern_analyst’s two visible profiles are exactly those two. Keep only one identity line active. For authorised demo diagnostics: temporarily sets the chosen identity, restores the previous client identifier on success or error, reads stored vectors only and makes no model calls.',
+        code:`DECLARE
+  previous_id VARCHAR2(64) :=
+    SYS_CONTEXT('USERENV', 'CLIENT_IDENTIFIER');
+  visible_count NUMBER;
+
+  PROCEDURE restore_context IS
+  BEGIN
+    IF previous_id IS NULL THEN
+      DBMS_SESSION.CLEAR_IDENTIFIER;
+    ELSE
+      DBMS_SESSION.SET_IDENTIFIER(previous_id);
+    END IF;
+  END;
+BEGIN
+  -- Keep only ONE identity line active.
+  DBMS_SESSION.SET_IDENTIFIER('statewide_admin');
+  -- DBMS_SESSION.SET_IDENTIFIER('central_analyst');
+  -- DBMS_SESSION.SET_IDENTIFIER('northern_analyst');
+  -- DBMS_SESSION.SET_IDENTIFIER('southern_analyst');
+  -- DBMS_SESSION.SET_IDENTIFIER('read_only_viewer');
+
+  SELECT COUNT(*)
+  INTO visible_count
+  FROM person_narrative_embeddings e
+  JOIN secure_persons_of_interest_v p
+    ON p.person_id = e.person_id;
+
+  DBMS_OUTPUT.PUT_LINE(
+    'Identity: ' ||
+    SYS_CONTEXT('USERENV', 'CLIENT_IDENTIFIER')
+  );
+  DBMS_OUTPUT.PUT_LINE('Visible stored narratives: ' || visible_count);
+
+  FOR r IN (
+    WITH selected_profile AS (
+      SELECT p.person_ref, e.embedding
+      FROM person_narrative_embeddings e
+      JOIN secure_persons_of_interest_v p
+        ON p.person_id = e.person_id
+      ORDER BY p.person_ref FETCH FIRST 1 ROW ONLY
+    )
+    SELECT s.person_ref AS compared_with, p.person_ref,
+           ROUND(1 - VECTOR_DISTANCE(e.embedding,
+             s.embedding, COSINE), 4) AS similarity_score
+    FROM person_narrative_embeddings e
+    JOIN secure_persons_of_interest_v p
+      ON p.person_id = e.person_id
+    CROSS JOIN selected_profile s
+    WHERE p.person_ref <> s.person_ref
+    ORDER BY similarity_score DESC, p.person_ref
+    FETCH FIRST 6 ROWS ONLY
+  ) LOOP
+    DBMS_OUTPUT.PUT_LINE(
+      r.compared_with || ' -> ' || r.person_ref ||
+      '  similarity ' || TO_CHAR(r.similarity_score, 'FM0.0000')
+    );
+  END LOOP;
+
+  restore_context;
+EXCEPTION
+  WHEN OTHERS THEN
+    restore_context;
+    RAISE;
+END;`}],
     point: 'These are fictional profiles and generic image comparisons, not biometric identification or findings about a real person.'
   },
   evidence: {

@@ -1,7 +1,7 @@
 services:
   app-fu40:
     build: .
-    image: localhost/incidentdata-livestack:map-layout-20261105-r1
+    image: localhost/incidentdata-livestack:explain-persons-sql-20261108-r2
     environment:
       CDR_ROOM_ENABLED: "1"
       CDR_ROOM_ROOT: /var/lib/detective-room
