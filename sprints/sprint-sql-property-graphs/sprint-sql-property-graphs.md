@@ -1,6 +1,22 @@
 # How do I query relationships as a graph with SQL Property Graphs in Oracle Database 26ai?
 
-## Introduction
+**Level:** Intermediate  
+**Sprint owner:** Nagatanmayee Gunukula  
+**Focus:** SQL Property Graphs  
+**Product:** Oracle Database 26ai  
+**Short description:** Use SQL Property Graphs to query paths, shared neighbors, recruitment chains, and aggregates.
+
+## Objectives
+
+After this sprint, you will be able to:
+
+- Define a SQL Property Graph over relational tables.
+- Query paths, shared neighbors, and variable-length recruitment chains with GRAPH_TABLE.
+- Combine graph queries with SQL aggregation and inspect graph metadata.
+
+Estimated Time: 20 minutes
+
+## Answer
 
 Some questions are about connections: which volunteers delivered to the same shelters, who recruited whom, and which donors supplied food to which shelters. Joins can answer these questions, but complex relationships may require many self-joins or recursive common table expressions (CTEs).
 
