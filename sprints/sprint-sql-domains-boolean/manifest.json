@@ -1,0 +1,12 @@
+{
+  "workshoptitle": "LiveLabs Sprints",
+  "help": "livelabs-help-sprints_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "How do I enforce a data rule once and reuse it on every column with SQL Domains in Oracle Database 26ai?",
+      "description": "Use SQL Domains and BOOLEAN to enforce reusable data rules, format values, and inspect domain usage.",
+      "filename": "sprint-sql-domains-boolean.md"
+    }
+  ],
+  "task_type": "Sections"
+}
