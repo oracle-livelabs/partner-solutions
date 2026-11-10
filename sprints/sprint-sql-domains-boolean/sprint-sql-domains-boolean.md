@@ -1,10 +1,10 @@
 # How do I enforce a data rule once and reuse it on every column with SQL Domains in Oracle Database 26ai?
 
-**Level:** Beginner  
-**Sprint owner:** Nagatanmayee Gunukula  
-**Focus:** SQL Domains and BOOLEAN  
-**Product:** Oracle Database 26ai  
-**Short description:** Use SQL Domains and BOOLEAN to enforce reusable data rules, format values, and inspect domain usage.
+## Answer
+
+Schemas often repeat the same rules in multiple tables: email columns use the same validation, quantities must stay within the same range, and flags use separate conventions. When a rule changes, every copy must be updated.
+
+Oracle Database 26ai SQL Domains let you define a data type, constraints, display format, and annotations once, then reuse them on columns. Oracle Database 26ai also supports a native`BOOLEAN` data type.
 
 ## Objectives
 
@@ -14,13 +14,7 @@ After this sprint, you will be able to:
 - Apply domains to table columns and use BOOLEAN values in SQL predicates.
 - Display domain-formatted values and find domain usage in the data dictionary.
 
-Estimated Time: 10 minutes
-
-## Answer
-
-Schemas often repeat the same rules in multiple tables: email columns use the same validation, quantities must stay within the same range, and flags use separate conventions. When a rule changes, every copy must be updated.
-
-Oracle Database 26ai SQL Domains let you define a data type, constraints, display format, and annotations once, then reuse them on columns. Oracle Database 26ai also supports a native `BOOLEAN` data type.
+**Estimated Time:** 10 minutes
 
 ### Before you begin
 
