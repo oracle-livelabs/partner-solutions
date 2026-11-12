@@ -26,7 +26,7 @@ Learn how to
 The instructions below show you how to import the sample notebook, and change default visualization settings as needed.  
 First **import** the sample notebook and then execute the relevant paragraph for each step in task 2.   
 
-1. If you did not download the workshop resources in Lab 3 or need to do that again, use this [**link**](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip "URL for workshop resources").
+1. If you did not download the workshop resources in Lab 3 or need to do that again, use this [**link**](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip "URL for workshop resources").
 
 2. Click the **Notebooks** menu icon and then on the **Import** notebook icon on the top right.  
 
@@ -60,7 +60,7 @@ If the compute environment is not ready as yet and the code cannot be executed t
 
 1. The first few paragraphs contain SQL queries to explore the `OCW_NODES` and `OCW_EDGES` tables. Note that edges have a `REASON` attribute with possible values being {`Forms Dependency`, `Data Model`, `Data access`, `Implementation`, `Process Flow`}. We will use these when loading the subgraph to analyze.  
 
-  ![Edges types in the graph](images/notebook-edge-types.png "Edge types in the graph")
+    ![Edges types in the graph](images/notebook-edge-types.png "Edge types in the graph")
 
 2. We will load the graph into the in-memory graph server in order to execute some graph algorithms.
 
@@ -109,7 +109,7 @@ If the compute environment is not ready as yet and the code cannot be executed t
     See the [PGQL site](https://pgql-lang.org) and specification for more details on the syntax and features of the language.  
     The Getting Started notebook folder also has a tutorial on PGQL.  
 
-4.   Note that dependency graph is essentially a tree with one Forms module at the root, i.e. the landing page, connected to all others (i.e. screens you can navigate to in the application). 
+4. Note that dependency graph is essentially a tree with one Forms module at the root, i.e. the landing page, connected to all others (i.e. screens you can navigate to in the application). 
     So this isn't a very useful avenue for exploration. Let's instead look at the graph of relationships between the database tables as defined either in the data model or in the application logic. That is, we load and view the subgraph with edges having a reason of `Data Model` or `Implementation`.  
     That query is similar to one above with just a simple change to the WHERE clause.  
 
@@ -122,65 +122,65 @@ If the compute environment is not ready as yet and the code cannot be executed t
      </copy>
      ```
 
-Execute this paragraph and then follow the optional steps below to alter the visualization as follows:  
-- Render the edges by their `reason` values to show data model edges as dashed red lines. This is known as a **Highlight** 
-- Render the nodes in different size based on the value of the `TOTAL_DML` property and use a database table icon to symbolize them. 
+    Execute this paragraph and then follow the optional steps below to alter the visualization as follows:  
+    - Render the edges by their `reason` values to show data model edges as dashed red lines. This is known as a **Highlight** 
+    - Render the nodes in different size based on the value of the `TOTAL_DML` property and use a database table icon to symbolize them. 
 
-Click on the settings icon to open up the dialog.  
+    Click on the settings icon to open up the dialog.  
 
-First change the size of the Height to 550 pixels.  
-![Change view height](images/notebook-change-view-height.png "Change view height")  
+    First change the size of the Height to 550 pixels.  
+    ![Change view height](images/notebook-change-view-height.png "Change view height")  
 
-Then click on Customization and scroll down a bit and change the Page Size from 100 to 800 to show the graph as a whole.  
+    Then click on Customization and scroll down a bit and change the Page Size from 100 to 800 to show the graph as a whole.  
 
-![Change view height](images/notebook-change-page-size.png "Change view height")  
+    ![Change view height](images/notebook-change-page-size.png "Change view height")  
 
-Now let's add the highlights on the edges and nodes.  
+    Now let's add the highlights on the edges and nodes.  
 
-Click the **Highlights** tab and then on New Highlight.  
+    Click the **Highlights** tab and then on New Highlight.  
 
-![Add a highlight](images/notebook-highlights-tab.png "Add a highlight") 
+    ![Add a highlight](images/notebook-highlights-tab.png "Add a highlight") 
 
-Click on Edges to add one specific to edges.  Click the `+` sign next to **Conditions** to add one for the edges.  
-Choose `REASON` as the edge property and `Data Model` as its value.  
+    Click on Edges to add one specific to edges.  Click the `+` sign next to **Conditions** to add one for the edges.  
+    Choose `REASON` as the edge property and `Data Model` as its value.  
 
-![Highlight data model edges](images/notebook-edge-data-model-1.png "Highlight Data Model edges")
+    ![Highlight data model edges](images/notebook-edge-data-model-1.png "Highlight Data Model edges")
 
-Scroll down and set the Size, Color, Style, and Label as shown in the screenshots below.  
+    Scroll down and set the Size, Color, Style, and Label as shown in the screenshots below.  
 
-![Highlight data model edges](images/notebook-edge-data-model-2.png "Highlight Data Model edges")  
+    ![Highlight data model edges](images/notebook-edge-data-model-2.png "Highlight Data Model edges")  
 
-![Highlight data model edges](images/notebook-edge-data-model-3.png "Highlight Data Model edges")  
-
-
-Repeat the process for edges with reason = 'Implementation'.  
-
-![Highlight implementation edges](images/notebook-edge-implementation-1.png "Highlight implementation edges")  
-
-![Highlight dimplementation edges](images/notebook-edge-implementation-2.png "Highlight implementation edges")  
-
-Next add highlights on the Vertices (nodes).  Click on New Highlight and then Vertices and set the Condition, Icon, and Label as shown below.  
-
-![Highlight nodes](images/notebook-node-table-icon-1.png "Highlight table nodes")  
-
-![Highlight nodes](images/notebook-node-table-icon-2.png "Highlight table nodes")  
-
- Lastly, add three new highlights to display the TABLE nodes based on their TOTAL\_DML value.  
-
- Add them in the following sequence: TOTAL\_DML > 200, TOTAL\_DML <= 200, and TOTAL\_DML <= 3. 
-
- The following screenshots show the steps for the first highlight (total\_dml > 200). Repeat the steps for the other two. 
-
- ![Highlight by total dml property](images/notebook-total-dml-1.png "Highlight by total dml value")  
-
- ![Highlight by total dml property](images/notebook-total-dml-2.png "Highlight by total dml value")    
-
-Once you're done you should have something similar to the following screenshot. The colors may differ.
-
- ![All highlights](images/notebook-dm-graph-highlights.png "Data model graph highlights")
+    ![Highlight data model edges](images/notebook-edge-data-model-3.png "Highlight Data Model edges")  
 
 
-5.  Now let's run the Louvain community detection algorithm on this subgraph.  
+    Repeat the process for edges with reason = 'Implementation'.  
+
+    ![Highlight implementation edges](images/notebook-edge-implementation-1.png "Highlight implementation edges")  
+
+    ![Highlight dimplementation edges](images/notebook-edge-implementation-2.png "Highlight implementation edges")  
+
+    Next add highlights on the Vertices (nodes).  Click on New Highlight and then Vertices and set the Condition, Icon, and Label as shown below.  
+
+    ![Highlight nodes](images/notebook-node-table-icon-1.png "Highlight table nodes")  
+
+    ![Highlight nodes](images/notebook-node-table-icon-2.png "Highlight table nodes")  
+
+    Lastly, add three new highlights to display the TABLE nodes based on their TOTAL\_DML value.  
+
+    Add them in the following sequence: TOTAL\_DML > 200, TOTAL\_DML <= 200, and TOTAL\_DML <= 3. 
+
+    The following screenshots show the steps for the first highlight (total\_dml > 200). Repeat the steps for the other two. 
+
+    ![Highlight by total dml property](images/notebook-total-dml-1.png "Highlight by total dml value")  
+
+    ![Highlight by total dml property](images/notebook-total-dml-2.png "Highlight by total dml value")    
+
+    Once you're done you should have something similar to the following screenshot. The colors may differ.
+
+    ![All highlights](images/notebook-dm-graph-highlights.png "Data model graph highlights")
+
+
+5. Now let's run the Louvain community detection algorithm on this subgraph.  
     The first step is load the subgraph into memory using the Python API and the MATCH and WHERE clause shown in the visualization query above. i.e.   
     ```
      <copy>
