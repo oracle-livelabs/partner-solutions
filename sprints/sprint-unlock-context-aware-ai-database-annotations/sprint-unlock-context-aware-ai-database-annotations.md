@@ -21,9 +21,7 @@ Estimated Time: **15 minutes**
 
 Connect to an Oracle Database 26ai instance using your preferred SQL worksheet.
 
-## Tasks
-
-### 1. Create a table with annotations
+## Create a table with annotations
 
 Verify your database connection:
 
@@ -65,7 +63,7 @@ ANNOTATIONS (
 );
 ```
 
-  The annotations describe the table and its columns. For example, `product_id` is marked as a surrogate key and given a display label.
+The annotations describe the table and its columns. For example, `product_id` is marked as a surrogate key and given a display label.
 
 ### 2. Query annotation metadata
 
@@ -86,7 +84,7 @@ FROM user_annotations_usage
 WHERE object_name = 'PRODUCTS';
 ```
 
-  The output lists annotations for the table and its columns, including values such as `UI_Display = 'Product ID'`.
+The output lists annotations for the table and its columns, including values such as `UI_Display = 'Product ID'`.
 
 ### 3. Modify annotations
 
@@ -100,7 +98,7 @@ ALTER TABLE products
   );
 ```
 
-  Update the `unit_price` column by dropping its `Classification` annotation and adding a visibility status:
+Update the `unit_price` column by dropping its `Classification` annotation and adding a visibility status:
 
 ```sql
 ALTER TABLE products MODIFY (
@@ -111,7 +109,7 @@ ALTER TABLE products MODIFY (
 );
 ```
 
-  Run the metadata query again to review the changes:
+Run the metadata query again to review the changes:
 
 ```sql
 SELECT object_name,
