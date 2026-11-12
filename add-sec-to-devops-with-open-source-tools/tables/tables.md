@@ -1,5 +1,16 @@
 # Tables in LiveLabs
 
+## Introduction
+
+This reference explains how to format Markdown tables and set table captions in LiveLabs.
+
+Estimated Time: Reference material; no timed task.
+
+### Objectives
+
+- Format and align Markdown table columns.
+- Set a custom table caption.
+
 ## Tables are cool!
 
 You can define a table in Markdown just like so:
@@ -52,3 +63,7 @@ As you can see, the numbering is added automatically.
 Isn't that cool?
 
 You can also refer to the [LiveLabs Markdown Cheatsheet](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/labfiles/LiveLabs_MD_Cheat_Sheet.pdf)
+
+## Acknowledgements
+
+This page uses the shared table examples from the Oracle LiveLabs workshop template.
