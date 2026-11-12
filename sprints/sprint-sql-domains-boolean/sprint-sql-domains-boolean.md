@@ -1,6 +1,6 @@
 # How do I enforce a data rule once and reuse it on every column with SQL Domains in Oracle Database 26ai?
 
-## Answer
+## Introduction
 
 Schemas often repeat the same rules in multiple tables: email columns use the same validation, quantities must stay within the same range, and flags use separate conventions. When a rule changes, every copy must be updated.
 
