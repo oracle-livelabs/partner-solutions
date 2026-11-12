@@ -30,7 +30,7 @@ This lab assumes you have completed all previous labs successfully.
 
     ```
     <copy>
-    https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
     </copy>
     ```
 
@@ -44,7 +44,7 @@ This lab assumes you have completed all previous labs successfully.
 
     ```
     <copy>
-    wget --no-check-certificate https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
+    wget --no-check-certificate https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
     </copy>
    ```
 
