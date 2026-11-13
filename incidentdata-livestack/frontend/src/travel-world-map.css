@@ -1,0 +1,12 @@
+.cdr-world{border:1px solid #c6dce3;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 6px 22px #173d4b0c}
+.cdr-world-toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;background:#f7fbfc;border-bottom:1px solid #dce8ec}
+.cdr-world-toolbar strong{display:block;font-size:18px}.cdr-world-toolbar span{display:block;margin-top:5px;font-size:12px;color:#52717d}
+.cdr-world-controls{display:flex;flex-wrap:wrap;gap:6px}.cdr-world-controls button{min-height:36px}.cdr-world-controls button[aria-pressed=true]{background:#e0edf1;border-color:#769aa8}
+.cdr-world-legend{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:10px 18px;font-size:12px;color:#45616d}.cdr-world-legend span{display:flex;align-items:center;gap:6px}.cdr-world-legend span:last-child{margin-left:auto;font-size:11px}.cdr-world-legend i{width:18px;height:3px;border-radius:4px}
+.cdr-world>svg{width:100%;display:block;aspect-ratio:1100/570;background:#eaf4f8;touch-action:none;cursor:grab}.cdr-world>svg:active{cursor:grabbing}.cdr-world-route{cursor:pointer;outline:none}.cdr-world-route:focus path:first-child{stroke-width:4}.cdr-world-route{transition:opacity .1s}
+.cdr-world-city{font:600 11px system-ui,sans-serif;fill:#2e505e;paint-order:stroke;stroke:#fffffff5;stroke-width:4;stroke-linejoin:round;pointer-events:none}
+.cdr-world-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;padding:10px 18px;border-top:1px solid #d4e3e9;color:#597582}.cdr-world-footer a{color:#376878}
+.cdr-world-inspector{padding:15px 18px;min-height:94px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px;background:#f4f8fa;border-top:1px solid #dce8ec;overflow-wrap:anywhere}.cdr-world-inspector span{font-size:13px}.cdr-world-inspector small{color:#56717c}
+.cdr-world-records{padding:14px 18px;border-top:1px solid #dce8ec}.cdr-world-records>div{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px}.cdr-world-records>button{display:block;text-align:left;white-space:normal;margin:6px 0;width:100%}
+.cdr-world-warning{padding:12px 18px;margin:0;background:#fff8eb;font-size:13px}
+@media(max-width:600px){.cdr-world-toolbar{padding:12px}.cdr-world-legend{padding:10px 12px}.cdr-world-legend span:last-child{margin-left:0;width:100%}.cdr-world>svg{min-height:320px}.cdr-world-controls button{padding:8px!important}}

@@ -1,0 +1,39 @@
+.poi-visual-search{min-width:0;padding:20px;border:1px solid #c7dada;border-top:3px solid #437c94;background:#f8fbfc}
+.poi-visual-search__heading small{font-size:10px;font-weight:700;letter-spacing:.08em;color:#437c78}
+.poi-visual-search__heading h3{margin:6px 0;font-size:19px}
+.poi-visual-search__heading p,.poi-visual-search [role=status],.poi-visual-search__note{font-size:12px;line-height:1.5;color:#566873}
+.poi-visual-search__query{display:flex;align-items:center;gap:24px;margin:18px 0;background:#fff;border:1px solid #dde5e8;padding:16px}
+.poi-visual-search__preview,.poi-visual-search__placeholder{width:180px;height:220px;object-fit:contain;background:#edf1f2;border-radius:4px;flex-shrink:0}
+.poi-visual-search__placeholder{display:grid;place-items:center;color:#66757e;font-size:13px}
+.poi-visual-search__controls{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0}
+.poi-visual-search__controls strong{font-size:14px}.poi-visual-search__controls small{font-size:11px;color:#566873}
+.poi-visual-search__filename{font-size:12px;overflow-wrap:anywhere}
+.poi-visual-search__choose{position:relative;display:inline-block;padding:10px 14px;background:#437c94;color:#fff;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer}
+.poi-visual-search__choose input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.poi-visual-search__choose:focus-within{outline:3px solid #a95b30;outline-offset:3px}
+.poi-visual-search__clear{border:0;background:transparent;color:#437c94;padding:4px 0;text-decoration:underline;font-size:12px;cursor:pointer}
+.poi-visual-search__results h4{font-size:16px;margin:18px 0 8px}
+.poi-visual-search__cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.poi-visual-match{position:relative;background:#fff;border:1px solid #d4dfe3;border-radius:5px;overflow:hidden}
+.poi-visual-match>img{display:block;width:100%;height:170px;object-fit:contain;background:#eef2f3;padding:8px;box-sizing:border-box}
+.poi-visual-match__rank{position:absolute;left:9px;top:9px;padding:4px 7px;background:#fff;border:1px solid #d4dfe3;border-radius:4px;font-size:12px;font-weight:700}
+.poi-visual-match__body{padding:13px;display:flex;flex-direction:column;gap:8px}
+.poi-visual-match h5{margin:0;font-size:16px}.poi-visual-match__body>small{font-size:10px;color:#566873}
+.poi-visual-match__score{color:#356c80;font-size:21px}.poi-visual-match__score span{font-size:11px;font-weight:400}
+.poi-visual-match button{background:#fff;border:1px solid #86a7b6;border-radius:3px;padding:8px;color:#356c80;cursor:pointer;font-size:12px}
+.poi-visual-match button:hover{background:#edf5f6}
+.poi-dual-search{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.poi-dual-search>.poi-visual-search,.poi-dual-search>.poi-narrative-search{padding:16px;border:1px solid #c7dada;border-top:3px solid #437c94;min-width:0;background:#f8fbfc}
+.poi-dual-search>.poi-narrative-search{border-top-color:#4b7776;gap:14px}
+.poi-dual-search .poi-visual-search__query{gap:12px;padding:10px;align-items:flex-start}
+.poi-dual-search .poi-visual-search__preview,.poi-dual-search .poi-visual-search__placeholder{width:100px;height:140px}
+.poi-dual-search .poi-visual-search__controls{gap:9px}
+.poi-dual-search .poi-visual-search__controls strong{font-size:12px}
+.poi-dual-search .poi-visual-search__choose{padding:9px;font-size:11px;max-width:100%;box-sizing:border-box}
+.poi-search-results{padding:18px;border:1px solid #c7dada;background:#f8fbfc;min-width:0}
+.poi-search-results h3{font-size:19px;margin:0 0 10px}
+.poi-search-results>p{font-size:12px;line-height:1.5;color:#566873}
+.poi-results-source{overflow-wrap:anywhere}
+.poi-visual-match__body>p{font-size:12px;line-height:1.5;color:#566873;margin:0}
+@media(max-width:1050px){.poi-dual-search{grid-template-columns:1fr}}
+@media(max-width:600px){.poi-visual-search{padding:12px}.poi-visual-search__query{align-items:flex-start;gap:14px;padding:10px}.poi-visual-search__preview,.poi-visual-search__placeholder{width:110px;height:150px}.poi-visual-search__cards{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}}

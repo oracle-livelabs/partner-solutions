@@ -1,0 +1,5 @@
+Document: account-directory comparison
+Care worker: Lena Harper; worker identifier DEMO-WORKER-17; assigned service account CARE-ACCOUNT-17.
+Outside contact: Morgan Reed; volunteered directory entry EXT-ACCOUNT-04.
+Compared extract: DEMO-MSG-09A.
+Directory association is distinct from verified account control and message authorship. Shared use, export completeness and independent attribution have not been resolved. No source places Morgan Reed at the incident or with the missing tool case.

@@ -1,0 +1,6 @@
+# Preserve the accepted AI Opps app and every backend/runtime file.
+FROM localhost/adelaide-crime-intelligence:ai-ops-sweep-20260930
+WORKDIR /app
+# Add fingerprinted frontend assets; keep prior assets for already-open clients.
+COPY frontend/dist/assets/ ./frontend/dist/assets/
+COPY frontend/dist/index.html ./frontend/dist/index.html

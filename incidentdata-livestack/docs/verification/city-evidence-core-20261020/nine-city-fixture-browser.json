@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "mode": "nine-city fixture UI",
+  "checks": [
+    {
+      "city": "Adelaide",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Perth",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Brisbane",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Amsterdam",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Brussels",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Dublin",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Boston",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Chicago",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    },
+    {
+      "city": "Las Vegas",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    }
+  ],
+  "errors": [],
+  "noWrites": true
+}

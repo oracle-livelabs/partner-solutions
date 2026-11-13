@@ -1,0 +1,100 @@
+{
+  "mode": "--check",
+  "profiles": 9,
+  "expectedAssertions": 63,
+  "added": 0,
+  "committed": false,
+  "activeProfileUnchanged": true,
+  "distribution": [
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "BOSTON_DATA_V2",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "BOSTON_DATA_V2",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "BRISBANE_DATA_V2",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "BRISBANE_DATA_V2",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "CHICAGO_DATA_V2",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "CHICAGO_DATA_V2",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "LAS_VEGAS_DATA_V2",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    },
+    {
+      "PROFILE_CODE": "PERTH_DATA_V2",
+      "REVIEW_STATUS": "declared",
+      "IDENTIFIER_COUNT": 4
+    },
+    {
+      "PROFILE_CODE": "PERTH_DATA_V2",
+      "REVIEW_STATUS": "proposed",
+      "IDENTIFIER_COUNT": 3
+    }
+  ]
+}

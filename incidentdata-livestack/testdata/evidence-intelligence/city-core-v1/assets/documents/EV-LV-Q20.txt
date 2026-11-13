@@ -1,0 +1,5 @@
+Collection note without a handover signature — North Strip area (City of Las Vegas)
+
+Authored fictional teaching supplement for Las Vegas; linked incident SYN-LV-2026-01501, North Strip area (City of Las Vegas).
+A fictional collection request repeats LV-CORE-05 in its workshop-reference field, but the handover, weight and recipient fields are blank. A request is not a completed transfer and does not establish who handled a particular part.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

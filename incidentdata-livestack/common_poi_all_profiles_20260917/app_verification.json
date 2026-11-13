@@ -1,0 +1,224 @@
+{
+  "completed_at": "2026-09-17T06:13:39.526Z",
+  "live_scope": [
+    {
+      "user": "statewide_admin",
+      "count": 13
+    },
+    {
+      "user": "adelaide_central_analyst",
+      "count": 13
+    },
+    {
+      "user": "read_only_viewer",
+      "count": 13
+    },
+    {
+      "user": "northern_analyst",
+      "count": 0
+    },
+    {
+      "user": "southern_analyst",
+      "count": 0
+    }
+  ],
+  "details": [
+    {
+      "ref": "POI-NBNW-GEORGE",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-NBNW-CLARA",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-NBNW-EVE",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-NBNW-PHILIP",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-FNET-MARA",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-FNET-ELIAS",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-FNET-NOAH",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-FNET-TESSA",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-FNET-DARNELL",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-V2-VIVIENNE",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-V2-JULIAN",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-V2-TONY",
+      "portrait_checksum": true,
+      "detail": true
+    },
+    {
+      "ref": "POI-V2-GEORGE",
+      "portrait_checksum": true,
+      "detail": true
+    }
+  ],
+  "all_saved_profiles": [
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA",
+      "TOTAL_PEOPLE": 13,
+      "COMMON_PEOPLE": 13,
+      "NARRATIVE_VECTORS": 13,
+      "PORTRAIT_VECTORS": 13
+    },
+    {
+      "PROFILE_CODE": "BRISBANE_DATA",
+      "TOTAL_PEOPLE": 16,
+      "COMMON_PEOPLE": 13,
+      "NARRATIVE_VECTORS": 13,
+      "PORTRAIT_VECTORS": 13
+    },
+    {
+      "PROFILE_CODE": "PERTH_DATA",
+      "TOTAL_PEOPLE": 25,
+      "COMMON_PEOPLE": 13,
+      "NARRATIVE_VECTORS": 13,
+      "PORTRAIT_VECTORS": 13
+    },
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "TOTAL_PEOPLE": 15,
+      "COMMON_PEOPLE": 13,
+      "NARRATIVE_VECTORS": 13,
+      "PORTRAIT_VECTORS": 13
+    },
+    {
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "TOTAL_PEOPLE": 13,
+      "COMMON_PEOPLE": 13,
+      "NARRATIVE_VECTORS": 13,
+      "PORTRAIT_VECTORS": 13
+    },
+    {
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "TOTAL_PEOPLE": 13,
+      "COMMON_PEOPLE": 13,
+      "NARRATIVE_VECTORS": 13,
+      "PORTRAIT_VECTORS": 13
+    },
+    {
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "TOTAL_PEOPLE": 13,
+      "COMMON_PEOPLE": 13,
+      "NARRATIVE_VECTORS": 13,
+      "PORTRAIT_VECTORS": 13
+    }
+  ],
+  "restore_join_checks": [
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA",
+      "RESTORABLE_CAST": 13,
+      "UNIQUE_REFS": 13,
+      "UNIQUE_PORTRAITS": 13,
+      "NARRATIVE_DIMENSIONS": 384,
+      "PORTRAIT_DIMENSIONS": 512
+    },
+    {
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "RESTORABLE_CAST": 13,
+      "UNIQUE_REFS": 13,
+      "UNIQUE_PORTRAITS": 13,
+      "NARRATIVE_DIMENSIONS": 384,
+      "PORTRAIT_DIMENSIONS": 512
+    },
+    {
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "RESTORABLE_CAST": 13,
+      "UNIQUE_REFS": 13,
+      "UNIQUE_PORTRAITS": 13,
+      "NARRATIVE_DIMENSIONS": 384,
+      "PORTRAIT_DIMENSIONS": 512
+    },
+    {
+      "PROFILE_CODE": "BRISBANE_DATA",
+      "RESTORABLE_CAST": 13,
+      "UNIQUE_REFS": 13,
+      "UNIQUE_PORTRAITS": 13,
+      "NARRATIVE_DIMENSIONS": 384,
+      "PORTRAIT_DIMENSIONS": 512
+    },
+    {
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "RESTORABLE_CAST": 13,
+      "UNIQUE_REFS": 13,
+      "UNIQUE_PORTRAITS": 13,
+      "NARRATIVE_DIMENSIONS": 384,
+      "PORTRAIT_DIMENSIONS": 512
+    },
+    {
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "RESTORABLE_CAST": 13,
+      "UNIQUE_REFS": 13,
+      "UNIQUE_PORTRAITS": 13,
+      "NARRATIVE_DIMENSIONS": 384,
+      "PORTRAIT_DIMENSIONS": 512
+    },
+    {
+      "PROFILE_CODE": "PERTH_DATA",
+      "RESTORABLE_CAST": 13,
+      "UNIQUE_REFS": 13,
+      "UNIQUE_PORTRAITS": 13,
+      "NARRATIVE_DIMENSIONS": 384,
+      "PORTRAIT_DIMENSIONS": 512
+    }
+  ],
+  "restore_executed": false,
+  "browser": {
+    "profile_cards": 13,
+    "all_names_rendered": true,
+    "all_portraits_loaded": true,
+    "selected_profile": "Mara Vega",
+    "page_errors": [],
+    "write_requests": []
+  },
+  "health": {
+    "status": "healthy",
+    "database": {
+      "STATUS": "healthy"
+    },
+    "security": "Deep Sec policy baseline + scoped database view"
+  },
+  "container": {
+    "status": "running",
+    "started_at": "2026-09-15T08:20:49.034966069Z",
+    "restart_count": 0
+  },
+  "no_restart_performed": true,
+  "no_activation_performed": true
+}

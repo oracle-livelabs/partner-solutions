@@ -1,0 +1,10 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-C02
+Balanced purchase example retained for comparison
+
+Comparison example
+Line A: board; EUR 20.00
+Line B: mount; EUR 30.00
+Total: EUR 50.00
+Unique line identifiers; entries reconcile.
+
+Authored fixture; not a recovered or original incident document.

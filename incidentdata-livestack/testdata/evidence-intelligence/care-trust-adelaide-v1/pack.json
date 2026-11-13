@@ -1,0 +1,1410 @@
+{
+  "packageCode": "EI_ADELAIDE_CARE_V1",
+  "profileCode": "ADELAIDE_DATA_V2",
+  "version": "1.0",
+  "knowledgeSetId": "KS-CARE-TRUST-001",
+  "authoredAt": "2026-09-27",
+  "patternCode": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+  "caseRef": "CASE-V2-RES-001",
+  "people": [
+    {
+      "personRef": "POI-ADL-CARE-W01",
+      "displayName": "Ellis Ward",
+      "role": "care_worker",
+      "sourceRefs": [
+        "EV-ADL-H03",
+        "EV-ADL-H04",
+        "EV-ADL-H06"
+      ],
+      "narrativeSummary": "Wholly fictional home-support worker named in assignment and directory records. Assignment does not establish attendance, authorship or payment use.",
+      "narrativeText": "Ellis Ward is a wholly fictional home-support worker associated with the invented provider DEMO-ADL-SUPPORT-01. Separate extracts record an allocated support role for Resident A in Marion and Resident B in Oaklands Park. A directory associates a service account with that allocation, but the retained outward message has not been independently attributed to its author. Resident B permitted a limited transport enquiry; no equivalent authority for Resident A is supplied. Ellis is a documentary comparison contact, not an identified offender or financial helper."
+    },
+    {
+      "personRef": "POI-ADL-CARE-X01",
+      "displayName": "Rowan Hale",
+      "role": "external_contact",
+      "sourceRefs": [
+        "EV-ADL-H06",
+        "EV-ADL-H14"
+      ],
+      "narrativeSummary": "Wholly fictional transport-enquiry contact outside the allocated support team; directory association is not verified account control or presence.",
+      "narrativeText": "Rowan Hale is a wholly fictional outside contact named in a volunteered directory entry for a community-transport enquiry. A retained exchange includes a corresponding account label, while independent account ownership and message authorship remain unverified. Rowan supplies a possible enquiry context for Resident B, but cannot explain Resident A’s label in the retained text. No source places Rowan at a dwelling or connects Rowan with spending, entry or missing property. This is contextual document review, not an allegation of responsibility."
+    }
+  ],
+  "newLinks": [
+    {
+      "personRef": "POI-ADL-CARE-W01",
+      "incidentRef": "ACI-V2-2026-0001",
+      "sourceRefs": [
+        "EV-ADL-H03"
+      ],
+      "summary": "Authored care-allocation context in EV-ADL-H03 only. Not evidence of attendance, message authorship, payment use or responsibility."
+    },
+    {
+      "personRef": "POI-ADL-CARE-W01",
+      "incidentRef": "ACI-V2-2026-0002",
+      "sourceRefs": [
+        "EV-ADL-H04",
+        "EV-ADL-H07"
+      ],
+      "summary": "Authored allocation and limited-permission context in EV-ADL-H04/H07; no identification of the residential visitor or financial helper."
+    },
+    {
+      "personRef": "POI-ADL-CARE-X01",
+      "incidentRef": "ACI-V2-2026-0001",
+      "sourceRefs": [
+        "EV-ADL-H06"
+      ],
+      "summary": "Documentary account-directory comparison in EV-ADL-H06 only; no verified account control, dwelling attendance or responsibility."
+    },
+    {
+      "personRef": "POI-ADL-CARE-X01",
+      "incidentRef": "ACI-V2-2026-0002",
+      "sourceRefs": [
+        "EV-ADL-H14"
+      ],
+      "summary": "Attributed transport-enquiry clarification in EV-ADL-H14; possible lawful context, not independent message authentication or attendance."
+    }
+  ],
+  "posts": [
+    {
+      "ref": "SYN-ADL-CARE-POST-01",
+      "incidentRef": "ACI-V2-2026-0001",
+      "date": "2026-06-24T00:00:00Z",
+      "text": "[Fictional community post] Someone close to me has raised a concern about an approach to their home. They rely on help and are now wondering who knows their private circumstances. They want to ask questions without losing that help. Where can they start privately? Please do not name anyone or share addresses.",
+      "basis": "A separately authored private follow-up in EV-ADL-H15 supplies ACI-V2-2026-0001 and permission to record the concern. Public wording alone identifies neither resident nor event."
+    },
+    {
+      "ref": "SYN-ADL-CARE-POST-02",
+      "incidentRef": "ACI-V2-2026-0002",
+      "date": "2026-06-24T01:00:00Z",
+      "text": "[Fictional community post] I agreed to help arranging transport, but that was not permission to share everything about me. After an unfamiliar approach to my home I want the limits of that permission recorded. I cannot say that the two things are connected.",
+      "basis": "A separately authored private clarification in EV-ADL-H16 supplies ACI-V2-2026-0002. Limited transport permission is a comparison context, not corroboration of a visitor or a shared cause."
+    },
+    {
+      "ref": "SYN-ADL-CARE-POST-03",
+      "incidentRef": null,
+      "date": "2026-06-25T00:00:00Z",
+      "text": "[Fictional community post] Our discussion group is asking how to query an unfamiliar home-support invoice. A billing question is not proof of fraud. We are not naming a provider or discussing any particular household.",
+      "basis": null
+    }
+  ],
+  "items": [
+    {
+      "evidenceRef": "EV-ADL-H01",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Residential daytime entry report near a side access in Marion",
+      "description": "The unchanged Marion report and a separately authored resident-support concern form the opening lead.",
+      "kind": "incident_context_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0001\nSuburb: Marion; category: SCT - Residence; status: reported.\nOriginal title: Residential daytime entry report near a side access in Marion\nOriginal narrative, reproduced verbatim: A synthetic report was received on a weekday morning about marks near a side window at a dwelling in Marion. The record notes a brief daytime occupancy-context observation for teaching comparison; it does not identify a person or establish a connection.\nSource layer 2: newly authored teaching supplement\nNew authored context, recorded 24 June: Resident A (ADL-RES-A) receives help at home and asks who has access to their private circumstances. In a fictional attributed follow-up, the resident recalls two brief knocks before noticing the marks; this is not an independently verified observation. No property loss or entry by a named person is added.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "originalReportUnchanged": true,
+        "originalReportSha256": "269a8953ce762042e220c308dbd78493dff7cc379d30ca1d32ef0b482f961c47"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H01.txt",
+        "mimeType": "text/plain",
+        "sha256": "2ab34b8be8488e4cc8274e008b9607073c8c6836162c94ec975bf829ad0230ff",
+        "caption": "The unchanged Marion report and a separately authored resident-support concern form the opening lead."
+      },
+      "indexText": "Residential daytime entry report near a side access in Marion\nThe unchanged Marion report and a separately authored resident-support concern form the opening lead.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0001\nSuburb: Marion; category: SCT - Residence; status: reported.\nOriginal title: Residential daytime entry report near a side access in Marion\nOriginal narrative, reproduced verbatim: A synthetic report was received on a weekday morning about marks near a side window at a dwelling in Marion. The record notes a brief daytime occupancy-context observation for teaching comparison; it does not identify a person or establish a connection.\nSource layer 2: newly authored teaching supplement\nNew authored context, recorded 24 June: Resident A (ADL-RES-A) receives help at home and asks who has access to their private circumstances. In a fictional attributed follow-up, the resident recalls two brief knocks before noticing the marks; this is not an independently verified observation. No property loss or entry by a named person is added.",
+      "indexTextSha256": "e17259eb9b09bb4ddf5e12d9bd2e7b5efeed7112431c10abc4dea1eaf7af37ab"
+    },
+    {
+      "evidenceRef": "EV-ADL-H02",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0002",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Daytime residential approach reported in Oaklands Park",
+      "description": "The Oaklands Park approach remains a context report, with a separate limited-permission question.",
+      "kind": "incident_context_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0002\nSuburb: Oaklands Park; category: SCT - Residence; status: under_review.\nOriginal title: Daytime residential approach reported in Oaklands Park\nOriginal narrative, reproduced verbatim: A synthetic weekday report describes an unfamiliar approach to a residential entry in Oaklands Park around midday. The entry is retained as a broad context record only and is not evidence of a linked series.\nSource layer 2: newly authored teaching supplement\nNew authored context, recorded 24 June: Resident B (ADL-RES-B) receives home support and wants a prior transport-enquiry permission recorded alongside the concern. This does not identify the person who approached the dwelling or connect that approach with Resident A.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-B",
+          "sourceQuote": "ADL-RES-B"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "under_review",
+        "originalReportUnchanged": true,
+        "originalReportSha256": "4d0687f44fb925477024e5a2c60a505db86aac5abead99802a281e492c8e9d3d"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-03T03:12:00.000Z",
+        "suburb": "Oaklands Park",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0184,
+        "longitude": 138.5473,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H02.txt",
+        "mimeType": "text/plain",
+        "sha256": "831d524157fa5d474f271fc599eba1d3d8232c895339e3871b49d1d30da1ec8d",
+        "caption": "The Oaklands Park approach remains a context report, with a separate limited-permission question."
+      },
+      "indexText": "Daytime residential approach reported in Oaklands Park\nThe Oaklands Park approach remains a context report, with a separate limited-permission question.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0002\nSuburb: Oaklands Park; category: SCT - Residence; status: under_review.\nOriginal title: Daytime residential approach reported in Oaklands Park\nOriginal narrative, reproduced verbatim: A synthetic weekday report describes an unfamiliar approach to a residential entry in Oaklands Park around midday. The entry is retained as a broad context record only and is not evidence of a linked series.\nSource layer 2: newly authored teaching supplement\nNew authored context, recorded 24 June: Resident B (ADL-RES-B) receives home support and wants a prior transport-enquiry permission recorded alongside the concern. This does not identify the person who approached the dwelling or connect that approach with Resident A.",
+      "indexTextSha256": "16bea9f049edb2ce08e60f86a1406f74c8bc933ce951d991ecd5658be89be1c5"
+    },
+    {
+      "evidenceRef": "EV-ADL-H03",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "A care assignment records a role, not a visit",
+      "description": "The allocated worker and provider are identified in a fictional support extract without an appointment or attendance record.",
+      "kind": "care_assignment_extract",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: redacted support-allocation extract, displayed date 22 June 2026\nClient: ADL-RES-A. Invented provider: DEMO-ADL-SUPPORT-01. Allocated worker: Ellis Ward, reference ADL-WORKER-07.\nThe role is ordinary home support. The extract contains no visit schedule, address, attendance log, bank authority or instruction to disclose information outside the support team.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        },
+        {
+          "namespace": "provider",
+          "value": "DEMO-ADL-SUPPORT-01",
+          "sourceQuote": "DEMO-ADL-SUPPORT-01"
+        },
+        {
+          "namespace": "worker",
+          "value": "ADL-WORKER-07",
+          "sourceQuote": "ADL-WORKER-07"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported"
+      },
+      "personLinks": [
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "basis": "literal_name_mention",
+          "relation": "care_worker",
+          "quote": "Ellis Ward",
+          "startCharacter": 205,
+          "endCharacter": 215,
+          "reviewStatus": "unreviewed",
+          "explanation": "Exact text mention in an authored fictional document; not verified identity, authorship or responsibility."
+        }
+      ],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H03.txt",
+        "mimeType": "text/plain",
+        "sha256": "a40b7edc58e94db0737068109a67ce616aa46e91641003bb38a463100bcbc3d0",
+        "caption": "The allocated worker and provider are identified in a fictional support extract without an appointment or attendance record."
+      },
+      "indexText": "A care assignment records a role, not a visit\nThe allocated worker and provider are identified in a fictional support extract without an appointment or attendance record.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: redacted support-allocation extract, displayed date 22 June 2026\nClient: ADL-RES-A. Invented provider: DEMO-ADL-SUPPORT-01. Allocated worker: Ellis Ward, reference ADL-WORKER-07.\nThe role is ordinary home support. The extract contains no visit schedule, address, attendance log, bank authority or instruction to disclose information outside the support team.",
+      "indexTextSha256": "ddcc63dbb21ef150d1be6b804a1d1ae56ea473ba07484c089acef254496a63e1"
+    },
+    {
+      "evidenceRef": "EV-ADL-H04",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0002",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "The second allocation is not evidence of a common visitor",
+      "description": "A separate assignment names the same support worker for Resident B; it records responsibility, not attendance at either reported approach.",
+      "kind": "care_assignment_extract",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: redacted support-allocation extract, displayed date 22 June 2026\nClient: ADL-RES-B. Invented provider: DEMO-ADL-SUPPORT-01. Allocated worker: Ellis Ward, reference ADL-WORKER-07.\nNo attendance record is supplied. The document does not identify the unfamiliar person in the Oaklands Park report. Provider identity, worker allocation and who physically visited are different questions.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-B",
+          "sourceQuote": "ADL-RES-B"
+        },
+        {
+          "namespace": "provider",
+          "value": "DEMO-ADL-SUPPORT-01",
+          "sourceQuote": "DEMO-ADL-SUPPORT-01"
+        },
+        {
+          "namespace": "worker",
+          "value": "ADL-WORKER-07",
+          "sourceQuote": "ADL-WORKER-07"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "under_review"
+      },
+      "personLinks": [
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "basis": "literal_name_mention",
+          "relation": "care_worker",
+          "quote": "Ellis Ward",
+          "startCharacter": 205,
+          "endCharacter": 215,
+          "reviewStatus": "unreviewed",
+          "explanation": "Exact text mention in an authored fictional document; not verified identity, authorship or responsibility."
+        }
+      ],
+      "incidentContext": {
+        "occurredAt": "2026-06-03T03:12:00.000Z",
+        "suburb": "Oaklands Park",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0184,
+        "longitude": 138.5473,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H04.txt",
+        "mimeType": "text/plain",
+        "sha256": "7bbace43fe2941120e11fc8356e471bcb111d126d9a2768464a6fc92d96f06ba",
+        "caption": "A separate assignment names the same support worker for Resident B; it records responsibility, not attendance at either reported approach."
+      },
+      "indexText": "The second allocation is not evidence of a common visitor\nA separate assignment names the same support worker for Resident B; it records responsibility, not attendance at either reported approach.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: redacted support-allocation extract, displayed date 22 June 2026\nClient: ADL-RES-B. Invented provider: DEMO-ADL-SUPPORT-01. Allocated worker: Ellis Ward, reference ADL-WORKER-07.\nNo attendance record is supplied. The document does not identify the unfamiliar person in the Oaklands Park report. Provider identity, worker allocation and who physically visited are different questions.",
+      "indexTextSha256": "d2daac5871030b660dd6f71bec8e540f0fa9259b1d56479f4bc07a474361b0e3"
+    },
+    {
+      "evidenceRef": "EV-ADL-H05",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "An outward message contains two private client labels",
+      "description": "A redacted retained exchange appears to cross the allocated-team boundary, but its author and purpose are not independently established.",
+      "kind": "retained_message_extract",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: contributor-supplied message transcription, displayed date 23 June 2026\nDisplayed sender label: ADL-SVC-07. Displayed recipient label: ADL-EXT-02.\nRetained text: \"ADL-RES-B asked about community transport. I also have the ADL-RES-A note about getting assistance. Can we discuss the enquiry?\"\nThe contributor says the recipient is outside the allocated support team. The extract gives no address, absence period or medical information. No platform export, account-control evidence or proof of forwarding is supplied. The appearance of both labels does not establish permission for either disclosure.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        },
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-B",
+          "sourceQuote": "ADL-RES-B"
+        },
+        {
+          "namespace": "service_account",
+          "value": "ADL-SVC-07",
+          "sourceQuote": "ADL-SVC-07"
+        },
+        {
+          "namespace": "external_account",
+          "value": "ADL-EXT-02",
+          "sourceQuote": "ADL-EXT-02"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "authorship": "not_independently_established"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H05.txt",
+        "mimeType": "text/plain",
+        "sha256": "3aef0398e8a9cbd4bc14a7d246c29929a7a84ea00975114bab64c60d1289feb7",
+        "caption": "A redacted retained exchange appears to cross the allocated-team boundary, but its author and purpose are not independently established."
+      },
+      "indexText": "An outward message contains two private client labels\nA redacted retained exchange appears to cross the allocated-team boundary, but its author and purpose are not independently established.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: contributor-supplied message transcription, displayed date 23 June 2026\nDisplayed sender label: ADL-SVC-07. Displayed recipient label: ADL-EXT-02.\nRetained text: \"ADL-RES-B asked about community transport. I also have the ADL-RES-A note about getting assistance. Can we discuss the enquiry?\"\nThe contributor says the recipient is outside the allocated support team. The extract gives no address, absence period or medical information. No platform export, account-control evidence or proof of forwarding is supplied. The appearance of both labels does not establish permission for either disclosure.",
+      "indexTextSha256": "5473734806c498a3564f3a649512ef474945ba9703641c9b8e314d42e83d823c"
+    },
+    {
+      "evidenceRef": "EV-ADL-H06",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "A directory offers names to check, not verified authorship",
+      "description": "A redacted directory associates two fictional names with displayed account labels; it does not authenticate the retained message.",
+      "kind": "account_directory_extract",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: volunteered directory comparison, supplied 24 June 2026\nDEMO-ADL-SUPPORT-01 allocation directory: Ellis Ward, ADL-WORKER-07, associated service label ADL-SVC-07.\nSeparate volunteered contact entry: Rowan Hale, outside transport-enquiry contact, displayed label ADL-EXT-02.\nThese entries are not access logs. Who controlled either account at the relevant time, composed the retained text or attended a dwelling is not established.",
+      "markers": [
+        {
+          "namespace": "worker",
+          "value": "ADL-WORKER-07",
+          "sourceQuote": "ADL-WORKER-07"
+        },
+        {
+          "namespace": "service_account",
+          "value": "ADL-SVC-07",
+          "sourceQuote": "ADL-SVC-07"
+        },
+        {
+          "namespace": "external_account",
+          "value": "ADL-EXT-02",
+          "sourceQuote": "ADL-EXT-02"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported"
+      },
+      "personLinks": [
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "basis": "literal_name_mention",
+          "relation": "care_worker",
+          "quote": "Ellis Ward",
+          "startCharacter": 161,
+          "endCharacter": 171,
+          "reviewStatus": "unreviewed",
+          "explanation": "Exact text mention in an authored fictional document; not verified identity, authorship or responsibility."
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "basis": "literal_name_mention",
+          "relation": "external_contact",
+          "quote": "Rowan Hale",
+          "startCharacter": 261,
+          "endCharacter": 271,
+          "reviewStatus": "unreviewed",
+          "explanation": "Exact text mention in an authored fictional document; not verified identity, authorship or responsibility."
+        }
+      ],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H06.txt",
+        "mimeType": "text/plain",
+        "sha256": "9716e7c66cdbbf522140594d93506fb17e23991fc9e91dafcc4bd8db5129f57f",
+        "caption": "A redacted directory associates two fictional names with displayed account labels; it does not authenticate the retained message."
+      },
+      "indexText": "A directory offers names to check, not verified authorship\nA redacted directory associates two fictional names with displayed account labels; it does not authenticate the retained message.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: volunteered directory comparison, supplied 24 June 2026\nDEMO-ADL-SUPPORT-01 allocation directory: Ellis Ward, ADL-WORKER-07, associated service label ADL-SVC-07.\nSeparate volunteered contact entry: Rowan Hale, outside transport-enquiry contact, displayed label ADL-EXT-02.\nThese entries are not access logs. Who controlled either account at the relevant time, composed the retained text or attended a dwelling is not established.",
+      "indexTextSha256": "7468d2a8116f1b836ef75a0eb431ffbe055955db26b95fb58c6b947255136f80"
+    },
+    {
+      "evidenceRef": "EV-ADL-H07",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0002",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Transport permission is specific to one resident and one purpose",
+      "description": "A fictional consent extract allows an initial transport-availability enquiry for Resident B only.",
+      "kind": "consent_extract",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: limited support consent, displayed date 20 June 2026\nClient: ADL-RES-B. Permission: ADL-TRANSPORT-B.\nThe resident permits an initial enquiry about availability of community transport, sharing a first-contact label and the request for a return call. The permission expires once that enquiry is answered. It does not permit sharing medical details, a household routine or any other resident’s information.\nThe extract does not authenticate the outward message, identify its author or establish that it implemented this permission.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-B",
+          "sourceQuote": "ADL-RES-B"
+        },
+        {
+          "namespace": "transport_permission",
+          "value": "ADL-TRANSPORT-B",
+          "sourceQuote": "ADL-TRANSPORT-B"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "under_review",
+        "permissionScope": "one_client_one_initial_transport_enquiry"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-03T03:12:00.000Z",
+        "suburb": "Oaklands Park",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0184,
+        "longitude": 138.5473,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H07.txt",
+        "mimeType": "text/plain",
+        "sha256": "a466bebf7f1aac8b6b0fb8e94d0430a0272f9365b4d7fa4a0533d62f595d21f4",
+        "caption": "A fictional consent extract allows an initial transport-availability enquiry for Resident B only."
+      },
+      "indexText": "Transport permission is specific to one resident and one purpose\nA fictional consent extract allows an initial transport-availability enquiry for Resident B only.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: limited support consent, displayed date 20 June 2026\nClient: ADL-RES-B. Permission: ADL-TRANSPORT-B.\nThe resident permits an initial enquiry about availability of community transport, sharing a first-contact label and the request for a return call. The permission expires once that enquiry is answered. It does not permit sharing medical details, a household routine or any other resident’s information.\nThe extract does not authenticate the outward message, identify its author or establish that it implemented this permission.",
+      "indexTextSha256": "c8310dd9cd6b9aa71379a68081a2454cded2cac4b28d542671b020c5c0702f12"
+    },
+    {
+      "evidenceRef": "EV-ADL-H08",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0003",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Rear-gate access concern logged during weekday hours",
+      "description": "An unchanged comparison report sets a boundary on what the wider watch actually establishes.",
+      "kind": "incident_context_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0003\nSuburb: Morphett Vale; category: SCT - Residence; status: assigned.\nOriginal title: Rear-gate access concern logged during weekday hours\nOriginal narrative, reproduced verbatim: A fictional report records a rear-gate access concern at a dwelling in Morphett Vale during a weekday daytime period. No individual, address, or conclusion is recorded.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "markers": [],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "assigned",
+        "originalReportUnchanged": true,
+        "originalReportSha256": "93c2cb9679d36bd89d2a7c7e0a04092767dd18acd69c3e13c5dc8c7585c24d52"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-08T01:36:00.000Z",
+        "suburb": "Morphett Vale",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.1218,
+        "longitude": 138.5268,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H08.txt",
+        "mimeType": "text/plain",
+        "sha256": "338ab370cd7ce588bc1b1992c3cf86991a99af487c50d6ac84398a0c9dde28ea",
+        "caption": "An unchanged comparison report sets a boundary on what the wider watch actually establishes."
+      },
+      "indexText": "Rear-gate access concern logged during weekday hours\nAn unchanged comparison report sets a boundary on what the wider watch actually establishes.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0003\nSuburb: Morphett Vale; category: SCT - Residence; status: assigned.\nOriginal title: Rear-gate access concern logged during weekday hours\nOriginal narrative, reproduced verbatim: A fictional report records a rear-gate access concern at a dwelling in Morphett Vale during a weekday daytime period. No individual, address, or conclusion is recorded.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "indexTextSha256": "0cf4f8e19a9b862c92d61bfc73ed9e8b4e4cd2b747596c775d49fb99878856d4"
+    },
+    {
+      "evidenceRef": "EV-ADL-H09",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0004",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Residential door-handle concern recorded at midday",
+      "description": "An unchanged comparison report sets a boundary on what the wider watch actually establishes.",
+      "kind": "incident_context_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0004\nSuburb: Edwardstown; category: SCT - Residence; status: reported.\nOriginal title: Residential door-handle concern recorded at midday\nOriginal narrative, reproduced verbatim: A synthetic midday record notes a reported door-handle concern at a dwelling in Edwardstown. It is included to demonstrate analyst review of contextual similarities, not to imply responsibility.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "markers": [],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "originalReportUnchanged": true,
+        "originalReportSha256": "1e57e3ea25f8fbee0d4f8b5d1c9bba23804704011b6aa7e9fb31efcb4b364529"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-10T03:57:00.000Z",
+        "suburb": "Edwardstown",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -34.9801,
+        "longitude": 138.5696,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H09.txt",
+        "mimeType": "text/plain",
+        "sha256": "e2d0792d612fba9129670f68a3b2e64338c5a6edfc7a1054e4c9db4dc6e92a68",
+        "caption": "An unchanged comparison report sets a boundary on what the wider watch actually establishes."
+      },
+      "indexText": "Residential door-handle concern recorded at midday\nAn unchanged comparison report sets a boundary on what the wider watch actually establishes.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0004\nSuburb: Edwardstown; category: SCT - Residence; status: reported.\nOriginal title: Residential door-handle concern recorded at midday\nOriginal narrative, reproduced verbatim: A synthetic midday record notes a reported door-handle concern at a dwelling in Edwardstown. It is included to demonstrate analyst review of contextual similarities, not to imply responsibility.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "indexTextSha256": "55b57f483f386c7263a8d945075ade44870fd19c18698e642d3e093d35db370f"
+    },
+    {
+      "evidenceRef": "EV-ADL-H10",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0005",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "A resolved side-path report has a different explanation",
+      "description": "A resolved Mitchell Park report and an attributed explanation test whether similar settings imply a series.",
+      "kind": "incident_context_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0005\nSuburb: Mitchell Park; category: SCT - Residence; status: resolved.\nOriginal title: Weekday residential side-path observation logged\nOriginal narrative, reproduced verbatim: A fictional household report mentions activity near a side path in Mitchell Park during weekday hours. The account contains no identifying detail and remains a synthetic training record.\nSource layer 2: newly authored teaching supplement\nSeparate authored clarification, recorded 25 June: the fictional resident says a neighbour had permission to collect garden cuttings by the side path. This is an attributed lawful explanation, not an independently verified identification. The original resolved status is retained; this note neither reopens the report nor resolves other households’ concerns.",
+      "markers": [],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "resolved",
+        "originalReportUnchanged": true,
+        "originalReportSha256": "66b650fd788c8b55eed6a57a184c2fc0650e754d8481249bec25f67480c1d2c2"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-15T01:21:00.000Z",
+        "suburb": "Mitchell Park",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0096,
+        "longitude": 138.5561,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H10.txt",
+        "mimeType": "text/plain",
+        "sha256": "f06048af743ecdce078ffb8f48479ccfd0386a1934661dbd33b748185c6fab13",
+        "caption": "A resolved Mitchell Park report and an attributed explanation test whether similar settings imply a series."
+      },
+      "indexText": "A resolved side-path report has a different explanation\nA resolved Mitchell Park report and an attributed explanation test whether similar settings imply a series.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0005\nSuburb: Mitchell Park; category: SCT - Residence; status: resolved.\nOriginal title: Weekday residential side-path observation logged\nOriginal narrative, reproduced verbatim: A fictional household report mentions activity near a side path in Mitchell Park during weekday hours. The account contains no identifying detail and remains a synthetic training record.\nSource layer 2: newly authored teaching supplement\nSeparate authored clarification, recorded 25 June: the fictional resident says a neighbour had permission to collect garden cuttings by the side path. This is an attributed lawful explanation, not an independently verified identification. The original resolved status is retained; this note neither reopens the report nor resolves other households’ concerns.",
+      "indexTextSha256": "eafed09f64dceba7c814f4b01e3c929bb32b38cf290b256faff6d5f18813113f"
+    },
+    {
+      "evidenceRef": "EV-ADL-H11",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0006",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Afternoon window-entry concern recorded in Seacombe Gardens",
+      "description": "An unchanged comparison report sets a boundary on what the wider watch actually establishes.",
+      "kind": "incident_context_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0006\nSuburb: Seacombe Gardens; category: SCT - Residence; status: reported.\nOriginal title: Afternoon window-entry concern recorded in Seacombe Gardens\nOriginal narrative, reproduced verbatim: A synthetic afternoon report records a window-entry concern at a dwelling in Seacombe Gardens. The time band and property setting are included for controlled vector and graph demonstrations.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "markers": [],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "originalReportUnchanged": true,
+        "originalReportSha256": "da45849636b18e30565cebab4e0222cf278402ac0696e14301ab824ebd1a121a"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-17T04:38:00.000Z",
+        "suburb": "Seacombe Gardens",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0247,
+        "longitude": 138.5452,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H11.txt",
+        "mimeType": "text/plain",
+        "sha256": "0e425ddbc61797d10bfc42840c0e3874f760cc5db2b89ce3383592d6e7c5c44e",
+        "caption": "An unchanged comparison report sets a boundary on what the wider watch actually establishes."
+      },
+      "indexText": "Afternoon window-entry concern recorded in Seacombe Gardens\nAn unchanged comparison report sets a boundary on what the wider watch actually establishes.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0006\nSuburb: Seacombe Gardens; category: SCT - Residence; status: reported.\nOriginal title: Afternoon window-entry concern recorded in Seacombe Gardens\nOriginal narrative, reproduced verbatim: A synthetic afternoon report records a window-entry concern at a dwelling in Seacombe Gardens. The time band and property setting are included for controlled vector and graph demonstrations.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "indexTextSha256": "061e41c1c6dbf04476ec312771494c670a798d37251d02d60b042d487dfead2e"
+    },
+    {
+      "evidenceRef": "EV-ADL-H12",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0007",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Daytime boundary approach noted at Ascot Park dwelling",
+      "description": "An unchanged comparison report sets a boundary on what the wider watch actually establishes.",
+      "kind": "incident_context_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0007\nSuburb: Ascot Park; category: SCT - Residence; status: under_review.\nOriginal title: Daytime boundary approach noted at Ascot Park dwelling\nOriginal narrative, reproduced verbatim: A fictional weekday report describes an approach near a dwelling boundary in Ascot Park. It has been written with approximate locality context only and carries an explicit synthetic provenance marker.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "markers": [],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "under_review",
+        "originalReportUnchanged": true,
+        "originalReportSha256": "82c1aa649dbce9ef8a165ac3064b7b7e1b9ccb333c95dad1f37e21fc516b1a66"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-22T02:03:00.000Z",
+        "suburb": "Ascot Park",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -34.9914,
+        "longitude": 138.5583,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H12.txt",
+        "mimeType": "text/plain",
+        "sha256": "9e2d2be245ba76bf8955c3ce727aa85751c19831926f283bd6577b14afa6c3ba",
+        "caption": "An unchanged comparison report sets a boundary on what the wider watch actually establishes."
+      },
+      "indexText": "Daytime boundary approach noted at Ascot Park dwelling\nAn unchanged comparison report sets a boundary on what the wider watch actually establishes.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nSource layer 1: saved report ACI-V2-2026-0007\nSuburb: Ascot Park; category: SCT - Residence; status: under_review.\nOriginal title: Daytime boundary approach noted at Ascot Park dwelling\nOriginal narrative, reproduced verbatim: A fictional weekday report describes an approach near a dwelling boundary in Ascot Park. It has been written with approximate locality context only and carries an explicit synthetic provenance marker.\nSource layer 2: newly authored teaching supplement\nNo new care, visitor or payment relationship is supplied for this report.",
+      "indexTextSha256": "01184e7ec14d7bec14743558db5f95b9707404e8d9f3afa5c65b6fd88febf3fa"
+    },
+    {
+      "evidenceRef": "EV-ADL-H13",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "The retained copy has a provenance gap",
+      "description": "The contributor supplied a transcription, not a platform export; a source hash protects retained bytes only.",
+      "kind": "provenance_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic receipt and provenance note, 25 June 2026\nThe retained message was received as a contributor-supplied transcription. Original device, full conversation, server metadata and independent account-control checks were not supplied.\nA file hash can detect later changes to the retained asset. It cannot establish authenticity, authorship, completeness, forwarding or a connection with a residential entry concern. No exact care schedule or capture location was collected.",
+      "markers": [],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "authenticity": "unverified"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H13.txt",
+        "mimeType": "text/plain",
+        "sha256": "0dd7c441297bfcc2df83bbf3a281d52163ef77a186a4b58abc90f67f88db466d",
+        "caption": "The contributor supplied a transcription, not a platform export; a source hash protects retained bytes only."
+      },
+      "indexText": "The retained copy has a provenance gap\nThe contributor supplied a transcription, not a platform export; a source hash protects retained bytes only.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic receipt and provenance note, 25 June 2026\nThe retained message was received as a contributor-supplied transcription. Original device, full conversation, server metadata and independent account-control checks were not supplied.\nA file hash can detect later changes to the retained asset. It cannot establish authenticity, authorship, completeness, forwarding or a connection with a residential entry concern. No exact care schedule or capture location was collected.",
+      "indexTextSha256": "17e4653963aa8e2fea9c4bf7cf8d41c9c064b4f35dc7a4835a04c3e40e350ac7"
+    },
+    {
+      "evidenceRef": "EV-ADL-H14",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0002",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "An outside contact describes a possible transport enquiry",
+      "description": "An attributed clarification supplies a lawful-purpose possibility for Resident B, without resolving the other client label.",
+      "kind": "attributed_contact_clarification",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: attributed contact clarification, 25 June 2026\nRowan Hale says a general transport-availability enquiry was discussed for ADL-RES-B and supplies the volunteered label ADL-EXT-02. Rowan does not authenticate the retained transcription, identify its author or explain why ADL-RES-A appears in it.\nNo record places this contact at either dwelling. A possible legitimate purpose for one client cannot be extended to another client.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-B",
+          "sourceQuote": "ADL-RES-B"
+        },
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        },
+        {
+          "namespace": "external_account",
+          "value": "ADL-EXT-02",
+          "sourceQuote": "ADL-EXT-02"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "under_review"
+      },
+      "personLinks": [
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "basis": "literal_name_mention",
+          "relation": "external_contact",
+          "quote": "Rowan Hale",
+          "startCharacter": 110,
+          "endCharacter": 120,
+          "reviewStatus": "unreviewed",
+          "explanation": "Exact text mention in an authored fictional document; not verified identity, authorship or responsibility."
+        }
+      ],
+      "incidentContext": {
+        "occurredAt": "2026-06-03T03:12:00.000Z",
+        "suburb": "Oaklands Park",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0184,
+        "longitude": 138.5473,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H14.txt",
+        "mimeType": "text/plain",
+        "sha256": "6d273bf4ecd7ac58a1aaa957b1165e4ca4c7b4a306cb82c2a023968d4ba5a7b4",
+        "caption": "An attributed clarification supplies a lawful-purpose possibility for Resident B, without resolving the other client label."
+      },
+      "indexText": "An outside contact describes a possible transport enquiry\nAn attributed clarification supplies a lawful-purpose possibility for Resident B, without resolving the other client label.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: attributed contact clarification, 25 June 2026\nRowan Hale says a general transport-availability enquiry was discussed for ADL-RES-B and supplies the volunteered label ADL-EXT-02. Rowan does not authenticate the retained transcription, identify its author or explain why ADL-RES-A appears in it.\nNo record places this contact at either dwelling. A possible legitimate purpose for one client cannot be extended to another client.",
+      "indexTextSha256": "595c5abb3338e9174d7f98f9074be6df0484d8630419a7047e8db0cead55e8b6"
+    },
+    {
+      "evidenceRef": "EV-ADL-H15",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "A private follow-up makes the public concern traceable",
+      "description": "The public post is non-identifying; a separate fictional follow-up supplies the Marion incident reference and permission to record a concern.",
+      "kind": "signal_triage_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic private triage follow-up, 24 June 2026\nPublic post: SYN-ADL-CARE-POST-01. In a separate private follow-up, the contributor supplies ACI-V2-2026-0001 and client label ADL-RES-A, and permits this concern to be recorded with that report.\nResident A says they want the help to continue and worry that asking about information sharing might upset that help. No actual threat or withdrawal of care is reported. This concern is attributed, not an assessment of capacity.\nThe explicit report reference supports a comparison link. Public wording alone does not identify a resident, worker, dwelling or event, and this follow-up does not corroborate entry or a shared cause.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        },
+        {
+          "namespace": "public_post",
+          "value": "SYN-ADL-CARE-POST-01",
+          "sourceQuote": "SYN-ADL-CARE-POST-01"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "sourcePostRef": "SYN-ADL-CARE-POST-01",
+        "linkBasis": "separate_attributed_private_followup"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H15.txt",
+        "mimeType": "text/plain",
+        "sha256": "64adeb6013144e27ee7c1c43eed53bea11016a6c1802590279f4aa70e802e1bf",
+        "caption": "The public post is non-identifying; a separate fictional follow-up supplies the Marion incident reference and permission to record a concern."
+      },
+      "indexText": "A private follow-up makes the public concern traceable\nThe public post is non-identifying; a separate fictional follow-up supplies the Marion incident reference and permission to record a concern.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic private triage follow-up, 24 June 2026\nPublic post: SYN-ADL-CARE-POST-01. In a separate private follow-up, the contributor supplies ACI-V2-2026-0001 and client label ADL-RES-A, and permits this concern to be recorded with that report.\nResident A says they want the help to continue and worry that asking about information sharing might upset that help. No actual threat or withdrawal of care is reported. This concern is attributed, not an assessment of capacity.\nThe explicit report reference supports a comparison link. Public wording alone does not identify a resident, worker, dwelling or event, and this follow-up does not corroborate entry or a shared cause.",
+      "indexTextSha256": "885b4fcce8d67905ed451e6429411d82286879c7c080ba0cb943551cfbb4a771"
+    },
+    {
+      "evidenceRef": "EV-ADL-H16",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0002",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "A contributor asks that the consent boundary be recorded",
+      "description": "A separate fictional clarification connects the second public post to the Oaklands Park report.",
+      "kind": "signal_triage_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic private triage clarification, 24 June 2026\nPublic post: SYN-ADL-CARE-POST-02. In a separate private follow-up, the contributor supplies ACI-V2-2026-0002 and ADL-RES-B, and asks for a limited transport enquiry to be recorded in context.\nThe contributor does not identify the person who approached the dwelling, verify the message author or claim that the enquiry caused the approach. No permission concerning ADL-RES-A is supplied.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-B",
+          "sourceQuote": "ADL-RES-B"
+        },
+        {
+          "namespace": "public_post",
+          "value": "SYN-ADL-CARE-POST-02",
+          "sourceQuote": "SYN-ADL-CARE-POST-02"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "under_review",
+        "sourcePostRef": "SYN-ADL-CARE-POST-02",
+        "linkBasis": "separate_attributed_private_followup"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-03T03:12:00.000Z",
+        "suburb": "Oaklands Park",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0184,
+        "longitude": 138.5473,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H16.txt",
+        "mimeType": "text/plain",
+        "sha256": "0968786715685673a0d307b431733fb16a616489945d01dd0bef2cd9500c6ecc",
+        "caption": "A separate fictional clarification connects the second public post to the Oaklands Park report."
+      },
+      "indexText": "A contributor asks that the consent boundary be recorded\nA separate fictional clarification connects the second public post to the Oaklands Park report.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic private triage clarification, 24 June 2026\nPublic post: SYN-ADL-CARE-POST-02. In a separate private follow-up, the contributor supplies ACI-V2-2026-0002 and ADL-RES-B, and asks for a limited transport enquiry to be recorded in context.\nThe contributor does not identify the person who approached the dwelling, verify the message author or claim that the enquiry caused the approach. No permission concerning ADL-RES-A is supplied.",
+      "indexTextSha256": "f58da7a60c2cbd6aa0ea9d0417bbcd0ec9bdb8780aa5c89a194a22e625ba4ae2"
+    },
+    {
+      "evidenceRef": "EV-ADL-H17",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "A resident asks about spending while wanting support to continue",
+      "description": "An attributed shopping-payment concern introduces a separate financial question, not a reinterpretation of the entry report.",
+      "kind": "attributed_financial_concern",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: attributed resident follow-up, 25 June 2026\nClient: ADL-RES-A.\nResident A says: \"I agreed to help with groceries. I still need that help, but I do not understand every amount. I waited because I did not want to make things difficult.\" The resident asks for permission and receipts to be compared.\nNo threat, coercive demand or eyewitness account of payment misuse is supplied. The person who assisted with spending is not named. Needing support does not establish impaired capacity. This concern does not amend the window-marks report into a fraud or theft finding.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "financialHelperIdentity": "not_established",
+        "hypothesis": "personal_spending_question_not_care_funding"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H17.txt",
+        "mimeType": "text/plain",
+        "sha256": "652622bec1b22069c4914af44f063ed16dcfb22ae608e8eed5c0347c829a0cb3",
+        "caption": "An attributed shopping-payment concern introduces a separate financial question, not a reinterpretation of the entry report."
+      },
+      "indexText": "A resident asks about spending while wanting support to continue\nAn attributed shopping-payment concern introduces a separate financial question, not a reinterpretation of the entry report.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: attributed resident follow-up, 25 June 2026\nClient: ADL-RES-A.\nResident A says: \"I agreed to help with groceries. I still need that help, but I do not understand every amount. I waited because I did not want to make things difficult.\" The resident asks for permission and receipts to be compared.\nNo threat, coercive demand or eyewitness account of payment misuse is supplied. The person who assisted with spending is not named. Needing support does not establish impaired capacity. This concern does not amend the window-marks report into a fraud or theft finding.",
+      "indexTextSha256": "01347374209f46054fabe7cc3cd25be6e00285ffb2f7be66a564d6dcf4adfab9"
+    },
+    {
+      "evidenceRef": "EV-ADL-H18",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Shopping help has an AUD 50 limit and a receipt requirement",
+      "description": "A redacted permission extract specifies groceries for the resident, not unrestricted use of their money.",
+      "kind": "financial_permission_extract",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: limited shopping-support permission, displayed date 18 June 2026\nClient: ADL-RES-A. Permission reference: ADL-SHOP-A.\nPurpose: groceries for the resident, up to AUD 50 per shopping occasion, with a receipt. No authority for personal purchases, transfers, gifts or wider disclosure is shown. The financial helper is unnamed.\nNo PIN, card number, account number or general banking authority is retained. The displayed extract has not been independently authenticated and does not identify a purchaser.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        },
+        {
+          "namespace": "shopping_permission",
+          "value": "ADL-SHOP-A",
+          "sourceQuote": "ADL-SHOP-A"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "financialHelperIdentity": "not_established",
+        "hypothesis": "personal_spending_question_not_care_funding",
+        "currency": "AUD",
+        "perOccasionLimit": 50
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H18.txt",
+        "mimeType": "text/plain",
+        "sha256": "06836fe1acffef7a84c59bfc9d4f9cda0eff784da87d194846bdb56eb66ed698",
+        "caption": "A redacted permission extract specifies groceries for the resident, not unrestricted use of their money."
+      },
+      "indexText": "Shopping help has an AUD 50 limit and a receipt requirement\nA redacted permission extract specifies groceries for the resident, not unrestricted use of their money.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: limited shopping-support permission, displayed date 18 June 2026\nClient: ADL-RES-A. Permission reference: ADL-SHOP-A.\nPurpose: groceries for the resident, up to AUD 50 per shopping occasion, with a receipt. No authority for personal purchases, transfers, gifts or wider disclosure is shown. The financial helper is unnamed.\nNo PIN, card number, account number or general banking authority is retained. The displayed extract has not been independently authenticated and does not identify a purchaser.",
+      "indexTextSha256": "a845db7bb9cccfe39503a975f6f6b39df5d83b5f6f5c5a93e80c1ed9e3d3250f"
+    },
+    {
+      "evidenceRef": "EV-ADL-H19",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Three entries need settlement and permission checks",
+      "description": "Two equal grocery-sized entries and a larger amount appear in an incomplete extract.",
+      "kind": "redacted_financial_extract",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: redacted shopping-entry extract supplied 25 June 2026\nClient: ADL-RES-A. Permission comparison: ADL-SHOP-A. Currency: AUD.\nADL-TXN-A1, 19 June: 31.80. ADL-TXN-A2, 19 June: 31.80. ADL-TXN-A3, 22 June: 84.60.\nSettlement, reversal, merchant and purchaser fields are omitted from this extract. It is not a reconciled statement or loss calculation. No account credentials or payment user is identified.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        },
+        {
+          "namespace": "shopping_permission",
+          "value": "ADL-SHOP-A",
+          "sourceQuote": "ADL-SHOP-A"
+        },
+        {
+          "namespace": "payment_entry",
+          "value": "ADL-TXN-A3",
+          "sourceQuote": "ADL-TXN-A3"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "financialHelperIdentity": "not_established",
+        "hypothesis": "personal_spending_question_not_care_funding",
+        "currency": "AUD",
+        "settlementStatus": "omitted_in_this_extract"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H19.txt",
+        "mimeType": "text/plain",
+        "sha256": "e627e484a13430ae2f274d7937334e7ceb40aebd4624e029df066db92ce55411",
+        "caption": "Two equal grocery-sized entries and a larger amount appear in an incomplete extract."
+      },
+      "indexText": "Three entries need settlement and permission checks\nTwo equal grocery-sized entries and a larger amount appear in an incomplete extract.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: redacted shopping-entry extract supplied 25 June 2026\nClient: ADL-RES-A. Permission comparison: ADL-SHOP-A. Currency: AUD.\nADL-TXN-A1, 19 June: 31.80. ADL-TXN-A2, 19 June: 31.80. ADL-TXN-A3, 22 June: 84.60.\nSettlement, reversal, merchant and purchaser fields are omitted from this extract. It is not a reconciled statement or loss calculation. No account credentials or payment user is identified.",
+      "indexTextSha256": "03b579f618c83d2edbf16aca52be7eabc056de64a7d4d400a8a62268f4ae5f0b"
+    },
+    {
+      "evidenceRef": "EV-ADL-H20",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "A later reconciliation changes the spending picture",
+      "description": "A voided authorisation and a matching receipt explain part of the extract; a separate refund is only requested.",
+      "kind": "financial_reconciliation_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic reconciliation addendum, displayed date 26 June 2026\nClient: ADL-RES-A. Currency: AUD.\nADL-TXN-A1: settled 31.80; the supplied grocery receipt matches this amount. ADL-TXN-A2: voided authorisation, not a second settled payment.\nADL-TXN-A3: displayed as settled 84.60. A refund has been requested; completion is not confirmed. No receipt or permission beyond the AUD 50 limit is supplied.\nNo payment user is identified. No source connects these entries with the residential approach or the outward message. No home-support invoice, government funding claim, NDIS claim or funding remittance is supplied.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "ADL-RES-A",
+          "sourceQuote": "ADL-RES-A"
+        },
+        {
+          "namespace": "payment_entry",
+          "value": "ADL-TXN-A3",
+          "sourceQuote": "ADL-TXN-A3"
+        }
+      ],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "financialHelperIdentity": "not_established",
+        "hypothesis": "personal_spending_question_not_care_funding",
+        "currency": "AUD",
+        "refundStatus": "requested_not_confirmed",
+        "careFundingClaim": "not_supplied"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H20.txt",
+        "mimeType": "text/plain",
+        "sha256": "a55475c99248f59f6e4b39789de69700933c1c06595ad1018b2ddaaf8a608f7c",
+        "caption": "A voided authorisation and a matching receipt explain part of the extract; a separate refund is only requested."
+      },
+      "indexText": "A later reconciliation changes the spending picture\nA voided authorisation and a matching receipt explain part of the extract; a separate refund is only requested.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: synthetic reconciliation addendum, displayed date 26 June 2026\nClient: ADL-RES-A. Currency: AUD.\nADL-TXN-A1: settled 31.80; the supplied grocery receipt matches this amount. ADL-TXN-A2: voided authorisation, not a second settled payment.\nADL-TXN-A3: displayed as settled 84.60. A refund has been requested; completion is not confirmed. No receipt or permission beyond the AUD 50 limit is supplied.\nNo payment user is identified. No source connects these entries with the residential approach or the outward message. No home-support invoice, government funding claim, NDIS claim or funding remittance is supplied.",
+      "indexTextSha256": "ca58f801a7ed0af22a923071e861798da5d423663f0d048fa012fc32cfc16c54"
+    },
+    {
+      "evidenceRef": "EV-ADL-H21",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "ADELAIDE_DATA_V2",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "Adelaide 1.0",
+      "incidentRef": "ACI-V2-2026-0001",
+      "caseRef": "CASE-V2-RES-001",
+      "title": "Seven comparison records are not seven linked offenders",
+      "description": "A case-context note keeps the watch membership distinct from an established offence series.",
+      "kind": "case_comparison_note",
+      "sourceText": "SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: authored comparison-register note, 26 June 2026\nCase CASE-V2-RES-001 contains seven existing residential-context records from Marion, Oaklands Park, Morphett Vale, Edwardstown, Mitchell Park, Seacombe Gardens and Ascot Park. The label Residential Daytime Occupancy Test Burglary is a watch hypothesis, not a conclusion that every entry is a proved burglary.\nOnly the separately recorded Marion and Oaklands Park private follow-ups supply care-context leads. No source establishes a common visitor, offender or cause across the seven. Mitchell Park remains resolved. Generic legacy public posts are unverified context: their occasional after-hours wording does not alter the saved daytime occurrence times.\nA separate public discussion about an unfamiliar support invoice has no reviewed incident link and supplies no invoice or funding claim.",
+      "markers": [],
+      "attributes": {
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "sharedOffender": "not_established",
+        "careFundingClaim": "not_supplied"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-01T00:48:00.000Z",
+        "suburb": "Marion",
+        "district": "Southern & Eastern Adelaide",
+        "latitude": -35.0148,
+        "longitude": 138.5542,
+        "locationRole": "locality_reference",
+        "precision": "Existing approximate synthetic suburb context",
+        "pointMeaning": "Not a residence, care visit, absence window, evidence capture location or observed attendance."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-06-26T02:30:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-27",
+        "anchorSnapshotSha256": "4e944aab4c939f30e79b16a491610e082341d96e8842290cd125c0175e49f1c2",
+        "basis": "Additive Adelaide teaching supplement. Original report, status, location and comparison membership are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Wholly fictional source and people. A retained-byte hash does not authenticate a document. Incident coordinates are approximate context only."
+      },
+      "asset": {
+        "path": "assets/EV-ADL-H21.txt",
+        "mimeType": "text/plain",
+        "sha256": "839985c4718e73258f074878fd6c1850f2f0f52a3904c3ad14792e4ab9e83692",
+        "caption": "A case-context note keeps the watch membership distinct from an established offence series."
+      },
+      "indexText": "Seven comparison records are not seven linked offenders\nA case-context note keeps the watch membership distinct from an established offence series.\nSYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE\nDocument: authored comparison-register note, 26 June 2026\nCase CASE-V2-RES-001 contains seven existing residential-context records from Marion, Oaklands Park, Morphett Vale, Edwardstown, Mitchell Park, Seacombe Gardens and Ascot Park. The label Residential Daytime Occupancy Test Burglary is a watch hypothesis, not a conclusion that every entry is a proved burglary.\nOnly the separately recorded Marion and Oaklands Park private follow-ups supply care-context leads. No source establishes a common visitor, offender or cause across the seven. Mitchell Park remains resolved. Generic legacy public posts are unverified context: their occasional after-hours wording does not alter the saved daytime occurrence times.\nA separate public discussion about an unfamiliar support invoice has no reviewed incident link and supplies no invoice or funding claim.",
+      "indexTextSha256": "8faad849abc547bb70d6431f0a9c06e590038659651c9be02a5f6905c9f135e9"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-09-17T01:48:09.643Z",
+  "environment": "isolated real application at 127.0.0.1:18706, browser timezone America/Los_Angeles",
+  "checks": {
+    "catalogue_dynamic_filters_and_full_marker_coverage": true,
+    "all_nine_area_maps_and_details": true,
+    "online_no_null_island_markers": true,
+    "exact_source_report_evidence_and_named_timezone_not_browser_timezone": true,
+    "accent_and_local_midnight_browser_checks": true,
+    "detailed_filter_under_executive_group": true,
+    "persistent_exact_synthetic_notice": true,
+    "user_switch_clears_privileged_saved_data": true,
+    "live_brussels_explorer_uses_active_profile_timezone": true
+  },
+  "screenshots": [
+    "screenshots/amsterdam_all.png",
+    "screenshots/centrum.png",
+    "screenshots/west.png",
+    "screenshots/nieuw-west.png",
+    "screenshots/noord.png",
+    "screenshots/oost.png",
+    "screenshots/zuid.png",
+    "screenshots/zuidoost.png",
+    "screenshots/weesp.png",
+    "screenshots/westpoort.png",
+    "screenshots/online_no_markers.png",
+    "screenshots/exact_report_time_and_evidence.png",
+    "screenshots/accented_place_search.png",
+    "screenshots/local_midnight_boundary.png"
+  ],
+  "page_errors": [],
+  "write_requests": [],
+  "status": "passed",
+  "finished_at": "2026-09-17T01:48:36.969Z"
+}

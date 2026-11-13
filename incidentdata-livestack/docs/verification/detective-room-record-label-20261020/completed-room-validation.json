@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "batch_id": "DR-20261020-68ed95d9-8383-401c",
+  "htmlSHA256": "91688aeef9f70e605945a7d1ae3916885e5d210aa8fc13bf479c31263e537d14",
+  "widths": [
+    1440,
+    1056,
+    850,
+    560,
+    390,
+    320
+  ],
+  "views": [
+    "room",
+    "board",
+    "case-overview",
+    "people-register",
+    "analysis",
+    "record-index",
+    "messages",
+    "gallery",
+    "sources",
+    "briefing"
+  ],
+  "checks": [
+    "board selections and explicit cords",
+    "portrait / scene / conversation inspectors",
+    "all message IDs and filters; applicable empty-state",
+    "all custom panel source controls and source records",
+    "original download paths and source readers",
+    "keyboard Escape and nested dialog navigation",
+    "responsive control and board bounds",
+    "matching video playback and pause when included",
+    "no browser errors or remote requests"
+  ],
+  "note": "Baseline automated checks; source-specific calculations and visual review remain required."
+}

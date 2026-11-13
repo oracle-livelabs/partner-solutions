@@ -1,0 +1,7 @@
+Document: care-assignment extract
+Provider label: DEMO-CARE-01
+Client reference: CT-RES-A
+Worker identifier: DEMO-WORKER-17
+Named worker: Lena Harper
+The assignment was recorded before the incident. Visit schedules, residence and clinical information are withheld.
+This establishes a recorded care role in the fictional document, not attendance at the incident, access misuse or message authorship.

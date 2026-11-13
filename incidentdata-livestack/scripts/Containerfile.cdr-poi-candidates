@@ -1,0 +1,3 @@
+FROM localhost/local/adelaide-crime-intelligence:cdr-models-20260913
+COPY backend/data-room.js backend/data-room-poi-candidates.js /app/backend/
+COPY dist/ /app/frontend/dist/

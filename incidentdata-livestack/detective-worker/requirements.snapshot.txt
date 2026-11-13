@@ -1,0 +1,20 @@
+# Versions captured from the running milestone worker, not a portable lockfile.
+attrs==26.1.0
+cffi==2.1.1
+cloudpickle==3.1.2
+dlinfo==2.0.0
+espeakng-loader==0.2.4
+flatbuffers==25.12.19
+joblib==1.6.0
+kokoro-onnx==0.6.1
+ml_dtypes==0.6.0
+numpy==2.5.3
+onnx==1.23.0
+onnxruntime==1.30.0
+packaging==26.3
+phonemizer==3.4.0
+pillow==12.3.0
+protobuf==7.36.2
+pycparser==3.0
+soundfile==0.14.0
+typing_extensions==4.16.0

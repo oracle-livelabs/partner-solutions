@@ -1,0 +1,27 @@
+{
+  "generator": "Built-in image_gen tool",
+  "generatedAt": "2026-09-24",
+  "purpose": "Fictional object illustrations for comparative retrieval; no claim of a real scene or recovered object",
+  "prompts": [
+    {
+      "name": "tray-a",
+      "prompt": "Use case: photorealistic-natural. Asset type: synthetic evidence teaching illustration for software tests. Produce one square photorealistic tabletop image of an EMPTY dark blue rectangular moulded tool tray, with two long parallel recesses and one small round recess, on a plain light grey workshop bench. Subtle scuffs, top-down viewpoint, diffuse daylight. No tools in the tray. No people, brands, readable text, scales, identification numbers, landmarks or police markings. Entirely imaginary object, no actual incident depicted. Clear object boundary and natural material texture.",
+      "sourcePath": "/home/opc/.codex/generated_images/01a0d36b-acda-7c42-af4b-5ec28fc707ee/exec-c12d76cc-1193-40cf-b038-8d0af11fea59.png"
+    },
+    {
+      "name": "tray-b",
+      "prompt": "Use case: photorealistic-natural. Asset type: synthetic evidence teaching illustration for software tests. Produce one square photorealistic image of an EMPTY dark blue rectangular moulded tool tray with two long parallel recesses and one small round recess. Place it on a plain grey shelf and photograph from a slightly oblique overhead viewpoint under cool workshop lighting. Subtle scuffs and dust, no tools. This is a separate fictional comparator with the same broad shape, not proof of the same object. No people, brands, readable text, identification numbers, landmarks or police markings.",
+      "sourcePath": "/home/opc/.codex/generated_images/01a0d36b-acda-7c42-af4b-5ec28fc707ee/exec-7d044365-be09-4271-9665-1b9736676bd4.png"
+    },
+    {
+      "name": "organiser-control",
+      "prompt": "Use case: photorealistic-natural. Asset type: synthetic evidence negative-control image for software tests. Produce one square photorealistic tabletop image of an EMPTY bright orange plastic parts organiser with a regular grid of twelve small square compartments, sitting on a plain light grey workshop bench. Top-down view and diffuse daylight. It should be unmistakably orange, with square compartments rather than elongated tool-shaped recesses. No people, tools, branding, readable text, identification numbers, landmarks or police markings. Entirely imaginary object.",
+      "sourcePath": "/home/opc/.codex/generated_images/01a0d36b-acda-7c42-af4b-5ec28fc707ee/exec-cceb82cc-6290-4aea-91fd-945882fe3874.png"
+    },
+    {
+      "name": "latch-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: synthetic evidence teaching illustration for software tests. Produce one square photorealistic close-up of a plain dull steel storage-door latch mounted on a grey painted metal panel, showing two shallow diagonal surface scratches beside the latch. Ordinary workshop lighting, unobstructed detailed material textures. No person, hands, tools, brands, readable text, rulers, identification numbers, landmarks or police markings. Entirely fictional teaching illustration; avoid sensational or forensic claims.",
+      "sourcePath": "/home/opc/.codex/generated_images/01a0d36b-acda-7c42-af4b-5ec28fc707ee/exec-74c77cc0-8495-4016-8d2c-fbb7a83b4317.png"
+    }
+  ]
+}

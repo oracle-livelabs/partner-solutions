@@ -1,0 +1,5 @@
+Reservation copy with a repeated payment suffix — Clontarf West area
+
+Authored fictional teaching supplement for Dublin; linked incident SYN-DUB-2026-07247, Clontarf West area.
+The fictional print-room reservation shows two entries carrying suffix DUB-CORE-02: a framed-print reservation and a display-board reservation. Each quotes 240 units; the currency field is blank. The copy does not establish that either amount settled.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

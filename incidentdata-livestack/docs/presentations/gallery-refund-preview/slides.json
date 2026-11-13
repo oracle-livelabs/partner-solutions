@@ -1,0 +1,2992 @@
+[
+  {
+    "title": "Has the gallery paid twice?",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "MAKING THE AI AGENT FRAMEWORK VISIBLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Has the gallery paid twice?",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A simple story for explaining tools, reflection and conversational memory.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "01",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "text",
+        "value": "One invoice reference.\nThree documents.\nOne unanswered question.",
+        "x": 0.65,
+        "y": 2.6,
+        "w": 6.7,
+        "h": 2.2,
+        "size": 34,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 8.45,
+        "y": 2.4,
+        "w": 3.65,
+        "h": 3.6,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "box",
+        "x": 8.75,
+        "y": 2.73,
+        "w": 2.98,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "FICTIONAL CASE",
+        "x": 8.85,
+        "y": 2.795,
+        "w": 2.78,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "INV-204",
+        "x": 8.8,
+        "y": 3.48,
+        "w": 2.95,
+        "h": 0.62,
+        "size": 34,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "line",
+        "x": 8.8,
+        "y": 4.38,
+        "w": 2.9,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Invoice\nRefund request\nChanged bank instructions",
+        "x": 8.8,
+        "y": 4.68,
+        "w": 2.9,
+        "h": 1.15,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "A 10-minute colleague walkthrough\nIncludes presenter notes and two follow-up prompts.",
+        "x": 0.65,
+        "y": 5.55,
+        "w": 6.9,
+        "h": 0.7,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "A story the audience can hold in mind",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A story the audience can hold in mind",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Keep the case small enough that everyone can follow the source trail.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "02",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.45,
+        "w": 3.93,
+        "h": 3.15,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "SOURCE S01",
+        "x": 0.75,
+        "y": 2.6500000000000004,
+        "w": 3.5300000000000002,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Exhibition invoice",
+        "x": 0.75,
+        "y": 3.0700000000000003,
+        "w": 3.5300000000000002,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The gallery’s exhibition invoice is identified by INV-204.",
+        "x": 0.75,
+        "y": 3.9000000000000004,
+        "w": 3.5300000000000002,
+        "h": 1.5299999999999998,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 4.7,
+        "y": 2.45,
+        "w": 3.93,
+        "h": 3.15,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "SOURCE S02",
+        "x": 4.9,
+        "y": 2.6500000000000004,
+        "w": 3.5300000000000002,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Refund request",
+        "x": 4.9,
+        "y": 3.0700000000000003,
+        "w": 3.5300000000000002,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A customer requests a refund against the same invoice: INV-204.",
+        "x": 4.9,
+        "y": 3.9000000000000004,
+        "w": 3.5300000000000002,
+        "h": 1.5299999999999998,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 8.85,
+        "y": 2.45,
+        "w": 3.93,
+        "h": 3.15,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "SOURCE S03",
+        "x": 9.049999999999999,
+        "y": 2.6500000000000004,
+        "w": 3.5300000000000002,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Follow-up email",
+        "x": 9.049999999999999,
+        "y": 3.0700000000000003,
+        "w": 3.5300000000000002,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The email changes the requested refund bank details.",
+        "x": 9.049999999999999,
+        "y": 3.9000000000000004,
+        "w": 3.5300000000000002,
+        "h": 1.5299999999999998,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 5.93,
+        "w": 12.23,
+        "h": 0.72,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.08
+      },
+      {
+        "kind": "text",
+        "value": "Missing from the supplied set: payment confirmation",
+        "x": 0.75,
+        "y": 6.1,
+        "w": 11.83,
+        "h": 0.5,
+        "size": 21,
+        "color": "AB6B24",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "title": "What can we establish?",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "What can we establish?",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The central distinction is a request for payment versus evidence of payment.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "03",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.45,
+        "w": 5.97,
+        "h": 3.32,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "RECORDED IN THE SUPPLIED DOCUMENTS",
+        "x": 0.75,
+        "y": 2.6500000000000004,
+        "w": 5.569999999999999,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The records connect",
+        "x": 0.75,
+        "y": 3.0700000000000003,
+        "w": 5.569999999999999,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A shared invoice reference.\nA request for a refund.\nA change to requested bank instructions.",
+        "x": 0.75,
+        "y": 3.9000000000000004,
+        "w": 5.569999999999999,
+        "h": 1.6999999999999997,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 6.8,
+        "y": 2.45,
+        "w": 5.97,
+        "h": 3.32,
+        "fill": "FAEEDB",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "NOT ESTABLISHED BY THIS DOCUMENT SET",
+        "x": 7,
+        "y": 2.6500000000000004,
+        "w": 5.569999999999999,
+        "h": 0.25,
+        "size": 10,
+        "color": "AB6B24",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Did money move?",
+        "x": 7,
+        "y": 3.0700000000000003,
+        "w": 5.569999999999999,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "We have no supplied confirmation that a refund was paid.\n\nA duplicate payment is not established.",
+        "x": 7,
+        "y": 3.9000000000000004,
+        "w": 5.569999999999999,
+        "h": 1.6999999999999997,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "A missing confirmation is a gap in this record set. It does not prove that no payment occurred.",
+        "x": 0.7,
+        "y": 6.1,
+        "w": 11.95,
+        "h": 0.65,
+        "size": 18,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Interaction 1: explain the records",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Interaction 1: explain the records",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The agent retrieves supporting sources and writes a bounded answer.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "04",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.65,
+        "y": 2.4,
+        "w": 1.65,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "QUESTION 1",
+        "x": 0.75,
+        "y": 2.465,
+        "w": 1.45,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "“What do these records tell us about the gallery refund?”",
+        "x": 0.7,
+        "y": 3,
+        "w": 5.75,
+        "h": 1.65,
+        "size": 27,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 6.85,
+        "y": 2.4,
+        "w": 5.92,
+        "h": 3.72,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "ILLUSTRATIVE RESPONSE",
+        "x": 7.1,
+        "y": 2.67,
+        "w": 5.35,
+        "h": 0.25,
+        "size": 11,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The invoice, refund request and bank-change email refer to the same transaction.\n\nThe supplied records do not establish whether the refund was paid.",
+        "x": 7.1,
+        "y": 3.26,
+        "w": 5.35,
+        "h": 2.55,
+        "size": 21,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "Presenter cue: ask the audience which sentence needs a source.",
+        "x": 0.7,
+        "y": 6.35,
+        "w": 11.95,
+        "h": 0.35,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "What happens inside the framework?",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "What happens inside the framework?",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "One registered investigator agent uses permitted tools and receives their results.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "05",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.68,
+        "w": 2.87,
+        "h": 2.48,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "box",
+        "x": 0.73,
+        "y": 2.88,
+        "w": 0.48,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "1",
+        "x": 0.83,
+        "y": 2.945,
+        "w": 0.27999999999999997,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "Question + case",
+        "x": 0.73,
+        "y": 3.48,
+        "w": 2.51,
+        "h": 0.7,
+        "size": 19,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Selected identity and conversation reference",
+        "x": 0.73,
+        "y": 4.25,
+        "w": 2.5,
+        "h": 0.84,
+        "size": 15,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "→",
+        "x": 3.4299999999999997,
+        "y": 3.58,
+        "w": 0.24,
+        "h": 0.5,
+        "size": 21,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "box",
+        "x": 3.67,
+        "y": 2.68,
+        "w": 2.87,
+        "h": 2.48,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "box",
+        "x": 3.85,
+        "y": 2.88,
+        "w": 0.48,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "2",
+        "x": 3.95,
+        "y": 2.945,
+        "w": 0.27999999999999997,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "Oracle agent team",
+        "x": 3.85,
+        "y": 3.48,
+        "w": 2.51,
+        "h": 0.7,
+        "size": 19,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "RUN_TEAM starts the\nregistered task",
+        "x": 3.85,
+        "y": 4.25,
+        "w": 2.5,
+        "h": 0.84,
+        "size": 15,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "→",
+        "x": 6.55,
+        "y": 3.58,
+        "w": 0.24,
+        "h": 0.5,
+        "size": 21,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "box",
+        "x": 6.79,
+        "y": 2.68,
+        "w": 2.87,
+        "h": 2.48,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "box",
+        "x": 6.97,
+        "y": 2.88,
+        "w": 0.48,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "3",
+        "x": 7.069999999999999,
+        "y": 2.945,
+        "w": 0.27999999999999997,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "Permitted tools",
+        "x": 6.97,
+        "y": 3.48,
+        "w": 2.51,
+        "h": 0.7,
+        "size": 19,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Fixed PL/SQL reads return structured facts",
+        "x": 6.97,
+        "y": 4.25,
+        "w": 2.5,
+        "h": 0.84,
+        "size": 15,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "→",
+        "x": 9.67,
+        "y": 3.58,
+        "w": 0.24,
+        "h": 0.5,
+        "size": 21,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "box",
+        "x": 9.91,
+        "y": 2.68,
+        "w": 2.87,
+        "h": 2.48,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "box",
+        "x": 10.09,
+        "y": 2.88,
+        "w": 0.48,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "4",
+        "x": 10.19,
+        "y": 2.945,
+        "w": 0.27999999999999997,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "Review brief",
+        "x": 10.09,
+        "y": 3.48,
+        "w": 2.51,
+        "h": 0.7,
+        "size": 19,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The model explains\nfacts and gaps",
+        "x": 10.09,
+        "y": 4.25,
+        "w": 2.5,
+        "h": 0.84,
+        "size": 15,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 5.57,
+        "w": 12.23,
+        "h": 0.93,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.08
+      },
+      {
+        "kind": "text",
+        "value": "Proposed addition: a supporting-records tool that returns excerpts and source references.",
+        "x": 0.75,
+        "y": 5.74,
+        "w": 11.83,
+        "h": 0.7100000000000001,
+        "size": 19,
+        "color": "AB6B24",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "title": "Make the source behind a statement visible",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Make the source behind a statement visible",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A colleague should be able to inspect why the answer says what it says.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "06",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.4,
+        "w": 7.63,
+        "h": 0.96,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "S01 · INVOICE",
+        "x": 0.75,
+        "y": 2.54,
+        "w": 7.2,
+        "h": 0.19,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "“Invoice INV-204 — Exhibition booking.”",
+        "x": 0.75,
+        "y": 2.84,
+        "w": 7.2,
+        "h": 0.36,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 3.52,
+        "w": 7.63,
+        "h": 0.96,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "S02 · REFUND REQUEST",
+        "x": 0.75,
+        "y": 3.66,
+        "w": 7.2,
+        "h": 0.19,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "“Please arrange a refund against invoice INV-204.”",
+        "x": 0.75,
+        "y": 3.96,
+        "w": 7.2,
+        "h": 0.36,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 4.640000000000001,
+        "w": 7.63,
+        "h": 0.96,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "S03 · FOLLOW-UP EMAIL",
+        "x": 0.75,
+        "y": 4.78,
+        "w": 7.2,
+        "h": 0.19,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "“For this refund, use the replacement bank instructions.”",
+        "x": 0.75,
+        "y": 5.080000000000001,
+        "w": 7.2,
+        "h": 0.36,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 8.45,
+        "y": 2.4,
+        "w": 4.33,
+        "h": 3.44,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "SUPPORTED STATEMENT",
+        "x": 8.68,
+        "y": 2.66,
+        "w": 3.85,
+        "h": 0.23,
+        "size": 11,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The documents refer to the same invoice.\n\nThey do not confirm payment.",
+        "x": 8.68,
+        "y": 3.23,
+        "w": 3.85,
+        "h": 2.25,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "All excerpts on this slide are illustrative synthetic content.",
+        "x": 0.7,
+        "y": 6.15,
+        "w": 11.95,
+        "h": 0.4,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Reflection gives the gap a clear meaning",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Reflection gives the gap a clear meaning",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A useful agent can identify the boundary of its answer.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "07",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.45,
+        "w": 3.93,
+        "h": 3.48,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "KNOWN",
+        "x": 0.75,
+        "y": 2.6500000000000004,
+        "w": 3.5300000000000002,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A linked request",
+        "x": 0.75,
+        "y": 3.0700000000000003,
+        "w": 3.5300000000000002,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The invoice and refund request share INV-204.\n\nThe bank-change email adds context.",
+        "x": 0.75,
+        "y": 3.9000000000000004,
+        "w": 3.5300000000000002,
+        "h": 1.8599999999999999,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 4.7,
+        "y": 2.45,
+        "w": 3.93,
+        "h": 3.48,
+        "fill": "FAEEDB",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "MISSING",
+        "x": 4.9,
+        "y": 2.6500000000000004,
+        "w": 3.5300000000000002,
+        "h": 0.25,
+        "size": 10,
+        "color": "AB6B24",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Payment confirmation",
+        "x": 4.9,
+        "y": 3.0700000000000003,
+        "w": 3.5300000000000002,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The supplied case does not show whether the refund was paid.",
+        "x": 4.9,
+        "y": 3.9000000000000004,
+        "w": 3.5300000000000002,
+        "h": 1.8599999999999999,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 8.85,
+        "y": 2.45,
+        "w": 3.93,
+        "h": 3.48,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "CONCLUSION",
+        "x": 9.049999999999999,
+        "y": 2.6500000000000004,
+        "w": 3.5300000000000002,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Duplicate payment unproven",
+        "x": 9.049999999999999,
+        "y": 3.0700000000000003,
+        "w": 3.5300000000000002,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Explain the uncertainty. Avoid turning a suspicious-looking sequence into an established finding.",
+        "x": 9.049999999999999,
+        "y": 3.9000000000000004,
+        "w": 3.5300000000000002,
+        "h": 1.8599999999999999,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "Presenter cue: “What would we need before changing that conclusion?”",
+        "x": 0.7,
+        "y": 6.3,
+        "w": 11.95,
+        "h": 0.35,
+        "size": 18,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Interaction 2: remember the gap",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Interaction 2: remember the gap",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A follow-up can use the case context without repeating the invoice or story.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "08",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.65,
+        "y": 2.4,
+        "w": 3.03,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "SAME CASE · FOLLOW-UP 1",
+        "x": 0.75,
+        "y": 2.465,
+        "w": 2.8299999999999996,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "“What is the most important thing we still don’t know, and which supplied records explain that gap?”",
+        "x": 0.7,
+        "y": 3.05,
+        "w": 6.05,
+        "h": 2.3,
+        "size": 24,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 7.08,
+        "y": 2.4,
+        "w": 5.7,
+        "h": 3.7,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "ILLUSTRATIVE RESPONSE",
+        "x": 7.33,
+        "y": 2.68,
+        "w": 5.15,
+        "h": 0.25,
+        "size": 11,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Whether the refund was actually paid.\n\nThe supplied records contain a request and changed instructions, but no payment confirmation.",
+        "x": 7.33,
+        "y": 3.25,
+        "w": 5.15,
+        "h": 2.55,
+        "size": 21,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 6.2,
+        "w": 12.23,
+        "h": 0.62,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.08
+      },
+      {
+        "kind": "text",
+        "value": "Keep the same conversation ID; tools can be rechecked while case context is retained.",
+        "x": 0.75,
+        "y": 6.37,
+        "w": 11.83,
+        "h": 0.4,
+        "size": 16,
+        "color": "236E69",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "title": "Interaction 3: turn the discussion into a handover",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Interaction 3: turn the discussion into a handover",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Carry the supported findings into a useful, concise form.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "09",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.65,
+        "y": 2.4,
+        "w": 3.03,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "SAME CASE · FOLLOW-UP 2",
+        "x": 0.75,
+        "y": 2.465,
+        "w": 2.8299999999999996,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "text",
+        "value": "“Using the same case and the gap we just discussed, write a three-sentence handover for the gallery manager. Separate recorded facts from what remains unknown.”",
+        "x": 0.7,
+        "y": 3.02,
+        "w": 5.93,
+        "h": 2.85,
+        "size": 23,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 6.95,
+        "y": 2.4,
+        "w": 5.83,
+        "h": 3.9,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "ILLUSTRATIVE HANDOVER",
+        "x": 7.2,
+        "y": 2.68,
+        "w": 5.3,
+        "h": 0.25,
+        "size": 11,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The supplied documents link invoice INV-204 to a refund request and changed bank instructions.\n\nThey do not confirm whether a refund payment occurred.\n\nA duplicate payment is therefore not established from this record set.",
+        "x": 7.2,
+        "y": 3.2,
+        "w": 5.3,
+        "h": 2.95,
+        "size": 20,
+        "color": "203B45",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "A new source can change the answer",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "FOLLOW-ON DEMONSTRATION",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A new source can change the answer",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Optional extension: show an answer developing with the supplied evidence.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "FUTURE EXTENSION",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "10",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.45,
+        "w": 4.45,
+        "h": 3.52,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "NEW SYNTHETIC SOURCE S04",
+        "x": 0.75,
+        "y": 2.6500000000000004,
+        "w": 4.05,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Payment confirmation",
+        "x": 0.75,
+        "y": 3.0700000000000003,
+        "w": 4.05,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A confirmation records one refund payment against INV-204.",
+        "x": 0.75,
+        "y": 3.9000000000000004,
+        "w": 4.05,
+        "h": 1.9,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "→",
+        "x": 5.2,
+        "y": 3.65,
+        "w": 0.55,
+        "h": 0.65,
+        "size": 34,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "box",
+        "x": 6.02,
+        "y": 2.45,
+        "w": 6.75,
+        "h": 3.52,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "UPDATED SUPPORTED CONCLUSION",
+        "x": 6.27,
+        "y": 2.73,
+        "w": 6.2,
+        "h": 0.25,
+        "size": 11,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "One refund payment is now supported by a supplied confirmation.\n\nA duplicate payment is still not established.",
+        "x": 6.27,
+        "y": 3.38,
+        "w": 6.2,
+        "h": 2.35,
+        "size": 24,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Prompt: “What does this new document change, and what does it leave unresolved?”",
+        "x": 0.7,
+        "y": 6.3,
+        "w": 12,
+        "h": 0.4,
+        "size": 18,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "What works today, and what we would add",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "DELIVERY STATUS",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "What works today, and what we would add",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The native framework is running. This particular story is a proposed teaching extension.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "CURRENT + PROPOSED",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "11",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.45,
+        "w": 5.97,
+        "h": 3.92,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "WORKING IN LIVESTACK",
+        "x": 0.75,
+        "y": 2.6500000000000004,
+        "w": 5.569999999999999,
+        "h": 0.25,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Native agent foundation",
+        "x": 0.75,
+        "y": 3.0700000000000003,
+        "w": 5.569999999999999,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "One investigator agent and five tools.\nCity-aware watched-pattern tiles.\nCase conversation and follow-ups.\nOracle execution history and AI Ops.\nStructured, readable answers.",
+        "x": 0.75,
+        "y": 3.9000000000000004,
+        "w": 5.569999999999999,
+        "h": 2.3,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 6.8,
+        "y": 2.45,
+        "w": 5.97,
+        "h": 3.92,
+        "fill": "FAEEDB",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED ADDITIONS",
+        "x": 7,
+        "y": 2.6500000000000004,
+        "w": 5.569999999999999,
+        "h": 0.25,
+        "size": 10,
+        "color": "AB6B24",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Make the story demonstrable",
+        "x": 7,
+        "y": 3.0700000000000003,
+        "w": 5.569999999999999,
+        "h": 0.72,
+        "size": 21,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Small synthetic document set.\nSupporting-records excerpt tool.\nVisible source references in answers.\nRetained conversation timeline.\nLater: add a new source and revisit.",
+        "x": 7,
+        "y": 3.9000000000000004,
+        "w": 5.569999999999999,
+        "h": 2.3,
+        "size": 17,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "A demo colleagues can explain back",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "THE GALLERY REFUND PUZZLE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "A demo colleagues can explain back",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The story makes the framework visible through a sequence of understandable questions.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "FAEEDB",
+        "line": "FAEEDB",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "PROPOSED STORY",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "AB6B24",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "12",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.65,
+        "w": 2.28,
+        "h": 2.1,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "Ask",
+        "x": 0.73,
+        "y": 2.92,
+        "w": 1.92,
+        "h": 0.4,
+        "size": 22,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Has the gallery paid twice?",
+        "x": 0.73,
+        "y": 3.66,
+        "w": 1.92,
+        "h": 1,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 3.04,
+        "y": 2.65,
+        "w": 2.28,
+        "h": 2.1,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "Inspect",
+        "x": 3.22,
+        "y": 2.92,
+        "w": 1.92,
+        "h": 0.4,
+        "size": 22,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Which source\nsupports that?",
+        "x": 3.22,
+        "y": 3.66,
+        "w": 1.92,
+        "h": 1,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 5.53,
+        "y": 2.65,
+        "w": 2.28,
+        "h": 2.1,
+        "fill": "FAEEDB",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "Reflect",
+        "x": 5.71,
+        "y": 2.92,
+        "w": 1.92,
+        "h": 0.4,
+        "size": 22,
+        "color": "AB6B24",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "What can’t\nwe establish?",
+        "x": 5.71,
+        "y": 3.66,
+        "w": 1.92,
+        "h": 1,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 8.020000000000001,
+        "y": 2.65,
+        "w": 2.28,
+        "h": 2.1,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "Continue",
+        "x": 8.200000000000001,
+        "y": 2.92,
+        "w": 1.92,
+        "h": 0.4,
+        "size": 22,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "What do we\nstill not know?",
+        "x": 8.200000000000001,
+        "y": 3.66,
+        "w": 1.92,
+        "h": 1,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.510000000000002,
+        "y": 2.65,
+        "w": 2.28,
+        "h": 2.1,
+        "fill": "FFFFFF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "Share",
+        "x": 10.690000000000001,
+        "y": 2.92,
+        "w": 1.92,
+        "h": 0.4,
+        "size": 22,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Explain it to a colleague.",
+        "x": 10.690000000000001,
+        "y": 3.66,
+        "w": 1.92,
+        "h": 1,
+        "size": 18,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 5.25,
+        "w": 12.23,
+        "h": 1.04,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.08
+      },
+      {
+        "kind": "text",
+        "value": "The answer is useful when colleagues can follow its sources, its limits and its continuity.",
+        "x": 0.75,
+        "y": 5.42,
+        "w": 11.83,
+        "h": 0.8200000000000001,
+        "size": 23,
+        "color": "236E69",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "title": "Appendix: map the story to CRIME_DATA",
+    "elements": [
+      {
+        "kind": "text",
+        "value": "INCIDENTDATA LIVESTACK",
+        "x": 0.55,
+        "y": 0.3,
+        "w": 5,
+        "h": 0.22,
+        "size": 10,
+        "color": "B44C3A",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "TECHNICAL REFERENCE",
+        "x": 0.55,
+        "y": 0.65,
+        "w": 11,
+        "h": 0.22,
+        "size": 10,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Appendix: map the story to CRIME_DATA",
+        "x": 0.55,
+        "y": 1.03,
+        "w": 12.15,
+        "h": 0.65,
+        "size": 30,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "The supporting-records function is the proposed extension; its final name and contract remain to be designed.",
+        "x": 0.55,
+        "y": 1.75,
+        "w": 12.05,
+        "h": 0.55,
+        "size": 16,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 10.65,
+        "y": 0.28,
+        "w": 2.12,
+        "h": 0.32,
+        "fill": "EAF4EF",
+        "line": "EAF4EF",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "TECHNICAL APPENDIX",
+        "x": 10.75,
+        "y": 0.34500000000000003,
+        "w": 1.9200000000000002,
+        "h": 0.19,
+        "size": 9,
+        "color": "236E69",
+        "bold": true,
+        "align": "center"
+      },
+      {
+        "kind": "line",
+        "x": 0.55,
+        "y": 6.99,
+        "w": 12.2,
+        "color": "CAD7D2"
+      },
+      {
+        "kind": "text",
+        "value": "Synthetic training story • Proposed scenario, not yet loaded into LiveStack",
+        "x": 0.55,
+        "y": 7.1,
+        "w": 11.2,
+        "h": 0.18,
+        "size": 9,
+        "color": "587078",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "13",
+        "x": 12.2,
+        "y": 7.08,
+        "w": 0.55,
+        "h": 0.22,
+        "size": 10,
+        "color": "587078",
+        "bold": true,
+        "align": "right"
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.4,
+        "w": 12.23,
+        "h": 0.45,
+        "fill": "FFFFFF",
+        "line": "F5F3EE",
+        "r": 0
+      },
+      {
+        "kind": "text",
+        "value": "Oracle-supplied runtime",
+        "x": 0.74,
+        "y": 2.5,
+        "w": 3.02,
+        "h": 0.26,
+        "size": 13,
+        "color": "587078",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "DBMS_CLOUD_AI_AGENT.RUN_TEAM",
+        "x": 3.93,
+        "y": 2.5,
+        "w": 8.55,
+        "h": 0.27,
+        "size": 14,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 2.92,
+        "w": 12.23,
+        "h": 0.45,
+        "fill": "F5F3EE",
+        "line": "F5F3EE",
+        "r": 0
+      },
+      {
+        "kind": "text",
+        "value": "Registered team",
+        "x": 0.74,
+        "y": 3.02,
+        "w": 3.02,
+        "h": 0.26,
+        "size": 13,
+        "color": "587078",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "CRIMEDATA_PATTERN_INVESTIGATION_TEAM",
+        "x": 3.93,
+        "y": 3.02,
+        "w": 8.55,
+        "h": 0.27,
+        "size": 14,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 3.44,
+        "w": 12.23,
+        "h": 0.45,
+        "fill": "FFFFFF",
+        "line": "F5F3EE",
+        "r": 0
+      },
+      {
+        "kind": "text",
+        "value": "Investigator",
+        "x": 0.74,
+        "y": 3.54,
+        "w": 3.02,
+        "h": 0.26,
+        "size": 13,
+        "color": "587078",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "CRIMEDATA_PATTERN_INVESTIGATOR",
+        "x": 3.93,
+        "y": 3.54,
+        "w": 8.55,
+        "h": 0.27,
+        "size": 14,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 3.96,
+        "w": 12.23,
+        "h": 0.45,
+        "fill": "F5F3EE",
+        "line": "F5F3EE",
+        "r": 0
+      },
+      {
+        "kind": "text",
+        "value": "Task",
+        "x": 0.74,
+        "y": 4.06,
+        "w": 3.02,
+        "h": 0.26,
+        "size": 13,
+        "color": "587078",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "CRIMEDATA_PATTERN_INVESTIGATION_TASK",
+        "x": 3.93,
+        "y": 4.06,
+        "w": 8.55,
+        "h": 0.27,
+        "size": 14,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 4.48,
+        "w": 12.23,
+        "h": 0.45,
+        "fill": "FFFFFF",
+        "line": "F5F3EE",
+        "r": 0
+      },
+      {
+        "kind": "text",
+        "value": "Model profile",
+        "x": 0.74,
+        "y": 4.58,
+        "w": 3.02,
+        "h": 0.26,
+        "size": 13,
+        "color": "587078",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "CRIMEDATA_SELECT_AI_V2",
+        "x": 3.93,
+        "y": 4.58,
+        "w": 8.55,
+        "h": 0.27,
+        "size": 14,
+        "color": "203B45",
+        "bold": true
+      },
+      {
+        "kind": "box",
+        "x": 0.55,
+        "y": 5.3,
+        "w": 12.23,
+        "h": 1.25,
+        "fill": "EAF4EF",
+        "line": "CAD7D2",
+        "r": 0.12
+      },
+      {
+        "kind": "text",
+        "value": "Existing tool roles",
+        "x": 0.76,
+        "y": 5.47,
+        "w": 2.18,
+        "h": 0.3,
+        "size": 15,
+        "color": "236E69",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "value": "Pattern brief · Pattern links · Area/time · Evidence/report coverage · Readiness",
+        "x": 3.13,
+        "y": 5.47,
+        "w": 9.35,
+        "h": 0.38,
+        "size": 16,
+        "color": "203B45",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "value": "Inspect actual activity in USER_AI_AGENT_TEAM_HISTORY, USER_AI_AGENT_TASK_HISTORY and USER_AI_AGENT_TOOL_HISTORY.",
+        "x": 0.76,
+        "y": 6.01,
+        "w": 11.8,
+        "h": 0.28,
+        "size": 12,
+        "color": "587078",
+        "bold": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "status": "deployed_healthy",
+  "at": "2026-09-20T02:26:53.289Z",
+  "image_before": "localhost/local/adelaide-crime-intelligence:six-city-restore-20260919",
+  "image_after": "localhost/local/adelaide-crime-intelligence:saved-profile-scale-20260920",
+  "image_id_after": "1f4e13f384bae7a29e9dd426f63c62bfda666dadadb8e6ee22d6acefd5a8a269",
+  "container_after": "7ef3d3441888e5bbce716cf9a7a45a44f9dc20c64946d8f452fa935d48282200",
+  "started_at": "2026-09-20T02:24:57.270689021Z",
+  "settings_unchanged": true,
+  "mounts_unchanged": true,
+  "ports_unchanged": true,
+  "unrelated_backend_and_public_assets_unchanged": true,
+  "profile_mappings": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "count": 21532,
+      "nrt": true
+    },
+    {
+      "code": "PERTH_DATA",
+      "count": 33511,
+      "nrt": true
+    },
+    {
+      "code": "BRISBANE_DATA",
+      "count": 42317,
+      "nrt": true
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "count": 14467,
+      "nrt": false
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "count": 25691,
+      "nrt": false
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "count": 17817,
+      "nrt": false
+    }
+  ],
+  "active_profile_unchanged": "DUBLIN_CITY_DATA_V1",
+  "chicago_loaded": false,
+  "restore_invoked": false,
+  "rollback_image_retained": "localhost/local/adelaide-crime-intelligence:six-city-restore-20260919",
+  "live_api_and_browser": "passed"
+}

@@ -1,0 +1,9 @@
+{
+  "deployed": true,
+  "image": "localhost/incidentdata-livestack:person-links-20261020-r1",
+  "previousImage": "localhost/incidentdata-livestack:city-evidence-core-20261020-r1",
+  "runtimeSettingsUnchanged": true,
+  "unrelatedBackendUnchanged": true,
+  "frontendUnchanged": true,
+  "at": "2026-10-20T04:49:53.458Z"
+}

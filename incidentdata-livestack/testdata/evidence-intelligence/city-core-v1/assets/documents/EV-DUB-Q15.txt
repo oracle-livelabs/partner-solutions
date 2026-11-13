@@ -1,0 +1,5 @@
+Follow-up preserving the timing disagreement — Cherry Orchard area
+
+Authored fictional teaching supplement for Dublin; linked incident SYN-DUB-2026-01610, Cherry Orchard area.
+The fictional follow-up for DUB-CORE-04 records that the resident and route copy give different approximate windows. No independent clock source resolves the difference. A legitimate delivery explanation remains possible; the account does not establish an occupancy test.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

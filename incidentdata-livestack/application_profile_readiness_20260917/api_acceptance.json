@@ -1,0 +1,754 @@
+{
+  "started_at": "2026-09-17T01:39:27.792Z",
+  "environment": "isolated loopback application; real FU40 data; GET only",
+  "checks": {
+    "catalogue_six_profiles_and_explicit_saved_selection": true,
+    "all_physical_api_coordinates_exactly_match_validated_source": true,
+    "all_11_groups_39_categories_9_areas_match": true,
+    "profile_local_month_and_midnight_boundaries": true,
+    "online_references_never_map": true,
+    "stratified_file_database_api_roundtrips": 379,
+    "nonadmin_library_denied_and_live_scopes_unchanged": true,
+    "brussels_live_health_and_map_regression": true
+  },
+  "requests": [
+    {
+      "route": "/api/setup/profiles?profileCode=AMSTERDAM_DATA_V1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 450
+    },
+    {
+      "route": "/api/setup/profiles?profileCode=DOES_NOT_EXIST",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 404,
+      "elapsed_ms": 41
+    },
+    {
+      "route": "/api/setup/profiles?profileCode=constructor",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 400,
+      "elapsed_ms": 27
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?limit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 637
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=BURGLARY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 282
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=COMMUNITY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 274
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=DAMAGE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 280
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=DOMESTIC_VIOLENCE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 269
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=DRUGS&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 338
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=FRAUD&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 325
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=PERSONAL_SAFETY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 290
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=SEXUAL_OFFENCES&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 263
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=THEFT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 297
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=VIOLENCE_HARM&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 310
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?group=WEAPONS&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 262
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_ARSON&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 258
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_ASSAULT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 278
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_ATT_ENTRY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 265
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_ATT_HOMICIDE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 260
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_BICYCLE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 289
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_COMPUTER&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 267
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_COM_BURGLARY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 269
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_CULTIVATION&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 268
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DEPRIVATION&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 267
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DOCUMENT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 262
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DOM_ASSAULT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 269
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DOM_DAMAGE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 257
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DOM_HARASSMENT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 256
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DOM_THREATS&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 261
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DRUG_POSSESSION&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 261
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_DRUG_SUPPLY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 260
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_EXTORTION&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 259
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_FALSE_REPORT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 259
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_FIREARM&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 259
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_FROM_VEHICLE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 270
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_HARASSMENT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 266
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_HOMICIDE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 253
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_IMPERSONATION&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 255
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_MARKETPLACE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 260
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_OTHER_THEFT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 257
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_PAYMENT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 249
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_PICKPOCKET&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 276
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_PREMISES_THEFT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 261
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_RAPE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 268
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_RESISTANCE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 260
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_RES_BURGLARY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 288
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_ROBBERY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 258
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_SEXUAL_INTEGRITY&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 251
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_SHOPLIFT&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 261
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_THREATS&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 257
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_VANDALISM&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 273
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_VEHICLE&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 265
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_VEHICLE_PARTS&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 259
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?category=AMS_WEAPON&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 259
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Centrum&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 249
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Nieuw-West&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 247
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Noord&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 246
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Oost&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 250
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Weesp&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 262
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=West&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 248
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Westpoort&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 249
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Zuid&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 258
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?area=Zuidoost&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 243
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?from=2026-05-01&to=2026-05-31&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 351
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?from=2026-06-01&to=2026-06-30&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 307
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?from=2026-05-01&to=2026-05-01&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 353
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?role=locality_reference",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 247
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?q=%27+OR+1%3D1+--&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 515
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?q=%25&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 510
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?q=short+absence+followed+by+the+discovery+of+a+damaged+lock&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 608
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review?q=Rh%C3%B4nepark&limit=1&mapLimit=1",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 521
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/incidents/SYN-BRU-2026-00003",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 404,
+      "elapsed_ms": 54
+    },
+    {
+      "route": "/api/setup/profiles?profileCode=AMSTERDAM_DATA_V1",
+      "port": 18706,
+      "user": "adelaide_central_analyst",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review",
+      "port": 18706,
+      "user": "adelaide_central_analyst",
+      "status": 403,
+      "elapsed_ms": 0
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/incidents/SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "adelaide_central_analyst",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 18706,
+      "user": "adelaide_central_analyst",
+      "status": 200,
+      "elapsed_ms": 131
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 8706,
+      "user": "adelaide_central_analyst",
+      "status": 200,
+      "elapsed_ms": 125
+    },
+    {
+      "route": "/api/incidents?q=SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "adelaide_central_analyst",
+      "status": 200,
+      "elapsed_ms": 745
+    },
+    {
+      "route": "/api/setup/profiles?profileCode=AMSTERDAM_DATA_V1",
+      "port": 18706,
+      "user": "northern_analyst",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review",
+      "port": 18706,
+      "user": "northern_analyst",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/incidents/SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "northern_analyst",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 18706,
+      "user": "northern_analyst",
+      "status": 200,
+      "elapsed_ms": 127
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 8706,
+      "user": "northern_analyst",
+      "status": 200,
+      "elapsed_ms": 123
+    },
+    {
+      "route": "/api/incidents?q=SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "northern_analyst",
+      "status": 200,
+      "elapsed_ms": 704
+    },
+    {
+      "route": "/api/setup/profiles?profileCode=AMSTERDAM_DATA_V1",
+      "port": 18706,
+      "user": "southern_analyst",
+      "status": 403,
+      "elapsed_ms": 2
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review",
+      "port": 18706,
+      "user": "southern_analyst",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/incidents/SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "southern_analyst",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 18706,
+      "user": "southern_analyst",
+      "status": 200,
+      "elapsed_ms": 123
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 8706,
+      "user": "southern_analyst",
+      "status": 200,
+      "elapsed_ms": 127
+    },
+    {
+      "route": "/api/incidents?q=SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "southern_analyst",
+      "status": 200,
+      "elapsed_ms": 699
+    },
+    {
+      "route": "/api/setup/profiles?profileCode=AMSTERDAM_DATA_V1",
+      "port": 18706,
+      "user": "read_only_viewer",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review",
+      "port": 18706,
+      "user": "read_only_viewer",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/incidents/SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "read_only_viewer",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 18706,
+      "user": "read_only_viewer",
+      "status": 200,
+      "elapsed_ms": 128
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 8706,
+      "user": "read_only_viewer",
+      "status": 200,
+      "elapsed_ms": 127
+    },
+    {
+      "route": "/api/incidents?q=SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "read_only_viewer",
+      "status": 200,
+      "elapsed_ms": 704
+    },
+    {
+      "route": "/api/setup/profiles?profileCode=AMSTERDAM_DATA_V1",
+      "port": 18706,
+      "user": "unknown",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/review",
+      "port": 18706,
+      "user": "unknown",
+      "status": 403,
+      "elapsed_ms": 1
+    },
+    {
+      "route": "/api/setup/profiles/AMSTERDAM_DATA_V1/incidents/SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "unknown",
+      "status": 403,
+      "elapsed_ms": 0
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 18706,
+      "user": "unknown",
+      "status": 200,
+      "elapsed_ms": 128
+    },
+    {
+      "route": "/api/dashboard",
+      "port": 8706,
+      "user": "unknown",
+      "status": 200,
+      "elapsed_ms": 129
+    },
+    {
+      "route": "/api/incidents?q=SYN-AMS-2026-00002",
+      "port": 18706,
+      "user": "unknown",
+      "status": 200,
+      "elapsed_ms": 708
+    },
+    {
+      "route": "/api/profile-context",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 21
+    },
+    {
+      "route": "/api/incidents/map/timeline?limit=100",
+      "port": 18706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 2165
+    },
+    {
+      "route": "/api/health",
+      "port": 8706,
+      "user": "statewide_admin",
+      "status": 200,
+      "elapsed_ms": 5
+    }
+  ],
+  "checks_full_report_search_literal_escaping_and_accented_search": true,
+  "status": "passed",
+  "finished_at": "2026-09-17T01:40:11.301Z"
+}

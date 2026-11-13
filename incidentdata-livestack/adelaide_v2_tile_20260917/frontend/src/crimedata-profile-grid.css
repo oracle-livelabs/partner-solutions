@@ -1,0 +1,63 @@
+/* Keep every Data Foundation profile tile visually equal, regardless of state. */
+.crimedata-setup__profiles {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.crimedata-setup__profiles article {
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+}
+
+.crimedata-setup__profiles button {
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #dce4e6;
+  border-top: 4px solid #b6c0c3;
+  padding: 12px;
+  background: #fafbfb;
+}
+
+.crimedata-setup__profiles button.active {
+  border-top-color: #437c94;
+  background: #f8fbfd;
+  box-shadow: inset 0 0 0 1px #c7dce4;
+}
+
+.crimedata-setup__profiles article.foundation-profile {
+  border-top-color: #437c94;
+  background: #f8fbfd;
+}
+
+.crimedata-setup__profiles em {
+  margin-top: auto;
+  padding-top: 9px;
+}
+
+.crimedata-setup__profiles .crimedata-setup__coverage {
+  display: block;
+  margin-top: 8px;
+  color: #4f7777;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.crimedata-setup__coverage strong {
+  color: #314f58;
+  font-weight: 700;
+}
+
+@media (max-width: 950px) {
+  .crimedata-setup__profiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .crimedata-setup__profiles {
+    grid-template-columns: 1fr;
+  }
+}

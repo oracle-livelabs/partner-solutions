@@ -1,0 +1,5 @@
+Delivery route copy as an alternative account — Leidsebuurt-Noordoost
+
+Authored fictional teaching supplement for Amsterdam; linked incident SYN-AMS-2026-06302, Leidsebuurt-Noordoost.
+A fictional courier route copy repeats AMS-CORE-04 in its enquiry-reference field beside a parcel delivery attempt. The copy gives an approximate window and no recipient signature. It supplies an alternative context, not verified visitor identification.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

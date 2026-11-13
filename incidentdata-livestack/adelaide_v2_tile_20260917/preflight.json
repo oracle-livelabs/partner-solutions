@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-17T07:05:25.239Z",
+  "image_before": "localhost/local/adelaide-crime-intelligence:empty-summary-20260917",
+  "image_id_before": "c330dd2b13ec27d4ff4347988366ffbf043ebe00824acf348afc33a3170f5482",
+  "container_before": "cc644942b71faac27807416c17aaafa5ee6b02838a1529fb22b5843d33d6e7fa",
+  "runtime_server_sha256": "3a4825c1f1fe71b255023c53a341155281efb4f3933c30597e33719fec690d6f",
+  "baseline_exact_match": true,
+  "baseline_assets": [
+    "BatchMessages-BxrVkSZj.js",
+    "BatchMessages-o6iZKUsE.css",
+    "BatchMoneyFlows-C_1PigCI.js",
+    "BatchMoneyFlows-DrrsbPEl.css",
+    "BatchPeoplePhotos-BAAg5R-3.css",
+    "BatchPeoplePhotos-D6tvI5V5.js",
+    "BatchPoiCandidates-BAtclp3e.css",
+    "BatchPoiCandidates-D31JCuxP.js",
+    "index-BVQfHIm3.css",
+    "index-Dfi5pNuq.js"
+  ],
+  "main_before_sha256": "373010b7527445f991b400f693b564d36c2bbafa65456b684319911fc1d19bd2"
+}

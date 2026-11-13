@@ -1,0 +1,3 @@
+FROM localhost/crimedata-detective-worker:record-label-recovery-20261020-r2
+COPY backend/photo-comparison-state.js backend/detective-room-source.js backend/detective-room-compose.js backend/detective-room-associations.js backend/detective-room-worker.js backend/detective-room-recovery.js backend/detective-room-store.js /app/backend/
+COPY scripts/preview_detective_room_person_links.cjs /app/scripts/

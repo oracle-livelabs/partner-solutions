@@ -1,0 +1,5 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+Document: redacted shopping-entry extract supplied 25 June 2026
+Client: ADL-RES-A. Permission comparison: ADL-SHOP-A. Currency: AUD.
+ADL-TXN-A1, 19 June: 31.80. ADL-TXN-A2, 19 June: 31.80. ADL-TXN-A3, 22 June: 84.60.
+Settlement, reversal, merchant and purchaser fields are omitted from this extract. It is not a reconciled statement or loss calculation. No account credentials or payment user is identified.

@@ -1,0 +1,16 @@
+{
+  "name": "incidentdata-detective-worker-runtime",
+  "private": true,
+  "description": "Dependency versions captured from the deployed milestone worker; use as CDR_ROOM_RUNTIME_PACKAGE when rebuilding its media runtime.",
+  "dependencies": {
+    "oci-common": "2.140.0",
+    "oci-generativeaiinference": "2.140.0",
+    "oracledb": "6.10.0",
+    "csv-parse": "7.0.2",
+    "buffer-crc32": "1.0.0",
+    "yauzl": "3.4.0",
+    "yazl": "3.3.1",
+    "playwright": "1.63.0",
+    "sharp": "0.35.5"
+  }
+}

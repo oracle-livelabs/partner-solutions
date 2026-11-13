@@ -1,0 +1,10 @@
+TDATE,SENDER,SENDER_ACCOUNT,RECEIVER,RECEIVER_ACCOUNT,AMOUNT,DESCRIPTION,FLAG
+03-JUN-2025,Aboriginal Art Gallery,976-423-786,DesertWave Logistics,951-908-223,47625.47,"Art purchase, vague provenance",Yes
+04-JUN-2025,Aboriginal Art Gallery,976-423-786,BrushStone Ltd,974-732-118,49210.32,"Consulting fee, no contract",No
+05-JUN-2025,Aboriginal Art Gallery,976-423-786,Yulara Ventures,964-821-887,44376.89,"High-value gift, non-family",Yes
+10-JUN-2025,DesertWave Logistics,951-908-223,Eve Kendall,902-985-439,45338.17,"Loan repayment, unrelated entities",Yes
+11-JUN-2025,BrushStone Ltd,974-732-118,Clara Thornhill,901-494-173,48977.44,"Equipment rental, no supporting docs",No
+12-JUN-2025,Yulara Ventures,964-821-887,Philip Vandamm,921-789-654,40892.75,"Advisory payout, shell recipient",Yes
+27-JUN-2025,Eve Kendall,902-985-439,Roger Thornhill,981-225-563,49412.03,"Crypto conversion, unregistered exchange",Yes
+28-JUN-2025,Clara Thornhill,901-494-173,Roger Thornhill,981-225-563,44005.60,"Interior design, invoice mismatch",No
+29-JUN-2025,Philip Vandamm,921-789-654,Roger Thornhill,981-225-563,47499.95,"Suspicious donation",Yes

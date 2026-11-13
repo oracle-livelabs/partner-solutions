@@ -1,0 +1,16 @@
+{
+  "durationSeconds": 220.708333,
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "videoTracks": 1,
+  "audioTracks": 1,
+  "chapters": 8,
+  "captionCues": 45,
+  "voice": "Approved V3 French/British voice blend; expressive neural English narration with breath-sized pauses",
+  "speechSamplesVerified": true,
+  "fullDecode": "passed",
+  "compositor": "Linux Pillow + FFmpeg H.264/AAC; approved 1.2% zoom, 0.6-second chapter dissolve, fixed caption band",
+  "font": "DejaVu Sans 30px (Linux substitute for macOS Helvetica Neue)",
+  "sha256": "7d7931d3ea876f58b8b8b4b89b795f0b5f8eb87eda3b62f1ae2ecd22065e1b8a"
+}

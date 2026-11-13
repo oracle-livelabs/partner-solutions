@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "batchId": "DR-20261020-68ed95d9-8383-401c",
+  "declaredBy": "Scenario owner instruction in chat",
+  "declaredAt": "2026-10-20",
+  "links": [
+    {
+      "handle": "kappa66",
+      "personRef": "POI-NBNW-GEORGE",
+      "reason": "Scenario owner explicitly linked kappa66 to George Kaplan."
+    },
+    {
+      "handle": "evek81",
+      "personRef": "POI-NBNW-EVE",
+      "reason": "Scenario owner explicitly linked evek81 to Eve Kendall."
+    },
+    {
+      "handle": "pipp68",
+      "personRef": "POI-NBNW-PHILIP",
+      "reason": "Scenario owner confirmed pipp68 as Philip Vandamm in chat."
+    },
+    {
+      "handle": "thorny58",
+      "personRef": "POI-NBNW-CLARA",
+      "reason": "Scenario owner confirmed thorny58 as Clara Thornhill in chat."
+    }
+  ]
+}

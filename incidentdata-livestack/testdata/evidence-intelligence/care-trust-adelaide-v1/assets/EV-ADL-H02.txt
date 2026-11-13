@@ -1,0 +1,7 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+Source layer 1: saved report ACI-V2-2026-0002
+Suburb: Oaklands Park; category: SCT - Residence; status: under_review.
+Original title: Daytime residential approach reported in Oaklands Park
+Original narrative, reproduced verbatim: A synthetic weekday report describes an unfamiliar approach to a residential entry in Oaklands Park around midday. The entry is retained as a broad context record only and is not evidence of a linked series.
+Source layer 2: newly authored teaching supplement
+New authored context, recorded 24 June: Resident B (ADL-RES-B) receives home support and wants a prior transport-enquiry permission recorded alongside the concern. This does not identify the person who approached the dwelling or connect that approach with Resident A.

@@ -1,0 +1,108 @@
+/* Keep every Data Foundation profile tile visually equal, regardless of state. */
+.main .crimedata-setup > header {
+  height: auto;
+  min-height: 92px;
+}
+
+.crimedata-setup__counts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.crimedata-setup__profiles {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.crimedata-setup__profiles article {
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+}
+
+.crimedata-setup__profiles button {
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #dce4e6;
+  border-top: 4px solid #b6c0c3;
+  padding: 12px;
+  background: #fafbfb;
+}
+
+.crimedata-setup__profiles button.active {
+  border-top-color: #437c94;
+  background: #f8fbfd;
+  box-shadow: inset 0 0 0 1px #c7dce4;
+}
+
+.crimedata-setup__profiles article.foundation-profile {
+  border-top-color: #437c94;
+  background: #f8fbfd;
+}
+
+.crimedata-setup__profiles em {
+  margin-top: auto;
+  padding-top: 9px;
+}
+
+.crimedata-setup__profiles .crimedata-setup__coverage {
+  display: block;
+  margin-top: 8px;
+  color: #4f7777;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.crimedata-setup__coverage strong {
+  color: #314f58;
+  font-weight: 700;
+}
+
+.profile-activation-confirmation {
+  display: grid;
+  gap: 7px;
+  padding: 15px;
+  font-size: 12px;
+  color: #314f58;
+}
+
+.profile-activation-confirmation input {
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+  padding: 9px;
+  border: 1px solid #b6c4c7;
+}
+
+.crimedata-setup__additional {
+  padding: 0 15px 15px;
+  font-size: 12px;
+}
+
+.crimedata-setup__additional summary { cursor: pointer; }
+.crimedata-setup__additional button { display: block; margin-top: 10px; padding: 9px; }
+.crimedata-setup__profiles button:disabled { cursor: default; opacity: .6; }
+
+.profile-restore-state { margin-top: 10px; font-size: 11px; font-weight: 600; }
+.profile-restore-state.ready { color: #286153; }
+.profile-restore-state.review-only { color: #76603f; }
+.profile-restore-note { margin: 10px 15px; color: #596a73; font-size: 12px; line-height: 1.5; }
+.profile-restore-progress, .profile-restore-success { margin: 15px; padding: 14px; border-left: 4px solid #437c94; background: #eef5f8; }
+.profile-restore-success { border-left-color: #377b59; background: #edf7ef; }
+.profile-restore-progress p { margin: 0 0 10px; }
+.profile-restore-progress p:last-child { margin: 10px 0 0; }
+.profile-restore-progress progress { width: min(100%, 280px); accent-color: #437c94; vertical-align: middle; }
+.profile-restore-elapsed { display: inline-block; margin-left: 12px; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 950px) {
+  .crimedata-setup__profiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .crimedata-setup__profiles {
+    grid-template-columns: 1fr;
+  }
+}

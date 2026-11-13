@@ -1,0 +1,26 @@
+.brand {
+  display: grid;
+  gap: 9px;
+  padding: 15px 22px 16px;
+  border: 0;
+  border-bottom: 1px solid #d7dadd;
+  background: #fff;
+  color: #20242a;
+  cursor: pointer;
+  text-align: left;
+}
+
+.brand__oracle-logo { width: 110px; height: auto; }
+
+.brand .brand__title {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (max-width: 850px) {
+  .brand { padding: 18px 10px; justify-items: center; }
+  .brand__oracle-logo { width: 42px; }
+  .brand__title { display: none; }
+}

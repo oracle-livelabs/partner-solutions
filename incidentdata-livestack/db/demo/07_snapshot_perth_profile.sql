@@ -1,0 +1,34 @@
+/* Capture the currently loaded Perth Metro teaching profile into its independent snapshot. */
+WHENEVER SQLERROR EXIT SQL.SQLCODE ROLLBACK
+DELETE FROM perth_bak_person_embeddings;
+DELETE FROM perth_bak_incident_embeddings;
+DELETE FROM perth_bak_semantic_matches;
+DELETE FROM perth_bak_case_incident_links;
+DELETE FROM perth_bak_person_incident_links;
+DELETE FROM perth_bak_evidence_items;
+DELETE FROM perth_bak_incident_reports;
+DELETE FROM perth_bak_case_files;
+DELETE FROM perth_bak_persons;
+DELETE FROM perth_bak_crime_incidents;
+DELETE FROM perth_bak_analyst_actions;
+DELETE FROM perth_bak_security_entitlements;
+DELETE FROM perth_bak_patrol_areas;
+DELETE FROM perth_bak_incident_categories;
+DELETE FROM perth_bak_security_users;
+INSERT INTO perth_bak_incident_categories SELECT * FROM incident_categories;
+INSERT INTO perth_bak_patrol_areas SELECT * FROM patrol_areas;
+INSERT INTO perth_bak_security_users SELECT * FROM security_users;
+INSERT INTO perth_bak_security_entitlements SELECT * FROM security_user_geo_entitlements;
+INSERT INTO perth_bak_crime_incidents SELECT * FROM crime_incidents;
+INSERT INTO perth_bak_incident_reports SELECT * FROM incident_reports;
+INSERT INTO perth_bak_evidence_items SELECT * FROM evidence_items;
+INSERT INTO perth_bak_persons SELECT * FROM persons_of_interest;
+INSERT INTO perth_bak_person_incident_links SELECT * FROM person_incident_links;
+INSERT INTO perth_bak_case_files SELECT * FROM case_files;
+INSERT INTO perth_bak_case_incident_links SELECT * FROM case_incident_links;
+INSERT INTO perth_bak_semantic_matches SELECT * FROM semantic_matches;
+INSERT INTO perth_bak_incident_embeddings SELECT * FROM incident_report_embeddings;
+INSERT INTO perth_bak_person_embeddings SELECT * FROM person_profile_embeddings;
+INSERT INTO perth_bak_analyst_actions SELECT * FROM analyst_actions;
+UPDATE demo_data_profiles SET profile_status=CASE WHEN profile_code='PERTH_DATA' THEN 'active' WHEN profile_status='active' THEN 'available' ELSE profile_status END,last_backup_at=SYSTIMESTAMP WHERE profile_code IN ('ADELAIDE_DATA','PERTH_DATA');
+COMMIT;

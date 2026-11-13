@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sourceDatabasesNeverModified": [
+    "FU40",
+    "FU30"
+  ],
+  "destinationNamePattern": "^ID[0-9A-F]{6}$",
+  "automated": [
+    "encrypted dump checksums",
+    "empty private source tables",
+    "nine saved city counts",
+    "nine actual city restores",
+    "six active watch patterns per city",
+    "875 saved identifier assertions",
+    "five valid property graphs",
+    "twenty source-matched native data grants and cross-table parent rule",
+    "three authenticated APEX applications",
+    "individual fixed-persona React accounts",
+    "forged administrator header rejected",
+    "public CA trusted HTTPS",
+    "native AI object counts",
+    "native OCI inference",
+    "fresh Detective Room generation and video validation",
+    "authenticated room and ZIP access",
+    "public APEX service",
+    "temporary bootstrap credential object deleted before ready callback"
+  ],
+  "step6HumanBrowser": [
+    "sign into all three APEX apps with participant accounts",
+    "confirm APEX persona scope",
+    "React evidence core stories in nine cities",
+    "fictional handles and portraits on Crime Board",
+    "open narrated video and download offline ZIP",
+    "certificate renewal observation",
+    "reproduce from packaged Git commit without source VM"
+  ]
+}

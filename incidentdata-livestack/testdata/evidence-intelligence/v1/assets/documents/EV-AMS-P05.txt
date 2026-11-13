@@ -1,0 +1,12 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-P05
+Invoice total differs from the retained transaction note
+
+Document: invoice-total comparison
+Comparison marker: AMS-2-3
+Invoice total: 780.00
+Transaction-note total: 708.00
+Currency: not recorded
+Account identifiers: not supplied
+No conclusion about the cause of the difference.
+
+Authored fixture; not a recovered or original incident document.

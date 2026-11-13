@@ -1,0 +1,439 @@
+{
+  "generatedAt": "2026-09-24T14:16:13.358Z",
+  "passed": true,
+  "passedCount": 59,
+  "total": 59,
+  "scope": "Offline fixture/embedding checks, anchored to live HTTP records. Not a native Oracle or agent execution test.",
+  "pending": [
+    "Native Oracle JSON/VECTOR/SDO/GRAPH_TABLE execution",
+    "Transactional loader and rollback against a test schema",
+    "Snapshot restore compatibility in database",
+    "Select AI/agent tool execution and source-instruction isolation",
+    "Evidence Intelligence UI"
+  ],
+  "checks": [
+    {
+      "name": "Data contract and source hashes",
+      "pass": true,
+      "detail": {
+        "valid": true,
+        "errors": [],
+        "items": 32,
+        "incidents": 12,
+        "people": 6
+      }
+    },
+    {
+      "name": "Embedding pack fingerprint",
+      "pass": true
+    },
+    {
+      "name": "payment-reference",
+      "pass": true,
+      "detail": [
+        {
+          "evidenceRef": "EV-AMS-P01",
+          "score": 0.6759
+        },
+        {
+          "evidenceRef": "EV-AMS-P02",
+          "score": 0.6591
+        },
+        {
+          "evidenceRef": "EV-AMS-C02",
+          "score": 0.6566
+        },
+        {
+          "evidenceRef": "EV-AMS-P05",
+          "score": 0.5089
+        },
+        {
+          "evidenceRef": "EV-AMS-P04",
+          "score": 0.4979
+        },
+        {
+          "evidenceRef": "EV-AMS-P06",
+          "score": 0.472
+        }
+      ]
+    },
+    {
+      "name": "invoice-reconciliation",
+      "pass": true,
+      "detail": [
+        {
+          "evidenceRef": "EV-AMS-P05",
+          "score": 0.7051
+        },
+        {
+          "evidenceRef": "EV-AMS-P04",
+          "score": 0.6469
+        },
+        {
+          "evidenceRef": "EV-AMS-N05",
+          "score": 0.5911
+        },
+        {
+          "evidenceRef": "EV-AMS-P02",
+          "score": 0.5192
+        },
+        {
+          "evidenceRef": "EV-AMS-N04",
+          "score": 0.4785
+        },
+        {
+          "evidenceRef": "EV-AMS-C02",
+          "score": 0.4577
+        }
+      ]
+    },
+    {
+      "name": "tray-description",
+      "pass": true,
+      "detail": [
+        {
+          "evidenceRef": "EV-AMS-W02",
+          "score": 0.7066
+        },
+        {
+          "evidenceRef": "EV-AMS-V02",
+          "score": 0.6277
+        },
+        {
+          "evidenceRef": "EV-AMS-V01",
+          "score": 0.5678
+        },
+        {
+          "evidenceRef": "EV-AMS-W01",
+          "score": 0.5643
+        },
+        {
+          "evidenceRef": "EV-AMS-V03",
+          "score": 0.5532
+        },
+        {
+          "evidenceRef": "EV-AMS-W06",
+          "score": 0.3611
+        }
+      ]
+    },
+    {
+      "name": "latch-description",
+      "pass": true,
+      "detail": [
+        {
+          "evidenceRef": "EV-AMS-V04",
+          "score": 0.7497
+        },
+        {
+          "evidenceRef": "EV-AMS-W05",
+          "score": 0.6937
+        },
+        {
+          "evidenceRef": "EV-AMS-W06",
+          "score": 0.4142
+        },
+        {
+          "evidenceRef": "EV-AMS-W01",
+          "score": 0.3359
+        },
+        {
+          "evidenceRef": "EV-AMS-N12",
+          "score": 0.3199
+        },
+        {
+          "evidenceRef": "EV-AMS-W04",
+          "score": 0.2978
+        }
+      ]
+    },
+    {
+      "name": "tray-a-comparison",
+      "pass": true,
+      "detail": [
+        {
+          "evidenceRef": "EV-AMS-V02",
+          "score": 0.8366
+        },
+        {
+          "evidenceRef": "EV-AMS-V03",
+          "score": 0.795
+        },
+        {
+          "evidenceRef": "EV-AMS-V04",
+          "score": 0.7124
+        }
+      ]
+    },
+    {
+      "name": "tray-b-comparison",
+      "pass": true,
+      "detail": [
+        {
+          "evidenceRef": "EV-AMS-V01",
+          "score": 0.8366
+        },
+        {
+          "evidenceRef": "EV-AMS-V03",
+          "score": 0.7295
+        },
+        {
+          "evidenceRef": "EV-AMS-V04",
+          "score": 0.6821
+        }
+      ]
+    },
+    {
+      "name": "Exact marker payment_comparison:AMS-2-1",
+      "pass": true,
+      "detail": [
+        "EV-AMS-P01",
+        "EV-AMS-P02"
+      ]
+    },
+    {
+      "name": "Exact marker payment_comparison:AMS-2-2",
+      "pass": true,
+      "detail": [
+        "EV-AMS-P03",
+        "EV-AMS-P04"
+      ]
+    },
+    {
+      "name": "Exact marker payment_comparison:AMS-2-3",
+      "pass": true,
+      "detail": [
+        "EV-AMS-P05",
+        "EV-AMS-P06"
+      ]
+    },
+    {
+      "name": "Exact marker storage_comparison:AMS-5-1",
+      "pass": true,
+      "detail": [
+        "EV-AMS-W01",
+        "EV-AMS-W02"
+      ]
+    },
+    {
+      "name": "Exact marker inventory_forms:K-204",
+      "pass": true,
+      "detail": [
+        "EV-AMS-W03"
+      ]
+    },
+    {
+      "name": "Exact marker dispatch_forms:K-204",
+      "pass": true,
+      "detail": [
+        "EV-AMS-P03"
+      ]
+    },
+    {
+      "name": "Exact marker payment_comparison:NO-SUCH-MARKER",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Self retrieval EV-AMS-P01 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N01 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-P02 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N02 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-P03 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N03 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-P04 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N04 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-P05 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N05 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-P06 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N06 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-W01 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N07 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-W02 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N08 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-W03 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N09 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-W04 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N10 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-W05 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N11 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-W06 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-N12 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V01 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V01 image",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V02 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V02 image",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V03 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V03 image",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V04 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-V04 image",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-C01 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-C02 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-C03 text",
+      "pass": true
+    },
+    {
+      "name": "Self retrieval EV-AMS-C04 text",
+      "pass": true
+    },
+    {
+      "name": "Captured live scope statewide_admin",
+      "pass": true,
+      "detail": {
+        "items": 32
+      }
+    },
+    {
+      "name": "Captured live scope adelaide_central_analyst",
+      "pass": true,
+      "detail": {
+        "items": 0
+      }
+    },
+    {
+      "name": "Captured live scope northern_analyst",
+      "pass": true,
+      "detail": {
+        "items": 0
+      }
+    },
+    {
+      "name": "Captured live scope southern_analyst",
+      "pass": true,
+      "detail": {
+        "items": 0
+      }
+    },
+    {
+      "name": "Captured live scope read_only_viewer",
+      "pass": true,
+      "detail": {
+        "items": 0
+      }
+    },
+    {
+      "name": "Approximate incident context radius",
+      "pass": true,
+      "detail": [
+        "SYN-AMS-2026-05667",
+        "SYN-AMS-2026-05199",
+        "SYN-AMS-2026-05000",
+        "SYN-AMS-2026-06208"
+      ]
+    },
+    {
+      "name": "Amsterdam local midnight boundary",
+      "pass": true,
+      "detail": [
+        "SYN-AMS-2026-00207",
+        "SYN-AMS-2026-03505"
+      ]
+    },
+    {
+      "name": "Typed source-to-person and inherited paths",
+      "pass": true
+    }
+  ]
+}

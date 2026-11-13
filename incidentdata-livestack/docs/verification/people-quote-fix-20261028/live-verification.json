@@ -1,0 +1,15 @@
+{
+  "batchId": "DR-20261020-2d216fe7-eca8-4f55",
+  "batch": "Chris_Drugs.zip",
+  "httpStatus": 200,
+  "version": "cdr-people-mentioned-v3",
+  "cards": 8,
+  "mentions": 14,
+  "unsupportedAttributesOmitted": 0,
+  "liveModelExtraction": true,
+  "previousFailureReplay": {
+    "mentionsRetained": 15,
+    "unsupportedAttributesOmitted": 5
+  },
+  "at": "2026-10-28T06:32:19.087Z"
+}

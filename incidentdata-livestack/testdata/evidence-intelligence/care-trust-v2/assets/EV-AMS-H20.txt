@@ -1,0 +1,8 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+
+Document: redacted shopping-entry extract supplied 4 July 2026
+Client reference: CT-RES-A
+Permission comparison: DEMO-SHOP-A
+Displayed entries: DEMO-TXN-A1, 27 June, EUR 24.60; DEMO-TXN-A2, 27 June, EUR 24.60; DEMO-TXN-A3, 30 June, EUR 62.40.
+The supplied extract omits settlement and reversal status, merchant detail and purchaser identity. No card, PIN or account number is retained. Do not add these entries together and call the total a loss.
+Questions: are the two equal entries both settled, and what authority and receipt support the larger entry? Compare the later reconciliation before drawing a conclusion.

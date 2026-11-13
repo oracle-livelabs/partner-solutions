@@ -1,0 +1,4 @@
+FROM localhost/local/adelaide-crime-intelligence:ai-ops-v1-20260915
+COPY runtime_server_after.js /app/backend/server.js
+COPY community-signals-summary.js /app/backend/community-signals-summary.js
+RUN node --check /app/backend/server.js && node --check /app/backend/community-signals-summary.js

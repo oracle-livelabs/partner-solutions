@@ -1,0 +1,60 @@
+{
+  "evaluationOnly": true,
+  "neverDeployOrIndex": true,
+  "textProbes": [
+    {
+      "id": "care_assignment",
+      "query": "same home support worker assigned to two residents",
+      "required": [
+        "EV-AMS-H03",
+        "EV-AMS-H04"
+      ],
+      "topK": 6
+    },
+    {
+      "id": "outward_message",
+      "query": "private client appointment information forwarded to an outside account",
+      "required": [
+        "EV-AMS-H05"
+      ],
+      "topK": 4
+    },
+    {
+      "id": "consent",
+      "query": "permission for a limited transport enquiry does not cover another client",
+      "required": [
+        "EV-AMS-H07"
+      ],
+      "topK": 4
+    }
+  ],
+  "exactWorker": [
+    "EV-AMS-H03",
+    "EV-AMS-H04",
+    "EV-AMS-H06"
+  ],
+  "formCollision": [
+    "EV-AMS-H09"
+  ],
+  "forbiddenConclusions": [
+    "The worker authored the message",
+    "Morgan attended a burglary",
+    "Consent for B covers A",
+    "No forced entry",
+    "The resolved incident is reopened"
+  ],
+  "absentBridges": [
+    "Independent message authorship",
+    "Authority for CT-RES-A",
+    "External contact at an incident",
+    "Coordination or responsibility"
+  ],
+  "mainReview": [
+    "EV-AMS-H03",
+    "EV-AMS-H04",
+    "EV-AMS-H05",
+    "EV-AMS-H06",
+    "EV-AMS-H07",
+    "EV-AMS-H12"
+  ]
+}

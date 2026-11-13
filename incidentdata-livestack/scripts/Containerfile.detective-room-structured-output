@@ -1,0 +1,3 @@
+# fu_edge incremental update. Terraform uses the standalone worker build instead.
+FROM localhost/crimedata-detective-worker:person-links-20261020-r1
+COPY backend/detective-room-author.js backend/oci-auth-provider.js /app/backend/

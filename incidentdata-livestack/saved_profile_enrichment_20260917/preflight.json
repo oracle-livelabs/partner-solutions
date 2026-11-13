@@ -1,0 +1,143 @@
+{
+  "db": {
+    "USERNAME": "CRIME_DATA",
+    "DB_NAME": "GE1C42BF10AE843_FU40"
+  },
+  "profiles": [
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PROFILE_CODE": "ADELAIDE_DATA",
+      "PROFILE_STATUS": "active"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PROFILE_CODE": "BRISBANE_DATA",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 5,
+      "PROFILE_CODE": "PERTH_DATA",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 10,
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "PROFILE_STATUS": "available"
+    }
+  ],
+  "active": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 1,
+      "ACTIVATED_AT": "2026-09-17T05:23:40.661177",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ],
+  "areas": [
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PATROL_AREA_ID": 44,
+      "AREA_CODE": "BRU_SYNTHETIC"
+    },
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PATROL_AREA_ID": 27,
+      "AREA_CODE": "CENTRAL"
+    },
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PATROL_AREA_ID": 28,
+      "AREA_CODE": "NORTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PATROL_AREA_ID": 29,
+      "AREA_CODE": "SOUTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PATROL_AREA_ID": 13100001,
+      "AREA_CODE": "DUBLIN_SYN_COVERAGE"
+    },
+    {
+      "DATASET_PROFILE_ID": 10,
+      "PATROL_AREA_ID": 27,
+      "AREA_CODE": "CENTRAL"
+    },
+    {
+      "DATASET_PROFILE_ID": 10,
+      "PATROL_AREA_ID": 28,
+      "AREA_CODE": "NORTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 10,
+      "PATROL_AREA_ID": 29,
+      "AREA_CODE": "SOUTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 10,
+      "PATROL_AREA_ID": 9200001,
+      "AREA_CODE": "BRU_SYNTHETIC"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PATROL_AREA_ID": 44,
+      "AREA_CODE": "BRU_SYNTHETIC"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PATROL_AREA_ID": 27,
+      "AREA_CODE": "CENTRAL"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PATROL_AREA_ID": 28,
+      "AREA_CODE": "NORTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PATROL_AREA_ID": 29,
+      "AREA_CODE": "SOUTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PATROL_AREA_ID": 12200001,
+      "AREA_CODE": "AMS_SYNTHETIC"
+    }
+  ],
+  "created_at": "2026-09-17T05:31:53.190Z",
+  "source_profile": "ADELAIDE_DATA_V2",
+  "targets": [
+    {
+      "id": 10,
+      "code": "BRUSSELS_DATA_V1",
+      "area": "BRU_SYNTHETIC"
+    },
+    {
+      "id": 30,
+      "code": "AMSTERDAM_DATA_V1",
+      "area": "AMS_SYNTHETIC"
+    },
+    {
+      "id": 50,
+      "code": "DUBLIN_CITY_DATA_V1",
+      "area": "DUBLIN_SYN_COVERAGE"
+    }
+  ],
+  "backup_sha256": "33d18780cfb185cfc8feffc940eabb746d16e65cc34e831931fbe2c33f19c20a"
+}

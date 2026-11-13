@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-26T11:25:58.171396+00:00",
+  "status": "restricted_functional_test_available_full_acceptance_incomplete",
+  "sourceCommit": "dd663ea2416277fb199cb8ccba2d1299d4ff6896",
+  "branch": "deployment/oci-resource-manager",
+  "region": "ap-sydney-1",
+  "terraformApplySucceeded": false,
+  "bootstrapState": "failed",
+  "bootstrapStage": "acceptance",
+  "protectedOriginalVmAndDatabaseIdsOutsideTestState": true,
+  "checks": {
+    "applicationTests": 421,
+    "bootstrapTests": 17,
+    "frontendBuild": "passed",
+    "terraformValidation": "passed",
+    "standaloneAppAndWorkerBuilds": "passed",
+    "offlineWorkerProbes": "passed",
+    "schemaSecurityAiApexAndAccountStages": "completed",
+    "publicIpTlsNormalTrust": "passed_before_external_change",
+    "reactHealthAndFixedOperatorPersona": "passed_before_external_change",
+    "reactHtmlAndJavaScript": "passed_before_external_change",
+    "apexPublicLoginForms": 3,
+    "authenticatedApexBrowserLogins": "not_performed",
+    "fullDestinationAcceptance": "incomplete_following_external_interruptions",
+    "restrictedPublicHealth": "passed",
+    "restrictedReactOperatorAndViewerFixedPersonas": "passed",
+    "restrictedApexLoginForms": 3
+  },
+  "externalAutomation": {
+    "webRulesRemovedUtc": "2026-10-26T09:38:49.303Z",
+    "testVmStoppedUtc": "2026-10-26T10:08:33.961Z",
+    "sameInstancePrincipalForBothActions": true,
+    "principalIdSuffix": "cpzeajz2gr3dpdxq",
+    "automationOwnerLookup": "not_authorized_or_not_found",
+    "reviewedWebRulesRestored": true,
+    "currentTestVmState": "RUNNING",
+    "ownerExceptionRequiredForStableTest": true,
+    "webRulesRemovedAgainObservedUtc": "2026-10-26T10:39:28.714264Z",
+    "testVmRestartedOnce": true,
+    "testDatabaseAlsoFoundStopped": true,
+    "testDatabaseRestartedOnce": true,
+    "currentTestDatabaseState": "AVAILABLE"
+  },
+  "cleanup": {
+    "scheduled": true,
+    "deadlineUtc": "2026-10-26T12:30:51.519069+00:00",
+    "completed": false,
+    "extensionMinutes": 30
+  },
+  "fullStackReleaseReady": false,
+  "recovery": {
+    "sameVmAndDatabaseRetained": true,
+    "frozenApplicationReleaseUnchanged": true,
+    "recoveryPlanChangesOnlyReadiness": true,
+    "fullAcceptanceStillIncomplete": true,
+    "furtherRestartsOrRuleRestorationsPendingApprovedSandboxException": true
+  },
+  "restrictedAccess": {
+    "operatorIpv4": "101.115.236.229/32",
+    "testVmSelfAccess": "149.118.67.173/32",
+    "vmHttpHttpsRestricted": true,
+    "databaseApexOrdsRestricted": true,
+    "privateTestTerraformPackageValidated": true,
+    "applicationReleaseUnchanged": true
+  },
+  "humanFunctionalTestHandoff": true,
+  "furtherCitySwitchingAcceptanceRunsStarted": false
+}

@@ -1,0 +1,197 @@
+{
+  "recordedAt": "2026-10-20T09:18:17.012Z",
+  "milestoneTag": "milestone-2026-10-20",
+  "containers": [
+    {
+      "name": "policeadelaide_app-fu40_1",
+      "image": "localhost/incidentdata-livestack:person-links-20261020-r1",
+      "imageId": "4f3eaa7d2f15b44c078f64112fd272a80be0eb54ae26cb47236fcd335316ef0d",
+      "command": [
+        "npm",
+        "start"
+      ],
+      "entrypoint": [
+        "docker-entrypoint.sh"
+      ],
+      "workingDir": "/app",
+      "user": "",
+      "mounts": [
+        {
+          "source": "/home/opc/.local/share/containers/storage/volumes/policeadelaide_police-transformers-cache/_data",
+          "destination": "/app/.cache/transformers",
+          "type": "volume",
+          "readWrite": true
+        },
+        {
+          "source": "/home/opc/.oci",
+          "destination": "/root/.oci",
+          "type": "bind",
+          "readWrite": false
+        },
+        {
+          "source": "/home/opc/livestack/detective-room/data",
+          "destination": "/var/lib/detective-room",
+          "type": "bind",
+          "readWrite": true
+        },
+        {
+          "source": "/home/opc/livestack/policeAdelaide/frontend/public/poi",
+          "destination": "/app/frontend/dist/poi",
+          "type": "bind",
+          "readWrite": false
+        },
+        {
+          "source": "/home/opc/wallet",
+          "destination": "/opt/crime-data/wallet",
+          "type": "bind",
+          "readWrite": false
+        }
+      ],
+      "resources": {
+        "memory": 0,
+        "pidsLimit": 2048,
+        "shmSize": 65536000,
+        "cpusetCpus": ""
+      },
+      "restart": {
+        "Name": "unless-stopped",
+        "MaximumRetryCount": 0
+      }
+    },
+    {
+      "name": "detective-room-worker",
+      "image": "localhost/crimedata-detective-worker:person-links-20261020-r1",
+      "imageId": "ca29fb3a49ccacd8d3afa92839baff6f2c4f413dfa7e234af3b0e381ed881582",
+      "command": [
+        "-c",
+        "0,1,2,3,4,5",
+        "flock",
+        "-n",
+        "-F",
+        "/data/worker.lock",
+        "node",
+        "/app/backend/detective-room-worker.js"
+      ],
+      "entrypoint": [
+        "taskset"
+      ],
+      "workingDir": "/app",
+      "user": "",
+      "mounts": [
+        {
+          "source": "/home/opc/wallet",
+          "destination": "/opt/crime-data/wallet",
+          "type": "bind",
+          "readWrite": false
+        },
+        {
+          "source": "/home/opc/.oci",
+          "destination": "/root/.oci",
+          "type": "bind",
+          "readWrite": false
+        },
+        {
+          "source": "/home/opc/livestack/policeAdelaide/frontend/public",
+          "destination": "/public",
+          "type": "bind",
+          "readWrite": false
+        },
+        {
+          "source": "/home/opc/livestack/detective-room/data",
+          "destination": "/data",
+          "type": "bind",
+          "readWrite": true
+        },
+        {
+          "source": "/home/opc/livestack/detective-room/models",
+          "destination": "/models",
+          "type": "bind",
+          "readWrite": false
+        }
+      ],
+      "resources": {
+        "memory": 12884901888,
+        "pidsLimit": 256,
+        "shmSize": 1073741824,
+        "cpusetCpus": ""
+      },
+      "restart": {
+        "Name": "unless-stopped",
+        "MaximumRetryCount": 0
+      }
+    }
+  ],
+  "workerSourceFiles": [
+    {
+      "path": "detective-worker/models.manifest.json",
+      "sha256": "0d0280444f1d89c403b6d137bb52f59bbf92947d02dd58e83b4545a60a3a2feb",
+      "bytes": 447
+    },
+    {
+      "path": "detective-worker/requirements.snapshot.txt",
+      "sha256": "ae9a700be16e1566fe2bf5308a67df4ab8c9a078926c0661012282624bd2c717",
+      "bytes": 405
+    },
+    {
+      "path": "detective-worker/room/assets/industrial.css",
+      "sha256": "da14818cb5a109223ff22458fe24809876b21e70395ea82e6ffda6c317ebb931",
+      "bytes": 51360
+    },
+    {
+      "path": "detective-worker/room/assets/room.html",
+      "sha256": "a287dd1345380befe75322f25773854c639d094a378be928d627f975acb84851",
+      "bytes": 19653
+    },
+    {
+      "path": "detective-worker/room/scripts/build.mjs",
+      "sha256": "b0fbf76145a1a4b959e49f29c523ef5a2998d0cfc63be666fd3e986afe60b933",
+      "bytes": 11098
+    },
+    {
+      "path": "detective-worker/room/scripts/check.mjs",
+      "sha256": "b37700c9a927f0ab59bbba20b279806c0c2b0b5d40df3149b336cfc989573723",
+      "bytes": 9104
+    },
+    {
+      "path": "detective-worker/runtime-package.json",
+      "sha256": "3c3b49c454565b2ea97a10a1858097ad3923da651843d1a3b89f7ba61cac3b95",
+      "bytes": 497
+    },
+    {
+      "path": "detective-worker/video/assets/frames.html",
+      "sha256": "12bf930228cdf3fc9a6e5c130dcfd7ccf8dc4e510cc7bdba9b2b299a7b966019",
+      "bytes": 5096
+    },
+    {
+      "path": "detective-worker/video/assets/player.html",
+      "sha256": "0ccf1caf69b348e60ae1e73b755c8f8a3efd89530144f7986268065ea665b6f6",
+      "bytes": 5883
+    },
+    {
+      "path": "detective-worker/video/scripts/check.mjs",
+      "sha256": "b6716940342da859b8d0be14c05822aace67d067c74f0f968c9eed466dac73c6",
+      "bytes": 2311
+    },
+    {
+      "path": "detective-worker/video/scripts/encode_linux.py",
+      "sha256": "6841903717d083ad73edda7caaf56d96efb4eec565f8430df145abec1c62e2ba",
+      "bytes": 7498
+    },
+    {
+      "path": "detective-worker/video/scripts/package.mjs",
+      "sha256": "0aeef5309b81d5c8dfcfff8ffd2fbe84ef6cbc8250436641221a1b957a962465",
+      "bytes": 4056
+    },
+    {
+      "path": "detective-worker/video/scripts/render.mjs",
+      "sha256": "cc152103e6aff41cb056ce590ac8b182ab0607abb8017028b0c80a1ada8d53ca",
+      "bytes": 1591
+    },
+    {
+      "path": "detective-worker/video/scripts/synthesize.py",
+      "sha256": "92f096c0465de79e72afc6836a2d0fbbb68ec8f06f285f47171567209d2d0e5d",
+      "bytes": 8621
+    }
+  ],
+  "secretsIncluded": false
+}

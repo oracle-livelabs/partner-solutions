@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+const ROOT=__dirname,PROJECT=path.dirname(ROOT);
+const before=fs.readFileSync(path.join(ROOT,'runtime_server_before.js'),'utf8').split('\n'),after=fs.readFileSync(path.join(ROOT,'runtime_server_after.js'),'utf8').split('\n');
+const retainedBefore=before.filter(l=>!l.startsWith('const profileConfig =')&&!l.startsWith('function requestedProfile(')&&!l.startsWith('async function profileStatus(')&&!l.startsWith("app.get('/api/setup/profiles'"));
+const retainedAfter=after.filter(l=>!l.startsWith('const {profileConfig,')&&!l.startsWith("app.use('/api/setup', profileSelectionGuard)")&&!l.startsWith("app.get('/api/setup/profiles'"));
+assert.deepEqual(retainedAfter,retainedBefore,'Unrelated backend changes');
+fs.copyFileSync(path.join(PROJECT,'backend/setup-profile-selection.js'),path.join(ROOT,'setup-profile-selection.js'));
+const tests=execFileSync(process.execPath,['--test',...fs.readdirSync(path.join(PROJECT,'test')).filter(n=>n.endsWith('.test.js')).map(n=>path.join(PROJECT,'test',n))],{cwd:PROJECT,encoding:'utf8',maxBuffer:12*1024*1024});assert.match(tests,/# fail 0/);fs.writeFileSync(path.join(ROOT,'unit_tests.log'),tests,{flag:'wx'});
+execFileSync(process.execPath,['--check',path.join(ROOT,'runtime_server_after.js')]);
+const output=execFileSync(process.execPath,[path.join(PROJECT,'frontend/node_modules/vite/bin/vite.js'),'build','--outDir',path.join(ROOT,'dist')],{cwd:path.join(ROOT,'frontend'),encoding:'utf8',stdio:'pipe'});fs.writeFileSync(path.join(ROOT,'build.log'),output,{flag:'wx'});console.log('Frontend built; full unit suite passed; only setup backend configuration/validation changed.');

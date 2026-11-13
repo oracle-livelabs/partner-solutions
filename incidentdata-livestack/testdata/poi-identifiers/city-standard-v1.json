@@ -1,0 +1,1304 @@
+{
+  "version": 1,
+  "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+  "phoneRangeSource": "https://www.ofcom.org.uk/phones-and-broadband/phone-numbers/numbers-for-drama",
+  "emailDomainSource": "https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml",
+  "people": [
+    {
+      "personRef": "POI-2026-0317A",
+      "displayName": "Profile Alder",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-2026-0317A",
+          "type": "alias",
+          "value": "Amber Finch",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317A",
+          "type": "username",
+          "value": "demo_profile_amber01",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317A",
+          "type": "username",
+          "value": "demo_alder.finch01",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317A",
+          "type": "email",
+          "value": "profile.alder.01@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317A",
+          "type": "phone",
+          "value": "+447700900100",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-2026-0317B",
+      "displayName": "Profile Meridian",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-2026-0317B",
+          "type": "alias",
+          "value": "Copper Kestrel",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "type": "username",
+          "value": "demo_profile_copper02",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "type": "username",
+          "value": "demo_meridian.kestrel02",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "type": "email",
+          "value": "profile.meridian.02@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "type": "phone",
+          "value": "+447700900102",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-ADL-CARE-W01",
+      "displayName": "Ellis Ward",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "type": "alias",
+          "value": "Quiet Wren",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "type": "username",
+          "value": "demo_ellis_quiet03",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "type": "username",
+          "value": "demo_ward.wren03",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "type": "email",
+          "value": "ellis.ward.03@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "type": "phone",
+          "value": "+447700900104",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-ADL-CARE-X01",
+      "displayName": "Rowan Hale",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "type": "alias",
+          "value": "Silver Fox",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "type": "username",
+          "value": "demo_rowan_silver04",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "type": "username",
+          "value": "demo_hale.fox04",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "type": "email",
+          "value": "rowan.hale.04@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "type": "phone",
+          "value": "+447700900106",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "type": "email",
+          "value": "hale.04@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-AMS-CARE-W01",
+      "displayName": "Lena Harper",
+      "profileCodes": [
+        "AMSTERDAM_DATA_V1"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-AMS-CARE-W01",
+          "type": "alias",
+          "value": "Harbour Heron",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-W01",
+          "type": "username",
+          "value": "demo_lena_harbour05",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-W01",
+          "type": "username",
+          "value": "demo_harper.heron05",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-W01",
+          "type": "email",
+          "value": "lena.harper.05@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-W01",
+          "type": "phone",
+          "value": "+447700900108",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-AMS-CARE-X01",
+      "displayName": "Morgan Reed",
+      "profileCodes": [
+        "AMSTERDAM_DATA_V1"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-AMS-CARE-X01",
+          "type": "alias",
+          "value": "Cedar Lark",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-X01",
+          "type": "username",
+          "value": "demo_morgan_cedar06",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-X01",
+          "type": "username",
+          "value": "demo_reed.lark06",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-X01",
+          "type": "email",
+          "value": "morgan.reed.06@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-X01",
+          "type": "phone",
+          "value": "+447700900110",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-AMS-CARE-X01",
+          "type": "email",
+          "value": "reed.06@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-FNET-DARNELL",
+      "displayName": "Darnell Price",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "type": "alias",
+          "value": "Evening Owl",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "type": "username",
+          "value": "demo_darnell_evening07",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "type": "username",
+          "value": "demo_price.owl07",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "type": "email",
+          "value": "darnell.price.07@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "type": "phone",
+          "value": "+447700900112",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-FNET-ELIAS",
+      "displayName": "Elias Grant",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "type": "alias",
+          "value": "Northern Robin",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "type": "username",
+          "value": "demo_elias_northern08",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "type": "username",
+          "value": "demo_grant.robin08",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "type": "email",
+          "value": "elias.grant.08@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "type": "phone",
+          "value": "+447700900114",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-FNET-MARA",
+      "displayName": "Mara Vega",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-FNET-MARA",
+          "type": "alias",
+          "value": "Indigo Otter",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "type": "username",
+          "value": "demo_mara_indigo09",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "type": "username",
+          "value": "demo_vega.otter09",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "type": "email",
+          "value": "mara.vega.09@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "type": "phone",
+          "value": "+447700900116",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "type": "email",
+          "value": "vega.09@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-FNET-NOAH",
+      "displayName": "Noah Kim",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-FNET-NOAH",
+          "type": "alias",
+          "value": "Willow Swift",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "type": "username",
+          "value": "demo_noah_willow10",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "type": "username",
+          "value": "demo_kim.swift10",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "type": "email",
+          "value": "noah.kim.10@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "type": "phone",
+          "value": "+447700900118",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "type": "email",
+          "value": "kim.10@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "type": "phone",
+          "value": "+447700900119",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-FNET-TESSA",
+      "displayName": "Tessa Rowe",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-FNET-TESSA",
+          "type": "alias",
+          "value": "Autumn Lynx",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "type": "username",
+          "value": "demo_tessa_autumn11",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "type": "username",
+          "value": "demo_rowe.lynx11",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "type": "email",
+          "value": "tessa.rowe.11@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "type": "phone",
+          "value": "+447700900120",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-NBNW-CLARA",
+      "displayName": "Clara Thornhill",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "type": "alias",
+          "value": "Golden Falcon",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "type": "username",
+          "value": "demo_clara_golden12",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "type": "username",
+          "value": "demo_thornhill.falcon12",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "type": "email",
+          "value": "clara.thornhill.12@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "type": "phone",
+          "value": "+447700900122",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "type": "email",
+          "value": "thornhill.12@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-NBNW-EVE",
+      "displayName": "Eve Kendall",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-NBNW-EVE",
+          "type": "alias",
+          "value": "River Marten",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "type": "username",
+          "value": "demo_eve_river13",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "type": "username",
+          "value": "demo_kendall.marten13",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "type": "email",
+          "value": "eve.kendall.13@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "type": "phone",
+          "value": "+447700900124",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-NBNW-GEORGE",
+      "displayName": "George Kaplan",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "type": "alias",
+          "value": "Velvet Plover",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "type": "username",
+          "value": "demo_george_velvet14",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "type": "username",
+          "value": "demo_kaplan.plover14",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "type": "email",
+          "value": "george.kaplan.14@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "type": "phone",
+          "value": "+447700900126",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "type": "email",
+          "value": "kaplan.14@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-NBNW-PHILIP",
+      "displayName": "Philip Vandamm",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "type": "alias",
+          "value": "Winter Ibis",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "type": "username",
+          "value": "demo_philip_winter15",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "type": "username",
+          "value": "demo_vandamm.ibis15",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "type": "email",
+          "value": "philip.vandamm.15@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "type": "phone",
+          "value": "+447700900128",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "type": "email",
+          "value": "vandamm.15@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-V2-GEORGE",
+      "displayName": "George Horner",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-V2-GEORGE",
+          "type": "alias",
+          "value": "Meadow Sparrow",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "type": "username",
+          "value": "demo_george_meadow16",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "type": "username",
+          "value": "demo_horner.sparrow16",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "type": "email",
+          "value": "george.horner.16@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "type": "phone",
+          "value": "+447700900130",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-V2-JULIAN",
+      "displayName": "Julian Cross",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-V2-JULIAN",
+          "type": "alias",
+          "value": "Crimson Raven",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "type": "username",
+          "value": "demo_julian_crimson17",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "type": "username",
+          "value": "demo_cross.raven17",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "type": "email",
+          "value": "julian.cross.17@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "type": "phone",
+          "value": "+447700900132",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "type": "email",
+          "value": "cross.17@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "type": "phone",
+          "value": "+447700900133",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-V2-TONY",
+      "displayName": "Tony Kapoor",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-V2-TONY",
+          "type": "alias",
+          "value": "Slate Pipit",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "type": "username",
+          "value": "demo_tony_slate18",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "type": "username",
+          "value": "demo_kapoor.pipit18",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "type": "email",
+          "value": "tony.kapoor.18@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "type": "phone",
+          "value": "+447700900134",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "type": "email",
+          "value": "kapoor.18@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    },
+    {
+      "personRef": "POI-V2-VIVIENNE",
+      "displayName": "Vivienne Hartley",
+      "profileCodes": [
+        "ADELAIDE_DATA_V2",
+        "PERTH_DATA_V2",
+        "BRISBANE_DATA_V2",
+        "AMSTERDAM_DATA_V1",
+        "BRUSSELS_DATA_V1",
+        "DUBLIN_CITY_DATA_V1",
+        "BOSTON_DATA_V2",
+        "CHICAGO_DATA_V2",
+        "LAS_VEGAS_DATA_V2"
+      ],
+      "identifiers": [
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "type": "alias",
+          "value": "Orchard Tern",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Fictional nickname for demonstrations.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "type": "username",
+          "value": "demo_vivienne_orchard19",
+          "namespace": "telegram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "type": "username",
+          "value": "demo_hartley.tern19",
+          "namespace": "instagram",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Synthetic handle; no live platform account was searched or created.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "type": "email",
+          "value": "vivienne.hartley.19@example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "type": "phone",
+          "value": "+447700900136",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. UK drama-reserved phone range, used consistently across city profiles; does not imply a UK residence.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "type": "email",
+          "value": "hartley.19@mail.example.test",
+          "status": "declared",
+          "sourceRef": "synthetic:city-poi-identifiers:v1:2026-10-20",
+          "sourceNote": "Generated fictional teaching identifier at scenario owner request. Not extracted from original evidence and not a real account or subscriber. Reserved .test email domain.",
+          "recordedBy": "Synthetic POI identifier generator v1; scenario-owner authorised"
+        }
+      ]
+    }
+  ]
+}

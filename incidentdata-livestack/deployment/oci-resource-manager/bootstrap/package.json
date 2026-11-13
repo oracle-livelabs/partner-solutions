@@ -1,0 +1,6 @@
+{
+  "name": "incidentdata-deployment-bootstrap",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {"oracledb": "6.10.0"}
+}

@@ -1,0 +1,620 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IncidentData LiveStack — Adelaide workshop</title>
+<style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#30343b;background:white}*{box-sizing:border-box}body{margin:0}.topbar{height:70px;border-bottom:1px solid #d5d7d9;display:flex;align-items:center;padding:0 30px;gap:25px;background:white;position:sticky;top:0;z-index:3}.brand{color:#b3311c;font-size:22px;font-weight:bold;letter-spacing:1px}.brand small{display:block;color:#53565a;font-size:12px;letter-spacing:0;font-weight:normal}.workshop-name{font-size:15px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.layout{display:grid;grid-template-columns:290px minmax(0,1fr);min-height:calc(100vh - 70px)}.sidebar{border-right:1px solid #d9dcdf;background:#f8f8f8;padding:28px 0;overflow:auto;height:calc(100vh - 70px);position:sticky;top:70px}.sidebar h2{margin:0 22px 20px;font-size:17px;font-weight:600}.sidebar a{display:block;padding:11px 22px;color:#333;text-decoration:none;border-left:4px solid transparent;line-height:1.35;font-size:14px}.sidebar a:hover{background:#eee}.sidebar a.active{color:#a62f1c;border-color:#b3311c;background:white;font-weight:bold}main{width:100%;max-width:1180px;padding:34px 64px 70px;margin:0 auto}.note{font-size:13px;color:#62666a;border-bottom:1px solid #ddd;padding-bottom:16px;margin-bottom:26px}.chapter{display:none}.chapter.active{display:block}.kicker{color:#a63826;font-size:12px;font-weight:bold;letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px}h1{font-size:32px;line-height:1.2;font-weight:600;margin:0 0 24px}h2{font-size:24px;margin:38px 0 16px;border-bottom:1px solid #ddd;padding-bottom:10px}h3{font-size:18px;margin:28px 0 12px}p,li{font-size:16px;line-height:1.65}li{margin-bottom:9px}img{display:block;width:100%;max-width:100%;height:auto;margin:24px 0;border:1px solid #d8d8d8;cursor:zoom-in}a{color:#a63826}code{background:#f3f3f3;padding:2px 4px}.pager{border-top:1px solid #ddd;margin-top:50px;padding-top:20px;display:flex;justify-content:space-between}.pager a{text-decoration:none;font-weight:bold}dialog{width:min(95vw,1800px);max-height:95vh;padding:15px;border:0;box-shadow:0 12px 55px #0008}dialog img{width:auto;max-width:100%;max-height:calc(95vh - 60px);margin:auto;cursor:zoom-out}dialog button{float:right;margin-bottom:8px;border:0;background:#b3311c;color:white;padding:6px 12px;cursor:pointer}@media(max-width:850px){.layout{display:block}.sidebar{height:auto;position:static;border-bottom:1px solid #ddd;padding:10px}.sidebar a{display:inline-block;border-left:0;border-bottom:3px solid transparent;padding:9px}.sidebar a.active{border-bottom-color:#b3311c}main{padding:24px}}
+table{border-collapse:collapse;margin:14px 0;font-size:14px;width:100%}th,td{border:1px solid #d5d7d9;padding:7px 10px;text-align:left;vertical-align:top}th{background:#f1efed}blockquote{margin:16px 0;padding:10px 16px;border-left:4px solid #2f6f9f;background:#f4f7fa}blockquote p{margin:6px 0}li>ul,li>ol{margin:6px 0}
+</style></head><body><header class="topbar"><div class="brand">ORACLE<small>LiveLabs</small></div><div class="workshop-name">IncidentData LiveStack — Adelaide workshop</div></header><div class="layout"><nav class="sidebar" aria-label="Workshop chapters"><h2>Contents</h2><a href="#introduction" data-page="introduction">Introduction</a><a href="#scene-1" data-page="scene-1">Workshop &amp; Guides</a><a href="#scene-2" data-page="scene-2">Scene 1: Data Foundation</a><a href="#scene-3" data-page="scene-3">Scene 2: Incident Activity Center</a><a href="#scene-4" data-page="scene-4">Scene 3: Incident Pattern Signals</a><a href="#scene-5" data-page="scene-5">Scene 4: Person Intelligence</a><a href="#scene-6" data-page="scene-6">Scene 5: Evidence Intelligence</a><a href="#scene-7" data-page="scene-7">Scene 6: Case Relationships</a><a href="#scene-8" data-page="scene-8">Scene 7: Incident Map</a><a href="#scene-9" data-page="scene-9">Scene 8: Incident Explorer</a><a href="#scene-10" data-page="scene-10">Scene 9: Incident and Capacity Analytics</a><a href="#scene-11" data-page="scene-11">Scene 10: Ask IncidentData</a><a href="#scene-12" data-page="scene-12">Scene 11: AI Agent Console</a><a href="#scene-13" data-page="scene-13">Scene 12: Data Room</a><a href="#scene-14" data-page="scene-14">Scene 14: AI Opps</a></nav><main><div class="note">Local review preview · The publication entry point is <code>workshops/sandbox/index.html</code>.</div><article id="introduction" class="chapter"><div class="kicker">LiveLabs workshop · 1 of 15</div><h1>IncidentData LiveStack — Adelaide workshop</h1>
+<h2>Introduction</h2>
+<p>This workshop follows a synthetic payment-document comparison in the Adelaide, South Australia training profile. Start with the authorised data scope, examine a watch and its source records, compare search and graph views, and finish with the two Ask and agent routes plus the Data Room pipeline.</p>
+<p>Estimated Time: 115 minutes</p>
+<p><img src="../introduction/../images/incidentdata-overview.png" alt="Conceptual IncidentData learning journey" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Explain what the selected city and demo persona allow you to see.
+</li><li>
+Distinguish original incidents, contextual signals, vector comparisons, recorded links and AI drafts.
+</li><li>
+Compare the guided handler routes with the configured Select AI and agent framework routes.
+</li><li>
+Trace a synthetic ZIP through the seven Data Room stages.
+</li></ul>
+<h2>Before you begin</h2>
+<ol><li>
+Open the <a href="http://localhost:18706/">IncidentData LiveStack application</a> on the demonstration machine. Confirm <strong>IncidentData LiveStack</strong> in the header.
+<p><img src="../introduction/../images/introduction-welcome.png" alt="IncidentData LiveStack Welcome page with the Adelaide profile active" loading="lazy"></p>
+</li><li>
+Use the Adelaide training profile and <strong>Statewide administrator</strong> demo persona for the main path. Your instructor should prepare the profile before learners begin. A restore changes shared application data; it is not a routine learner step.
+</li><li>
+Keep a second browser tab for this guide. Application counts, available cases, vectors, evidence and saved batches depend on the active profile, persona and preparation state. Read what your session actually shows.
+</li><li>
+Use only synthetic training material. The demo-persona selector illustrates scope; it is not production authentication. Do not use this application for operational policing decisions.
+</li></ol>
+<h2>Route through the workshop</h2>
+<p>Start in <strong>Workshop &amp; Guides</strong> to obtain the training package, then continue through <strong>Data Foundation</strong> and Scenes 2–12. The route ends at <strong>Scene 14: AI Opps</strong>; the earlier Data-Room2 preview chapter is intentionally left out of this cut. Short Redwood inspired animations are placed beside the duality, vector, security, watch graph, Ask, agent and Data Room explanations.</p>
+<h2>Credits and scope</h2>
+<p>This recut follows the requested Adelaide experience and the local IncidentData application/workshop source available on 23 October 2026. Conceptual illustrations are original project assets. They explain ideas; they are not screenshots of a live Adelaide restore or proof that every optional AI service is ready.</p><div class="pager"><span></span><a href="#scene-1">Next →</a></div></article><article id="scene-1" class="chapter"><div class="kicker">LiveLabs workshop · 2 of 15</div><h1>Workshop &amp; Guides — prepare the sample package</h1>
+<h2>Introduction</h2>
+<p>Collect the supplied synthetic training material before opening the scene sequence. The package includes test archives and photos that can support later Data Room and person-comparison exercises.</p>
+<p>Estimated Time: 8 minutes</p>
+<p><img src="../workshop-guides/../images/shared-platform.png" alt="The application and supporting workshop paths" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Find the Part 2 Data Room guide and download its sample package.
+</li><li>
+Separate the outer download from the individual ZIP files intended for testing.
+</li><li>
+Keep the photos and their provenance available for the vector discussion.
+</li></ul>
+<h2>Task 1: Open Part 2</h2>
+<ol><li>
+In the app&#x27;s left navigation, select <strong>Workshop &amp; Guides</strong>. The page lists companion guides: <strong>Start here</strong>, <strong>Part 1 · React application</strong>, <strong>Part 2 · Data Room</strong>, <strong>Part 3 · Oracle APEX</strong> and a <strong>Deep Data Security lab</strong>. These complement this workshop; they do not replace these scenes.
+<p><img src="../workshop-guides/../images/workshop-guides-library.png" alt="Workshop &amp; Guides page listing the companion guides" loading="lazy"></p>
+</li><li>
+On the <strong>Part 2 · Data Room</strong> card, select <strong>Open guide ↗</strong>. The guide opens in a new browser tab.
+</li><li>
+Select <strong>Download Sample ZIP File</strong>. This downloads <code>Sep2026-Cases-V3-Sample-Data.zip</code> (about 72 MB). Save it to a clearly named local folder and keep the original download intact.
+</li></ol>
+<blockquote><p><strong>Note:</strong> The Data Room&#x27;s ZIP Loader also has a <strong>Download sample ZIP</strong> button. That one is different: it gives <code>incidentdata-room-synthetic-sample.zip</code>, a small eight-file batch for a quick upload test. Use the Part 2 package for this workshop.</p></blockquote>
+<h2>Task 2: Unzip and inspect</h2>
+<ol><li>
+Expand the downloaded outer package with your laptop&#x27;s archive utility. On a Mac you may also see <code>__MACOSX</code> folders and <code>.DS_Store</code> files; ignore them.
+</li><li>
+Inside <code>Sep2026-Cases-V3-Sample-Data/</code> you should find:
+<table><thead><tr><th>Item</th><th>Contents</th></tr></thead><tbody><tr><td>Seven case ZIPs</td><td><code>AliceSprings_Scenario_1A.zip</code>, <code>Brussels_Conference_Trail_2a.zip</code>, <code>Chris_Drugs.zip</code>, <code>Gianni_Money.zip</code>, <code>Scene200_Brussels.zip</code>, <code>Scene2b_Drug.zip</code>, <code>Scene4_Suga.zip</code></td></tr><tr><td><code>POI_Photos/</code></td><td>Nine fictional profile portraits, for example <code>george-kaplan.png</code> and <code>philip-vandamm.png</code></td></tr><tr><td><code>Face_Search_Photos/</code></td><td>Ten test photos in pairs (<code>dp1</code>/<code>dp2</code>, <code>eg1</code>/<code>eg2</code>, <code>mv1</code>/<code>mv2</code>, <code>nk1</code>/<code>nk2</code>, <code>tr1</code>/<code>tr2</code>)</td></tr></tbody></table>
+</li><li>
+Keep the individual case ZIPs separate. Each one is a single Data Room batch; do not upload the outer package as though it were one batch.
+</li><li>
+Note which photos are supplied synthetic material. They may be used later to discuss whole-photo vector similarity and person/narrative comparison, where the feature and prepared data are available. A photo similarity result is not an identity finding.
+</li><li>
+Do not upload, delete or rerun a batch yet. Scene 12 explains the pipeline and its prerequisites.
+</li></ol>
+<h2>Continue</h2>
+<p>Move to <strong>Data Foundation</strong> and confirm the selected city and data scope.</p><div class="pager"><a href="#introduction">← Previous</a><a href="#scene-2">Next →</a></div></article><article id="scene-2" class="chapter"><div class="kicker">LiveLabs workshop · 3 of 15</div><h1>Scene 1: Data Foundation</h1>
+<h2>Introduction</h2>
+<p>Establish the active Adelaide data and scope, then use the five presenter tiles to introduce the database capabilities. The tile examples are local teaching simulations, not edits to Adelaide records.</p>
+<p>Estimated Time: 25 minutes</p>
+<p><img src="../scene-1-data-foundation/../images/technology-overview.png" alt="Conceptual platform capabilities" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Read the active profile and demo-persona context before interpreting any count.
+</li><li>
+Explore JSON duality, Vector Search, Property Graph, Spatial and Deep Data Security.
+</li><li>
+Locate the nine saved city profiles and distinguish profile review from restore.
+</li></ul>
+<h2>Task 1: Read the foundation screen</h2>
+<ol><li>
+Select <strong>Data Foundation</strong>. Confirm the app title, active city and <strong>Statewide administrator</strong>. Read the incident, category, persona and watched-pattern cards as current-session values rather than fixed numbers.
+<p><img src="../scene-1-data-foundation/../images/scene-1-data-foundation.png" alt="Data Foundation summary cards and capability tiles" loading="lazy"></p>
+</li><li>
+Talk through <strong>Relational &amp; JSON</strong>, <strong>Vector-ready narratives</strong>, <strong>Graph &amp; spatial context</strong> and <strong>Deep Data Security</strong>. Each panel introduces a capability; later scenes reveal the specific execution path.
+</li><li>
+Scroll to the saved dataset profile library beneath the foundation tiles. The nine city choices are Adelaide, Perth, Brisbane, Amsterdam, Brussels, Dublin, Boston, Chicago and Las Vegas. Review the saved profile information without changing the active data.
+<p><img src="../scene-1-data-foundation/../images/scene-1-profile-library.png" alt="Saved dataset profile library with Adelaide V3 active" loading="lazy"></p>
+</li><li>
+For an instructor-led reset only: on the <strong>Adelaide</strong> tile (<strong>ADELAIDE_DATA_V3</strong>, <em>Adelaide Data Set V3 - Metro Suburb Coverage</em>), type the confirmation <code>ACTIVATE ADELAIDE_DATA_V3</code> and select <strong>Restore Adelaide</strong>, under the session&#x27;s approved backup/recovery procedure. <strong>Restore Adelaide NRT</strong> instead shifts incident times so the latest incident is now; standard restore keeps the saved May–June 2026 dates. Allow a few minutes, then wait for the active profile and counts to refresh. Do not interpret a loading placeholder as the final state.
+</li></ol>
+<p><strong>Presenter note:</strong> Adelaide V3 spreads 21,532 synthetic incidents across 394 official Greater Adelaide suburbs. Each patrol area is one connected region: Adelaide Central (5,488 incidents), Northern &amp; Western Adelaide (8,883) and Southern &amp; Eastern Adelaide (7,161). The Central, Northern and Southern analyst personas each see only their own area. The earlier Adelaide V2 profile is still listed under <strong>Other saved profiles</strong>. A different city can be used after its profile and exercise prerequisites are checked.</p>
+<h2>Task 2: JSON Relational Duality Views</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-1-data-foundation/../powtoons/index.html?story=duality">One incident, two views</a>.</p>
+<ol><li>
+Select <strong>JSON duality views</strong>. In the invented <code>DEMO-101</code> example, compare related incident/report rows with one JSON document.
+</li><li>
+Choose <strong>Two views, one record</strong>, change the table status to <strong>Under review</strong> and observe the two displays change together. Reset the example.
+</li><li>
+Explain that a defined duality view maps selected rows to a document. JSON output alone does not establish that a duality view is deployed for every IncidentData endpoint.
+</li></ol>
+<p><img src="../scene-1-data-foundation/../images/json-duality.png" alt="How a defined duality view relates rows and a document" loading="lazy"></p>
+<h2>Task 3: Oracle Vector Search</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-1-data-foundation/../powtoons/index.html?story=vector">Similarity is a lead</a>.</p>
+<ol><li>
+Select <strong>Oracle Vector Search</strong>, then <strong>See similarity</strong>. Compare Dog with the nearby Greyhound and Poodle examples; choose Car and read the changed ranking.
+</li><li>
+Explain that embeddings represent content numerically and distance helps rank related content. A score is not a probability or a person identification.
+</li><li>
+Later narrative and photo vector exercises require compatible prepared vectors in the selected profile. Check coverage before promising live matches.
+</li></ol>
+<p><img src="../scene-1-data-foundation/../images/vector-search-flow.png" alt="Conceptual vector retrieval path" loading="lazy"></p>
+<h2>Task 4: Property Graph and Spatial</h2>
+<ol><li>
+Select <strong>Property Graph</strong>. Follow Alex to a bicycle at one hop and the shop at two hops. Name the nodes, edges and recorded link types; the layout itself creates no relationship.
+</li><li>
+Select <strong>Spatial</strong>. Compare <strong>Within distance</strong> at 1 km with <strong>In patrol area</strong> in its invented grid. One tests distance, the other area membership.
+</li><li>
+Relate these concepts to the later case views and approximate incident map without claiming every drawn graph or map invokes a native database graph/spatial operator.
+</li></ol>
+<h2>Task 5: Deep Data Security</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-1-data-foundation/../powtoons/index.html?story=security">Scope before search</a>.</p>
+<ol><li>
+Select <strong>Deep Sec · ABAC</strong> and <strong>Explore access decisions</strong>. Compare North and Statewide area scope while keeping the other attributes visible.
+</li><li>
+Explain why a broader area can allow an additional standard record while a restricted record remains unavailable.
+</li><li>
+Reset the example. The tile is a local simulation; application scoped views and separately installed native DDS identities/grants are distinct demonstrations.
+</li></ol>
+<h2>Continue</h2>
+<p>Open <strong>Incident Activity Center</strong> to read current authorised Adelaide activity.</p><div class="pager"><a href="#scene-1">← Previous</a><a href="#scene-3">Next →</a></div></article><article id="scene-3" class="chapter"><div class="kicker">LiveLabs workshop · 4 of 15</div><h1>Scene 2: Incident Activity Center</h1>
+<h2>Introduction</h2>
+<p>Begin with descriptive Adelaide activity before following one lead. Counts change with the selected profile, persona, record dates and filters.</p>
+<p>Estimated Time: 6 minutes</p>
+<p><img src="../scene-2-incident-activity-center/../images/incident-journey.png" alt="Conceptual route from activity to a source record" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Read the current authorised incident and open-record totals.
+</li><li>
+Separate watched patterns, community signals and area coverage.
+</li></ul>
+<h2>Task 1: Read the cards</h2>
+<ol><li>
+Select <strong>Incident Activity Center</strong> with <strong>Statewide administrator</strong> selected. Record <strong>Authorised incidents</strong>, <strong>Open records</strong>, <strong>Watched crime patterns</strong>, <strong>Community signals</strong> and <strong>Area coverage</strong>.
+<p><img src="../scene-2-incident-activity-center/../images/scene-2-activity-center.png" alt="Incident Activity Center overview for Adelaide V3" loading="lazy"></p>
+</li><li>
+Compare Central, North and South where the prepared Adelaide profile shows them. If a short relative-time chart is empty, inspect its date window against the stored record dates before drawing a conclusion.
+</li><li>
+If the presenter is demonstrating scope, change to a regional demo user, wait for figures to refresh and record the difference. Return to Statewide administrator before continuing.
+</li></ol>
+<h2>Task 2: Explain the measures</h2>
+<p>Distinguish a stored incident from a watched pattern and a contextual community signal. A smaller regional total demonstrates different application results; it does not by itself prove native database DDS enforcement.</p>
+<h2>Continue</h2>
+<p>Use <strong>Incident Pattern Signals</strong> to move from the overall view to the payment-document watch.</p><div class="pager"><a href="#scene-2">← Previous</a><a href="#scene-4">Next →</a></div></article><article id="scene-4" class="chapter"><div class="kicker">LiveLabs workshop · 5 of 15</div><h1>Scene 3: Incident Pattern Signals</h1>
+<h2>Introduction</h2>
+<p>Follow a named payment-document watch while keeping authorised incident records separate from external context and similarity suggestions.</p>
+<p>Estimated Time: 12 minutes</p>
+<p><img src="../scene-3-incident-pattern-signals/../images/relationship-graph.png" alt="Conceptual recorded relationship network" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Read the selected watch&#x27;s scenario-ready panel without treating it as a finding.
+</li><li>
+Explain the graph&#x27;s nodes, links and display filters.
+</li><li>
+Open a source incident from a selected graph node.
+</li></ul>
+<h2>Task 1: Select the watch</h2>
+<ol><li>
+Select <strong>Incident Pattern Signals</strong>. Under <strong>Watched Crime Patterns</strong>, choose <strong>Payment-Document Anomaly Chain</strong> if it is available in the active Adelaide profile. Wait for the source trail to finish loading.
+</li><li>
+Read <strong>SCENARIO READY · AUTHORISED RECORDS + CONTEXTUAL SIGNALS</strong>. Record the actual linked-incident count, contextual-post count and case reference shown in this session.
+<p><img src="../scene-3-incident-pattern-signals/../images/scene-3-payment-document-watch.png" alt="Payment-Document Anomaly Chain watch with its scenario summary" loading="lazy"></p>
+</li><li>
+Explain that the watch identifies records to inspect. Simulated public posts are unverified context, not an incident report or corroboration.
+</li></ol>
+<h2>Task 2: Explore result relationships</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-3-incident-pattern-signals/../powtoons/index.html?story=signals">A graph is a trail to inspect</a>.</p>
+<ol><li>
+Select <strong>Explore result relationships</strong> and wait for authorised relationships to load.
+</li><li>
+Read the legend: W for watch, I for incident and P for contextual post. Explain recorded membership, reviewed comparison and semantic similarity as different link types.
+</li><li>
+Compare the scenario&#x27;s explicit watch links with the graph&#x27;s total visible nodes; bounded related context may add more incidents.
+</li><li>
+In <strong>Show records</strong>, clear <strong>Public posts</strong>. Observe the new node and connection totals. This is a display filter; it does not delete source material.
+</li><li>
+Select a visible incident node. Read its detail card and choose its source-detail route if offered. Record that incident reference for Scene 8, then close the graph.
+</li></ol>
+<h2>Task 3: Handle an unavailable watch</h2>
+<p>If this watch, its source trail or compatible vectors are unavailable after the Adelaide restore, use a different populated watch and record its label. Explain the missing prerequisite rather than inventing a case ID or result count.</p>
+<h2>Continue</h2>
+<p>Inspect fictional person context and the limits of narrative and photo comparison.</p><div class="pager"><a href="#scene-3">← Previous</a><a href="#scene-5">Next →</a></div></article><article id="scene-5" class="chapter"><div class="kicker">LiveLabs workshop · 6 of 15</div><h1>Scene 4: Person Intelligence</h1>
+<h2>Introduction</h2>
+<p>Person Intelligence brings fictional profiles, their identifier register and photo context into review. The register records who captured each alias, username, email or phone number, who reviewed it, and when it was valid. Vector similarity helps find candidates; it does not identify a person or decide responsibility.</p>
+<p>This scene uses <strong>George Kaplan</strong> (<code>POI-NBNW-GEORGE</code>) because, in the Adelaide V3 profile, he has four linked incidents in scope and a register that shows every state you need: current, expired and awaiting review.</p>
+<p>Estimated Time: 12 minutes</p>
+<p><img src="../scene-4-person-intelligence/../images/scene-4-register-time.png" alt="George Kaplan&#x27;s identifier register, Time view" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Open a fictional profile and its register detail.
+</li><li>
+Read the identifier register three ways: Time, Table and Graph.
+</li><li>
+Distinguish validity, administrative review and identity confirmation.
+</li><li>
+Compare narrative and photo-vector search as distinct inputs.
+</li></ul>
+<h3>Prerequisites</h3>
+<ul><li>
+The active dataset is <strong>ADELAIDE_DATA_V3</strong>. The register detail shows the dataset name; dates should read <strong>Dates in Australia/Adelaide</strong>.
+</li><li>
+The current persona can see <code>POI-NBNW-GEORGE</code>. Linked-incident counts depend on the persona&#x27;s scope.
+</li></ul>
+<h2>Task 1: Select a profile</h2>
+<ol><li>
+Select <strong>Person Intelligence</strong>. The <strong>Authorised POI profiles</strong> list shows each profile&#x27;s reference, alias and readiness.
+</li><li>
+Select <strong>POI-NBNW-GEORGE · George Kaplan</strong>. <strong>Selected Profile</strong> shows his alias (Kaplan), summary, status (<em>person of interest</em>) and the two stored vectors: <em>384d narrative vector</em> and <em>512d visual vector</em>.
+</li><li>
+Note that the summary is authored profile text. It describes a line of enquiry, not a finding: &quot;a laundering purpose has not been established&quot;.
+</li></ol>
+<h2>Task 2: Open the register detail</h2>
+<ol><li>
+Select George Kaplan&#x27;s round portrait in <strong>Selected Profile</strong>. The small ↗ badge shows that it opens the record. You can also focus it with the keyboard and press <strong>Enter</strong>.
+</li><li>
+The <strong>Person Intelligence · Register Detail</strong> window opens. Confirm:
+<ul><li>
+<strong>10 identifiers</strong>
+</li><li>
+<strong>Linked incidents in your scope: 4</strong>
+</li><li>
+<strong>Dataset: ADELAIDE_DATA_V3</strong>
+</li></ul>
+</li><li>
+Expand <strong>Full person record</strong>. It contains the full narrative, the profile attributes and <strong>Recorded incident links</strong>, for example <code>ACI-2026-16323 · Fraud, deception and related offences</code>. Each link states its own limits, such as &quot;attribution remains unconfirmed&quot;. Collapse it again.
+</li></ol>
+<h2>Task 3: Read the register in time</h2>
+<p>The register opens on <strong>Time</strong>.</p>
+<ol><li>
+In <strong>Active periods</strong>, each bar is one identifier&#x27;s validity period. An arrow at the right edge means the period is open-ended; the chart does not invent an end date.
+</li><li>
+Find <strong>Velvet Plover</strong>. Its bar stops in April: this alias is <strong>Expired</strong>. Every other identifier is current.
+</li><li>
+Select <strong>Capture &amp; review</strong>. The bars are replaced by events: a dot (●) where an identifier was captured and a diamond (◆) where it was administratively reviewed. <code>george.kaplan.14@example.test</code> has a capture dot but no diamond, because it is still awaiting review.
+</li></ol>
+<p><img src="../scene-4-person-intelligence/../images/scene-4-register-capture-review.png" alt="Capture and review events" loading="lazy"></p>
+<blockquote><p><strong>Teaching point:</strong> <em>Current</em> and <em>Expired</em> are validity states. Administrative review is a separate step, and it does not confirm identity or account ownership.</p></blockquote>
+<h2>Task 4: Read the register as a table</h2>
+<ol><li>
+Select <strong>Table</strong>. Each row shows the identifier, its type and platform, state, who captured it and when, who reviewed it, and when it stops being valid.
+</li><li>
+Check these rows:
+<table><thead><tr><th>Identifier</th><th>Type / platform</th><th>State</th><th>Reviewed by</th><th>Valid to</th></tr></thead><tbody><tr><td>george.kaplan.14@example.test</td><td>email</td><td>Current</td><td>Awaiting review</td><td>Open-ended</td></tr><tr><td>Velvet Plover</td><td>alias</td><td>Expired</td><td>reviewer02</td><td>19 Apr 2026</td></tr><tr><td>demo_george_velvet14</td><td>username / telegram</td><td>Current</td><td>reviewer08</td><td>Open-ended</td></tr><tr><td>kappa66</td><td>username / unspecified</td><td>Current</td><td>reviewer04</td><td>Open-ended</td></tr></tbody></table>
+</li><li>
+Use the filters above the table. They apply to Time, Table and Graph alike:
+<ul><li>
+Set <strong>State</strong> to <strong>Expired</strong>. Only Velvet Plover remains.
+</li><li>
+Set <strong>State</strong> back to <strong>All states</strong>, then set <strong>Type</strong> to <strong>alias</strong>. Velvet Plover, Kaplan, G. Kaplan and GK remain.
+</li><li>
+Type <code>reviewer08</code> in <strong>Find identifiers</strong> to see every entry that reviewer touched. Clear the filters before continuing.
+</li></ul>
+</li></ol>
+<p><img src="../scene-4-person-intelligence/../images/scene-4-register-table.png" alt="Identifier table" loading="lazy"></p>
+<h2>Task 5: Read the register as a graph</h2>
+<ol><li>
+Select <strong>Graph</strong>. George Kaplan sits at the centre (<strong>POI</strong>). Each identifier is a node coloured by type: alias, username, email or phone. The grey nodes are the people and apps that captured or reviewed each entry, for example <code>agent12</code> and <code>reviewer02</code>.
+</li><li>
+Read the legend. A dashed line is a review; a dashed node outline is an expired identifier. Find Velvet Plover&#x27;s dashed outline.
+</li><li>
+Select <strong>Velvet Plover</strong>. Its detail panel shows:
+<ul><li>
+captured by agent12 on 7 Mar 2026
+</li><li>
+reviewed by reviewer02 on 9 Mar 2026
+</li><li>
+valid from 1 Mar to 19 Apr 2026
+</li><li>
+source reference <code>register:city-poi-identifiers:v1:2026-10-20</code>
+</li><li>
+the note that its validity has ended and it is excluded from current matching
+</li></ul>
+</li><li>
+Clear <strong>Show capture and review actors</strong>. The graph reduces to George and his 10 identifiers. Use <strong>+</strong>, <strong>−</strong> and <strong>Fit graph</strong> to zoom, then turn the actors back on.
+</li></ol>
+<p><img src="../scene-4-person-intelligence/../images/scene-4-register-graph.png" alt="Identifier graph with Velvet Plover selected" loading="lazy"></p>
+<blockquote><p><strong>Note:</strong> In the graph, both aliases and actors carry the letter <strong>A</strong>. Colour tells them apart: teal for aliases, grey for actors.</p>
+<p>This network is drawn in the browser from the secured register query. It is not an Oracle SQL property graph; Scene 6 covers that.</p></blockquote>
+<ol start="5"><li>
+Press <strong>Escape</strong> or select <strong>×</strong> to close. Focus returns to the portrait.
+</li></ol>
+<h2>Task 6 (optional): A busier register</h2>
+<ol><li>
+Select <strong>POI-NBNW-PHILIP · Philip Vandamm</strong>, George&#x27;s gallery client, and open his register detail. It has 13 identifiers.
+</li><li>
+In <strong>Table</strong>, set <strong>State</strong> to <strong>Proposed</strong>. Three aliases remain: <code>vanders</code>, <code>pippster</code> and <code>pippy</code>. They were captured but not yet accepted into the register. Set <strong>State</strong> back to <strong>All states</strong>.
+</li><li>
+Compare his <strong>Graph</strong> with George&#x27;s. More identifiers and reviewers make it denser, which is when the filters and <strong>Show capture and review actors</strong> become useful.
+</li></ol>
+<h2>Task 7: Explore vector comparisons</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-4-person-intelligence/../powtoons/index.html?story=vector">Similarity is a lead</a>. The final beat connects the teaching example to narrative and supplied-photo comparisons.</p>
+<ol><li>
+Reselect George Kaplan. Under <strong>Narrative vector search</strong>, the box may already hold a suggested description. Replace it with <em>art gallery sales and client donations</em> and select <strong>Search narratives</strong>.
+</li><li>
+Results are ranked by narrative similarity: George Kaplan first (about 0.57), then Eve Kendall, Philip Vandamm and Clara Thornhill. Exact scores can vary with the embedding model. Related wording ranks nearby profiles, so read each summary before discussing a candidate. A high score means similar wording, not involvement.
+</li><li>
+Under <strong>Visual vector search</strong>, choose a test image using only the supplied synthetic photos from the sample package or an existing prepared batch. Record the model, threshold and source shown by the interface. A whole-photo similarity result may reflect scene composition; it is not facial identity proof.
+</li><li>
+Both searches generate model vectors outside the application UI. Oracle then ranks authorised rows with <code>VECTOR_DISTANCE(..., COSINE)</code> through <code>secure_persons_of_interest_v</code>. If a profile lacks compatible embeddings or a photo set, explain the prerequisite and use the conceptual vector tile from Scene 1. Do not invent a match.
+</li></ol>
+<h2>Continue</h2>
+<p>Check whether the active scope has an Evidence Intelligence pack. George Kaplan&#x27;s art-market incidents are a natural thread to follow.</p><div class="pager"><a href="#scene-4">← Previous</a><a href="#scene-6">Next →</a></div></article><article id="scene-6" class="chapter"><div class="kicker">LiveLabs workshop · 7 of 15</div><h1>Scene 5: Evidence Intelligence</h1>
+<h2>Introduction</h2>
+<p>Check available source material before making an evidence claim. Visibility can differ across Adelaide profile restores and demo personas.</p>
+<p>Estimated Time: 5 minutes</p>
+<p><img src="../scene-5-evidence-intelligence/../images/source-review.png" alt="Original material and AI drafts remain separate" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Establish whether scoped evidence items and case context are visible.
+</li><li>
+Trace any displayed item to its original source.
+</li></ul>
+<h2>Task 1: Inspect availability</h2>
+<ol><li>
+Select <strong>Evidence Intelligence</strong>. Wait for the summary cards and filters to load.
+<p><img src="../scene-5-evidence-intelligence/../images/scene-5-evidence-intelligence.png" alt="Evidence Intelligence summary cards and filters" loading="lazy"></p>
+</li><li>
+Record the visible evidence-item, incident, case and fictional-person counts. If the screen says no pack is visible, state that limitation and do not demonstrate an imaginary result.
+</li><li>
+If items exist, choose one, inspect its source label and link type, and distinguish original content from AI descriptions or similarity suggestions.
+</li></ol>
+<h2>Continue</h2>
+<p>Use <strong>Case Relationships</strong> to follow recorded case links, regardless of whether a dedicated evidence pack is present.</p><div class="pager"><a href="#scene-5">← Previous</a><a href="#scene-7">Next →</a></div></article><article id="scene-7" class="chapter"><div class="kicker">LiveLabs workshop · 8 of 15</div><h1>Scene 6: Case Relationships</h1>
+<h2>Introduction</h2>
+<p>Use a payment-document case that exists in the active Adelaide scope. Compare the graph presentations while keeping the same case and underlying sources in view.</p>
+<p>Estimated Time: 10 minutes</p>
+<p><img src="../scene-6-case-relationships/../images/relationship-graph.png" alt="Conceptual case network and link types" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Inspect the case&#x27;s incident, fictional-person and evidence-reference context.
+</li><li>
+Compare all four graph-view choices, especially <strong>Oracle Graph Explorer</strong>.
+</li></ul>
+<h2>Task 1: Select a case and source</h2>
+<ol><li>
+Select <strong>Case Relationships</strong> and choose the case referenced by the payment-document watch. Record its actual reference before presenting the graph.
+<p><img src="../scene-6-case-relationships/../images/scene-6-case-relationships.png" alt="Case Relationships graph for a selected case" loading="lazy"></p>
+</li><li>
+Read the case summary and node/link counts. Open a connected incident or detail card and identify the original record behind one link.
+</li></ol>
+<h2>Task 2: Compare graph views</h2>
+<ol><li>
+Switch through all four view choices displayed in this build, holding the same case constant. The known options include <strong>Pathway Style</strong>, <strong>Force-directed network</strong> and <strong>Oracle Graph Explorer</strong>; read the fourth option&#x27;s exact label from the live screen rather than inventing it.
+</li><li>
+In each view, point out how layout, clustering or exploration controls change the way relationships are inspected. Explain which links are recorded and which are optional similarity comparisons.
+</li><li>
+Spend extra time in <strong>Oracle Graph Explorer</strong>: select a node, follow one edge and use the available details to return to a source. If the Explorer needs separate configuration or does not load, record that result and continue with the available views.
+</li></ol>
+<p><strong>Interpretation:</strong> A graph drawing can render scoped relational links, while other features may query a native database graph. The visual style alone does not prove the database execution mechanism or a common offender.</p>
+<h2>Continue</h2>
+<p>Add approximate geographic context in <strong>Incident Map</strong>.</p><div class="pager"><a href="#scene-6">← Previous</a><a href="#scene-8">Next →</a></div></article><article id="scene-8" class="chapter"><div class="kicker">LiveLabs workshop · 9 of 15</div><h1>Scene 7: Incident Map</h1>
+<h2>Introduction</h2>
+<p>The map adds approximate location context to authorised records. Its drawn markers can be fewer than all matching incidents.</p>
+<p>Estimated Time: 8 minutes</p>
+<p><img src="../scene-7-incident-map/../images/spatial-context.png" alt="Conceptual spatial context" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Use category, area, status and time controls.
+</li><li>
+Explain map precision and marker limits.
+</li><li>
+See how database security changes what each persona can map.
+</li></ul>
+<h2>Task 1: Inspect the map</h2>
+<ol><li>
+Select <strong>Incident Map</strong>. Read the summary cards: <strong>Displayed map markers</strong> (for example, <em>2,500 of 21,532 matching records</em>), <strong>Active incidents</strong>, <strong>Suburbs represented</strong> and <strong>Priority markers</strong>.
+</li><li>
+The map draws the most recent <strong>2,500</strong> markers by default. Under <strong>Markers to draw</strong>, choose <strong>All matching markers</strong> and select <strong>Update map</strong>. Incidents now fill the metropolitan area across 394 suburbs.
+</li></ol>
+<blockquote><p><strong>Note:</strong> Filter changes apply only when you select <strong>Update map</strong>. Until then, the summary cards still describe the previous view.</p></blockquote>
+<h2>Task 2: Filter by patrol area</h2>
+<ol><li>
+Under <strong>Patrol area</strong>, choose <strong>Northern &amp; Western Adelaide</strong> and select <strong>Update map</strong>. The markers form one region: the coast from Henley Beach and Seaton north through Port Adelaide, and the northern suburbs from Enfield to Elizabeth and Golden Grove. <strong>Displayed map markers</strong> should read <em>8,883 of 8,883</em> when all markers are drawn.
+<p><img src="../scene-7-incident-map/../images/scene-7-map-northern-western.png" alt="Incident Map showing all 8,883 Northern &amp; Western Adelaide incidents" loading="lazy"></p>
+</li><li>
+Repeat with <strong>Adelaide Central</strong> (the CBD and inner suburbs, about 7 km out) and <strong>Southern &amp; Eastern Adelaide</strong> (Glenelg and Marion south to Seaford, plus the eastern suburbs and hills).
+</li><li>
+Change one more filter at a time (category, status or month) and explain the observed change. Return <strong>Patrol area</strong> to <strong>All authorised areas</strong> when you finish.
+</li></ol>
+<h2>Task 3: Compare personas</h2>
+<ol><li>
+In <strong>Demo user</strong> at the top right, choose <strong>Northern analyst</strong>. Without any filter, the map shows only Northern &amp; Western Adelaide: <strong>Displayed map markers</strong> reads <em>2,500 of 8,883</em> because the marker limit returns to its default. The database&#x27;s scoped view, not the map, removes the other areas.
+</li><li>
+Try <strong>Central analyst</strong> and <strong>Southern analyst</strong>, then return to <strong>Statewide administrator</strong>.
+</li><li>
+If a marker opens a detail, compare its approximate position with the source report&#x27;s location wording.
+</li></ol>
+<p><strong>Interpretation:</strong> Each point is an approximate synthetic location inside the named suburb, not an address. Display limits and clustering can reduce drawn markers. Nearby positions do not establish a common event or causal relationship.</p>
+<h2>Continue</h2>
+<p>Use <strong>Incident Explorer</strong> to inspect original report detail with several search methods.</p><div class="pager"><a href="#scene-7">← Previous</a><a href="#scene-9">Next →</a></div></article><article id="scene-9" class="chapter"><div class="kicker">LiveLabs workshop · 10 of 15</div><h1>Scene 8: Incident Explorer</h1>
+<h2>Introduction</h2>
+<p>Move from a watch, map marker or graph node to an original incident report. This scene also compares the available search controls.</p>
+<p>Estimated Time: 8 minutes</p>
+<p><img src="../scene-8-incident-explorer/../images/source-review.png" alt="Source review keeps original reports separate from derived context" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Find records through free text and structured filters.
+</li><li>
+Read report details and distinguish them from computed links.
+</li></ul>
+<h2>Task 1: Compare search methods</h2>
+<ol><li>
+Select <strong>Incident Explorer</strong> and allow records and filter lists to load.
+<p><img src="../scene-8-incident-explorer/../images/scene-8-incident-explorer.png" alt="Incident Explorer search and results" loading="lazy"></p>
+</li><li>
+Try <strong>GENERIC INCIDENT SEARCH</strong> with a phrase or the incident reference recorded in Scene 3. Move focus away from the field if needed, then wait for the result count to update.
+</li><li>
+Clear that search. Compare category, suburb, patrol area, status and other available filters one at a time. Record which controls narrow the result set in your Adelaide session.
+</li></ol>
+<h2>Task 2: Read one result in detail</h2>
+<ol><li>
+Open one returned incident. Read its reference, category, status, dates, approximate location, <strong>REPORT SUMMARY</strong> and <strong>REPORT NARRATIVE</strong>.
+</li><li>
+Check the read-only attributes and any person/evidence counts. Distinguish the source report from a watch membership, semantic match or analyst interpretation.
+</li><li>
+Record the incident reference for later discussion. Clear search filters when finished.
+</li></ol>
+<h2>Continue</h2>
+<p>Return to aggregate patterns in <strong>Incident and Capacity Analytics</strong>.</p><div class="pager"><a href="#scene-8">← Previous</a><a href="#scene-10">Next →</a></div></article><article id="scene-10" class="chapter"><div class="kicker">LiveLabs workshop · 11 of 15</div><h1>Scene 9: Incident and Capacity Analytics</h1>
+<h2>Introduction</h2>
+<p>Place individual Adelaide reports in descriptive historical context. Relative-time panels depend on the stored incident dates.</p>
+<p>Estimated Time: 6 minutes</p>
+<p><img src="../scene-9-incident-and-capacity-analytics/../images/incident-journey.png" alt="Conceptual route from summaries to source records" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Read incident demand, workload and trends within the active scope.
+</li><li>
+Explain the difference between descriptive counts and prediction.
+</li></ul>
+<h2>Task 1: Explore the panels</h2>
+<ol><li>
+Select <strong>Incident and Capacity Analytics</strong>. Start with <strong>Incident Demand</strong>.
+<p><img src="../scene-9-incident-and-capacity-analytics/../images/scene-9-analytics.png" alt="Incident and Capacity Analytics panels" loading="lazy"></p>
+</li><li>
+Inspect <strong>Area Workload</strong>, <strong>Volume Trend</strong>, <strong>Vector Groups</strong> and <strong>Case Context</strong> if populated. Record the date window and active persona alongside any figures you present.
+</li><li>
+If a recent-period result is empty, compare the window with the dates in the saved Adelaide profile before interpreting it.
+</li></ol>
+<p><strong>Interpretation:</strong> Historical volumes and groupings describe returned records; they do not predict incidents or recommend deployment.</p>
+<h2>Continue</h2>
+<p>Compare the two routes for asking questions of authorised data.</p><div class="pager"><a href="#scene-9">← Previous</a><a href="#scene-11">Next →</a></div></article><article id="scene-11" class="chapter"><div class="kicker">LiveLabs workshop · 12 of 15</div><h1>Scene 10: Ask IncidentData</h1>
+<h2>Introduction</h2>
+<p>The page presents two ways to ask about authorised data. Keep the SQL-handler guided route separate from the configured Select AI route that may invoke an LLM.</p>
+<p>Estimated Time: 10 minutes</p>
+<p><img src="../scene-10-ask-incidentdata/../images/select-ai-paths.png" alt="Reviewed SQL templates and configured Select AI are distinct paths" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Inspect one reviewed, read-only guided SQL question.
+</li><li>
+Observe a configured Select AI question if that service is ready.
+</li><li>
+Relate native AI activity to the later <strong>AI Opps</strong> dashboard.
+</li></ul>
+<h2>Task 1: Bottom Ask route — SQL handler</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-10-ask-incidentdata/../powtoons/index.html?story=ask">Two ways to ask</a>.</p>
+<ol><li>
+In the lower <strong>Ask</strong> area, choose a displayed guided question. Select <strong>Show SQL</strong> before running it where that response mode is available.
+<p><img src="../scene-10-ask-incidentdata/../images/scene-10-ask-incidentdata.png" alt="Ask IncidentData page with the guided Ask area" loading="lazy"></p>
+</li><li>
+Read the reviewed SQL template, active scope, date conditions and returned row count. Use <strong>Run query</strong> or <strong>Explain answer</strong> to compare output modes.
+</li><li>
+Explain why a handler-wired, read-only query can be efficient and predictable. It maps the question to approved SQL; it is not evidence that an LLM generated the query.
+</li></ol>
+<h2>Task 2: Top Ask route — Select AI</h2>
+<ol><li>
+In the upper Ask area, use the prepared Select AI example if the configured service is available. Record the question, actual response and any SQL or source context exposed by the page.
+</li><li>
+Explain that this route can use a configured LLM. Compare its answer with the guided route without assuming the same execution path or identical wording.
+</li><li>
+Later in <strong>AI Opps</strong>, look for the corresponding native AI activity. If configuration, permissions or provider access are missing, show the visible state and do not claim that an LLM call completed.
+</li></ol>
+<h2>Continue</h2>
+<p>Compare guided and native agent execution in <strong>AI Agent Console</strong>.</p><div class="pager"><a href="#scene-10">← Previous</a><a href="#scene-12">Next →</a></div></article><article id="scene-12" class="chapter"><div class="kicker">LiveLabs workshop · 13 of 15</div><h1>Scene 11: AI Agent Console</h1>
+<h2>Introduction</h2>
+<p>Compare a lower, handler-wired <strong>Run agent</strong> route with the upper route built around the configured AI Agent Framework. Both need reviewable results and clear source scope.</p>
+<p>Estimated Time: 10 minutes</p>
+<p><img src="../scene-11-ai-agent-console/../images/agent-framework.png" alt="Conceptual agent tasks, tools and scoped database results" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Review the Signals, Requests and Logistics specialist contexts.
+</li><li>
+Distinguish a guided PL/SQL/SQL handler workflow from a native agent team using tasks and permitted tools.
+</li><li>
+Inspect audit activity and connect native AI calls to <strong>AI Opps</strong>.
+</li></ul>
+<h2>Task 1: Bottom Run agent route — guided handler</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-11-ai-agent-console/../powtoons/index.html?story=agents">Two ways to run an agent</a>.</p>
+<ol><li>
+Select <strong>AI Agent Console</strong>. Review the Signals, Requests and Logistics cards and their available guided tools.
+<p><img src="../scene-11-ai-agent-console/../images/scene-11-agent-console.png" alt="AI Agent Console specialist cards" loading="lazy"></p>
+</li><li>
+In the lower <strong>Run agent</strong> area, choose a prepared guided workflow. Inspect its reviewed, scoped query/result and any saved action in <strong>Recent agent actions</strong>.
+</li><li>
+Explain the handler-wired route as a controlled way to package database work. The exact PL/SQL handler implementation should be confirmed from the deployed build before presenting code-level detail; a guided answer alone does not prove an LLM call.
+</li></ol>
+<h2>Task 2: Top route — AI Agent Framework</h2>
+<ol><li>
+In the upper agent area, use a prepared native agent example if the framework and model are configured. Identify the agent or team, tasks, permitted tools, actual output and any cited source context.
+</li><li>
+Explain that this route can call an LLM and orchestrate database tools. Review the recorded action rather than inferring completion from a card or button.
+</li><li>
+Find its native activity later in <strong>AI Opps</strong>. If the service is unavailable, record the visible state and keep the guided route as the completed exercise.
+</li></ol>
+<h2>Continue</h2>
+<p>Move to the separate synthetic-document pipeline in <strong>Data Room</strong>.</p><div class="pager"><a href="#scene-11">← Previous</a><a href="#scene-13">Next →</a></div></article><article id="scene-13" class="chapter"><div class="kicker">LiveLabs workshop · 14 of 15</div><h1>Scene 12: Data Room</h1>
+<h2>Introduction</h2>
+<p>Use a prepared saved batch, or one case ZIP from the <strong>Workshop &amp; Guides</strong> sample package, to explain how synthetic files become traceable descriptions, connections and data products. The saved Alice Springs batch is separate from the Adelaide incident watch.</p>
+<p>Estimated Time: 14 minutes</p>
+<p><img src="../scene-12-data-room/../images/data-room-pipeline.png" alt="Seven stages of the synthetic Data Room pipeline" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Explain all seven pipeline stages and the state of one selected batch.
+</li><li>
+Use the five workspace tabs to navigate its outputs.
+</li><li>
+Keep original files, AI drafts, connection suggestions and saved products distinct.
+</li></ul>
+<h2>Task 1: Choose a prepared batch</h2>
+<ol><li>
+Select <strong>Data Room</strong>. Under <strong>Choose your batch</strong>, keep <strong>Open existing batch</strong> selected. <strong>Batch Load History</strong> lists the latest batches visible to the current demo user.
+</li><li>
+Find <code>AliceSprings_Scenario_1A.zip</code> and select <strong>Open</strong>. Another batch may be marked <strong>Selected</strong> from earlier work; make sure the Alice Springs batch is the one open before continuing. Its history row reads <em>18 items · Synthetic travel CSVs, inventory-related messages, financial rows, and unverified scene photos</em>.
+</li><li>
+Expand <strong>Batch details &amp; processing status</strong>. It shows when and by whom the batch was loaded, the ZIP and expanded sizes, and the status of each of the seven stages. Record the batch ID and stage status shown in this session. At the time of writing, the Alice Springs batch had stages 1–6 complete and stage 7 pending.
+<p><img src="../scene-12-data-room/../images/scene-12-data-room-stages.png" alt="Alice Springs batch processing status across the seven stages" loading="lazy"></p>
+</li><li>
+If demonstrating a new upload instead, select <strong>Upload new ZIP</strong> to open the <strong>ZIP Loader</strong>:
+<ul><li>
+Check the limits it lists: 20 MiB ZIP, 100 files, 8 MiB per file, 40 MiB expanded; TXT, CSV, JSON, JPG/JPEG, PNG, MP3, M4A and MP4; no encrypted or nested archives.
+</li><li>
+Choose one individual case ZIP from the sample package, never the outer package or real evidence.
+</li><li>
+Tick <strong>I confirm this ZIP contains synthetic training data only</strong>, then select <strong>Load ZIP</strong>.
+</li><li>
+For a quick test, <strong>Download sample ZIP</strong> gives a small eight-file batch.
+</li></ul>
+</li><li>
+After loading, expand <strong>Batch details &amp; processing status</strong>. Load, Unzip and Ingest should show <strong>Complete</strong>. Unzip reports how many supported files were validated and how many operating-system metadata files were ignored. Until stage 4 runs, the <strong>Files</strong> tab marks each one-line description <em>Inventory-derived · not AI-generated</em>. A zero shown while requests are still running is not a final inventory.
+</li></ol>
+<h2>Task 2: Explain the seven stages</h2>
+<p><strong>Animated pause:</strong> <a href="../scene-12-data-room/../powtoons/index.html?story=data-room">From ZIP to review pack</a>.</p>
+<p>The stage names below match <strong>Batch details &amp; processing status</strong>.</p>
+<ol><li>
+<strong>Load:</strong> retain the original ZIP, assign a batch ID and store its SHA-256 checksum.
+</li><li>
+<strong>Unzip:</strong> extract and validate the supported files from that individual ZIP.
+</li><li>
+<strong>Ingest:</strong> store original content, checksums and inventory headlines.
+</li><li>
+<strong>Identify/Describe:</strong> run from the <strong>Files</strong> tab with <strong>Run Identify/Describe</strong>. It sends the batch&#x27;s content to OCI GenAI and creates AI descriptions that remain drafts linked to the original files.
+<ul><li>
+Text analysis covers the first 24,000 characters of each file.
+</li><li>
+Images are analysed up to 5 MiB.
+</li><li>
+MP3/M4A audio is transcribed and the transcript is described.
+</li><li>
+MP4 originals can be downloaded, but video analysis is unavailable.
+</li></ul>
+</li><li>
+<strong>Learn what is there:</strong> run from <strong>Brief &amp; Connections</strong> with <strong>Run batch learning</strong>. Saved descriptions are summarised into a source-linked Batch Brief.
+</li><li>
+<strong>Understand Connections:</strong> run from <strong>Brief &amp; Connections</strong> with <strong>Run connections</strong>. Source links, declared synthetic cast/scene context, whole-photo similarity and the ADB agent&#x27;s review are kept separate. For Alice Springs, the stage reports <em>21 graph nodes · 28 supported candidate links · native ADB agent review saved</em>.
+</li><li>
+<strong>Create Data products:</strong> run from <strong>Brief &amp; Connections</strong> with <strong>Create / reopen data products</strong>. It saves a versioned review pack with a manifest and the available outputs.
+</li></ol>
+<p>Load, Unzip and Ingest run on upload. Each later stage has its own control and waits for the stage before it, and may invoke configured AI services. Explain incomplete or failed stages before moving on.</p>
+<h2>Task 3: Use the workspace tabs</h2>
+<ol><li>
+<strong>Files:</strong> under <strong>Files &amp; descriptions</strong>, filter by <strong>Content type</strong>, then use <strong>Details</strong> on one item to open its source reference. <strong>Download</strong> retrieves the unchanged original.
+</li><li>
+<strong>Explore:</strong> under <strong>Choose what to explore</strong>, five tiles show what the batch supports: <strong>Money Flows</strong>, <strong>Messages</strong>, <strong>Travel</strong>, <strong>People mentioned</strong> and <strong>People &amp; Photos</strong>. Each is marked, for example, <em>Ready to analyse</em> or <em>Not recognised</em>, depending on the batch&#x27;s content. Inspect themes and candidate connections without treating a suggestion as a fact.
+</li><li>
+<strong>Brief &amp; Connections:</strong> read the <strong>Batch Brief</strong>, its citations, the <strong>Connections &amp; Person / Photo Graph</strong> and the <strong>Saved review pack</strong>.
+</li><li>
+<strong>Assistants:</strong> two specialisations, the <strong>Batch Assistant</strong> and the <strong>Crime Expert Assistant</strong>, answer questions about the saved content. Start with a suggested prompt such as <em>What does this batch contain?</em> and check each response against the saved files and brief.
+</li><li>
+<strong>Outputs:</strong> use <strong>Open saved review packs</strong> to open a completed, versioned data product when one exists; state when none exists. <strong>Virtual Detective Room &amp; Video Briefing</strong> can generate an AI-drafted room and briefing for the batch. Treat it as an AI draft that needs analyst review.
+</li></ol>
+<h2>Continue</h2>
+<p>Finish by inspecting the AI activity and measurement trail in <strong>AI Opps</strong>. <strong>View AI activity ↗</strong> at the top of the Data Room links there.</p><div class="pager"><a href="#scene-12">← Previous</a><a href="#scene-14">Next →</a></div></article><article id="scene-14" class="chapter"><div class="kicker">LiveLabs workshop · 15 of 15</div><h1>Scene 14: AI Opps</h1>
+<h2>Introduction</h2>
+<p>Close the demonstration by showing what AI activity was recorded and what usage measures are available. Scene 13 from the earlier cut is omitted, so this chapter keeps the requested Scene 14 label.</p>
+<p>Estimated Time: 6 minutes</p>
+<p><img src="../scene-14-ai-opps/../images/select-ai-paths.png" alt="Configured AI and database paths are measured differently" loading="lazy"></p>
+<h3>Objectives</h3>
+<ul><li>
+Find activity from the prepared Select AI and agent-framework examples.
+</li><li>
+Explain measured, unavailable and non-AI work without inventing token counts.
+</li></ul>
+<h2>Task 1: Read the activity view</h2>
+<ol><li>
+Select <strong>AI Opps</strong>. Review activity filters, application areas, usage summary and token-coverage explanation.
+<p><img src="../scene-14-ai-opps/../images/scene-14-ai-opps.png" alt="AI Opps usage and traceability summary" loading="lazy"></p>
+</li><li>
+Filter for any native Select AI question from Scene 10 and native agent action from Scene 11 that actually completed. Note the action, time, provider and reported tokens when those fields are present.
+</li><li>
+Contrast those entries with the guided SQL and handler routes. A reviewed query can be useful without invoking an LLM; an empty AI activity list does not mean the guided exercise failed.
+</li><li>
+Explain why native invocation tokens may be unavailable even when another usage measure is shown. Do not infer a missing count.
+</li></ol>
+<h2>Finish</h2>
+<p>Summarise one original source record, one computed comparison, one recorded link and one AI draft or action. State the active Adelaide scope and any optional exercise that was unavailable in this session.</p><div class="pager"><a href="#scene-13">← Previous</a><span></span></div></article></main></div><dialog id="zoom"><button type="button" aria-label="Close image">Close</button><img alt="Expanded workshop screenshot"></dialog><script>
+function showChapter(){const id=location.hash.slice(1)||'introduction';const target=document.getElementById(id)||document.getElementById('introduction');document.querySelectorAll('.chapter').forEach(el=>el.classList.toggle('active',el===target));document.querySelectorAll('.sidebar a').forEach(el=>el.classList.toggle('active',el.dataset.page===target.id));window.scrollTo(0,0)}window.addEventListener('hashchange',showChapter);showChapter();const zoom=document.getElementById('zoom');document.querySelectorAll('.chapter img').forEach(img=>img.addEventListener('click',()=>{zoom.querySelector('img').src=img.src;zoom.querySelector('img').alt=img.alt;zoom.showModal()}));zoom.querySelector('button').addEventListener('click',()=>zoom.close());zoom.querySelector('img').addEventListener('click',()=>zoom.close());
+</script></body></html>

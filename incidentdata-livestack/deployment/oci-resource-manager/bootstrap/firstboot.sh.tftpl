@@ -1,0 +1,63 @@
+#!/bin/bash
+set -euo pipefail
+umask 077
+install -d -m 700 /opt/incidentdata/state /opt/incidentdata/logs
+exec 9>/opt/incidentdata/state/installer.lock
+flock -n 9 || exit 75
+# Authenticated Run Command may read this fixed diagnostic only; no root shell.
+cat > /usr/local/sbin/incidentdata-bootstrap-status <<'DIAGNOSTIC'
+#!/usr/bin/python3
+import pathlib,sys
+if len(sys.argv)!=1:raise SystemExit(2)
+for name in ['state/bootstrap-status.json','logs/firstboot.log']:
+    file=pathlib.Path('/opt/incidentdata')/name
+    print(name)
+    if file.exists():print(file.read_text(errors='replace')[-3500:])
+names=['app-build','worker-build','schema','security','ai','apex','accounts','ollama','ollama-pull','gateway','services','acceptance','bootstrap-dependencies']
+logs=[pathlib.Path('/opt/incidentdata/logs')/(name+'.log') for name in names]
+logs += [pathlib.Path('/opt/incidentdata/release/apex')/('import-'+str(app)+'.log') for app in [319,320,361]]
+logs += [pathlib.Path('/opt/incidentdata/release/apex')/('login-'+str(app)+'.log') for app in [319,320,361]]
+logs += [pathlib.Path('/opt/incidentdata/release/database/security-restore.log')]
+logs=[file for file in logs if file.is_file()]
+if logs:
+    file=max(logs,key=lambda file:file.stat().st_mtime)
+    print(file.name);print(file.read_text(errors='replace')[-4500:])
+DIAGNOSTIC
+chmod 755 /usr/local/sbin/incidentdata-bootstrap-status
+cat > /usr/local/sbin/incidentdata-bootstrap-resume <<'RESUME'
+#!/bin/bash
+set -euo pipefail
+test "$#" -eq 0 || exit 2
+umask 077
+cd /opt/incidentdata
+exec 9>/opt/incidentdata/state/installer.lock
+flock -n 9 || exit 75
+# Only reinvoke the same root-owned, release-checked installer and fixed config.
+# No caller-selected command, path, environment or installer arguments.
+env -i PATH=/usr/sbin:/usr/bin:/sbin:/bin HOME=/root LANG=C.UTF-8 \
+ /opt/incidentdata/installer-venv/bin/python -I \
+ /opt/incidentdata/install.py /opt/incidentdata/state/bootstrap.json \
+ >> /opt/incidentdata/logs/firstboot.log 2>&1
+RESUME
+chmod 755 /usr/local/sbin/incidentdata-bootstrap-resume
+printf 'ocarun ALL=(root) NOPASSWD: /usr/local/sbin/incidentdata-bootstrap-status "", /usr/local/sbin/incidentdata-bootstrap-resume ""\n' > /etc/sudoers.d/101-incidentdata-diagnostics
+chmod 440 /etc/sudoers.d/101-incidentdata-diagnostics
+visudo -cf /etc/sudoers.d/101-incidentdata-diagnostics
+# Only non-secret configuration and the installer travel in instance metadata.
+cat > /opt/incidentdata/state/bootstrap.json <<'CONFIG'
+${config_json}
+CONFIG
+printf '%s' '${installer_base64}' | base64 -d > /opt/incidentdata/install.py
+exec > /opt/incidentdata/logs/firstboot.log 2>&1
+if test -x /usr/libexec/oci-growfs; then /usr/libexec/oci-growfs -y; fi
+dnf -y install podman python3 python3-pip java-21-openjdk-headless unzip tar gzip firewalld
+dnf -y module enable nodejs:20
+dnf -y install nodejs npm
+node -e 'if(Number(process.versions.node.split(".")[0])<20)process.exit(1)'
+python3 -m venv /opt/incidentdata/installer-venv
+/opt/incidentdata/installer-venv/bin/pip install --disable-pip-version-check oci==2.140.0
+systemctl enable --now firewalld
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+firewall-cmd --reload
+/opt/incidentdata/installer-venv/bin/python /opt/incidentdata/install.py /opt/incidentdata/state/bootstrap.json

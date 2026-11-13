@@ -1,0 +1,4 @@
+# Build with a minimal context containing only the freshly built dist directory.
+# Preserve the verified FU40 backend and dependencies for this UI-only release.
+FROM localhost/local/adelaide-crime-intelligence:cdr-workspace-20260912
+COPY dist/ /app/frontend/dist/

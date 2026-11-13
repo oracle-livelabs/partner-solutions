@@ -1,0 +1,35 @@
+FROM docker.io/node:20-bookworm AS ui
+WORKDIR /app/frontend
+COPY frontend/package*.json ./
+RUN npm install
+COPY frontend ./
+RUN npm run build
+
+FROM docker.io/node:20-bookworm
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+COPY backend ./backend
+COPY testdata/evidence-intelligence/v1/assets ./testdata/evidence-intelligence/v1/assets
+COPY testdata/evidence-intelligence/care-trust-v1/assets ./testdata/evidence-intelligence/care-trust-v1/assets
+COPY testdata/evidence-intelligence/care-trust-v2/assets ./testdata/evidence-intelligence/care-trust-v2/assets
+COPY testdata/evidence-intelligence/care-trust-adelaide-v1/assets ./testdata/evidence-intelligence/care-trust-adelaide-v1/assets
+COPY testdata/evidence-intelligence/city-core-v1/assets ./testdata/evidence-intelligence/city-core-v1/assets
+COPY scripts/setup_select_ai_v2.js ./scripts/setup_select_ai_v2.js
+COPY scripts/setup_data_room.js ./scripts/setup_data_room.js
+COPY scripts/setup_data_room_descriptions.js ./scripts/setup_data_room_descriptions.js
+COPY scripts/setup_data_room_learning.js ./scripts/setup_data_room_learning.js
+COPY scripts/setup_data_room_workspace.js ./scripts/setup_data_room_workspace.js
+COPY scripts/setup_data_room_money.js ./scripts/setup_data_room_money.js
+COPY scripts/setup_data_room_messages.js ./scripts/setup_data_room_messages.js
+COPY scripts/setup_data_room_capabilities.js ./scripts/setup_data_room_capabilities.js
+COPY scripts/setup_data_room_money_agent.js ./scripts/setup_data_room_money_agent.js
+COPY scripts/setup_data_room_people_photos.js ./scripts/setup_data_room_people_photos.js
+COPY scripts/setup_data_room_expert.js ./scripts/setup_data_room_expert.js
+COPY scripts/setup_ai_ops.js ./scripts/setup_ai_ops.js
+COPY scripts/load_v2_fictional_pois.js ./scripts/load_v2_fictional_pois.js
+COPY scripts/update_v2_julian_portrait.js ./scripts/update_v2_julian_portrait.js
+COPY --from=ui /app/frontend/dist ./frontend/dist
+ENV NODE_ENV=production PORT=3001 TRANSFORMERS_CACHE=/app/.cache/transformers
+EXPOSE 3001
+CMD ["npm", "start"]

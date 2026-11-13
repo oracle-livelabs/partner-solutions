@@ -1,0 +1,4 @@
+# Pinned accepted worker: preserve its runtime, source adapters and voice models.
+FROM 3a6999f526e865657319d1861e6a0b26134bfd84f2574d41d41e8f1b05f1d9aa
+WORKDIR /app
+COPY backend/ai-ops-registry.js backend/ai-ops-store.js backend/ai-ops-telemetry.js backend/detective-room-author.js backend/detective-room-store.js backend/detective-room-worker.js ./backend/

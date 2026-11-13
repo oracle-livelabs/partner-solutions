@@ -1,0 +1,236 @@
+{
+  "db": {
+    "USERNAME": "CRIME_DATA",
+    "DB_NAME": "GE1C42BF10AE843_FU40"
+  },
+  "active": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 1,
+      "ACTIVATED_AT": "2026-09-17T05:23:40.661177",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ],
+  "profiles": [
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PROFILE_CODE": "ADELAIDE_DATA",
+      "PROFILE_STATUS": "active"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PROFILE_CODE": "BRISBANE_DATA",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 5,
+      "PROFILE_CODE": "PERTH_DATA",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PROFILE_CODE": "ADELAIDE_DATA_V2",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 10,
+      "PROFILE_CODE": "BRUSSELS_DATA_V1",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 30,
+      "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+      "PROFILE_STATUS": "available"
+    },
+    {
+      "DATASET_PROFILE_ID": 50,
+      "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+      "PROFILE_STATUS": "available"
+    }
+  ],
+  "areas": [
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PATROL_AREA_ID": 1,
+      "AREA_CODE": "CENTRAL"
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PATROL_AREA_ID": 2,
+      "AREA_CODE": "NORTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PATROL_AREA_ID": 3,
+      "AREA_CODE": "SOUTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 5,
+      "PATROL_AREA_ID": 319,
+      "AREA_CODE": "PERTH_CENTRAL"
+    },
+    {
+      "DATASET_PROFILE_ID": 5,
+      "PATROL_AREA_ID": 320,
+      "AREA_CODE": "PERTH_NORTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 5,
+      "PATROL_AREA_ID": 321,
+      "AREA_CODE": "PERTH_SOUTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PATROL_AREA_ID": 314,
+      "AREA_CODE": "BRIS_CENTRAL"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PATROL_AREA_ID": 315,
+      "AREA_CODE": "BRIS_NORTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PATROL_AREA_ID": 316,
+      "AREA_CODE": "BRIS_SOUTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PATROL_AREA_ID": 317,
+      "AREA_CODE": "BRIS_WEST"
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PATROL_AREA_ID": 318,
+      "AREA_CODE": "BRIS_OUTER"
+    },
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PATROL_AREA_ID": 1,
+      "AREA_CODE": "CENTRAL"
+    },
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PATROL_AREA_ID": 2,
+      "AREA_CODE": "NORTH"
+    },
+    {
+      "DATASET_PROFILE_ID": 1,
+      "PATROL_AREA_ID": 3,
+      "AREA_CODE": "SOUTH"
+    }
+  ],
+  "liveAreas": [
+    {
+      "PATROL_AREA_ID": 64,
+      "AREA_CODE": "CENTRAL"
+    },
+    {
+      "PATROL_AREA_ID": 65,
+      "AREA_CODE": "NORTH"
+    },
+    {
+      "PATROL_AREA_ID": 66,
+      "AREA_CODE": "SOUTH"
+    }
+  ],
+  "links": [
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PERSON_ID": 1881,
+      "N": 2
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PERSON_ID": 4,
+      "N": 3
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PERSON_ID": 7,
+      "N": 3
+    },
+    {
+      "DATASET_PROFILE_ID": 5,
+      "PERSON_ID": 1883,
+      "N": 8
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PERSON_ID": 1880,
+      "N": 5
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PERSON_ID": 8,
+      "N": 4
+    },
+    {
+      "DATASET_PROFILE_ID": 4,
+      "PERSON_ID": 1882,
+      "N": 5
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PERSON_ID": 3,
+      "N": 4
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PERSON_ID": 6,
+      "N": 4
+    },
+    {
+      "DATASET_PROFILE_ID": 6,
+      "PERSON_ID": 5,
+      "N": 4
+    }
+  ],
+  "created_at": "2026-09-17T06:05:20.574000",
+  "package_sha256": "ccc37234489843067ba4bcce3e242023f62ce34011b10aaaac8841c1d42033f2",
+  "before_sha256": "90c802c5aa63d827fd6e1f323f3de83265d5ee249d0cf11cb0b9e0b9626c14f0",
+  "targets": [
+    {
+      "id": 1,
+      "code": "ADELAIDE_DATA",
+      "area": "CENTRAL"
+    },
+    {
+      "id": 4,
+      "code": "BRISBANE_DATA",
+      "area": "BRIS_CENTRAL"
+    },
+    {
+      "id": 5,
+      "code": "PERTH_DATA",
+      "area": "PERTH_CENTRAL"
+    },
+    {
+      "id": 6,
+      "code": "ADELAIDE_DATA_V2",
+      "area": "CENTRAL"
+    }
+  ],
+  "counts": [
+    {
+      "profile": "ADELAIDE_DATA",
+      "before": 0,
+      "matching_shared": 0
+    },
+    {
+      "profile": "BRISBANE_DATA",
+      "before": 3,
+      "matching_shared": 0
+    },
+    {
+      "profile": "PERTH_DATA",
+      "before": 12,
+      "matching_shared": 0
+    },
+    {
+      "profile": "ADELAIDE_DATA_V2",
+      "before": 6,
+      "matching_shared": 4
+    }
+  ]
+}

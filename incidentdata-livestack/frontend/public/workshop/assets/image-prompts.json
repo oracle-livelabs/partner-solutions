@@ -1,0 +1,18 @@
+{
+  "mode": "Built-in image_gen",
+  "created": "2026-10-10",
+  "assets": [
+    {
+      "file": "incidentdata-overview.png",
+      "prompt": "Use case: illustration-story. Asset: landscape 16:9 cover illustration for IncidentData LiveStack educational blog and PowerPoint. Create a polished static Powtoon-like flat editorial cartoon in Oracle Redwood-inspired colours: warm ivory #F5F1EA, charcoal #312D2A, terracotta #C74634, teal #537C78, ochre #C29A5B. Three fictional adult analysts of varied appearance, one with dark curly hair and teal shirt, another with silver hair and terracotta jacket, a third in ochre shirt, calmly examining incident information at a shared desk. Surround them with simple floating motifs of a report, map with pins, connected nodes, and a document, all anchored to a subtle central database motif. Modern rounded character proportions, clean vector-like contours, restrained paper texture, warm approachable teaching atmosphere. Composition has spacious upper-left negative space and activity toward centre/right. No text, no numbers, no logos, no police badges, no weapons, no alarm imagery. Crisp wide image. This defines a consistent reusable visual family."
+    },
+    {
+      "file": "source-review.png",
+      "prompt": "Use case: illustration-story. Asset: 16:9 static educational illustration in same Redwood-inspired Powtoon-like flat cartoon visual family: warm ivory #F5F1EA background, charcoal #312D2A contours, terracotta #C74634, teal #537C78, ochre #C29A5B, restrained paper texture. A fictional adult analyst with dark curly hair and teal shirt calmly examining a document with a magnifying glass at a desk. Three document layers nearby: an original paper sheet, a transparent annotation layer, and a terracotta AI draft sheet. Each distinguishable by visual treatment, with an intact original resting on desk. A second fictional silver-haired colleague in terracotta jacket points to a small linked-source trail. Clean friendly rounded proportions, sophisticated editorial composition, generous margins, no text anywhere, no numbers, no logo, no police badges, no weapons. Use icons and blank lines only. Scene communicates careful human review and provenance, never AI certainty. Landscape, crisp print-ready illustration."
+    },
+    {
+      "file": "technology-overview.png",
+      "prompt": "Use case: illustration-story. Asset: 16:9 chapter opener for technology section of IncidentData LiveStack, static Redwood-inspired Powtoon-like editorial cartoon. Warm ivory #F5F1EA background, charcoal #312D2A lines, terracotta #C74634, teal #537C78, ochre #C29A5B, restrained paper texture. Fictional analyst in ochre shirt and fictional colleague with dark curly hair in teal shirt looking at a central database cylinder on a broad desk. Floating visual motifs in balanced orbit: a semantic vector dot cluster, a folded map with pin, a connected node network, a nested document, and a small assistant tool gear. Motifs connect lightly to database; no precise architectural claims. Rounded friendly characters, sophisticated flat illustration, ample breathing room, crisp edges. No text, letters, numbers, logos, no police or crime iconography, no robot domination. A calm educational technology scene. Landscape full-width composition."
+    }
+  ]
+}

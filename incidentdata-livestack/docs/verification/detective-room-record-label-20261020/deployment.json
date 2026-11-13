@@ -1,0 +1,22 @@
+{
+  "deployed": true,
+  "image": "localhost/crimedata-detective-worker:record-label-layout-20261020-r1",
+  "previousContainer": "detective-room-worker-before-record-label-20261020",
+  "runtimeSettingsUnchanged": true,
+  "change": "Wrap long source record labels within narrow viewports",
+  "validation": {
+    "widths": [
+      1440,
+      1056,
+      850,
+      560,
+      390,
+      320
+    ],
+    "records": 67,
+    "messages": 96,
+    "files": 18,
+    "videoSeconds": 220.708333
+  },
+  "at": "2026-10-20T04:25:33.408Z"
+}

@@ -1,0 +1,5 @@
+# Update the Data Foundation tile on the accepted Oracle Internals release.
+FROM localhost/adelaide-crime-intelligence:oracle-internals-20260930
+WORKDIR /app
+COPY frontend/dist/assets/ ./frontend/dist/assets/
+COPY frontend/dist/index.html ./frontend/dist/index.html

@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
+const ROOT=__dirname,PROJECT=path.dirname(ROOT),UI=path.join(ROOT,'frontend');const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+assert(!fs.existsSync(UI));fs.mkdirSync(UI);fs.cpSync(path.join(PROJECT,'adelaide_v2_tile_20260917/frontend/src'),path.join(UI,'src'),{recursive:true});
+for(const name of ['index.html','vite.config.js','package.json'])fs.copyFileSync(path.join(PROJECT,'frontend',name),path.join(UI,name));
+fs.symlinkSync(path.join(PROJECT,'frontend/node_modules'),path.join(UI,'node_modules'),'dir');
+fs.copyFileSync(path.join(UI,'src/main.jsx'),path.join(ROOT,'main_before.jsx'));fs.copyFileSync(path.join(PROJECT,'compose.fu40.yml'),path.join(ROOT,'compose_before.yml'));
+execFileSync('podman',['cp','policeadelaide_app-fu40_1:/app/frontend/dist/index.html',path.join(ROOT,'runtime_index_before.html')]);
+execFileSync('podman',['cp','policeadelaide_app-fu40_1:/app/frontend/dist/assets',path.join(ROOT,'runtime_assets_before')]);
+execFileSync('podman',['cp','policeadelaide_app-fu40_1:/app/backend/server.js',path.join(ROOT,'runtime_server_before.js')]);
+fs.copyFileSync(path.join(ROOT,'runtime_server_before.js'),path.join(ROOT,'runtime_server_after.js'));
+const result=execFileSync(process.execPath,[path.join(PROJECT,'frontend/node_modules/vite/bin/vite.js'),'build','--outDir',path.join(ROOT,'baseline-dist')],{cwd:UI,encoding:'utf8',stdio:'pipe'});fs.writeFileSync(path.join(ROOT,'baseline_build.log'),result,{flag:'wx'});
+assert.equal(fs.readFileSync(path.join(ROOT,'baseline-dist/index.html'),'utf8'),fs.readFileSync(path.join(ROOT,'runtime_index_before.html'),'utf8'));
+const assets=fs.readdirSync(path.join(ROOT,'baseline-dist/assets'));for(const file of assets)assert.equal(hash(fs.readFileSync(path.join(ROOT,'baseline-dist/assets',file))),hash(fs.readFileSync(path.join(ROOT,'runtime_assets_before',file))),file);
+const [app]=JSON.parse(execFileSync('podman',['inspect','policeadelaide_app-fu40_1'],{encoding:'utf8'}));assert.equal(app.ImageName,'localhost/local/adelaide-crime-intelligence:adelaide-v2-tile-20260917');
+fs.writeFileSync(path.join(ROOT,'preflight.json'),JSON.stringify({created_at:new Date().toISOString(),image_before:app.ImageName,image_id_before:app.Image,container_before:app.Id,runtime_server_before_sha256:hash(fs.readFileSync(path.join(ROOT,'runtime_server_before.js'))),baseline_exact_match:true,baseline_assets:assets},null,2)+'\n',{flag:'wx',mode:0o600});console.log('Exact running frontend and backend captured; baseline asset reproduction passed.');

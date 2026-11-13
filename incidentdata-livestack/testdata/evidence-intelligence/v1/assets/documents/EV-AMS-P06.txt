@@ -1,0 +1,11 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-P06
+Supporting paperwork contains a duplicated line identifier
+
+Document: supporting payment paperwork
+Comparison marker: AMS-2-3
+Line 07: display rental; EUR 90.00
+Line 07: board hire; EUR 90.00
+Repeated identifier: 07
+Source follow-up: completed without a conclusion about responsibility.
+
+Authored fixture; not a recovered or original incident document.

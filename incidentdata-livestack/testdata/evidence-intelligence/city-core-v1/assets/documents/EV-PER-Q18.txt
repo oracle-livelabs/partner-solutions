@@ -1,0 +1,5 @@
+Supplier catalogue showing a broad part family — Hamersley
+
+Authored fictional teaching supplement for Perth; linked incident SYN-PER-2026-02610, Hamersley.
+A fictional supplier catalogue repeats PER-CORE-05 as a part-family code for several compatible assemblies. It is not a unique serial number. A matching catalogue family does not establish that two observations concern the same physical part.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

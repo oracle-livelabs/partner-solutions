@@ -1,0 +1,5 @@
+Blank-form control in another namespace — Kuraby
+
+Authored fictional teaching supplement for Brisbane; linked incident SYN-BNE-2026-00077, Kuraby.
+An unused fictional supplier template prints BNE-CORE-02 as its sample code. This value belongs to the blank-template namespace. It does not join the template to the reservation or establish a common supplier.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

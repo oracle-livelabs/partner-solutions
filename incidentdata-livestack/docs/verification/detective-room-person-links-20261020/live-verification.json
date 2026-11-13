@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "batchId": "DR-20261020-68ed95d9-8383-401c",
+  "runId": "run-1792471817737-af4421d2201e",
+  "current": true,
+  "portraitHandleLinks": {
+    "kappa66": "George Kaplan",
+    "evek81": "Eve Kendall",
+    "pipp68": "Philip Vandamm",
+    "thorny58": "Clara Thornhill"
+  },
+  "allFourCardsOnBoard": true,
+  "conversationLinksPreserved": true,
+  "pendingPhotoLinks": 2,
+  "originalSenderNamesPreserved": true,
+  "provenanceVerified": true,
+  "liveRoomBrowserPassed": true,
+  "zipDownload": true,
+  "at": "2026-10-20T04:53:41.066Z"
+}

@@ -1,0 +1,91 @@
+{
+  "status": "passed_read_only",
+  "fixtures": [
+    {
+      "test": "empty_posts",
+      "result": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 2
+      }
+    },
+    {
+      "test": "scoped_reviewed_distinct_and_time_window",
+      "result": {
+        "POST_COUNT_72H": 3,
+        "SOURCE_COUNT_72H": 2,
+        "RISING_COUNT_72H": 1,
+        "ELEVATED_COUNT_72H": 1,
+        "LINKED_POST_COUNT": 1,
+        "LINKED_INCIDENT_COUNT": 2,
+        "AUTHORISED_INCIDENT_COUNT": 2
+      }
+    }
+  ],
+  "live_scopes": [
+    {
+      "user": "statewide_admin",
+      "result": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 21513
+      }
+    },
+    {
+      "user": "adelaide_central_analyst",
+      "result": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 8024
+      }
+    },
+    {
+      "user": "northern_analyst",
+      "result": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 7347
+      }
+    },
+    {
+      "user": "southern_analyst",
+      "result": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 6142
+      }
+    },
+    {
+      "user": "read_only_viewer",
+      "result": {
+        "POST_COUNT_72H": 0,
+        "SOURCE_COUNT_72H": 0,
+        "RISING_COUNT_72H": 0,
+        "ELEVATED_COUNT_72H": 0,
+        "LINKED_POST_COUNT": 0,
+        "LINKED_INCIDENT_COUNT": 0,
+        "AUTHORISED_INCIDENT_COUNT": 8024
+      }
+    }
+  ]
+}

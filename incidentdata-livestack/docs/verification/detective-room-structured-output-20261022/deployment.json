@@ -1,0 +1,15 @@
+{
+  "deployed": true,
+  "image": "localhost/crimedata-detective-worker:structured-output-20261022-r2",
+  "previousImage": "localhost/crimedata-detective-worker:person-links-20261020-r1",
+  "backupContainer": "detective-room-worker-before-structured-output-20261022",
+  "sourceFix": "31f463c",
+  "authorSha256": "7df00497bdc21c07a81a4f0817d36af02011c397c1a0b2d742b5e93c781bf114",
+  "authProviderSha256": "b0c37d7269638c046625710f0088936850f740ae0255bc3941d245f385416e35",
+  "unrelatedWorkerBackendUnchanged": true,
+  "runtimeSettingsUnchanged": true,
+  "heartbeat": "2026-10-21T20:27:06.604Z",
+  "applicationHealth": "healthy",
+  "fullRoomVideoAcceptance": "pending",
+  "at": "2026-10-21T20:27:07.544Z"
+}
