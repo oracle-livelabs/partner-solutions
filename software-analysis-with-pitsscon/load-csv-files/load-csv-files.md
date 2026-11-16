@@ -44,7 +44,7 @@ Learn how to
 
      ```
      <copy>
-     https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
+     https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
      </copy>
      ```
 
@@ -53,7 +53,7 @@ Learn how to
 
      ```
      <copy>
-     curl -G -o pitss-ocw-data.zip https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
+     curl -G -o pitss-ocw-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/partner-solutions/analyze-app-dependancy-with-graph-studio/PITSS_OCW_DATA.zip
      </copy>
      ```
 
@@ -78,14 +78,14 @@ Learn how to
     ![Choose files](./images/db-actions-dataload-choose-files.png "Choose files")
 
 3. Verify the column names and datatypes that will be used when creating the corresponding database tables.  Click on the file name `ocw-nodes.csv`.  
-   ![Check the nodes file](./images/db-actions-dataload-check-nodes-file.png "Check the nodes file")  
+    ![Check the nodes file](./images/db-actions-dataload-check-nodes-file.png "Check the nodes file")  
 
-   View the properties. The `WEIGHT` column should be of type `NUMBER` instead of `VARCHAR2`.  MAke the change and click Close.  
-   ![Change datatype for the weight column](./images/db-actions-dataload-nodes-weight-column.png "Change datatype for the weight column")  
+    View the properties. The `WEIGHT` column should be of type `NUMBER` instead of `VARCHAR2`.  MAke the change and click Close.  
+    ![Change datatype for the weight column](./images/db-actions-dataload-nodes-weight-column.png "Change datatype for the weight column")  
 
-   Optionally check the properties for the `ocw_edges.csv' file too.  Then click Close. 
+    Optionally check the properties for the `ocw_edges.csv' file too.  Then click Close. 
    
-   `
+    `
 4. Now click the **Start** button to execute the data load job.
     ![Click start](./images/db-actions-dataload-start.png "Click Start ")
 
@@ -124,7 +124,7 @@ Learn how to
     - Adds a foreign key constraint to the `ocw_edges` table specifying that `source_id` references `ocw_nodes.object_id`
     - Adds a second foreign key constraint to the `ocw_edges` table specifying that `target_id` references `ocw_nodes.object_id` 
 
-9.  Execute the script in the SQL worksheet.  
+9. Execute the script in the SQL worksheet.  
     ![Add primary and foreign keys](./images/db-actions-sql-add-keys.png "Add primary and foreign keys ")  
    
   
