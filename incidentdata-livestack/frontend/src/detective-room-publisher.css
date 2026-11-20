@@ -1,0 +1,8 @@
+.detective-publisher-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.detective-publisher-tiles article{display:flex;flex-direction:column;align-items:flex-start;padding:20px;border:1px solid #66736866;border-radius:8px;background:linear-gradient(145deg,#25302b0c,#6e715012)}
+.detective-publisher-tiles h3{margin:0 0 12px}
+.detective-publisher-tiles p{line-height:1.5}
+.detective-publisher-tiles small{display:block;line-height:1.5;margin-top:12px;overflow-wrap:anywhere}
+.detective-publisher-tiles button{white-space:normal;text-align:left;margin-top:auto}
+.detective-room-state{font-weight:700;letter-spacing:.08em}
+@media(max-width:850px){.detective-publisher-tiles{grid-template-columns:1fr}}

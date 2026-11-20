@@ -1,0 +1,4 @@
+Document: extract provenance and limitations
+Compared extract: DEMO-MSG-09A; thread DEMO-THREAD-09.
+Only the supplied redacted extract is retained. No original device, verified participant login, complete conversation or operational chain of custody is supplied.
+A checksum identifies the retained test file, not the authenticity of the underlying account. The extract may support a question about disclosure, but authorship, authority, intent and any link to the property loss remain open.

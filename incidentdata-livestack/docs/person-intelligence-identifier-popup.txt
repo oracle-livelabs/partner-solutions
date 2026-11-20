@@ -1,0 +1,79 @@
+Person Intelligence identifier pop-up — released 30 October 2026
+
+Open Person Intelligence, select a profile, then select its round portrait in
+Selected Profile. The portrait is a keyboard-accessible button, including when
+the profile uses a fallback image. The native modal restores focus on close.
+
+The top section shows the person reference, name, primary alias, status,
+summary, registration date, scoped incident count and dataset. Full person
+record expands the narrative and JSON attributes. Below it:
+
+Graph: person-to-identifier relationships, with optional capture/review actors,
+type colours, pan, zoom, fit and selectable identifiers or actors. Dashed
+identifier outlines mark expired entries; dashed edges mark review. This
+network is drawn with D3 from the scoped SQL register response; it does not
+create or query a new Oracle SQL property graph.
+Table: identifier values, platform/type, validity state, review status, capture
+actor/date, reviewer and expiry. Selecting a value shows its complete metadata.
+Time: validity Gantt bars or capture/review events. Open validity intervals are
+clipped at the chart boundary and marked with arrows, without inventing an end
+date in the database. Rows show proposed/expired/current states. Review events
+represent administrative review, not independent identity confirmation.
+
+All views share value/actor/source search, identifier-type and validity-state
+filters. Selected identifiers retain their detail across tabs. Dates use the
+active profile timezone. Source values and attribution are served verbatim.
+
+GET /api/persons/:personRef/identifiers uses SECURE_PERSONS_OF_INTEREST_V and
+SECURE_POI_IDENTIFIERS_V with bound references, verifies active profile stability
+and returns 404 for inaccessible or unknown people. Requests are cancelled on
+close or user/profile changes. More than 1,000 identifiers is explicitly flagged
+as a bounded response. No database schema, metadata or identifiers were changed.
+
+Verification: unit checks for scope, SQL binds, profile-change rejection,
+empty/large registers, half-open validity, filtering, graph actor grouping and
+time domains; browser checks for Graph/Table/Time, selection, filtering,
+keyboard tabs, Escape, focus restoration, mobile width 390, fallback portraits,
+temporary-error retry, empty registers and stale requests. Live checks covered
+all five existing personas and all 17 POIs. No page errors were observed.
+
+Release image: localhost/incidentdata-livestack:poi-identifier-dialog-20261030-r1
+Prior image: localhost/incidentdata-livestack:people-resilient-20261028-r1
+The rebuilt baseline frontend matched the live index exactly. The release
+layers only the new endpoint, its registration on the actual running server
+source, and the new UI build. Unrelated local server edits were excluded.
+Runtime environment, mounts, ports and unrelated backend hashes were verified.
+The active dataset remained ADELAIDE_DATA_V2. The release script checks for idle
+Data Room jobs and restores the previous image if health/settings checks fail.
+
+Receipts, desktop/mobile screenshots and release artifact:
+/home/opc/scratch/poi-identifier-dialog-20261030/
+Browser checks: node scripts/test_poi_identifier_dialog.cjs --live
+Unit checks: node --test test/poi-identifier-detail.test.js test/poi-identifier-model.test.js
+
+Update, 5 November 2026 — current behaviour on port 8706
+Checked against the running image
+localhost/incidentdata-livestack:people-register-detail-20261031-r1.
+
+- The window title is now "Person Intelligence · Register Detail".
+- Tabs are Time, Table, Graph, in that order. The window opens on Time,
+  not Graph.
+- The Time tab has two views: "Active periods" (validity bars) and
+  "Capture & review" (● capture, ◆ administrative review).
+- The header also shows Registered (date and time) and "Linked incidents in
+  your scope". Full person record lists Recorded incident links (up to six).
+- The State filter offers Current, Expired, Proposed, Rejected and Not yet
+  valid.
+- In the Graph, alias nodes and capture/review actor nodes both carry the
+  letter "A"; only colour separates them (teal alias, grey actor).
+- Dates follow the active profile's time zone. ADELAIDE_DATA_V2 had no
+  display configuration, so it showed UTC; a z_base_profile_config row
+  (time_zone Australia/Adelaide, locale en-AU, no bounds) was added on
+  5 November 2026 for dataset_profile_id 6.
+- In ADELAIDE_DATA_V2, the POI-FNET-* and POI-V2-* profiles have no linked
+  incidents. Workshop Scene 4 therefore uses George Kaplan (POI-NBNW-GEORGE).
+- 5 November 2026 (later): ADELAIDE_DATA_V3 (dataset_profile_id 350) replaced V2
+  as the active Adelaide profile. Its 139 POI identifiers were copied from
+  profile 6 with new IDs (SHA-256 of "350|<original id>"); values, dates and
+  reviewers are unchanged. George Kaplan keeps 10 identifiers and 4 linked
+  incidents. V3 has its own display configuration (Australia/Adelaide, en-AU).

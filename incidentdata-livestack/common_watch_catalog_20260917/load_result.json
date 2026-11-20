@@ -1,0 +1,69 @@
+{
+  "mode": "--apply",
+  "committed": true,
+  "rolled_back": false,
+  "idempotent_existing": false,
+  "inserted": 42,
+  "updated": 12,
+  "plan_sha256": "9496a4b97088ea80df5e89432cd99e2d4a1455033e076ff1d1459897a8f2529c",
+  "active_unchanged": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 1,
+      "ACTIVATED_AT": "2026-09-17T05:23:40.661177",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ],
+  "preservation_passed": true,
+  "profiles": [
+    {
+      "profile": "ADELAIDE_DATA",
+      "shared_definitions": 21,
+      "total_definitions": 21,
+      "displayed": 6
+    },
+    {
+      "profile": "BRISBANE_DATA",
+      "shared_definitions": 21,
+      "total_definitions": 23,
+      "displayed": 6
+    },
+    {
+      "profile": "PERTH_DATA",
+      "shared_definitions": 21,
+      "total_definitions": 23,
+      "displayed": 6
+    },
+    {
+      "profile": "ADELAIDE_DATA_V2",
+      "shared_definitions": 21,
+      "total_definitions": 21,
+      "displayed": 6
+    },
+    {
+      "profile": "BRUSSELS_DATA_V1",
+      "shared_definitions": 21,
+      "total_definitions": 21,
+      "displayed": 6
+    },
+    {
+      "profile": "AMSTERDAM_DATA_V1",
+      "shared_definitions": 21,
+      "total_definitions": 21,
+      "displayed": 6
+    },
+    {
+      "profile": "DUBLIN_CITY_DATA_V1",
+      "shared_definitions": 21,
+      "total_definitions": 21,
+      "displayed": 6
+    },
+    {
+      "profile": "ACTIVE_ADELAIDE_DATA",
+      "shared_definitions": 21,
+      "total_definitions": 21,
+      "displayed": 6
+    }
+  ],
+  "completed_at": "2026-09-17T06:41:25.342Z"
+}

@@ -1,0 +1,30 @@
+{
+  "deployed": true,
+  "image": "localhost/incidentdata-livestack:city-evidence-core-20261020-r1",
+  "previousImage": "localhost/incidentdata-livestack:description-quote-recovery-20261019-r1",
+  "activeUnchanged": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 131,
+      "ACTIVATED_AT": "2026-10-20T00:04:07.884Z",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ],
+  "unchangedRuntimeSettings": true,
+  "unrelatedBackendUnchanged": true,
+  "walkthroughs": [
+    "After-hours access",
+    "Payment-document trail",
+    "Precinct timing and context",
+    "Doorstep visits and alternatives",
+    "Parts descriptions and provenance",
+    "Worksite inventory and controls"
+  ],
+  "visibleItems": 100,
+  "coreItems": 24,
+  "scopedView": {
+    "beforeSha256": "056428bf3ab68b4014eb25099f8326776c05d891240470328134d99d040be6e7",
+    "afterSha256": "fb46ea232aca914cd200147f43afb67f0cce360ba8454351773eff8c856f48be"
+  },
+  "at": "2026-10-20T02:07:29.481Z"
+}

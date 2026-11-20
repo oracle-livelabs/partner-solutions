@@ -1,0 +1,4 @@
+FROM localhost/local/adelaide-crime-intelligence:six-city-restore-20260919
+COPY backend/profile-library.js backend/profile-review-scale.js /app/backend/
+COPY frontend/index.html /app/frontend/dist/index.html
+COPY frontend/assets/ /app/frontend/dist/assets/

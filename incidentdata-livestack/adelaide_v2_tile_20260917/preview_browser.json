@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-17T07:12:03.767Z",
+  "checks": [
+    "Default Adelaide tile selects V2 with explicit label and 21,532 saved incidents; selection sends no write.",
+    "Standard and NRT buttons send the correct profile code for Adelaide V2, Perth and Brisbane; all six POST requests intercepted in browser.",
+    "Limited viewer cannot use either restore button."
+  ],
+  "intercepted_restore_requests": [
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "ADELAIDE_DATA_V2"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "ADELAIDE_DATA_V2"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "PERTH_DATA"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "PERTH_DATA"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "BRISBANE_DATA"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "BRISBANE_DATA"
+      },
+      "sent_to_server": false
+    }
+  ],
+  "unexpected_write_requests": [],
+  "page_errors": [],
+  "active_profile": "ADELAIDE_DATA",
+  "live_incidents": 21513,
+  "selected_profile": "ADELAIDE_DATA_V2",
+  "selected_incidents": 21532
+}

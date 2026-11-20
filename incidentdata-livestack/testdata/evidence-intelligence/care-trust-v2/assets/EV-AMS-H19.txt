@@ -1,0 +1,7 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+
+Document: limited shopping-support permission, displayed date 26 June 2026
+Client reference: CT-RES-A
+Permission reference: DEMO-SHOP-A
+Permitted purpose: groceries for the resident, up to EUR 35 per shopping occasion, with a receipt. The extract does not authorise personal purchases, general transfers or disclosure of private care details.
+The financial helper is not named. No PIN, bank details, visit schedule or residence is provided. A displayed permission document is not independently authenticated and does not prove who used a payment instrument.

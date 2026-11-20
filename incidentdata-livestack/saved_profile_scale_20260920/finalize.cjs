@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const CHI=path.join(path.dirname(__dirname),'synthetic_chicago_city_may_jun_2026_v2');
+const read=(root,name)=>JSON.parse(fs.readFileSync(path.join(root,name))),hash=x=>crypto.createHash('sha256').update(x).digest('hex');
+const stable=x=>x===null||typeof x!=='object'?JSON.stringify(x):Array.isArray(x)?'['+x.map(stable).join(',')+']':'{'+Object.keys(x).sort().map(k=>JSON.stringify(k)+':'+stable(x[k])).join(',')+'}';
+const deployment=read(__dirname,'deployment.json');assert.equal(deployment.status,'deployed_healthy');
+for(const name of ['build_checks.json','preview_api.json','preview_browser.json','live_api.json','live_browser.json'])assert.equal(read(__dirname,name).status,'passed',name);
+const before=read(CHI,'database_fingerprint_before.json'),afterName='database_fingerprint_after_after_app_scale_20260920.json',after=read(CHI,afterName);assert.deepEqual(after,before);
+const pre=read(CHI,'database_preflight_after_before_app_scale_20260920.json'),post=read(CHI,'database_preflight_after_after_app_scale_20260920.json');
+const metadata=['identity','profiles','active','columns','constraints','indexes','triggers','identities','permissions','constraint_columns','live_constraints','live_indexes','live_triggers','snapshot_counts','live_counts','users','patrol','entitlements'];
+for(const key of metadata)assert.deepEqual(post[key].map(stable).sort(),pre[key].map(stable).sort(),key);
+const chicago=read(CHI,'STATUS.json');assert.equal(hash(fs.readFileSync(path.join(CHI,'staging/manifest.json'))),chicago.manifest_sha256,'Frozen Chicago manifest changed');
+const api=read(__dirname,'live_api.json'),browser=read(__dirname,'live_browser.json');
+const report={status:'PASS',at:new Date().toISOString(),deployment:'deployment.json',active_profile:'DUBLIN_CITY_DATA_V1',saved_profile_ids:after.profileIds,saved_profiles:9,live_incidents:17817,live_pois:13,live_cases:5,database_fingerprint:afterName,original_fingerprint_sha256:hash(fs.readFileSync(path.join(CHI,'database_fingerprint_before.json'))),post_fingerprint_sha256:hash(fs.readFileSync(path.join(CHI,afterName))),all_saved_live_security_configuration_fingerprints_equal:true,schema_and_identity_metadata_equal:metadata,protected_fingerprinted_tables:Object.keys(after.tables).length,unit_tests_passed:183,live_api_requests:api.requests.length,live_max_api_ms:Math.max(...api.requests.map(x=>x.milliseconds)),live_max_payload_bytes:Math.max(...api.requests.map(x=>x.bytes)),independent_coordinate_check:api.independent_coordinates,live_browser_api_writes_sent:browser.api_writes_sent,live_page_errors:browser.page_errors,coordinates_edited:false,profile_activation_performed:false,chicago_loaded:false,chicago_manifest_unchanged:true,chicago_manual_review_waived:false,chicago_specific_app_acceptance:'Not run; Chicago remains staged and unloaded',ddl_performed:false,paid_ai_or_embedding_calls:0,rollback_image:deployment.rollback_image_retained};
+fs.writeFileSync(path.join(__dirname,'preservation_verification.json'),JSON.stringify(report,null,2)+'\n',{flag:'wx',mode:0o600});
+console.log(JSON.stringify(report,null,2));

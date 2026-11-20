@@ -1,0 +1,5 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+Document: limited support consent, displayed date 20 June 2026
+Client: ADL-RES-B. Permission: ADL-TRANSPORT-B.
+The resident permits an initial enquiry about availability of community transport, sharing a first-contact label and the request for a return call. The permission expires once that enquiry is answered. It does not permit sharing medical details, a household routine or any other resident’s information.
+The extract does not authenticate the outward message, identify its author or establish that it implemented this permission.

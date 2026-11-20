@@ -1,0 +1,4 @@
+.crimedata-setup__profiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+.crimedata-setup__profiles button{appearance:none;text-align:left;font:inherit;cursor:pointer;border:1px solid #dce4e6;border-top:4px solid #4f7d7b;background:#fff;padding:12px}
+.crimedata-setup__profiles button.planned{border-top-color:#b6c0c3;background:#fafbfb}
+.crimedata-setup__profiles button.active{border-color:#6b9e9b;box-shadow:0 0 0 1px #b8d9d7}

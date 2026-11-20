@@ -1,0 +1,114 @@
+/* Compact the graph so the relationship network reads as one focused work area. */
+.case-graph__experience {
+  display: block !important;
+  min-height: 0 !important;
+}
+
+.case-graph__experience .case-graph__canvas {
+  height: 720px !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid #dbe1e4 !important;
+}
+
+.case-graph__detail {
+  display: grid;
+  grid-template-columns: 130px 92px 58px minmax(155px, 1fr) minmax(210px, 1.35fr);
+  align-items: center;
+  column-gap: 14px;
+  padding: 12px 15px !important;
+  background: #fff !important;
+}
+
+.case-graph__detail > small,
+.case-graph__detail > b,
+.case-graph__detail > p,
+.case-graph__detail > em {
+  margin: 0 !important;
+}
+
+.case-graph__detail > b { font-size: 14px; }
+.case-graph__detail > p { font-size: 11px; }
+.case-graph__detail > em {
+  border-top: 0 !important;
+  border-left: 1px solid #e1e6e8;
+  padding: 3px 0 3px 14px !important;
+}
+
+.case-graph__metrics {
+  align-self: flex-start;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* Match the Healthcare workbench: independent controls, a clear column gutter,
+   and no layered panels crossing the graph boundary. */
+.case-graph__layout {
+  grid-template-columns: 235px minmax(0, 3fr) !important;
+  gap: 20px !important;
+}
+
+.case-graph__rail {
+  position: static !important;
+  z-index: auto !important;
+  gap: 12px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.case-graph__search input {
+  box-sizing: border-box;
+}
+
+.case-graph__workbench {
+  position: static !important;
+  z-index: auto !important;
+  gap: 12px !important;
+}
+
+.case-graph__depth,
+.case-graph__node-list {
+  border-radius: 5px !important;
+  background: #fff !important;
+}
+
+.case-graph__node-list {
+  max-height: 450px !important;
+}
+
+@media (max-width: 850px) {
+  .case-graph__experience .case-graph__canvas {
+    height: 580px !important;
+  }
+
+  .case-graph__detail {
+    display: block;
+  }
+
+  .case-graph__detail > * {
+    margin: 7px 0 !important;
+  }
+
+  .case-graph__detail > em {
+    border-left: 0;
+    border-top: 1px solid #e1e6e8 !important;
+    padding: 9px 0 0 !important;
+  }
+}
+/* The graph is intentionally layered: light relationship paths sit behind the
+   cards, so the labels remain the primary reading order. */
+.case-graph__canvas svg { pointer-events: auto; }
+.case-graph__edge {
+  stroke: #9bafb6 !important;
+  stroke-width: 1.35 !important;
+  opacity: .46 !important;
+  pointer-events: none;
+}
+.case-graph__edge--case-involves { stroke: #7896a4 !important; opacity: .52 !important; }
+.case-graph__edge--semantic-similarity { stroke: #c74634 !important; stroke-width: 2.4 !important; stroke-dasharray: 7 5; opacity: .78 !important; }
+.case-graph__svg-node { isolation: isolate; }
+.case-graph__svg-node rect { stroke-width: 1.8 !important; }
+.case-graph__svg-node.active rect { stroke-width: 3 !important; }
+.case-graph__svg-node.person .case-graph__person-face{fill:#f7efe3;stroke:#aa643b;stroke-width:2;filter:drop-shadow(0 2px 2px #263e4618)}.case-graph__svg-node.person .case-graph__person-eye{fill:#573f32}.case-graph__svg-node.person .case-graph__person-smile{fill:none;stroke:#573f32;stroke-width:1.8;stroke-linecap:round}.case-graph__svg-node.person.active .case-graph__person-face{stroke:#c74634;stroke-width:3}.case-graph__legend span:nth-child(3):before{color:#aa643b}.case-graph__legend span:nth-child(4):before{color:#aa643b}

@@ -1,0 +1,5 @@
+Supplier catalogue showing a broad part family — North Strip area (City of Las Vegas)
+
+Authored fictional teaching supplement for Las Vegas; linked incident SYN-LV-2026-01501, North Strip area (City of Las Vegas).
+A fictional supplier catalogue repeats LV-CORE-05 as a part-family code for several compatible assemblies. It is not a unique serial number. A matching catalogue family does not establish that two observations concern the same physical part.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

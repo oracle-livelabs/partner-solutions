@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1060" viewBox="0 0 1900 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Crime Data Room batch load data model</title>
+  <desc id="desc">Entity relationship diagram for the separate cdr tables used by Crime Data Room batch loads.</desc>
+  <style>
+    .bg{fill:#f5f8fa}.title{font:700 30px Arial,sans-serif;fill:#183c4e}.sub{font:16px Arial,sans-serif;fill:#486170}.group{fill:#eef8f4;stroke:#9bcdbd;stroke-width:2}.groupTitle{font:700 16px Arial,sans-serif;fill:#23634f}.table{fill:#fff;stroke:#6f91a2;stroke-width:2}.head{fill:#24495b}.tableTitle{font:700 17px Arial,sans-serif;fill:#fff}.field{font:14px 'Courier New',monospace;fill:#263b46}.note{font:13px Arial,sans-serif;fill:#486170}.link{fill:none;stroke:#547a8d;stroke-width:2;marker-end:url(#arrow)}.linkLabel{font:12px Arial,sans-serif;fill:#355665}.boundary{fill:#fff4df;stroke:#e0ad54;stroke-width:2}.boundaryText{font:700 15px Arial,sans-serif;fill:#815d1e}
+  </style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8z" fill="#547a8d"/></marker></defs>
+  <rect class="bg" width="1600" height="1060"/>
+  <text class="title" x="55" y="55">Crime Data Room — Batch Load Data Model</text>
+  <text class="sub" x="55" y="84">Oracle ADB tables used only for Crime Data Room uploads, processing, review and cleanup</text>
+  <rect class="boundary" x="1250" y="30" width="495" height="62" rx="8"/>
+  <text class="boundaryText" x="1275" y="57">Separate from CrimeData Live Stack</text>
+  <text class="note" x="1275" y="78">No writes to incidents, reports, evidence or POI tables</text>
+
+  <rect class="group" x="35" y="115" width="1830" height="885" rx="14"/>
+  <text class="groupTitle" x="58" y="145">CRIME DATA ROOM (cdr_*) BOUNDARY</text>
+
+  <!-- relationship connectors behind table cards -->
+  <path class="link" d="M355 295 H440"/><text class="linkLabel" x="370" y="284">1 : many</text>
+  <path class="link" d="M200 398 V515"/><text class="linkLabel" x="210" y="465">1 : many</text>
+  <path class="link" d="M355 650 H590"/><text class="linkLabel" x="440" y="639">1 : many</text>
+  <path class="link" d="M795 410 V515"/><text class="linkLabel" x="805" y="470">1 : many</text>
+  <path class="link" d="M1045 410 V515"/><text class="linkLabel" x="1055" y="470">1 : many</text>
+  <path class="link" d="M1295 410 V515"/><text class="linkLabel" x="1305" y="470">1 : many</text>
+  <path class="link" d="M1550 410 V515"/><text class="linkLabel" x="1560" y="470">1 : many</text>
+  <path class="link" d="M795 650 V765"/><text class="linkLabel" x="805" y="720">1 : many</text>
+  <path class="link" d="M1295 650 V765"/><text class="linkLabel" x="1305" y="720">1 : many</text>
+  <path class="link" d="M1550 650 V765"/><text class="linkLabel" x="1560" y="720">1 : many</text>
+  <path class="link" d="M1295 650 C1295 730 1120 700 1100 765"/><text class="linkLabel" x="1190" y="707">run_id</text>
+  <path class="link" d="M795 650 C795 730 620 700 590 765"/><text class="linkLabel" x="655" y="707">item_id</text>
+
+  <!-- batch root -->
+  <g transform="translate(70 180)"><rect class="table" width="285" height="218" rx="7"/><path class="head" d="M7 0h271a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="16" y="27">cdr_batches</text><text class="field" x="16" y="68">PK  batch_id</text><text class="field" x="16" y="91">    filename, loaded_by</text><text class="field" x="16" y="114">    status, timestamps</text><text class="field" x="16" y="137">    archive_blob (original ZIP)</text><text class="field" x="16" y="160">    archive_sha256</text><text class="field" x="16" y="183">    headline, error_text</text><text class="note" x="16" y="207">Root record for one upload</text></g>
+  <g transform="translate(440 180)"><rect class="table" width="230" height="230" rx="7"/><path class="head" d="M7 0h216a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_items</text><text class="field" x="14" y="68">PK  item_id</text><text class="field" x="14" y="91">FK  batch_id</text><text class="field" x="14" y="114">    original_path</text><text class="field" x="14" y="137">    content_type</text><text class="field" x="14" y="160">    content_blob</text><text class="field" x="14" y="183">    sha256, preview</text><text class="note" x="14" y="211">One row per ZIP file</text></g>
+  <g transform="translate(90 515)"><rect class="table" width="220" height="135" rx="7"/><path class="head" d="M7 0h206a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_stages</text><text class="field" x="14" y="68">PK/FK batch_id</text><text class="field" x="14" y="91">PK     stage_no</text><text class="field" x="14" y="114">       status, detail</text></g>
+
+  <!-- processing / learning tables -->
+  <g transform="translate(690 180)"><rect class="table" width="210" height="230" rx="7"/><path class="head" d="M7 0h196a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_ai_runs</text><text class="field" x="14" y="68">PK  run_id</text><text class="field" x="14" y="91">FK  batch_id</text><text class="field" x="14" y="114">    requested_by</text><text class="field" x="14" y="137">    model, prompt version</text><text class="field" x="14" y="160">    status, lease</text><text class="field" x="14" y="183">    run counters</text><text class="note" x="14" y="211">Identify / Describe run</text></g>
+  <g transform="translate(940 180)"><rect class="table" width="210" height="230" rx="7"/><path class="head" d="M7 0h196a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_learn_runs</text><text class="field" x="14" y="68">PK  run_id</text><text class="field" x="14" y="91">FK  batch_id</text><text class="field" x="14" y="114">    input_json</text><text class="field" x="14" y="137">    result_json (brief)</text><text class="field" x="14" y="160">    model, provenance</text><text class="field" x="14" y="183">    status, lease</text><text class="note" x="14" y="211">Batch Brief versions</text></g>
+  <g transform="translate(1190 180)"><rect class="table" width="210" height="230" rx="7"/><path class="head" d="M7 0h196a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_workspace_runs</text><text class="field" x="14" y="68">PK  run_id</text><text class="field" x="14" y="91">FK  batch_id</text><text class="field" x="14" y="114">    kind, question</text><text class="field" x="14" y="137">    input / result JSON</text><text class="field" x="14" y="160">    native conversation ID</text><text class="field" x="14" y="183">    status, lease</text><text class="note" x="14" y="211">Connections + chat</text></g>
+  <g transform="translate(1440 180)"><rect class="table" width="210" height="230" rx="7"/><path class="head" d="M7 0h196a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_chat_threads</text><text class="field" x="14" y="68">PK  thread_id</text><text class="field" x="14" y="91">FK  batch_id</text><text class="field" x="14" y="114">    owner_name</text><text class="field" x="14" y="137">    title</text><text class="field" x="14" y="160">    created_at</text><text class="note" x="14" y="195">Saved chat grouping</text></g>
+
+  <!-- dependent output tables -->
+  <g transform="translate(590 765)"><rect class="table" width="210" height="150" rx="7"/><path class="head" d="M7 0h196a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_ai_results</text><text class="field" x="14" y="68">PK/FK run_id</text><text class="field" x="14" y="91">PK/FK item_id</text><text class="field" x="14" y="114">       result_json</text><text class="field" x="14" y="137">       source_sha256</text></g>
+  <g transform="translate(1040 765)"><rect class="table" width="230" height="150" rx="7"/><path class="head" d="M7 0h216a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_batch_vectors</text><text class="field" x="14" y="68">PK/FK run_id</text><text class="field" x="14" y="91">PK/FK item_id</text><text class="field" x="14" y="114">       modality, model</text><text class="field" x="14" y="137">       embedding VECTOR</text></g>
+  <g transform="translate(1300 765)"><rect class="table" width="250" height="150" rx="7"/><path class="head" d="M7 0h236a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_agent_tool_events</text><text class="field" x="14" y="68">FK  run_id</text><text class="field" x="14" y="91">    tool_name</text><text class="field" x="14" y="114">    created_at</text><text class="note" x="14" y="137">Agent audit trace</text></g>
+  <g transform="translate(1580 765)"><rect class="table" width="230" height="150" rx="7"/><path class="head" d="M7 0h216a7 7 0 0 1 7 7v38H0V7a7 7 0 0 1 7-7z"/><text class="tableTitle" x="14" y="27">cdr_data_products</text><text class="field" x="14" y="68">PK  product_id</text><text class="field" x="14" y="91">FK  batch_id</text><text class="field" x="14" y="114">FK  connection_run_id</text><text class="field" x="14" y="137">    product_json</text></g>
+  <text class="note" x="65" y="975">Batch removal deletes these Data Room records in dependency order. The orange boundary is a hard application/data-model boundary: operational CrimeData Live Stack tables are not part of this model.</text>
+</svg>

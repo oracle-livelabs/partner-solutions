@@ -1,0 +1,11 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {loadIdentifierDetail}=require('../backend/poi-identifier-detail');
+function fake({person={PERSON_REF:'POI-A'},identifiers=[],changed=false}={}){
+ const calls=[];return {calls,async execute(sql,binds){calls.push({sql,binds});if(sql.includes('JOIN z_base_dataset_profiles'))return {rows:[{DATASET_PROFILE_ID:6,PROFILE_CODE:'ADELAIDE_DATA_V2'}]};if(sql.includes('FROM secure_persons_of_interest_v'))return {rows:person?[person]:[]};if(sql.includes('FROM secure_poi_identifiers_v'))return {rows:identifiers};if(sql.includes('SELECT dataset_profile_id'))return {rows:[{DATASET_PROFILE_ID:changed?10:6}]};throw Error('Unexpected query');}};
+}
+test('unavailable and unauthorised people produce no identifier query',async()=>{const c=fake({person:null});assert.equal(await loadIdentifierDetail(c,'not-visible'),null);assert(!c.calls.some(q=>q.sql.includes('secure_poi_identifiers_v')));});
+test('identifier details use scoped views and bound references, retaining dates and attribution verbatim',async()=>{const identifiers=[{IDENTIFIER_VALUE:'Tone',REVIEW_STATUS:'declared',CREATED_AT:'2025-11-03T00:00:00Z',RECORDED_BY:'agent03'}],c=fake({identifiers});const ref="x' OR 1=1 --";const result=await loadIdentifierDetail(c,ref);assert.deepEqual(result.identifiers,identifiers);assert.equal(result.profileId,6);assert.equal(result.truncated,false);for(const call of c.calls.filter(q=>q.binds)){assert.equal(call.binds.ref,ref);assert(!call.sql.includes(ref));}});
+test('active profile change rejects a mixed-profile response',async()=>{await assert.rejects(()=>loadIdentifierDetail(fake({changed:true}),'POI-A'),e=>e.status===409);});
+test('large registers are explicitly bounded without implying completeness',async()=>{const c=fake({identifiers:Array.from({length:1001},(_,i)=>({IDENTIFIER_ID:String(i)}))});const result=await loadIdentifierDetail(c,'POI-A');assert.equal(result.identifiers.length,1000);assert.equal(result.truncated,true);});
+test('visible profiles without identifiers return an empty register',async()=>{const value=await loadIdentifierDetail(fake(),'POI-A');assert.deepEqual(value.identifiers,[]);});

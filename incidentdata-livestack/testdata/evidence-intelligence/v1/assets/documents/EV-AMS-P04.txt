@@ -1,0 +1,11 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-P04
+Supporting invoice and receipt entries fail to reconcile
+
+Document: supporting invoice and receipt comparison
+Ledger-layout marker: AMS-2-2
+Invoice amount: EUR 315.00
+Receipt amount: EUR 351.00
+Columns: reference | amount
+Reason for difference: not recorded.
+
+Authored fixture; not a recovered or original incident document.

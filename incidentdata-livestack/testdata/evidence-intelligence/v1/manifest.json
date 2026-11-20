@@ -1,0 +1,237 @@
+{
+  "packageCode": "EI_AMSTERDAM_V1",
+  "packSha256": "1bef374ebe424050eac2bb4de8b13d8cb496edc90ec236f9a4c264aea6047669",
+  "anchorSnapshotSha256": "d289e52a80ffd1d69d2625ff8b0136e03471a58dfa5eb40b0168d5e45b31637f",
+  "valid": true,
+  "errors": [],
+  "items": 32,
+  "incidents": 12,
+  "people": 6,
+  "assets": [
+    {
+      "evidenceRef": "EV-AMS-P01",
+      "path": "assets/documents/EV-AMS-P01.txt",
+      "mimeType": "text/plain",
+      "sha256": "31d24993341a2cca135f02fb20f7a97f3f20d25c42d041f996b415c6ad3c2fe5",
+      "caption": "A purchase-confirmation extract for Buiksloterham-Noord repeats a payment-reference suffix beside two differently described entries. The retained comparison copy leaves the supplier attribution open and records the disagreement for document review."
+    },
+    {
+      "evidenceRef": "EV-AMS-N01",
+      "path": "assets/documents/EV-AMS-N01.txt",
+      "mimeType": "text/plain",
+      "sha256": "8611629181a989a266efe7225155d2f0c0085a16b3c442d3f059edac67445f75",
+      "caption": "Philip Vandamm is named as the context-note provider for the purchase-confirmation comparison. The entry asks which copy supplied the repeated suffix; no payer, supplier, or signatory identity is verified."
+    },
+    {
+      "evidenceRef": "EV-AMS-P02",
+      "path": "assets/documents/EV-AMS-P02.txt",
+      "mimeType": "text/plain",
+      "sha256": "80a104a9c82b19b2e964f159d7704498ec6555231aed3a57d0fa05f91808e897",
+      "caption": "Two entries on the Vondelparkbuurt-West purchase copy show an equal amount against different goods descriptions. The original incident follow-up ended without a responsibility finding; this teaching extract preserves the unresolved accounting comparison."
+    },
+    {
+      "evidenceRef": "EV-AMS-N02",
+      "path": "assets/documents/EV-AMS-N02.txt",
+      "mimeType": "text/plain",
+      "sha256": "d430b585b40b7c91dd9f984777126984e626cab89c9df76cf1133963fd82e57d",
+      "caption": "The comparison register names Philip Vandamm as a context-note provider for the equal-amount entries. It preserves the completed source review and leaves the two goods descriptions distinct."
+    },
+    {
+      "evidenceRef": "EV-AMS-P03",
+      "path": "assets/documents/EV-AMS-P03.txt",
+      "mimeType": "text/plain",
+      "sha256": "c61d2cb06ecec00eb21195ec6c3f565a609ed0a21311f1040ca105dd0aea7c91",
+      "caption": "The NDSM terrein receipt copy contains a reused invoice suffix in a two-column ledger layout. A separate dispatch-form code appears in its margin, but that code has no verified connection to a shipment or a person."
+    },
+    {
+      "evidenceRef": "EV-AMS-N03",
+      "path": "assets/documents/EV-AMS-N03.txt",
+      "mimeType": "text/plain",
+      "sha256": "41bb58c5105ab83791a6bf0e1a251de7b158592b75b85131e7957c14b7bc3b73",
+      "caption": "Mara Vega appears as the document comparison contact on the receipt-copy index. The note asks whether the reused suffix belongs to a template; it does not identify the author of the receipt."
+    },
+    {
+      "evidenceRef": "EV-AMS-P04",
+      "path": "assets/documents/EV-AMS-P04.txt",
+      "mimeType": "text/plain",
+      "sha256": "25605c2184da3c013162cde8706fe6ec0ec09df24527253d5f808a0b12b08ad6",
+      "caption": "A supporting invoice from Surinamepleinbuurt uses the same broad ledger layout as a separate receipt copy. Its amount differs from the accompanying receipt, and the available extract leaves the reason for that difference unresolved."
+    },
+    {
+      "evidenceRef": "EV-AMS-N04",
+      "path": "assets/documents/EV-AMS-N04.txt",
+      "mimeType": "text/plain",
+      "sha256": "198f7dc4640c9d39a8fa1c4c50b094ee9817e1f057b5521c4dd4f0781385fdb8",
+      "caption": "The invoice comparison cover note lists Mara Vega as the document comparison contact. The open question concerns the receipt difference, with no account ownership or transaction attribution supplied."
+    },
+    {
+      "evidenceRef": "EV-AMS-P05",
+      "path": "assets/documents/EV-AMS-P05.txt",
+      "mimeType": "text/plain",
+      "sha256": "476246fba576ff83e4b438a744211df16fd1994bbc7839f0b83d64ca1436a187",
+      "caption": "A Frederik Hendrikbuurt-Zuidoost invoice extract records a total that differs from the retained transaction note. The comparison sheet lists both values and leaves currency unspecified, allowing the reviewer to inspect the discrepancy without inferring a payment route."
+    },
+    {
+      "evidenceRef": "EV-AMS-N05",
+      "path": "assets/documents/EV-AMS-N05.txt",
+      "mimeType": "text/plain",
+      "sha256": "161e7a205f475380d31850cf33fc99651915d99c84a75a89bb50b91728e86327",
+      "caption": "Elias Grant is listed as the scene-account contact in the invoice-total review note. The note requests the missing currency field and retains the two totals without identifying who prepared either document."
+    },
+    {
+      "evidenceRef": "EV-AMS-P06",
+      "path": "assets/documents/EV-AMS-P06.txt",
+      "mimeType": "text/plain",
+      "sha256": "136d96c7e2a5f0381cd49b9830b17a593db03e2f2309600b51674aea07747472",
+      "caption": "The Hemonybuurt supporting-paperwork extract repeats a line identifier across two entries. Its total remains a comparison question; the source incident was closed without a responsibility conclusion, and this fixture does not change that outcome."
+    },
+    {
+      "evidenceRef": "EV-AMS-N06",
+      "path": "assets/documents/EV-AMS-N06.txt",
+      "mimeType": "text/plain",
+      "sha256": "fe39867d554c6ec1c8aa4e0f4258aefdf32f66ec4bd1fdaa3001942a0e454e77",
+      "caption": "A reconciliation cover sheet names Elias Grant as the scene-account contact for the duplicated line identifier. Its status records a completed follow-up with no conclusion about responsibility."
+    },
+    {
+      "evidenceRef": "EV-AMS-W01",
+      "path": "assets/documents/EV-AMS-W01.txt",
+      "mimeType": "text/plain",
+      "sha256": "f08d7e94ac65de3d570c64744e1d9ad49871ad4cd21ab02281a1760b621c8f79",
+      "caption": "An Alfa-driehoek inventory comparison describes two long recesses and one circular recess in a moulded storage tray. The related report concerns a missing small tool case; the tray description is supplementary fictional context and does not identify a recovered item."
+    },
+    {
+      "evidenceRef": "EV-AMS-N07",
+      "path": "assets/documents/EV-AMS-N07.txt",
+      "mimeType": "text/plain",
+      "sha256": "06aa0549470bb6aadeb9b314fe5797fb96361a11361a4f7c6e5067b35a867f04",
+      "caption": "George Horner is named as context-note provider on the storage inventory cover sheet. The associated sketch records the arrangement of tray recesses, while the whereabouts of the reported tool case remain unspecified."
+    },
+    {
+      "evidenceRef": "EV-AMS-W02",
+      "path": "assets/documents/EV-AMS-W02.txt",
+      "mimeType": "text/plain",
+      "sha256": "13f0fef789e0862856eeed7fced4f46e8ecc05f1d2011b7185c5415bbebe9f8d",
+      "caption": "A workshop comparison note from Oostelijke Handelskade describes an opened compartment and a tray with two elongated recesses. Its broad shape resembles another inventory description, but neither the note nor the reported storage-box loss establishes that the objects are the same."
+    },
+    {
+      "evidenceRef": "EV-AMS-N08",
+      "path": "assets/documents/EV-AMS-N08.txt",
+      "mimeType": "text/plain",
+      "sha256": "86e20c211f9f8679de4239a76e5eb72f28153357fb9ffaf81cf61725d7574992",
+      "caption": "The opened-compartment comparison lists George Horner as the context-note provider. The note describes a broad tray outline and asks for the original inventory, without asserting ownership or recovery."
+    },
+    {
+      "evidenceRef": "EV-AMS-W03",
+      "path": "assets/documents/EV-AMS-W03.txt",
+      "mimeType": "text/plain",
+      "sha256": "4357878a42e26ef3349a033f82b73901fc4e683547c17c3a369d96b17cb49e65",
+      "caption": "The Rietlanden site-store extract records an inventory tag alongside a note about a broken access fitting. Its stock-form code resembles notation in an unrelated payment document; the two codes belong to different systems and do not establish a shared source."
+    },
+    {
+      "evidenceRef": "EV-AMS-N09",
+      "path": "assets/documents/EV-AMS-N09.txt",
+      "mimeType": "text/plain",
+      "sha256": "d1716bd6a0d54530b1badc6ad1e1aa0cdea0faa0bfb94082eab06bc98d9c9c9d",
+      "caption": "George Kaplan appears as the document comparison contact on the inventory-tag cover note. The note distinguishes the stock-form namespace from a dispatch-form namespace and leaves their resemblance unresolved."
+    },
+    {
+      "evidenceRef": "EV-AMS-W04",
+      "path": "assets/documents/EV-AMS-W04.txt",
+      "mimeType": "text/plain",
+      "sha256": "fd164b9b965824e2b622ce466f00f33bd6b6334daab92b0d15ec2e633b4559ca",
+      "caption": "A Middenmeer area materials ledger contains a site-store tag beside an incomplete storage-box check. The extract retains the stock description and the recorded gap; it provides no verified ownership, removal time, or explanation for the disturbed ledger."
+    },
+    {
+      "evidenceRef": "EV-AMS-N10",
+      "path": "assets/documents/EV-AMS-N10.txt",
+      "mimeType": "text/plain",
+      "sha256": "646edc91126554c6a4c31020a223e300823736b4923f528aa3f9e9222e3087bf",
+      "caption": "The materials-ledger review names George Kaplan as the document comparison contact. It asks which inventory check was incomplete; no person is recorded as moving the storage box."
+    },
+    {
+      "evidenceRef": "EV-AMS-W05",
+      "path": "assets/documents/EV-AMS-W05.txt",
+      "mimeType": "text/plain",
+      "sha256": "069d11473feba51b83814e4ef6ef1360a80c1ee104dbc03b7fae282334437172",
+      "caption": "A Hamerstraatkwartier-Oost comparison note describes shallow diagonal marks beside a storage latch. The associated report concerns missing hand tools; the surface description provides no basis to identify a tool, attribute the marks, or date their creation."
+    },
+    {
+      "evidenceRef": "EV-AMS-N11",
+      "path": "assets/documents/EV-AMS-N11.txt",
+      "mimeType": "text/plain",
+      "sha256": "50e3fa44dbf107b49735f24ae52d62e58253758aa3cb594d05743d9bba3b6651",
+      "caption": "Clara Thornhill is listed as the scene-account contact for the storage-entrance comparison. The note records that a scratch description cannot establish the age of the mark or the tool that produced it."
+    },
+    {
+      "evidenceRef": "EV-AMS-W06",
+      "path": "assets/documents/EV-AMS-W06.txt",
+      "mimeType": "text/plain",
+      "sha256": "f053e09dae283db34d3e8252d2dd97143b782b970aab4e17baa29188a3d83bf2",
+      "caption": "A Bedrijventerrein-Noord Weesp equipment-check extract pairs an incomplete tool-case inventory with a storage-latch sketch. Similar words occur in another entrance note, but the retained material does not establish a common tool, shared object, or connected event."
+    },
+    {
+      "evidenceRef": "EV-AMS-N12",
+      "path": "assets/documents/EV-AMS-N12.txt",
+      "mimeType": "text/plain",
+      "sha256": "8c63b64df9d9fadb286ace342cf4d9e550632cd8254e7d8ba66ff19812f0e535",
+      "caption": "An equipment-check cover note names Clara Thornhill as the scene-account contact. The source remains partial and offers no measurements that would link its latch sketch to another reported entrance."
+    },
+    {
+      "evidenceRef": "EV-AMS-V01",
+      "path": "assets/images/tray-a.png",
+      "mimeType": "image/png",
+      "sha256": "5c332b871505a8f95a6fe86d9ee4a6c64243e896cc8ebc3ffb433bb962a6663f",
+      "caption": "A generated overhead illustration shows an empty dark blue moulded tray with two parallel long recesses and a circular pocket. It represents a broad shape for comparison with the inventory note and has no incident capture time or verified recovery context."
+    },
+    {
+      "evidenceRef": "EV-AMS-V02",
+      "path": "assets/images/tray-b.png",
+      "mimeType": "image/png",
+      "sha256": "6c578f246746a694e102a63449616b847464572d26bc2683c81f40a14416029b",
+      "caption": "The second generated tray illustration uses an oblique viewpoint and cooler shelf lighting. Two long recesses and a round pocket provide a visual comparison target, while the fixture deliberately makes no claim that it depicts the same physical item."
+    },
+    {
+      "evidenceRef": "EV-AMS-V03",
+      "path": "assets/images/organiser-control.png",
+      "mimeType": "image/png",
+      "sha256": "7d9812d5acf4ffd55c0145ea97c531e4d4feff8bf588e15101977dbdef0d8d51",
+      "caption": "An orange parts organiser is shown in a generated overhead illustration with twelve square compartments. Its storage function resembles the blue trays, but the colour and compartment layout differ; it has no recorded connection to the missing property."
+    },
+    {
+      "evidenceRef": "EV-AMS-V04",
+      "path": "assets/images/latch-detail.png",
+      "mimeType": "image/png",
+      "sha256": "16242fcc4c90176cd6882fb2570a1c9294d4286a64830ca2b49f0417e867613d",
+      "caption": "A generated close-up illustrates a dull steel latch on a grey panel, with two shallow diagonal surface scratches. The illustration supports description-based retrieval, while providing no measurement, tool identification, or evidence of the marks occurring at the incident."
+    },
+    {
+      "evidenceRef": "EV-AMS-C01",
+      "path": "assets/documents/EV-AMS-C01.txt",
+      "mimeType": "text/plain",
+      "sha256": "c5493184abc0fa732cb90bd53b8d25615732c5fb33459f6170b639569d8b8ebd",
+      "caption": "A blank dispatch comparison form contains an administrative code and empty reference columns. It has no transaction entries, amount, sender, or recipient; its resemblance to populated paperwork is limited to the printed form layout."
+    },
+    {
+      "evidenceRef": "EV-AMS-C02",
+      "path": "assets/documents/EV-AMS-C02.txt",
+      "mimeType": "text/plain",
+      "sha256": "0743f25d03898b0957fe6903dabd064129dc96aece4399e81975bd3f5b5016a2",
+      "caption": "A separate teaching purchase example records two distinct line identifiers whose amounts reconcile with the stated total. It shares general payment vocabulary with the questioned documents, but contains no repeated reference or unresolved amount difference."
+    },
+    {
+      "evidenceRef": "EV-AMS-C03",
+      "path": "assets/documents/EV-AMS-C03.txt",
+      "mimeType": "text/plain",
+      "sha256": "7f0b9f407d1cbdf663a0c2e584ae30c930612e9d58add0bf953a50cd4770ece8",
+      "caption": "The routine stock checklist lists cleaning cloths and packaging sleeves, with a materials column left empty. Its workshop wording may resemble storage reports, but it records neither missing tools nor an identified latch, tray, or inventory marker."
+    },
+    {
+      "evidenceRef": "EV-AMS-C04",
+      "path": "assets/documents/EV-AMS-C04.txt",
+      "mimeType": "text/plain",
+      "sha256": "74b0cc5f92b7c289b70ee8a8a7d2e0804128f7fbcb71d68fcf580e508938ecbf",
+      "caption": "An attachment retained with the comparison pack contains a sentence addressed to an automated reader. That sentence is source content rather than an instruction from the reviewer; the attachment provides no payment amount, valid case action, or additional evidential link."
+    }
+  ],
+  "databaseApplied": false
+}

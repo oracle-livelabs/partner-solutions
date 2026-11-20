@@ -1,0 +1,4 @@
+# Correct the saved-profile notice after adding the shared watch catalogue.
+FROM localhost/adelaide-crime-intelligence:perth-v2-activation-20261001
+WORKDIR /app
+COPY backend/profile-library.js ./backend/

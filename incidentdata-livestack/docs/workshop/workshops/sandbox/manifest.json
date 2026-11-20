@@ -1,0 +1,74 @@
+{
+  "workshoptitle": "IncidentData LiveStack \u2014 Adelaide workshop",
+  "help": "livelabs-help-database_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Get Started",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs-livestacks.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Workshop & Guides",
+      "filename": "../../workshop-guides/workshop-guides.md"
+    },
+    {
+      "title": "Scene 1: Data Foundation",
+      "filename": "../../scene-1-data-foundation/scene-1-data-foundation.md"
+    },
+    {
+      "title": "Scene 2: Incident Activity Center",
+      "filename": "../../scene-2-incident-activity-center/scene-2-incident-activity-center.md"
+    },
+    {
+      "title": "Scene 3: Incident Pattern Signals",
+      "filename": "../../scene-3-incident-pattern-signals/scene-3-incident-pattern-signals.md"
+    },
+    {
+      "title": "Scene 4: Person Intelligence",
+      "filename": "../../scene-4-person-intelligence/scene-4-person-intelligence.md"
+    },
+    {
+      "title": "Scene 5: Evidence Intelligence",
+      "filename": "../../scene-5-evidence-intelligence/scene-5-evidence-intelligence.md"
+    },
+    {
+      "title": "Scene 6: Case Relationships",
+      "filename": "../../scene-6-case-relationships/scene-6-case-relationships.md"
+    },
+    {
+      "title": "Scene 7: Incident Map",
+      "filename": "../../scene-7-incident-map/scene-7-incident-map.md"
+    },
+    {
+      "title": "Scene 8: Incident Explorer",
+      "filename": "../../scene-8-incident-explorer/scene-8-incident-explorer.md"
+    },
+    {
+      "title": "Scene 9: Incident and Capacity Analytics",
+      "filename": "../../scene-9-incident-and-capacity-analytics/scene-9-incident-and-capacity-analytics.md"
+    },
+    {
+      "title": "Scene 10: Ask IncidentData",
+      "filename": "../../scene-10-ask-incidentdata/scene-10-ask-incidentdata.md"
+    },
+    {
+      "title": "Scene 11: AI Agent Console",
+      "filename": "../../scene-11-ai-agent-console/scene-11-ai-agent-console.md"
+    },
+    {
+      "title": "Scene 12: Data Room",
+      "filename": "../../scene-12-data-room/scene-12-data-room.md"
+    },
+    {
+      "title": "Scene 14: AI Opps",
+      "filename": "../../scene-14-ai-opps/scene-14-ai-opps.md"
+    },
+    {
+      "title": "Need Help?",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}

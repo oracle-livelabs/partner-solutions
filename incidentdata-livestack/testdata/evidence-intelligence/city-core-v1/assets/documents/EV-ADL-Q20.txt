@@ -1,0 +1,5 @@
+Collection note without a handover signature — Modbury
+
+Authored fictional teaching supplement for Adelaide; linked incident ACI-V2-2026-0009, Modbury.
+A fictional collection request repeats ADL-CORE-05 in its workshop-reference field, but the handover, weight and recipient fields are blank. A request is not a completed transfer and does not establish who handled a particular part.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

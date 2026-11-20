@@ -1,0 +1,70 @@
+{
+  "status": "failed",
+  "mode": "preview",
+  "page_errors": [],
+  "blocked_writes": [],
+  "checks": [
+    "Nine tiles in three desktop rows, USA row ordered Boston / Chicago / Las Vegas; no duplicate USA entries.",
+    "BOSTON_CITY_DATA_V1: correct saved review/count/timezone; restore remains disabled and Dublin stays active.",
+    "CHICAGO_CITY_DATA_V2: correct saved review/count/timezone; restore remains disabled and Dublin stays active.",
+    "LAS_VEGAS_URBAN_DATA_V1: correct saved review/count/timezone; restore remains disabled and Dublin stays active."
+  ],
+  "tile_geometry": [
+    {
+      "x": 331,
+      "y": 1060.265625,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 726.65625,
+      "y": 1060.265625,
+      "width": 385.671875,
+      "height": 138.5
+    },
+    {
+      "x": 1122.328125,
+      "y": 1060.265625,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 331,
+      "y": 1208.765625,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 726.65625,
+      "y": 1208.765625,
+      "width": 385.671875,
+      "height": 138.5
+    },
+    {
+      "x": 1122.328125,
+      "y": 1208.765625,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 331,
+      "y": 1357.265625,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 726.65625,
+      "y": 1357.265625,
+      "width": 385.671875,
+      "height": 138.5
+    },
+    {
+      "x": 1122.328125,
+      "y": 1357.265625,
+      "width": 385.65625,
+      "height": 138.5
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Mobile page must not overflow horizontally\n    at /home/opc/livestack/policeAdelaide/usa_foundation_tiles_20260920/check_browser.cjs:51:12\n    at async withServer (/home/opc/livestack/policeAdelaide/usa_foundation_tiles_20260920/harness.cjs:22:52)",
+  "at": "2026-09-20T10:29:14.729Z"
+}

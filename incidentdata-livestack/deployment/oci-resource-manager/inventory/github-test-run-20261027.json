@@ -1,0 +1,155 @@
+{
+  "status": "test_cleaned_up",
+  "sourceRepository": "https://github.com/fucci/CrimeDataLiveStack",
+  "branch": "deployment/oci-resource-manager",
+  "sourceCommit": "dd663ea2416277fb199cb8ccba2d1299d4ff6896",
+  "testRun": "80fa3ec89936",
+  "region": "ap-sydney-1",
+  "compartment": "franco_ucci_sandbox",
+  "plan": {
+    "additions": 27,
+    "changes": 0,
+    "deletions": 0
+  },
+  "applyStarted": true,
+  "publicationStarted": true,
+  "cleanup": {
+    "scheduled": true,
+    "deadlineUtc": "2026-10-27T12:23:34.916086+00:00",
+    "completed": true,
+    "cleanedAt": "2026-10-27T12:26:29.398701+00:00"
+  },
+  "estimatedEightHoursUSD": 6.83,
+  "externalSandboxInterruptionsAccepted": true,
+  "checkedAt": "2026-10-27T12:27:01.136887+00:00",
+  "publicationCompleted": true,
+  "publicationApproved": true,
+  "fullStackReleaseReady": false,
+  "latestObservation": {
+    "checkedAt": "2026-10-27T12:25:59.702207+00:00",
+    "apply": "FAILED",
+    "vm": null,
+    "database": "STOPPED",
+    "bootstrap": {},
+    "publicIp": null
+  },
+  "authenticatedApexBrowserChecks": [
+    {
+      "id": 319,
+      "status": "passed"
+    },
+    {
+      "id": 320,
+      "status": "passed"
+    },
+    {
+      "id": 361,
+      "status": "passed"
+    }
+  ],
+  "vmIngressRemovedAfterApply": true,
+  "vmIngressRestored": false,
+  "completedBootstrapStages": [
+    "runtime",
+    "schema",
+    "security",
+    "ai",
+    "apex",
+    "accounts",
+    "ollama",
+    "https"
+  ],
+  "fullDestinationAcceptance": false,
+  "externalAutomationRecoveryAttempted": true,
+  "backgroundWatcher": {
+    "unit": "incidentdata-watch-80fa3ec89936.service",
+    "readOnly": true
+  },
+  "webRecovery": {
+    "approvedByUser": true,
+    "scope": "One-time TCP 80/443 restoration and graceful test VM reboot to restart the gateway; no repeated rule overrides",
+    "verifiedAtUtc": "2026-10-27T08:39:10.950904+00:00",
+    "trustedHttps": true,
+    "authenticatedHealth": "healthy",
+    "browser": [
+      {
+        "kind": "react",
+        "status": "passed",
+        "signedInScope": "statewide_admin",
+        "pages": 3
+      }
+    ],
+    "earlierTerraformApplyStillFailed": true,
+    "fullAcceptanceRerun": false,
+    "accessRemovedAgain": true,
+    "repeatRemovalObservedAtUtc": "2026-10-27T08:39:42.026038+00:00",
+    "currentReactReachable": true,
+    "furtherRuleRestoresAttempted": false,
+    "blockingCondition": "Inbound HTTP/HTTPS rules were removed again after trusted HTTPS, authenticated health and three-page React browser checks passed",
+    "repeatRemovalAudit": {
+      "timeUtc": "2026-10-27T08:38:38.717000+00:00",
+      "actorType": "instance",
+      "actorIp": "152.67.123.254",
+      "sameActorAsPreviousTests": true
+    },
+    "currentScope": "HTTPS only from 101.115.236.229/32; confirmed by user"
+  },
+  "restrictedWebAccess": {
+    "cidr": "101.115.236.229/32",
+    "port": 443,
+    "userConfirmed": true,
+    "configuredAtUtc": "2026-10-27T08:51:30.428087+00:00",
+    "externalUserVerification": "User confirmed a login prompt or the application",
+    "publicHttpEnabled": false,
+    "unrestrictedHttpsEnabled": false,
+    "verifiedAtUtc": "2026-10-27T08:52:48.582274+00:00"
+  },
+  "profileCatalogueUserCheck": {
+    "verifiedAtUtc": "2026-10-27T09:10:36.227038+00:00",
+    "result": "User confirmed city cards load after Refresh profiles",
+    "applicationCodeChanged": false,
+    "authenticatedDiagnosticNotNeeded": true,
+    "temporaryDiagnosticKeyCleanupSubmitted": true
+  },
+  "recurringFetchDiagnostic": {
+    "checkedAtUtc": "2026-10-27T09:18:52.610213+00:00",
+    "requests": [
+      {
+        "path": "/api/health",
+        "http": 200,
+        "seconds": 0.09,
+        "health": "healthy",
+        "profiles": 0,
+        "active": null
+      },
+      {
+        "path": "/api/setup/profiles",
+        "http": 200,
+        "seconds": 1.21,
+        "health": null,
+        "profiles": 15,
+        "active": "ADELAIDE_DATA_V2"
+      },
+      {
+        "path": "/api/setup/profiles?profileCode=ADELAIDE_DATA_V2",
+        "http": 200,
+        "seconds": 1.26,
+        "health": null,
+        "profiles": 15,
+        "active": "ADELAIDE_DATA_V2"
+      },
+      {
+        "path": "/api/setup/profiles",
+        "http": 200,
+        "seconds": 2.07,
+        "health": null,
+        "profiles": 15,
+        "active": "ADELAIDE_DATA_V2"
+      }
+    ],
+    "temporaryKeyDeletedByProbe": true,
+    "firewallRulePresentAtDiagnosis": true,
+    "browserFailureReproduced": false,
+    "userTriggerClarificationPending": true
+  }
+}

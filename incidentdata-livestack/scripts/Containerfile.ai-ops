@@ -1,0 +1,4 @@
+FROM localhost/local/adelaide-crime-intelligence:agent-history-v1-20260915
+COPY backend/ai-ops-telemetry.js backend/ai-ops-store.js backend/server.js backend/agent-console-routes.js backend/embeddings.js backend/pattern-embeddings.js backend/data-room-structured-ai.js backend/data-room-descriptions.js backend/data-room-learning.js backend/data-room-workspace.js backend/data-room-money-agent.js backend/data-room-poi-candidates.js /app/backend/
+COPY scripts/setup_ai_ops.js scripts/check_ai_ops_live.js /app/scripts/
+COPY frontend/dist/ /app/frontend/dist/

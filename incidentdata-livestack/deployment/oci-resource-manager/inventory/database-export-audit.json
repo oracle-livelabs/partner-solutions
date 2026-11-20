@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "exportPrefix": "ID_RELEASE_MVH80DYX",
+  "encrypted": true,
+  "encryptedDumpCanBeRead": true,
+  "privateTablesEmpty": 44,
+  "credentialCreationAbsent": true,
+  "sourcePasswordHashesAbsent": true,
+  "schedulerObjectsAbsent": true,
+  "metadataBytes": 446041,
+  "exportedTables": 122,
+  "propertyGraphMetadataPresent": true,
+  "restoreTested": false
+}

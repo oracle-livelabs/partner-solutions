@@ -1,0 +1,32 @@
+[
+  {
+    "run": 1,
+    "batch": "DR-20261020-68ed95d9-8383-401c",
+    "status": 200,
+    "cards": 9,
+    "mentions": 37,
+    "sourceCheckWarnings": 16,
+    "llm": {
+      "provider": "OCI GenAI",
+      "model": "google.gemini-2.5-flash",
+      "region": "us-chicago-1",
+      "operationId": "cdr.people.mentioned"
+    },
+    "usage": {
+      "attempts": 1,
+      "retries": 0,
+      "elapsedMs": 50748,
+      "tokenStatus": "measured",
+      "inputTokens": 13302,
+      "outputTokens": 5009,
+      "reasoningTokens": 9502,
+      "totalTokens": 27813
+    },
+    "traceId": "68847d39-5493-458b-a71a-6b36be7ce135",
+    "aiOpsLlmRecords": 1,
+    "aiOpsOutcomeRecords": 1,
+    "providerTotalMatchesDashboard": true,
+    "workflowDoesNotDuplicateTokens": true,
+    "at": "2026-10-28T06:48:26.212Z"
+  }
+]

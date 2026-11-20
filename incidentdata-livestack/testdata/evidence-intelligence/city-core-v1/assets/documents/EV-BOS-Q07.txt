@@ -1,0 +1,5 @@
+Reconciliation resolving the extra authorisation — Beacon Hill
+
+Authored fictional teaching supplement for Boston; linked incident SYN-BOS-2026-00008, Beacon Hill.
+The fictional reconciliation for BOS-CORE-02 records one settled reservation and one voided authorisation. The additional authorisation did not settle in this teaching account. A requested refund is not recorded as a completed refund.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

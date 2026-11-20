@@ -1,0 +1,14 @@
+{
+  "knowledgeSetId": "KS-CARE-TRUST-001",
+  "version": "2.0",
+  "title": "The Care-Trust: Who knows?",
+  "patternCode": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+  "caseRef": "CASE-AMS-2026-03",
+  "premise": "Something is missing. Someone depends on help. Who knows their circumstances — and what did they have permission to do?",
+  "steps": [
+    {"id":"lead","label":"1. A small concern","question":"Why was this public concern linked for review?","evidenceRefs":["EV-AMS-H17","EV-AMS-H01"],"basis":"A private, fictional follow-up supplies the incident reference; the public post alone does not.","reviewQuestion":"Separate the public concern, the private follow-up and the original property report. What makes this a review lead, not proof?"},
+    {"id":"access","label":"2. Who knows?","question":"Who had a recorded care role, and what appears to have left the team?","evidenceRefs":["EV-AMS-H03","EV-AMS-H05","EV-AMS-H06","EV-AMS-H12"],"basis":"Compare assignment, message extract, directory attribution and provenance; they establish different things.","reviewQuestion":"Distinguish assignment, directory association and the outward message. Do not turn account attribution into verified authorship or physical presence. What independent source is missing?"},
+    {"id":"permission","label":"3. Check permission","question":"Does the second resident's explanation resolve the first concern?","evidenceRefs":["EV-AMS-H04","EV-AMS-H07","EV-AMS-H15","EV-AMS-H22"],"basis":"A transport enquiry has a limited consent context for Resident B. It cannot authorise disclosure for Resident A.","reviewQuestion":"What does the second resident's permission explain, and what remains unresolved for the first resident? Preserve the difference between a statement and corroboration."},
+    {"id":"money","label":"4. Follow the money question","question":"Was help with shopping used within the agreed limit?","evidenceRefs":["EV-AMS-H18","EV-AMS-H19","EV-AMS-H20","EV-AMS-H21"],"basis":"Compare an attributed concern, permission, a redacted entry list and a later reconciliation. An apparent duplicate is explained; another entry remains unresolved.","reviewQuestion":"Separate authorised help, the explained duplicate and the remaining transaction question. State why neither a burglary link, a responsible person nor care-funding fraud is established."}
+  ]
+}

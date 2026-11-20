@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Care-Trust: Who knows?"
+  short_description: "Build source-linked synthetic safeguarding stories"
+  default_prompt: "Use $care-trust-who-knows to strengthen the synthetic Care-Trust story, its source-supported data links and its CrimeData-LiveStack walkthrough."

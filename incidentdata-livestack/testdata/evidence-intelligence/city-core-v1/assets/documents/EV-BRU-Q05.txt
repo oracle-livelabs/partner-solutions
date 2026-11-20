@@ -1,0 +1,5 @@
+Reservation copy with a repeated payment suffix — Josaphat
+
+Authored fictional teaching supplement for Brussels; linked incident SYN-BRU-2026-07876, Josaphat.
+The fictional print-room reservation shows two entries carrying suffix BRU-CORE-02: a framed-print reservation and a display-board reservation. Each quotes 240 units; the currency field is blank. The copy does not establish that either amount settled.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

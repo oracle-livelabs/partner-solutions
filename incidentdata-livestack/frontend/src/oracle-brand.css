@@ -1,0 +1,36 @@
+.brand {
+  display: grid;
+  gap: 3px;
+  padding: 15px 22px 16px;
+  border: 0;
+  border-bottom: 1px solid #d7dadd;
+  background: #fff;
+  color: #20242a;
+  cursor: pointer;
+  text-align: left;
+}
+
+.brand__oracle-logo { width: 110px; height: auto; margin-bottom: 6px; }
+
+.brand .brand__title {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.brand .brand__city {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #9f3829;
+}
+
+@media (max-width: 850px) {
+  .brand { padding: 18px 10px; justify-items: center; }
+  .brand__oracle-logo { width: 42px; }
+  .brand .brand__title { display: block; font-size: 10px; text-align: center; overflow-wrap: anywhere; }
+  .brand .brand__city { font-size: 11px; text-align: center; overflow-wrap: anywhere; }
+}

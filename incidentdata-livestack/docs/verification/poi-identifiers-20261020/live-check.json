@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "permanentAssertions": 63,
+  "activeProfileAssertions": 7,
+  "multipleEmailsAccountsAndPhones": true,
+  "platformIsolation": true,
+  "sharedIdentifiersFlagged": true,
+  "proposedRejectedExpiredExcluded": true,
+  "unauthorizedViewEmpty": true,
+  "temporaryAssertionsRolledBack": true,
+  "profileUnchanged": true
+}

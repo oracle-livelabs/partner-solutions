@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-23T05:49:25.458756+00:00",
+  "status": "automated_acceptance_passed_after_vm_recovery",
+  "sourceCommit": "7f2857727102c977e6c460a0e339ee90284877a4",
+  "branch": "deployment/oci-resource-manager",
+  "region": "ap-sydney-1",
+  "terraformVersion": "1.5.7",
+  "terraformApplySucceeded": true,
+  "bootstrapState": "ready",
+  "bootstrapStage": "complete",
+  "temporaryBootstrapCredentialObjectDeleted": true,
+  "protectedOriginalVmAndDatabaseIdsOutsideTestState": true,
+  "recovery": {
+    "testVmReplaced": true,
+    "restoredDatabaseRetained": true,
+    "immutableDataModelApexAiAndContractArtifactsUnchanged": 32,
+    "reason": "Saved-profile catalogue verification query timed out at 30 seconds; aggregate counts once."
+  },
+  "checks": {
+    "applicationTests": 413,
+    "bootstrapTests": 17,
+    "frontendBuild": "passed",
+    "terraformValidation": "passed",
+    "standaloneAppAndWorkerBuilds": "passed",
+    "offlineWorkerBrowserImageSpeechVideoProbes": "passed",
+    "savedCityCountsAndActualCityRestores": 9,
+    "validPropertyGraphs": 5,
+    "nativeSecurityDataGrants": 20,
+    "nativeAiInventory": "passed",
+    "nativeInference": "passed",
+    "fixedPersonas": 5,
+    "forgedAdminHeaderRejected": true,
+    "apexOperatorBrowserLogins": 3,
+    "apexViewerBrowserLogins": 3,
+    "reactBrowserPages": 4,
+    "dataFoundationCityTiles": 9,
+    "dataFoundationBrowserLoadMs": 5364,
+    "publicIpTlsNormalTrust": "passed",
+    "sampleZipBytes": 72471932,
+    "sampleZipSha256": "4500fc8dc8bed93dc5c67d45c03fa99c463ac9349000bd13840a834871453c61",
+    "freshDetectiveRoomVideoAndOfflineZip": "passed"
+  },
+  "externalNetworkDrift": {
+    "occurrences": 2,
+    "reviewedHttpHttpsRulesRestored": true,
+    "externalAutomationOwnershipUnresolved": true
+  },
+  "cleanup": {
+    "scheduled": true,
+    "deadlineUtc": "2026-10-23T09:46:33.654171+00:00",
+    "completed": false
+  },
+  "fullStackReleaseReady": false,
+  "remainingHumanAcceptance": [
+    "Human story, media and source walkthrough",
+    "Certificate renewal observation",
+    "Resolve recurring external web-rule removal for stable access"
+  ]
+}

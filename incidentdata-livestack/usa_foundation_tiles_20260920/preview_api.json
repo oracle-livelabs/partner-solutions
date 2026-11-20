@@ -1,0 +1,308 @@
+{
+  "status": "passed",
+  "at": "2026-09-20T10:28:59.523Z",
+  "mode": "read_only_preview",
+  "profiles": [
+    {
+      "code": "ADELAIDE_DATA",
+      "profile": {
+        "DATASET_PROFILE_ID": 1,
+        "PROFILE_CODE": "ADELAIDE_DATA",
+        "PROFILE_NAME": "Adelaide Data Set V1 - Baseline",
+        "CITY_LABEL": "Adelaide Metropolitan Area",
+        "PROFILE_STATUS": "available",
+        "PROFILE_NOTES": "Immutable V1 baseline: Adelaide May-June 2026 synthetic demonstration profile; 21,513 incidents; natural report titles/narratives; generator 5.0.0 seed 20260828. Preserved before the planned 21,532-record V2 scenario cut.",
+        "CAPTURED_AT": "2026-09-03T08:23:48.575Z"
+      },
+      "backup": {
+        "INCIDENTS": 21513,
+        "REPORTS": 21513,
+        "PERSONS": 13,
+        "CASES": 0
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": true,
+        "nrtRestore": true
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "profile": {
+        "DATASET_PROFILE_ID": 6,
+        "PROFILE_CODE": "ADELAIDE_DATA_V2",
+        "PROFILE_NAME": "Adelaide Data Set V2 - Scenario Enrichment",
+        "CITY_LABEL": "Adelaide Metropolitan Area",
+        "PROFILE_STATUS": "available",
+        "PROFILE_NOTES": "Adelaide V2 synthetic scenario enrichment with six database-controlled UI-visible watched patterns.",
+        "CAPTURED_AT": "2026-09-04T01:02:03.827Z"
+      },
+      "backup": {
+        "INCIDENTS": 21532,
+        "REPORTS": 21532,
+        "PERSONS": 15,
+        "CASES": 5
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": true,
+        "nrtRestore": true
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "profile": {
+        "DATASET_PROFILE_ID": 30,
+        "PROFILE_CODE": "AMSTERDAM_DATA_V1",
+        "PROFILE_NAME": "Amsterdam May-June 2026 V1",
+        "CITY_LABEL": "Gemeente Amsterdam (including Weesp)",
+        "PROFILE_STATUS": "available",
+        "PROFILE_NOTES": "Synthetic demonstration data. These are not actual police incidents. Validated inactive library staging; not activation-ready. configuration_sha256=9aa65bcba1cd6d4d9ebf864f62412e076d798e3fb3b39e8548b32b31e0bfceba. Exact user teaching quotas; official aggregate context is not a local crime rate.",
+        "CAPTURED_AT": "2026-09-17T00:55:28.487Z"
+      },
+      "backup": {
+        "INCIDENTS": 14467,
+        "REPORTS": 14467,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": true,
+        "nrtRestore": false
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "BOSTON_CITY_DATA_V1",
+      "profile": {
+        "DATASET_PROFILE_ID": 91,
+        "PROFILE_CODE": "BOSTON_CITY_DATA_V1",
+        "PROFILE_NAME": "Boston City Synthetic Data Set V1 - May-June 2026",
+        "CITY_LABEL": "Boston",
+        "PROFILE_STATUS": "staged",
+        "PROFILE_NOTES": "Synthetic demonstration data. These are not actual police incidents. Inactive library staging, not activation-ready. Shoreline clearance revision generator 1.0.1; configuration_sha256=06371f2a704a83e111eacf31fbd6526cca40f8a0536276ed5b59f3593539358c. Original version backed up; no other profile changed.",
+        "CAPTURED_AT": "2026-09-19T14:13:59.934Z"
+      },
+      "backup": {
+        "INCIDENTS": 14513,
+        "REPORTS": 14513,
+        "PERSONS": 0,
+        "CASES": 0
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": false,
+        "nrtRestore": false
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "BRISBANE_DATA",
+      "profile": {
+        "DATASET_PROFILE_ID": 4,
+        "PROFILE_CODE": "BRISBANE_DATA",
+        "PROFILE_NAME": "Brisbane Data Set Profile",
+        "CITY_LABEL": "Brisbane Metropolitan Area",
+        "PROFILE_STATUS": "available",
+        "PROFILE_NOTES": "Captured from the active operational dataset on 2026-09-01.",
+        "CAPTURED_AT": "2026-09-01T22:38:52.905Z"
+      },
+      "backup": {
+        "INCIDENTS": 42317,
+        "REPORTS": 42317,
+        "PERSONS": 16,
+        "CASES": 1
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": true,
+        "nrtRestore": true
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "profile": {
+        "DATASET_PROFILE_ID": 10,
+        "PROFILE_CODE": "BRUSSELS_DATA_V1",
+        "PROFILE_NAME": "Brussels-Capital May-June 2026 V1",
+        "CITY_LABEL": "Brussels-Capital Region",
+        "PROFILE_STATUS": "available",
+        "PROFILE_NOTES": "Synthetic demonstration data. These are not actual police incidents. Validated inactive library staging; not activation-ready. configuration_sha256=c13410bfbb62c19a6f0e3dd2b3833da43c95ae33d5f4c047dd40ccab61734e83. Exact user teaching quotas; official aggregate context is not a local crime rate.",
+        "CAPTURED_AT": "2026-09-16T13:05:01.364Z"
+      },
+      "backup": {
+        "INCIDENTS": 25691,
+        "REPORTS": 25691,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": true,
+        "nrtRestore": false
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "CHICAGO_CITY_DATA_V2",
+      "profile": {
+        "DATASET_PROFILE_ID": 110,
+        "PROFILE_CODE": "CHICAGO_CITY_DATA_V2",
+        "PROFILE_NAME": "Chicago City Synthetic Data V2 - May-June 2026",
+        "CITY_LABEL": "City of Chicago",
+        "PROFILE_STATUS": "staged",
+        "PROFILE_NOTES": "Synthetic demonstration data. These are not actual police incidents. Complete inactive saved-library load; NOT activation-ready. App/index/map acceptance and activation authorization remain pending. logical_sha256=ef7c761c4e9cfae01ec7ef55e25aec8f07fd7eaa13543e99babe81d8fabdbc44",
+        "CAPTURED_AT": "2026-09-20T07:37:00.186Z"
+      },
+      "backup": {
+        "INCIDENTS": 39649,
+        "REPORTS": 39649,
+        "PERSONS": 0,
+        "CASES": 0
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": false,
+        "nrtRestore": false
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "profile": {
+        "DATASET_PROFILE_ID": 50,
+        "PROFILE_CODE": "DUBLIN_CITY_DATA_V1",
+        "PROFILE_NAME": "Dublin City Synthetic Data Set V1 - May-June 2026",
+        "CITY_LABEL": "Dublin City Council area",
+        "PROFILE_STATUS": "active",
+        "PROFILE_NOTES": "Synthetic demonstration data. These are not actual police incidents. Validated inactive library staging; not activation-ready. configuration_sha256=3d81f17292fb32970789ff48efd5fb5b0647a27486fd2f92c3732e904f29e475. Exact user teaching quotas; official aggregate context is not a local crime rate.",
+        "CAPTURED_AT": "2026-09-17T05:07:02.732Z"
+      },
+      "backup": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": true,
+        "nrtRestore": false
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "LAS_VEGAS_URBAN_DATA_V1",
+      "profile": {
+        "DATASET_PROFILE_ID": 90,
+        "PROFILE_CODE": "LAS_VEGAS_URBAN_DATA_V1",
+        "PROFILE_NAME": "Las Vegas Urban Synthetic Data Set V1 - May-June 2026",
+        "CITY_LABEL": "Las Vegas urban demonstration area",
+        "PROFILE_STATUS": "staged",
+        "PROFILE_NOTES": "Synthetic demonstration data. These are not actual police incidents. Validated inactive library staging; not activation-ready. configuration_sha256=3a6cea82a70db91e1b391651bb8d9320840bf3266911dba4740684459d85caee. Exact user teaching quotas; official aggregate context is not a local crime rate.",
+        "CAPTURED_AT": "2026-09-19T11:30:50.048Z"
+      },
+      "backup": {
+        "INCIDENTS": 19527,
+        "REPORTS": 19527,
+        "PERSONS": 0,
+        "CASES": 0
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": false,
+        "nrtRestore": false
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    },
+    {
+      "code": "PERTH_DATA",
+      "profile": {
+        "DATASET_PROFILE_ID": 5,
+        "PROFILE_CODE": "PERTH_DATA",
+        "PROFILE_NAME": "Perth Data Set Profile",
+        "CITY_LABEL": "Perth Metropolitan Area",
+        "PROFILE_STATUS": "available",
+        "PROFILE_NOTES": "Captured from the active operational dataset on 2026-09-01.",
+        "CAPTURED_AT": "2026-09-01T22:44:19.379Z"
+      },
+      "backup": {
+        "INCIDENTS": 33511,
+        "REPORTS": 33511,
+        "PERSONS": 25,
+        "CASES": 1
+      },
+      "capabilities": {
+        "savedReview": true,
+        "restore": true,
+        "nrtRestore": true
+      },
+      "live": {
+        "INCIDENTS": 17817,
+        "REPORTS": 17817,
+        "PERSONS": 13,
+        "CASES": 5
+      },
+      "active": "DUBLIN_CITY_DATA_V1"
+    }
+  ],
+  "database_writes_sent": 0
+}

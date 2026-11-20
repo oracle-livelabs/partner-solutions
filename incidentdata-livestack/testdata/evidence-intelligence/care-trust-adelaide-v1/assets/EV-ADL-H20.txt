@@ -1,0 +1,6 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+Document: synthetic reconciliation addendum, displayed date 26 June 2026
+Client: ADL-RES-A. Currency: AUD.
+ADL-TXN-A1: settled 31.80; the supplied grocery receipt matches this amount. ADL-TXN-A2: voided authorisation, not a second settled payment.
+ADL-TXN-A3: displayed as settled 84.60. A refund has been requested; completion is not confirmed. No receipt or permission beyond the AUD 50 limit is supplied.
+No payment user is identified. No source connects these entries with the residential approach or the outward message. No home-support invoice, government funding claim, NDIS claim or funding remittance is supplied.

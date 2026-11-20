@@ -1,0 +1,18 @@
+{
+  "status": "deployed_healthy",
+  "completed_at": "2026-09-17T07:12:32.828Z",
+  "image_before": "localhost/local/adelaide-crime-intelligence:empty-summary-20260917",
+  "image_after": "localhost/local/adelaide-crime-intelligence:adelaide-v2-tile-20260917",
+  "image_id_after": "ea58414c63f97da54fb6a75e3aca24ef3edd254eebdabc2045a51ce4e18b8e35",
+  "container_after": "119a821a61e1273908a7b1b517c41b4e4f7bc1d558246e230899b0bd9afc667e",
+  "started_at": "2026-09-17T07:12:29.817845917Z",
+  "application_environment_unchanged": true,
+  "mounts_unchanged": true,
+  "ports_unchanged": true,
+  "backend_unchanged": true,
+  "runtime_server_sha256": "3a4825c1f1fe71b255023c53a341155281efb4f3933c30597e33719fec690d6f",
+  "frontend_assets_verified": 11,
+  "active_profile_unchanged": "ADELAIDE_DATA",
+  "restore_invoked": false,
+  "rollback_image_retained": "localhost/local/adelaide-crime-intelligence:empty-summary-20260917"
+}

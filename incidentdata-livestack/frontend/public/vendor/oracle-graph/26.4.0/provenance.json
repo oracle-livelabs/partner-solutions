@@ -1,0 +1,9 @@
+{
+  "package": "@gvt/graphviz",
+  "version": "26.4.0",
+  "sourceArchive": "graphviz-26.4.0.tgz",
+  "archiveSha256": "8940a413d73e10a9d5061f6621ceb87cfe79089a7bd79dea0ce0901433d02dcf",
+  "origin": "User-supplied Oracle Graph Visualization Library",
+  "vendorFiles": "Unmodified contents of package/dist/library",
+  "licenseNotice": "Oracle proprietary software. Use and redistribution remain subject to the applicable Oracle license terms. This integration does not relicense the library."
+}

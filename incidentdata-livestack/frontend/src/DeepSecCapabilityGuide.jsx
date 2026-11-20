@@ -1,0 +1,53 @@
+import React, {useEffect,useRef,useState} from 'react';
+import {createPortal} from 'react-dom';
+import './vector-capability-guide.css';
+import './json-duality-capability-guide.css';
+import './deep-sec-capability-guide.css';
+const STEPS=['What is ABAC?','Explore access decisions','What Oracle provides','Apply it to this app'];
+const NOTES=[
+ '“Identity tells us who is asking. A policy compares their attributes with the data and action. Being able to open the application does not automatically mean access to every record.”',
+ '“Try North versus South, then change clearance. Statewide scope opens the area condition, but clearance and action rules still apply. Even an allowed row can have a masked field.”',
+ '“Oracle can enforce policies where the data lives. Trusted end-user context and data grants determine which rows, fields and operations are allowed.”',
+ '“Scope is applied before a query produces results. The same discipline matters when a dashboard counts records or an AI tool retrieves evidence.”',
+];
+const RECORDS=[
+ {id:'DEMO-N1',area:'North',classification:'Standard',title:'Bicycle report',contact:'Example contact N1'},
+ {id:'DEMO-N2',area:'North',classification:'Restricted',title:'Restricted incident',contact:'Example contact N2'},
+ {id:'DEMO-S1',area:'South',classification:'Standard',title:'Property report',contact:'Example contact S1'},
+ {id:'DEMO-S2',area:'South',classification:'Restricted',title:'Restricted incident',contact:'Example contact S2'},
+];
+function AccessExample(){
+ const [area,setArea]=useState('North'),[clearance,setClearance]=useState('Standard'),[role,setRole]=useState('Reader'),[action,setAction]=useState('Read');
+ const decisions=RECORDS.map(record=>{const reasons=[];if(area!=='Statewide'&&area!==record.area)reasons.push('Area outside scope');if(record.classification==='Restricted'&&clearance!=='Restricted')reasons.push('Requires restricted clearance');if(action==='Update'&&role!=='Editor')reasons.push('Update requires editor role');return {...record,allowed:reasons.length===0,reasons};});
+ const visible=decisions.filter(r=>r.allowed);
+ return <><p className="vg-lead">Change the fictional user's attributes and requested action. Watch the policy decision and returned records change.</p><div className="ds-controls"><label>Area scope<select aria-label="Example area scope" value={area} onChange={e=>setArea(e.target.value)}>{['North','South','Statewide'].map(x=><option key={x}>{x}</option>)}</select></label><label>Clearance<select aria-label="Example clearance" value={clearance} onChange={e=>setClearance(e.target.value)}>{['Standard','Restricted'].map(x=><option key={x}>{x}</option>)}</select></label><label>Role<select aria-label="Example role" value={role} onChange={e=>setRole(e.target.value)}>{['Reader','Editor'].map(x=><option key={x}>{x}</option>)}</select></label></div><div className="vg-query"><span>Requested action</span>{['Read','Update'].map(x=><button type="button" key={x} aria-pressed={action===x} onClick={()=>setAction(x)}>{x}</button>)}</div>
+ <div className="vg-explain"><h4>The teaching policy</h4><p>Area matches (or scope is Statewide), clearance covers the record, and updates require Editor. All three conditions must pass. Contact values also require Restricted clearance.</p></div>
+ <div className="jd-example-grid"><section className="jd-card"><h4>Policy decisions</h4><p className="jd-caption">Invented records shown here to explain the rule. A denied record would not appear in a real scoped result.</p><ul className="ds-decisions">{decisions.map(r=><li key={r.id}><b>{r.id} · {r.area} · {r.classification}</b><span className={r.allowed?'ds-allow':'ds-deny'}>{r.allowed?'Allowed':r.reasons.join('; ')}</span></li>)}</ul></section><section className="jd-card"><h4 aria-live="polite">{visible.length} {visible.length===1?'record allowed':'records allowed'}</h4><p className="jd-caption">Example result for the requested action</p><ul className="ds-results">{visible.map(r=><li key={r.id}><b>{r.id} · {r.title}</b><span>Contact: {clearance==='Restricted'?r.contact:'Masked'}</span></li>)}</ul>{!visible.length&&<p>No records satisfy this policy.</p>}</section></div><p className="vg-footnote">Local simulation using invented fixtures. It does not query protected records, execute updates or change the selected app persona.</p><button type="button" onClick={()=>{setArea('North');setClearance('Standard');setRole('Reader');setAction('Read');}}>Reset example</button></>;
+}
+export default function DeepSecCapabilityGuide({onClose}){
+ const [step,setStep]=useState(0),dialog=useRef(null),returnFocus=useRef(document.activeElement);
+ useEffect(()=>{const el=dialog.current,overflow=document.body.style.overflow;document.body.style.overflow='hidden';el.showModal();return()=>{el.close();document.body.style.overflow=overflow;if(returnFocus.current?.isConnected)returnFocus.current.focus({preventScroll:true});};},[]);
+ function trapTab(e){if(e.key!=='Tab')return;const all=[...dialog.current.querySelectorAll('button:not([disabled]),select,a[href],summary,[tabindex="0"]')].filter(el=>el.getClientRects().length);if(e.shiftKey&&document.activeElement===all[0]){e.preventDefault();all.at(-1).focus();}else if(!e.shiftKey&&document.activeElement===all.at(-1)){e.preventDefault();all[0].focus();}}
+ function backdrop(e){if(e.target!==dialog.current)return;const r=dialog.current.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)onClose();}
+ return createPortal(<dialog ref={dialog} className="vector-guide ds-guide" aria-labelledby="deep-sec-guide-title" onKeyDown={trapTab} onClick={backdrop} onCancel={e=>{e.preventDefault();onClose();}}>
+ <header className="vg-header"><div><small>DATA FOUNDATION · PRESENTER WALKTHROUGH</small><h2 id="deep-sec-guide-title">Deep Sec · ABAC</h2><p>Access decisions based on trusted identity and data attributes.</p></div><button type="button" autoFocus onClick={onClose} aria-label="Close Deep Sec walkthrough">Close ×</button></header>
+ <nav className="vg-steps" aria-label="Walkthrough steps">{STEPS.map((name,i)=><button type="button" key={name} aria-pressed={step===i} onClick={()=>setStep(i)}><span>{i+1}</span>{name}</button>)}</nav>
+ <div className="vg-body" key={step}><h3>{STEPS[step]}</h3>
+ {step===0&&<><p className="vg-lead"><strong>ABAC means Attribute-Based Access Control.</strong> A policy compares attributes of the user, the record and the requested action to decide what is allowed.</p><div className="vg-number-flow"><div><span>User attributes</span><strong>Area + clearance + role</strong></div><b aria-hidden="true">→</b><div><span>Policy decision</span><strong>Read or update this record?</strong></div></div><div className="vg-explain"><h4>A simple example</h4><p>A North-area reader may read ordinary North records. A restricted South record needs both the correct area scope and sufficient clearance. Updating also requires an editor role.</p></div><p>Authentication establishes who is requesting access. Authorization decides which data and actions that identity may access. A role can be one attribute among several.</p></>}
+ {step===1&&<AccessExample/>}
+ {step===2&&<><p className="vg-lead">Oracle Deep Data Security defines fine-grained authorization at the database layer.</p><ol className="vg-oracle-flow"><li><b>1 · Establish trusted context</b><p>Carry the end user's verified identity, roles and attributes into the database session, including pooled application connections.</p></li><li><b>2 · Define data grants</b><p>Specify permitted operations, recipients and row conditions with declarative policies.</p></li><li><b>3 · Protect data elements</b><p>Control access at row, column and cell levels. Configured masking can conceal unauthorized field values.</p></li><li><b>4 · Apply policy consistently</b><p>Queries, analytics and AI tools must operate within the relevant authorization context. Related-object grants can derive access from parent records.</p></li></ol><details className="vg-sql"><summary>Show illustrative policy logic</summary><p>Pseudocode for our teaching rule, not deployable Oracle data-grant syntax. Real policy requires trusted context, database configuration and appropriate grants.</p><pre tabIndex={0}><code>{`area_allowed = user.area == "Statewide"
+               OR user.area == record.area
+clearance_allowed = record.classification == "Standard"
+                    OR user.clearance == "Restricted"
+action_allowed = action == "Read"
+                 OR user.role == "Editor"
+
+allow = area_allowed AND clearance_allowed AND action_allowed
+contact_visible = allow AND user.clearance == "Restricted"`}</code></pre></details></>}
+ {step===3&&<><p className="vg-lead">Scope the records before counting, joining, searching or passing them to an AI tool.</p><div className="vg-explain"><h4>Where it appears in IncidentData</h4><p>The app sets its selected demo-user context on database connections. Secure views restrict records before page queries calculate totals or return linked data. The repository also contains a native Deep Sec policy baseline; native grants and context provisioning are a separate deployment step.</p></div><ol className="vg-app-flow"><li>Choose a demonstration persona to compare visible scope.</li><li>Check that summaries and record lists use the same scope.</li><li>Inspect the database query and its context.</li><li>Keep AI tools and related records within authorized access.</li></ol><p>The demo identity selector illustrates scope; production authentication must establish trusted identity. This presenter example changes only invented data controls and does not change app permissions.</p></>}
+
+ <aside className="vg-talk"><small>Talk track</small><p>{NOTES[step]}</p></aside>
+ {(step===0||step===2)&&<p className="vg-sources">Oracle references: <a href="https://docs.oracle.com/en/database/oracle/oracle-database/26/ddscg/what-is-oracle-deep-data-security.html" target="_blank" rel="noreferrer">Deep Data Security overview</a> · <a href="https://docs.oracle.com/en/database/oracle/oracle-database/26/ddscg/data-grants.html" target="_blank" rel="noreferrer">Data grants</a> · <a href="https://docs.oracle.com/en/database/oracle/oracle-database/26/ddscg/configure-security-context.html" target="_blank" rel="noreferrer">Trusted security context</a></p>}
+ </div><footer className="vg-footer"><span>Step {step+1} of {STEPS.length}</span><div><button type="button" disabled={step===0} onClick={()=>setStep(s=>s-1)}>Back</button><button type="button" className="vg-next" onClick={()=>step===STEPS.length-1?onClose():setStep(s=>s+1)}>{step===STEPS.length-1?'Finish':'Next →'}</button></div></footer>
+ </dialog>,document.body);
+}

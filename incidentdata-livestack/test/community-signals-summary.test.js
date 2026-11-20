@@ -1,0 +1,7 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const{SUMMARY_SQL,communitySignalSummary}=require('../backend/community-signals-summary');
+test('empty-post summary keeps the separately counted authorised incidents',async()=>{const row={POST_COUNT_72H:0,SOURCE_COUNT_72H:0,RISING_COUNT_72H:0,ELEVATED_COUNT_72H:0,LINKED_POST_COUNT:0,LINKED_INCIDENT_COUNT:0,AUTHORISED_INCIDENT_COUNT:21513};let calls=0;const result=await communitySignalSummary({execute:async sql=>{calls++;assert.equal(sql,SUMMARY_SQL);return{rows:[row]};}});assert.equal(calls,1);assert.deepEqual(result,row);});
+test('nonempty summaries are returned unchanged',async()=>{const row={POST_COUNT_72H:3,SOURCE_COUNT_72H:2,RISING_COUNT_72H:1,ELEVATED_COUNT_72H:1,LINKED_POST_COUNT:1,LINKED_INCIDENT_COUNT:2,AUTHORISED_INCIDENT_COUNT:17};assert.deepEqual(await communitySignalSummary({execute:async()=>({rows:[row]})}),row);});
+test('both counts use secure views and preserve reviewed-link and 72h filters',()=>{assert.match(SUMMARY_SQL,/FROM secure_social_media_posts_v/);assert.match(SUMMARY_SQL,/JOIN secure_crime_incidents_v/);assert.match(SUMMARY_SQL,/FROM secure_crime_incidents_v\) incidents/);assert.match(SUMMARY_SQL,/review_status='reviewed'/);assert.match(SUMMARY_SQL,/INTERVAL '72' HOUR/);assert.doesNotMatch(SUMMARY_SQL,/GROUP BY/);});
+test('an invalid empty result fails rather than sending an empty HTTP body',async()=>{await assert.rejects(communitySignalSummary({execute:async()=>({rows:[]})}),/Expected one scoped/);});

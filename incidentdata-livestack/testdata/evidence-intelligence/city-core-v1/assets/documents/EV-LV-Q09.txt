@@ -1,0 +1,5 @@
+Closing-time observation with a clock gap — Downtown
+
+Authored fictional teaching supplement for Las Vegas; linked incident SYN-LV-2026-00033, Downtown.
+A fictional venue observer describes a queue leaving the service lane after closing. Log LV-CORE-03 uses an estimated clock reading; there is no synchronised device timestamp. The observer records no identity or confirmed connection between groups.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

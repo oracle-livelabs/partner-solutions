@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "at": "2026-10-20T02:08:54.236Z",
+  "cities": [
+    {
+      "city": "Adelaide",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Perth",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Brisbane",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Amsterdam",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Brussels",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Dublin",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Boston",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Chicago",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    },
+    {
+      "city": "Las Vegas",
+      "sources": 24,
+      "stories": 6,
+      "textVectors": 24,
+      "imageVectors": 4,
+      "localIncidentAnchorsVerified": true
+    }
+  ],
+  "activeProfile": "PERTH_DATA_V2",
+  "liveCoreSources": 24,
+  "walkthroughs": 6,
+  "allLiveAssetChecksumsVerified": true,
+  "otherCityAssetsDenied": true,
+  "restrictedScopeVerified": true,
+  "imageRankingVerified": true,
+  "textRankingVerified": true,
+  "nativeSpatialVerified": true,
+  "nativeGraphVerified": true,
+  "ai": [
+    {
+      "mode": "select-ai",
+      "citations": [
+        "EV-PER-Q05",
+        "EV-PER-Q06",
+        "EV-PER-Q07",
+        "EV-PER-Q08"
+      ],
+      "toolEvents": 0
+    },
+    {
+      "mode": "agent",
+      "citations": [
+        "EV-PER-Q07",
+        "EV-PER-Q08"
+      ],
+      "toolEvents": 2
+    }
+  ]
+}

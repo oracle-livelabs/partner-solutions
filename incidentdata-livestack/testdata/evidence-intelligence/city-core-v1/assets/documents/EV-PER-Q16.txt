@@ -1,0 +1,5 @@
+Blank route template with a reused label — Bedford
+
+Authored fictional teaching supplement for Perth; linked incident SYN-PER-2026-00099, Bedford.
+A fictional route-form example prints PER-CORE-04 in its sample-label field. This is a template namespace, separate from the enquiry reference. The repeated characters cannot identify a delivery worker or connect unrelated visits.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

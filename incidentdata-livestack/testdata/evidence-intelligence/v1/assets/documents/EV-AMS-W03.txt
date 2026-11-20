@@ -1,0 +1,11 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-W03
+Site-store inventory tag beside an access-fitting note
+
+Document: site-store inventory tag
+Comparison marker: AMS-5-2
+Stock-form code: K-204
+Reported property: small tool case
+Access fitting: described as broken
+Stock-form code namespace: inventory forms, not dispatch forms.
+
+Authored fixture; not a recovered or original incident document.

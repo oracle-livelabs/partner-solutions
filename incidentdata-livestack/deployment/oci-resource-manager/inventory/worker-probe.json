@@ -1,0 +1,13 @@
+{
+  "image": "localhost/incidentdata-detective-worker:portable-candidate-20261021",
+  "imageId": "d2e70a6813c31d239f4caa4fb7ea9cea71446d1b2c3cf0d4d5b3d8989126241e",
+  "standaloneBuildPassed": true,
+  "networkDisabledDuringProbe": true,
+  "chromiumPassed": true,
+  "sharpPassed": true,
+  "kokoroSpeechPassed": true,
+  "ffmpegPassed": true,
+  "liveWorkerUnchanged": true,
+  "fullDestinationGenerationTested": false,
+  "workerLockBinaryPassed": true
+}

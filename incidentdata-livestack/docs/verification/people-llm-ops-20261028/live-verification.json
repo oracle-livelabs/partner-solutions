@@ -1,0 +1,60 @@
+[
+  {
+    "run": 1,
+    "batch": "DR-20261020-2d216fe7-eca8-4f55",
+    "status": 200,
+    "cards": 8,
+    "mentions": 14,
+    "llm": {
+      "provider": "OCI GenAI",
+      "model": "google.gemini-2.5-flash",
+      "region": "us-chicago-1",
+      "operationId": "cdr.people.mentioned"
+    },
+    "usage": {
+      "attempts": 1,
+      "retries": 0,
+      "elapsedMs": 31559,
+      "tokenStatus": "measured",
+      "inputTokens": 6246,
+      "outputTokens": 1663,
+      "reasoningTokens": 6417,
+      "totalTokens": 14326
+    },
+    "traceId": "d803d2f5-4ccf-4acf-b8d3-77a1d5f64053",
+    "aiOpsLlmRecords": 1,
+    "aiOpsOutcomeRecords": 1,
+    "providerTotalMatchesDashboard": true,
+    "workflowDoesNotDuplicateTokens": true,
+    "at": "2026-10-28T06:40:25.230Z"
+  },
+  {
+    "run": 2,
+    "batch": "DR-20261020-2d216fe7-eca8-4f55",
+    "status": 200,
+    "cards": 8,
+    "mentions": 14,
+    "llm": {
+      "provider": "OCI GenAI",
+      "model": "google.gemini-2.5-flash",
+      "region": "us-chicago-1",
+      "operationId": "cdr.people.mentioned"
+    },
+    "usage": {
+      "attempts": 1,
+      "retries": 0,
+      "elapsedMs": 32095,
+      "tokenStatus": "measured",
+      "inputTokens": 6246,
+      "outputTokens": 1663,
+      "reasoningTokens": 6417,
+      "totalTokens": 14326
+    },
+    "traceId": "67ca5341-f8ec-451b-aa9f-50714cc49291",
+    "aiOpsLlmRecords": 1,
+    "aiOpsOutcomeRecords": 1,
+    "providerTotalMatchesDashboard": true,
+    "workflowDoesNotDuplicateTokens": true,
+    "at": "2026-10-28T06:40:57.540Z"
+  }
+]

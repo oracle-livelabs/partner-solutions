@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-26T08:59:50Z",
+  "checks": {
+    "application-tests": {
+      "passed": true,
+      "logSha256": "beccfd7fe9a9829c40a1a8383d71979ddc7afb088f762df43b6184809cbdafe1"
+    },
+    "frontend-build": {
+      "passed": true,
+      "logSha256": "dad68e7c249dfff876a84e9b02b90e097e7b6d726a46cb4138723ff7052dee98"
+    },
+    "bootstrap-tests": {
+      "passed": true,
+      "logSha256": "67beda2f81cb5690cf59f121f63624bf3b99500ef49dafbbd2f3cd7e3e5ab393"
+    },
+    "terraform-fmt": {
+      "passed": true,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "terraform-validate": {
+      "passed": true,
+      "logSha256": "f7997225125835fdd14060ac776d273f394b874f9a481b9e2122c83dc8adc5c1"
+    },
+    "app-image": {
+      "passed": true,
+      "logSha256": "26eea712d1cbcaaad0c5e285256f6588e4e64fc50f3ed2b6e6b7ed967554bd3c"
+    },
+    "worker-image": {
+      "passed": true,
+      "logSha256": "ec0d0134f2264bcb62a0dcb2f37a4ad16543fd1dd05a872435ab3c87605f7f43"
+    },
+    "worker-offline": {
+      "passed": true,
+      "logSha256": "a5ada7a5cd3a897b785e987702cbdba499ae6482165b654079d3b3e85eed5955"
+    },
+    "worker-lock-binary": {
+      "passed": true,
+      "logSha256": "c5907e1daff2ced22d0755f64be02e56613af00fb3e8629c11d1e526a65923b3"
+    }
+  },
+  "cloudResourcesCreated": false,
+  "terraformApplyRun": false,
+  "destinationTested": false
+}

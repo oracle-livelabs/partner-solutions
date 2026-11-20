@@ -1,0 +1,3 @@
+FROM localhost/local/adelaide-crime-intelligence:poi-dual-ui-20260913
+COPY backend/data-room-structured-ai.js backend/data-room-ai.js backend/data-room-learning-ai.js backend/data-room-descriptions.js backend/data-room-learning.js /app/backend/
+COPY dist/ /app/frontend/dist/

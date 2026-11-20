@@ -1,0 +1,5 @@
+Unrelated roster code comparison — Gare Josaphat
+
+Authored fictional teaching supplement for Brussels; linked incident SYN-BRU-2026-08913, Gare Josaphat.
+A blank fictional volunteer roster also carries BRU-CORE-03, in its template-edition field. The namespace is separate from the event-service reference. Code similarity alone cannot link a roster user to the precinct observation.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

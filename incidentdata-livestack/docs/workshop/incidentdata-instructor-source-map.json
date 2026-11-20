@@ -1,0 +1,24 @@
+{
+  "sourceHost": "fu_edge",
+  "projectRoot": "/home/opc/livestack/policeAdelaide",
+  "deploymentImage": "localhost/incidentdata-livestack:branding-20261010-r3",
+  "localPort": 18706,
+  "remotePort": 8706,
+  "adb": "fu40",
+  "schema": "CRIME_DATA",
+  "apexWorkspace": "CRIME_DATA",
+  "apexApp": 361,
+  "apexSource": "/home/opc/scratch/APEX_Apps/dickv3/DickV3-App361.apexlang.zip",
+  "guides": [
+    "docs/deep-data-security.md",
+    "docs/incident-semantic-search.md",
+    "docs/evidence-intelligence-walkthrough.md",
+    "docs/crime-data-room-workspace.md"
+  ],
+  "ddsKits": {
+    "Basic": "demos/DDS_Basic_CrimeData_ADB",
+    "Advanced": "demos/DDS_Advanced_CrimeData_ADB",
+    "CTG": "demos/DDS_CTG_CrimeData_ADB"
+  },
+  "validation": "Screen labels and core navigation reviewed; narrative vectors, APEX live walkthrough and DDS execution still require release validation."
+}

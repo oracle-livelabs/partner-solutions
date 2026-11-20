@@ -1,0 +1,5 @@
+Authorisation note awaiting settlement — Southwest urban connector (Spring Valley)
+
+Authored fictional teaching supplement for Las Vegas; linked incident SYN-LV-2026-00495, Southwest urban connector (Spring Valley).
+A fictional payment-terminal note repeats LV-CORE-02 in the reservation-reference field. One entry is marked pending authorisation; the settlement-reference field is empty. A repeated suffix is a comparison lead, not proof of a duplicate charge.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

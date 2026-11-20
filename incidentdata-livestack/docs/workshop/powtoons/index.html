@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IncidentData · animated explainers</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; color: #253036; background: #f7f5f0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    a { color: #9d3424; }
+    .wrap { max-width: 1120px; margin: auto; padding: 24px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 8px 0 24px; border-bottom: 1px solid #d9d4cb; }
+    .brand { font-size: 15px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #ad3d2b; }
+    .brand span { color: #253036; font-weight: 500; letter-spacing: 0; text-transform: none; }
+    .home { font-size: 14px; }
+    .eyebrow { color: #9d3424; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; margin-top: 28px; }
+    h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.15; margin: 10px 0 12px; }
+    .intro { max-width: 760px; font-size: 17px; line-height: 1.5; margin: 0 0 22px; }
+    .player { overflow: hidden; background: #fff; border: 1px solid #ded8cc; border-radius: 18px; box-shadow: 0 14px 35px #312b2015; }
+    .stage { position: relative; min-height: 450px; padding: 32px; background: radial-gradient(circle at 85% 10%, #fce7dc 0, transparent 32%), linear-gradient(135deg,#f6f1e8,#e9f2f1); overflow: hidden; }
+    .scene-name { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 800; color: #a43d2a; }
+    .scene-title { margin: 9px 0 24px; font-size: clamp(23px, 3vw, 34px); line-height: 1.17; max-width: 670px; }
+    .visual { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; min-height: 260px; }
+    .card { display: flex; flex-direction: column; justify-content: center; min-width: 190px; max-width: 255px; min-height: 126px; padding: 21px; border: 2px solid #d8cec0; border-radius: 18px; background: #fffdf9; box-shadow: 0 8px 0 #d8cfc1; animation: pop .42s both; }
+    .card:nth-child(2) { animation-delay: .15s; }.card:nth-child(3) { animation-delay: .3s; }
+    .card.accent { background: #c74634; color: white; border-color: #a53222; box-shadow: 0 8px 0 #8d2e21; }
+    .card.teal { background: #d9eeee; border-color: #74a6a2; box-shadow: 0 8px 0 #5d8b87; }
+    .card.gold { background: #f7e8bb; border-color: #d2ac54; box-shadow: 0 8px 0 #ae8d40; }
+    .card small { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; opacity: .78; margin-bottom: 9px; }
+    .card strong { font-size: 20px; line-height: 1.18; }.card em { font-size: 14px; font-style: normal; line-height: 1.35; margin-top: 8px; }
+    .arrow { color: #a43d2a; font-size: 40px; font-weight: 800; animation: slide .45s .25s both; }
+    .caption { display: flex; gap: 15px; align-items: center; min-height: 100px; padding: 19px 27px; background: #243b44; color: white; }
+    .caption .number { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #f7e8bb; color: #253036; font-weight: 800; }
+    .caption p { font-size: 18px; line-height: 1.4; margin: 0; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 18px 25px; background: #fff; }
+    button { border: 1px solid #b8aea0; border-radius: 9px; background: white; color: #253036; padding: 11px 17px; font-size: 15px; font-weight: 700; cursor: pointer; }
+    button:hover,button:focus-visible { border-color: #ad3d2b; outline: 2px solid transparent; box-shadow: 0 0 0 3px #efc1b9; }
+    button.primary { background: #ad3d2b; border-color: #ad3d2b; color: white; }
+    .count { margin-left: auto; font-size: 14px; color: #625e58; }
+    .progress { height: 6px; background: #e4dfd7; }.progress div { height: 100%; background: #c74634; transition: width .3s; }
+    .note { max-width: 850px; margin: 20px 0; padding: 16px 20px; border-left: 4px solid #c74634; background: #fff; line-height: 1.5; }
+    .library { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }.library a { display: inline-block; background: white; border: 1px solid #ded8cc; border-radius: 9px; padding: 10px 14px; text-decoration: none; font-weight: 700; }.library a[aria-current] { background: #f8e1da; }
+    @keyframes pop { from { transform: translateY(28px) scale(.94); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+    @keyframes slide { from { transform: translateX(-16px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @media(max-width:650px) { .stage { padding: 22px; min-height: 510px; }.card { min-width: 135px; max-width: 190px; min-height: 105px; padding: 14px; }.card strong { font-size: 17px; }.arrow { font-size: 26px; }.caption p { font-size: 16px; }.count { width: 100%; margin: 5px 0 0; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><div class="brand">IncidentData <span>· Redwood inspired explainers</span></div><a class="home" id="return-link" href="../workshops/sandbox/?lab=scene-1-data-foundation">← Return to workshop scene</a></header>
+    <main>
+      <div class="eyebrow">Animated learning break · about 45 seconds</div>
+      <h1 id="title"></h1>
+      <p class="intro" id="intro"></p>
+      <section class="player" aria-label="Animated explainer">
+        <div class="stage"><div class="scene-name" id="scene-name"></div><h2 class="scene-title" id="scene-title"></h2><div class="visual" id="visual" aria-hidden="true"></div></div>
+        <div class="caption" aria-live="polite"><span class="number" id="number"></span><p id="caption"></p></div>
+        <div class="progress" aria-hidden="true"><div id="progress"></div></div>
+        <div class="controls"><button class="primary" id="play" type="button">Pause</button><button id="back" type="button">← Previous</button><button id="next" type="button">Next →</button><button id="replay" type="button">Replay</button><span class="count" id="count"></span></div>
+      </section>
+      <p class="note" id="note"></p>
+      <nav class="library" aria-label="More explainers" id="library"></nav>
+    </main>
+  </div>
+  <script>
+  const stories = {
+    duality: { title:'One incident, two views', intro:'A quick visual pause before the JSON Relational Duality Views walkthrough.', note:'Teaching illustration: the DEMO-101 example is local to the presenter panel. It does not update the Adelaide incident database.', steps:[
+      ['Start with linked rows','The incident and its reports are stored as related records.',[['Incident','DEMO-101','Status: Open','accent'],['Report','First statement','Linked to DEMO-101','']]],
+      ['Present one document','A defined duality view can present the selected rows as nested JSON.',[['Rows','INCIDENTS + REPORTS','',''],['Duality view','One JSON document','With a reports array','teal']]],
+      ['Change through a defined view','In the app simulation, changing status to Under review updates both displays.',[['Table','Under review','','gold'],['JSON','Under review','','teal']]],
+      ['Read the rule','The view definition controls the mapping and allowed updates. A JSON response by itself proves nothing about duality views.',[['Key idea','One governed mapping','Check its definition','accent']]]]},
+    vector: { title:'Similarity is a lead', intro:'Use this before the Vector Search tile or a narrative and photo comparison.', note:'Teaching illustration: the Dog and Car examples are invented. A vector score is not a probability, a face identification or a finding about a real incident.', steps:[
+      ['Turn content into vectors','An embedding model represents content as lists of numbers.',[['Text','Dog','',''],['Model','Embedding','','gold'],['Vector','Number list','','teal']]],
+      ['Compare distance','Nearby vectors can indicate related meaning or wording.',[['Query','Dog','','accent'],['Near','Greyhound · Poodle','','teal'],['Far','Car','','']]],
+      ['Change the query','Select Car in the app walkthrough. The ranking changes with the question.',[['Query','Car','','accent'],['Ranking','Reordered results','','gold']]],
+      ['Return to the source','Bio wording and supplied photos can rank candidates when prepared vectors exist. Open the underlying source before interpreting a match.',[['Vector result','Candidate only','','gold'],['Source','Narrative or photo','','teal']]]]},
+    security: { title:'Scope before search', intro:'Use this before the Deep Sec · ABAC walkthrough to explain why two users can see different totals.', note:'Teaching illustration: the animated records and the app tile are simulations. They do not change the selected demo persona or database permissions.', steps:[
+      ['Who is asking?','Access decisions use the requester, action and record attributes.',[['Requester','North · Reader','',''],['Action','Read','','gold'],['Record','Area + clearance','','teal']]],
+      ['Narrow area','The North example allows one matching standard record.',[['North scope','1 allowed','','teal'],['Restricted','Still blocked','','accent']]],
+      ['Broaden area','Statewide scope permits another area match, but it does not bypass clearance.',[['Statewide','2 allowed','','teal'],['Restricted','Still blocked','','accent']]],
+      ['Apply scope early','Counts, joins, searches and AI answers must use authorised records.',[['Scope','Before counting','','gold'],['Answer','Authorised results','','teal']]]]},
+    signals: { title:'A graph is a trail to inspect', intro:'A short pause before exploring payment-document result relationships.', note:'Conceptual animation: read the actual Adelaide counts in the application. Public posts are unverified context; graph links do not establish causation or responsibility.', steps:[
+      ['Start with a watch','A watch can bring authorised incidents and contextual posts into one review.',[['Watch','Payment-document','','accent'],['Incidents','Authorised','','teal'],['Posts','Unverified context','','gold']]],
+      ['Read each line type','Membership, reviewed comparison and semantic similarity describe different reasons to connect nodes.',[['Solid','Recorded membership','',''],['Dashed','Reviewed comparison','','gold'],['Dotted','Semantic similarity','','teal']]],
+      ['Hide public posts','The display changes, while the underlying source records stay in place.',[['All shown','Posts + incidents','','gold'],['Posts hidden','Incidents in focus','','teal']]],
+      ['Open an incident','Select an authorised incident and read its original report. A graph is a route to review.',[['Node','Selected incident','','accent'],['Source','Original report','','teal']]]]},
+    ask: { title:'Two ways to ask', intro:'Compare the lower guided SQL handler with the upper configured Select AI path.', note:'Conceptual comparison. Show an actual SQL template or completed native AI response before making a claim about this session.', steps:[
+      ['Lower guided route','A question maps to reviewed, read-only SQL over scoped views.',[['Question','Guided prompt','','accent'],['Handler','Reviewed SQL','','gold'],['Result','Authorised rows','','teal']]],
+      ['Inspect the query','Show SQL exposes the selected template and lets the presenter discuss its conditions.',[['Question','What was asked?','',''],['SQL','What ran?','','gold'],['Scope','Which records?','','teal']]],
+      ['Upper Select AI route','A configured model may help form or explain a database answer.',[['Question','Natural language','','accent'],['Select AI','Configured model','','gold'],['Answer','Review output','','teal']]],
+      ['Follow the trace','Only a completed native AI call belongs in the AI Opps usage discussion.',[['Guided SQL','No LLM assumed','',''],['Native AI','Check AI Opps','','teal']]]]},
+    agents: { title:'Two ways to run an agent', intro:'Separate a controlled lower handler workflow from a configured native agent team.', note:'Conceptual comparison. Agent outputs are drafts to inspect against sources; verify the deployed handler and native framework before describing code-level behaviour.', steps:[
+      ['Lower guided route','The selected specialist uses approved tools and scoped database work.',[['Specialist','Signals · Requests · Logistics','','accent'],['Handler','Controlled workflow','','gold'],['Result','Review action','','teal']]],
+      ['Read its audit','A saved action records what was asked and what the guided workflow returned.',[['Prompt','Question','',''],['Tool','Reviewed path','','gold'],['Audit','Saved action','','teal']]],
+      ['Upper native route','A configured agent framework may coordinate tasks and permitted tools with an LLM.',[['Agent team','Tasks','','accent'],['Tools','Permitted calls','','gold'],['Output','Review draft','','teal']]],
+      ['Check AI activity','Look in AI Opps for a completed native call and its available usage measures.',[['Native call','If completed','',''],['AI Opps','Visible trace','','teal']]]]},
+    'data-room': { title:'From ZIP to review pack', intro:'Follow one synthetic batch through the seven Data Room stages.', note:'Conceptual sequence. Start with one supported inner test ZIP from the sample bundle; counts and completed stages depend on the selected batch.', steps:[
+      ['Preserve the source','Load the ZIP, unzip accepted files and ingest a typed inventory.',[['1 Load','Original ZIP','','accent'],['2 Unzip','Accepted files','','gold'],['3 Ingest','Stored items','','teal']]],
+      ['Describe and learn','AI descriptions remain drafts; the Batch Brief summarises saved descriptions.',[['4 Describe','Source-linked drafts','','accent'],['5 Learn','Batch Brief','','teal']]],
+      ['Review connections','Keep authored links, vector comparisons and agent interpretations distinct.',[['6 Connections','Source references','','accent'],['Similarity','Candidate only','','gold']]],
+      ['Save a product','A versioned review pack can contain the manifest, brief, graph and review outputs.',[['7 Data products','Versioned pack','','teal'],['Return','Trace to source','','accent']]]]}
+  };
+  const requested = new URLSearchParams(location.search).get('story');
+  const key = Object.hasOwn(stories, requested) ? requested : 'duality';
+  const story = stories[key];
+  let position = 0, playing = true, timer;
+  const $ = id => document.getElementById(id);
+  function card(parts) { const el=document.createElement('div'); el.className='card '+(parts[3]||''); const small=document.createElement('small'), strong=document.createElement('strong'), em=document.createElement('em'); small.textContent=parts[0]; strong.textContent=parts[1]; em.textContent=parts[2]; el.append(small,strong,em); return el; }
+  function render() { const step=story.steps[position]; $('scene-name').textContent=`${position+1} / ${story.steps.length}`; $('scene-title').textContent=step[0]; $('caption').textContent=step[1]; $('number').textContent=position+1; $('count').textContent=`Step ${position+1} of ${story.steps.length}`; $('progress').style.width=((position+1)/story.steps.length*100)+'%'; $('visual').replaceChildren(); step[2].forEach((item,i)=>{if(i){const arrow=document.createElement('span');arrow.className='arrow';arrow.textContent='→';$('visual').append(arrow)}$('visual').append(card(item))}); $('back').disabled=position===0; $('next').disabled=position===story.steps.length-1; }
+  function setPlaying(value){ playing=value; $('play').textContent=playing?'Pause':'Play'; clearTimeout(timer); if(playing && position<story.steps.length-1)timer=setTimeout(()=>{position++;render();setPlaying(true)},12000); if(playing && position===story.steps.length-1){playing=false;$('play').textContent='Play';} }
+  $('title').textContent=story.title;$('intro').textContent=story.intro;$('note').textContent=story.note;document.title=story.title+' · IncidentData';
+  const returnScene = {signals:'scene-3-incident-pattern-signals',ask:'scene-10-ask-incidentdata',agents:'scene-11-ai-agent-console','data-room':'scene-12-data-room'};
+  $('return-link').href='../workshops/sandbox/?lab='+(returnScene[key]||'scene-1-data-foundation');
+  for(const [id,item] of Object.entries(stories)){const a=document.createElement('a');a.href='?story='+id;a.textContent=item.title;if(id===key)a.setAttribute('aria-current','page');$('library').append(a)}
+  $('play').addEventListener('click',()=>{if(position===story.steps.length-1&&!playing)position=0;render();setPlaying(!playing)});
+  $('back').addEventListener('click',()=>{position=Math.max(0,position-1);render();setPlaying(false)});
+  $('next').addEventListener('click',()=>{position=Math.min(story.steps.length-1,position+1);render();setPlaying(false)});
+  $('replay').addEventListener('click',()=>{position=0;render();setPlaying(true)});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlaying(false)});
+  render();setPlaying(true);
+  </script>
+</body>
+</html>

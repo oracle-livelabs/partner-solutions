@@ -1,0 +1,64 @@
+{
+  "mode": "--apply",
+  "committed": true,
+  "distinctPeople": 19,
+  "personCityRecords": 143,
+  "additionalIdentifiers": 812,
+  "added": 812,
+  "existingAssertionsPreserved": 63,
+  "totalAssertions": 875,
+  "identifiersPerPerson": {
+    "minimum": 5,
+    "maximum": 7
+  },
+  "sharedPeopleConsistent": true,
+  "activeProfileUnchanged": true,
+  "liveAndSavedPoiRegistersUnchanged": true,
+  "distribution": [
+    {
+      "profileCode": "ADELAIDE_DATA_V2",
+      "people": 17,
+      "additionalIdentifiers": 96
+    },
+    {
+      "profileCode": "PERTH_DATA_V2",
+      "people": 17,
+      "additionalIdentifiers": 96
+    },
+    {
+      "profileCode": "BRISBANE_DATA_V2",
+      "people": 17,
+      "additionalIdentifiers": 96
+    },
+    {
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "people": 15,
+      "additionalIdentifiers": 86
+    },
+    {
+      "profileCode": "BRUSSELS_DATA_V1",
+      "people": 13,
+      "additionalIdentifiers": 75
+    },
+    {
+      "profileCode": "DUBLIN_CITY_DATA_V1",
+      "people": 13,
+      "additionalIdentifiers": 75
+    },
+    {
+      "profileCode": "BOSTON_DATA_V2",
+      "people": 17,
+      "additionalIdentifiers": 96
+    },
+    {
+      "profileCode": "CHICAGO_DATA_V2",
+      "people": 17,
+      "additionalIdentifiers": 96
+    },
+    {
+      "profileCode": "LAS_VEGAS_DATA_V2",
+      "people": 17,
+      "additionalIdentifiers": 96
+    }
+  ]
+}

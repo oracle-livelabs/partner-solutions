@@ -1,0 +1,622 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "people": [
+        {
+          "personRef": "POI-2026-0317A",
+          "displayName": "Profile Alder"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "displayName": "Profile Meridian"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "displayName": "Ellis Ward"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "displayName": "Rowan Hale"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "PERTH_DATA_V2",
+      "people": [
+        {
+          "personRef": "POI-2026-0317A",
+          "displayName": "Profile Alder"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "displayName": "Profile Meridian"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "displayName": "Ellis Ward"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "displayName": "Rowan Hale"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "BRISBANE_DATA_V2",
+      "people": [
+        {
+          "personRef": "POI-2026-0317A",
+          "displayName": "Profile Alder"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "displayName": "Profile Meridian"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "displayName": "Ellis Ward"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "displayName": "Rowan Hale"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "people": [
+        {
+          "personRef": "POI-AMS-CARE-W01",
+          "displayName": "Lena Harper"
+        },
+        {
+          "personRef": "POI-AMS-CARE-X01",
+          "displayName": "Morgan Reed"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "people": [
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "people": [
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "BOSTON_DATA_V2",
+      "people": [
+        {
+          "personRef": "POI-2026-0317A",
+          "displayName": "Profile Alder"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "displayName": "Profile Meridian"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "displayName": "Ellis Ward"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "displayName": "Rowan Hale"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "CHICAGO_DATA_V2",
+      "people": [
+        {
+          "personRef": "POI-2026-0317A",
+          "displayName": "Profile Alder"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "displayName": "Profile Meridian"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "displayName": "Ellis Ward"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "displayName": "Rowan Hale"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    },
+    {
+      "code": "LAS_VEGAS_DATA_V2",
+      "people": [
+        {
+          "personRef": "POI-2026-0317A",
+          "displayName": "Profile Alder"
+        },
+        {
+          "personRef": "POI-2026-0317B",
+          "displayName": "Profile Meridian"
+        },
+        {
+          "personRef": "POI-ADL-CARE-W01",
+          "displayName": "Ellis Ward"
+        },
+        {
+          "personRef": "POI-ADL-CARE-X01",
+          "displayName": "Rowan Hale"
+        },
+        {
+          "personRef": "POI-FNET-DARNELL",
+          "displayName": "Darnell Price"
+        },
+        {
+          "personRef": "POI-FNET-ELIAS",
+          "displayName": "Elias Grant"
+        },
+        {
+          "personRef": "POI-FNET-MARA",
+          "displayName": "Mara Vega"
+        },
+        {
+          "personRef": "POI-FNET-NOAH",
+          "displayName": "Noah Kim"
+        },
+        {
+          "personRef": "POI-FNET-TESSA",
+          "displayName": "Tessa Rowe"
+        },
+        {
+          "personRef": "POI-NBNW-CLARA",
+          "displayName": "Clara Thornhill"
+        },
+        {
+          "personRef": "POI-NBNW-EVE",
+          "displayName": "Eve Kendall"
+        },
+        {
+          "personRef": "POI-NBNW-GEORGE",
+          "displayName": "George Kaplan"
+        },
+        {
+          "personRef": "POI-NBNW-PHILIP",
+          "displayName": "Philip Vandamm"
+        },
+        {
+          "personRef": "POI-V2-GEORGE",
+          "displayName": "George Horner"
+        },
+        {
+          "personRef": "POI-V2-JULIAN",
+          "displayName": "Julian Cross"
+        },
+        {
+          "personRef": "POI-V2-TONY",
+          "displayName": "Tony Kapoor"
+        },
+        {
+          "personRef": "POI-V2-VIVIENNE",
+          "displayName": "Vivienne Hartley"
+        }
+      ]
+    }
+  ]
+}

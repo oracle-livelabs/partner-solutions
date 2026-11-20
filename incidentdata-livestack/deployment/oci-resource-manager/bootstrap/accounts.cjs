@@ -1,0 +1,3 @@
+'use strict';
+const fs=require('node:fs/promises'),path=require('node:path');
+(async()=>{const [configFile,appRoot,output]=process.argv.slice(2),config=JSON.parse(await fs.readFile(configFile,'utf8'));const {passwordRecord,validateAccounts}=require(path.join(appRoot,'backend/public-demo-auth.js'));const accounts=[];for(const p of config.participants)accounts.push({username:p.username,persona:p.persona,operator:!!p.operator,...await passwordRecord(p.password)});const document={version:1,accounts};validateAccounts(document);await fs.writeFile(output,JSON.stringify(document)+'\n',{mode:0o600});})().catch(()=>{console.error('Participant account preparation failed');process.exitCode=1;});

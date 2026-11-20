@@ -1,0 +1,5 @@
+Planned collection window beside the precinct — Clontarf East area
+
+Authored fictional teaching supplement for Dublin; linked incident SYN-DUB-2026-05321, Clontarf East area.
+A fictional venue administration sheet repeats DUB-CORE-03 as its event-service reference and proposes a later equipment collection. The driver and attendance boxes are blank. A scheduled collection does not establish an actual vehicle movement.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

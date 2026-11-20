@@ -1,0 +1,22 @@
+{
+  "deployed": true,
+  "image": "localhost/crimedata-detective-worker:record-label-recovery-20261020-r2",
+  "previousContainer": "detective-room-worker-before-analysis-recovery-20261020",
+  "runtimeSettingsUnchanged": true,
+  "change": "Wrap long source record labels within narrow viewports",
+  "validation": {
+    "widths": [
+      1440,
+      1056,
+      850,
+      560,
+      390,
+      320
+    ],
+    "records": 67,
+    "messages": 96,
+    "files": 18,
+    "videoSeconds": 220.708333
+  },
+  "at": "2026-10-20T04:28:56.433Z"
+}
