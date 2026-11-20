@@ -46,7 +46,7 @@ BEGIN
     FOR i IN 1..13
         LOOP
             objFileName  := 
-               'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data-lake/o/' || fnames(i);
+               'https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-lake/' || fnames(i);
             DBMS_CLOUD.GET_OBJECT(
                 credential_name => NULL
                ,object_uri => objFileName
