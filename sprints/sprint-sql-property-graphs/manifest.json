@@ -1,0 +1,12 @@
+{
+  "workshoptitle": "LiveLabs Sprints",
+  "help": "livelabs-help-sprints_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "How do I query relationships as a graph with SQL Property Graphs in Oracle Database 26ai?",
+      "description": "Use SQL Property Graphs to query paths, shared neighbors, recruitment chains, and aggregates.",
+      "filename": "sprint-sql-property-graphs.md"
+    }
+  ],
+  "task_type": "Sections"
+}

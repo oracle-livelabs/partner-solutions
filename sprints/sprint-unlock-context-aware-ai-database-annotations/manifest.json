@@ -1,0 +1,12 @@
+{
+  "workshoptitle": "LiveLabs Sprints",
+  "help": "livelabs-help-sprints_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "How do I unlock context-aware AI with database annotations in Oracle Database 26ai?",
+      "description": "Add structured schema annotations for data dictionary discovery and AI context.",
+      "filename": "sprint-unlock-context-aware-ai-database-annotations.md"
+    }
+  ],
+  "task_type": "Sections"
+}

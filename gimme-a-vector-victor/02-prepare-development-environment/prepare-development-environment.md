@@ -30,7 +30,7 @@ This lab assumes you have completed all previous labs successfully.
 
     ```
     <copy>
-    https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
     </copy>
     ```
 
@@ -44,7 +44,7 @@ This lab assumes you have completed all previous labs successfully.
 
     ```
     <copy>
-    wget --no-check-certificate https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
+    wget --no-check-certificate https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/partner-solutions%2Fgimme-a-vector%2Fgimme-a-vector.zip
     </copy>
    ```
 
@@ -92,41 +92,41 @@ We will be using *Oracle Application Express* (APEX) to construct and execute ou
 
 1. Still connected as the **admin** user, open and execute the script named **create-apex-environment.sql** to create a new APEX workspace within your ADB environment.
 
-   ![Create APEX workspace](./images/create-apex-environment.png)
+    ![Create APEX workspace](./images/create-apex-environment.png)
 
 2. Once the script completes, we'll open the APEX application development environment. Hover your mouse over and then click the *Database Actions* logo.
 
-   ![Switch over to APEX](./images/sdw-switchover-to-apex.png)
+    ![Switch over to APEX](./images/sdw-switchover-to-apex.png)
 
 3. If you don't see APEX as a pinned option or that it's been recently visited, just click on the *Development* option.
 
 
-   ![Select Development option](./images/sdw-select-development.png)
+    ![Select Development option](./images/sdw-select-development.png)
 
 4. The Autonomous Database development options menu opens. Select *APEX* from this menu.
 
 
-   ![Select APEX](./images/sdw-select-apex.png)
+    ![Select APEX](./images/sdw-select-apex.png)
 
 5. Sign into APEX as shown: Specify the **internal** APEX workspace and the **admin** user account; the password is identical to whatever you set for your ADB's **admin** account.
 
 
-   ![Connect to APEX as ADMIN](./images/sdw-sign-into-apex-as-admin.png)
+    ![Connect to APEX as ADMIN](./images/sdw-sign-into-apex-as-admin.png)
 
 6. The APEX *administration services* menu opens. Select the *Manage Workspaces* option.
 
 
-   ![View APEX administration main menu](./images/sdw-internal-admin-services.png)
+    ![View APEX administration main menu](./images/sdw-internal-admin-services.png)
 
 7. Under *Workspace Reports*, choose the *Existing Workspaces* option.
 
 
-   ![Select existing APEX workspaces](./images/sdw-select-existing-workspaces.png)
+    ![Select existing APEX workspaces](./images/sdw-select-existing-workspaces.png)
 
 8. Verify that the newly-created **RAG** APEX workspace is present.
 
 
-   ![Review APEX workspaces](./images/sdw-review-apex-workspaces.png)
+    ![Review APEX workspaces](./images/sdw-review-apex-workspaces.png)
 
 
 9. Your APEX environment setup is now complete. Close the browser tab to disconnect from APEX for now.
@@ -137,12 +137,12 @@ The files we need to create LLMs and construct a corpus of documents must reside
 
 1. Still connected as the **admin** user, open and execute the script named **copy-files-from-object-storage.sql** to initiate the transfer process. It should complete in less than two minutes.
 
-   ![Copy files from object storage](./images/copy-files-from-object-storage.png)
+    ![Copy files from object storage](./images/copy-files-from-object-storage.png)
 
 
 2. Let's verify what was copied via **DBMS_CLOUD.LIST_OBJECTS** function. First, open a new SQL worksheet by clicking on the *New File* button just to the right of *[Worksheet]* in the top left hand corner of your SQL Developer Web session and then choosing the *Worksheet* option: 
 
-   ![Open new SQL Worksheet](./images/sdw-open-new-worksheet.png)
+    ![Open new SQL Worksheet](./images/sdw-open-new-worksheet.png)
 
     Then copy the commands below into that new worksheet and execute them by clicking on the  commands and review the results displayed.
 
@@ -152,7 +152,7 @@ The files we need to create LLMs and construct a corpus of documents must reside
     </copy>
     ```
 
-   ![Confirm file transfer](./images/confirm-file-transfer.png)
+    ![Confirm file transfer](./images/confirm-file-transfer.png)
 
     You should observe that 11 files with a **.pdf** extension and two files with a **.onnx** extension now exist in the **DATA\_PUMP\_DIR** directory. We will use these files in the next two lessons.
 
