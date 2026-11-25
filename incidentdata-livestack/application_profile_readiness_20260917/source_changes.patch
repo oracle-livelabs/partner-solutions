@@ -1,0 +1,771 @@
+--- a/backend/server.js
++++ b/backend/server.js
+@@ -5,6 +5,8 @@
+ const morgan = require('morgan');
+ const path = require('path');
+ const oracledb = require('oracledb');
++const {createProfileLibrary} = require('./profile-library');
++const {presentationCopy} = require('./presentation-copy');
+ const {createAgentHistory} = require('./agent-history');
+ const ops = require('./ai-ops-telemetry');
+ const {createAiOps,persist:persistAiOps} = require('./ai-ops-store');
+@@ -61,12 +63,16 @@
+ const restorePerthDataSql = restoreProfileDataSql('perth_bak');
+ function setupAdmin(req,res) { if(req.demoUser!=='statewide_admin') { res.status(403).json({error:'CrimeData Setup changes are restricted to statewide_admin.'}); return false; } return true; }
+ const profileConfig = { ADELAIDE_DATA:{prefix:'basic_bak',name:'Adelaide Data Set V1 - Baseline',city:'Adelaide Metropolitan Area'}, ADELAIDE_DATA_V2:{prefix:'adelaide_v2_bak',name:'Adelaide Data Set V2 - Scenario Enrichment',city:'Adelaide Metropolitan Area'}, PERTH_DATA:{prefix:'perth_bak',name:'Perth Data Set Profile',city:'Perth Metropolitan Area'}, BRISBANE_DATA:{prefix:'brisbane_bak',name:'Brisbane Data Set Profile',city:'Brisbane Metropolitan Area'} };
+-function requestedProfile(code) { return profileConfig[code] ? code : 'ADELAIDE_DATA'; }
+-async function profileStatus(demoUser, code='ADELAIDE_DATA') { const profileCode=requestedProfile(code); return db(demoUser,async c=>{const [profile,profiles,live,backup,active]=await Promise.all([c.execute(`SELECT profile_code,profile_name,city_label,profile_status,profile_notes,captured_at AS last_backup_at FROM z_base_dataset_profiles WHERE profile_code=:profileCode`,{profileCode}),c.execute(`SELECT p.profile_code,p.profile_name,p.city_label,p.profile_status,p.profile_notes,p.captured_at AS last_backup_at,COUNT(i.incident_id) AS incident_count,COUNT(DISTINCT NULLIF(TRIM(i.suburb),'')) AS suburb_count FROM z_base_dataset_profiles p LEFT JOIN z_base_crime_incidents i ON i.dataset_profile_id=p.dataset_profile_id WHERE p.profile_code IN ('ADELAIDE_DATA','ADELAIDE_DATA_V2','PERTH_DATA','BRISBANE_DATA') GROUP BY p.profile_code,p.profile_name,p.city_label,p.profile_status,p.profile_notes,p.captured_at ORDER BY p.profile_code`),c.execute(`SELECT (SELECT COUNT(*) FROM crime_incidents) incidents,(SELECT COUNT(*) FROM incident_reports) reports,(SELECT COUNT(*) FROM persons_of_interest) persons,(SELECT COUNT(*) FROM case_files) cases FROM dual`),c.execute(`SELECT (SELECT COUNT(*) FROM z_base_crime_incidents b JOIN z_base_dataset_profiles p ON p.dataset_profile_id=b.dataset_profile_id WHERE p.profile_code=:profileCode) incidents,(SELECT COUNT(*) FROM z_base_incident_reports b JOIN z_base_dataset_profiles p ON p.dataset_profile_id=b.dataset_profile_id WHERE p.profile_code=:profileCode) reports,(SELECT COUNT(*) FROM z_base_persons b JOIN z_base_dataset_profiles p ON p.dataset_profile_id=b.dataset_profile_id WHERE p.profile_code=:profileCode) persons,(SELECT COUNT(*) FROM z_base_case_files b JOIN z_base_dataset_profiles p ON p.dataset_profile_id=b.dataset_profile_id WHERE p.profile_code=:profileCode) cases FROM dual`,{profileCode}),c.execute(`SELECT p.profile_code FROM z_base_active_dataset_profile a JOIN z_base_dataset_profiles p ON p.dataset_profile_id=a.dataset_profile_id WHERE a.control_id=1`)]);return {profile:profile.rows[0],profiles:profiles.rows,live:live.rows[0],backup:backup.rows[0],activeProfileCode:active.rows[0]?.PROFILE_CODE||null};}); }
++function requestedProfile(code) { if(!Object.hasOwn(profileConfig,code||''))throw Object.assign(new Error('Unsupported legacy restore target; no fallback is allowed.'),{status:409});return code; }
++async function profileStatus(demoUser,code) { return profileLibrary.status(demoUser,code); }
+ app.use(helmet({contentSecurityPolicy:false}));
+ app.use(cors({origin: process.env.FRONTEND_URL || true}));
+ app.use(morgan('tiny')); app.use(express.json({limit:'10mb'}));
+ app.use('/api', (req,res,next) => { res.set('Cache-Control','no-store'); req.demoUser=user(req); next(); });
++app.use('/api', (req,res,next) => {
++  if(process.env.CRIMEDATA_READ_ONLY_REVIEW==='1' && !['GET','HEAD'].includes(req.method))return res.status(405).json({error:'This isolated application review is read-only; no mutation was executed.'});
++  next();
++});
+ app.use('/api', ops.requestContext);
+ createAiOps(db).register(app);
+ // Preserve Data Room source filenames/previews verbatim; do not apply presentation-copy rewriting.
+@@ -74,25 +80,11 @@
+ // Stored history is served verbatim, before display-copy rewriting middleware.
+ const agentHistory = createAgentHistory(db, presentationCopy);
+ agentHistory.register(app);
+-function presentationCopy(value) {
+-  if (value instanceof Date) return value.toISOString();
+-  if (typeof value === 'string') {
+-    // Preserve JSON provenance stored inside report attributes; it is not day-to-day display copy.
+-    if (value.includes('"synthetic_record"')) return value;
+-    return value
+-      .replace(/synthetic fictional/gi, 'generated profile')
+-      .replace(/generated profile profile/gi, 'profile')
+-      .replace(/synthetic evidence item/gi, 'evidence item')
+-      .replace(/fictional person/gi, 'person')
+-      .replace(/fictional profile/gi, 'profile')
+-      .replace(/synthetic/gi, 'demonstration')
+-      .replace(/fictional/gi, 'demonstration')
+-      .replace(/teaching/gi, 'demonstration');
+-  }
+-  if (Array.isArray(value)) return value.map(presentationCopy);
+-  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key === 'synthetic_record' ? key : presentationCopy(key), presentationCopy(item)]));
+-  return value;
+-}
++const profileLibrary=createProfileLibrary(db,{legacyRestoreCodes:Object.keys(profileConfig)});
++profileLibrary.register(app);
++// Discovery is data-driven. Legacy mutation handlers remain limited to their
++// explicitly supported versions; an unknown/new code must never fall back.
++app.use('/api/setup',require('./setup-mutation-guard').setupMutationGuard({legacyProfiles:profileConfig,db}));
+ app.use('/api', (req,res,next) => {
+   const sendJson = res.json.bind(res);
+   res.json = (payload) => sendJson(presentationCopy(payload));
+@@ -144,12 +136,11 @@
+       {...auditDetails, question:`Prepare a review-only brief for ${patternCode}.`}));
+   } catch(e) { console.error('Case-readiness prepare error:',e); res.status(e.status || e.statusCode || 500).json({error:e.message || 'Could not prepare the case-readiness brief.'}); }
+ });
+-app.get('/api/setup/profiles', async (req,res) => { try { res.json(await profileStatus(req.demoUser,req.query.profileCode)); } catch(e){console.error('Profile status error:',e);res.status(500).json({error:e.message});} });
+ app.post('/api/setup/backup', async (req,res) => { if(!setupAdmin(req,res))return; const profileCode=requestedProfile(req.body?.profileCode),config=profileConfig[profileCode]; try { await db(req.demoUser,c=>c.execute(`BEGIN z_base_dataset_admin.capture_active_profile(:profileCode,:profileName,:cityLabel,:profileNotes); END;`,{profileCode,profileName:config.name,cityLabel:config.city,profileNotes:`Captured from the active operational dataset on ${new Date().toISOString().slice(0,10)}.`}));res.json({message:`Active operational data captured to the ${config.name} Z_BASE profile.`,...(await profileStatus(req.demoUser,profileCode))}); } catch(e){console.error('Z_BASE profile capture error:',e);res.status(500).json({error:e.message});} });
+ app.post('/api/setup/delete', async (req,res) => { if(!setupAdmin(req,res))return; const profileCode=requestedProfile(req.body?.profileCode),config=profileConfig[profileCode],confirmation=`DELETE ${config.city.toUpperCase()} DATA SET`; if(req.body?.confirmation!==confirmation)return res.status(400).json({error:`Enter ${confirmation} to confirm deletion.`}); try { await db(req.demoUser,async c=>{for(const statement of clearBasicDataSql)await c.execute(statement);await c.execute(`UPDATE demo_data_profiles SET profile_status=CASE WHEN profile_code=:profileCode THEN 'unloaded' WHEN profile_status='active' THEN 'available' ELSE profile_status END`,{profileCode});await c.commit();});res.json({message:`${config.name} deleted from the operational dataset. Its recoverable snapshot remains available to load.`,...(await profileStatus(req.demoUser,profileCode))}); } catch(e){console.error('Profile delete error:',e);res.status(500).json({error:e.message});} });
+ app.post('/api/setup/load', async (req,res) => { if(!setupAdmin(req,res))return; const profileCode=requestedProfile(req.body?.profileCode); try { await db(req.demoUser,c=>c.execute(`BEGIN z_base_dataset_admin.restore_profile(:profileCode); END;`,{profileCode}));const status=await profileStatus(req.demoUser,profileCode);res.json({message:`${status.profile?.PROFILE_NAME||profileCode} restored from the Z_BASE profile library.`,...status}); } catch(e){console.error('Z_BASE profile restore error:',e);res.status(500).json({error:e.message});} });
+ app.post('/api/setup/load-nrt', async (req,res) => { if(!setupAdmin(req,res))return; const profileCode=requestedProfile(req.body?.profileCode); if(!['ADELAIDE_DATA','ADELAIDE_DATA_V2','PERTH_DATA','BRISBANE_DATA'].includes(profileCode))return res.status(400).json({error:'Near-real-time restore is available only for an available Adelaide, Perth, or Brisbane Data Set Profile.'}); try { await db(req.demoUser,c=>c.execute(`DECLARE v_latest_occurred_at TIMESTAMP WITH TIME ZONE; BEGIN z_base_dataset_admin.restore_profile(:profileCode); SELECT MAX(occurred_at) INTO v_latest_occurred_at FROM crime_incidents; IF v_latest_occurred_at IS NULL THEN RAISE_APPLICATION_ERROR(-20031,'The restored profile has no incident occurrence time.'); END IF; UPDATE crime_incidents SET occurred_at=occurred_at+(SYSTIMESTAMP-v_latest_occurred_at); COMMIT; END;`,{profileCode}));const status=await profileStatus(req.demoUser,profileCode);res.json({message:`${status.profile?.PROFILE_NAME||profileCode} restored in NRT mode. Incident occurrence times were shifted as one series so the latest incident is now. The Z_BASE snapshot remains unchanged.`,...status}); } catch(e){console.error('NRT Z_BASE profile restore error:',e);res.status(500).json({error:e.message});} });
+-app.get('/api/setup/export', async (req,res) => { if(!setupAdmin(req,res))return; try { const snapshot=await db(req.demoUser,async c=>{const [incidents,reports,persons,cases,evidence,personLinks,caseLinks]=await Promise.all([c.execute(`SELECT * FROM crime_incidents ORDER BY incident_id`),c.execute(`SELECT report_id,incident_id,report_summary,DBMS_LOB.SUBSTR(report_text,4000,1) report_text,embedding_text,enrichments,created_at FROM incident_reports ORDER BY report_id`),c.execute(`SELECT * FROM persons_of_interest ORDER BY person_id`),c.execute(`SELECT * FROM case_files ORDER BY case_id`),c.execute(`SELECT * FROM evidence_items ORDER BY evidence_id`),c.execute(`SELECT * FROM person_incident_links ORDER BY person_id,incident_id`),c.execute(`SELECT * FROM case_incident_links ORDER BY case_id,incident_id`)]);return {profile:'ADELAIDE_DATA',city:'Adelaide',exportedAt:new Date().toISOString(),notice:'Synthetic core relational profile export. The recoverable in-database snapshot also preserves vector and audit tables.',data:{crimeIncidents:incidents.rows,incidentReports:reports.rows,persons:persons.rows,cases:cases.rows,evidence:evidence.rows,personIncidentLinks:personLinks.rows,caseIncidentLinks:caseLinks.rows}};});res.set({'Content-Type':'application/json','Content-Disposition':`attachment; filename="adelaide-data-set-profile-${new Date().toISOString().slice(0,10)}.json"`});res.send(JSON.stringify(snapshot,null,2)); } catch(e){console.error('Profile export error:',e);res.status(500).json({error:e.message});} });
++app.get('/api/setup/export', async (req,res) => { if(!setupAdmin(req,res))return; try { const snapshot=await db(req.demoUser,async c=>{const context=await require('./profile-library').activeContext(c);const [incidents,reports,persons,cases,evidence,personLinks,caseLinks]=await Promise.all([c.execute(`SELECT * FROM crime_incidents ORDER BY incident_id`),c.execute(`SELECT report_id,incident_id,report_summary,DBMS_LOB.SUBSTR(report_text,4000,1) report_text,embedding_text,enrichments,created_at FROM incident_reports ORDER BY report_id`),c.execute(`SELECT * FROM persons_of_interest ORDER BY person_id`),c.execute(`SELECT * FROM case_files ORDER BY case_id`),c.execute(`SELECT * FROM evidence_items ORDER BY evidence_id`),c.execute(`SELECT * FROM person_incident_links ORDER BY person_id,incident_id`),c.execute(`SELECT * FROM case_incident_links ORDER BY case_id,incident_id`)]);return {profile:context.profileCode,city:context.cityLabel,timeZone:context.timeZone,exportedAt:new Date().toISOString(),notice:context.notice,exportScope:'Active core relational profile; in-database snapshot separately preserves vector and audit tables.',data:{crimeIncidents:incidents.rows,incidentReports:reports.rows,persons:persons.rows,cases:cases.rows,evidence:evidence.rows,personIncidentLinks:personLinks.rows,caseIncidentLinks:caseLinks.rows}};});res.set({'Content-Type':'application/json','Content-Disposition':`attachment; filename="${snapshot.profile.toLowerCase().replace(/[^a-z0-9_-]/g,'_')}-data-set-profile-${new Date().toISOString().slice(0,10)}.json"`});res.send(JSON.stringify(snapshot,null,2)); } catch(e){console.error('Profile export error:',e);res.status(500).json({error:e.message});} });
+ app.get('/api/users', async (req,res) => { const r=await db(req.demoUser,c=>c.execute(`SELECT u.user_name,u.role_name,u.display_name,LISTAGG(p.area_name, ', ') WITHIN GROUP(ORDER BY p.area_name) areas FROM security_users u LEFT JOIN security_user_geo_entitlements e ON e.user_name=u.user_name LEFT JOIN patrol_areas p ON p.patrol_area_id=e.patrol_area_id GROUP BY u.user_name,u.role_name,u.display_name ORDER BY u.user_name`)); res.json(r.rows); });
+ app.get('/api/dashboard', async (req,res) => { const r=await db(req.demoUser,async c => { const [summary,categories,areas,signals,watchedPatterns]=await Promise.all([
+   c.execute(`SELECT COUNT(*) incident_count, COUNT(DISTINCT cat.executive_group_code) category_count, SUM(CASE WHEN i.incident_status NOT IN ('resolved','closed_no_further_action') THEN 1 ELSE 0 END) open_count FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id WHERE cat.active=1`),
+@@ -256,25 +247,8 @@
+   c.execute(`SELECT COUNT(DISTINCT e.evidence_id) evidence_count,COUNT(DISTINCT CASE WHEN r.report_id IS NOT NULL THEN i.incident_id END) reported_incident_count,COUNT(DISTINCT i.incident_id) linked_incident_count FROM secure_watched_pattern_incidents_v wpi JOIN secure_crime_incidents_v i ON i.incident_ref=wpi.incident_ref LEFT JOIN secure_evidence_items_v e ON e.incident_id=i.incident_id LEFT JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE wpi.pattern_code=:patternCode`,{patternCode})
+ ]); return {pattern:pattern.rows[0]||null,incidents:incidents.rows,posts:posts.rows,summary:summary.rows[0]||{},evidence:evidence.rows[0]||{}};}); res.json(result); } catch(e){console.error('Retail transit challenge error:',e);res.status(500).json({error:e.message});} });
+ app.get('/api/incidents/filters', async (req,res) => { try { const r=await db(req.demoUser,async c=>{const [categories,suburbs,statuses,areas]=await Promise.all([c.execute(`SELECT cat.executive_group_label value,MIN(cat.display_order) display_order,MIN(cat.display_color) display_color,COUNT(*) record_count FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id WHERE cat.active=1 GROUP BY cat.executive_group_code,cat.executive_group_label ORDER BY MIN(cat.display_order)`),c.execute(`SELECT suburb value,COUNT(*) record_count FROM secure_crime_incidents_v GROUP BY suburb ORDER BY value`),c.execute(`SELECT incident_status value,COUNT(*) record_count FROM secure_crime_incidents_v GROUP BY incident_status ORDER BY value`),c.execute(`SELECT p.area_name value,COUNT(*) record_count FROM secure_crime_incidents_v i JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id GROUP BY p.area_name ORDER BY value`)]);return {categories:categories.rows,suburbs:suburbs.rows,statuses:statuses.rows,areas:areas.rows};});res.json(r);} catch(e){console.error('Incident filter LOV error:',e);res.status(500).json({error:e.message});} });
+-app.get('/api/incidents', async (req,res) => { const q=String(req.query.q||'').trim().toLowerCase(),category=String(req.query.category||'').trim(),suburb=String(req.query.suburb||'').trim(),status=String(req.query.status||'').trim(),area=String(req.query.area||'').trim(),limit=Math.min(Math.max(Number(req.query.limit)||100,1),200); try { const r=await db(req.demoUser,c=>c.execute(`SELECT * FROM (SELECT i.incident_id,i.incident_ref,i.suburb,i.incident_status,i.occurred_at,i.location_type,i.modus_operandi,i.latitude,i.longitude,cat.executive_group_label category_name,cat.category_name detailed_category_name,cat.display_color,cat.severity_band,p.area_name,r.report_summary FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE cat.active=1 AND (:q IS NULL OR LOWER(i.incident_ref) LIKE '%'||:q||'%' OR LOWER(i.suburb) LIKE '%'||:q||'%' OR LOWER(cat.category_name) LIKE '%'||:q||'%' OR LOWER(cat.executive_group_label) LIKE '%'||:q||'%' OR LOWER(NVL(i.modus_operandi,'x')) LIKE '%'||:q||'%' OR LOWER(r.report_summary) LIKE '%'||:q||'%') AND (:category IS NULL OR cat.executive_group_label=:category) AND (:suburb IS NULL OR i.suburb=:suburb) AND (:status IS NULL OR i.incident_status=:status) AND (:area IS NULL OR p.area_name=:area) ORDER BY i.occurred_at DESC) WHERE ROWNUM <= :limit`, {q:q||null,category:category||null,suburb:suburb||null,status:status||null,area:area||null,limit})); res.json(r.rows); } catch(e){console.error('Incident search error:',e);res.status(500).json({error:e.message});} });
+-app.get('/api/incidents/map', async (req,res) => { const q=String(req.query.q||'').trim().toLowerCase(),category=String(req.query.category||'').trim(),suburb=String(req.query.suburb||'').trim(),status=String(req.query.status||'').trim(),area=String(req.query.area||'').trim(),month=String(req.query.month||'').trim(),limit=Math.min(Math.max(Number(req.query.limit)||2500,100),25000); const baseBinds={q:q||null,category:category||null,suburb:suburb||null,status:status||null,area:area||null,month:month||null},binds={...baseBinds,limit}; const where=`cat.active=1 AND (:q IS NULL OR LOWER(i.incident_ref) LIKE '%'||:q||'%' OR LOWER(i.suburb) LIKE '%'||:q||'%' OR LOWER(cat.category_name) LIKE '%'||:q||'%' OR LOWER(cat.executive_group_label) LIKE '%'||:q||'%' OR LOWER(NVL(i.modus_operandi,'x')) LIKE '%'||:q||'%' OR LOWER(r.report_summary) LIKE '%'||:q||'%') AND (:category IS NULL OR cat.executive_group_label=:category) AND (:suburb IS NULL OR i.suburb=:suburb) AND (:status IS NULL OR i.incident_status=:status) AND (:area IS NULL OR p.area_name=:area) AND (:month IS NULL OR TO_CHAR(i.occurred_at,'YYYY-MM')=:month)`; try { const result=await db(req.demoUser,async c=>{const [rows,coverage,summary]=await Promise.all([c.execute(`SELECT * FROM (SELECT i.incident_id,i.incident_ref,i.suburb,i.incident_status,i.occurred_at,i.location_type,i.modus_operandi,i.latitude,i.longitude,cat.executive_group_label category_name,cat.category_name detailed_category_name,cat.display_color,cat.severity_band,p.area_name,r.report_summary FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE ${where} ORDER BY i.occurred_at DESC) WHERE ROWNUM<=:limit`,binds),c.execute(`SELECT i.suburb,ROUND(AVG(i.latitude),6) latitude,ROUND(AVG(i.longitude),6) longitude,COUNT(*) incident_count FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE ${where} GROUP BY i.suburb ORDER BY incident_count DESC,i.suburb`,baseBinds),c.execute(`SELECT COUNT(*) total_count,SUM(CASE WHEN i.incident_status NOT IN ('resolved','closed_no_further_action') THEN 1 ELSE 0 END) open_count FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE ${where}`,baseBinds)]);return {rows:rows.rows,coverage:coverage.rows,summary:summary.rows[0],limit};});res.json(result); } catch(e){console.error('Incident map query error:',e);res.status(500).json({error:e.message});} });
+-app.get('/api/incidents/map/timeline', async (req,res) => {
+-  const q=String(req.query.q||'').trim().toLowerCase(),category=String(req.query.category||'').trim(),suburb=String(req.query.suburb||'').trim(),status=String(req.query.status||'').trim(),area=String(req.query.area||'').trim(),month=String(req.query.month||'').trim(),fromDate=String(req.query.from||'').trim(),toDate=String(req.query.to||'').trim(),limit=Math.min(Math.max(Number(req.query.limit)||2500,100),25000);
+-  const baseBinds={q:q||null,category:category||null,suburb:suburb||null,status:status||null,area:area||null,month:month||null,fromDate:fromDate||null,toDate:toDate||null},binds={...baseBinds,limit};
+-  const where=`cat.active=1 AND (:q IS NULL OR LOWER(i.incident_ref) LIKE '%'||:q||'%' OR LOWER(i.suburb) LIKE '%'||:q||'%' OR LOWER(cat.category_name) LIKE '%'||:q||'%' OR LOWER(cat.executive_group_label) LIKE '%'||:q||'%' OR LOWER(NVL(i.modus_operandi,'x')) LIKE '%'||:q||'%' OR LOWER(r.report_summary) LIKE '%'||:q||'%') AND (:category IS NULL OR cat.executive_group_label=:category) AND (:suburb IS NULL OR i.suburb=:suburb) AND (:status IS NULL OR i.incident_status=:status) AND (:area IS NULL OR p.area_name=:area) AND (:month IS NULL OR TO_CHAR(i.occurred_at,'YYYY-MM')=:month) AND (:fromDate IS NULL OR i.occurred_at>=TO_DATE(:fromDate,'YYYY-MM-DD')) AND (:toDate IS NULL OR i.occurred_at<TO_DATE(:toDate,'YYYY-MM-DD')+1)`;
+-  try {
+-    const result=await db(req.demoUser,async c=>{
+-      const [rows,coverage,summary,timeBounds]=await Promise.all([
+-        c.execute(`SELECT * FROM (SELECT i.incident_id,i.incident_ref,i.suburb,i.incident_status,i.occurred_at,i.location_type,i.modus_operandi,i.latitude,i.longitude,cat.executive_group_label category_name,cat.category_name detailed_category_name,cat.display_color,cat.severity_band,p.area_name,r.report_summary FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE ${where} ORDER BY i.occurred_at DESC) WHERE ROWNUM<=:limit`,binds),
+-        c.execute(`SELECT i.suburb,ROUND(AVG(i.latitude),6) latitude,ROUND(AVG(i.longitude),6) longitude,COUNT(*) incident_count FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE ${where} GROUP BY i.suburb ORDER BY incident_count DESC,i.suburb`,baseBinds),
+-        c.execute(`SELECT COUNT(*) total_count,SUM(CASE WHEN i.incident_status NOT IN ('resolved','closed_no_further_action') THEN 1 ELSE 0 END) open_count FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE ${where}`,baseBinds),
+-        c.execute(`SELECT TO_CHAR(MIN(occurred_at),'YYYY-MM-DD') earliest_date,TO_CHAR(MAX(occurred_at),'YYYY-MM-DD') latest_date FROM secure_crime_incidents_v`)
+-      ]);
+-      return {rows:rows.rows,coverage:coverage.rows,summary:summary.rows[0],timeBounds:timeBounds.rows[0],limit};
+-    });
+-    res.json(result);
+-  } catch(e){console.error('Incident map timeline query error:',e);res.status(500).json({error:e.message});}
+-});
++app.get('/api/incidents', async (req,res) => { const q=String(req.query.q||'').trim().toLowerCase(),category=String(req.query.category||'').trim(),suburb=String(req.query.suburb||'').trim(),status=String(req.query.status||'').trim(),area=String(req.query.area||'').trim(),limit=Math.min(Math.max(Number(req.query.limit)||100,1),200); try { const r=await db(req.demoUser,c=>c.execute(`SELECT * FROM (SELECT i.incident_id,i.incident_ref,i.suburb,i.incident_status,i.occurred_at,i.location_type,i.modus_operandi,i.latitude,i.longitude,cat.executive_group_label category_name,cat.category_name detailed_category_name,cat.display_color,cat.severity_band,p.area_name,r.report_summary FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE cat.active=1 AND (:q IS NULL OR LOWER(i.incident_ref) LIKE '%'||:q||'%' OR LOWER(i.suburb) LIKE '%'||:q||'%' OR LOWER(cat.category_name) LIKE '%'||:q||'%' OR LOWER(cat.executive_group_label) LIKE '%'||:q||'%' OR LOWER(NVL(i.modus_operandi,'x')) LIKE '%'||:q||'%' OR LOWER(r.report_summary) LIKE '%'||:q||'%' OR DBMS_LOB.INSTR(LOWER(r.report_text),:q)>0) AND (:category IS NULL OR cat.executive_group_label=:category) AND (:suburb IS NULL OR i.suburb=:suburb) AND (:status IS NULL OR i.incident_status=:status) AND (:area IS NULL OR p.area_name=:area) ORDER BY i.occurred_at DESC) WHERE ROWNUM <= :limit`, {q:q||null,category:category||null,suburb:suburb||null,status:status||null,area:area||null,limit})); res.json(r.rows); } catch(e){console.error('Incident search error:',e);res.status(500).json({error:e.message});} });
++require('./live-incident-map').registerLiveIncidentMap(app,db);
+ app.get('/api/incidents/:incidentRef', async (req,res) => { const incidentRef=String(req.params.incidentRef||'').trim(); try { const result=await db(req.demoUser,async c=>{const incident=await c.execute(`SELECT i.incident_id,i.incident_ref,i.incident_status,i.occurred_at,i.location_type,i.suburb,i.latitude,i.longitude,i.address_line_1,i.address_locality,i.address_region,i.address_postcode,i.address_country_code,i.address_precision,i.modus_operandi,i.property_category,i.vehicle_descriptor,i.incident_attributes,cat.executive_group_label category_name,cat.category_name detailed_category_name,cat.executive_group_code,cat.severity_band,cat.display_color,p.area_name,r.report_summary,DBMS_LOB.SUBSTR(r.report_text,4000,1) report_text FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id WHERE i.incident_ref=:incidentRef`,{incidentRef}); if(!incident.rows.length)return null; const id=incident.rows[0].INCIDENT_ID; const [evidence,people]=await Promise.all([c.execute(`SELECT evidence_type,created_at FROM evidence_items WHERE incident_id=:id ORDER BY evidence_id`,{id}),c.execute(`SELECT p.person_ref,p.alias_name,p.person_status,l.connection_type,l.link_summary FROM person_incident_links l JOIN secure_persons_of_interest_v p ON p.person_id=l.person_id WHERE l.incident_id=:id ORDER BY p.person_ref`,{id})]);return {incident:incident.rows[0],evidence:evidence.rows,people:people.rows};}); if(!result)return res.status(404).json({error:'No authorised incident record found.'});res.json(result); } catch(e){console.error('Incident detail error:',e);res.status(500).json({error:e.message});} });
+ app.get('/api/patterns', async (req,res) => { const r=await db(req.demoUser,c=>c.execute(`SELECT modus_operandi,COUNT(DISTINCT i.incident_id) incident_count,ROUND(AVG(sm.similarity_score),2) avg_similarity FROM secure_crime_incidents_v i LEFT JOIN semantic_matches sm ON sm.source_incident_id=i.incident_id GROUP BY modus_operandi ORDER BY incident_count DESC`)); res.json(r.rows); });
+ require('./incident-semantic-search').registerIncidentSemanticSearch(app, db, require('./pattern-embeddings'));
+@@ -408,7 +382,7 @@
+ });
+ const baseOllamaGenerate = ollamaGenerate;
+ ollamaGenerate = (prompt, system) => baseOllamaGenerate(prompt, `${system}\nAuthorised describes the database security scope, never an INCIDENT_STATUS value. Never add an INCIDENT_STATUS filter unless the user explicitly asks for a named status.`);
+-const frontendDist = path.join(__dirname, '../frontend/dist');
++const frontendDist = process.env.CRIMEDATA_FRONTEND_DIST || path.join(__dirname, '../frontend/dist');
+ app.use(express.static(frontendDist, { setHeaders: (res) => res.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0') }));
+ app.get('*', (req, res) => { res.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0'); res.sendFile(path.join(frontendDist, 'index.html')); });
+ (async()=>{
+@@ -425,7 +399,9 @@
+     poolConfig.configDir=process.env.ORACLE_WALLET_LOCATION;
+   }
+   pool=await oracledb.createPool(poolConfig);
+-  ops.configure(event=>db(event.actor,c=>persistAiOps(c,event)));
+-  dataRoom.start();
+-  app.listen(port,'0.0.0.0',()=>console.log(`Adelaide Crime Intelligence on ${port}`));
++  if(process.env.CRIMEDATA_READ_ONLY_REVIEW!=='1') {
++    ops.configure(event=>db(event.actor,c=>persistAiOps(c,event)));
++    dataRoom.start();
++  }
++  app.listen(port,process.env.CRIMEDATA_BIND_HOST||'0.0.0.0',()=>console.log(`CrimeData application on ${port}`));
+ })().catch(err=>{console.error(err);process.exit(1)});
+--- a/backend/profile-library.js
++++ b/backend/profile-library.js
+@@ -0,0 +1,149 @@
++/* Data-driven saved-profile discovery and READ-ONLY review. No activation DML. */
++const oracle = require('oracledb');
++const NOTICE = 'Synthetic demonstration data. These are not actual police incidents.';
++const fail = (status, message) => Object.assign(new Error(message), {status});
++function profileCode(value) {
++  if (typeof value !== 'string' || !/^[A-Z][A-Z0-9_]{1,79}$/.test(value)) throw fail(400, 'A valid explicit profile code is required.');
++  return value;
++}
++function json(value) {
++  if (typeof value === 'string') { try { return JSON.parse(value); } catch { return {}; } }
++  return value && typeof value === 'object' ? value : {};
++}
++function validZone(value) {
++  if (typeof value !== 'string') return null;
++  try { new Intl.DateTimeFormat('en-GB', {timeZone:value}).format(0); return value; } catch { return null; }
++}
++function zonedSql(column, zone) {
++  if (!/^[a-z_.]+$/i.test(column) || !validZone(zone)) throw fail(400, 'Invalid time-zone expression.');
++  return `(${column} AT TIME ZONE '${zone.replace(/'/g,"''")}')`;
++}
++function parseFilters(query={}) {
++  const result={};
++  for (const key of ['q','group','category','area','status','role','from','to']) {
++    const value=query[key];
++    if (value !== undefined && (typeof value !== 'string' || value.length>200)) throw fail(400, 'Invalid '+key+' filter.');
++    result[key]=value?.trim() || null;
++  }
++  if (result.role && !['physical_context','locality_reference'].includes(result.role)) throw fail(400,'Invalid location role.');
++  for (const key of ['from','to']) if (result[key] && (!/^\d{4}-\d{2}-\d{2}$/.test(result[key]) || Number.isNaN(Date.parse(result[key]+'T00:00:00Z')) || new Date(result[key]+'T00:00:00Z').toISOString().slice(0,10)!==result[key])) throw fail(400,'Invalid calendar date.');
++  if (result.from && result.to && result.from>result.to) throw fail(400,'Start date must not follow end date.');
++  const bounded = (value, fallback, max) => { const n=value===undefined?fallback:Number(value); if(!Number.isInteger(n)||n<1||n>max)throw fail(400,'Invalid result limit.');return n; };
++  result.limit=bounded(query.limit,75,200);result.mapLimit=bounded(query.mapLimit,15000,25000);
++  return result;
++}
++function contextFrom(row) {
++  const document=json(row.CONFIG_DOCUMENT),config=json(document.config);
++  const timeZone=validZone(config.time_zone);
++  let locale='en-GB';try{if(config.locale)locale=Intl.getCanonicalLocales(config.locale)[0];}catch{}
++  return {profileCode:row.PROFILE_CODE,profileName:row.PROFILE_NAME,cityLabel:row.CITY_LABEL,status:row.PROFILE_STATUS,
++    timeZone:timeZone||'UTC',timeZoneConfigured:!!timeZone,locale,notice:NOTICE,
++    bounds:config.geography?.municipal_bounds_wgs84||null,
++    activationReady:document.activation_ready===true,activationBlockers:document.activation_blockers||[],
++    classification:config.source_taxonomy||null,synthetic:true};
++}
++async function getProfile(c, code) {
++  const rows=(await c.execute(`SELECT p.dataset_profile_id,p.profile_code,p.profile_name,p.city_label,p.profile_status,p.profile_notes,p.captured_at,
++    cfg.config_document FROM z_base_dataset_profiles p LEFT JOIN z_base_profile_config cfg ON cfg.dataset_profile_id=p.dataset_profile_id
++    WHERE p.profile_code=:code`,{code:profileCode(code)})).rows;
++  if (!rows.length) throw fail(404,'Saved profile not found.');return rows[0];
++}
++async function activeContext(c) {
++  const rows=(await c.execute(`SELECT p.dataset_profile_id,p.profile_code,p.profile_name,p.city_label,p.profile_status,cfg.config_document
++    FROM z_base_active_dataset_profile a JOIN z_base_dataset_profiles p ON p.dataset_profile_id=a.dataset_profile_id
++    LEFT JOIN z_base_profile_config cfg ON cfg.dataset_profile_id=p.dataset_profile_id WHERE a.control_id=1`)).rows;
++  if(!rows.length)throw fail(503,'No active profile is configured.');return contextFrom(rows[0]);
++}
++async function requireAdmin(c,user) {
++  if(user!=='statewide_admin')throw fail(403,'Saved-profile library review is restricted to the existing Statewide Admin. Live locality access is unchanged.');
++  const row=(await c.execute('SELECT role_name,is_active FROM security_users WHERE user_name=:userName',{userName:user})).rows[0];
++  if(row?.ROLE_NAME!=='admin'||row.IS_ACTIVE!==1)throw fail(403,'An active library administrator is required.');
++}
++const joins=`FROM z_base_crime_incidents i
++  JOIN z_base_incident_categories cat ON cat.dataset_profile_id=i.dataset_profile_id AND cat.category_id=i.category_id
++  JOIN z_base_incident_reports r ON r.dataset_profile_id=i.dataset_profile_id AND r.incident_id=i.incident_id`;
++const areaSql="COALESCE(JSON_VALUE(i.incident_attributes,'$.district_area_name_nl'),i.address_locality,i.suburb)";
++const roleSql="COALESCE(JSON_VALUE(i.incident_attributes,'$.location_role'),CASE WHEN i.latitude IS NULL OR i.longitude IS NULL THEN 'locality_reference' ELSE 'physical_context' END)";
++const physicalSql=`i.latitude BETWEEN -90 AND 90 AND i.longitude BETWEEN -180 AND 180 AND ${roleSql}<>'locality_reference'`;
++function whereFor(filters,zone) {
++  const time=zonedSql('i.occurred_at',zone);
++  return `i.dataset_profile_id=:pid AND cat.active=1
++    AND (:q IS NULL OR INSTR(LOWER(i.incident_ref),LOWER(:q))>0 OR INSTR(LOWER(i.suburb),LOWER(:q))>0
++      OR INSTR(LOWER(cat.category_name),LOWER(:q))>0 OR INSTR(LOWER(r.report_summary),LOWER(:q))>0 OR DBMS_LOB.INSTR(LOWER(r.report_text),LOWER(:q))>0)
++    AND (:groupCode IS NULL OR cat.executive_group_code=:groupCode) AND (:category IS NULL OR cat.category_code=:category)
++    AND (:area IS NULL OR ${areaSql}=:area) AND (:status IS NULL OR i.incident_status=:status)
++    AND (:role IS NULL OR ${roleSql}=:role)
++    AND (:fromDate IS NULL OR TO_CHAR(${time},'YYYY-MM-DD')>=:fromDate)
++    AND (:toDate IS NULL OR TO_CHAR(${time},'YYYY-MM-DD')<=:toDate)`;
++}
++function bindFilters(pid,f) { return {pid,q:f.q,groupCode:f.group,category:f.category,area:f.area,status:f.status,role:f.role,fromDate:f.from,toDate:f.to}; }
++async function review(c,code,query) {
++  const profile=await getProfile(c,code),context=contextFrom(profile),f=parseFilters(query),binds=bindFilters(profile.DATASET_PROFILE_ID,f),where=whereFor(f,context.timeZone),time=zonedSql('i.occurred_at',context.timeZone);
++  // Saved tables have profile-only indexes, not the live identity-key indexes.
++  // Avoid stop-key nested-loop plans repeatedly scanning the same profile.
++  const select=`/*+ LEADING(i) USE_HASH(cat r) */ i.incident_id,i.incident_ref,i.suburb,i.incident_status,TO_CHAR(${time},'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM') occurred_at,
++    i.location_type,i.latitude,i.longitude,cat.category_code,cat.category_name detailed_category_name,cat.executive_group_code,cat.executive_group_label category_name,
++    cat.display_color,cat.severity_band,r.report_summary,${areaSql} district_area,${roleSql} location_role`;
++  const records=(await c.execute(`SELECT ${select} ${joins} WHERE ${where} ORDER BY i.occurred_at,i.incident_ref FETCH FIRST :limit ROWS ONLY`,{...binds,limit:f.limit})).rows;
++  const markers=(await c.execute(`SELECT /*+ LEADING(i) USE_HASH(cat r) */ i.incident_ref,i.latitude,i.longitude,cat.display_color,cat.executive_group_code,${areaSql} district_area ${joins}
++    WHERE ${where} AND ${physicalSql} ORDER BY i.incident_ref FETCH FIRST :mapLimit ROWS ONLY`,{...binds,mapLimit:f.mapLimit})).rows;
++  const summary=(await c.execute(`SELECT /*+ LEADING(i) USE_HASH(cat r) */ COUNT(*) total_count,SUM(CASE WHEN ${physicalSql} THEN 1 ELSE 0 END) physical_count,
++    SUM(CASE WHEN ${roleSql}='locality_reference' THEN 1 ELSE 0 END) reference_count,
++    MIN(TO_CHAR(${time},'YYYY-MM-DD')) first_local_date,MAX(TO_CHAR(${time},'YYYY-MM-DD')) last_local_date,
++    COUNT(DISTINCT TO_CHAR(${time},'YYYY-MM-DD')) local_dates ${joins} WHERE ${where}`,binds)).rows[0];
++  const categories=(await c.execute(`SELECT /*+ LEADING(i) USE_HASH(cat r) */ cat.category_code,cat.category_name,cat.executive_group_code,cat.executive_group_label,cat.display_color,cat.display_order,COUNT(*) record_count
++    ${joins} WHERE i.dataset_profile_id=:pid AND cat.active=1
++    GROUP BY cat.category_code,cat.category_name,cat.executive_group_code,cat.executive_group_label,cat.display_color,cat.display_order ORDER BY cat.display_order,cat.category_code`,{pid:profile.DATASET_PROFILE_ID})).rows;
++  const areas=(await c.execute(`SELECT ${areaSql} area_name,JSON_VALUE(i.incident_attributes,'$.area_type') area_type,COUNT(*) record_count
++    FROM z_base_crime_incidents i WHERE i.dataset_profile_id=:pid GROUP BY ${areaSql},JSON_VALUE(i.incident_attributes,'$.area_type') ORDER BY area_name`,{pid:profile.DATASET_PROFILE_ID})).rows;
++  const statuses=(await c.execute('SELECT incident_status,COUNT(*) record_count FROM z_base_crime_incidents WHERE dataset_profile_id=:pid GROUP BY incident_status ORDER BY incident_status',{pid:profile.DATASET_PROFILE_ID})).rows;
++  const capabilities=(await c.execute(`SELECT (SELECT COUNT(*) FROM z_base_incident_embeddings WHERE dataset_profile_id=:pid) embeddings,
++    (SELECT COUNT(*) FROM z_base_case_files WHERE dataset_profile_id=:pid) cases FROM dual`,{pid:profile.DATASET_PROFILE_ID})).rows[0];
++  return {context,summary,records,markers,categories,areas,statuses,capabilities,readOnly:true,scope:'saved_profile_admin_review',
++    markerLimit:f.mapLimit,markersTruncated:Number(summary.PHYSICAL_COUNT)>markers.length,recordLimit:f.limit,recordsTruncated:Number(summary.TOTAL_COUNT)>records.length,notice:NOTICE};
++}
++async function detail(c,code,reference) {
++  if(typeof reference!=='string'||reference.length>100)throw fail(400,'Invalid incident reference.');
++  const profile=await getProfile(c,code),context=contextFrom(profile),pid=profile.DATASET_PROFILE_ID;
++  const incident=(await c.execute(`SELECT i.incident_ref,i.incident_id,i.incident_status,i.suburb,i.location_type,i.latitude,i.longitude,i.incident_attributes,
++    TO_CHAR(${zonedSql('i.occurred_at',context.timeZone)},'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM') occurred_at,
++    cat.category_name detailed_category_name,cat.executive_group_label category_name,cat.executive_group_code,r.report_summary,r.report_text
++    ${joins} WHERE i.dataset_profile_id=:pid AND i.incident_ref=:reference`,{pid,reference},{fetchInfo:{REPORT_TEXT:{type:oracle.STRING}}})).rows[0];
++  if(!incident)throw fail(404,'Incident not found in the selected saved profile.');
++  const evidence=(await c.execute('SELECT evidence_id,evidence_type,evidence_metadata FROM z_base_evidence_items WHERE dataset_profile_id=:pid AND incident_id=:id ORDER BY evidence_id',{pid,id:incident.INCIDENT_ID})).rows;
++  return {context,incident,evidence,notice:NOTICE,readOnly:true};
++}
++function createProfileLibrary(db,{legacyRestoreCodes=[]}={}) {
++  async function readAdmin(user,fn) {
++    if(user!=='statewide_admin')throw fail(403,'Saved-profile library access is restricted to Statewide Admin; use the scoped live views.');
++    return db(user,async c=>{c.callTimeout=30000;await c.execute('SET TRANSACTION READ ONLY');await requireAdmin(c,user);return fn(c);});
++  }
++  async function status(user,requested) {
++    return readAdmin(user,async c=>{
++      const active=await activeContext(c),code=requested?profileCode(requested):active.profileCode,row=await getProfile(c,code);
++      const profiles=(await c.execute(`SELECT p.dataset_profile_id,p.profile_code,p.profile_name,p.city_label,p.profile_status,p.profile_notes,p.captured_at last_backup_at,
++        (SELECT COUNT(*) FROM z_base_crime_incidents i WHERE i.dataset_profile_id=p.dataset_profile_id) incident_count,
++        (SELECT COUNT(DISTINCT suburb) FROM z_base_crime_incidents i WHERE i.dataset_profile_id=p.dataset_profile_id) suburb_count
++        FROM z_base_dataset_profiles p ORDER BY p.profile_code`)).rows;
++      const live=(await c.execute(`SELECT (SELECT COUNT(*) FROM secure_crime_incidents_v) incidents,(SELECT COUNT(*) FROM secure_incident_reports_v) reports,
++        (SELECT COUNT(*) FROM secure_persons_of_interest_v) persons,(SELECT COUNT(*) FROM case_files) cases FROM dual`)).rows[0];
++      const backup=(await c.execute(`SELECT (SELECT COUNT(*) FROM z_base_crime_incidents WHERE dataset_profile_id=:pid) incidents,
++        (SELECT COUNT(*) FROM z_base_incident_reports WHERE dataset_profile_id=:pid) reports,(SELECT COUNT(*) FROM z_base_persons WHERE dataset_profile_id=:pid) persons,
++        (SELECT COUNT(*) FROM z_base_case_files WHERE dataset_profile_id=:pid) cases FROM dual`,{pid:row.DATASET_PROFILE_ID})).rows[0];
++      const {CONFIG_DOCUMENT,...profile}=row;
++      return {profile,profiles,live,backup,activeProfileCode:active.profileCode,context:contextFrom(row),notice:NOTICE,
++        capabilities:{savedReview:true,restore:legacyRestoreCodes.includes(code),nrtRestore:legacyRestoreCodes.includes(code)},
++        globalSwitch:true,activationNotice:'Review does not activate. Replacing the global active profile requires separate explicit confirmation and completed acceptance checks.'};
++    });
++  }
++  function register(app) {
++    const route=(fn)=>(req,res)=>Promise.resolve().then(()=>fn(req)).then(x=>res.json(x)).catch(e=>res.status(e.status||500).json({error:e.status?e.message:'Saved-profile read failed; no data was changed.'}));
++    // Register before presentation-copy rewriting: source labels/provenance are immutable.
++    app.get('/api/profile-context',route(req=>db(req.demoUser,activeContext)));
++    app.get('/api/setup/profiles',route(req=>status(req.demoUser,req.query.profileCode)));
++    app.get('/api/setup/profiles/:profileCode/review',route(req=>readAdmin(req.demoUser,c=>review(c,req.params.profileCode,req.query))));
++    app.get('/api/setup/profiles/:profileCode/incidents/:incidentRef',route(req=>readAdmin(req.demoUser,c=>detail(c,req.params.profileCode,req.params.incidentRef))));
++  }
++  return {register,status,readAdmin};
++}
++module.exports={NOTICE,profileCode,json,validZone,zonedSql,parseFilters,contextFrom,getProfile,activeContext,requireAdmin,review,detail,createProfileLibrary,whereFor};
+--- a/backend/presentation-copy.js
++++ b/backend/presentation-copy.js
+@@ -0,0 +1,16 @@
++/* Keep source records/provenance verbatim; only legacy explanatory copy is styled. */
++const protectedKey=/(?:^|_)(?:report_text|report_summary|incident_attributes|enrichments|evidence_metadata|profile_notes|source|provenance|notice|code|ref|time_zone|timezone|category_name|city_label|profile_name|area_name)$/i;
++function presentationCopy(value,key='') {
++  if(value instanceof Date)return value.toISOString();
++  if(protectedKey.test(key))return value;
++  if(typeof value==='string'){
++    if(value==='Synthetic demonstration data. These are not actual police incidents.'||value.includes('"synthetic_record"'))return value;
++    return value.replace(/synthetic fictional/gi,'generated profile').replace(/generated profile profile/gi,'profile')
++      .replace(/synthetic evidence item/gi,'evidence item').replace(/fictional person/gi,'person').replace(/fictional profile/gi,'profile')
++      .replace(/synthetic/gi,'demonstration').replace(/fictional/gi,'demonstration').replace(/teaching/gi,'demonstration');
++  }
++  if(Array.isArray(value))return value.map(x=>presentationCopy(x,key));
++  if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,presentationCopy(v,k)]));
++  return value;
++}
++module.exports={presentationCopy};
+--- a/backend/setup-mutation-guard.js
++++ b/backend/setup-mutation-guard.js
+@@ -0,0 +1,20 @@
++/* Fail closed before legacy setup code can restore a fallback/wrong locality. */
++const {activeContext,requireAdmin}=require('./profile-library');
++function setupMutationGuard({legacyProfiles,db}) {
++  return async(req,res,next)=>{
++    const action=req.path.slice(1);
++    if(req.method!=='POST'||!['load','load-nrt','backup','delete'].includes(action))return next();
++    try{
++      if(req.demoUser!=='statewide_admin')return res.status(403).json({error:'Setup changes require Statewide Admin.'});
++      const code=req.body?.profileCode;
++      if(!Object.hasOwn(legacyProfiles,code||''))return res.status(409).json({error:'This profile is review-only in the application. No fallback, restore, overwrite or active-profile change was performed.'});
++      if(['load','load-nrt'].includes(action)&&req.body?.confirmation!==`ACTIVATE ${code}`)return res.status(400).json({error:`Explicit global-switch confirmation required: ACTIVATE ${code}`});
++      if(typeof req.body?.expectedActiveProfileCode!=='string')return res.status(400).json({error:'Refresh the catalogue and explicitly confirm the current global active profile.'});
++      const active=await db(req.demoUser,async c=>{await requireAdmin(c,req.demoUser);return activeContext(c);});
++      if(active.profileCode!==req.body.expectedActiveProfileCode)return res.status(409).json({error:'The active profile changed. Refresh and review the global replacement before proceeding.'});
++      if(['backup','delete'].includes(action)&&active.profileCode!==code)return res.status(409).json({error:'The selected profile is not the active dataset; refusing to overwrite or delete another locality.'});
++      next();
++    }catch(e){res.status(e.status||500).json({error:e.status?e.message:'Setup preflight failed; no mutation was performed.'});}
++  };
++}
++module.exports={setupMutationGuard};
+--- a/backend/live-incident-map.js
++++ b/backend/live-incident-map.js
+@@ -0,0 +1,37 @@
++/* Scoped live map queries use the active profile's calendar, not session UTC. */
++const {activeContext,zonedSql,parseFilters}=require('./profile-library');
++async function timeline(c,query={}) {
++  const f=parseFilters({...query,limit:undefined}),context=await activeContext(c);
++  const extra={};for(const key of ['suburb','area','category','month']){if(query[key]!==undefined&&(typeof query[key]!=='string'||query[key].length>200))throw Object.assign(Error('Invalid map filter.'),{status:400});extra[key]=query[key]?.trim()||null;}
++  if(extra.month&&!/^\d{4}-(0[1-9]|1[0-2])$/.test(extra.month))throw Object.assign(Error('Invalid month.'),{status:400});
++  const limit=query.limit===undefined?2500:Number(query.limit);if(!Number.isInteger(limit)||limit<1||limit>25000)throw Object.assign(Error('Invalid marker limit.'),{status:400});
++  const time=zonedSql('i.occurred_at',context.timeZone);
++  const role="COALESCE(JSON_VALUE(i.incident_attributes,'$.location_role'),CASE WHEN i.latitude IS NULL OR i.longitude IS NULL THEN 'locality_reference' ELSE 'physical_context' END)";
++  const physical=`i.latitude BETWEEN -90 AND 90 AND i.longitude BETWEEN -180 AND 180 AND ${role}<>'locality_reference'`;
++  const binds={q:f.q,category:extra.category,suburb:extra.suburb,area:extra.area,status:f.status,month:extra.month,fromDate:f.from,toDate:f.to};
++  const where=`cat.active=1 AND (:q IS NULL OR INSTR(LOWER(i.incident_ref),LOWER(:q))>0 OR INSTR(LOWER(i.suburb),LOWER(:q))>0
++    OR INSTR(LOWER(cat.category_name),LOWER(:q))>0 OR INSTR(LOWER(cat.executive_group_label),LOWER(:q))>0
++    OR INSTR(LOWER(r.report_summary),LOWER(:q))>0 OR DBMS_LOB.INSTR(LOWER(r.report_text),LOWER(:q))>0)
++    AND (:category IS NULL OR cat.executive_group_label=:category) AND (:suburb IS NULL OR i.suburb=:suburb)
++    AND (:area IS NULL OR p.area_name=:area) AND (:status IS NULL OR i.incident_status=:status)
++    AND (:month IS NULL OR TO_CHAR(${time},'YYYY-MM')=:month)
++    AND (:fromDate IS NULL OR TO_CHAR(${time},'YYYY-MM-DD')>=:fromDate)
++    AND (:toDate IS NULL OR TO_CHAR(${time},'YYYY-MM-DD')<=:toDate)`;
++  const joins=`FROM secure_crime_incidents_v i JOIN incident_categories cat ON cat.category_id=i.category_id
++    JOIN patrol_areas p ON p.patrol_area_id=i.patrol_area_id JOIN secure_incident_reports_v r ON r.incident_id=i.incident_id`;
++  const rows=(await c.execute(`SELECT i.incident_id,i.incident_ref,i.suburb,i.incident_status,TO_CHAR(${time},'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM') occurred_at,
++    i.location_type,i.modus_operandi,i.latitude,i.longitude,${role} location_role,cat.executive_group_label category_name,
++    cat.category_name detailed_category_name,cat.display_color,cat.severity_band,p.area_name,r.report_summary ${joins}
++    WHERE ${where} ORDER BY i.occurred_at DESC,i.incident_ref FETCH FIRST :limit ROWS ONLY`,{...binds,limit})).rows;
++  const coverage=(await c.execute(`SELECT i.suburb,ROUND(AVG(CASE WHEN ${physical} THEN i.latitude END),6) latitude,
++    ROUND(AVG(CASE WHEN ${physical} THEN i.longitude END),6) longitude,COUNT(*) incident_count ${joins}
++    WHERE ${where} GROUP BY i.suburb ORDER BY incident_count DESC,i.suburb`,binds)).rows;
++  const summary=(await c.execute(`SELECT COUNT(*) total_count,SUM(CASE WHEN i.incident_status NOT IN ('resolved','closed_no_further_action') THEN 1 ELSE 0 END) open_count,
++    SUM(CASE WHEN ${physical} THEN 1 ELSE 0 END) physical_count,SUM(CASE WHEN ${role}='locality_reference' THEN 1 ELSE 0 END) reference_count ${joins} WHERE ${where}`,binds)).rows[0];
++  const timeBounds=(await c.execute(`SELECT TO_CHAR(MIN(${time}),'YYYY-MM-DD') earliest_date,TO_CHAR(MAX(${time}),'YYYY-MM-DD') latest_date FROM secure_crime_incidents_v i`)).rows[0];
++  return {rows,coverage,summary,timeBounds,limit,context,notice:context.notice};
++}
++function registerLiveIncidentMap(app,db) {
++  for(const route of ['/api/incidents/map','/api/incidents/map/timeline'])app.get(route,async(req,res)=>{try{res.json(await db(req.demoUser,c=>timeline(c,req.query)));}catch(e){console.error('Scoped map read:',e.message);res.status(e.status||500).json({error:e.status?e.message:'Scoped incident map is unavailable.'});}});
++}
++module.exports={timeline,registerLiveIncidentMap};
+--- a/frontend/src/main.jsx
++++ b/frontend/src/main.jsx
+@@ -5,6 +5,10 @@
+ import ResultRelationships from "./ResultRelationships";
+ import CrimeDataRoom from "./CrimeDataRoom";
+ import AiOps from "./AiOps";
++import ProfileLibraryPanel from "./ProfileLibraryPanel";
++import {ActiveProfileProvider,useActiveProfile} from "./ProfileContext";
++import {ProfileMapExtent} from "./SavedProfileReview";
++import {SYNTHETIC_NOTICE,formatProfileTime,physicalCoordinates} from "./profile-presentation.mjs";
+ import AgentAuditTrail, {useConversationHistory, HistorySaveNotice} from "./AgentHistory";
+ import PoiVisualSearch, { PoiVectorResults } from "./PoiVisualSearch";
+ import "leaflet/dist/leaflet.css";
+@@ -342,6 +346,7 @@
+     read_only_viewer: "Limited central scope",
+   }[user];
+   return (
++    <ActiveProfileProvider user={user}>
+     <div className="shell" data-release="2026-08-16-language-refresh">
+       <aside>
+         <button className="brand" onClick={() => setPage("welcome")} aria-label="Open Crime Data Livestack home">
+@@ -380,7 +385,7 @@
+           </div>
+           <label>
+             Demo user
+-            <select value={user} onChange={(e) => setUser(e.target.value)}>
++            <select aria-label="Demo user" value={user} onChange={(e) => setUser(e.target.value)}>
+               {USERS.map((u) => (
+                 <option key={u} value={u}>{USER_LABELS[u]}</option>
+               ))}
+@@ -422,9 +427,10 @@
+           </main>
+           <OracleInternalsPanel page={page} />
+         </div>
+-        <footer className="app-use-notice"><details><summary>Data use notice</summary><p>Demonstration data only — not for operational policing decisions. No record represents a real person, address, incident, or investigation.</p></details></footer>
++        <footer className="app-use-notice" role="note"><strong>{SYNTHETIC_NOTICE}</strong><span> Not for operational policing decisions.</span></footer>
+       </section>
+     </div>
++    </ActiveProfileProvider>
+   );
+ }
+ function Hero({ title, text, go, label }) {
+@@ -530,13 +536,6 @@
+   );
+ }
+ function Foundation({ dash, user }) {
+-  const [profile, setProfile] = useState(null), [selectedProfileCode, setSelectedProfileCode] = useState("ADELAIDE_DATA"), [working, setWorking] = useState(""), [notice, setNotice] = useState(""), [error, setError] = useState(""), [confirmation, setConfirmation] = useState("");
+-  const profileDefaults = { ADELAIDE_DATA: { city: "Adelaide Metropolitan Area", name: "Adelaide Data Set Profile", description: "Greater Adelaide SAPOL-calibrated demonstration data." }, PERTH_DATA: { city: "Perth Metropolitan Area", name: "Perth Data Set Profile", description: "Perth Metropolitan WAPOL-calibrated demonstration data." }, BRISBANE_DATA: { city: "Brisbane Metropolitan Area", name: "Brisbane Data Set Profile", description: "Brisbane Metropolitan QPS-calibrated demonstration data." } };
+-  const loadProfile = (profileCode = selectedProfileCode) => fetch("/api/setup/profiles?profileCode=" + encodeURIComponent(profileCode), { headers: { "X-Demo-User": user } }).then(async (response) => { const body = await response.json(); if (!response.ok) throw Error(body.error || "Profile status unavailable"); return body; }).then(setProfile).catch((e) => setError(e.message));
+-  useEffect(() => { setNotice(""); setError(""); setConfirmation(""); loadProfile(); }, [user, selectedProfileCode]);
+-  const perform = (action, payload = {}) => { setWorking(action); setNotice(""); setError(""); fetch("/api/setup/" + action, { method: "POST", headers: { "Content-Type": "application/json", "X-Demo-User": user }, body: JSON.stringify({ ...payload, profileCode: selectedProfileCode }) }).then(async (response) => { const body = await response.json(); if (!response.ok) throw Error(body.error || "Setup action unavailable"); return body; }).then((body) => { setNotice(body.message); setProfile(body); setConfirmation(""); }).catch((e) => setError(e.message)).finally(() => setWorking("")); };
+-  const exportProfile = () => { setWorking("export"); setNotice(""); setError(""); fetch("/api/setup/export", { headers: { "X-Demo-User": user } }).then(async (response) => { if (!response.ok) { const body = await response.json(); throw Error(body.error || "Export unavailable"); } return response.blob(); }).then((blob) => { const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url; link.download = "adelaide-data-set-profile.json"; link.click(); URL.revokeObjectURL(url); setNotice("Adelaide Data Set Profile export downloaded."); }).catch((e) => setError(e.message)).finally(() => setWorking("")); };
+-  const admin = user === "statewide_admin", selectedProfile = profile?.profile, selectedDefaults = profileDefaults[selectedProfileCode], profileName = selectedProfile?.PROFILE_NAME || selectedDefaults.name, confirmationText = `DELETE ${String(selectedProfile?.CITY_LABEL || selectedDefaults.city).split(" ")[0].toUpperCase()} DATA SET`, profiles = Object.keys(profileDefaults).map((code) => ({ ...profileDefaults[code], ...(profile?.profiles?.find((item) => item.PROFILE_CODE === code) || {}), PROFILE_CODE: code }));
+   return (
+     <>
+       <Hero
+@@ -588,13 +587,7 @@
+           </article>
+         ))}
+       </div>
+-      <section className="crimedata-setup">
+-        <header><div><small className="kicker">CRIMEDATA SETUP · Z_BASE DATASET PROFILE LIBRARY</small><h2>CrimeData Setup</h2><p>Choose an Adelaide/SAPOL, Perth/WAPOL, or Brisbane/QPS profile. Restoring a profile replaces the one active operational dataset from its independent Z_BASE library copy.</p></div></header>
+-        <div className="crimedata-setup__profiles">{profiles.map((item) => <button type="button" className={item.PROFILE_CODE === selectedProfileCode ? "active" : "planned"} key={item.PROFILE_CODE} onClick={() => setSelectedProfileCode(item.PROFILE_CODE)}><small>{item.PROFILE_CODE === profile?.activeProfileCode ? "ACTIVE DATASET" : item.LAST_BACKUP_AT ? "AVAILABLE TO RESTORE" : "PROFILE PENDING"}</small><b>{item.CITY_LABEL || item.city}</b><p>{item.description}</p>{item.LAST_BACKUP_AT && <span className="crimedata-setup__coverage"><strong>{Number(item.INCIDENT_COUNT || 0).toLocaleString("en-AU")}</strong> Crime Incidents Across <strong>{Number(item.SUBURB_COUNT || 0).toLocaleString("en-AU")}</strong> Suburbs</span>}<em>{item.LAST_BACKUP_AT ? `Z_BASE captured: ${String(item.LAST_BACKUP_AT).slice(0,19).replace("T"," ")}` : "Awaiting Z_BASE profile registration"}</em></button>)}</div>
+-        <div className="crimedata-setup__counts"><span><b>{Number(profile?.live?.INCIDENTS || 0).toLocaleString("en-AU")}</b> active incidents</span><span><b>{Number(profile?.live?.REPORTS || 0).toLocaleString("en-AU")}</b> active reports</span><span><b>{Number(profile?.live?.PERSONS || 0).toLocaleString("en-AU")}</b> active person profiles</span><span><b>{Number(profile?.backup?.INCIDENTS || 0).toLocaleString("en-AU")}</b> selected Z_BASE incidents</span></div>
+-        <div className="crimedata-setup__actions"><button className="restore" onClick={() => perform("load")} disabled={!admin || !!working || !Number(profile?.backup?.INCIDENTS)}>{working === "load" ? "Restoring…" : `Restore ${profileName}`}</button>{["ADELAIDE_DATA","PERTH_DATA","BRISBANE_DATA"].includes(selectedProfileCode) && <button className="restore nrt" onClick={() => perform("load-nrt")} disabled={!admin || !!working || !Number(profile?.backup?.INCIDENTS)}>{working === "load-nrt" ? "Restoring NRT…" : `Restore ${profileName} NRT`}</button>}</div>
+-        {!admin && <p className="crimedata-setup__access">Restoring a profile is available to the Statewide Admin demo user.</p>}{notice && <p className="crimedata-setup__notice">{notice}</p>}{error && <p className="pattern-error">CrimeData Setup error: {error}</p>}<footer>The standard restore preserves recorded timestamps. Adelaide, Perth, and Brisbane NRT restores shift all incident occurrence times together so the latest incident is now; they never change the Z_BASE snapshot.</footer>
+-      </section>
++      <ProfileLibraryPanel user={user}/>
+     </>
+   );
+ }
+@@ -908,6 +901,7 @@
+   return String(value).replaceAll("_", " ");
+ }
+ function ObjectDetailModal({ object, onClose, user }) {
++  const profileContext=useActiveProfile();
+   const [incidentDetail, setIncidentDetail] = useState(null);
+   const [personDetail, setPersonDetail] = useState(null);
+   const [detailError, setDetailError] = useState("");
+@@ -956,7 +950,7 @@
+     ["Incident reference", record.INCIDENT_REF || record.label],
+     ["Crime category", record.CATEGORY_NAME || record.category || record.detail?.split(" · ")[0]],
+     ["Status", record.INCIDENT_STATUS || record.status],
+-    ["Occurred", record.OCCURRED_AT],
++    ["Occurred", formatProfileTime(record.OCCURRED_AT,profileContext)],
+     ["Suburb", record.SUBURB || record.suburb || record.detail?.split(" · ")[1]],
+     ["Patrol area", record.AREA_NAME],
+     ["Location type", record.LOCATION_TYPE],
+@@ -1642,6 +1636,7 @@
+   );
+ }
+ function IncidentExplorer({ user, initialQuery = "" }) {
++  const profileContext=useActiveProfile();
+   const blank = { q: initialQuery, category: "", suburb: "", status: "", area: "" };
+   const [filters, setFilters] = useState(blank), [lovs, setLovs] = useState({ categories: [], suburbs: [], statuses: [], areas: [] }), [rows, setRows] = useState([]), [selectedRef, setSelectedRef] = useState(""), [detail, setDetail] = useState(null), [loading, setLoading] = useState(false), [error, setError] = useState(""), [askOpen, setAskOpen] = useState(false), [askMode, setAskMode] = useState("sql");
+   useEffect(() => { fetch("/api/incidents/filters", { headers: { "X-Demo-User": user } }).then(async (r) => { const data = await r.json(); if (!r.ok) throw Error(data.error || "Filter lists unavailable"); return data; }).then((data) => { setLovs(data); setFilters(blank); }).catch((e) => setError(e.message)); }, [user, initialQuery]);
+@@ -1656,8 +1651,8 @@
+     <section className="incident-explorer__filters"><label className="incident-explorer__generic"><span>GENERIC INCIDENT SEARCH</span><input value={filters.q} onChange={(event) => change("q", event.target.value)} placeholder="Incident ref, suburb, category, pattern, or report wording…" /></label><div className="incident-explorer__lovs"><Filter name="category" label="Crime category" values={lovs.categories} /><Filter name="suburb" label="Suburb" values={lovs.suburbs} /><Filter name="status" label="Incident status" values={lovs.statuses} /><Filter name="area" label="Patrol area" values={lovs.areas} /></div><div className="incident-explorer__filter-foot"><span>Parameter LOVs reflect only authorised records.</span><button onClick={() => setFilters(blank)} disabled={!Object.values(filters).some(Boolean)}>Clear parameters</button></div></section>
+     {error && <p className="pattern-error">Incident Explorer error: {error}</p>}
+     <div className="incident-explorer__workspace">
+-      <section className="incident-result-list"><header><div><small>SEARCH RESULTS</small><h3>Authorised incidents</h3></div><span>{rows.length}</span></header><div className="incident-result-list__rows">{rows.map((row) => <button key={row.INCIDENT_REF} onClick={() => setSelectedRef(row.INCIDENT_REF)} className={row.INCIDENT_REF === selectedRef ? "active" : ""}><div><b>{row.INCIDENT_REF}</b><span>{row.CATEGORY_NAME}</span></div><p>{row.SUBURB} · {row.AREA_NAME}</p><small>{String(row.INCIDENT_STATUS || "").replaceAll("_", " ")} · {String(row.OCCURRED_AT || "").slice(0, 10)}</small></button>)}{!loading && !rows.length && <p className="incident-result-list__empty">No authorised incidents match these parameters.</p>}</div></section>
+-      <section className="incident-detail-form"><header><div><small>SELECTED INCIDENT RECORD</small><h3>{selected?.INCIDENT_REF || "Select an incident"}</h3><p>{selected ? `${selected.CATEGORY_NAME} · ${selected.SUBURB}` : "Choose a returned record to view the governed incident form."}</p></div><span>read only</span></header>{selected && <><form><label><span>Executive category</span><input readOnly value={display(selected.CATEGORY_NAME)} /></label><label><span>Detailed category</span><input readOnly value={display(selected.DETAILED_CATEGORY_NAME)} /></label><label><span>Incident reference</span><input readOnly value={display(selected.INCIDENT_REF)} /></label><label><span>Status</span><input readOnly value={display(selected.INCIDENT_STATUS).replaceAll("_", " ")} /></label><label><span>Severity band</span><input readOnly value={display(selected.SEVERITY_BAND)} /></label><label><span>Occurred at</span><input readOnly value={display(selected.OCCURRED_AT)} /></label><label><span>Patrol area</span><input readOnly value={display(selected.AREA_NAME)} /></label><label><span>Suburb</span><input readOnly value={display(selected.SUBURB)} /></label><label><span>Location type</span><input readOnly value={display(selected.LOCATION_TYPE)} /></label><label className="full"><span>Address details (synthetic / masked)</span><input readOnly value={[selected.ADDRESS_LINE_1, selected.ADDRESS_LOCALITY, selected.ADDRESS_REGION, selected.ADDRESS_POSTCODE, selected.ADDRESS_COUNTRY_CODE].filter(Boolean).join(", ") || "—"} /></label><label><span>Address precision</span><input readOnly value={display(selected.ADDRESS_PRECISION).replaceAll("_", " ")} /></label><label className="full"><span>Modus operandi</span><input readOnly value={display(selected.MODUS_OPERANDI)} /></label><label><span>Property category</span><input readOnly value={display(selected.PROPERTY_CATEGORY)} /></label><label><span>Vehicle descriptor</span><input readOnly value={display(selected.VEHICLE_DESCRIPTOR)} /></label></form><section className="incident-detail-form__narrative"><small>REPORT SUMMARY</small><p>{display(selected.REPORT_SUMMARY)}</p><small>REPORT NARRATIVE</small><p>{display(selected.REPORT_TEXT)}</p></section><div className="incident-detail-form__related"><article><small>EVIDENCE</small><b>{detail.evidence.length}</b><p>{detail.evidence.map((item) => item.EVIDENCE_TYPE).join(", ") || "No evidence items linked"}</p></article><article><small>PERSON LINKS</small><b>{detail.people.length}</b><p>{detail.people.map((item) => `${item.PERSON_REF} (${item.CONNECTION_TYPE.replaceAll("_", " ")})`).join(", ") || "No person links in this record"}</p></article></div><details className="incident-detail-form__json"><summary>View record attributes</summary><pre>{display(selected.INCIDENT_ATTRIBUTES)}</pre></details></>}</section>
++      <section className="incident-result-list"><header><div><small>SEARCH RESULTS</small><h3>Authorised incidents</h3></div><span>{rows.length}</span></header><div className="incident-result-list__rows">{rows.map((row) => <button key={row.INCIDENT_REF} onClick={() => setSelectedRef(row.INCIDENT_REF)} className={row.INCIDENT_REF === selectedRef ? "active" : ""}><div><b>{row.INCIDENT_REF}</b><span>{row.CATEGORY_NAME}</span></div><p>{row.SUBURB} · {row.AREA_NAME}</p><small>{String(row.INCIDENT_STATUS || "").replaceAll("_", " ")} · {formatProfileTime(row.OCCURRED_AT,profileContext)}</small></button>)}{!loading && !rows.length && <p className="incident-result-list__empty">No authorised incidents match these parameters.</p>}</div></section>
++      <section className="incident-detail-form"><header><div><small>SELECTED INCIDENT RECORD</small><h3>{selected?.INCIDENT_REF || "Select an incident"}</h3><p>{selected ? `${selected.CATEGORY_NAME} · ${selected.SUBURB}` : "Choose a returned record to view the governed incident form."}</p></div><span>read only</span></header>{selected && <><form><label><span>Executive category</span><input readOnly value={display(selected.CATEGORY_NAME)} /></label><label><span>Detailed category</span><input readOnly value={display(selected.DETAILED_CATEGORY_NAME)} /></label><label><span>Incident reference</span><input readOnly value={display(selected.INCIDENT_REF)} /></label><label><span>Status</span><input readOnly value={display(selected.INCIDENT_STATUS).replaceAll("_", " ")} /></label><label><span>Severity band</span><input readOnly value={display(selected.SEVERITY_BAND)} /></label><label><span>Occurred at</span><input readOnly value={formatProfileTime(selected.OCCURRED_AT,profileContext)} /></label><label><span>Patrol area</span><input readOnly value={display(selected.AREA_NAME)} /></label><label><span>Suburb</span><input readOnly value={display(selected.SUBURB)} /></label><label><span>Location type</span><input readOnly value={display(selected.LOCATION_TYPE)} /></label><label className="full"><span>Address details (synthetic / masked)</span><input readOnly value={[selected.ADDRESS_LINE_1, selected.ADDRESS_LOCALITY, selected.ADDRESS_REGION, selected.ADDRESS_POSTCODE, selected.ADDRESS_COUNTRY_CODE].filter(Boolean).join(", ") || "—"} /></label><label><span>Address precision</span><input readOnly value={display(selected.ADDRESS_PRECISION).replaceAll("_", " ")} /></label><label className="full"><span>Modus operandi</span><input readOnly value={display(selected.MODUS_OPERANDI)} /></label><label><span>Property category</span><input readOnly value={display(selected.PROPERTY_CATEGORY)} /></label><label><span>Vehicle descriptor</span><input readOnly value={display(selected.VEHICLE_DESCRIPTOR)} /></label></form><section className="incident-detail-form__narrative"><small>REPORT SUMMARY</small><p>{display(selected.REPORT_SUMMARY)}</p><small>REPORT NARRATIVE</small><p>{display(selected.REPORT_TEXT)}</p></section><div className="incident-detail-form__related"><article><small>EVIDENCE</small><b>{detail.evidence.length}</b><p>{detail.evidence.map((item) => item.EVIDENCE_TYPE).join(", ") || "No evidence items linked"}</p></article><article><small>PERSON LINKS</small><b>{detail.people.length}</b><p>{detail.people.map((item) => `${item.PERSON_REF} (${item.CONNECTION_TYPE.replaceAll("_", " ")})`).join(", ") || "No person links in this record"}</p></article></div><details className="incident-detail-form__json"><summary>View record attributes</summary><pre>{display(selected.INCIDENT_ATTRIBUTES)}</pre></details></>}</section>
+     </div>
+     {selected && <button className="incident-ask-me__launch" onClick={() => { setAskMode("sql"); setAskOpen(true); }}>Ask Me (SQL) about {selected.INCIDENT_REF}</button>}
+     {selected && <button className="incident-ask-me__launch llm" onClick={() => { setAskMode("llm"); setAskOpen(true); }}>Ask Me (LLM) about {selected.INCIDENT_REF}</button>}
+@@ -1729,11 +1724,13 @@
+ function IncidentMapFocus({ incident }) {
+   const map = useMap();
+   useEffect(() => {
+-    if (incident) map.flyTo([Number(incident.LATITUDE), Number(incident.LONGITUDE)], Math.max(map.getZoom(), 12), { duration: 0.45 });
++    const point=physicalCoordinates(incident||{});
++    if (point) map.flyTo(point, Math.max(map.getZoom(), 12), { duration: 0.45 });
+   }, [incident, map]);
+   return null;
+ }
+ function IncidentMap({ user, initialQuery = "", initialPatternCode = "" }) {
++  const profileContext=useActiveProfile();
+   const [incidents, setIncidents] = useState([]);
+   const [selectedRef, setSelectedRef] = useState("");
+   const [detailObject, setDetailObject] = useState(null);
+@@ -1758,7 +1755,7 @@
+     const endpoint = initialPatternCode ? "/api/watched-patterns/" + encodeURIComponent(initialPatternCode) + "/map" : "/api/incidents/map/timeline?" + params.toString();
+     fetch(endpoint, { headers: { "X-Demo-User": user } })
+       .then(async (response) => { const data = await response.json(); if (!response.ok) throw Error(data.error || "Map data unavailable"); return data; })
+-      .then((data) => { const bounds=data.timeBounds||{}; setIncidents(data.rows || []); setCoverage(data.coverage || []); setMapSummary(data.summary || { TOTAL_COUNT: 0, OPEN_COUNT: 0 }); setTimeBounds(bounds); setTimeRange((current) => current.from && current.to ? current : { from: bounds.EARLIEST_DATE || "", to: bounds.LATEST_DATE || "" }); setSelectedRef(data.rows?.[0]?.INCIDENT_REF || ""); })
++      .then((data) => { const bounds=data.timeBounds||{}; setIncidents(data.rows || []); setCoverage(data.coverage || []); setMapSummary(data.summary || { TOTAL_COUNT: 0, OPEN_COUNT: 0 }); setTimeBounds(bounds); setTimeRange((current) => current.from && current.to ? current : { from: bounds.EARLIEST_DATE || "", to: bounds.LATEST_DATE || "" }); setSelectedRef(""); })
+       .catch((requestError) => { setIncidents([]); setCoverage([]); setMapSummary({ TOTAL_COUNT: 0, OPEN_COUNT: 0 }); setError(requestError.message); })
+       .finally(() => setLoading(false));
+   };
+@@ -1770,7 +1767,7 @@
+     loadMap(initialFilters, 2500, { from: "", to: "" });
+   }, [user, initialQuery, initialPatternCode]);
+ 
+-  const mapped = incidents.filter((item) => Number.isFinite(Number(item.LATITUDE)) && Number.isFinite(Number(item.LONGITUDE)));
++  const mapped = incidents.filter((item) => physicalCoordinates(item));
+   const isOpen = (item) => !["resolved", "closed_no_further_action"].includes(String(item.INCIDENT_STATUS || "").toLowerCase());
+   const isPriority = (item) => isOpen(item) || String(item.SEVERITY_BAND || "").toLowerCase() === "high";
+   const totalCount = Number(mapSummary.TOTAL_COUNT || 0);
+@@ -1800,7 +1797,7 @@
+     if (!layers.categories) return "";
+     return item.DISPLAY_COLOR || "#437c94";
+   };
+-  const suburbCenters = coverage.map((item) => ({ name: item.SUBURB, lat: Number(item.LATITUDE), lng: Number(item.LONGITUDE), count: Number(item.INCIDENT_COUNT) }));
++  const suburbCenters = coverage.filter(item=>physicalCoordinates(item)).map((item) => ({ name: item.SUBURB, lat: Number(item.LATITUDE), lng: Number(item.LONGITUDE), count: Number(item.INCIDENT_COUNT) }));
+   const priorities = [
+     { label: "Active incident workload", value: `${openCount.toLocaleString("en-AU")} open records`, text: "Authorised records still reported, assigned, or under review in this filtered set.", tone: "red" },
+     { label: "Priority map markers", value: `${priority.length} highlighted`, text: "Priority emphasis is descriptive and based on record status and category.", tone: "amber" },
+@@ -1853,9 +1850,10 @@
+           </div>
+         </header>
+         <div className="incident-leaflet-map" aria-label="Approximate incident map">
+-          <MapContainer center={[-34.9285, 138.6]} zoom={10} minZoom={8} maxZoom={16} scrollWheelZoom preferCanvas className="incident-leaflet-map__canvas">
++          <MapContainer center={[0,0]} zoom={2} minZoom={2} maxZoom={16} scrollWheelZoom preferCanvas className="incident-leaflet-map__canvas">
+             <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}" attribution="Tiles © Esri" />
+-            <IncidentMapFocus incident={selected} />
++            <ProfileMapExtent context={profileContext} records={mapped} scope={profileContext.profileCode}/>
++            <IncidentMapFocus incident={selectedRef?selected:null} />
+             {layers.suburbs && suburbCenters.map((suburb) => <CircleMarker key={suburb.name} center={[suburb.lat, suburb.lng]} radius={1} pathOptions={{ opacity: 0, fillOpacity: 0 }} interactive={false}><Tooltip permanent direction="center" className="incident-suburb-label">{suburb.name}</Tooltip></CircleMarker>)}
+             {layers.incidents && visibleMarkers.map((item) => {
+               const highlighted = isPriority(item) && layers.priority;
+--- a/frontend/src/app-use-notice.css
++++ b/frontend/src/app-use-notice.css
+@@ -1,4 +1,7 @@
+ .app-use-notice {
++  position: sticky;
++  bottom: 0;
++  z-index: 1100;
+   margin: 0 30px 22px;
+   padding: 9px 13px;
+   background: #fff3df;
+--- a/frontend/src/profile-presentation.mjs
++++ b/frontend/src/profile-presentation.mjs
+@@ -0,0 +1,28 @@
++export const SYNTHETIC_NOTICE = 'Synthetic demonstration data. These are not actual police incidents.';
++export function attributes(record={}) {
++  const raw=record.INCIDENT_ATTRIBUTES??record.incident_attributes;
++  if(typeof raw==='string'){try{return JSON.parse(raw);}catch{return {};}}
++  return raw&&typeof raw==='object'?raw:{};
++}
++export function physicalCoordinates(record={}) {
++  if((record.LOCATION_ROLE??record.location_role??attributes(record).location_role)==='locality_reference')return null;
++  const lat=record.LATITUDE??record.latitude,lon=record.LONGITUDE??record.longitude;
++  const number=v=>(typeof v==='number'||typeof v==='string'&&v.trim()!=='')?Number(v):NaN;
++  const y=number(lat),x=number(lon);
++  return Number.isFinite(y)&&Number.isFinite(x)&&y>=-90&&y<=90&&x>=-180&&x<=180?[y,x]:null;
++}
++export function formatProfileTime(value,context={}) {
++  if(!value)return 'Not recorded';
++  const date=new Date(value);if(!Number.isFinite(date.getTime()))return 'Invalid timestamp';
++  const timeZone=context.timeZone||'UTC';
++  try{return new Intl.DateTimeFormat(context.locale||'en-GB',{timeZone,year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23',timeZoneName:'longOffset'}).format(date)+` (${timeZone})`;}
++  catch{return date.toISOString()+' (UTC; profile time zone unavailable)';}
++}
++export function boundsFromContext(context={},records=[]) {
++  const b=context.bounds;
++  if(Array.isArray(b)&&b.length===4&&b.every(Number.isFinite)&&b[0]>=-180&&b[2]<=180&&b[1]>=-90&&b[3]<=90&&b[0]<b[2]&&b[1]<b[3])return [[b[1],b[0]],[b[3],b[2]]];
++  const points=records.map(physicalCoordinates).filter(Boolean);
++  if(!points.length)return null;
++  let south=90,north=-90,west=180,east=-180;for(const [y,x]of points){south=Math.min(south,y);north=Math.max(north,y);west=Math.min(west,x);east=Math.max(east,x);}
++  const padding=.002;return [[south-padding,west-padding],[north+padding,east+padding]];
++}
+--- a/frontend/src/ProfileContext.jsx
++++ b/frontend/src/ProfileContext.jsx
+@@ -0,0 +1,14 @@
++import React,{createContext,useContext,useEffect,useState} from 'react';
++import {SYNTHETIC_NOTICE} from './profile-presentation.mjs';
++const ProfileContext=createContext({timeZone:'UTC',locale:'en-GB',notice:SYNTHETIC_NOTICE});
++export function ActiveProfileProvider({user,children}) {
++  const [context,setContext]=useState({timeZone:'UTC',locale:'en-GB',notice:SYNTHETIC_NOTICE});
++  useEffect(()=>{
++    const controller=new AbortController();
++    const load=()=>fetch('/api/profile-context',{headers:{'X-Demo-User':user},signal:controller.signal}).then(async r=>{if(!r.ok)throw Error('Active profile unavailable');return r.json();}).then(setContext).catch(e=>{if(e.name!=='AbortError')setContext({timeZone:'UTC',locale:'en-GB',notice:SYNTHETIC_NOTICE,unavailable:true});});
++    load();window.addEventListener('crimedata-profile-changed',load);
++    return()=>{controller.abort();window.removeEventListener('crimedata-profile-changed',load);};
++  },[user]);
++  return <ProfileContext.Provider value={context}>{children}</ProfileContext.Provider>;
++}
++export const useActiveProfile=()=>useContext(ProfileContext);
+--- a/frontend/src/ProfileLibraryPanel.jsx
++++ b/frontend/src/ProfileLibraryPanel.jsx
+@@ -0,0 +1,30 @@
++import React,{useEffect,useState} from 'react';
++import SavedProfileReview from './SavedProfileReview';
++export default function ProfileLibraryPanel({user}) {
++  const [code,setCode]=useState(''),[data,setData]=useState(null),[review,setReview]=useState(false),[confirmation,setConfirmation]=useState(''),[error,setError]=useState(''),[working,setWorking]=useState(false),[notice,setNotice]=useState('');
++  useEffect(()=>{
++    setData(null);setReview(false);setConfirmation('');setError('');setNotice('');
++    if(user!=='statewide_admin')return;
++    const controller=new AbortController();fetch('/api/setup/profiles'+(code?'?profileCode='+encodeURIComponent(code):''),{headers:{'X-Demo-User':user},signal:controller.signal}).then(async r=>{const x=await r.json();if(!r.ok)throw Error(x.error||'Profile catalogue unavailable');return x;}).then(setData).catch(e=>{if(e.name!=='AbortError')setError(e.message);});
++    return()=>controller.abort();
++  },[code,user]);
++  if(user!=='statewide_admin')return <section className="crimedata-setup"><h2>Saved profile library</h2><p>Saved-library review is restricted to Statewide Admin. Your authorised live incident views and locality scope remain unchanged.</p></section>;
++  const selected=data?.profile,selectedCode=selected?.PROFILE_CODE||code,confirmText='ACTIVATE '+selectedCode;
++  const perform=action=>{
++    if(confirmation!==confirmText)return;setWorking(true);setError('');setNotice('');
++    fetch('/api/setup/'+action,{method:'POST',headers:{'Content-Type':'application/json','X-Demo-User':user},body:JSON.stringify({profileCode:selectedCode,confirmation,expectedActiveProfileCode:data.activeProfileCode})}).then(async r=>{const x=await r.json();if(!r.ok)throw Error(x.error||'Action unavailable');return x;}).then(x=>{setData(x);setConfirmation('');setNotice(x.message);window.dispatchEvent(new Event('crimedata-profile-changed'));}).catch(e=>setError(e.message)).finally(()=>setWorking(false));
++  };
++  return <section className="crimedata-setup" aria-label="Saved profile library">
++    <header><div><small className="kicker">CRIMEDATA SETUP · Z_BASE DATASET PROFILE LIBRARY</small><h2>CrimeData Setup</h2><p>Profiles come from the database catalogue. Selecting or reviewing a saved profile does not change the globally active operational dataset.</p><p>Active operational profile: <b data-testid="active-profile-code">{data?.activeProfileCode||'Loading…'}</b></p></div></header>
++    <div className="crimedata-setup__profiles">{data?.profiles.map(p=><button type="button" key={p.PROFILE_CODE} data-profile-code={p.PROFILE_CODE} className={p.PROFILE_CODE===selectedCode?'active':'planned'} onClick={()=>setCode(p.PROFILE_CODE)}><small>{p.PROFILE_CODE===data.activeProfileCode?'ACTIVE DATASET':p.PROFILE_STATUS==='staged'?'SAVED · NOT ACTIVATED':'SAVED PROFILE'}</small><b>{p.CITY_LABEL}</b><p>{p.PROFILE_NAME}</p><span className="crimedata-setup__coverage"><strong>{Number(p.INCIDENT_COUNT).toLocaleString('en-GB')}</strong> incidents · <strong>{Number(p.SUBURB_COUNT).toLocaleString('en-GB')}</strong> source locality labels</span><em>{p.PROFILE_CODE}</em></button>)}</div>
++    {data&&<><div className="crimedata-setup__counts"><span><b>{Number(data.live.INCIDENTS).toLocaleString('en-GB')}</b> live incidents</span><span><b>{Number(data.live.REPORTS).toLocaleString('en-GB')}</b> live reports</span><span><b>{Number(data.backup.INCIDENTS).toLocaleString('en-GB')}</b> selected saved incidents</span></div>
++      <div className="crimedata-setup__actions"><button type="button" onClick={()=>setReview(x=>!x)}>{review?'Hide saved-profile review':'Review saved profile (read only)'}</button></div>
++      <p>{data.activationNotice}</p>
++      {!data.capabilities.restore?<p data-testid="activation-blocked">Activation is disabled for this saved profile pending its separate acceptance and global-switch approval. No data or security entitlement is changed by reviewing it.</p>:<>
++        <label className="profile-activation-confirmation">Global replacement confirmation<input aria-label="Global replacement confirmation" value={confirmation} onChange={e=>setConfirmation(e.target.value)} placeholder={confirmText}/></label>
++        <div className="crimedata-setup__actions"><button type="button" disabled={working||confirmation!==confirmText} onClick={()=>perform('load')}>Restore selected legacy profile</button>{data.capabilities.nrtRestore&&<button type="button" disabled={working||confirmation!==confirmText} onClick={()=>perform('load-nrt')}>Restore legacy profile with shifted occurrence times</button>}</div>
++      </>}
++      {review&&<SavedProfileReview key={selectedCode+user} user={user} profileCode={selectedCode} activeProfileCode={data.activeProfileCode} onClose={()=>setReview(false)}/>}
++    </>}{notice&&<p>{notice}</p>}{error&&<p className="pattern-error" role="alert">{error}</p>}
++  </section>;
++}
+--- a/frontend/src/SavedProfileReview.jsx
++++ b/frontend/src/SavedProfileReview.jsx
+@@ -0,0 +1,69 @@
++import React,{useEffect,useState} from 'react';
++import {CircleMarker,MapContainer,TileLayer,Tooltip,useMap} from 'react-leaflet';
++import {attributes,boundsFromContext,formatProfileTime,physicalCoordinates,SYNTHETIC_NOTICE} from './profile-presentation.mjs';
++import './profile-review.css';
++export function ProfileMapExtent({context,records,scope=''}) {
++  const map=useMap(),bounds=boundsFromContext(context,records),key=JSON.stringify(bounds);
++  // MapContainer owns teardown; a child cleanup can run after its map pane is removed.
++  useEffect(()=>{if(bounds)map.fitBounds(bounds,{padding:[16,16],maxZoom:15,animate:false});},[map,key,scope]);
++  return null;
++}
++const emptyFilters={q:'',group:'',category:'',area:'',status:'',role:'',from:'',to:''};
++export default function SavedProfileReview({user,profileCode,activeProfileCode,onClose}) {
++  const [filters,setFilters]=useState(emptyFilters),[applied,setApplied]=useState(emptyFilters),[data,setData]=useState(null),[selected,setSelected]=useState(''),[detail,setDetail]=useState(null),[error,setError]=useState(''),[detailError,setDetailError]=useState(''),[loading,setLoading]=useState(true);
++  const endpoint='/api/setup/profiles/'+encodeURIComponent(profileCode);
++  useEffect(()=>{
++    const controller=new AbortController();setLoading(true);setError('');setData(null);setDetail(null);setSelected('');
++    const params=new URLSearchParams(Object.entries(applied).filter(([,v])=>v));
++    fetch(endpoint+'/review?'+params,{headers:{'X-Demo-User':user},signal:controller.signal}).then(async r=>{const x=await r.json();if(!r.ok)throw Error(x.error||'Review unavailable');return x;}).then(x=>{setData(x);setSelected(x.records[0]?.INCIDENT_REF||'');}).catch(e=>{if(e.name!=='AbortError')setError(e.message);}).finally(()=>{if(!controller.signal.aborted)setLoading(false);});
++    return()=>controller.abort();
++  },[profileCode,user,applied]);
++  useEffect(()=>{
++    setDetail(null);setDetailError('');if(!selected)return;
++    const controller=new AbortController();fetch(endpoint+'/incidents/'+encodeURIComponent(selected),{headers:{'X-Demo-User':user},signal:controller.signal}).then(async r=>{const x=await r.json();if(!r.ok)throw Error(x.error||'Detail unavailable');return x;}).then(setDetail).catch(e=>{if(e.name!=='AbortError')setDetailError(e.message);});return()=>controller.abort();
++  },[selected,profileCode,user]);
++  const groups=[...new Map((data?.categories||[]).map(c=>[c.EXECUTIVE_GROUP_CODE,{code:c.EXECUTIVE_GROUP_CODE,label:c.EXECUTIVE_GROUP_LABEL,color:c.DISPLAY_COLOR}])).values()];
++  const update=(k,value)=>setFilters(f=>({...f,[k]:value,...(k==='group'?{category:''}:{})}));
++  const record=detail?.incident,a=attributes(record),coordinates=record?physicalCoordinates(record):null;
++  const markers=data?.markers.filter(m=>physicalCoordinates(m))||[];
++  const context=data?.context||{},summary=data?.summary||{};
++  const mapContext=applied.role==='locality_reference'?context:applied.area||applied.q||applied.group||applied.category?{}:context;
++  return <section className="saved-profile-review" aria-label="Saved profile review">
++    <header><div><small>READ-ONLY SAVED PROFILE · NO ACTIVATION</small><h2>{context.profileName||profileCode}</h2><p>Reviewing {profileCode}. Active operational profile remains {activeProfileCode||'unchanged'}.</p></div><button type="button" onClick={onClose}>Close saved review</button></header>
++    <p className="saved-profile-review__notice">{SYNTHETIC_NOTICE}</p>
++    <form className="saved-profile-review__filters" onSubmit={e=>{e.preventDefault();setApplied({...filters});}}>
++      <label>Search titles, full reports or references<input aria-label="Saved report search" value={filters.q} onChange={e=>update('q',e.target.value)} maxLength={200}/></label>
++      <label>Executive group<select aria-label="Saved executive group" value={filters.group} onChange={e=>update('group',e.target.value)}><option value="">All executive groups</option>{groups.map(g=><option key={g.code} value={g.code}>{g.label}</option>)}</select></label>
++      <label>Detailed category<select aria-label="Saved detailed category" value={filters.category} onChange={e=>update('category',e.target.value)}><option value="">All detailed categories</option>{data?.categories.filter(c=>!filters.group||c.EXECUTIVE_GROUP_CODE===filters.group).map(c=><option key={c.CATEGORY_CODE} value={c.CATEGORY_CODE}>{c.CATEGORY_NAME}</option>)}</select></label>
++      <label>District / source area<select aria-label="Saved district" value={filters.area} onChange={e=>update('area',e.target.value)}><option value="">Whole profile</option>{data?.areas.map(a=><option key={a.AREA_NAME} value={a.AREA_NAME}>{a.AREA_NAME} ({a.AREA_TYPE||'source locality'})</option>)}</select></label>
++      <label>Location role<select aria-label="Saved location role" value={filters.role} onChange={e=>update('role',e.target.value)}><option value="">All records</option><option value="physical_context">Physical-context marker</option><option value="locality_reference">Online / reference only</option></select></label>
++      <label>Status<select aria-label="Saved status" value={filters.status} onChange={e=>update('status',e.target.value)}><option value="">All statuses</option>{data?.statuses.map(s=><option key={s.INCIDENT_STATUS}>{s.INCIDENT_STATUS}</option>)}</select></label>
++      <label>From local date<input aria-label="Saved from date" type="date" value={filters.from} onChange={e=>update('from',e.target.value)}/></label>
++      <label>To local date<input aria-label="Saved to date" type="date" value={filters.to} onChange={e=>update('to',e.target.value)}/></label>
++      <button type="submit" disabled={loading}>Apply saved filters</button><button type="button" onClick={()=>{setFilters(emptyFilters);setApplied({...emptyFilters});}}>Clear saved filters</button>
++    </form>
++    {error&&<p role="alert">{error}</p>}{loading&&<p role="status">Reading saved profile…</p>}
++    {data&&<><p className="saved-profile-review__stats" data-testid="saved-summary">{Number(summary.TOTAL_COUNT||0).toLocaleString('en-GB')} matching incidents · {Number(summary.PHYSICAL_COUNT||0).toLocaleString('en-GB')} physical points · {Number(summary.REFERENCE_COUNT||0).toLocaleString('en-GB')} reference-only records · {summary.LOCAL_DATES} local dates ({context.timeZone})</p>
++      {!context.timeZoneConfigured&&<p role="status">This legacy profile has no stored time-zone configuration. UTC is shown explicitly; it is not an inferred local time.</p>}
++      <div className="saved-profile-review__columns"><section><div className="saved-profile-review__map" data-testid="saved-map" data-marker-count={markers.length}>
++        <MapContainer center={[0,0]} zoom={2} minZoom={2} preferCanvas scrollWheelZoom zoomAnimation={false} fadeAnimation={false} markerZoomAnimation={false}>
++          <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}" attribution="Tiles © Esri"/>
++          <ProfileMapExtent context={mapContext} records={markers} scope={profileCode}/>
++          {markers.map(m=><CircleMarker key={m.INCIDENT_REF} center={physicalCoordinates(m)} radius={m.INCIDENT_REF===selected?6:2} pathOptions={{color:m.DISPLAY_COLOR||'#437c94',weight:1,fillOpacity:.7}} eventHandlers={{click:()=>setSelected(m.INCIDENT_REF)}}><Tooltip>{m.INCIDENT_REF} · {m.DISTRICT_AREA}</Tooltip></CircleMarker>)}
++        </MapContainer></div>
++        <p>Approximate fictional area markers, not actual event sites or measured crime hotspots. Online/reference-only records have no physical marker. {data.markersTruncated?`Showing ${markers.length} of ${summary.PHYSICAL_COUNT} physical markers; narrow the filters.`:'All matching physical markers are shown.'}</p>
++        <div className="saved-profile-review__legend">{groups.map(g=><span key={g.code}><i style={{background:g.color}}/>{g.label}</span>)}</div>
++        <div className="saved-profile-review__results" aria-label="Saved incident results">{data.records.map(r=><button key={r.INCIDENT_REF} type="button" className={r.INCIDENT_REF===selected?'selected':''} onClick={()=>setSelected(r.INCIDENT_REF)}><b>{r.INCIDENT_REF}</b><span>{r.REPORT_SUMMARY}</span><small>{r.DISTRICT_AREA} · {formatProfileTime(r.OCCURRED_AT,context)}</small></button>)}</div>
++        {data.recordsTruncated&&<p>First {data.recordLimit} matching records listed; search or narrow the filters to reach others. All matching physical markers remain independently available up to the stated map limit.</p>}
++      </section><section className="saved-profile-review__detail" aria-label="Saved incident detail">{detailError&&<p role="alert">{detailError}</p>}{selected&&!record&&!detailError&&<p>Loading linked report…</p>}{!selected&&<p>No incident matches these filters.</p>}{record&&<>
++        <small>{record.INCIDENT_REF} · {record.CATEGORY_NAME} / {record.DETAILED_CATEGORY_NAME}</small><h3>{record.REPORT_SUMMARY}</h3>
++        <dl><dt>Occurred locally</dt><dd data-testid="saved-occurred">{formatProfileTime(record.OCCURRED_AT,context)}</dd><dt>Stored offset / UTC</dt><dd>{record.OCCURRED_AT} / {new Date(record.OCCURRED_AT).toISOString()}</dd>
++          <dt>Municipality</dt><dd>{a.municipality_name_nl||context.cityLabel}</dd><dt>District / source type</dt><dd>{a.district_area_name_nl||'Not recorded'} / {a.area_type||'Not recorded'}</dd><dt>Wijk / buurt</dt><dd>{a.wijk_name_nl||'Not recorded'} / {a.buurt_name_nl||record.SUBURB}</dd><dt>Setting / status</dt><dd>{record.LOCATION_TYPE} / {record.INCIDENT_STATUS}</dd><dt>Location</dt><dd data-testid="saved-location">{coordinates?`Approximate latitude ${coordinates[0]}, longitude ${coordinates[1]}`:'Reference-only; no physical coordinates or map marker'}</dd><dt>Police unit</dt><dd>{a.police_unit_code||'Unassigned; no independently verified attribution'}</dd></dl>
++        <p className="saved-profile-review__narrative" data-testid="saved-narrative">{record.REPORT_TEXT}</p>
++        <h4>Evidence references</h4>{detail.evidence.length?detail.evidence.map(e=>{const meta=typeof e.EVIDENCE_METADATA==='string'?JSON.parse(e.EVIDENCE_METADATA):e.EVIDENCE_METADATA||{};return <p key={e.EVIDENCE_ID}>{e.EVIDENCE_TYPE}: {meta.evidence_summary||'Reference metadata only'} ({meta.evidence_status||'recorded reference'}; {meta.media_artifact_exists?'artifact recorded':'no media artifact'})</p>;}):<p>No evidence items linked.</p>}
++        <details><summary>Stored source hierarchy and synthetic provenance</summary><pre>{JSON.stringify(a,null,2)}</pre></details>
++      </>}</section></div>
++      <p className="saved-profile-review__capabilities">Saved narrative embeddings: {data.capabilities.EMBEDDINGS}. Saved graph cases: {data.capabilities.CASES}. This read-only review performs no embedding, AI or graph-generation calls. {context.activationReady?'Data readiness recorded; global activation still requires separate confirmation.':'Activation acceptance remains pending; this review cannot change the active dataset.'}</p>
++    </>}
++  </section>;
++}
+--- a/frontend/src/profile-review.css
++++ b/frontend/src/profile-review.css
+@@ -0,0 +1 @@
++.saved-profile-review{border:1px solid #cad5dd;padding:20px;margin:18px 0;background:#fff;color:#243c48;border-radius:8px}.saved-profile-review>header{display:flex;justify-content:space-between;align-items:start;gap:16px}.saved-profile-review h2{margin:5px 0}.saved-profile-review__notice{background:#fff1ce;border-left:4px solid #b57820;padding:12px;font-weight:700}.saved-profile-review__filters{display:flex;flex-wrap:wrap;align-items:end;gap:12px}.saved-profile-review__filters label{display:grid;gap:5px;font-size:12px}.saved-profile-review input,.saved-profile-review select,.saved-profile-review button{font:inherit;padding:8px;border:1px solid #9eafb8;border-radius:4px;background:white;color:inherit}.saved-profile-review button{cursor:pointer}.saved-profile-review button:disabled{opacity:.5;cursor:wait}.saved-profile-review__stats{font-weight:700;padding:12px 0}.saved-profile-review__columns{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}.saved-profile-review__map .leaflet-container{height:520px;z-index:0}.saved-profile-review__detail{min-width:0;border-left:1px solid #dbe3e7;padding-left:20px}.saved-profile-review__detail dl{font-size:13px}.saved-profile-review__detail dt{font-weight:700;margin-top:8px}.saved-profile-review__detail dd{margin:2px 0;overflow-wrap:anywhere}.saved-profile-review__narrative{line-height:1.65;background:#f3f7f9;padding:15px}.saved-profile-review pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px}.saved-profile-review__results{max-height:260px;overflow:auto;border:1px solid #cad5dd}.saved-profile-review__results button{display:grid;gap:5px;width:100%;text-align:left;border:0;border-bottom:1px solid #dbe3e7;border-radius:0}.saved-profile-review__results button.selected{background:#eef5f8}.saved-profile-review__results small{color:#526775}.saved-profile-review__legend{display:flex;flex-wrap:wrap;gap:7px 12px;font-size:12px;margin:10px 0}.saved-profile-review__legend i{display:inline-block;width:10px;height:10px;margin-right:4px}.saved-profile-review__capabilities{border-top:1px solid #dbe3e7;padding-top:12px;font-size:12px}.saved-profile-review [role=alert]{color:#a02c23}.profile-activation-confirmation{display:flex;gap:10px;align-items:center;margin:12px 0}.profile-activation-confirmation input{padding:8px;min-width:260px}@media(max-width:1050px){.saved-profile-review__columns{grid-template-columns:1fr}.saved-profile-review__detail{border-left:0;padding-left:0}}
+--- a/test/profile-library.test.js
++++ b/test/profile-library.test.js
+@@ -0,0 +1,55 @@
++const test=require('node:test'),assert=require('node:assert/strict');
++const {NOTICE,profileCode,parseFilters,contextFrom,zonedSql,createProfileLibrary,whereFor,detail}=require('../backend/profile-library');
++const {presentationCopy}=require('../backend/presentation-copy');
++const {setupMutationGuard}=require('../backend/setup-mutation-guard');
++test('profile identifiers are explicit and never fall back to another city',()=>{
++  assert.equal(profileCode('AMSTERDAM_DATA_V1'),'AMSTERDAM_DATA_V1');
++  for(const code of [undefined,'','../ADELAIDE_DATA','constructor','A\' OR 1=1--',['ADELAIDE_DATA']])assert.throws(()=>profileCode(code),{status:400});
++});
++test('saved filters validate real calendar dates and independent marker limits',()=>{
++  const f=parseFilters({from:'2026-05-01',to:'2026-06-30',role:'locality_reference'});assert.equal(f.mapLimit,15000);assert.equal(f.limit,75);
++  for(const q of [{from:'2026-02-30'},{from:'2026-07-01',to:'2026-06-30'},{role:'any'},{limit:201},{mapLimit:25001},{q:['a']},{q:'x'.repeat(201)}])assert.throws(()=>parseFilters(q),{status:400});
++});
++test('stored configuration supplies timezone; legacy missing zone is explicit UTC',()=>{
++  const base={PROFILE_CODE:'A',PROFILE_NAME:'A',CITY_LABEL:'A',PROFILE_STATUS:'staged'};
++  const c=contextFrom({...base,CONFIG_DOCUMENT:{config:{time_zone:'Europe/Amsterdam',locale:'en-GB'},activation_ready:false}});
++  assert.equal(c.timeZone,'Europe/Amsterdam');assert.equal(c.activationReady,false);assert.equal(c.notice,NOTICE);
++  assert.equal(contextFrom(base).timeZoneConfigured,false);assert.equal(contextFrom(base).timeZone,'UTC');
++  assert.throws(()=>zonedSql('i.occurred_at','UTC\' OR 1=1'),{status:400});
++  assert.match(zonedSql('i.occurred_at','Europe/Amsterdam'),/AT TIME ZONE 'Europe\/Amsterdam'/);
++});
++test('source prose, identifiers, notices and JSON survive presentation unchanged',()=>{
++  const record={REPORT_TEXT:'A fictional witness reported a synthetic sample.',REPORT_SUMMARY:'Rhônepark: a resident\'s account',INCIDENT_ATTRIBUTES:{synthetic_record:true,synthetic_profile_code:'synthetic-demo',source:'fictional source label'},PROFILE_NOTES:NOTICE,notice:NOTICE,PROFILE_CODE:'SYNTHETIC_PROFILE',AREA_NAME:'Synthetic coverage (not a police unit)'};
++  assert.deepEqual(presentationCopy(record),record);assert.equal(presentationCopy({explanation:'synthetic demonstration'}).explanation,'demonstration demonstration');
++});
++test('saved library rejects every non-admin before opening a database connection',async()=>{
++  const library=createProfileLibrary(()=>{throw Error('Must not access saved rows');});
++  for(const user of ['adelaide_central_analyst','northern_analyst','southern_analyst','read_only_viewer','unknown'])await assert.rejects(library.status(user,'AMSTERDAM_DATA_V1'),{status:403});
++});
++test('detail binds both selected profile and incident; cross-profile reference is 404',async()=>{
++  const queries=[];const c={execute:async(sql,binds)=>{queries.push({sql,binds});return {rows:queries.length===1?[{DATASET_PROFILE_ID:30,PROFILE_CODE:'AMSTERDAM_DATA_V1',CONFIG_DOCUMENT:{config:{time_zone:'Europe/Amsterdam'}}}]:[]};}};
++  await assert.rejects(detail(c,'AMSTERDAM_DATA_V1','SYN-BRU-2026-00003'),{status:404});
++  assert.equal(queries[1].binds.pid,30);assert.equal(queries[1].binds.reference,'SYN-BRU-2026-00003');
++  assert.match(queries[1].sql,/cat.dataset_profile_id=i.dataset_profile_id/);assert.match(queries[1].sql,/r.dataset_profile_id=i.dataset_profile_id/);
++  assert.match(whereFor({},'Europe/Amsterdam'),/DBMS_LOB.INSTR\(LOWER\(r.report_text\)/);
++});
++test('mutation guard blocks new/unknown profiles, missing approval and stale global state',async()=>{
++  let dbCalls=0,nextCalls=0;const db=async(user,fn)=>{dbCalls++;return fn({execute:async sql=>({rows:sql.includes('role_name')?[{ROLE_NAME:'admin',IS_ACTIVE:1}]:[{PROFILE_CODE:'BRUSSELS_DATA_V1',CONFIG_DOCUMENT:{config:{time_zone:'Europe/Brussels'}}}]})});};
++  const guard=setupMutationGuard({legacyProfiles:{ADELAIDE_DATA:{}},db});
++  async function run(body,user='statewide_admin',path='/load'){let status=200;const res={status(n){status=n;return this;},json(){}};await guard({method:'POST',path,body,demoUser:user},res,()=>nextCalls++);return status;}
++  assert.equal(await run({profileCode:'AMSTERDAM_DATA_V1',confirmation:'ACTIVATE AMSTERDAM_DATA_V1'}),409);assert.equal(dbCalls,0);
++  assert.equal(await run({profileCode:'TYPO'}),409);assert.equal(await run({profileCode:'ADELAIDE_DATA'}),400);
++  assert.equal(await run({profileCode:'ADELAIDE_DATA'},'read_only_viewer'),403);
++  assert.equal(await run({profileCode:'ADELAIDE_DATA',confirmation:'ACTIVATE ADELAIDE_DATA',expectedActiveProfileCode:'PERTH_DATA'}),409);
++  assert.equal(await run({profileCode:'ADELAIDE_DATA',expectedActiveProfileCode:'BRUSSELS_DATA_V1'},'statewide_admin','/backup'),409);
++  assert.equal(nextCalls,0);
++});
++test('presentation helpers reject NULL/blank/non-physical coordinates and retain genuine zero',async()=>{
++  const {physicalCoordinates,boundsFromContext,formatProfileTime}=await import('../frontend/src/profile-presentation.mjs');
++  for(const v of [null,undefined,'',' ',false,NaN,Infinity])assert.equal(physicalCoordinates({LATITUDE:v,LONGITUDE:4.9}),null);
++  assert.equal(physicalCoordinates({LATITUDE:52,LONGITUDE:4,LOCATION_ROLE:'locality_reference'}),null);
++  assert.equal(physicalCoordinates({LATITUDE:91,LONGITUDE:4}),null);assert.deepEqual(physicalCoordinates({LATITUDE:0,LONGITUDE:0}),[0,0]);
++  assert.deepEqual(boundsFromContext({bounds:[4.728,52.277,5.108,52.432]}),[[52.277,4.728],[52.432,5.108]]);
++  const local=formatProfileTime('2026-04-30T22:15:16Z',{timeZone:'Europe/Amsterdam',locale:'en-GB'});
++  assert.match(local,/01 May 2026/);assert.match(local,/00:15:16/);assert.match(local,/GMT\+02:00/);assert.match(local,/Europe\/Amsterdam/);
++});
+--- a/test/ask-crime-v2-results.test.js
++++ b/test/ask-crime-v2-results.test.js
+@@ -10,8 +10,7 @@
+ const {createAgentHistory} = require('../backend/agent-history');
+ 
+ const source = fs.readFileSync(require.resolve('../backend/server'), 'utf8');
+-const copySource = source.slice(source.indexOf('function presentationCopy('), source.indexOf('\napp.use(', source.indexOf('function presentationCopy(')));
+-const presentationCopy = vm.runInNewContext(`(${copySource})`, {Date});
++const {presentationCopy} = require('../backend/presentation-copy');
+ const routeSource = source.slice(source.indexOf('const SELECT_AI_V2_PROFILE'), source.indexOf('const SELECT_AI_AGENT_V2_TEAM'));
+ const question = 'show me the last 5 incidents in norwood, including report summary and narrative';
+ const validSql = 'SELECT report_summary, report_text FROM secure_incident_reports_v FETCH FIRST 5 ROWS ONLY';
+@@ -147,8 +146,10 @@
+   assert.equal(invalid.state.audit[0].historyStatus, 'failed');
+ });
+ 
+-test('regression fixture reproduces the original formatter overflow for driver-shaped cycles', () => {
++test('unconverted driver-shaped CLOB cycles are still rejected at the JSON boundary', () => {
+   const lob = {};
+   lob.connection = {lob};
+-  assert.throws(() => presentationCopy({rows: [{REPORT_TEXT: lob}]}), /Maximum call stack size exceeded/);
++  // Protected source fields are no longer recursively rewritten. The fetch
++  // conversion tested above is still required: a driver LOB is not JSON text.
++  assert.throws(() => JSON.stringify(presentationCopy({rows: [{REPORT_TEXT: lob}]})), /circular/i);
+ });

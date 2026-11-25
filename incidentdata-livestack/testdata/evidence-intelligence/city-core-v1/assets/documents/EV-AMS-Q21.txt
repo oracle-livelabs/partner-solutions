@@ -1,0 +1,5 @@
+Stores count with an outstanding transfer — Alfa-driehoek
+
+Authored fictional teaching supplement for Amsterdam; linked incident SYN-AMS-2026-04233, Alfa-driehoek.
+A fictional worksite stores sheet lists a discrepancy beside transfer AMS-CORE-06. The count was taken before an internal relocation was reconciled. It records a stock difference, not a conclusion that an item was stolen.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

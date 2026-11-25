@@ -1,0 +1,18 @@
+# Standalone worker build: no dependency on images from the source VM.
+FROM docker.io/node:24-bookworm AS node
+FROM docker.io/python:3.12-bookworm
+COPY --from=node /usr/local/bin/node /usr/local/bin/node
+COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg espeak-ng unzip libsndfile1 && rm -rf /var/lib/apt/lists/*
+RUN python3 -m venv /opt/media
+ENV PATH="/opt/media/bin:${PATH}" PLAYWRIGHT_BROWSERS_PATH=/opt/playwright
+COPY detective-worker/requirements.snapshot.txt /opt/media/requirements.txt
+RUN python -m pip install --no-cache-dir -r /opt/media/requirements.txt
+WORKDIR /app
+COPY detective-worker/runtime-package.json ./package.json
+RUN npm install --omit=dev --no-audit --no-fund && npx playwright install --with-deps chromium
+COPY backend ./backend
+COPY detective-worker ./detective-worker
+ENV CDR_ROOM_MODELS=/models CDR_ROOM_ROOT=/data CDR_ROOM_PUBLIC_ROOT=/public CDR_ROOM_RUNTIME_PACKAGE=/app/package.json
+CMD ["node", "backend/detective-room-worker.js"]

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "at": "2026-09-20T10:28:42.333Z",
+  "results": [
+    {
+      "name": "unit_tests",
+      "exit_code": 0,
+      "elapsed_ms": 1006
+    },
+    {
+      "name": "frontend_build",
+      "exit_code": 0,
+      "elapsed_ms": 2393
+    }
+  ]
+}

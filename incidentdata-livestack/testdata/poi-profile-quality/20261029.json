@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "sourceRef": "synthetic:poi-profile-quality:v1:2026-10-29",
+  "scope": "Active POIs and existing saved copies of the same person references; no new people or relationships",
+  "people": [
+    {
+      "personRef": "POI-2026-0317A",
+      "aliases": ["Alder"],
+      "summary": "Synthetic observation profile grouping recurring outerwear descriptions and vehicle-shape notes. No named individual has been established. Similar clothing or a broadly matching vehicle may relate to different people; use the original observations to compare detail before treating separate sightings as one person."
+    },
+    {
+      "personRef": "POI-2026-0317B",
+      "aliases": ["Meridian"],
+      "summary": "Synthetic comparison profile for recurring service-route timing notes. The shared label groups observations for review; it does not identify a driver, place a particular person at a location, or establish responsibility. Compare the original time windows and route descriptions before linking entries."
+    },
+    {
+      "personRef": "POI-ADL-CARE-W01",
+      "aliases": ["Ellis W."],
+      "summary": "Fictional home-support worker allocated to Resident A in Marion and Resident B in Oaklands Park. Assignment and directory records provide the comparison context, but do not establish attendance or who authored a retained message. A limited transport enquiry was permitted for Resident B; equivalent authority for Resident A is not supplied."
+    },
+    {
+      "personRef": "POI-ADL-CARE-X01",
+      "aliases": ["Rowan H."],
+      "summary": "Fictional community-transport enquiry contact outside the allocated support team. A volunteered directory entry and a corresponding account label provide context for Resident B's enquiry. Account control and message authorship remain unverified; no supplied source places Rowan at a dwelling or connects Rowan with spending or missing property."
+    },
+    {
+      "personRef": "POI-FNET-DARNELL",
+      "aliases": ["Darnell", "Daz", "D. Price"],
+      "summary": "Fictional mobile associate whose scenario role involves meetings across several locations and carrying small items, messages or cash between contacts. The backstory raises a possible courier role within a drug network, but does not establish parcel contents or knowledge of unlawful activity. Compare any claimed handover with its original message, time and location."
+    },
+    {
+      "personRef": "POI-FNET-ELIAS",
+      "aliases": ["Elias", "Eli"],
+      "summary": "Fictional methodical associate with an interest in cash flow, informal payments and record keeping. The scenario assigns a possible bookkeeping and resource-allocation role within a drug network. A balance, payment reference or contact alone does not establish the purpose of funds; the underlying records are needed to assess that hypothesis."
+    },
+    {
+      "personRef": "POI-FNET-MARA",
+      "aliases": ["Mara", "M. Vega"],
+      "summary": "Fictional socially confident facilitator who moves between community and business settings, arranging introductions and meetings. The scenario explores whether that access supports exchanges within a drug network. A social connection or attendance at the same venue does not establish participation; distinguish the recorded introduction from any inferred purpose."
+    },
+    {
+      "personRef": "POI-FNET-NOAH",
+      "aliases": ["Noah"],
+      "summary": "Fictional low-visibility associate with a routine public presence and contacts across several social circles. The scenario considers a communications or logistics support role rather than direct handling of drugs or cash. Routine contact patterns provide comparison material, but do not by themselves establish a network role or knowledge of an exchange."
+    },
+    {
+      "personRef": "POI-FNET-TESSA",
+      "aliases": ["Tessa", "Tess", "T. Rowe"],
+      "summary": "Fictional trusted associate with access to private social and residential settings. The backstory considers administration, packaging, storage and reconciliation as possible functions within a distribution network. Access to a property is contextual; it does not establish possession of its contents or responsibility for a particular transaction."
+    },
+    {
+      "personRef": "POI-NBNW-CLARA",
+      "aliases": ["Thornhill", "C. Thornhill"],
+      "summary": "Fictional philanthropist and Ochre East Foundation co-director alongside gallery operator George Kaplan. Her role brings donor introductions, governance and grant distributions into the art-market scenario. The backstory raises questions about donations from gallery clients; social influence and a director title do not establish knowledge of misuse."
+    },
+    {
+      "personRef": "POI-NBNW-EVE",
+      "aliases": ["Kendall", "E. Kendall"],
+      "summary": "Fictional art consultant in an Alice Springs gallery scenario, with a backstory spanning resource-sector companies, client introductions and high-value sales. Review themes include provenance, travel overlap and the source of transaction funds. The scenario's suggested brokerage role is a hypothesis, not a verified finding of misconduct."
+    },
+    {
+      "personRef": "POI-NBNW-GEORGE",
+      "aliases": ["Kaplan", "G. Kaplan", "GK"],
+      "summary": "Fictional Alice Springs art-gallery operator and Ochre East Foundation co-director. The scenario connects sales, resales and client donations involving Philip Vandamm, Eve Kendall and Clara Thornhill. Those records support comparison of prices, provenance and payment timing; the backstory's laundering hypothesis requires assessment against the original evidence."
+    },
+    {
+      "personRef": "POI-NBNW-PHILIP",
+      "aliases": ["Vandamm", "Phil", "P. Vandamm"],
+      "summary": "Fictional international investor and major client of George Kaplan's gallery. His backstory centres on offshore structures, intermediaries, art purchases and travel to Alice Springs, providing a financial-layering hypothesis for the scenario. A payment or shared itinerary alone does not establish unlawful funds, control of an entity or intent."
+    },
+    {
+      "personRef": "POI-V2-GEORGE",
+      "aliases": ["The Architect", "G. Horner", "Geo"],
+      "summary": "Fictional applied-mathematics and sports-data figure known in the scenario as The Architect. The backstory raises possible overlap between sports information and a synthetic-drug network. His technical background explains the comparison theme; neither expertise nor graph proximity establishes involvement in a specific exchange."
+    },
+    {
+      "personRef": "POI-V2-JULIAN",
+      "aliases": ["Julian", "Jules", "J. Cross"],
+      "summary": "Fictional Amsterdam-based technology-consultancy executive. The scenario explores possible overlap between consultancy contacts and counterfeit-goods activity. Business introductions and shared logistics are comparison leads; the supplied backstory does not verify that Julian controlled goods, knew their origin or authorised a particular shipment."
+    },
+    {
+      "personRef": "POI-V2-TONY",
+      "aliases": ["Skids", "Tone", "T. Kapoor"],
+      "summary": "Fictional former mathematician who runs a film-vehicle maintenance business and has a logistics-broker role in the scenario. Known as Skids, he provides a link between technical planning, vehicle work and transport contacts. The backstory's suggested logistics connections do not establish what a vehicle carried or knowledge of unlawful activity."
+    },
+    {
+      "personRef": "POI-V2-VIVIENNE",
+      "aliases": ["Vivienne", "Viv"],
+      "summary": "Fictional business adviser who mentors emerging entrepreneurs through a boutique consultancy. Her role supplies a legitimate professional context for introductions, meetings and business relationships in the scenario. Consultancy contact should be read in that context; it does not establish involvement in another person's alleged conduct."
+    }
+  ]
+}

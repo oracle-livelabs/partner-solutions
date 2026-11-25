@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "identifiers": [
+    {
+      "personRef": "POI-NBNW-GEORGE",
+      "type": "username",
+      "namespace": "unspecified",
+      "value": "kappa66",
+      "status": "declared",
+      "sourceRef": "DR-20261020-68ed95d9-8383-401c:scenario-owner-chat",
+      "sourceNote": "Scenario owner explicitly linked kappa66 to George Kaplan.",
+      "recordedBy": "Scenario owner instruction in chat"
+    },
+    {
+      "personRef": "POI-NBNW-EVE",
+      "type": "username",
+      "namespace": "unspecified",
+      "value": "evek81",
+      "status": "declared",
+      "sourceRef": "DR-20261020-68ed95d9-8383-401c:scenario-owner-chat",
+      "sourceNote": "Scenario owner explicitly linked evek81 to Eve Kendall.",
+      "recordedBy": "Scenario owner instruction in chat"
+    },
+    {
+      "personRef": "POI-NBNW-PHILIP",
+      "type": "username",
+      "namespace": "unspecified",
+      "value": "pipp68",
+      "status": "declared",
+      "sourceRef": "DR-20261020-68ed95d9-8383-401c:scenario-owner-chat",
+      "sourceNote": "Scenario owner confirmed pipp68 as Philip Vandamm in chat.",
+      "recordedBy": "Scenario owner instruction in chat"
+    },
+    {
+      "personRef": "POI-NBNW-CLARA",
+      "type": "username",
+      "namespace": "unspecified",
+      "value": "thorny58",
+      "status": "declared",
+      "sourceRef": "DR-20261020-68ed95d9-8383-401c:scenario-owner-chat",
+      "sourceNote": "Scenario owner confirmed thorny58 as Clara Thornhill in chat.",
+      "recordedBy": "Scenario owner instruction in chat"
+    },
+    {
+      "personRef": "POI-NBNW-PHILIP",
+      "type": "alias",
+      "value": "pippy",
+      "status": "proposed",
+      "sourceRef": "scenario-owner-chat:2026-10-20:additional-alias-examples",
+      "sourceNote": "Scenario owner gave this as an example of an additional alias Philip could use. Pending confirmation before automatic matching.",
+      "recordedBy": "Scenario owner instruction in chat"
+    },
+    {
+      "personRef": "POI-NBNW-PHILIP",
+      "type": "alias",
+      "value": "pippster",
+      "status": "proposed",
+      "sourceRef": "scenario-owner-chat:2026-10-20:additional-alias-examples",
+      "sourceNote": "Scenario owner gave this as an example of an additional alias Philip could use. Pending confirmation before automatic matching.",
+      "recordedBy": "Scenario owner instruction in chat"
+    },
+    {
+      "personRef": "POI-NBNW-PHILIP",
+      "type": "alias",
+      "value": "vanders",
+      "status": "proposed",
+      "sourceRef": "scenario-owner-chat:2026-10-20:additional-alias-examples",
+      "sourceNote": "Scenario owner gave this as an example of an additional alias Philip could use. Pending confirmation before automatic matching.",
+      "recordedBy": "Scenario owner instruction in chat"
+    }
+  ]
+}

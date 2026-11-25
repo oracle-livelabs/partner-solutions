@@ -1,0 +1,215 @@
+{
+  "mode": "read_only_preview",
+  "started_at": "2026-09-20T02:23:30.831Z",
+  "requests": [
+    {
+      "path": "/api/setup/profiles",
+      "status": 200,
+      "milliseconds": 290,
+      "bytes": 6686,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/DUBLIN_CITY_DATA_V1/review",
+      "status": 200,
+      "milliseconds": 4307,
+      "bytes": 2618668,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review?view=clustered",
+      "status": 200,
+      "milliseconds": 3902,
+      "bytes": 68274,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/records?offset=75&limit=75",
+      "status": 200,
+      "milliseconds": 2676,
+      "bytes": 48231,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/records?offset=42300&limit=75",
+      "status": 200,
+      "milliseconds": 2859,
+      "bytes": 11629,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/records?offset=42317",
+      "status": 200,
+      "milliseconds": 1368,
+      "bytes": 1109,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review?view=clustered&category=OTHER_THEFT",
+      "status": 200,
+      "milliseconds": 4094,
+      "bytes": 66006,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/records?category=OTHER_THEFT&offset=5550",
+      "status": 200,
+      "milliseconds": 3234,
+      "bytes": 31415,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review?view=clustered&area=Alexandra%20Hills",
+      "status": 200,
+      "milliseconds": 3911,
+      "bytes": 64097,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review?view=clustered&q=NONEXISTENT_SCALE_CHECK_20260920",
+      "status": 200,
+      "milliseconds": 3126,
+      "bytes": 16304,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map?zoom=19&mapLimit=25000&bbox=152.74924735092347,-27.61654120316623,152.75124735092348,-27.614541203166226",
+      "status": 200,
+      "milliseconds": 4433,
+      "bytes": 2604,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map?zoom=19&mapLimit=25000",
+      "status": 200,
+      "milliseconds": 2645,
+      "bytes": 53032,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BOSTON_CITY_DATA_V1/review?view=clustered&role=locality_reference",
+      "status": 200,
+      "milliseconds": 259,
+      "bytes": 58056,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/DUBLIN_CITY_DATA_V1/incidents/SYN-DUB-2026-05258",
+      "status": 200,
+      "milliseconds": 357,
+      "bytes": 8653,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/incidents/SYN-DUB-2026-05258",
+      "status": 404,
+      "milliseconds": 321,
+      "bytes": 61,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map",
+      "status": 403,
+      "milliseconds": 2,
+      "bytes": 101,
+      "user": "read_only_viewer"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map",
+      "status": 403,
+      "milliseconds": 1,
+      "bytes": 101,
+      "user": "northern_analyst"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/records",
+      "status": 403,
+      "milliseconds": 1,
+      "bytes": 101,
+      "user": "read_only_viewer"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/records",
+      "status": 403,
+      "milliseconds": 1,
+      "bytes": 101,
+      "user": "northern_analyst"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map?offset=-1",
+      "status": 400,
+      "milliseconds": 8,
+      "bytes": 34,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map?limit=201",
+      "status": 400,
+      "milliseconds": 7,
+      "bytes": 33,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map?zoom=20",
+      "status": 400,
+      "milliseconds": 7,
+      "bytes": 29,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map?bbox=0,2,1,1",
+      "status": 400,
+      "milliseconds": 7,
+      "bytes": 31,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/BRISBANE_DATA/review/map?bbox=NaN,0,1,1",
+      "status": 400,
+      "milliseconds": 7,
+      "bytes": 31,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles/NOT_A_REAL_PROFILE/review?view=clustered",
+      "status": 404,
+      "milliseconds": 7,
+      "bytes": 36,
+      "user": "statewide_admin"
+    },
+    {
+      "path": "/api/setup/profiles",
+      "status": 200,
+      "milliseconds": 265,
+      "bytes": 6686,
+      "user": "statewide_admin"
+    }
+  ],
+  "checks": [
+    "All nine saved profiles and active Dublin catalogue counts unchanged",
+    "Default Dublin review limits and timezone preserved",
+    "Stable disjoint first/second pages, final partial page and end-of-results verified",
+    "Category, area and empty-query totals remain exact and independent of paging",
+    "Both cluster grids and narrow viewport membership independently reconciled against all 42,317 stored physical rows streamed in bounded batches",
+    "High zoom cannot bypass 5000 raw-marker cap; large selection coarsens clusters without sampling",
+    "Reference-only records have no false markers; detail/profile isolation and restricted-user denials pass"
+  ],
+  "writes": 0,
+  "scale_profile": {
+    "code": "BRISBANE_DATA",
+    "saved_records": 42317,
+    "physical": 42317,
+    "clusters": 27,
+    "scope": "Actual saved Oracle rows, larger than Chicago; Chicago itself is still not loaded."
+  },
+  "independent_coordinates": {
+    "stored_physical_rows": 42317,
+    "stream_batches": 43,
+    "cluster_grids_independently_reconciled": 2,
+    "viewport_rows": 6,
+    "all_returned_marker_references_verified": true,
+    "writes": 0
+  },
+  "status": "passed",
+  "finished_at": "2026-09-20T02:24:10.051Z"
+}

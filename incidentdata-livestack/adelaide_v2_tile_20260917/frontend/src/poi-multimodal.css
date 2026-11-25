@@ -1,0 +1,138 @@
+.poi-search-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.poi-search-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #d8e1e3;
+  background: #f8fbfb;
+  padding: 15px;
+}
+
+.poi-search-card header small {
+  color: #4b7776;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.poi-search-card header h3 {
+  margin: 5px 0 0;
+  color: #304653;
+  font-size: 16px;
+}
+
+.poi-search-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid #becbce;
+  border-radius: 3px;
+  padding: 9px;
+  background: #fff;
+  color: #314750;
+  font: 12px/1.45 inherit;
+}
+
+.poi-search-card > button,
+.poi-search-card button[type="submit"] {
+  align-self: flex-start;
+  border: 1px solid #437c94;
+  border-radius: 3px;
+  padding: 8px 12px;
+  background: #437c94;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.poi-search-card button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.poi-search-card > p {
+  margin: 0;
+  color: #61717a;
+  font: 9px/1.35 monospace;
+}
+
+.poi-upload {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 82px;
+}
+
+.poi-upload img,
+.poi-upload > span {
+  width: 72px;
+  height: 82px;
+  border: 1px solid #cad5d7;
+  background: #fff;
+}
+
+.poi-upload img {
+  object-fit: cover;
+}
+
+.poi-upload > span {
+  display: grid;
+  place-items: center;
+  border-style: dashed;
+  color: #74838a;
+  font-size: 9px;
+  text-align: center;
+}
+
+.poi-upload label {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #aab9bd;
+  border-radius: 3px;
+  padding: 7px 9px;
+  background: #fff;
+  color: #355762;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.poi-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.object-detail-modal__evidence-image {
+  margin: 14px 0 0;
+  border: 1px solid #d5dfe1;
+  background: #f7fafb;
+  padding: 8px;
+}
+
+.object-detail-modal__evidence-image img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  background: #e9eff0;
+}
+
+.object-detail-modal__evidence-image figcaption {
+  margin-top: 7px;
+  color: #566a73;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1050px) {
+  .poi-search-grid {
+    grid-template-columns: 1fr;
+  }
+}

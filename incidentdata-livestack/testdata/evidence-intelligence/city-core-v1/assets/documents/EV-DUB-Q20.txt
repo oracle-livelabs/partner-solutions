@@ -1,0 +1,5 @@
+Collection note without a handover signature — Priorswood area
+
+Authored fictional teaching supplement for Dublin; linked incident SYN-DUB-2026-06788, Priorswood area.
+A fictional collection request repeats DUB-CORE-05 in its workshop-reference field, but the handover, weight and recipient fields are blank. A request is not a completed transfer and does not establish who handled a particular part.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

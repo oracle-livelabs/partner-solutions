@@ -1,0 +1,830 @@
+{
+  "readOnly": true,
+  "sourceSchema": "CRIME_DATA",
+  "sourceDatabase": "fu40",
+  "databaseVersion": [
+    {
+      "BANNER_FULL": "Oracle AI Database 26ai Enterprise Edition Release 23.26.4.1.0 - Production\nVersion 23.26.4.1.0"
+    }
+  ],
+  "objectCounts": [
+    {
+      "OBJECT_TYPE": "CREDENTIAL",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 1
+    },
+    {
+      "OBJECT_TYPE": "FUNCTION",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 20
+    },
+    {
+      "OBJECT_TYPE": "INDEX",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 216
+    },
+    {
+      "OBJECT_TYPE": "JOB",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 6
+    },
+    {
+      "OBJECT_TYPE": "LOB",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 85
+    },
+    {
+      "OBJECT_TYPE": "PACKAGE",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 5
+    },
+    {
+      "OBJECT_TYPE": "PACKAGE BODY",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 5
+    },
+    {
+      "OBJECT_TYPE": "PROCEDURE",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 4
+    },
+    {
+      "OBJECT_TYPE": "PROGRAM",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 6
+    },
+    {
+      "OBJECT_TYPE": "PROPERTY GRAPH",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 5
+    },
+    {
+      "OBJECT_TYPE": "SEQUENCE",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 12
+    },
+    {
+      "OBJECT_TYPE": "SQL TRANSLATION PROFILE",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 10
+    },
+    {
+      "OBJECT_TYPE": "TABLE",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 122
+    },
+    {
+      "OBJECT_TYPE": "VIEW",
+      "STATUS": "VALID",
+      "OBJECT_COUNT": 54
+    }
+  ],
+  "invalidObjects": [],
+  "storage": [
+    {
+      "ALLOCATED_MB": 8793
+    }
+  ],
+  "apexRelease": [
+    {
+      "VERSION_NO": "26.1.5"
+    }
+  ],
+  "apexApplications": [
+    {
+      "WORKSPACE": "CRIME_DATA",
+      "APPLICATION_ID": 319,
+      "APPLICATION_NAME": "DickTracy26ai",
+      "ALIAS": "DICKTRACY26AI",
+      "OWNER": "CRIME_DATA"
+    },
+    {
+      "WORKSPACE": "CRIME_DATA",
+      "APPLICATION_ID": 320,
+      "APPLICATION_NAME": "DickV2",
+      "ALIAS": "DICKV2",
+      "OWNER": "CRIME_DATA"
+    },
+    {
+      "WORKSPACE": "CRIME_DATA",
+      "APPLICATION_ID": 361,
+      "APPLICATION_NAME": "DickV3",
+      "ALIAS": "DICKV3",
+      "OWNER": "CRIME_DATA"
+    }
+  ],
+  "apexWorkspaces": [
+    {
+      "WORKSPACE": "CRIME_DATA",
+      "WORKSPACE_ID": 32164830996203172
+    }
+  ],
+  "apexAuthColumns": [
+    {
+      "COLUMN_NAME": "WORKSPACE"
+    },
+    {
+      "COLUMN_NAME": "WORKSPACE_DISPLAY_NAME"
+    },
+    {
+      "COLUMN_NAME": "APPLICATION_ID"
+    },
+    {
+      "COLUMN_NAME": "APPLICATION_NAME"
+    },
+    {
+      "COLUMN_NAME": "WORKING_COPY_NAME"
+    },
+    {
+      "COLUMN_NAME": "IS_CURRENT_AUTHENTICATION"
+    },
+    {
+      "COLUMN_NAME": "IS_SUBSCRIBED"
+    },
+    {
+      "COLUMN_NAME": "SUBSCRIPTION_NEEDS_REFRESH"
+    },
+    {
+      "COLUMN_NAME": "SCHEME_TYPE"
+    },
+    {
+      "COLUMN_NAME": "SCHEME_TYPE_CODE"
+    },
+    {
+      "COLUMN_NAME": "AUTHENTICATION_SCHEME_NAME"
+    },
+    {
+      "COLUMN_NAME": "STATIC_ID"
+    },
+    {
+      "COLUMN_NAME": "INVALID_SESSION_TYPE"
+    },
+    {
+      "COLUMN_NAME": "INVALID_SESSION_URL"
+    },
+    {
+      "COLUMN_NAME": "PLSQL_CODE"
+    },
+    {
+      "COLUMN_NAME": "VERIFICATION_FUNCTION"
+    },
+    {
+      "COLUMN_NAME": "PRE_AUTHENTICATION_PROCESS"
+    },
+    {
+      "COLUMN_NAME": "POST_AUTHENTICATION_PROCESS"
+    },
+    {
+      "COLUMN_NAME": "SWITCH_IN_SESSION"
+    },
+    {
+      "COLUMN_NAME": "COOKIE_NAME"
+    },
+    {
+      "COLUMN_NAME": "COOKIE_PATH"
+    },
+    {
+      "COLUMN_NAME": "COOKIE_DOMAIN"
+    },
+    {
+      "COLUMN_NAME": "COOKIE_SECURE"
+    },
+    {
+      "COLUMN_NAME": "LOGOUT_URL"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTES"
+    },
+    {
+      "COLUMN_NAME": "RAS_MODE"
+    },
+    {
+      "COLUMN_NAME": "RAS_DYNAMIC_ROLES"
+    },
+    {
+      "COLUMN_NAME": "RAS_NAMESPACES"
+    },
+    {
+      "COLUMN_NAME": "HELP_TEXT"
+    },
+    {
+      "COLUMN_NAME": "COMMENTS"
+    },
+    {
+      "COLUMN_NAME": "AUTHENTICATION_SCHEME_ID"
+    },
+    {
+      "COLUMN_NAME": "REFERENCED_SCHEMA_ID"
+    },
+    {
+      "COLUMN_NAME": "LAST_UPDATED_BY"
+    },
+    {
+      "COLUMN_NAME": "LAST_UPDATED_ON"
+    },
+    {
+      "COLUMN_NAME": "CREATED_BY"
+    },
+    {
+      "COLUMN_NAME": "CREATED_ON"
+    },
+    {
+      "COLUMN_NAME": "COMPONENT_SIGNATURE"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_01"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_02"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_03"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_04"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_05"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_06"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_07"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_08"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_09"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_10"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_11"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_12"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_13"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_14"
+    },
+    {
+      "COLUMN_NAME": "ATTRIBUTE_15"
+    }
+  ],
+  "apexAuthentication": [
+    {
+      "APPLICATION_ID": 319,
+      "AUTHENTICATION_SCHEME_NAME": "Temporary OpenDoor - Synthetic Teaching Demo",
+      "SCHEME_TYPE": "Open Door Credentials"
+    },
+    {
+      "APPLICATION_ID": 319,
+      "AUTHENTICATION_SCHEME_NAME": "Oracle APEX Accounts",
+      "SCHEME_TYPE": "Oracle APEX Accounts"
+    },
+    {
+      "APPLICATION_ID": 320,
+      "AUTHENTICATION_SCHEME_NAME": "Oracle APEX Accounts",
+      "SCHEME_TYPE": "Oracle APEX Accounts"
+    },
+    {
+      "APPLICATION_ID": 320,
+      "AUTHENTICATION_SCHEME_NAME": "Temporary OpenDoor - Synthetic Teaching Demo",
+      "SCHEME_TYPE": "Open Door Credentials"
+    },
+    {
+      "APPLICATION_ID": 361,
+      "AUTHENTICATION_SCHEME_NAME": "Oracle APEX Accounts",
+      "SCHEME_TYPE": "Oracle APEX Accounts"
+    }
+  ],
+  "activeProfile": [
+    {
+      "DATASET_PROFILE_ID": 131,
+      "PROFILE_CODE": "PERTH_DATA_V2"
+    }
+  ],
+  "cities": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "city": "Adelaide",
+      "INCIDENTS": 21532,
+      "PERSONS": 17,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 103
+    },
+    {
+      "code": "PERTH_DATA_V2",
+      "city": "Perth",
+      "INCIDENTS": 33511,
+      "PERSONS": 17,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 103
+    },
+    {
+      "code": "BRISBANE_DATA_V2",
+      "city": "Brisbane",
+      "INCIDENTS": 42317,
+      "PERSONS": 17,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 103
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "city": "Amsterdam",
+      "INCIDENTS": 14467,
+      "PERSONS": 15,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 93
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "city": "Brussels",
+      "INCIDENTS": 25691,
+      "PERSONS": 13,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 82
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "city": "Dublin",
+      "INCIDENTS": 17817,
+      "PERSONS": 13,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 82
+    },
+    {
+      "code": "BOSTON_DATA_V2",
+      "city": "Boston",
+      "INCIDENTS": 14513,
+      "PERSONS": 17,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 103
+    },
+    {
+      "code": "CHICAGO_DATA_V2",
+      "city": "Chicago",
+      "INCIDENTS": 39649,
+      "PERSONS": 17,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 103
+    },
+    {
+      "code": "LAS_VEGAS_DATA_V2",
+      "city": "Las Vegas",
+      "INCIDENTS": 19527,
+      "PERSONS": 17,
+      "ACTIVE_WATCH_PATTERNS": 6,
+      "IDENTIFIERS": 103
+    }
+  ],
+  "dataRoom": [
+    {
+      "BATCHES": 2,
+      "ITEMS": 21
+    }
+  ],
+  "dataRoomStorageColumns": [
+    {
+      "TABLE_NAME": "CDR_AI_RESULTS",
+      "COLUMN_NAME": "RESULT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_BATCHES",
+      "COLUMN_NAME": "ARCHIVE_BLOB",
+      "DATA_TYPE": "BLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_DATA_PRODUCTS",
+      "COLUMN_NAME": "PRODUCT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_ASSISTANT_RUNS",
+      "COLUMN_NAME": "ANSWER",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_ASSISTANT_RUNS",
+      "COLUMN_NAME": "QUESTION",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_BOARDS",
+      "COLUMN_NAME": "DETAILED_BRIEF",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_BOARDS",
+      "COLUMN_NAME": "EDGES_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_BOARDS",
+      "COLUMN_NAME": "NODES_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_BOARDS",
+      "COLUMN_NAME": "SUMMARY_BRIEF",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_NOTES",
+      "COLUMN_NAME": "BODY",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_THEORIES",
+      "COLUMN_NAME": "COUNTEREVIDENCE",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_THEORIES",
+      "COLUMN_NAME": "DECISION_REASON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_THEORIES",
+      "COLUMN_NAME": "EVIDENCE_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_THEORIES",
+      "COLUMN_NAME": "TEST_PLAN",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_EXPERT_THEORIES",
+      "COLUMN_NAME": "THEORY_TEXT",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_ITEMS",
+      "COLUMN_NAME": "CONTENT_BLOB",
+      "DATA_TYPE": "BLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_ITEMS",
+      "COLUMN_NAME": "TEXT_PREVIEW",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_LEARN_RUNS",
+      "COLUMN_NAME": "INPUT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_LEARN_RUNS",
+      "COLUMN_NAME": "RESULT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_MONEY_AI_RUNS",
+      "COLUMN_NAME": "CONTEXT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_MONEY_AI_RUNS",
+      "COLUMN_NAME": "RAW_ANSWER",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_MONEY_AI_RUNS",
+      "COLUMN_NAME": "RESULT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_MONEY_RUNS",
+      "COLUMN_NAME": "RESULT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_MSG_RECORDS",
+      "COLUMN_NAME": "BODY",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_MSG_RECORDS",
+      "COLUMN_NAME": "MESSAGE_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_MSG_RUNS",
+      "COLUMN_NAME": "RESULT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_PHOTO_SEARCHES",
+      "COLUMN_NAME": "CROP_BLOB",
+      "DATA_TYPE": "BLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_PHOTO_SEARCHES",
+      "COLUMN_NAME": "RESULT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_WORKSPACE_RUNS",
+      "COLUMN_NAME": "CONTEXT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_WORKSPACE_RUNS",
+      "COLUMN_NAME": "INPUT_JSON",
+      "DATA_TYPE": "CLOB"
+    },
+    {
+      "TABLE_NAME": "CDR_WORKSPACE_RUNS",
+      "COLUMN_NAME": "RESULT_JSON",
+      "DATA_TYPE": "CLOB"
+    }
+  ],
+  "cloudAiViews": [
+    {
+      "TABLE_NAME": "USER_CLOUD_AI_CONVERSATIONS"
+    },
+    {
+      "TABLE_NAME": "USER_CLOUD_AI_CONVERSATION_PROMPTS"
+    },
+    {
+      "TABLE_NAME": "USER_CLOUD_AI_CONVERSATION_PROMPTS_EXT"
+    },
+    {
+      "TABLE_NAME": "USER_CLOUD_AI_PROFILES"
+    },
+    {
+      "TABLE_NAME": "USER_CLOUD_AI_PROFILE_ATTRIBUTES"
+    }
+  ],
+  "aiProfiles": [
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "STATUS": "ENABLED"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "STATUS": "ENABLED"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "STATUS": "ENABLED"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "STATUS": "ENABLED"
+    }
+  ],
+  "aiProfileAttributes": [
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "additional_instructions",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "conversation",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "credential_name",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "max_tokens",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "model",
+      "ATTRIBUTE_VALUE": "google.gemini-2.5-flash"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "oci_compartment_id",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "provider",
+      "ATTRIBUTE_VALUE": "oci"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "role",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_CRIME_DETECTIVE_V1",
+      "ATTRIBUTE_NAME": "temperature",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "additional_instructions",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "conversation",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "credential_name",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "max_tokens",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "model",
+      "ATTRIBUTE_VALUE": "meta.llama-4-maverick-17b-128e-instruct-fp8"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "oci_compartment_id",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "provider",
+      "ATTRIBUTE_VALUE": "oci"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "role",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CDR_WORKSPACE_AI_V1",
+      "ATTRIBUTE_NAME": "temperature",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "additional_instructions",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "comments",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "credential_name",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "max_tokens",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "model",
+      "ATTRIBUTE_VALUE": "meta.llama-4-maverick-17b-128e-instruct-fp8"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "object_list",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "oci_compartment_id",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "provider",
+      "ATTRIBUTE_VALUE": "oci"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "region",
+      "ATTRIBUTE_VALUE": "us-chicago-1"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "role",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "CRIMEDATA_SELECT_AI_V2",
+      "ATTRIBUTE_NAME": "temperature",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "additional_instructions",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "credential_name",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "max_tokens",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "model",
+      "ATTRIBUTE_VALUE": "meta.llama-4-maverick-17b-128e-instruct-fp8"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "oci_compartment_id",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "provider",
+      "ATTRIBUTE_VALUE": "oci"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "role",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    },
+    {
+      "PROFILE_NAME": "DTAI_MOBILE_AI_V1",
+      "ATTRIBUTE_NAME": "temperature",
+      "ATTRIBUTE_VALUE": "[redacted]"
+    }
+  ],
+  "aiAgentViews": [
+    {
+      "TABLE_NAME": "USER_AI_AGENTS"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_ATTRIBUTES"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TASKS"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TASK_ATTRIBUTES"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TASK_HISTORY"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TEAMS"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TEAM_ATTRIBUTES"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TEAM_HISTORY"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TOOLS"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TOOL_ATTRIBUTES"
+    },
+    {
+      "TABLE_NAME": "USER_AI_AGENT_TOOL_HISTORY"
+    }
+  ],
+  "graphs": [
+    {
+      "OBJECT_NAME": "CDR_CONNECTIONS_GRAPH_V1",
+      "STATUS": "VALID"
+    },
+    {
+      "OBJECT_NAME": "CDR_MONEY_GRAPH_V1",
+      "STATUS": "VALID"
+    },
+    {
+      "OBJECT_NAME": "CDR_MSG_GRAPH_V1",
+      "STATUS": "VALID"
+    },
+    {
+      "OBJECT_NAME": "CDR_PHOTO_GRAPH_V1",
+      "STATUS": "VALID"
+    },
+    {
+      "OBJECT_NAME": "CRIME_CASE_NETWORK",
+      "STATUS": "VALID"
+    }
+  ],
+  "outboundLinks": []
+}

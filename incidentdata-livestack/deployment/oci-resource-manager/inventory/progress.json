@@ -1,0 +1,25 @@
+{
+  "currentStep": 6,
+  "stage": "automated-acceptance-passed-human-walkthrough-pending",
+  "steps": {
+    "1": "complete",
+    "2": "complete",
+    "3": "complete_local_candidate",
+    "4": "complete_reviewed_test_plan",
+    "5": "complete_automated_acceptance_after_vm_recovery",
+    "6": "automated_media_and_headless_browser_checks_passed_human_review_pending"
+  },
+  "sourceCommit": "7f2857727102c977e6c460a0e339ee90284877a4",
+  "cloudResourcesCreated": true,
+  "terraformApplyRun": true,
+  "terraformApplySucceeded": true,
+  "fullStackReleaseReady": false,
+  "localCandidatePackaged": true,
+  "terraformPlanRun": true,
+  "resourceManagerStackCreated": true,
+  "vaultRequired": false,
+  "dynamicGroupsRequired": false,
+  "currentTestRun": "9e649a368bcc",
+  "currentState": "artifacts/test-runs/github-20261023.json",
+  "remaining": "Human story/media walkthrough and certificate renewal observation; external web-rule-removal automation requires an owner exception for stable access. Scheduled short-lived test cleanup remains armed."
+}

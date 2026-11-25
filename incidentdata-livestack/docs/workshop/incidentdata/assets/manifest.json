@@ -1,0 +1,90 @@
+{
+  "palette": {
+    "ivory": "#F5F1EA",
+    "charcoal": "#312D2A",
+    "terracotta": "#C74634",
+    "teal": "#537C78",
+    "ochre": "#C29A5B"
+  },
+  "typeface": "Arial",
+  "assets": [
+    {
+      "file": "incidentdata-overview.png",
+      "caption": "Fictional analysts explore incidents through reports, maps and relationships.",
+      "kind": "illustration",
+      "blogPlacement": "## Part 1 Exploring the functionality"
+    },
+    {
+      "file": "incident-journey.png",
+      "caption": "The learner journey connects an activity overview to source review.",
+      "kind": "diagram",
+      "blogPlacement": "### Keep the sources close"
+    },
+    {
+      "file": "source-review.png",
+      "caption": "Original material, authored context and AI drafts remain distinguishable.",
+      "kind": "illustration",
+      "blogPlacement": "### Give supplied content its own workspace"
+    },
+    {
+      "file": "data-room-pipeline.png",
+      "caption": "The Data Room workflow records seven stages for a training batch.",
+      "kind": "diagram",
+      "blogPlacement": "### Experience the platform through APEX too"
+    },
+    {
+      "file": "shared-platform.png",
+      "caption": "Conceptual shared platform: React and APEX use the shared IncidentData environment.",
+      "kind": "diagram",
+      "blogPlacement": "The workshop is being prepared as three application parts"
+    },
+    {
+      "file": "dds-lab.png",
+      "caption": "The dedicated DDS lab examines identities, approved products and grants.",
+      "kind": "diagram",
+      "blogPlacement": "## Part 2 Exploring the technology"
+    },
+    {
+      "file": "technology-overview.png",
+      "caption": "Complementary technologies support different ways to explore the incident context.",
+      "kind": "illustration",
+      "blogPlacement": "### Vector Search Finding related meaning"
+    },
+    {
+      "file": "vector-search-flow.png",
+      "caption": "Prepared embeddings and authorised ranking support semantic retrieval.",
+      "kind": "diagram",
+      "blogPlacement": "### Spatial Adding geographic context"
+    },
+    {
+      "file": "spatial-context.png",
+      "caption": "Geographic context links authorised records to a map and report details.",
+      "kind": "diagram",
+      "blogPlacement": "### Graph Making connections inspectable"
+    },
+    {
+      "file": "relationship-graph.png",
+      "caption": "A conceptual case network makes recorded links inspectable.",
+      "kind": "diagram",
+      "blogPlacement": "### JSON Accommodating varied information"
+    },
+    {
+      "file": "json-duality.png",
+      "caption": "A true duality view maps relational data into a JSON document representation.",
+      "kind": "diagram",
+      "blogPlacement": "### Select AI Asking questions through natural language"
+    },
+    {
+      "file": "select-ai-paths.png",
+      "caption": "Reviewed SQL templates and configured Select AI use distinct execution paths.",
+      "kind": "diagram",
+      "blogPlacement": "### Agent Framework Coordinating tools and tasks"
+    },
+    {
+      "file": "agent-framework.png",
+      "caption": "Agent teams use permitted tools to produce outcomes for review.",
+      "kind": "diagram",
+      "blogPlacement": "Together, these technologies let learners"
+    }
+  ]
+}

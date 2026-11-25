@@ -1,0 +1,36 @@
+{
+  "status": "deployed_healthy",
+  "completed_at": "2026-09-17T07:42:47.741Z",
+  "image_before": "localhost/local/adelaide-crime-intelligence:adelaide-v2-tile-20260917",
+  "image_after": "localhost/local/adelaide-crime-intelligence:europe-profile-tiles-20260917",
+  "image_id_after": "d880dac1ab6c53b253c597d432e4882a0bd7c55667b2b7eb01cbdd35477d0345",
+  "container_after": "47e7b44a977e69f3eb8ce32ac8d536e5b88a3ea8e164b4a4c76eda61fe353f3c",
+  "started_at": "2026-09-17T07:42:43.263059069Z",
+  "application_environment_unchanged": true,
+  "mounts_unchanged": true,
+  "ports_unchanged": true,
+  "runtime_server_sha256": "2777cfa8398f50a156940109e896c17597c63af8cb661150583e756ca3c27e56",
+  "helper_sha256": "df7057736d801c29bd02e094d284ecc4f371c1d99a274ed695cc05f663975646",
+  "frontend_assets_verified": 11,
+  "profile_mappings": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "count": 21532
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "count": 14467
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "count": 25691
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "count": 17817
+    }
+  ],
+  "active_profile_unchanged": "ADELAIDE_DATA_V2",
+  "restore_invoked": false,
+  "rollback_image_retained": "localhost/local/adelaide-crime-intelligence:adelaide-v2-tile-20260917"
+}

@@ -1,0 +1,5 @@
+Authorised relocation awaiting a receiving count — South Boston
+
+Authored fictional teaching supplement for Boston; linked incident SYN-BOS-2026-04945, South Boston.
+A fictional transfer slip repeats BOS-CORE-06 and authorises an internal move between stores. The dispatch box is completed, but the receiving count is blank. Compare both documents before treating the inventory difference as an unexplained loss.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

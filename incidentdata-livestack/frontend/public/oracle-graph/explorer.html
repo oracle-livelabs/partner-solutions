@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <!-- Oracle 26.4 compiles its fixed style expressions. This exception applies
+      only to this document; API values are properties, never style expressions.
+      The same-origin iframe isolates CSS, not a separate security principal. -->
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+ <title>Oracle Graph Explorer</title>
+ <link rel="stylesheet" href="/vendor/oracle-graph/26.4.0/alta.css">
+ <link rel="stylesheet" href="/vendor/oracle-graph/26.4.0/bundle.css">
+ <link rel="stylesheet" href="./explorer.css">
+ <script defer src="/vendor/oracle-graph/26.4.0/index.js"></script>
+ <script defer src="./explorer.js"></script>
+</head>
+<body><div id="graph" aria-label="Oracle graph visualization"></div><p id="failure" role="alert" hidden></p></body>
+</html>

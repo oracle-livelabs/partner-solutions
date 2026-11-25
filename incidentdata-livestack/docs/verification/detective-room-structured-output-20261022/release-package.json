@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "sourceCommit": "8c8d2bcd29d8223079be74f09137c678f831755e",
+  "manifestSha256": "8c3d49b1da4354c311fa8ee3072719beed42872d492a2137cfcb4a37e5a7747d",
+  "resourceManagerZipSha256": "d998f23f0f3c8a97a8a3f15ca0218cddd1b71c50372cafe7a7eb42762f9c5126",
+  "artifactCount": 34,
+  "applicationSourceHashes": {
+    "backend/detective-room-author.js": "7df00497bdc21c07a81a4f0817d36af02011c397c1a0b2d742b5e93c781bf114",
+    "backend/oci-auth-provider.js": "b0c37d7269638c046625710f0088936850f740ae0255bc3941d245f385416e35"
+  },
+  "standaloneWorkerCopiesCurrentBackend": true,
+  "bootstrapRestoreConfirmationIncluded": true,
+  "provisioned": false,
+  "fullFreshDeploymentAcceptance": "pending"
+}

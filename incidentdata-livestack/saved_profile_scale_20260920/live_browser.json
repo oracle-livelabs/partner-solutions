@@ -1,0 +1,128 @@
+{
+  "mode": "live",
+  "checks": [
+    "Six restore tiles and three extra profiles retained; Dublin classic default and stored timezone survive a Los Angeles browser timezone.",
+    "Actual 42,317-record profile reconciles all initial map counts; visible cluster click zooms; next/previous/final-partial paging keeps the existing viewport.",
+    "Street zoom renders bounded original markers; applying filters resets to the first page; empty searches have no false markers.",
+    "Mobile review uses one column; Boston online-only records have no physical markers; switching to a restricted user removes the saved review."
+  ],
+  "page_errors": [],
+  "blocked_writes": [],
+  "maps": [
+    {
+      "zoom": 9,
+      "bbox": [
+        152.2073364,
+        -28.0889432,
+        153.8552856,
+        -26.8216197
+      ],
+      "mode": "clusters",
+      "represented": 42317,
+      "matched": 42317,
+      "markers": 0,
+      "clusters": 13
+    },
+    {
+      "zoom": 11,
+      "bbox": [
+        152.8225708,
+        -27.6792717,
+        153.2345581,
+        -27.3626204
+      ],
+      "mode": "clusters",
+      "represented": 35238,
+      "matched": 42317,
+      "markers": 0,
+      "clusters": 32
+    },
+    {
+      "zoom": 14,
+      "bbox": [
+        153.178339,
+        -27.5435887,
+        153.2298374,
+        -27.5040082
+      ],
+      "mode": "clusters",
+      "represented": 704,
+      "matched": 42317,
+      "markers": 0,
+      "clusters": 25
+    },
+    {
+      "zoom": 16,
+      "bbox": [
+        153.1899047,
+        -27.5286335,
+        153.2027793,
+        -27.5187384
+      ],
+      "mode": "markers",
+      "represented": 108,
+      "matched": 42317,
+      "markers": 108,
+      "clusters": 0
+    },
+    {
+      "zoom": 9,
+      "bbox": [
+        152.2073364,
+        -28.0865201,
+        153.8552856,
+        -26.8191686
+      ],
+      "mode": "clusters",
+      "represented": 5600,
+      "matched": 5600,
+      "markers": 0,
+      "clusters": 11
+    },
+    {
+      "zoom": 2,
+      "bbox": [
+        -105.46875,
+        -67.0674334,
+        105.46875,
+        67.0674334
+      ],
+      "mode": "clusters",
+      "represented": 0,
+      "matched": 0,
+      "markers": 0,
+      "clusters": 0
+    },
+    {
+      "zoom": 9,
+      "bbox": [
+        152.2073364,
+        -28.0889432,
+        153.8552856,
+        -26.8216197
+      ],
+      "mode": "clusters",
+      "represented": 42317,
+      "matched": 42317,
+      "markers": 0,
+      "clusters": 13
+    },
+    {
+      "zoom": 11,
+      "bbox": [
+        -71.2360382,
+        42.180197,
+        -70.8240509,
+        42.4442346
+      ],
+      "mode": "clusters",
+      "represented": 0,
+      "matched": 0,
+      "markers": 0,
+      "clusters": 0
+    }
+  ],
+  "status": "passed",
+  "finished_at": "2026-09-20T02:26:53.251Z",
+  "api_writes_sent": 0
+}

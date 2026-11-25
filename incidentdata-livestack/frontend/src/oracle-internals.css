@@ -1,0 +1,71 @@
+.oi-panel { position:relative; flex:0 0 var(--oi-width); width:var(--oi-width); min-width:0; border-left:1px solid #d4dbd9; background:#f7f8f5; color:#283e48; }
+.oi-panel--collapsed { flex-basis:48px; width:48px; }
+.oi-panel__sticky { position:sticky; top:0; }
+.oi-toggle { display:flex; gap:10px; align-items:center; width:100%; min-height:50px; padding:14px 18px; border:0; border-bottom:1px solid #d4dbd9; background:#fff; color:#923426; font-family:inherit; line-height:1.4; cursor:pointer; }
+.oi-toggle:hover { background:#f2eee8; }
+.oi-toggle svg { stroke:#b53b2a; stroke-width:1.5; flex-shrink:0; }
+.oi-toggle__title { flex:1; text-align:left; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+.oi-toggle__chevron { font-size:22px; line-height:1; color:#53666c; }
+.oi-panel--collapsed .oi-toggle { flex-direction:column; padding:15px 10px; min-height:144px; }
+.oi-panel--collapsed .oi-toggle__title { writing-mode:vertical-rl; text-orientation:mixed; }
+.oi-content { max-height:calc(100dvh - 52px); overflow:auto; overscroll-behavior:contain; padding:22px 20px; }
+.oi-content[hidden] { display:none; }
+.oi-content h2 { font-size:21px; line-height:1.25; margin:7px 0 9px; color:#283e48; }
+.oi-content h3 { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#3b5a62; margin:22px 0 8px; }
+.oi-content p { font-size:12px; line-height:1.65; margin:0; color:#4b5c63; overflow-wrap:anywhere; }
+.oi-eyebrow { color:#963627; font-weight:700; letter-spacing:.08em; font-size:9px; text-transform:uppercase; }
+.oi-content .oi-engine { font-size:11px; color:#64716f; }
+.oi-badges { display:flex; flex-wrap:wrap; gap:6px; margin:16px 0; }
+.oi-tone-ocean { --oi-accent:#437c94; --oi-tint:#eaf1f5; --oi-border:#bfd0da; }
+.oi-tone-sienna { --oi-accent:#aa643b; --oi-tint:#f8eee7; --oi-border:#e1c6b4; }
+.oi-tone-pine { --oi-accent:#4c825c; --oi-tint:#edf4ec; --oi-border:#bed1c0; }
+.oi-tone-plum { --oi-accent:#796087; --oi-tint:#f1edf5; --oi-border:#d2c5dc; }
+.oi-tone-teal { --oi-accent:#4f7d7b; --oi-tint:#edf4f2; --oi-border:#bed2ce; }
+.oi-tone-rose { --oi-accent:#a36472; --oi-tint:#f7edf0; --oi-border:#dfc1ca; }
+.oi-tone-red { --oi-accent:#c74634; --oi-tint:#fbefeb; --oi-border:#e7c2b9; }
+.oi-badge { display:inline-block; border:1px solid var(--oi-border); border-radius:2px; box-shadow:inset 0 2px var(--oi-accent); background:var(--oi-tint); color:#293e46; padding:5px 7px 3px; font:10px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; overflow-wrap:anywhere; }
+.oi-flow { display:grid; gap:15px; padding:0; margin:16px 0 22px; list-style:none; }
+.oi-flow li { display:flex; gap:10px; align-items:center; position:relative; border:1px solid var(--oi-border); border-left:3px solid var(--oi-accent); border-radius:3px; padding:10px; background:var(--oi-tint); }
+.oi-flow li+li::before { content:'↓'; position:absolute; top:-17px; left:50%; font-size:12px; color:#63767b; }
+.oi-flow__number { display:grid; place-items:center; flex:0 0 23px; height:23px; border:1px solid var(--oi-border); border-radius:50%; background:#fff; font-size:10px; font-weight:700; }
+.oi-flow strong { display:block; font-size:11px; color:#293e46; }
+.oi-flow li div>span { display:block; font-size:10px; color:#4b5c63; margin-top:3px; line-height:1.4; }
+.oi-examples { border-top:1px solid #d4dbd9; padding-top:14px; }
+.oi-examples>summary { cursor:pointer; font-size:12px; color:#314c58; font-weight:700; line-height:1.6; }
+.oi-examples>summary>span { font-size:10px; color:#586a70; font-weight:400; margin-left:5px; white-space:nowrap; }
+.oi-content .oi-sql-note { margin:10px 0 15px; font-size:10px; line-height:1.6; }
+.oi-sql { margin:12px 0 18px; min-width:0; }
+.oi-sql__heading { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:7px; }
+.oi-sql h4 { font-size:11px; line-height:1.5; margin:0; color:#314c58; }
+.oi-sql button { flex-shrink:0; background:#fff; border:1px solid #a5b5b6; padding:5px 7px; border-radius:3px; font:inherit; font-size:10px; color:#304c55; cursor:pointer; min-height:30px; }
+.oi-sql button:hover { background:#eaf1f0; }
+.oi-content .oi-sql p { font-size:10px; margin:0 0 8px; }
+.oi-sql pre { max-width:100%; overflow:auto; white-space:pre; margin:0; padding:12px; border:1px solid #d3ddda; border-left:3px solid #4f7d7b; border-radius:3px; background:#edf1ed; color:#233e49; tab-size:2; font:10px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace; }
+.oi-copy-status { display:block; font-size:10px; color:#3b6150; margin-top:5px; line-height:1.4; }
+.oi-copy-status:empty { display:none; }
+.oi-teaching { border-left:3px solid #aa643b; background:#f4eee6; padding:12px; }
+.oi-teaching h3 { margin:0 0 7px; color:#6d4937; }
+.oi-content footer { margin-top:20px; border-top:1px solid #d4dbd9; padding-top:12px; font-size:10px; line-height:1.6; color:#5e6b6b; }
+.oi-resize { position:absolute; top:0; left:-4px; bottom:0; width:8px; cursor:col-resize; touch-action:none; }
+.oi-resize:hover,.oi-panel--resizing .oi-resize { background:#c7463450; }
+.oi-panel--resizing { user-select:none; }
+.oi-panel :is(button,summary,pre):focus-visible,.oi-resize:focus-visible { outline:2px solid #437c94; outline-offset:3px; }
+@media(max-width:1200px) and (min-width:851px) { .oi-panel:not(.oi-panel--collapsed) { width:300px; flex-basis:300px; } .oi-resize { display:none; } }
+@media(max-width:850px) {
+  .app-workspace { flex-direction:column; }
+  .oi-panel,.oi-panel--collapsed { order:-1; display:block; width:100%; flex:0 0 auto; border-left:0; border-bottom:1px solid #d4dbd9; }
+  .oi-panel__sticky { position:static; }
+  .oi-panel .oi-toggle { flex-direction:row; padding:12px 18px; min-height:48px; }
+  .oi-panel--collapsed .oi-toggle__title { writing-mode:horizontal-tb; }
+  .oi-toggle__chevron { transform:rotate(90deg); }
+  .oi-content { padding:18px; max-height:65dvh; }
+  .oi-resize { display:none; }
+}
+
+.oi-lesson{border:1px solid #d4dfda;border-radius:5px;background:#fff;padding:12px;margin:14px 0;min-width:0}
+.oi-lesson>summary{cursor:pointer;font-size:12px;font-weight:700;line-height:1.6;color:#315e63}
+.oi-content .oi-lesson>p{margin:10px 0;font-size:11px}
+.oi-lesson dl{margin:12px 0 0;min-width:0}
+.oi-lesson dt{font-size:11px;font-weight:700;color:#315e63;overflow-wrap:anywhere;line-height:1.5;margin-top:14px}
+.oi-lesson dd{margin:5px 0 0;font-size:11px;line-height:1.7;color:#4b5c63;overflow-wrap:anywhere}
+.oi-implementation{margin:18px 0;padding-bottom:12px;border-bottom:1px solid #d4dbd9}

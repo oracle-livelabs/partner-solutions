@@ -1,0 +1,5 @@
+Document: bounded chronology comparison
+Compared extract: DEMO-MSG-09A; displayed date 28 June 2026.
+Original incident: 29 June 2026, afternoon, as retained in the source report.
+The extract's displayed date precedes the incident date. The timing and completeness of the export are not independently authenticated.
+The supplementary pack was notionally received on 4 July and authored as test material on 25 September 2026. Ordering alone does not show coordination, an attendance window or causation.

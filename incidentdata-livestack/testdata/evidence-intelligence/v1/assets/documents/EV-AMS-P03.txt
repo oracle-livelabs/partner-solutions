@@ -1,0 +1,11 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-P03
+Receipt copy retains a reused suffix and ledger layout
+
+Document: receipt comparison copy
+Ledger-layout marker: AMS-2-2
+Invoice suffix: COPY-17
+Columns: reference | amount
+Margin form code: K-204
+The form code is administrative notation; no shipment has been established.
+
+Authored fixture; not a recovered or original incident document.

@@ -1,0 +1,11 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-P02
+Purchase copy repeats an amount under a different description
+
+Document: purchase confirmation comparison
+Reference suffix: AMS-2-1
+Entry A: exhibition mount; EUR 240.00
+Entry B: packing board; EUR 240.00
+Outcome: source incident resolved without a finding of responsibility
+No verified payer or supplier identity.
+
+Authored fixture; not a recovered or original incident document.

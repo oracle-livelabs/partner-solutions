@@ -1,0 +1,34 @@
+.incident-explorer__head-actions { display: flex; align-items: center; gap: 8px; }
+.incident-explorer__head-actions button { border: 1px solid #779f9d; background: #eff9f8; color: #356b69; border-radius: 3px; padding: 7px 10px; font-size: 11px; }
+.incident-explorer__head-actions button:disabled { opacity: .5; }
+.incident-ask-me__launch { justify-self: end; border: 1px solid #4f7d7b; border-radius: 4px; background: #4f7d7b; color: #fff; padding: 10px 14px; font-size: 12px; box-shadow: 0 2px 5px rgba(35, 73, 81, .18); }
+.incident-ask-me { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 24px; background: rgba(29, 45, 52, .5); }
+.incident-ask-me > section { width: min(960px, 100%); max-height: min(780px, calc(100vh - 48px)); overflow: auto; background: #fff; border: 1px solid #c9d8da; border-radius: 6px; box-shadow: 0 20px 60px rgba(25, 43, 50, .28); }
+.incident-ask-me > section > header { display: flex; align-items: start; justify-content: space-between; gap: 15px; padding: 18px; border-bottom: 1px solid #dce5e6; background: #edf8f7; }
+.incident-ask-me header small { font-size: 9px; font-weight: 700; letter-spacing: .075em; color: #4f6b71; text-transform: uppercase; }
+.incident-ask-me h2 { margin: 5px 0 2px; color: #294953; font-size: 20px; }
+.incident-ask-me h3 { margin: 4px 0; font-size: 14px; color: #315b65; }
+.incident-ask-me header p { margin: 0; font-size: 11px; color: #64747b; }
+.incident-ask-me > section > header > button { border: 0; background: transparent; color: #52656c; font-size: 26px; line-height: 1; }
+.incident-ask-me__notice { margin: 0; padding: 12px 18px; font-size: 11px; color: #5b6e75; background: #fafcfc; border-bottom: 1px solid #e1e8e9; }
+.incident-ask-me__tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding: 16px 18px; }
+.incident-ask-me__tiles button { display: grid; gap: 6px; text-align: left; border: 1px solid #c8dadb; background: #fff; padding: 11px; color: #345760; }
+.incident-ask-me__tiles button:hover:not(:disabled) { background: #eff9f8; border-color: #7da4a3; }
+.incident-ask-me__tiles b { font-size: 12px; }
+.incident-ask-me__tiles span { font-size: 10px; line-height: 1.35; color: #66767d; }
+.incident-ask-me__input { display: flex; gap: 8px; padding: 0 18px 16px; }
+.incident-ask-me__input input { flex: 1; min-width: 0; border: 1px solid #afc0c4; border-radius: 3px; padding: 10px; font: 12px Arial; }
+.incident-ask-me__input button { border: 1px solid #467a78; border-radius: 3px; background: #4f7d7b; color: #fff; padding: 0 14px; font-size: 11px; }
+.incident-ask-me__result { margin: 0 18px 18px; border: 1px solid #d7e2e3; background: #fbfcfc; }
+.incident-ask-me__result > header { display: flex; justify-content: space-between; gap: 12px; padding: 11px; border-bottom: 1px solid #e0e8e9; }
+.incident-ask-me__result > header span { color: #687980; font: 10px monospace; }
+.incident-ask-me__result > p, .incident-ask-me__result > small { display: block; margin: 11px; color: #596a72; font-size: 11px; line-height: 1.45; }
+.incident-ask-me__result details { margin: 11px; padding: 8px; border: 1px solid #dacbe0; background: #f8f5fa; color: #675670; font-size: 10px; }
+.incident-ask-me__result summary { cursor: pointer; font-weight: 700; }
+.incident-ask-me__result pre { max-height: 180px; overflow: auto; white-space: pre-wrap; font: 10px/1.4 monospace; }
+.incident-ask-me__result > div { overflow: auto; max-height: 260px; border-top: 1px solid #dce5e6; }
+.incident-ask-me__result table { width: 100%; border-collapse: collapse; font-size: 10px; }
+.incident-ask-me__result th, .incident-ask-me__result td { padding: 8px; text-align: left; vertical-align: top; white-space: nowrap; border-bottom: 1px solid #e1e8e9; }
+.incident-ask-me__result th { background: #f0f7f7; color: #496b72; font-size: 9px; text-transform: capitalize; }
+@media (max-width: 720px) { .incident-ask-me { padding: 10px; } .incident-ask-me__tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .incident-explorer__head-actions { margin-top: 8px; } .incident-ask-me__tiles { grid-template-columns: 1fr; } .incident-ask-me__input { display: grid; } .incident-ask-me__input button { min-height: 36px; } }

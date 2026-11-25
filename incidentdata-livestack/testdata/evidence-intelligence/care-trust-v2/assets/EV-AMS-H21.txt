@@ -1,0 +1,7 @@
+SYNTHETIC TEACHING SOURCE — NOT OPERATIONAL EVIDENCE
+
+Document: synthetic reconciliation addendum, displayed date 5 July 2026
+Client reference: CT-RES-A
+DEMO-TXN-A1: settled EUR 24.60; supplied grocery receipt matches that amount. DEMO-TXN-A2: voided authorisation, not a second settled payment. The apparent duplicate is explained within these supplied records.
+DEMO-TXN-A3: displayed as settled EUR 62.40; refund requested, completion not confirmed. No receipt or permission beyond the EUR 35 shopping limit is supplied. This leaves a question, not a verified loss or finding of misuse.
+No payment user is identified. No evidence connects this entry to the tool-case loss or outward message. No public-care funding claim, PGB payment or provider invoice is supplied, so care-funding fraud cannot be concluded.

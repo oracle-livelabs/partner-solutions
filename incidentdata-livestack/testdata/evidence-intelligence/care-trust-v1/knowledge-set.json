@@ -1,0 +1,20 @@
+{
+  "id": "KS-CARE-TRUST-001",
+  "version": "1.0",
+  "name": "Care-Trust Evidence",
+  "vignette": "Who knew?",
+  "profileCode": "AMSTERDAM_DATA_V1",
+  "watchPattern": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+  "caseRef": "CASE-AMS-2026-03",
+  "opening": "A tool case is reported missing. A second support record names the same worker. Did private information leave the care team?",
+  "adaptation": "Existing tools and parcel facts replace the proposed jewellery losses. Existing reported entry damage is not rewritten as unlocked entry.",
+  "scope": "Five existing incidents, two new fictional documentary contacts, sixteen supplementary evidence items; no new incidents or entitlements.",
+  "sourceBoundary": "Care context is new fictional teaching material. Person directory association is not account control, authorship, attendance or culpability.",
+  "deferred": [
+    "Operational schedules",
+    "Clinical details",
+    "Financial exploitation",
+    "Image comparisons",
+    "Proven offender identity"
+  ]
+}

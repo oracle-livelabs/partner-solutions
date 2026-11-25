@@ -1,0 +1,19 @@
+{
+  "cards": 32,
+  "images": 4,
+  "imagesLoaded": true,
+  "sourceDisclosure": true,
+  "assetLinksResolve": true,
+  "layouts": [
+    {
+      "width": 760,
+      "scroll": 760
+    },
+    {
+      "width": 390,
+      "scroll": 390
+    }
+  ],
+  "pageErrors": [],
+  "scope": "Local dataset review catalogue only; no production Evidence Intelligence UI is deployed."
+}

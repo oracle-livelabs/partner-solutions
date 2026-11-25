@@ -1,0 +1,7 @@
+Document: second care-assignment extract
+Provider label: DEMO-CARE-01
+Client reference: CT-RES-B
+Worker identifier: DEMO-WORKER-17
+Named worker: Lena Harper
+The assignment predates the reported parcel loss. No visit times, residence or clinical details are supplied.
+The record supports a common assigned worker with CT-RES-A, not a common offender. Authority to share information must be checked separately for each client.

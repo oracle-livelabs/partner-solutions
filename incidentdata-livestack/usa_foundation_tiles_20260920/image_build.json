@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "at": "2026-09-20T10:32:06.713Z",
+  "image": "local/adelaide-crime-intelligence:usa-foundation-tiles-20260920",
+  "image_id": "bfd1c31b1a717cd8e150014d1a838593fab80cc3779038af47907334930c4729",
+  "manifest": {
+    "frontend/index.html": "e280f67c8ba1a47ee35584dda3d3ed5088170513f733b4e9b031da29573e3682",
+    "frontend/assets/BatchMessages-BsIbwecY.css": "2677fdb29266e4bd4f8cfd24c5dc957fde33a54aec8142fac1287f23ee7bdcea",
+    "frontend/assets/BatchMessages-D20A8yDz.js": "58375428fc193f9087913326577aa5882a7a41fbee69b755c38d3e24015f7152",
+    "frontend/assets/BatchMoneyFlows-BrrX-5XD.js": "2abb9760f7248eba081f9d05a0da1de4971fc047e261006871d77836c37e3627",
+    "frontend/assets/BatchMoneyFlows-iwCrh3Xs.css": "a2c81006043f392e3d5d4d6a053c68b6662d77a1696223b3105f5f832d536be6",
+    "frontend/assets/BatchPeoplePhotos-BAAg5R-3.css": "bd7a99af0be65fe5e2525647f1c277f889dd2688e82cbea832c37bc42e2e9344",
+    "frontend/assets/BatchPeoplePhotos-bW-OFWKl.js": "50255141e46bc0745856277655810863fd5473822e0a2a04b8331177dfbc0b0a",
+    "frontend/assets/BatchPoiCandidates-B9k9KI0r.js": "1e09c085f97141c528572f5bc565ea81ba626b0e376f427e33ccde6119c3ebf6",
+    "frontend/assets/BatchPoiCandidates-BAtclp3e.css": "3702a2e86602c6d5d328bf08df736776b629d9ec977c12774ac24689607acae8",
+    "frontend/assets/BatchTravel-B68Ef2F4.js": "2c308444a222b2809e0161b09910374f0341304491008ea2faeab5294f9e746b",
+    "frontend/assets/BatchTravel-JY-E6rFr.css": "f89e665f322eda2e9ea713a998715b25eaee36c4d2ee663a5b8c36cc48efbdb4",
+    "frontend/assets/index-D9tOVKHP.css": "6fa2e2380178cce065ef1f9dc2d90b85927c524a3e9adef49f623a6cc4fd83de",
+    "frontend/assets/index-Wu8jHhfL.js": "8f348cacd8a4bff13f1a7331767659fc611d456050b615fe785bba8c747aaf60"
+  },
+  "isolated_context": true,
+  "base_image": "localhost/local/adelaide-crime-intelligence:saved-profile-scale-20260920",
+  "profile_data_included": false,
+  "public_assets_overwritten": false
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "mode": "live UI",
+  "checks": [
+    {
+      "city": "Live active city",
+      "sixStories": true,
+      "fourScopedSourcesPerStory": true,
+      "imagesLoad": true,
+      "reviewActionsReady": true,
+      "mobileFits": true
+    }
+  ],
+  "errors": [],
+  "noWrites": true
+}

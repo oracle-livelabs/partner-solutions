@@ -1,0 +1,43 @@
+{
+  "tenancy": "apacanzset03",
+  "compartment": "franco_ucci_sandbox",
+  "region": "ap-sydney-1",
+  "userConfirmed": true,
+  "publicAccess": "React and APEX over HTTPS",
+  "authentication": "individual demo accounts",
+  "hostname": null,
+  "genaiModelAvailability": {
+    "ap-sydney-1": {
+      "meta.llama-3.3-70b-instruct": false,
+      "meta.llama-4-maverick-17b-128e-instruct-fp8": false,
+      "google.gemini-2.5-flash": true,
+      "xai.grok-4.6": false,
+      "cohere.embed-v4.0": false
+    },
+    "us-chicago-1": {
+      "meta.llama-3.3-70b-instruct": true,
+      "meta.llama-4-maverick-17b-128e-instruct-fp8": true,
+      "google.gemini-2.5-flash": true,
+      "xai.grok-4.6": true,
+      "cohere.embed-v4.0": true
+    }
+  },
+  "existingResourceNames": {
+    "databases": [
+      "fu40",
+      "fu30"
+    ],
+    "instances": [
+      "fu10",
+      "fu6",
+      "fu_docling",
+      "fu_edge",
+      "fu_edge_TD",
+      "fu_vaipol_1",
+      "fu_vibe_test"
+    ]
+  },
+  "mustPreserveExistingResources": true,
+  "publicAddressPreference": "OCI reserved public IP; no custom domain required",
+  "hostnameRequired": false
+}

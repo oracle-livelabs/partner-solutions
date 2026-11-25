@@ -1,0 +1,424 @@
+{
+  "packageCode": "EI_AMSTERDAM_CARE_V2",
+  "profileCode": "AMSTERDAM_DATA_V1",
+  "knowledgeSetId": "KS-CARE-TRUST-001",
+  "version": "2.0",
+  "authoredAt": "2026-09-25",
+  "items": [
+    {
+      "evidenceRef": "EV-AMS-H17",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "2.0",
+      "incidentRef": "SYN-AMS-2026-12200",
+      "caseRef": "CASE-AMS-2026-03",
+      "title": "A private follow-up turns a public concern into a review lead",
+      "kind": "signal_triage_note",
+      "description": "The public post does not identify anyone. A separately authored private follow-up supplies the tool-case report reference and permission to record a concern about dependency and information sharing.",
+      "sourceText": "Document: synthetic triage note, recorded 4 July 2026\nPublic source: SYN-AMS-CARE-POST-01, posted 3 July.\nIn a separate private follow-up, the fictional contributor supplies report SYN-AMS-2026-12200 and asks for the concern to be recorded with that report. This is an authored teaching link, not an identity inferred from public text.\nThe original report concerns a small tool case and entrance damage. New concern: Resident A depends on assistance and worries that asking about privacy might jeopardise that assistance. No actual threat or withdrawal of care is reported.\nThis explains the comparison link; it does not corroborate the loss, identify a message author or show a common offender. The next source to inspect is the resident-support note, then the care-assignment and retained-message records.\nClient reference supplied in the private follow-up: CT-RES-A.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "CT-RES-A",
+          "sourceQuote": "CT-RES-A"
+        },
+        {
+          "namespace": "public_post",
+          "value": "SYN-AMS-CARE-POST-01",
+          "sourceQuote": "SYN-AMS-CARE-POST-01"
+        }
+      ],
+      "attributes": {
+        "sourcePostRef": "SYN-AMS-CARE-POST-01",
+        "linkBasis": "separate_attributed_private_followup",
+        "reviewStatus": "reviewed_comparison",
+        "originalIncidentUnchanged": true,
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "assigned",
+        "financialHelperIdentity": "not_established"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-29T11:12:26.000Z",
+        "suburb": "Surinamepleinbuurt",
+        "district": "Zuid",
+        "latitude": 52.356218,
+        "longitude": 4.852563,
+        "locationRole": "physical_context",
+        "precision": "approximate neighbourhood-level synthetic point",
+        "pointMeaning": "Random area marker on verified eligible public ground within the assigned buurt and municipality; not an actual event site, address, entrance or premises."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-07-05T10:00:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-25",
+        "anchorSnapshotSha256": "df25c8f0791b660c7969671ff10999bff1784f32f4e97c187f66ca4b286fc961",
+        "basis": "Additive Care-Trust v2 teaching supplement; original report and v1 sources are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Fictional source, not operational evidence. Approximate incident context is not a residence, care visit or capture location."
+      },
+      "asset": {
+        "path": "assets/EV-AMS-H17.txt",
+        "mimeType": "text/plain",
+        "sha256": "4beccda83a7adc4b398996c8c369baa2245963cd403fe7b97e54b0ca4df4d36c",
+        "caption": "The public post does not identify anyone. A separately authored private follow-up supplies the tool-case report reference and permission to record a concern about dependency and information sharing."
+      },
+      "indexText": "A private follow-up turns a public concern into a review lead\nThe public post does not identify anyone. A separately authored private follow-up supplies the tool-case report reference and permission to record a concern about dependency and information sharing.\nDocument: synthetic triage note, recorded 4 July 2026\nPublic source: SYN-AMS-CARE-POST-01, posted 3 July.\nIn a separate private follow-up, the fictional contributor supplies report SYN-AMS-2026-12200 and asks for the concern to be recorded with that report. This is an authored teaching link, not an identity inferred from public text.\nThe original report concerns a small tool case and entrance damage. New concern: Resident A depends on assistance and worries that asking about privacy might jeopardise that assistance. No actual threat or withdrawal of care is reported.\nThis explains the comparison link; it does not corroborate the loss, identify a message author or show a common offender. The next source to inspect is the resident-support note, then the care-assignment and retained-message records.\nClient reference supplied in the private follow-up: CT-RES-A.",
+      "indexTextSha256": "ef6cda57202c211545a8156f53358bd34cc68a9c694475bb55a8297f188ce878"
+    },
+    {
+      "evidenceRef": "EV-AMS-H18",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "2.0",
+      "incidentRef": "SYN-AMS-2026-12200",
+      "caseRef": "CASE-AMS-2026-03",
+      "title": "A resident wants help to continue while spending is clarified",
+      "kind": "attributed_financial_concern",
+      "description": "Resident A raises an attributed shopping-payment concern after the property report. Dependency explains hesitation in this fictional account; it does not identify the financial helper or connect spending to the burglary.",
+      "sourceText": "Document: attributed financial-support follow-up, 4 July 2026\nClient reference: CT-RES-A\nResident A says: \"I need the help to continue. I agreed to some shopping, but I do not understand every entry. I waited to ask because I did not want to cause trouble.\"\nThe resident asks for the shopping permission and receipts to be compared. This is a reported concern, not an assessment of memory or capacity. No threat, coercive demand or eyewitness account of card misuse is supplied.\nThe person who assisted with payments is not identified. A care assignment must not be substituted for proof of who spent money. This follow-up does not amend the tool-case incident into a fraud report.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "CT-RES-A",
+          "sourceQuote": "CT-RES-A"
+        }
+      ],
+      "attributes": {
+        "hypothesis": "personal_financial_abuse_unresolved",
+        "statementStatus": "attributed_unverified",
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "assigned",
+        "financialHelperIdentity": "not_established"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-29T11:12:26.000Z",
+        "suburb": "Surinamepleinbuurt",
+        "district": "Zuid",
+        "latitude": 52.356218,
+        "longitude": 4.852563,
+        "locationRole": "physical_context",
+        "precision": "approximate neighbourhood-level synthetic point",
+        "pointMeaning": "Random area marker on verified eligible public ground within the assigned buurt and municipality; not an actual event site, address, entrance or premises."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-07-05T10:00:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-25",
+        "anchorSnapshotSha256": "df25c8f0791b660c7969671ff10999bff1784f32f4e97c187f66ca4b286fc961",
+        "basis": "Additive Care-Trust v2 teaching supplement; original report and v1 sources are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Fictional source, not operational evidence. Approximate incident context is not a residence, care visit or capture location."
+      },
+      "asset": {
+        "path": "assets/EV-AMS-H18.txt",
+        "mimeType": "text/plain",
+        "sha256": "1b97ab28eee8a527f5c07ef8cc6a36b1e88ad1a6eee50fa637e0aa20f10f129f",
+        "caption": "Resident A raises an attributed shopping-payment concern after the property report. Dependency explains hesitation in this fictional account; it does not identify the financial helper or connect spending to the burglary."
+      },
+      "indexText": "A resident wants help to continue while spending is clarified\nResident A raises an attributed shopping-payment concern after the property report. Dependency explains hesitation in this fictional account; it does not identify the financial helper or connect spending to the burglary.\nDocument: attributed financial-support follow-up, 4 July 2026\nClient reference: CT-RES-A\nResident A says: \"I need the help to continue. I agreed to some shopping, but I do not understand every entry. I waited to ask because I did not want to cause trouble.\"\nThe resident asks for the shopping permission and receipts to be compared. This is a reported concern, not an assessment of memory or capacity. No threat, coercive demand or eyewitness account of card misuse is supplied.\nThe person who assisted with payments is not identified. A care assignment must not be substituted for proof of who spent money. This follow-up does not amend the tool-case incident into a fraud report.",
+      "indexTextSha256": "cc6ba5c31074fe32a79d203025dbee5eebad3431c4a46d660bcab63a28c0f93c"
+    },
+    {
+      "evidenceRef": "EV-AMS-H19",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "2.0",
+      "incidentRef": "SYN-AMS-2026-12200",
+      "caseRef": "CASE-AMS-2026-03",
+      "title": "The permission is for shopping, not unrestricted spending",
+      "kind": "financial_permission_extract",
+      "description": "A fictional permission extract sets a shopping limit and requires receipts. It is scoped to Resident A, names no financial helper and supplies no bank credential or account number.",
+      "sourceText": "Document: limited shopping-support permission, displayed date 26 June 2026\nClient reference: CT-RES-A\nPermission reference: DEMO-SHOP-A\nPermitted purpose: groceries for the resident, up to EUR 35 per shopping occasion, with a receipt. The extract does not authorise personal purchases, general transfers or disclosure of private care details.\nThe financial helper is not named. No PIN, bank details, visit schedule or residence is provided. A displayed permission document is not independently authenticated and does not prove who used a payment instrument.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "CT-RES-A",
+          "sourceQuote": "CT-RES-A"
+        },
+        {
+          "namespace": "shopping_permission",
+          "value": "DEMO-SHOP-A",
+          "sourceQuote": "DEMO-SHOP-A"
+        }
+      ],
+      "attributes": {
+        "permissionCurrency": "EUR",
+        "perOccasionLimit": 35,
+        "permissionAuthenticity": "not_independently_established",
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "assigned",
+        "financialHelperIdentity": "not_established"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-29T11:12:26.000Z",
+        "suburb": "Surinamepleinbuurt",
+        "district": "Zuid",
+        "latitude": 52.356218,
+        "longitude": 4.852563,
+        "locationRole": "physical_context",
+        "precision": "approximate neighbourhood-level synthetic point",
+        "pointMeaning": "Random area marker on verified eligible public ground within the assigned buurt and municipality; not an actual event site, address, entrance or premises."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-07-05T10:00:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-25",
+        "anchorSnapshotSha256": "df25c8f0791b660c7969671ff10999bff1784f32f4e97c187f66ca4b286fc961",
+        "basis": "Additive Care-Trust v2 teaching supplement; original report and v1 sources are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Fictional source, not operational evidence. Approximate incident context is not a residence, care visit or capture location."
+      },
+      "asset": {
+        "path": "assets/EV-AMS-H19.txt",
+        "mimeType": "text/plain",
+        "sha256": "56b0afd90ca9b07748d8732e5d182feada1742de4dc44c35a187db462d127309",
+        "caption": "A fictional permission extract sets a shopping limit and requires receipts. It is scoped to Resident A, names no financial helper and supplies no bank credential or account number."
+      },
+      "indexText": "The permission is for shopping, not unrestricted spending\nA fictional permission extract sets a shopping limit and requires receipts. It is scoped to Resident A, names no financial helper and supplies no bank credential or account number.\nDocument: limited shopping-support permission, displayed date 26 June 2026\nClient reference: CT-RES-A\nPermission reference: DEMO-SHOP-A\nPermitted purpose: groceries for the resident, up to EUR 35 per shopping occasion, with a receipt. The extract does not authorise personal purchases, general transfers or disclosure of private care details.\nThe financial helper is not named. No PIN, bank details, visit schedule or residence is provided. A displayed permission document is not independently authenticated and does not prove who used a payment instrument.",
+      "indexTextSha256": "ed2f0e52502d4430aba0853e30fec543037cf5c9b1cf76d14529b2218467b1b0"
+    },
+    {
+      "evidenceRef": "EV-AMS-H20",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "2.0",
+      "incidentRef": "SYN-AMS-2026-12200",
+      "caseRef": "CASE-AMS-2026-03",
+      "title": "Three displayed entries raise two different questions",
+      "kind": "redacted_financial_extract",
+      "description": "A redacted, fictional entry list shows two EUR 24.60 entries and one EUR 62.40 entry. It is an incomplete extract, not a reconciled loss calculation or attribution to a named worker.",
+      "sourceText": "Document: redacted shopping-entry extract supplied 4 July 2026\nClient reference: CT-RES-A\nPermission comparison: DEMO-SHOP-A\nDisplayed entries: DEMO-TXN-A1, 27 June, EUR 24.60; DEMO-TXN-A2, 27 June, EUR 24.60; DEMO-TXN-A3, 30 June, EUR 62.40.\nThe supplied extract omits settlement and reversal status, merchant detail and purchaser identity. No card, PIN or account number is retained. Do not add these entries together and call the total a loss.\nQuestions: are the two equal entries both settled, and what authority and receipt support the larger entry? Compare the later reconciliation before drawing a conclusion.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "CT-RES-A",
+          "sourceQuote": "CT-RES-A"
+        },
+        {
+          "namespace": "shopping_permission",
+          "value": "DEMO-SHOP-A",
+          "sourceQuote": "DEMO-SHOP-A"
+        },
+        {
+          "namespace": "payment_entry",
+          "value": "DEMO-TXN-A3",
+          "sourceQuote": "DEMO-TXN-A3"
+        }
+      ],
+      "attributes": {
+        "currency": "EUR",
+        "settlementStatus": "omitted_in_this_extract",
+        "identityAttribution": "none",
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "assigned",
+        "financialHelperIdentity": "not_established"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-29T11:12:26.000Z",
+        "suburb": "Surinamepleinbuurt",
+        "district": "Zuid",
+        "latitude": 52.356218,
+        "longitude": 4.852563,
+        "locationRole": "physical_context",
+        "precision": "approximate neighbourhood-level synthetic point",
+        "pointMeaning": "Random area marker on verified eligible public ground within the assigned buurt and municipality; not an actual event site, address, entrance or premises."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-07-05T10:00:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-25",
+        "anchorSnapshotSha256": "df25c8f0791b660c7969671ff10999bff1784f32f4e97c187f66ca4b286fc961",
+        "basis": "Additive Care-Trust v2 teaching supplement; original report and v1 sources are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Fictional source, not operational evidence. Approximate incident context is not a residence, care visit or capture location."
+      },
+      "asset": {
+        "path": "assets/EV-AMS-H20.txt",
+        "mimeType": "text/plain",
+        "sha256": "b2e97e6052620bdb06d9a58528e5901e371e1206eeee792284b286d9f1cab3e4",
+        "caption": "A redacted, fictional entry list shows two EUR 24.60 entries and one EUR 62.40 entry. It is an incomplete extract, not a reconciled loss calculation or attribution to a named worker."
+      },
+      "indexText": "Three displayed entries raise two different questions\nA redacted, fictional entry list shows two EUR 24.60 entries and one EUR 62.40 entry. It is an incomplete extract, not a reconciled loss calculation or attribution to a named worker.\nDocument: redacted shopping-entry extract supplied 4 July 2026\nClient reference: CT-RES-A\nPermission comparison: DEMO-SHOP-A\nDisplayed entries: DEMO-TXN-A1, 27 June, EUR 24.60; DEMO-TXN-A2, 27 June, EUR 24.60; DEMO-TXN-A3, 30 June, EUR 62.40.\nThe supplied extract omits settlement and reversal status, merchant detail and purchaser identity. No card, PIN or account number is retained. Do not add these entries together and call the total a loss.\nQuestions: are the two equal entries both settled, and what authority and receipt support the larger entry? Compare the later reconciliation before drawing a conclusion.",
+      "indexTextSha256": "fe44b377f5d8ca9a89949c8649ff2246459018e5ecfbf07c2b49978dfa07eba0"
+    },
+    {
+      "evidenceRef": "EV-AMS-H21",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "2.0",
+      "incidentRef": "SYN-AMS-2026-12200",
+      "caseRef": "CASE-AMS-2026-03",
+      "title": "One apparent duplicate is explained; one question stays open",
+      "kind": "financial_reconciliation_note",
+      "description": "A later fictional reconciliation identifies a voided duplicate and a matching grocery receipt. The larger entry has a refund request but no confirmed refund, receipt or extended permission in the supplied material.",
+      "sourceText": "Document: synthetic reconciliation addendum, displayed date 5 July 2026\nClient reference: CT-RES-A\nDEMO-TXN-A1: settled EUR 24.60; supplied grocery receipt matches that amount. DEMO-TXN-A2: voided authorisation, not a second settled payment. The apparent duplicate is explained within these supplied records.\nDEMO-TXN-A3: displayed as settled EUR 62.40; refund requested, completion not confirmed. No receipt or permission beyond the EUR 35 shopping limit is supplied. This leaves a question, not a verified loss or finding of misuse.\nNo payment user is identified. No evidence connects this entry to the tool-case loss or outward message. No public-care funding claim, PGB payment or provider invoice is supplied, so care-funding fraud cannot be concluded.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "CT-RES-A",
+          "sourceQuote": "CT-RES-A"
+        },
+        {
+          "namespace": "payment_entry",
+          "value": "DEMO-TXN-A3",
+          "sourceQuote": "DEMO-TXN-A3"
+        }
+      ],
+      "attributes": {
+        "explainedEntry": "DEMO-TXN-A2",
+        "unresolvedEntry": "DEMO-TXN-A3",
+        "refundStatus": "requested_not_confirmed",
+        "careFundingClaim": "not_supplied",
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "assigned",
+        "financialHelperIdentity": "not_established"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-29T11:12:26.000Z",
+        "suburb": "Surinamepleinbuurt",
+        "district": "Zuid",
+        "latitude": 52.356218,
+        "longitude": 4.852563,
+        "locationRole": "physical_context",
+        "precision": "approximate neighbourhood-level synthetic point",
+        "pointMeaning": "Random area marker on verified eligible public ground within the assigned buurt and municipality; not an actual event site, address, entrance or premises."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-07-05T10:00:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-25",
+        "anchorSnapshotSha256": "df25c8f0791b660c7969671ff10999bff1784f32f4e97c187f66ca4b286fc961",
+        "basis": "Additive Care-Trust v2 teaching supplement; original report and v1 sources are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Fictional source, not operational evidence. Approximate incident context is not a residence, care visit or capture location."
+      },
+      "asset": {
+        "path": "assets/EV-AMS-H21.txt",
+        "mimeType": "text/plain",
+        "sha256": "6fb9739ea9d88285876bdde5543e076f1e691411b7e1c7f4b110d902121e585f",
+        "caption": "A later fictional reconciliation identifies a voided duplicate and a matching grocery receipt. The larger entry has a refund request but no confirmed refund, receipt or extended permission in the supplied material."
+      },
+      "indexText": "One apparent duplicate is explained; one question stays open\nA later fictional reconciliation identifies a voided duplicate and a matching grocery receipt. The larger entry has a refund request but no confirmed refund, receipt or extended permission in the supplied material.\nDocument: synthetic reconciliation addendum, displayed date 5 July 2026\nClient reference: CT-RES-A\nDEMO-TXN-A1: settled EUR 24.60; supplied grocery receipt matches that amount. DEMO-TXN-A2: voided authorisation, not a second settled payment. The apparent duplicate is explained within these supplied records.\nDEMO-TXN-A3: displayed as settled EUR 62.40; refund requested, completion not confirmed. No receipt or permission beyond the EUR 35 shopping limit is supplied. This leaves a question, not a verified loss or finding of misuse.\nNo payment user is identified. No evidence connects this entry to the tool-case loss or outward message. No public-care funding claim, PGB payment or provider invoice is supplied, so care-funding fraud cannot be concluded.",
+      "indexTextSha256": "1fdfb2b8b0a586df906b4cd7f7bc0df5e5c3e1e365ed1abe8ce421452e56004d"
+    },
+    {
+      "evidenceRef": "EV-AMS-H22",
+      "version": 1,
+      "syntheticRecord": true,
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "knowledgeSetId": "KS-CARE-TRUST-001",
+      "knowledgeSetVersion": "2.0",
+      "incidentRef": "SYN-AMS-2026-06302",
+      "caseRef": "CASE-AMS-2026-03",
+      "title": "A second contributor asks for permission to be kept in context",
+      "kind": "signal_triage_note",
+      "description": "A private follow-up connects the second public post to the parcel report. Resident B wants the authorised transport enquiry recorded without treating it as unrestricted disclosure or an explanation of another resident’s concern.",
+      "sourceText": "Document: synthetic triage clarification, recorded 4 July 2026\nPublic source: SYN-AMS-CARE-POST-02, posted 3 July.\nIn a separate private follow-up the fictional contributor supplies SYN-AMS-2026-06302, the existing sealed-parcel report, and asks for this comparison to be recorded. The public post alone does not identify the event.\nClient reference: CT-RES-B. A limited transport enquiry was permitted, as described in the separate consent extract. The contributor does not say that all information sharing was permitted, that the retained outward message served that enquiry, or that they witnessed its author.\nThis explanation concerns Resident B. It cannot resolve the use of Resident A's reference, identify a visitor or establish that the parcel loss and tool-case loss share a cause.",
+      "markers": [
+        {
+          "namespace": "care_client",
+          "value": "CT-RES-B",
+          "sourceQuote": "CT-RES-B"
+        },
+        {
+          "namespace": "public_post",
+          "value": "SYN-AMS-CARE-POST-02",
+          "sourceQuote": "SYN-AMS-CARE-POST-02"
+        }
+      ],
+      "attributes": {
+        "sourcePostRef": "SYN-AMS-CARE-POST-02",
+        "linkBasis": "separate_attributed_private_followup",
+        "reviewStatus": "reviewed_comparison",
+        "originalIncidentUnchanged": true,
+        "sourceStatus": "authored_synthetic_teaching_source",
+        "incidentStatus": "reported",
+        "financialHelperIdentity": "not_established"
+      },
+      "personLinks": [],
+      "incidentContext": {
+        "occurredAt": "2026-06-30T05:12:23.000Z",
+        "suburb": "Leidsebuurt-Noordoost",
+        "district": "Centrum",
+        "latitude": 52.363419,
+        "longitude": 4.883683,
+        "locationRole": "physical_context",
+        "precision": "approximate neighbourhood-level synthetic point",
+        "pointMeaning": "Random area marker on verified eligible public ground within the assigned buurt and municipality; not an actual event site, address, entrance or premises."
+      },
+      "capturedAt": null,
+      "captureLocation": null,
+      "simulatedRecordedAt": "2026-07-05T10:00:00.000Z",
+      "provenance": {
+        "origin": "authored_synthetic_fixture",
+        "authoredAt": "2026-09-25",
+        "anchorSnapshotSha256": "df25c8f0791b660c7969671ff10999bff1784f32f4e97c187f66ca4b286fc961",
+        "basis": "Additive Care-Trust v2 teaching supplement; original report and v1 sources are unchanged.",
+        "assetOrigin": "authored_text",
+        "custodyStatus": "simulated_provenance_only",
+        "notice": "Fictional source, not operational evidence. Approximate incident context is not a residence, care visit or capture location."
+      },
+      "asset": {
+        "path": "assets/EV-AMS-H22.txt",
+        "mimeType": "text/plain",
+        "sha256": "8a501b67086b8c3fe15331fbeb7d7e768c45415803d5dd8d5dc34c853b46d755",
+        "caption": "A private follow-up connects the second public post to the parcel report. Resident B wants the authorised transport enquiry recorded without treating it as unrestricted disclosure or an explanation of another resident’s concern."
+      },
+      "indexText": "A second contributor asks for permission to be kept in context\nA private follow-up connects the second public post to the parcel report. Resident B wants the authorised transport enquiry recorded without treating it as unrestricted disclosure or an explanation of another resident’s concern.\nDocument: synthetic triage clarification, recorded 4 July 2026\nPublic source: SYN-AMS-CARE-POST-02, posted 3 July.\nIn a separate private follow-up the fictional contributor supplies SYN-AMS-2026-06302, the existing sealed-parcel report, and asks for this comparison to be recorded. The public post alone does not identify the event.\nClient reference: CT-RES-B. A limited transport enquiry was permitted, as described in the separate consent extract. The contributor does not say that all information sharing was permitted, that the retained outward message served that enquiry, or that they witnessed its author.\nThis explanation concerns Resident B. It cannot resolve the use of Resident A's reference, identify a visitor or establish that the parcel loss and tool-case loss share a cause.",
+      "indexTextSha256": "af102833cc8fee7bda4e4a893a80e2515f893343986bffc81d4268f513081f14"
+    }
+  ],
+  "posts": [
+    {
+      "ref": "SYN-AMS-CARE-POST-01",
+      "incidentRef": "SYN-AMS-2026-12200",
+      "date": "2026-07-03T09:00:00Z",
+      "text": "[Fictional community post] Since things went missing, someone close to me is worried about who knows their routine. They rely on help and are afraid that asking questions will upset that help. Is there a way to raise a concern privately? Please do not post names or addresses.",
+      "basis": "A separately authored private follow-up supplies the exact report reference and permission to record the concern (EV-AMS-H17). The public wording alone does not identify the resident, care worker or event."
+    },
+    {
+      "ref": "SYN-AMS-CARE-POST-02",
+      "incidentRef": "SYN-AMS-2026-06302",
+      "date": "2026-07-03T14:00:00Z",
+      "text": "[Fictional community post] I asked a helper to arrange transport, and now people are reading too much into a missing delivery. Permission to make one enquiry is not permission to share everything. I want both points kept in the record.",
+      "basis": "A separately authored private clarification supplies the parcel-report reference (EV-AMS-H22). Compare the limited transport consent; neither post nor link verifies a shared visitor or message author."
+    },
+    {
+      "ref": "SYN-AMS-CARE-POST-03",
+      "incidentRef": null,
+      "date": "2026-07-04T08:00:00Z",
+      "text": "[Fictional community post] Our discussion group is asking how to query a care invoice for a visit someone does not remember. Is there a confidential place to ask? A billing question is not proof of fraud, and we are not naming a provider.",
+      "basis": null
+    }
+  ]
+}

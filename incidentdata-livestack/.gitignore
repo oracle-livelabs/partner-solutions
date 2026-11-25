@@ -1,0 +1,56 @@
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+.oci/
+wallet/
+*.pem
+*.p12
+*.jks
+*.sso
+
+# Dependencies, builds, and caches
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.cache/
+__pycache__/
+*.py[cod]
+*.log
+
+# Local database and container state
+oracle-data/
+volumes/
+*.lck
+
+# Generated, heavy, or reproducible data
+synthetic_*/
+prep_data/
+restore_*/
+europe_story_enrichment_*/
+generated/
+*.tar.gz
+*.zip
+!frontend/public/workshop/downloads/Sep2026-Cases-V3-Sample-Data.zip
+*.sqlite3
+*.geojson
+*.geojsonl
+*.jsonl
+database_backup/
+staging/
+reproducibility_check/
+
+# Local deployment snapshots, generated profile bundles, and branding backups.
+# Current application sources and fixtures live in the named source directories.
+/*_20??????/
+/.incidentdata-*-backup-*/
+
+# OCI deployment working data, credentials, plans and release artifacts
+/deployment/oci-resource-manager/artifacts/
+/deployment/oci-resource-manager/.tools/
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.auto.tfvars
+*.auto.tfvars.json

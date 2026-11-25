@@ -1,0 +1,1859 @@
+{
+  "capturedAt": "2026-10-20T02:01:50.335Z",
+  "cities": [
+    {
+      "city": "Adelaide",
+      "profileCode": "ADELAIDE_DATA_V2",
+      "id": 6,
+      "short": "ADL",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 7569,
+          "INCIDENT_REF": "ACI-2026-07569",
+          "SUBURB": "Unley",
+          "OCCURRED_AT": "2026-05-04T10:14:26.000Z",
+          "LATITUDE": -34.962293,
+          "LONGITUDE": 138.595547,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Rear service-door entry reported after closing at Unley Park premises",
+          "CASE_REF": "CASE-2026-0317",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-2026-0317A",
+              "DISPLAY_NAME": "Profile Alder"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 9252,
+          "INCIDENT_REF": "ACI-2026-09252",
+          "SUBURB": "Golden Grove",
+          "OCCURRED_AT": "2026-06-06T12:46:56.000Z",
+          "LATITUDE": -34.780554,
+          "LONGITUDE": 138.686679,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Vehicle reported missing from Salisbury East loading-side parking edge",
+          "CASE_REF": "CASE-2026-0317",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-2026-0317A",
+              "DISPLAY_NAME": "Profile Alder"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 16325,
+          "INCIDENT_REF": "ACI-2026-16325",
+          "SUBURB": "Adelaide",
+          "OCCURRED_AT": "2026-05-29T03:10:53.000Z",
+          "LATITUDE": -34.919711,
+          "LONGITUDE": 138.589752,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Split art-sale payments recorded against one Adelaide catalogue entry",
+          "CASE_REF": "CASE-2026-0421",
+          "PERSON_COUNT": 3,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "DISPLAY_NAME": "Eve Kendall"
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            },
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "DISPLAY_NAME": "Philip Vandamm"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 16312,
+          "INCIDENT_REF": "ACI-2026-16312",
+          "SUBURB": "Findon",
+          "OCCURRED_AT": "2026-05-02T05:22:50.000Z",
+          "LATITUDE": -34.888698,
+          "LONGITUDE": 138.556016,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Advisory invoice payment discrepancy reported in West Croydon",
+          "CASE_REF": "CASE-2026-0421",
+          "PERSON_COUNT": 2,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "DISPLAY_NAME": "Eve Kendall"
+            },
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 530,
+          "INCIDENT_REF": "ACI-2026-00530",
+          "SUBURB": "Adelaide",
+          "OCCURRED_AT": "2026-06-30T09:22:24.000Z",
+          "LATITUDE": -34.925189,
+          "LONGITUDE": 138.586932,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Common assault during a disagreement near a station entrance in Adelaide",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 1231,
+          "INCIDENT_REF": "ACI-2026-01231",
+          "SUBURB": "Adelaide",
+          "OCCURRED_AT": "2026-06-30T07:03:07.000Z",
+          "LATITUDE": -34.939145,
+          "LONGITUDE": 138.607887,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Afternoon report of common assault during a disagreement near a venue entrance in Adelaide",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 21522,
+          "INCIDENT_REF": "ACI-V2-2026-0001",
+          "SUBURB": "Marion",
+          "OCCURRED_AT": "2026-06-01T00:48:00.000Z",
+          "LATITUDE": -35.0148,
+          "LONGITUDE": 138.5542,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Residential daytime entry report near a side access in Marion",
+          "CASE_REF": "CASE-V2-RES-001",
+          "PERSON_COUNT": 2,
+          "people": [
+            {
+              "PERSON_REF": "POI-ADL-CARE-W01",
+              "DISPLAY_NAME": "Ellis Ward"
+            },
+            {
+              "PERSON_REF": "POI-ADL-CARE-X01",
+              "DISPLAY_NAME": "Rowan Hale"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 21523,
+          "INCIDENT_REF": "ACI-V2-2026-0002",
+          "SUBURB": "Oaklands Park",
+          "OCCURRED_AT": "2026-06-03T03:12:00.000Z",
+          "LATITUDE": -35.0184,
+          "LONGITUDE": 138.5473,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Daytime residential approach reported in Oaklands Park",
+          "CASE_REF": "CASE-V2-RES-001",
+          "PERSON_COUNT": 2,
+          "people": [
+            {
+              "PERSON_REF": "POI-ADL-CARE-W01",
+              "DISPLAY_NAME": "Ellis Ward"
+            },
+            {
+              "PERSON_REF": "POI-ADL-CARE-X01",
+              "DISPLAY_NAME": "Rowan Hale"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 21529,
+          "INCIDENT_REF": "ACI-V2-2026-0008",
+          "SUBURB": "Salisbury",
+          "OCCURRED_AT": "2026-06-04T16:06:00.000Z",
+          "LATITUDE": -34.7643,
+          "LONGITUDE": 138.6399,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Overnight vehicle-parts concern logged in Salisbury",
+          "CASE_REF": "CASE-V2-VPH-001",
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 21530,
+          "INCIDENT_REF": "ACI-V2-2026-0009",
+          "SUBURB": "Modbury",
+          "OCCURRED_AT": "2026-06-05T16:48:00.000Z",
+          "LATITUDE": -34.8312,
+          "LONGITUDE": 138.6861,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Tool-mark observation recorded in Modbury parking area",
+          "CASE_REF": "CASE-V2-VPH-001",
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 21535,
+          "INCIDENT_REF": "ACI-V2-2026-0014",
+          "SUBURB": "Torrensville",
+          "OCCURRED_AT": "2026-06-06T11:48:00.000Z",
+          "LATITUDE": -34.9209,
+          "LONGITUDE": 138.5601,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "After-hours construction-site access concern in Torrensville",
+          "CASE_REF": "CASE-V2-CSM-001",
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 21536,
+          "INCIDENT_REF": "ACI-V2-2026-0015",
+          "SUBURB": "Prospect",
+          "OCCURRED_AT": "2026-06-06T20:12:00.000Z",
+          "LATITUDE": -34.8845,
+          "LONGITUDE": 138.5949,
+          "LOCATION_ROLE": null,
+          "REPORT_SUMMARY": "Early Sunday material-storage check recorded in Prospect",
+          "CASE_REF": "CASE-V2-CSM-001",
+          "PERSON_COUNT": 0,
+          "people": []
+        }
+      ]
+    },
+    {
+      "city": "Perth",
+      "profileCode": "PERTH_DATA_V2",
+      "id": 131,
+      "short": "PER",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 12000161,
+          "INCIDENT_REF": "SYN-PER-2026-00161",
+          "SUBURB": "Ascot",
+          "OCCURRED_AT": "2026-05-16T19:24:59.000Z",
+          "LATITUDE": -31.944807,
+          "LONGITUDE": 115.919343,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A break-in through a damaged entrance - commercial area, Ascot",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 12000969,
+          "INCIDENT_REF": "SYN-PER-2026-00969",
+          "SUBURB": "South Fremantle",
+          "OCCURRED_AT": "2026-05-01T19:44:43.000Z",
+          "LATITUDE": -32.070042,
+          "LONGITUDE": 115.753135,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A break-in through a damaged entrance - South Fremantle, overnight",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 12000147,
+          "INCIDENT_REF": "SYN-PER-2026-00147",
+          "SUBURB": "Scarborough",
+          "OCCURRED_AT": "2026-06-28T22:42:06.000Z",
+          "LATITUDE": -31.894434,
+          "LONGITUDE": 115.775765,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Art consignment invoice queried in Scarborough",
+          "CASE_REF": "CASE-PER-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 12001005,
+          "INCIDENT_REF": "SYN-PER-2026-01005",
+          "SUBURB": "Wanneroo",
+          "OCCURRED_AT": "2026-06-18T06:08:56.000Z",
+          "LATITUDE": -31.71788,
+          "LONGITUDE": 115.780397,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Exhibition payment instruction disputed in Wanneroo",
+          "CASE_REF": "CASE-PER-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 12000093,
+          "INCIDENT_REF": "SYN-PER-2026-00093",
+          "SUBURB": "Shelley",
+          "OCCURRED_AT": "2026-06-24T12:02:11.000Z",
+          "LATITUDE": -32.024181,
+          "LONGITUDE": 115.896889,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A reported physical assault in Shelley on Wednesday",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 12000098,
+          "INCIDENT_REF": "SYN-PER-2026-00098",
+          "SUBURB": "Maylands",
+          "OCCURRED_AT": "2026-05-23T15:08:22.000Z",
+          "LATITUDE": -31.949814,
+          "LONGITUDE": 115.907323,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "An allegation of physical assault - Maylands, Saturday evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 12000015,
+          "INCIDENT_REF": "SYN-PER-2026-00015",
+          "SUBURB": "Langford",
+          "OCCURRED_AT": "2026-06-04T02:56:07.000Z",
+          "LATITUDE": -32.039278,
+          "LONGITUDE": 115.935717,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Missing items following a reported break-in - Langford, morning",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 12000099,
+          "INCIDENT_REF": "SYN-PER-2026-00099",
+          "SUBURB": "Bedford",
+          "OCCURRED_AT": "2026-05-24T07:18:30.000Z",
+          "LATITUDE": -31.916055,
+          "LONGITUDE": 115.889904,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property manager describes forced entry and missing property in Bedford",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 12000192,
+          "INCIDENT_REF": "SYN-PER-2026-00192",
+          "SUBURB": "Redcliffe",
+          "OCCURRED_AT": "2026-05-15T11:31:05.000Z",
+          "LATITUDE": -31.931204,
+          "LONGITUDE": 115.944565,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Visitor describes a parked vehicle found with a fitting removed in Redcliffe",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 12002610,
+          "INCIDENT_REF": "SYN-PER-2026-02610",
+          "SUBURB": "Hamersley",
+          "OCCURRED_AT": "2026-05-08T20:20:13.000Z",
+          "LATITUDE": -31.846075,
+          "LONGITUDE": 115.809774,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A parked vehicle found with a fitting removed - Hamersley, overnight",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 12002432,
+          "INCIDENT_REF": "SYN-PER-2026-02432",
+          "SUBURB": "Seville Grove",
+          "OCCURRED_AT": "2026-05-12T20:27:51.000Z",
+          "LATITUDE": -32.130185,
+          "LONGITUDE": 116.001791,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Wednesday account from Seville Grove: forced entry and missing property",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 12018509,
+          "INCIDENT_REF": "SYN-PER-2026-18509",
+          "SUBURB": "High Wycombe",
+          "OCCURRED_AT": "2026-06-24T11:31:37.000Z",
+          "LATITUDE": -31.927909,
+          "LONGITUDE": 116.005269,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Wednesday evening: a theft from premises without forced entry near High Wycombe",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        }
+      ]
+    },
+    {
+      "city": "Brisbane",
+      "profileCode": "BRISBANE_DATA_V2",
+      "id": 231,
+      "short": "BNE",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 14002065,
+          "INCIDENT_REF": "SYN-BNE-2026-02065",
+          "SUBURB": "Wakerley",
+          "OCCURRED_AT": "2026-05-11T14:57:47.000Z",
+          "LATITUDE": -27.48183,
+          "LONGITUDE": 153.146415,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property missing after reported forced entry near Wakerley on Tuesday",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 14002243,
+          "INCIDENT_REF": "SYN-BNE-2026-02243",
+          "SUBURB": "Woolloongabba",
+          "OCCURRED_AT": "2026-05-09T16:26:57.000Z",
+          "LATITUDE": -27.487044,
+          "LONGITUDE": 153.037829,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property missing after reported forced entry - workshop and storage area, Woolloongabba",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 14000040,
+          "INCIDENT_REF": "SYN-BNE-2026-00040",
+          "SUBURB": "Delaneys Creek",
+          "OCCURRED_AT": "2026-05-16T07:19:08.000Z",
+          "LATITUDE": null,
+          "LONGITUDE": null,
+          "LOCATION_ROLE": "locality_reference",
+          "REPORT_SUMMARY": "Exhibition payment instruction disputed in Delaneys Creek",
+          "CASE_REF": "CASE-BNE-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 14000077,
+          "INCIDENT_REF": "SYN-BNE-2026-00077",
+          "SUBURB": "Kuraby",
+          "OCCURRED_AT": "2026-05-30T02:54:58.000Z",
+          "LATITUDE": null,
+          "LONGITUDE": null,
+          "LOCATION_ROLE": "locality_reference",
+          "REPORT_SUMMARY": "Final supplier instruction referred for comparison in Kuraby",
+          "CASE_REF": "CASE-BNE-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "DISPLAY_NAME": "Philip Vandamm"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 14000003,
+          "INCIDENT_REF": "SYN-BNE-2026-00003",
+          "SUBURB": "Fernvale",
+          "OCCURRED_AT": "2026-06-16T10:27:17.000Z",
+          "LATITUDE": -27.452305,
+          "LONGITUDE": 152.630677,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Tuesday account from Fernvale: a confrontation involving reported assault",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 14000148,
+          "INCIDENT_REF": "SYN-BNE-2026-00148",
+          "SUBURB": "Fig Tree Pocket",
+          "OCCURRED_AT": "2026-06-02T08:43:12.000Z",
+          "LATITUDE": -27.525477,
+          "LONGITUDE": 152.954517,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "An allegation of physical assault near Fig Tree Pocket during the evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 14000035,
+          "INCIDENT_REF": "SYN-BNE-2026-00035",
+          "SUBURB": "Ferny Hills",
+          "OCCURRED_AT": "2026-06-27T06:07:33.000Z",
+          "LATITUDE": -27.403436,
+          "LONGITUDE": 152.900641,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A break-in through a damaged entrance - Ferny Hills, afternoon",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 14000097,
+          "INCIDENT_REF": "SYN-BNE-2026-00097",
+          "SUBURB": "Graceville",
+          "OCCURRED_AT": "2026-05-12T22:41:10.000Z",
+          "LATITUDE": -27.519821,
+          "LONGITUDE": 152.978763,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A damaged entrance and reported theft - Graceville, Wednesday morning",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 14001760,
+          "INCIDENT_REF": "SYN-BNE-2026-01760",
+          "SUBURB": "Park Ridge",
+          "OCCURRED_AT": "2026-06-04T11:33:56.000Z",
+          "LATITUDE": -27.709752,
+          "LONGITUDE": 153.092251,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A missing vehicle fitting following apparent theft - Park Ridge, Thursday evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 14005216,
+          "INCIDENT_REF": "SYN-BNE-2026-05216",
+          "SUBURB": "Chapel Hill",
+          "OCCURRED_AT": "2026-05-18T12:03:28.000Z",
+          "LATITUDE": -27.511094,
+          "LONGITUDE": 152.95486,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Parts taken from a parked vehicle in Chapel Hill on Monday",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 14005610,
+          "INCIDENT_REF": "SYN-BNE-2026-05610",
+          "SUBURB": "Coopers Plains",
+          "OCCURRED_AT": "2026-06-02T17:52:36.000Z",
+          "LATITUDE": -27.571317,
+          "LONGITUDE": 153.036871,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A theft from premises without forced entry - workshop and storage area, Coopers Plains",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 14005860,
+          "INCIDENT_REF": "SYN-BNE-2026-05860",
+          "SUBURB": "Karrabin",
+          "OCCURRED_AT": "2026-05-28T11:36:08.000Z",
+          "LATITUDE": -27.607606,
+          "LONGITUDE": 152.713107,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property manager's account: forced entry and missing property near Karrabin",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        }
+      ]
+    },
+    {
+      "city": "Amsterdam",
+      "profileCode": "AMSTERDAM_DATA_V1",
+      "id": 30,
+      "short": "AMS",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 12001083,
+          "INCIDENT_REF": "SYN-AMS-2026-01083",
+          "SUBURB": "Schinkelbuurt-Zuid",
+          "OCCURRED_AT": "2026-06-23T20:55:09.000Z",
+          "LATITUDE": 52.348181,
+          "LONGITUDE": 4.857186,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "After-closing store entry in Schinkelbuurt-Zuid",
+          "CASE_REF": "CASE-AMS-2026-01",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 12002902,
+          "INCIDENT_REF": "SYN-AMS-2026-02902",
+          "SUBURB": "Burgemeester Tellegenbuurt-Oost",
+          "OCCURRED_AT": "2026-06-24T19:44:29.000Z",
+          "LATITUDE": 52.349725,
+          "LONGITUDE": 4.903721,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Loading entrance disturbed in Burgemeester Tellegenbuurt-Oost",
+          "CASE_REF": "CASE-AMS-2026-01",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "DISPLAY_NAME": "Eve Kendall"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 12000207,
+          "INCIDENT_REF": "SYN-AMS-2026-00207",
+          "SUBURB": "NDSM terrein",
+          "OCCURRED_AT": "2026-06-27T18:38:28.000Z",
+          "LATITUDE": 52.403723,
+          "LONGITUDE": 4.894348,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Receipt comparison requested in NDSM terrein",
+          "CASE_REF": "CASE-AMS-2026-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-FNET-MARA",
+              "DISPLAY_NAME": "Mara Vega"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 12003505,
+          "INCIDENT_REF": "SYN-AMS-2026-03505",
+          "SUBURB": "Vondelparkbuurt-West",
+          "OCCURRED_AT": "2026-06-26T23:45:43.000Z",
+          "LATITUDE": 52.357658,
+          "LONGITUDE": 4.857579,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Invoice-entry discrepancy in Vondelparkbuurt-West",
+          "CASE_REF": "CASE-AMS-2026-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "DISPLAY_NAME": "Philip Vandamm"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 12002859,
+          "INCIDENT_REF": "SYN-AMS-2026-02859",
+          "SUBURB": "Oosterparkbuurt-Noordwest",
+          "OCCURRED_AT": "2026-06-30T18:35:11.000Z",
+          "LATITUDE": 52.358798,
+          "LONGITUDE": 4.912663,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Entertainment-area confrontation in Oosterparkbuurt-Noordwest",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 12005433,
+          "INCIDENT_REF": "SYN-AMS-2026-05433",
+          "SUBURB": "Hamerstraatkwartier-West",
+          "OCCURRED_AT": "2026-06-30T20:59:25.000Z",
+          "LATITUDE": 52.385818,
+          "LONGITUDE": 4.920745,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Late hospitality disturbance in Hamerstraatkwartier-West",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 12012200,
+          "INCIDENT_REF": "SYN-AMS-2026-12200",
+          "SUBURB": "Surinamepleinbuurt",
+          "OCCURRED_AT": "2026-06-29T11:12:26.000Z",
+          "LATITUDE": 52.356218,
+          "LONGITUDE": 4.852563,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Daytime door-check account in Surinamepleinbuurt",
+          "CASE_REF": "CASE-AMS-2026-03",
+          "PERSON_COUNT": 3,
+          "people": [
+            {
+              "PERSON_REF": "POI-AMS-CARE-W01",
+              "DISPLAY_NAME": "Lena Harper"
+            },
+            {
+              "PERSON_REF": "POI-AMS-CARE-X01",
+              "DISPLAY_NAME": "Morgan Reed"
+            },
+            {
+              "PERSON_REF": "POI-FNET-NOAH",
+              "DISPLAY_NAME": "Noah Kim"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 12006302,
+          "INCIDENT_REF": "SYN-AMS-2026-06302",
+          "SUBURB": "Leidsebuurt-Noordoost",
+          "OCCURRED_AT": "2026-06-30T05:12:23.000Z",
+          "LATITUDE": 52.363419,
+          "LONGITUDE": 4.883683,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Occupancy-check comparison in Leidsebuurt-Noordoost",
+          "CASE_REF": "CASE-AMS-2026-03",
+          "PERSON_COUNT": 2,
+          "people": [
+            {
+              "PERSON_REF": "POI-AMS-CARE-W01",
+              "DISPLAY_NAME": "Lena Harper"
+            },
+            {
+              "PERSON_REF": "POI-FNET-TESSA",
+              "DISPLAY_NAME": "Tessa Rowe"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 12001570,
+          "INCIDENT_REF": "SYN-AMS-2026-01570",
+          "SUBURB": "Herensingelkwartier",
+          "OCCURRED_AT": "2026-06-30T02:22:44.000Z",
+          "LATITUDE": 52.309783,
+          "LONGITUDE": 5.042209,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Reported vehicle-part harvesting in Herensingelkwartier",
+          "CASE_REF": "CASE-AMS-2026-04",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "DISPLAY_NAME": "Julian Cross"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 12002339,
+          "INCIDENT_REF": "SYN-AMS-2026-02339",
+          "SUBURB": "Dapperbuurt-Zuid",
+          "OCCURRED_AT": "2026-06-30T00:46:37.000Z",
+          "LATITUDE": 52.362004,
+          "LONGITUDE": 4.929439,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Overnight accessory removal in Dapperbuurt-Zuid",
+          "CASE_REF": "CASE-AMS-2026-04",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "DISPLAY_NAME": "Julian Cross"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 12004233,
+          "INCIDENT_REF": "SYN-AMS-2026-04233",
+          "SUBURB": "Alfa-driehoek",
+          "OCCURRED_AT": "2026-05-10T06:18:52.000Z",
+          "LATITUDE": 52.395942,
+          "LONGITUDE": 4.846863,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Worksite storage entry in Alfa-driehoek",
+          "CASE_REF": "CASE-AMS-2026-05",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-GEORGE",
+              "DISPLAY_NAME": "George Horner"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 12005000,
+          "INCIDENT_REF": "SYN-AMS-2026-05000",
+          "SUBURB": "Rietlanden",
+          "OCCURRED_AT": "2026-05-31T01:42:48.000Z",
+          "LATITUDE": 52.375723,
+          "LONGITUDE": 4.928517,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Workshop storage disturbed in Rietlanden",
+          "CASE_REF": "CASE-AMS-2026-05",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Brussels",
+      "profileCode": "BRUSSELS_DATA_V1",
+      "id": 10,
+      "short": "BRU",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 9003801,
+          "INCIDENT_REF": "SYN-BRU-2026-03801",
+          "SUBURB": "Basilique",
+          "OCCURRED_AT": "2026-06-30T21:18:57.000Z",
+          "LATITUDE": 50.87014,
+          "LONGITUDE": 4.322405,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Loading entrance disturbed in Basilique",
+          "CASE_REF": "CASE-BRU-2026-01",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "DISPLAY_NAME": "Eve Kendall"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 9005382,
+          "INCIDENT_REF": "SYN-BRU-2026-05382",
+          "SUBURB": "Hopital Francais",
+          "OCCURRED_AT": "2026-06-29T19:54:30.000Z",
+          "LATITUDE": 50.865169,
+          "LONGITUDE": 4.309553,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Service-lane access damage in Hopital Francais",
+          "CASE_REF": "CASE-BRU-2026-01",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 9007876,
+          "INCIDENT_REF": "SYN-BRU-2026-07876",
+          "SUBURB": "Josaphat",
+          "OCCURRED_AT": "2026-06-30T11:48:13.000Z",
+          "LATITUDE": 50.856843,
+          "LONGITUDE": 4.396047,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Questioned payment document in Josaphat",
+          "CASE_REF": "CASE-BRU-2026-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "DISPLAY_NAME": "Philip Vandamm"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 9009963,
+          "INCIDENT_REF": "SYN-BRU-2026-09963",
+          "SUBURB": "Stalingrad",
+          "OCCURRED_AT": "2026-06-30T12:45:49.000Z",
+          "LATITUDE": 50.83934,
+          "LONGITUDE": 4.341338,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Receipt comparison requested in Stalingrad",
+          "CASE_REF": "CASE-BRU-2026-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-FNET-MARA",
+              "DISPLAY_NAME": "Mara Vega"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 9006241,
+          "INCIDENT_REF": "SYN-BRU-2026-06241",
+          "SUBURB": "Gribaumont",
+          "OCCURRED_AT": "2026-06-30T21:18:33.000Z",
+          "LATITUDE": 50.841683,
+          "LONGITUDE": 4.43006,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Late hospitality disturbance in Gribaumont",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 9008913,
+          "INCIDENT_REF": "SYN-BRU-2026-08913",
+          "SUBURB": "Gare Josaphat",
+          "OCCURRED_AT": "2026-06-30T20:35:45.000Z",
+          "LATITUDE": 50.859932,
+          "LONGITUDE": 4.400582,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Entertainment-area confrontation in Gare Josaphat",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 9000970,
+          "INCIDENT_REF": "SYN-BRU-2026-00970",
+          "SUBURB": "Saint-Denis - Neerstalle",
+          "OCCURRED_AT": "2026-06-30T10:59:57.000Z",
+          "LATITUDE": 50.805765,
+          "LONGITUDE": 4.314669,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Reported entry after knocking in Saint-Denis - Neerstalle",
+          "CASE_REF": "CASE-BRU-2026-03",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-FNET-NOAH",
+              "DISPLAY_NAME": "Noah Kim"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 9019969,
+          "INCIDENT_REF": "SYN-BRU-2026-19969",
+          "SUBURB": "Kapelleveld",
+          "OCCURRED_AT": "2026-06-30T13:14:46.000Z",
+          "LATITUDE": 50.850923,
+          "LONGITUDE": 4.451055,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Daytime rear-entry report in Kapelleveld",
+          "CASE_REF": "CASE-BRU-2026-03",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-FNET-DARNELL",
+              "DISPLAY_NAME": "Darnell Price"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 9009222,
+          "INCIDENT_REF": "SYN-BRU-2026-09222",
+          "SUBURB": "Berchem Sainte-Agathe Centre",
+          "OCCURRED_AT": "2026-06-29T23:39:33.000Z",
+          "LATITUDE": 50.863569,
+          "LONGITUDE": 4.295715,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Parked-vehicle parts loss in Berchem Sainte-Agathe Centre",
+          "CASE_REF": "CASE-BRU-2026-04",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-VIVIENNE",
+              "DISPLAY_NAME": "Vivienne Hartley"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 9010357,
+          "INCIDENT_REF": "SYN-BRU-2026-10357",
+          "SUBURB": "Chasse",
+          "OCCURRED_AT": "2026-06-30T19:38:06.000Z",
+          "LATITUDE": 50.825423,
+          "LONGITUDE": 4.391557,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Evening parked-vehicle damage in Chasse",
+          "CASE_REF": "CASE-BRU-2026-04",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-TONY",
+              "DISPLAY_NAME": "Tony Kapoor"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 9000356,
+          "INCIDENT_REF": "SYN-BRU-2026-00356",
+          "SUBURB": "Industrie Nord",
+          "OCCURRED_AT": "2026-05-10T12:37:04.000Z",
+          "LATITUDE": 50.908069,
+          "LONGITUDE": 4.406365,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Workshop storage disturbed in Industrie Nord",
+          "CASE_REF": "CASE-BRU-2026-05",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 9001667,
+          "INCIDENT_REF": "SYN-BRU-2026-01667",
+          "SUBURB": "Industrie Nord",
+          "OCCURRED_AT": "2026-05-18T19:04:47.000Z",
+          "LATITUDE": 50.900038,
+          "LONGITUDE": 4.403465,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "After-hours worksite entry in Industrie Nord",
+          "CASE_REF": "CASE-BRU-2026-05",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Dublin",
+      "profileCode": "DUBLIN_CITY_DATA_V1",
+      "id": 50,
+      "short": "DUB",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 13104155,
+          "INCIDENT_REF": "SYN-DUB-2026-04155",
+          "SUBURB": "South Dock area",
+          "OCCURRED_AT": "2026-06-26T19:34:35.000Z",
+          "LATITUDE": 53.337782,
+          "LONGITUDE": -6.240316,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Service-lane access damage in South Dock area",
+          "CASE_REF": "CASE-DUB-2026-01",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 13107951,
+          "INCIDENT_REF": "SYN-DUB-2026-07951",
+          "SUBURB": "Grange area",
+          "OCCURRED_AT": "2026-06-28T18:33:13.000Z",
+          "LATITUDE": 53.402675,
+          "LONGITUDE": -6.158459,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Staff-door property loss in Grange area",
+          "CASE_REF": "CASE-DUB-2026-01",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 13107247,
+          "INCIDENT_REF": "SYN-DUB-2026-07247",
+          "SUBURB": "Clontarf West area",
+          "OCCURRED_AT": "2026-06-22T02:23:52.000Z",
+          "LATITUDE": 53.364188,
+          "LONGITUDE": -6.231814,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Invoice-entry discrepancy in Clontarf West area",
+          "CASE_REF": "CASE-DUB-2026-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "DISPLAY_NAME": "Philip Vandamm"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 13108500,
+          "INCIDENT_REF": "SYN-DUB-2026-08500",
+          "SUBURB": "Pembroke East area",
+          "OCCURRED_AT": "2026-06-29T15:26:23.000Z",
+          "LATITUDE": 53.33992,
+          "LONGITUDE": -6.215235,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Payment paperwork anomaly in Pembroke East area",
+          "CASE_REF": "CASE-DUB-2026-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-FNET-ELIAS",
+              "DISPLAY_NAME": "Elias Grant"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 13102711,
+          "INCIDENT_REF": "SYN-DUB-2026-02711",
+          "SUBURB": "Inns Quay area",
+          "OCCURRED_AT": "2026-06-30T22:00:22.000Z",
+          "LATITUDE": 53.361455,
+          "LONGITUDE": -6.259966,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Entertainment-area confrontation in Inns Quay area",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 13105321,
+          "INCIDENT_REF": "SYN-DUB-2026-05321",
+          "SUBURB": "Clontarf East area",
+          "OCCURRED_AT": "2026-06-30T19:38:16.000Z",
+          "LATITUDE": 53.367264,
+          "LONGITUDE": -6.172387,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Evening disturbance near hospitality in Clontarf East area",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 13101610,
+          "INCIDENT_REF": "SYN-DUB-2026-01610",
+          "SUBURB": "Cherry Orchard area",
+          "OCCURRED_AT": "2026-06-30T15:44:31.000Z",
+          "LATITUDE": 53.33429,
+          "LONGITUDE": -6.378235,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Residential side-entry damage in Cherry Orchard area",
+          "CASE_REF": "CASE-DUB-2026-03",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-FNET-TESSA",
+              "DISPLAY_NAME": "Tessa Rowe"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 13104722,
+          "INCIDENT_REF": "SYN-DUB-2026-04722",
+          "SUBURB": "North Dock area",
+          "OCCURRED_AT": "2026-06-30T16:13:19.000Z",
+          "LATITUDE": 53.351328,
+          "LONGITUDE": -6.24038,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Daytime rear-entry report in North Dock area",
+          "CASE_REF": "CASE-DUB-2026-03",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-FNET-DARNELL",
+              "DISPLAY_NAME": "Darnell Price"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 13103696,
+          "INCIDENT_REF": "SYN-DUB-2026-03696",
+          "SUBURB": "Cabra East area",
+          "OCCURRED_AT": "2026-06-29T21:55:47.000Z",
+          "LATITUDE": 53.376229,
+          "LONGITUDE": -6.286623,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "After-hours accessory removal in Cabra East area",
+          "CASE_REF": "CASE-DUB-2026-04",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-JULIAN",
+              "DISPLAY_NAME": "Julian Cross"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 13106788,
+          "INCIDENT_REF": "SYN-DUB-2026-06788",
+          "SUBURB": "Priorswood area",
+          "OCCURRED_AT": "2026-06-29T20:12:11.000Z",
+          "LATITUDE": 53.396432,
+          "LONGITUDE": -6.187377,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Attachment damage and missing part in Priorswood area",
+          "CASE_REF": "CASE-DUB-2026-04",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-VIVIENNE",
+              "DISPLAY_NAME": "Vivienne Hartley"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 13101742,
+          "INCIDENT_REF": "SYN-DUB-2026-01742",
+          "SUBURB": "Rathmines East area",
+          "OCCURRED_AT": "2026-06-21T08:12:33.000Z",
+          "LATITUDE": 53.319061,
+          "LONGITUDE": -6.232222,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Site equipment-loss account in Rathmines East area",
+          "CASE_REF": "CASE-DUB-2026-05",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 13103834,
+          "INCIDENT_REF": "SYN-DUB-2026-03834",
+          "SUBURB": "Mansion House area",
+          "OCCURRED_AT": "2026-06-14T07:10:23.000Z",
+          "LATITUDE": 53.332865,
+          "LONGITUDE": -6.252854,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Tools missing from site store in Mansion House area",
+          "CASE_REF": "CASE-DUB-2026-05",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-V2-GEORGE",
+              "DISPLAY_NAME": "George Horner"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Boston",
+      "profileCode": "BOSTON_DATA_V2",
+      "id": 270,
+      "short": "BOS",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 16000232,
+          "INCIDENT_REF": "SYN-BOS-2026-00232",
+          "SUBURB": "Roxbury",
+          "OCCURRED_AT": "2026-05-31T04:07:36.000Z",
+          "LATITUDE": 42.326213,
+          "LONGITUDE": -71.075171,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Sunday overnight: a break-in through a damaged entrance near Roxbury",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 16000548,
+          "INCIDENT_REF": "SYN-BOS-2026-00548",
+          "SUBURB": "South End",
+          "OCCURRED_AT": "2026-05-23T05:36:20.000Z",
+          "LATITUDE": 42.342255,
+          "LONGITUDE": -71.064819,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Forced entry and missing property - local retail area, South End",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 16000008,
+          "INCIDENT_REF": "SYN-BOS-2026-00008",
+          "SUBURB": "Beacon Hill",
+          "OCCURRED_AT": "2026-06-04T15:31:19.000Z",
+          "LATITUDE": null,
+          "LONGITUDE": null,
+          "LOCATION_ROLE": "locality_reference",
+          "REPORT_SUMMARY": "Exhibition refund payment queried in Beacon Hill",
+          "CASE_REF": "CASE-BOS-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 16000267,
+          "INCIDENT_REF": "SYN-BOS-2026-00267",
+          "SUBURB": "Charlestown",
+          "OCCURRED_AT": "2026-06-05T20:13:13.000Z",
+          "LATITUDE": null,
+          "LONGITUDE": null,
+          "LOCATION_ROLE": "locality_reference",
+          "REPORT_SUMMARY": "Marketplace art purchase remains undelivered in Charlestown",
+          "CASE_REF": "CASE-BOS-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-EVE",
+              "DISPLAY_NAME": "Eve Kendall"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 16000069,
+          "INCIDENT_REF": "SYN-BOS-2026-00069",
+          "SUBURB": "Back Bay",
+          "OCCURRED_AT": "2026-05-31T05:42:04.000Z",
+          "LATITUDE": 42.350094,
+          "LONGITUDE": -71.081656,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Back Bay: an allegation of physical assault during the overnight hours",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 16000324,
+          "INCIDENT_REF": "SYN-BOS-2026-00324",
+          "SUBURB": "East Boston",
+          "OCCURRED_AT": "2026-06-29T03:51:21.000Z",
+          "LATITUDE": 42.372032,
+          "LONGITUDE": -71.042555,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Sunday evening: physical contact during a confrontation near East Boston",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 16000084,
+          "INCIDENT_REF": "SYN-BOS-2026-00084",
+          "SUBURB": "Brighton",
+          "OCCURRED_AT": "2026-05-09T15:03:20.000Z",
+          "LATITUDE": 42.353474,
+          "LONGITUDE": -71.14864,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property manager's account: property missing after reported forced entry near Brighton",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 16000095,
+          "INCIDENT_REF": "SYN-BOS-2026-00095",
+          "SUBURB": "Dorchester",
+          "OCCURRED_AT": "2026-05-03T19:44:28.000Z",
+          "LATITUDE": 42.305131,
+          "LONGITUDE": -71.0651,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property missing after reported forced entry near Dorchester during the afternoon",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 16000104,
+          "INCIDENT_REF": "SYN-BOS-2026-00104",
+          "SUBURB": "Charlestown",
+          "OCCURRED_AT": "2026-05-14T23:11:43.000Z",
+          "LATITUDE": 42.379915,
+          "LONGITUDE": -71.062845,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A parked vehicle found with a fitting removed near Charlestown on Thursday",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 16000174,
+          "INCIDENT_REF": "SYN-BOS-2026-00174",
+          "SUBURB": "Hyde Park",
+          "OCCURRED_AT": "2026-05-25T07:53:22.000Z",
+          "LATITUDE": 42.240461,
+          "LONGITUDE": -71.140116,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A parked vehicle found with a fitting removed - Hyde Park, overnight",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 16002209,
+          "INCIDENT_REF": "SYN-BOS-2026-02209",
+          "SUBURB": "Roxbury",
+          "OCCURRED_AT": "2026-05-29T08:43:19.000Z",
+          "LATITUDE": 42.321432,
+          "LONGITUDE": -71.080801,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property manager's account: a theft from premises without forced entry near Roxbury",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 16004945,
+          "INCIDENT_REF": "SYN-BOS-2026-04945",
+          "SUBURB": "South Boston",
+          "OCCURRED_AT": "2026-05-20T22:32:37.000Z",
+          "LATITUDE": 42.328884,
+          "LONGITUDE": -71.058506,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Missing property following reported unauthorized removal - South Boston, Wednesday evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        }
+      ]
+    },
+    {
+      "city": "Chicago",
+      "profileCode": "CHICAGO_DATA_V2",
+      "id": 310,
+      "short": "CHI",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 18000594,
+          "INCIDENT_REF": "SYN-CHI-2026-00594",
+          "SUBURB": "PULLMAN",
+          "OCCURRED_AT": "2026-05-31T01:42:13.000Z",
+          "LATITUDE": 41.689662,
+          "LONGITUDE": -87.604468,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Forced entry and missing property - commercial area, PULLMAN",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 18000920,
+          "INCIDENT_REF": "SYN-CHI-2026-00920",
+          "SUBURB": "WASHINGTON HEIGHTS",
+          "OCCURRED_AT": "2026-05-05T23:33:22.000Z",
+          "LATITUDE": 41.700159,
+          "LONGITUDE": -87.64311,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property missing after reported forced entry - WASHINGTON HEIGHTS, Tuesday evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 18000423,
+          "INCIDENT_REF": "SYN-CHI-2026-00423",
+          "SUBURB": "DUNNING",
+          "OCCURRED_AT": "2026-05-28T22:08:24.000Z",
+          "LATITUDE": null,
+          "LONGITUDE": null,
+          "LOCATION_ROLE": "locality_reference",
+          "REPORT_SUMMARY": "Exhibition payment instruction disputed in DUNNING",
+          "CASE_REF": "CASE-CHI-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 18000747,
+          "INCIDENT_REF": "SYN-CHI-2026-00747",
+          "SUBURB": "AVONDALE",
+          "OCCURRED_AT": "2026-05-20T15:10:22.000Z",
+          "LATITUDE": 41.945923,
+          "LONGITUDE": -87.715825,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Provenance document discrepancy reported in AVONDALE",
+          "CASE_REF": "CASE-CHI-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-GEORGE",
+              "DISPLAY_NAME": "George Kaplan"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 18000026,
+          "INCIDENT_REF": "SYN-CHI-2026-00026",
+          "SUBURB": "ROGERS PARK",
+          "OCCURRED_AT": "2026-06-07T07:40:06.000Z",
+          "LATITUDE": 42.014099,
+          "LONGITUDE": -87.680313,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "An allegation of physical assault near ROGERS PARK, according to a visitor",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 18000110,
+          "INCIDENT_REF": "SYN-CHI-2026-00110",
+          "SUBURB": "UPTOWN",
+          "OCCURRED_AT": "2026-06-26T08:42:05.000Z",
+          "LATITUDE": 41.962608,
+          "LONGITUDE": -87.657846,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Physical contact during a confrontation - UPTOWN, Friday overnight",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 18000069,
+          "INCIDENT_REF": "SYN-CHI-2026-00069",
+          "SUBURB": "LAKE VIEW",
+          "OCCURRED_AT": "2026-05-03T18:14:11.000Z",
+          "LATITUDE": 41.934672,
+          "LONGITUDE": -87.654699,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property missing after reported forced entry - shared residential area, LAKE VIEW",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 18000087,
+          "INCIDENT_REF": "SYN-CHI-2026-00087",
+          "SUBURB": "EDISON PARK",
+          "OCCURRED_AT": "2026-05-27T18:46:16.000Z",
+          "LATITUDE": 42.007844,
+          "LONGITUDE": -87.809544,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Property manager describes a damaged entrance and reported theft in EDISON PARK",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 18000504,
+          "INCIDENT_REF": "SYN-CHI-2026-00504",
+          "SUBURB": "WASHINGTON PARK",
+          "OCCURRED_AT": "2026-06-18T04:33:16.000Z",
+          "LATITUDE": 41.792569,
+          "LONGITUDE": -87.623055,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Parts taken from a parked vehicle - neighborhood parking area, WASHINGTON PARK",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 18001496,
+          "INCIDENT_REF": "SYN-CHI-2026-01496",
+          "SUBURB": "LOWER WEST SIDE",
+          "OCCURRED_AT": "2026-05-21T04:38:35.000Z",
+          "LATITUDE": 41.856004,
+          "LONGITUDE": -87.650319,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A vehicle accessory removed without permission - LOWER WEST SIDE, evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 18004876,
+          "INCIDENT_REF": "SYN-CHI-2026-04876",
+          "SUBURB": "FULLER PARK",
+          "OCCURRED_AT": "2026-05-23T08:50:09.000Z",
+          "LATITUDE": 41.822433,
+          "LONGITUDE": -87.633655,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Saturday overnight: forced entry and missing property near FULLER PARK",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 18005397,
+          "INCIDENT_REF": "SYN-CHI-2026-05397",
+          "SUBURB": "AUSTIN",
+          "OCCURRED_AT": "2026-06-27T23:39:16.000Z",
+          "LATITUDE": 41.906857,
+          "LONGITUDE": -87.74395,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Missing property following reported unauthorized removal - AUSTIN, evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        }
+      ]
+    },
+    {
+      "city": "Las Vegas",
+      "profileCode": "LAS_VEGAS_DATA_V2",
+      "id": 331,
+      "short": "LV",
+      "anchors": [
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 20000229,
+          "INCIDENT_REF": "SYN-LV-2026-00229",
+          "SUBURB": "North Strip area (Winchester)",
+          "OCCURRED_AT": "2026-05-08T01:01:06.000Z",
+          "LATITUDE": 36.138808,
+          "LONGITUDE": -115.165381,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A break-in through a damaged entrance - North Strip area, Thursday evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "SERVICE_ACCESS",
+          "INCIDENT_ID": 20000798,
+          "INCIDENT_REF": "SYN-LV-2026-00798",
+          "SUBURB": "Spring Valley central",
+          "OCCURRED_AT": "2026-06-18T02:10:33.000Z",
+          "LATITUDE": 36.095993,
+          "LONGITUDE": -115.255782,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Wednesday evening: missing items following a reported break-in near Spring Valley central",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 20000078,
+          "INCIDENT_REF": "SYN-LV-2026-00078",
+          "SUBURB": "Northwest urban connector (City of Las Vegas)",
+          "OCCURRED_AT": "2026-05-18T00:07:58.000Z",
+          "LATITUDE": null,
+          "LONGITUDE": null,
+          "LOCATION_ROLE": "locality_reference",
+          "REPORT_SUMMARY": "Exhibition payment instruction disputed in Northwest urban connector",
+          "CASE_REF": "CASE-LV-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-CLARA",
+              "DISPLAY_NAME": "Clara Thornhill"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "ART_MARKET_PAYMENTS",
+          "INCIDENT_ID": 20000495,
+          "INCIDENT_REF": "SYN-LV-2026-00495",
+          "SUBURB": "Southwest urban connector (Spring Valley)",
+          "OCCURRED_AT": "2026-05-31T23:39:20.000Z",
+          "LATITUDE": null,
+          "LONGITUDE": null,
+          "LOCATION_ROLE": "locality_reference",
+          "REPORT_SUMMARY": "Final supplier instruction referred for comparison in Southwest urban connector",
+          "CASE_REF": "CASE-LV-V2-02",
+          "PERSON_COUNT": 1,
+          "people": [
+            {
+              "PERSON_REF": "POI-NBNW-PHILIP",
+              "DISPLAY_NAME": "Philip Vandamm"
+            }
+          ]
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 20000033,
+          "INCIDENT_REF": "SYN-LV-2026-00033",
+          "SUBURB": "Downtown",
+          "OCCURRED_AT": "2026-05-08T12:49:08.000Z",
+          "LATITUDE": 36.169847,
+          "LONGITUDE": -115.141787,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A confrontation involving reported assault near Downtown on Friday",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "NIGHT_PRECINCT_ACTIVITY",
+          "INCIDENT_ID": 20000051,
+          "INCIDENT_REF": "SYN-LV-2026-00051",
+          "SUBURB": "Fremont corridor",
+          "OCCURRED_AT": "2026-05-12T04:07:05.000Z",
+          "LATITUDE": 36.187949,
+          "LONGITUDE": -115.119666,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "An allegation of physical assault - Fremont corridor, Monday evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 20000006,
+          "INCIDENT_REF": "SYN-LV-2026-00006",
+          "SUBURB": "Downtown",
+          "OCCURRED_AT": "2026-05-12T22:09:58.000Z",
+          "LATITUDE": 36.187937,
+          "LONGITUDE": -115.139255,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Downtown: a break-in through a damaged entrance during the afternoon",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "RESIDENTIAL_OCCUPANCY_BURGLARY",
+          "INCIDENT_ID": 20000173,
+          "INCIDENT_REF": "SYN-LV-2026-00173",
+          "SUBURB": "Fremont corridor",
+          "OCCURRED_AT": "2026-05-26T16:28:15.000Z",
+          "LATITUDE": 36.171404,
+          "LONGITUDE": -115.1128,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Tuesday morning: a break-in through a damaged entrance near Fremont corridor",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 20000307,
+          "INCIDENT_REF": "SYN-LV-2026-00307",
+          "SUBURB": "Paradise east",
+          "OCCURRED_AT": "2026-05-29T02:28:56.000Z",
+          "LATITUDE": 36.115668,
+          "LONGITUDE": -115.069724,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Resident's account: parts taken from a parked vehicle near Paradise east",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "VEHICLE_PARTS_HARVESTING",
+          "INCIDENT_ID": 20001501,
+          "INCIDENT_REF": "SYN-LV-2026-01501",
+          "SUBURB": "North Strip area (City of Las Vegas)",
+          "OCCURRED_AT": "2026-06-09T03:55:24.000Z",
+          "LATITUDE": 36.137872,
+          "LONGITUDE": -115.175257,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A parked vehicle found with a fitting removed - North Strip area, Monday evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 20005783,
+          "INCIDENT_REF": "SYN-LV-2026-05783",
+          "SUBURB": "Summerlin South",
+          "OCCURRED_AT": "2026-06-26T01:56:13.000Z",
+          "LATITUDE": 36.119945,
+          "LONGITUDE": -115.326097,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "Forced entry and missing property - workshop and storage area, Summerlin South",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        },
+        {
+          "PATTERN_CODE": "CONSTRUCTION_SITE_MATERIAL_THEFT",
+          "INCIDENT_ID": 20007443,
+          "INCIDENT_REF": "SYN-LV-2026-07443",
+          "SUBURB": "Sunrise Manor south",
+          "OCCURRED_AT": "2026-06-21T03:54:55.000Z",
+          "LATITUDE": 36.135623,
+          "LONGITUDE": -115.066954,
+          "LOCATION_ROLE": "physical_context",
+          "REPORT_SUMMARY": "A break-in through a damaged entrance - Sunrise Manor south, evening",
+          "CASE_REF": null,
+          "PERSON_COUNT": 0,
+          "people": []
+        }
+      ]
+    }
+  ],
+  "active": [
+    {
+      "CONTROL_ID": 1,
+      "DATASET_PROFILE_ID": 131,
+      "ACTIVATED_AT": "2026-10-20T00:04:07.884Z",
+      "ACTIVATED_BY": "CRIME_DATA"
+    }
+  ]
+}

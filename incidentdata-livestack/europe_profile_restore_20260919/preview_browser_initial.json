@@ -1,0 +1,193 @@
+{
+  "status": "passed",
+  "at": "2026-09-19T06:17:48.053Z",
+  "checks": [
+    "All six catalogue targets and restore capabilities verified; Dublin stays active.",
+    "Nine standard/NRT requests confirmed and intercepted; zero restores sent to server.",
+    "Adelaide V1 remains available separately; six-city grid is not displaced.",
+    "Mismatched profile response prevents restore.",
+    "Mobile tile order and non-admin restrictions checked."
+  ],
+  "mapping": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "city": "Adelaide",
+      "count": 21532,
+      "nrt": true
+    },
+    {
+      "code": "PERTH_DATA",
+      "city": "Perth",
+      "count": 33511,
+      "nrt": true
+    },
+    {
+      "code": "BRISBANE_DATA",
+      "city": "Brisbane",
+      "count": 42317,
+      "nrt": true
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "city": "Amsterdam",
+      "count": 14467,
+      "nrt": false
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "city": "Brussels",
+      "count": 25691,
+      "nrt": false
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "city": "Dublin",
+      "count": 17817,
+      "nrt": false
+    }
+  ],
+  "layout": [
+    {
+      "x": 331,
+      "y": 1010.09375,
+      "width": 385.65625
+    },
+    {
+      "x": 726.65625,
+      "y": 1010.09375,
+      "width": 385.671875
+    },
+    {
+      "x": 1122.328125,
+      "y": 1010.09375,
+      "width": 385.65625
+    },
+    {
+      "x": 331,
+      "y": 1158.59375,
+      "width": 385.65625
+    },
+    {
+      "x": 726.65625,
+      "y": 1158.59375,
+      "width": 385.671875
+    },
+    {
+      "x": 1122.328125,
+      "y": 1158.59375,
+      "width": 385.65625
+    }
+  ],
+  "mobile": [
+    {
+      "x": 108,
+      "y": 2047.625
+    },
+    {
+      "x": 108,
+      "y": 2196.90625
+    },
+    {
+      "x": 108,
+      "y": 2358.90625
+    },
+    {
+      "x": 108,
+      "y": 2520.90625
+    },
+    {
+      "x": 108,
+      "y": 2682.90625
+    },
+    {
+      "x": 108,
+      "y": 2844.90625
+    }
+  ],
+  "intercepted": [
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "ADELAIDE_DATA_V2",
+        "confirmation": "ACTIVATE ADELAIDE_DATA_V2",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "ADELAIDE_DATA_V2",
+        "confirmation": "ACTIVATE ADELAIDE_DATA_V2",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "PERTH_DATA",
+        "confirmation": "ACTIVATE PERTH_DATA",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "PERTH_DATA",
+        "confirmation": "ACTIVATE PERTH_DATA",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "BRISBANE_DATA",
+        "confirmation": "ACTIVATE BRISBANE_DATA",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "BRISBANE_DATA",
+        "confirmation": "ACTIVATE BRISBANE_DATA",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "AMSTERDAM_DATA_V1",
+        "confirmation": "ACTIVATE AMSTERDAM_DATA_V1",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "BRUSSELS_DATA_V1",
+        "confirmation": "ACTIVATE BRUSSELS_DATA_V1",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "DUBLIN_CITY_DATA_V1",
+        "confirmation": "ACTIVATE DUBLIN_CITY_DATA_V1",
+        "expectedActiveProfileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    }
+  ],
+  "page_errors": [],
+  "unexpected_write_requests": [],
+  "restore_requests_sent_to_server": 0
+}

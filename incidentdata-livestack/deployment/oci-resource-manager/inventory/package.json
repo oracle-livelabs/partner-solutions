@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "artifacts": 33,
+  "payloadBytes": 5825157363,
+  "sourceCommit": "1c05e9dfba4da23067a051439f96ea225572eef5",
+  "manifestSha256": "40983b651e61661d2c117f94ece2cc8ce96de40fa4bf2cded21cd0419fe6e7b1",
+  "resourceManagerZipBytes": 25374,
+  "resourceManagerZipSha256": "3ce26c2f5075c8a4803b551724d260e225a02cfe6e9a6cce7d2453c516772a3a",
+  "extractedPackageTerraformValidationPassed": true,
+  "resourceManagerWorkingDirectory": "terraform",
+  "secretsInResourceManagerZip": false,
+  "published": false,
+  "provisioned": false,
+  "destinationTested": false,
+  "extractedPackageTerraformVersion": "1.5.7",
+  "step4PlanSucceeded": true,
+  "applyCleared": false,
+  "vaultRequired": false
+}

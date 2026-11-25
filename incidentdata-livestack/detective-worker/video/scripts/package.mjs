@@ -1,0 +1,20 @@
+import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';import {createRequire} from 'node:module';import {execFileSync} from 'node:child_process';
+const args=Object.fromEntries(process.argv.slice(2).filter(x=>x!=='--zip').reduce((a,x,i,v)=>i%2===0?[...a,[x,v[i+1]]]:a,[]));
+for(const k of ['--case','--build','--out','--runtime-package'])if(!args[k])throw Error('Missing '+k);
+const C=JSON.parse(fs.readFileSync(args['--case'],'utf8')),out=path.resolve(args['--out']),build=path.resolve(args['--build']);
+const require=createRequire(path.resolve(args['--runtime-package'])),sharp=require('sharp'),dir=path.dirname(fileURLToPath(import.meta.url));
+const timing=JSON.parse(fs.readFileSync(path.join(build,'timing.json'),'utf8'));
+const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clock=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
+const fields={TITLE:C.title,SUBTITLE:C.subtitle,STATUS:C.synthetic?'SYNTHETIC TRAINING CASE':'INVESTIGATION BRIEFING',FOCUS:C.focus,VOICE:timing.voice,NOTE:'Batch '+C.batch_id+'. '+C.disclaimer+' Locally generated AI narration; not a human recording.'};
+let html=fs.readFileSync(path.join(dir,'../assets/player.html'),'utf8')
+ .replace(/\{\{([A-Z]+)\}\}/g,(_,k)=>{if(!(k in fields))throw Error('Unknown template field '+k);return E(fields[k]);})
+ .replace('/*__TIMING__*/',JSON.stringify({duration:timing.duration,voice:timing.voice,chapters:timing.chapters}).replace(/</g,'\\u003c'))
+ .replace('/*__SCENES__*/',JSON.stringify(C.scenes.map(({html,...s})=>s)).replace(/</g,'\\u003c'));
+fs.writeFileSync(path.join(out,'Case-Overview.html'),html);
+await sharp(path.join(build,C.scenes[0].id+'.png')).jpeg({quality:88}).toFile(path.join(out,'Case-Overview-Poster.jpg'));
+const evidence=`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${E(C.title)} — evidence register</title><style>body{max-width:1080px;margin:35px auto;padding:0 24px;background:#17201c;color:#dae3cd;font:16px/1.65 system-ui}a{color:#dfc586}h1,h2{font-weight:500}code{overflow-wrap:anywhere;font-size:12px}table{width:100%;border-collapse:collapse}td,th{padding:12px;text-align:left;border-bottom:1px solid #52624a;overflow-wrap:anywhere}th{font-size:12px;text-transform:uppercase}td:first-child{width:35%}</style><a href="Case-Overview.html">← Back to video briefing</a><h1>${E(C.title)} — evidence register</h1><p>Batch <code>${E(C.batch_id)}</code>. ${E(C.subtitle)}.</p><h2>Scope, checks and limits</h2>${C.evidenceNotes.map(n=>'<p>'+E(n)+'</p>').join('')}<h2>Verified source files</h2><table><tr><th>File</th><th>SHA-256</th><th>Bytes</th></tr>${C.files.map(f=>`<tr><td>${E(f.path)}</td><td><code>${E(f.sha256)}</code></td><td>${E(f.bytes)}</td></tr>`).join('')}</table>`;
+fs.writeFileSync(path.join(out,'Evidence-Register.html'),evidence);
+fs.writeFileSync(path.join(out,'README.md'),`# ${C.title} — Video Briefing\n\nBatch: ${C.batch_id}\n\n${C.subtitle}\n\n${C.focus}\n\nOpen Case-Overview.html for the narrated video, chapters, transcript and evidence register. Keep this folder together. Case-Overview.mp4 plays independently. Voiceover-only M4A and editable SRT/VTT captions are included.\n\nDuration: ${clock(timing.duration)}. 1920 × 1080, 24 fps. ${timing.voice}. No background music. Linux pilot: approved frozen narration; no LLM rewriting or live database retrieval. This is a local artifact, not a shared online room.\n\n## Evidence scope\n\n${C.evidenceNotes.join('\n\n')}\n\n## Chapters\n\n${timing.chapters.map(c=>`- ${clock(c.start)} — ${c.title}`).join('\n')}\n`);
+if(process.argv.includes('--zip')){for(const f of ['Case-Overview.mp4','validation.json','player-validation.json'])if(!fs.existsSync(path.join(out,f)))throw Error('Not ready to package: '+f);execFileSync('/usr/bin/zip',['-q','-r',out+'.zip','.'],{cwd:out});}
+console.log(JSON.stringify({player:path.join(out,'Case-Overview.html'),duration:clock(timing.duration)}));

@@ -1,0 +1,30 @@
+{
+  "completed_at": "2026-09-17T06:14:46.567Z",
+  "state": "all_seven_saved_profiles_and_active_adelaide_have_common_13",
+  "active": "ADELAIDE_DATA",
+  "source_package": "/home/opc/livestack/policeAdelaide/saved_profile_enrichment_20260917/package.json",
+  "source_package_semantic_sha256": "ccc37234489843067ba4bcce3e242023f62ce34011b10aaaac8841c1d42033f2",
+  "files": {
+    "README.md": "530e67df0597c5ba60310c2b34a5ca03929b75f4350343a24150ccf0da2671a1",
+    "adelaide_common_pois_live.png": "a52823ef52b37aed7e547bb1727dc2bcdd75b0c24f30819554806f7592211884",
+    "after_people_and_vectors.json": "f81c989b94c6171fbfd49a0bed176df0e9da671fd72c11d8d617183266ba4f5d",
+    "app_verification.json": "356972fa21779e5924ab6cf94730a7d66d85b9d8da4ef0798f83a7a5957c41e5",
+    "audit_after.json": "c465176ccb3891d88c9aaa25859a19adf37eeef4d2dd2b1ab1c63858b04a46ed",
+    "audit_before.json": "efd618ffb1024a6be7b889abdf1d7c3ceb441a16aa782fdbc5038e33f6f53193",
+    "audit_dry_run.json": "347242c49f9bc06981a52c225020d3a7c66b4699184734532efad49c0c7dfad6",
+    "audit_precommit.json": "c465176ccb3891d88c9aaa25859a19adf37eeef4d2dd2b1ab1c63858b04a46ed",
+    "before_people_and_vectors.json": "5e4db8db792dadc0bbf890da107cd0b59c79f610e25be1f155bdc5d46d25d999",
+    "build_handoff.cjs": "36703400442d54bb71a57110f5c610f5c0eccf7326bdc7b291efdbe8d4681d2b",
+    "common.cjs": "38439e7cbde13b128f12e89475af1185908f27a65d330ecdf4a6f57cbf3c5c4b",
+    "dry_run.json": "fb3e384fd452b2d78919fff86ada4dcc68418a1dd6edb8b34f4b9796ae5c4d74",
+    "load.cjs": "9edc6e36df83183072f9489802531ce99f919dba5c26f3826190ed61af6d9b96",
+    "load_result.json": "461d117e441c45412470fac9bee77cd9a959543467aa38d51b0e14730ee68278",
+    "plan.cjs": "691ff89963733906de14d21eab1cdc7b622feaedc042609385612756fbca4517",
+    "plan.test.cjs": "0c4ff5b68b8d4d4f07ab1e3c2db738118c203eb2df47457bb0afbef58ee35777",
+    "plan_tests.log": "e8251dc0100ccdd0aae6c2885933338e1fbeac4714f2642930fe83f20ca10a31",
+    "preflight.cjs": "60ba29842a86c6006174a4c3dce3be95ab2a92da5e9dfba8a3a2160499a88d5a",
+    "preflight.json": "80516206e2ef0f9def1eee41d03cb0df01b40caaf63070a9e69469493c54c243",
+    "verification.json": "66a912036e1ecbd86c774e53163556353e246adfe33e4f06da4c215a6e64a443",
+    "verify_app.cjs": "55d89a21e13a11b618caf7d2baf321a002cfe735c4cd10d3403747e559deee46"
+  }
+}

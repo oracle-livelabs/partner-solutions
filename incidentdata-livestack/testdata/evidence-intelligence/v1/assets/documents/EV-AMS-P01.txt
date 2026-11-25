@@ -1,0 +1,11 @@
+SYNTHETIC TEACHING MATERIAL — EV-AMS-P01
+Purchase confirmation with a repeated payment suffix
+
+Document: purchase confirmation
+Reference suffix: AMS-2-1
+Entry A: framed-print reservation; EUR 240.00
+Entry B: display-board reservation; EUR 240.00
+Supplier attribution: not verified
+Copy notation: repeated reference suffix; compare the descriptions.
+
+Authored fixture; not a recovered or original incident document.

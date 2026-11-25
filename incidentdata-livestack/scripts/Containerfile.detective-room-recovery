@@ -1,0 +1,2 @@
+FROM localhost/crimedata-detective-worker:record-label-layout-20261020-r1
+COPY backend/detective-room-worker.js backend/detective-room-recovery.js /app/backend/

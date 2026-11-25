@@ -1,0 +1,420 @@
+{
+  "checkedAt": "2026-10-20T23:33:29.063702+00:00",
+  "readOnly": true,
+  "region": "ap-sydney-1",
+  "availabilityDomains": [
+    "UEYk:AP-SYDNEY-1-AD-1"
+  ],
+  "capacity": [
+    {
+      "fault_domain": null,
+      "instance_shape": "VM.Standard.E4.Flex",
+      "instance_shape_config": {
+        "ocpus": 4.0,
+        "memory_in_gbs": 32.0,
+        "nvmes": 0,
+        "baseline_ocpu_utilization": null
+      },
+      "available_count": 1103,
+      "availability_status": "AVAILABLE"
+    }
+  ],
+  "limits": {
+    "compute": [
+      {
+        "name": "dvh-standard-e4-core-count",
+        "value": 128,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 128,
+        "used": 0,
+        "fractionalAvailable": 128.0
+      },
+      {
+        "name": "standard-e4-core-count",
+        "value": 55555,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 55399,
+        "used": 17,
+        "fractionalAvailable": 55399.5
+      },
+      {
+        "name": "standard-e4-core-count-reservable",
+        "value": 0,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 0,
+        "used": 0,
+        "fractionalAvailable": 0.0
+      },
+      {
+        "name": "standard-e4-core-reserved-count",
+        "value": 1000000000,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 1000000000,
+        "used": 0,
+        "fractionalAvailable": 1000000000.0
+      },
+      {
+        "name": "standard-e4-memory-count",
+        "value": 925925,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 923954,
+        "used": 48,
+        "fractionalAvailable": 923954.0
+      },
+      {
+        "name": "standard-e4-memory-count-reservable",
+        "value": 0,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 0,
+        "used": 0,
+        "fractionalAvailable": 0.0
+      },
+      {
+        "name": "standard-e4-memory-reserved-count",
+        "value": 1000000000,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 1000000000,
+        "used": 0,
+        "fractionalAvailable": 1000000000.0
+      }
+    ],
+    "database": [
+      {
+        "name": "adw-dedicated-ecpu-count",
+        "value": 100000,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 100000,
+        "used": 0,
+        "fractionalAvailable": 100000.0
+      },
+      {
+        "name": "adw-ecpu-count",
+        "value": 144,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 1,
+        "used": 0,
+        "fractionalAvailable": 1.0
+      },
+      {
+        "name": "adw-exacc-ecpu-count",
+        "value": 100000,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 100000,
+        "used": 0,
+        "fractionalAvailable": 100000.0
+      },
+      {
+        "name": "ajd-ecpu-count",
+        "value": 16,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 16,
+        "used": 0,
+        "fractionalAvailable": 16.0
+      },
+      {
+        "name": "apex-ecpu-count",
+        "value": 278,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 262,
+        "used": 0,
+        "fractionalAvailable": 262.0
+      },
+      {
+        "name": "atp-dedicated-ecpu-count",
+        "value": 100000,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 100000,
+        "used": 0,
+        "fractionalAvailable": 100000.0
+      },
+      {
+        "name": "atp-ecpu-count",
+        "value": 120,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 20,
+        "used": 10,
+        "fractionalAvailable": 20.0
+      },
+      {
+        "name": "atp-exacc-ecpu-count",
+        "value": 100000,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 100000,
+        "used": 0,
+        "fractionalAvailable": 100000.0
+      },
+      {
+        "name": "autonomous-vm-cluster-count",
+        "value": 100000,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 100000,
+        "used": 0,
+        "fractionalAvailable": 100000.0
+      },
+      {
+        "name": "vm-basedb-x86-ecpu-count",
+        "value": 300,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 220,
+        "used": 0,
+        "fractionalAvailable": 220.0
+      },
+      {
+        "name": "vm-standard-e4-ocpu-count",
+        "value": 6944,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 6912,
+        "used": 0,
+        "fractionalAvailable": 6912.0
+      },
+      {
+        "name": "vm-standard-x86-ecpu-count",
+        "value": 300,
+        "scope": "AD",
+        "availabilityDomain": "UEYk:AP-SYDNEY-1-AD-1",
+        "available": 296,
+        "used": 0,
+        "fractionalAvailable": 296.0
+      }
+    ],
+    "block-storage": [],
+    "vcn": [
+      {
+        "name": "reserved-public-ip-count",
+        "value": 75,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 17,
+        "used": 1,
+        "fractionalAvailable": 17.0
+      },
+      {
+        "name": "subnet-count",
+        "value": 300,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": null,
+        "used": null,
+        "fractionalAvailable": null
+      },
+      {
+        "name": "vcn-count",
+        "value": 300,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 14,
+        "used": 8,
+        "fractionalAvailable": 14.0
+      }
+    ],
+    "kms": [
+      {
+        "name": "external-vault-count",
+        "value": 0,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 0,
+        "used": 0,
+        "fractionalAvailable": 0.0
+      },
+      {
+        "name": "external-vault-keyversion-count",
+        "value": 0,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": null,
+        "used": null,
+        "fractionalAvailable": null
+      },
+      {
+        "name": "virtual-private-vault-count",
+        "value": 0,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 0,
+        "used": 0,
+        "fractionalAvailable": 0.0
+      },
+      {
+        "name": "virtual-private-vault-keyversion-count",
+        "value": 1000,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": null,
+        "used": null,
+        "fractionalAvailable": null
+      },
+      {
+        "name": "virtual-private-vault-softwarekeyversion-count",
+        "value": 1000,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": null,
+        "used": null,
+        "fractionalAvailable": null
+      },
+      {
+        "name": "virtual-vault-count",
+        "value": 20,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 0,
+        "used": 0,
+        "fractionalAvailable": 0.0
+      },
+      {
+        "name": "virtual-vault-keyversion-count",
+        "value": 100,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": null,
+        "used": null,
+        "fractionalAvailable": null
+      },
+      {
+        "name": "virtual-vault-softwarekeyversion-count",
+        "value": 100,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": null,
+        "used": null,
+        "fractionalAvailable": null
+      }
+    ],
+    "object-storage": [
+      {
+        "name": "bucket-count",
+        "value": 10000,
+        "scope": "REGION",
+        "availabilityDomain": null,
+        "available": 9367,
+        "used": 0,
+        "fractionalAvailable": 9367.0
+      }
+    ]
+  },
+  "permissionProbes": {
+    "listDynamicGroups": {
+      "readSucceeded": true,
+      "returned": 100
+    },
+    "listCompartmentPolicies": {
+      "readSucceeded": true,
+      "returned": 1
+    },
+    "listVaults": {
+      "readSucceeded": true,
+      "returned": 0
+    },
+    "listBuckets": {
+      "readSucceeded": true,
+      "returned": 10
+    }
+  },
+  "createPermissionsProven": false,
+  "note": "Read probes and limits do not prove permissions to create resources or guarantee capacity at Apply time.",
+  "availabilityVerification": {
+    "tenancy:virtual-vault-count": {
+      "used": 20,
+      "available": 0,
+      "fractional_usage": 20.0,
+      "fractional_availability": 0.0,
+      "effective_quota_value": null
+    },
+    "tenancy:max-secrets-per-tenancy-count": {
+      "used": 155,
+      "available": 4845,
+      "fractional_usage": 155.0,
+      "fractional_availability": 4845.0,
+      "effective_quota_value": null
+    },
+    "tenancy:policy-statements-per-compartment-chain-count": {
+      "used": null,
+      "available": null,
+      "fractional_usage": null,
+      "fractional_availability": null,
+      "effective_quota_value": null
+    },
+    "tenancy:total-storage-gb": {
+      "used": 63249,
+      "available": 86751,
+      "fractional_usage": 63249.0,
+      "fractional_availability": 86751.0,
+      "effective_quota_value": null
+    },
+    "compartment:virtual-vault-count": {
+      "used": 0,
+      "available": 0,
+      "fractional_usage": 0.0,
+      "fractional_availability": 0.0,
+      "effective_quota_value": null
+    },
+    "compartment:max-secrets-per-tenancy-count": {
+      "used": 0,
+      "available": 4845,
+      "fractional_usage": 0.0,
+      "fractional_availability": 4845.0,
+      "effective_quota_value": null
+    },
+    "compartment:policy-statements-per-compartment-chain-count": {
+      "used": null,
+      "available": null,
+      "fractional_usage": null,
+      "fractional_availability": null,
+      "effective_quota_value": null
+    },
+    "compartment:total-storage-gb": {
+      "used": 2706,
+      "available": 86751,
+      "fractional_usage": 2706.0,
+      "fractional_availability": 86751.0,
+      "effective_quota_value": null
+    },
+    "dynamicGroupCount": 200
+  },
+  "permissionReview": {
+    "readOnly": true,
+    "localApiCredentialCreatePermissionsProven": false,
+    "resourceManagerJobIdentityNotCreatedOrTested": true,
+    "membershipCount": 6,
+    "matchingBroadTenancyGrants": 0,
+    "readablePolicies": 60,
+    "note": "No simple broad tenancy grant matched. Read access and a successful Plan do not prove resource creation permissions."
+  },
+  "dynamicGroupHeadroom": {
+    "currentGroups": 200,
+    "newGroupsRequired": 0,
+    "actualLimitNotExposedByLimitsApi": true,
+    "mustConfirmBeforeApply": false,
+    "currentDesign": "Exact request.principal.id conditions; no new groups"
+  },
+  "historicalVaultCapacity": {
+    "service": "kms",
+    "limitName": "virtual-vault-count",
+    "tenancyLimit": 20,
+    "tenancyUsed": 20,
+    "available": 0,
+    "requiredNewVaults": 1,
+    "requiredByCurrentDesign": false
+  },
+  "blockingCapacity": null,
+  "vaultRequired": false
+}

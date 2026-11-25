@@ -1,0 +1,5 @@
+Authorisation note awaiting settlement — Pembroke East area
+
+Authored fictional teaching supplement for Dublin; linked incident SYN-DUB-2026-08500, Pembroke East area.
+A fictional payment-terminal note repeats DUB-CORE-02 in the reservation-reference field. One entry is marked pending authorisation; the settlement-reference field is empty. A repeated suffix is a comparison lead, not proof of a duplicate charge.
+These newly authored details are a synthetic comparison exercise, not quotations from the original incident report.

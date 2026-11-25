@@ -1,0 +1,183 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-17T07:41:21.712Z",
+  "checks": [
+    "All six exact profile/count mappings verified against Z_BASE; unknown code returns 400.",
+    "Desktop has requested three-column, two-row order; selecting tiles sends no write.",
+    "All nine standard/NRT restore requests target the correct profiles; none sent to the server.",
+    "Mismatched server profile disables Restore rather than allowing a fallback.",
+    "Mobile layout stacks all six tiles in the same order.",
+    "Limited viewer cannot use any restore button."
+  ],
+  "api_results": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "count": 21532,
+      "name": "Adelaide Data Set V2 - Scenario Enrichment"
+    },
+    {
+      "code": "PERTH_DATA",
+      "count": 33511,
+      "name": "Perth Data Set Profile"
+    },
+    {
+      "code": "BRISBANE_DATA",
+      "count": 42317,
+      "name": "Brisbane Data Set Profile"
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "count": 14467,
+      "name": "Amsterdam May-June 2026 V1"
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "count": 25691,
+      "name": "Brussels-Capital May-June 2026 V1"
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "count": 17817,
+      "name": "Dublin City Synthetic Data Set V1 - May-June 2026"
+    }
+  ],
+  "layout": [
+    {
+      "x": 331,
+      "y": 1010.09375,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 726.65625,
+      "y": 1010.09375,
+      "width": 385.671875,
+      "height": 138.5
+    },
+    {
+      "x": 1122.328125,
+      "y": 1010.09375,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 331,
+      "y": 1158.59375,
+      "width": 385.65625,
+      "height": 138.5
+    },
+    {
+      "x": 726.65625,
+      "y": 1158.59375,
+      "width": 385.671875,
+      "height": 138.5
+    },
+    {
+      "x": 1122.328125,
+      "y": 1158.59375,
+      "width": 385.65625,
+      "height": 138.5
+    }
+  ],
+  "mobile_layout": [
+    {
+      "x": 108,
+      "y": 12.625,
+      "width": 248
+    },
+    {
+      "x": 108,
+      "y": 179.90625,
+      "width": 248
+    },
+    {
+      "x": 108,
+      "y": 342.6875,
+      "width": 248
+    },
+    {
+      "x": 108,
+      "y": 523.46875,
+      "width": 248
+    },
+    {
+      "x": 108,
+      "y": 686.25,
+      "width": 248
+    },
+    {
+      "x": 108,
+      "y": 849.03125,
+      "width": 248
+    }
+  ],
+  "intercepted_restore_requests": [
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "ADELAIDE_DATA_V2"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "ADELAIDE_DATA_V2"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "PERTH_DATA"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "PERTH_DATA"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "BRISBANE_DATA"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load-nrt",
+      "payload": {
+        "profileCode": "BRISBANE_DATA"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "AMSTERDAM_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "BRUSSELS_DATA_V1"
+      },
+      "sent_to_server": false
+    },
+    {
+      "path": "/api/setup/load",
+      "payload": {
+        "profileCode": "DUBLIN_CITY_DATA_V1"
+      },
+      "sent_to_server": false
+    }
+  ],
+  "page_errors": [],
+  "unexpected_write_requests": [],
+  "active_profile": "ADELAIDE_DATA_V2",
+  "live_incidents": 21532
+}

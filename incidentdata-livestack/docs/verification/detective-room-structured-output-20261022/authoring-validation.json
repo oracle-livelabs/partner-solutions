@@ -1,0 +1,32 @@
+{
+  "candidateAuthoring": "passed",
+  "sourceFiles": 2,
+  "facts": 14,
+  "calls": [
+    {
+      "model": "meta.llama-4-maverick-17b-128e-instruct-fp8",
+      "region": "us-chicago-1",
+      "attempts": 1
+    },
+    {
+      "model": "meta.llama-4-maverick-17b-128e-instruct-fp8",
+      "region": "us-chicago-1",
+      "attempts": 1
+    },
+    {
+      "model": "meta.llama-4-maverick-17b-128e-instruct-fp8",
+      "region": "us-chicago-1",
+      "attempts": 1
+    }
+  ],
+  "overview": true,
+  "scenes": 8,
+  "at": "2026-10-21T20:26:49.358Z",
+  "validatedImage": "localhost/crimedata-detective-worker:structured-output-20261022-r2",
+  "sourceHashesMatched": true,
+  "tests": {
+    "detectiveRoomSuites": 4,
+    "bootstrapTests": 17
+  },
+  "fullRoomVideoAcceptance": "pending"
+}

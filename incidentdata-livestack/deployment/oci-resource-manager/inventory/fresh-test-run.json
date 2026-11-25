@@ -1,0 +1,46 @@
+{
+  "testRun": "3707a7861c7f",
+  "step": 5,
+  "status": "vm_recovery_for_ip_tls_default_sni",
+  "sourceCommit": "e801856fc95df772e96aa676278c75535f9de61e",
+  "deploymentConfigCommit": "d782f39",
+  "plan": {
+    "additions": 27,
+    "changes": 0,
+    "deletions": 0
+  },
+  "previousFailedTestDestroyed": true,
+  "originalResourcesPreserved": {
+    "instances": 7,
+    "databases": 2
+  },
+  "databaseName": "IDFB40A7",
+  "publicIp": "150.230.14.78",
+  "budgetUsd": 20,
+  "cleanupDeadlineUtc": "2026-10-21T10:31:51Z",
+  "fullStackAcceptance": false,
+  "cleanupSucceeded": false,
+  "applicationImagesBuilt": true,
+  "schemaRestoreCompleted": true,
+  "invalidObjectsAfterApex": 0,
+  "apexAuthenticatedBrowserApps": [
+    319,
+    320,
+    361
+  ],
+  "apexDashboardDataLoaded": true,
+  "apexViewerScopedIncidentCount": 10831,
+  "operatorScopedIncidentCount": 33511,
+  "personaIncidentCounts": {
+    "statewide_admin": 33511,
+    "central_analyst": 10831,
+    "northern_analyst": 10191,
+    "southern_analyst": 12489,
+    "read_only_viewer": 10831
+  },
+  "publicIpTls": {
+    "originalWithoutSni": false,
+    "withExplicitSni": true,
+    "loopbackFixRegressionPassed": true
+  }
+}

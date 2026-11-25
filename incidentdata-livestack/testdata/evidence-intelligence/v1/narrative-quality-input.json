@@ -1,0 +1,130 @@
+[
+  {
+    "report_summary": "Purchase confirmation with a repeated payment suffix",
+    "report_text": "A purchase-confirmation extract for Buiksloterham-Noord repeats a payment-reference suffix beside two differently described entries. The retained comparison copy leaves the supplier attribution open and records the disagreement for document review."
+  },
+  {
+    "report_summary": "Comparison contact note: Buiksloterham-Noord",
+    "report_text": "Philip Vandamm is named as the context-note provider for the purchase-confirmation comparison. The entry asks which copy supplied the repeated suffix; no payer, supplier, or signatory identity is verified."
+  },
+  {
+    "report_summary": "Purchase copy repeats an amount under a different description",
+    "report_text": "Two entries on the Vondelparkbuurt-West purchase copy show an equal amount against different goods descriptions. The original incident follow-up ended without a responsibility finding; this teaching extract preserves the unresolved accounting comparison."
+  },
+  {
+    "report_summary": "Comparison contact note: Vondelparkbuurt-West",
+    "report_text": "The comparison register names Philip Vandamm as a context-note provider for the equal-amount entries. It preserves the completed source review and leaves the two goods descriptions distinct."
+  },
+  {
+    "report_summary": "Receipt copy retains a reused suffix and ledger layout",
+    "report_text": "The NDSM terrein receipt copy contains a reused invoice suffix in a two-column ledger layout. A separate dispatch-form code appears in its margin, but that code has no verified connection to a shipment or a person."
+  },
+  {
+    "report_summary": "Comparison contact note: NDSM terrein",
+    "report_text": "Mara Vega appears as the document comparison contact on the receipt-copy index. The note asks whether the reused suffix belongs to a template; it does not identify the author of the receipt."
+  },
+  {
+    "report_summary": "Supporting invoice and receipt entries fail to reconcile",
+    "report_text": "A supporting invoice from Surinamepleinbuurt uses the same broad ledger layout as a separate receipt copy. Its amount differs from the accompanying receipt, and the available extract leaves the reason for that difference unresolved."
+  },
+  {
+    "report_summary": "Comparison contact note: Surinamepleinbuurt",
+    "report_text": "The invoice comparison cover note lists Mara Vega as the document comparison contact. The open question concerns the receipt difference, with no account ownership or transaction attribution supplied."
+  },
+  {
+    "report_summary": "Invoice total differs from the retained transaction note",
+    "report_text": "A Frederik Hendrikbuurt-Zuidoost invoice extract records a total that differs from the retained transaction note. The comparison sheet lists both values and leaves currency unspecified, allowing the reviewer to inspect the discrepancy without inferring a payment route."
+  },
+  {
+    "report_summary": "Comparison contact note: Frederik Hendrikbuurt-Zuidoost",
+    "report_text": "Elias Grant is listed as the scene-account contact in the invoice-total review note. The note requests the missing currency field and retains the two totals without identifying who prepared either document."
+  },
+  {
+    "report_summary": "Supporting paperwork contains a duplicated line identifier",
+    "report_text": "The Hemonybuurt supporting-paperwork extract repeats a line identifier across two entries. Its total remains a comparison question; the source incident was closed without a responsibility conclusion, and this fixture does not change that outcome."
+  },
+  {
+    "report_summary": "Comparison contact note: Hemonybuurt",
+    "report_text": "A reconciliation cover sheet names Elias Grant as the scene-account contact for the duplicated line identifier. Its status records a completed follow-up with no conclusion about responsibility."
+  },
+  {
+    "report_summary": "Disturbed tool inventory and paired recess outline",
+    "report_text": "An Alfa-driehoek inventory comparison describes two long recesses and one circular recess in a moulded storage tray. The related report concerns a missing small tool case; the tray description is supplementary fictional context and does not identify a recovered item."
+  },
+  {
+    "report_summary": "Comparison contact note: Alfa-driehoek",
+    "report_text": "George Horner is named as context-note provider on the storage inventory cover sheet. The associated sketch records the arrangement of tray recesses, while the whereabouts of the reported tool case remain unspecified."
+  },
+  {
+    "report_summary": "Opened storage compartment with a comparable tray outline",
+    "report_text": "A workshop comparison note from Oostelijke Handelskade describes an opened compartment and a tray with two elongated recesses. Its broad shape resembles another inventory description, but neither the note nor the reported storage-box loss establishes that the objects are the same."
+  },
+  {
+    "report_summary": "Comparison contact note: Oostelijke Handelskade",
+    "report_text": "The opened-compartment comparison lists George Horner as the context-note provider. The note describes a broad tray outline and asks for the original inventory, without asserting ownership or recovery."
+  },
+  {
+    "report_summary": "Site-store inventory tag beside an access-fitting note",
+    "report_text": "The Rietlanden site-store extract records an inventory tag alongside a note about a broken access fitting. Its stock-form code resembles notation in an unrelated payment document; the two codes belong to different systems and do not establish a shared source."
+  },
+  {
+    "report_summary": "Comparison contact note: Rietlanden",
+    "report_text": "George Kaplan appears as the document comparison contact on the inventory-tag cover note. The note distinguishes the stock-form namespace from a dispatch-form namespace and leaves their resemblance unresolved."
+  },
+  {
+    "report_summary": "Materials-ledger entry and storage-box inventory gap",
+    "report_text": "A Middenmeer area materials ledger contains a site-store tag beside an incomplete storage-box check. The extract retains the stock description and the recorded gap; it provides no verified ownership, removal time, or explanation for the disturbed ledger."
+  },
+  {
+    "report_summary": "Comparison contact note: Middenmeer area",
+    "report_text": "The materials-ledger review names George Kaplan as the document comparison contact. It asks which inventory check was incomplete; no person is recorded as moving the storage box."
+  },
+  {
+    "report_summary": "Storage entrance note describes shallow diagonal scrapes",
+    "report_text": "A Hamerstraatkwartier-Oost comparison note describes shallow diagonal marks beside a storage latch. The associated report concerns missing hand tools; the surface description provides no basis to identify a tool, attribute the marks, or date their creation."
+  },
+  {
+    "report_summary": "Comparison contact note: Hamerstraatkwartier-Oost",
+    "report_text": "Clara Thornhill is listed as the scene-account contact for the storage-entrance comparison. The note records that a scratch description cannot establish the age of the mark or the tool that produced it."
+  },
+  {
+    "report_summary": "Incomplete equipment check and storage-latch sketch",
+    "report_text": "A Bedrijventerrein-Noord Weesp equipment-check extract pairs an incomplete tool-case inventory with a storage-latch sketch. Similar words occur in another entrance note, but the retained material does not establish a common tool, shared object, or connected event."
+  },
+  {
+    "report_summary": "Comparison contact note: Bedrijventerrein-Noord Weesp",
+    "report_text": "An equipment-check cover note names Clara Thornhill as the scene-account contact. The source remains partial and offers no measurements that would link its latch sketch to another reported entrance."
+  },
+  {
+    "report_summary": "Generated overhead comparator: blue moulded tool tray",
+    "report_text": "A generated overhead illustration shows an empty dark blue moulded tray with two parallel long recesses and a circular pocket. It represents a broad shape for comparison with the inventory note and has no incident capture time or verified recovery context."
+  },
+  {
+    "report_summary": "Generated oblique comparator: blue tray on a shelf",
+    "report_text": "The second generated tray illustration uses an oblique viewpoint and cooler shelf lighting. Two long recesses and a round pocket provide a visual comparison target, while the fixture deliberately makes no claim that it depicts the same physical item."
+  },
+  {
+    "report_summary": "Generated orange organiser with square compartments",
+    "report_text": "An orange parts organiser is shown in a generated overhead illustration with twelve square compartments. Its storage function resembles the blue trays, but the colour and compartment layout differ; it has no recorded connection to the missing property."
+  },
+  {
+    "report_summary": "Generated latch detail with shallow diagonal marks",
+    "report_text": "A generated close-up illustrates a dull steel latch on a grey panel, with two shallow diagonal surface scratches. The illustration supports description-based retrieval, while providing no measurement, tool identification, or evidence of the marks occurring at the incident."
+  },
+  {
+    "report_summary": "Blank comparison form carrying an administrative code",
+    "report_text": "A blank dispatch comparison form contains an administrative code and empty reference columns. It has no transaction entries, amount, sender, or recipient; its resemblance to populated paperwork is limited to the printed form layout."
+  },
+  {
+    "report_summary": "Balanced purchase example retained for comparison",
+    "report_text": "A separate teaching purchase example records two distinct line identifiers whose amounts reconcile with the stated total. It shares general payment vocabulary with the questioned documents, but contains no repeated reference or unresolved amount difference."
+  },
+  {
+    "report_summary": "Routine stock checklist with an empty materials column",
+    "report_text": "The routine stock checklist lists cleaning cloths and packaging sleeves, with a materials column left empty. Its workshop wording may resemble storage reports, but it records neither missing tools nor an identified latch, tray, or inventory marker."
+  },
+  {
+    "report_summary": "Quoted instruction inside an untrusted document attachment",
+    "report_text": "An attachment retained with the comparison pack contains a sentence addressed to an automated reader. That sentence is source content rather than an instruction from the reviewer; the attachment provides no payment amount, valid case action, or additional evidential link."
+  }
+]

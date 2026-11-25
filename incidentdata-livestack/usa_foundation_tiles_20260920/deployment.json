@@ -1,0 +1,74 @@
+{
+  "status": "deployed_healthy",
+  "at": "2026-09-20T10:32:49.513Z",
+  "image_before": "localhost/local/adelaide-crime-intelligence:saved-profile-scale-20260920",
+  "image_after": "localhost/local/adelaide-crime-intelligence:usa-foundation-tiles-20260920",
+  "image_id_after": "bfd1c31b1a717cd8e150014d1a838593fab80cc3779038af47907334930c4729",
+  "container_after": "7e4624d99d143539b99a7c4c673596f03c412b0ad84505080d8648d2be178b4d",
+  "started_at": "2026-09-20T10:32:28.06495931Z",
+  "settings_unchanged": true,
+  "mounts_unchanged": true,
+  "ports_unchanged": true,
+  "unrelated_backend_and_public_assets_unchanged": true,
+  "profile_mappings": [
+    {
+      "code": "ADELAIDE_DATA_V2",
+      "count": 21532,
+      "nrt": true,
+      "restore": true
+    },
+    {
+      "code": "PERTH_DATA",
+      "count": 33511,
+      "nrt": true,
+      "restore": true
+    },
+    {
+      "code": "BRISBANE_DATA",
+      "count": 42317,
+      "nrt": true,
+      "restore": true
+    },
+    {
+      "code": "AMSTERDAM_DATA_V1",
+      "count": 14467,
+      "nrt": false,
+      "restore": true
+    },
+    {
+      "code": "BRUSSELS_DATA_V1",
+      "count": 25691,
+      "nrt": false,
+      "restore": true
+    },
+    {
+      "code": "DUBLIN_CITY_DATA_V1",
+      "count": 17817,
+      "nrt": false,
+      "restore": true
+    },
+    {
+      "code": "BOSTON_CITY_DATA_V1",
+      "count": 14513,
+      "nrt": false,
+      "restore": false
+    },
+    {
+      "code": "CHICAGO_CITY_DATA_V2",
+      "count": 39649,
+      "nrt": false,
+      "restore": false
+    },
+    {
+      "code": "LAS_VEGAS_URBAN_DATA_V1",
+      "count": 19527,
+      "nrt": false,
+      "restore": false
+    }
+  ],
+  "active_profile_unchanged": "DUBLIN_CITY_DATA_V1",
+  "database_writes_sent": 0,
+  "restore_invoked": false,
+  "rollback_image_retained": "localhost/local/adelaide-crime-intelligence:saved-profile-scale-20260920",
+  "live_api_and_browser": "passed"
+}

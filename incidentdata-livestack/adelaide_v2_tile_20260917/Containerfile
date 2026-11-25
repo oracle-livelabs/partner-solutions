@@ -1,0 +1,2 @@
+FROM localhost/local/adelaide-crime-intelligence:empty-summary-20260917
+COPY dist/ /app/frontend/dist/

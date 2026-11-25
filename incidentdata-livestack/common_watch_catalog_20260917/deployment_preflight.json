@@ -1,0 +1,18 @@
+{
+  "image_before": "localhost/local/adelaide-crime-intelligence:ai-ops-v1-20260915",
+  "image_id_before": "3908d914be3ef6060b09bf82706975585ec0b8c1edebd4dff885c14865122182",
+  "container_before": "6c8cf76907cf1be0b23c82fc647ca6ad27950578ae47bbd78f20fef5655bca0c",
+  "started_before": "2026-09-15T08:20:49.034966069Z",
+  "runtime_before_sha256": "41793e2cc836537cdb19b84e22f40b4695790f46f3e57e689137ef2bc3bce75c",
+  "runtime_after_sha256": "3a4825c1f1fe71b255023c53a341155281efb4f3933c30597e33719fec690d6f",
+  "helper_sha256": "2ea1c695a663e52223c8f1cbf3e6d8c42db793db8d2cf04721e4fb5ddb587f60",
+  "changed_runtime_lines": [
+    165
+  ],
+  "application_test_summary": [
+    "# tests 148",
+    "# pass 148",
+    "# fail 0"
+  ],
+  "prepared_at": "2026-09-17T06:45:16.621Z"
+}

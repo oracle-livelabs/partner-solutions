@@ -1,0 +1,8 @@
+Document: retained redacted conversation extract
+Thread reference: DEMO-THREAD-09
+Message reference: DEMO-MSG-09A
+Displayed source account: CARE-ACCOUNT-17
+Displayed recipient account: EXT-ACCOUNT-04
+Displayed date: 28 June 2026; time and scheduling details withheld.
+Retained content: appointment-change information for CT-RES-A [private details withheld].
+The supplied account list places the recipient outside the allocated care team. The extract does not identify the person operating either account or establish permission, intent, later attendance or a connection to missing property.

@@ -1,0 +1,3 @@
+FROM localhost/local/adelaide-crime-intelligence:cdr-messages-dated-v2-20260918
+COPY backend/server.js backend/profile-library.js backend/setup-mutation-guard.js backend/setup-profile-selection.js /app/backend/
+COPY europe_profile_restore_20260919/dist/ /app/frontend/dist/

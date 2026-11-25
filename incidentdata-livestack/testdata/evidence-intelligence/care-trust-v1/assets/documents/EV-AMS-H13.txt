@@ -1,0 +1,4 @@
+Document: resolved-source comparison
+Original report: hand tools missing after apparent forced entry, with a described daytime knocking sequence.
+Outcome: follow-up review completed without a finding of responsibility; incident remains resolved.
+Noah Kim is an existing context-note contact, not an identified care worker. No care assignment, outward message or link to DEMO-CARE-01 is supplied for this incident. Similarity does not replace the source outcome.

@@ -1,0 +1,8 @@
+# Telemetry-only backend overlay on the accepted Oracle-layouts release.
+FROM localhost/adelaide-crime-intelligence:oracle-layouts-20260930
+WORKDIR /app
+COPY backend/ai-ops-registry.js backend/ai-ops-store.js backend/ai-ops-telemetry.js backend/data-room-descriptions.js backend/data-room-expert.js backend/data-room-learning.js backend/data-room-money-agent.js backend/data-room-structured-ai.js backend/data-room-workspace.js backend/detective-room-author.js backend/detective-room-store.js backend/detective-room-worker.js backend/embeddings.js backend/evidence-intelligence.js backend/incident-ai.js backend/pattern-embeddings.js backend/server.js ./backend/
+COPY scripts/check_ai_ops_live.js ./scripts/
+# Retain prior fingerprinted assets and the unchanged Oracle SDK/vendor files.
+COPY frontend/dist/assets/ ./frontend/dist/assets/
+COPY frontend/dist/index.html ./frontend/dist/index.html
